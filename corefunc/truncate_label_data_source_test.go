@@ -14,14 +14,14 @@ func TestAccTruncateLabelDataSourceDefaultMaxLength64(t *testing.T) {
 		Steps: []resource.TestStep{
 			{
 				Config: providerConfig + `
-				data "corefunc_truncate_label" "truncated" {
+				data "corefunc_str_truncate_label" "truncated" {
 					prefix = "NW-ZZZ-CLOUD-TEST-APP-CLOUD-PROD-CRIT"
 					label  = "K8S Pods Not Running Deployment Check"
 				}
 				`,
 				Check: resource.ComposeAggregateTestCheckFunc(
 					resource.TestCheckResourceAttr(
-						"data.corefunc_truncate_label.truncated",
+						"data.corefunc_str_truncate_label.truncated",
 						"value",
 						"NW-ZZZ-CLOUD-TEST-APP-CLOUD-PR…: K8S Pods Not Running Deploymen…",
 					),
@@ -46,7 +46,7 @@ func TestAccTruncateLabelDataSourceTruncateTests(t *testing.T) {
 			Steps: []resource.TestStep{
 				{
 					Config: providerConfig + `
-					data "corefunc_truncate_label" "label" {
+					data "corefunc_str_truncate_label" "label" {
 						prefix = "` + tc.prefix + `"
 						label = "` + tc.label + `"
 						max_length   = ` +
@@ -61,7 +61,7 @@ func TestAccTruncateLabelDataSourceTruncateTests(t *testing.T) {
 					`,
 					Check: resource.ComposeAggregateTestCheckFunc(
 						resource.TestCheckResourceAttr(
-							"data.corefunc_truncate_label.label",
+							"data.corefunc_str_truncate_label.label",
 							"value",
 							func() string {
 								if tc.expected == "" {

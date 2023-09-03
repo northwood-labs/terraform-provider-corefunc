@@ -54,7 +54,7 @@ We're going to assume you already have [Homebrew](https://mac.install.guide/home
 ## Ensure the provider is installed correctly
 
 ```bash
-cd ./examples/data-sources/corefunc_truncate_label
+cd ./examples/data-sources/corefunc_str_truncate_label
 
 # As a developer using `make build`, SKIP `terraform init`.
 terraform plan
@@ -65,20 +65,14 @@ terraform plan
 ### Success looks like…
 
 ```plain
-data.corefunc_truncate_label.label: Reading...
-data.corefunc_truncate_label.label: Read complete after 0s
+data.corefunc_str_truncate_label.label: Reading...
+data.corefunc_str_truncate_label.label: Read complete after 0s
 
 Changes to Outputs:
   + name = "NW-ZZZ-CLOUD-TEST-APP-CLOUD-PR…: K8S Pods Not Running Deploymen…"
 
 You can apply this plan to save these new output values to the Terraform state, without changing any real infrastructure.
 ```
-
-### Failure looks like…
-
-> **Error: Failed to load plugin schemas**
->
-> @TODO
 
 ## Testing and fuzzing
 
@@ -127,7 +121,7 @@ Benchmarks test the performance/scalability of a package. Different versions of 
 ```bash
 go test \
     -bench=. \
-    -benchtime=2s \
+    -benchtime=10s \
     -benchmem \
     -cpuprofile=_cpu.out \
     -memprofile=_mem.out \
