@@ -10,6 +10,10 @@ TruncateLabel supports prepending a prefix to a label, while truncating them
 to meet the maximum length constraints. Useful when grouping labels with a
 kind of prefix. Both the prefix and the label will be truncated if necessary.
 
+Uses a "balancing" algorithm between the prefix and the label, so that each
+section is truncated as a factor of how much space it takes up in the merged
+string.
+
 ----
 
 * maxLength (int64): The maximum allowed length of the combined label.
