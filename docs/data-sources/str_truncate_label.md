@@ -6,6 +6,15 @@ description: |-
   TruncateLabel supports prepending a prefix to a label, while truncating them
   to meet the maximum length constraints. Useful when grouping labels with a
   kind of prefix. Both the prefix and the label will be truncated if necessary.
+  Uses a "balancing" algorithm between the prefix and the label, so that each
+  section is truncated as a factor of how much space it takes up in the merged
+  string.
+  -> The motivation for this is in working with monitoring systems such
+  as New Relic and Datadog where there are hundreds of applications in a
+  monitoring "prod" account, and also hundreds of applications in a monitoring
+  "nonprod" account. This allows us to group lists of monitors together using a
+  shared prefix, but also truncate them appropriately to fit length
+  constraints for names.
 ---
 -->
 
@@ -14,6 +23,17 @@ description: |-
 TruncateLabel supports prepending a prefix to a label, while truncating them
 to meet the maximum length constraints. Useful when grouping labels with a
 kind of prefix. Both the prefix and the label will be truncated if necessary.
+
+Uses a "balancing" algorithm between the prefix and the label, so that each
+section is truncated as a factor of how much space it takes up in the merged
+string.
+
+-> The motivation for this is in working with monitoring systems such
+as New Relic and Datadog where there are hundreds of applications in a
+monitoring "prod" account, and also hundreds of applications in a monitoring
+"nonprod" account. This allows us to group lists of monitors together using a
+shared prefix, but also truncate them appropriately to fit length
+constraints for names.
 
 ## Example Usage
 
