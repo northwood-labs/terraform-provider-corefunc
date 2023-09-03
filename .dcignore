@@ -1,0 +1,110 @@
+# Write glob rules for ignored files.
+# Check syntax on https://deepcode.freshdesk.com/support/solutions/articles/60000531055-how-can-i-ignore-files-or-directories-
+# Used by Snyk; https://docs.snyk.io/features/integrations/ide-tools/visual-studio-code-extension-for-snyk-code
+
+# Hidden directories
+.*/
+
+# Python
+__pycache__/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+MANIFEST
+htmlcov/
+cover/
+instance/
+docs/_build/
+target/
+profile_default/
+__pypackages__/
+celerybeat-schedule
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+/site
+cython_debug/
+
+# JupyterNotebooks
+profile_default/
+
+# Hugo
+/public/
+/resources/_gen/
+
+# VirtualEnv
+[Bb]in
+[Ii]nclude
+[Ll]ib
+[Ll]ib64
+[Ll]ocal
+[Ss]cripts
+
+# SublimeText
+Package Control.cache/
+Package Control.ca-certs/
+
+# Windows
+$RECYCLE.BIN/
+
+# Linux
+*~
+
+# Emacs
+*~
+#*#
+auto-save-list
+tramp
+*_archive
+/eshell/history
+/eshell/lastdir
+/elpa/
+/auto/
+dist/
+/server/
+
+# macOS
+Icon
+
+Network Trash Folder
+Temporary Items
+
+# JetBrains
+cmake-build-*/
+out/
+
+# Vim
+*~
+tags
+
+# Node
+logs
+pids
+lib-cov
+coverage
+bower_components
+build/Release
+node_modules/
+jspm_packages/
+web_modules/
+out
+dist
+
+# Rust
+debug/
+target/
+
+# Packer
+packer_cache/

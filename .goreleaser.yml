@@ -1,0 +1,265 @@
+# Pro License
+variables:
+  SourceOrg: ""
+  SourceRepo: terraform-provider-corefunc
+  Description: "Utilities that should have been Terraform_core functions."
+  MaintainerName: Northwood Labs
+  MaintainerEmail: ""
+  AppleCertificateID: ""
+  GPGKeyID: ""
+
+project_name: terraform-provider-corefunc
+dist: ./dist
+
+changelog:
+  skip: false
+
+archives:
+  - id: "linux-archive"
+    builds:
+      - linux
+    allow_different_binary_count: false
+    wrap_in_directory: false
+    format: zip
+    files:
+      - none*
+    name_template: "{{ .ProjectName }}_v{{ .Version }}_{{ .Os }}_{{ .Arch }}"
+
+  - id: "windows-archive"
+    builds:
+      - windows
+    allow_different_binary_count: false
+    wrap_in_directory: false
+    format: zip
+    files:
+      - none*
+    name_template: "{{ .ProjectName }}_v{{ .Version }}_{{ .Os }}_{{ .Arch }}"
+
+  - id: "macos-archive"
+    builds:
+      - macos-universal
+    allow_different_binary_count: false
+    wrap_in_directory: false
+    format: zip
+    files:
+      - none*
+    name_template: "{{ .ProjectName }}_v{{ .Version }}_{{ .Os }}_universal"
+
+builds:
+  #-----------------------------------------------------------------------------
+  # Linux
+
+  - id: linux
+    dir: .
+    main: .
+    binary: "{{ .ProjectName }}_v{{ .Version }}"
+    skip: false
+    ldflags:
+      - -s -w
+      - -X main.commit={{.Commit}}
+      - -X main.date={{.Date}}
+      - -X main.version={{.Version}}
+    env:
+      - CGO_ENABLED=0
+    goos:
+      - linux
+    goarch:
+      - amd64
+      - arm64
+    # GOAMD64 to build when GOARCH is amd64. https://en.wikipedia.org/wiki/X86-64#Microarchitecture_levels
+    # goamd64:
+    # - v1 # (general purpose)
+    # - v2 # (c. 2009, QEMU)
+    # - v3 # (c. 2015)
+    # - v4 # (c. 2021)
+    hooks:
+      pre:
+        - make build-release-prep
+      post:
+        # any binary signatures that should happen
+
+  #-----------------------------------------------------------------------------
+  # Windows
+
+  - id: windows
+    dir: .
+    main: .
+    binary: "{{ .ProjectName }}_v{{ .Version }}"
+    skip: false
+    ldflags:
+      - -s -w
+      - -X main.commit={{.Commit}}
+      - -X main.date={{.Date}}
+      - -X main.version={{.Version}}
+    env:
+      - CGO_ENABLED=0
+    goos:
+      - windows
+    goarch:
+      - amd64
+      - arm64
+    # GOAMD64 to build when GOARCH is amd64. https://en.wikipedia.org/wiki/X86-64#Microarchitecture_levels
+    # goamd64:
+    # - v1 # (general purpose)
+    # - v2 # (c. 2009, QEMU)
+    # - v3 # (c. 2015)
+    # - v4 # (c. 2021)
+    hooks:
+      pre:
+        - make build-release-prep
+      post:
+        # any binary signatures that should happen
+
+  #-----------------------------------------------------------------------------
+  # macOS
+
+  - id: macos
+    dir: .
+    main: .
+    binary: "{{ .ProjectName }}_v{{ .Version }}"
+    skip: false
+    ldflags:
+      - -s -w
+      - -X main.commit={{.Commit}}
+      - -X main.date={{.Date}}
+      - -X main.version={{.Version}}
+    env:
+      - CGO_ENABLED=0
+    goos:
+      - darwin
+    goarch:
+      - amd64
+      - arm64
+    # GOAMD64 to build when GOARCH is amd64. https://en.wikipedia.org/wiki/X86-64#Microarchitecture_levels
+    # goamd64:
+    # - v1 # (general purpose)
+    # - v2 # (c. 2009, QEMU)
+    # - v3 # (c. 2015)
+    # - v4 # (c. 2021)
+    hooks:
+      pre:
+        - make build-release-prep
+
+universal_binaries:
+  - id: macos-universal
+    ids:
+      - macos
+    name_template: "{{ .ProjectName }}_v{{ .Version }}"
+    replace: true
+    hooks:
+      post:
+        # Apple Account
+        # https://developer.apple.com/account/resources/certificates/
+        - codesign -s {{.Var.AppleCertificateID}} -o runtime -v './dist/macos-universal_darwin_all/{{.ProjectName}}_v{{ .Version }}'
+
+checksum:
+  name_template: "{{ .ProjectName }}-checksums.txt"
+  algorithm: sha256
+
+signs:
+  - id: gpg
+    ids:
+      - linux-archive
+      - windows-archive
+    signature: "${artifact}.sig"
+    cmd: gpg2
+    args:
+      [
+        "-u",
+        "{{ .Var.GPGKeyID }}",
+        "--output",
+        "${signature}",
+        "--detach-sign",
+        "${artifact}",
+      ]
+    artifacts: all
+
+  - id: gatekeeper
+    ids:
+      - macos-archive
+    signature: "${artifact}"
+    cmd: xcrun
+    args:
+      [
+        "notarytool",
+        "submit",
+        "./dist/{{ .ProjectName }}_v{{ .Version }}_darwin_universal.zip",
+        "--apple-id",
+        "{{ .Env.AC_APPLE_ID }}",
+        "--password",
+        "{{ .Env.AC_PASSWORD }}",
+        "--team-id",
+        "{{ .Env.AC_TEAM_ID }}",
+        "--progress",
+        "--wait",
+      ]
+    artifacts: all
+
+release:
+  # Repo in which the release will be created.
+  # Default is extracted from the origin remote URL or empty if its private hosted.
+  github:
+    owner: "{{ .Var.SourceOrg }}"
+    name: "{{ .Var.SourceRepo }}"
+
+  # IDs of the archives to use.
+  # Defaults to all.
+  # ids:
+  #   - foo
+  #   - bar
+
+  # If set to true, will not auto-publish the release.
+  # Default is false.
+  draft: true
+
+  # If set to auto, will mark the release as not ready for production
+  # in case there is an indicator for this in the tag e.g. v1.0.0-rc1
+  # If set to true, will mark the release as not ready for production.
+  # Default is false.
+  prerelease: auto
+
+  # What to do with the release notes in case there the release already exists.
+  #
+  # Valid options are:
+  # - `keep-existing`: keep the existing notes
+  # - `append`: append the current release notes to the existing notes
+  # - `prepend`: prepend the current release notes to the existing notes
+  # - `replace`: replace existing notes
+  #
+  # Default is `keep-existing`.
+  mode: replace
+
+  # Header template for the release body.
+  # Defaults to empty.
+  header: |
+    ## What's Changed
+
+  # Footer template for the release body.
+  # Defaults to empty.
+  footer: |
+    ## Verifying Assets
+
+    Learn how to verify releases at @TODO.
+
+  # You can change the name of the release.
+  # Default is `{{.Tag}}` on OSS and `{{.PrefixedTag}}` on Pro.
+  # name_template: "{{.ProjectName}}-v{{.Version}} {{.Env.USER}}"
+
+  # You can disable this pipe in order to not create the release on any SCM.
+  # Keep in mind that this might also break things that depend on the release URL, for instance, homebrew taps.
+  #
+  # Defaults to false.
+  # disable: true
+
+  # You can add extra pre-existing files to the release.
+  # The filename on the release will be the last part of the path (base).
+  # If another file with the same name exists, the last one found will be used.
+  # These globs can also include templates.
+  #
+  # Defaults to empty.
+  # extra_files:
+  #   - glob: ./path/to/file.txt
+  #   - glob: ./glob/**/to/**/file/**/*
+  #   - glob: ./glob/foo/to/bar/file/foobar/override_from_previous
+  #   - glob: ./single_file.txt
+  #     name_template: file.txt # note that this only works if glob matches 1 file only

@@ -1,0 +1,4 @@
+---
+# https://aquasecurity.github.io/tfsec/latest/guides/configuration/config/
+exclude:
+  - aws-lambda-enable-tracing
