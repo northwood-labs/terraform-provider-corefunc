@@ -841,6 +841,11 @@ issues:
         - tagliatelle
       source: lint:allow_format
 
+    - text: (is unused)
+      linters:
+        - unused
+      source: lint:allow_unused
+
   # Independently from option `exclude` we use default exclude patterns, it can be disabled by this
   # option. To list all excluded by default patterns execute `golangci-lint run --help`. Default
   # value for this option is true.
