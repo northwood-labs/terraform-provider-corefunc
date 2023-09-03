@@ -1,0 +1,20 @@
+<!--
+---
+page_title: "{{ .RenderedProviderName }} Provider"
+subcategory: ""
+description: |-
+{{ .Description | plainmarkdown | trimspace | prefixlines "  " }}
+---
+-->
+
+# {{ .RenderedProviderName }} Provider
+
+-> We intend to support both Terraform as well as OpenTF with this provider.
+
+{{ .Description | trimspace }}
+
+## Setting-up the provider
+
+{{ tffile "examples/provider/provider.tf" }}
+
+<!-- Preview the provider docs with the Terraform registry provider docs preview tool: https://registry.terraform.io/tools/doc-preview -->
