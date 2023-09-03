@@ -54,7 +54,7 @@ func (d *truncateLabelDataSource) Metadata(
 ) {
 	tflog.Info(ctx, "Starting TruncateLabel DataSource Metadata method.")
 
-	resp.TypeName = req.ProviderTypeName + "_truncate_label"
+	resp.TypeName = req.ProviderTypeName + "_str_truncate_label"
 
 	tflog.Debug(ctx, fmt.Sprintf("req.ProviderTypeName = %s", req.ProviderTypeName))
 	tflog.Debug(ctx, fmt.Sprintf("resp.TypeName = %s", resp.TypeName))

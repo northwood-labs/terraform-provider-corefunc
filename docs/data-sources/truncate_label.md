@@ -1,6 +1,6 @@
 <!--
 ---
-page_title: "corefunc_truncate_label Data Source - corefunc"
+page_title: "corefunc_str_truncate_label Data Source - corefunc"
 subcategory: ""
 description: |-
   TruncateLabel supports prepending a prefix to a label, while truncating them
@@ -9,7 +9,7 @@ description: |-
 ---
 -->
 
-# corefunc_truncate_label (Data Source)
+# corefunc_str_truncate_label (Data Source)
 
 TruncateLabel supports prepending a prefix to a label, while truncating them
 to meet the maximum length constraints. Useful when grouping labels with a
@@ -19,7 +19,7 @@ kind of prefix. Both the prefix and the label will be truncated if necessary.
 
 ```terraform
 # Pass the prefix and the label, then limit to 64 characters.
-data "corefunc_truncate_label" "label" {
+data "corefunc_str_truncate_label" "label" {
   prefix     = "NW-ZZZ-CLOUD-TEST-APP-CLOUD-PROD-CRIT"
   label      = "K8S Pods Not Running Deployment Check"
   max_length = 64
@@ -27,7 +27,7 @@ data "corefunc_truncate_label" "label" {
 
 # `value` is the read-only attribute containing the truncated label.
 output "value" {
-  value = data.corefunc_truncate_label.label.value
+  value = data.corefunc_str_truncate_label.label.value
 }
 
 #=> NW-ZZZ-CLOUD-TEST-APP-CLOUD-PR…: K8S Pods Not Running Deploymen…
