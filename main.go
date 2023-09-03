@@ -1,3 +1,7 @@
+/*
+`main.go` is the entrypoint of the Terraform provider. See
+[`corefunc`](./corefunc) for the Go library code.
+*/
 package main
 
 import (
