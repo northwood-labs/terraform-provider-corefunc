@@ -30,7 +30,6 @@ See the `docs/` directory for user-facing documentation.
 * [ ] corefunc_list_sort_icase(arr)
 * [ ] corefunc_list_sort_version(arr)
 * [ ] corefunc_list_unshift(arr)
-* [ ] corefunc_map_has_key(map)
 * [ ] corefunc_println(string)
 * [ ] corefunc_str_camel(string)
 * [ ] corefunc_str_constant(string)
@@ -44,5 +43,5 @@ See the `docs/` directory for user-facing documentation.
 
 ## Documentation
 
-* [TF Provider Documentation](#)
+* [TF Registry Documentation](https://registry.terraform.io/providers/northwood-labs/corefunc/)
 * [Go Package Documentation](https://pkg.go.dev/github.com/northwood-labs/terraform-provider-corefunc)
