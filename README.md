@@ -45,4 +45,4 @@ See the `docs/` directory for user-facing documentation.
 ## Documentation
 
 * [TF Provider Documentation](#)
-* [Go Package Documentation](#)
+* [Go Package Documentation](https://pkg.go.dev/github.com/northwood-labs/terraform-provider-corefunc)
