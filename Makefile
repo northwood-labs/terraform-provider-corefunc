@@ -219,7 +219,7 @@ test: unit acc
 ## acc: [test] Runs Terraform provider acceptance tests. Set NAME= (without 'Test') to run a specific test by name
 acc:
 	@ $(ECHO) " "
-	@ $(ECHO) "\033[1;33m=====> Running unit and acceptance tests...\033[0m"
+	@ $(ECHO) "\033[1;33m=====> Running acceptance tests...\033[0m"
 	TF_ACC=1 $(GO) test -run=TestAcc$(NAME) -count=1 -parallel=$(shell nproc) -timeout 30s -coverpkg=./corefuncprovider/... -coverprofile=__coverage.out -v ./corefuncprovider/...
 
 .PHONY: unit
