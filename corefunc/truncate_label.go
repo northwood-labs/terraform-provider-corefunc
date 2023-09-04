@@ -32,9 +32,6 @@ shared prefix, but also truncate them appropriately to fit length
 constraints.
 */
 func TruncateLabel(maxLength int64, prefix, label string) string {
-	// origName := fmt.Sprintf("%s: %s", prefix, label)
-	// strLen := int64(len(origName))
-
 	// None.
 	if maxLength == 0 {
 		return ""
@@ -77,12 +74,6 @@ func TruncateLabel(maxLength int64, prefix, label string) string {
 		trimmedLabel := label[:removeFromLabelLength]
 
 		return strings.TrimSpace(trimmedPrefix) + "…: " + strings.TrimSpace(trimmedLabel) + "…"
-
-		// return fmt.Sprintf(
-		// 	"%s…: %s…",
-		// 	strings.TrimSpace(trimmedPrefix),
-		// 	strings.TrimSpace(trimmedLabel),
-		// )
 	}
 
 	return origName
