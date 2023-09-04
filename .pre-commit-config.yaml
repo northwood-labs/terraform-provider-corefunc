@@ -1,0 +1,86 @@
+---
+# See https://pre-commit.com for more information
+# See https://pre-commit.com/hooks.html for more hooks
+default_language_version:
+  python: python3.11
+
+default_stages:
+  - commit
+  - push
+
+fail_fast: false
+
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: d20d9444dfc759ebeeff1643f213132bb4dd491f
+    hooks:
+      - id: check-added-large-files
+        args:
+          - --maxkb=500
+          - --enforce-all
+      - id: check-case-conflict
+      - id: check-executables-have-shebangs
+      - id: check-json
+      - id: check-merge-conflict
+      - id: check-symlinks
+      - id: check-toml
+      - id: check-xml
+      - id: check-yaml
+        args:
+          - --allow-multiple-documents
+      - id: destroyed-symlinks
+      - id: detect-private-key
+      - id: end-of-file-fixer
+      - id: fix-byte-order-marker
+      - id: fix-encoding-pragma
+        args:
+          - --remove
+      - id: mixed-line-ending
+        args:
+          - --fix=lf
+      - id: requirements-txt-fixer
+      - id: trailing-whitespace
+
+  - repo: https://github.com/asottile/pyupgrade
+    rev: c21b4c4d153be0633357686c7697f539ac194868
+    hooks:
+      - id: pyupgrade
+        args:
+          - --py311-plus
+
+  - repo: https://github.com/asottile/reorder_python_imports
+    rev: c4fe43d9809f1507508b3aba24ad1a72b5407f58
+    hooks:
+      - id: reorder-python-imports
+        args:
+          - --py311-plus
+
+  - repo: https://github.com/skyzyx/git-hooks
+    rev: 4a2f0dc93e5c5353ed5e619599b0d15e34df88db
+    hooks:
+      - id: checkov
+        args:
+          - --directory=.
+          - --framework=terraform
+          - --quiet
+          - --compact
+          - --skip-check=CKV_AWS_50,CKV_AWS_116,CKV_AWS_173,CKV_AWS_115
+      - id: git-check
+      - id: gofumpt
+      - id: golangci-lint
+      # - id: go-consistent
+      - id: gomodupdate
+      - id: markdownlint
+        args:
+          - --ignore=node_modules
+          - --ignore=.github
+          - --ignore=.templates
+          - --fix
+      - id: script-must-have-extension
+      - id: shellcheck
+      - id: shfmt
+      - id: terraform-fmt
+      - id: terrascan
+      - id: tfsec
+      - id: yamlfmt
+      - id: yapf

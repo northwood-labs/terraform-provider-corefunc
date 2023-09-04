@@ -1,8 +1,10 @@
 #-------------------------------------------------------------------------------
 # Running `make` will show the list of subcommands that will run.
 
+SHELL:=bash
 BINARY_NAME=terraform-provider-corefunc
 BINARY_VERSION=$(shell cat ./VERSION | tr -d '\n')
+GOBIN=$(shell ./find-go-bin.sh)
 mkfile_path := $(abspath $(lastword $(MAKEFILE_LIST)))
 current_dir := $(dir $(mkfile_path))
 
@@ -10,15 +12,23 @@ current_dir := $(dir $(mkfile_path))
 # Global stuff.
 
 GO=$(shell which go)
-BREW_PREFIX=$(shell brew --prefix)
-HOMEBREW_PACKAGES=git git-lfs goreleaser/tap/goreleaser-pro graphviz jq librsvg pre-commit python@3.10 qcachegrind
+HOMEBREW_PACKAGES=bash coreutils findutils go jq nodejs pre-commit python@3.11
+
+# Determine the operating system and CPU arch.
+OS=$(shell uname -o | tr '[:upper:]' '[:lower:]')
 
 # Determine which version of `echo` to use. Use version from coreutils if available.
-ECHOCHECK := $(shell command -v $(BREW_PREFIX)/opt/coreutils/libexec/gnubin/echo 2> /dev/null)
-ifdef ECHOCHECK
-    ECHO="$(BREW_PREFIX)/opt/coreutils/libexec/gnubin/echo" -e
+ECHOCHECK_HOMEBREW_AMD64 := $(shell command -v /usr/local/opt/coreutils/libexec/gnubin/echo 2> /dev/null)
+ECHOCHECK_HOMEBREW_ARM64 := $(shell command -v /opt/homebrew/opt/coreutils/libexec/gnubin/echo 2> /dev/null)
+
+ifdef ECHOCHECK_HOMEBREW_AMD64
+	ECHO=/usr/local/opt/coreutils/libexec/gnubin/echo -e
+else ifdef ECHOCHECK_HOMEBREW_ARM64
+	ECHO=/opt/homebrew/opt/coreutils/libexec/gnubin/echo -e
+else ifeq ($(findstring linux,$(OS)), linux)
+	ECHO=echo -e
 else
-    ECHO=echo -e
+	ECHO=echo
 endif
 
 #-------------------------------------------------------------------------------
@@ -33,7 +43,7 @@ help:
 	@ $(ECHO) ""
 	@ sed -n 's/^##//p' ${MAKEFILE_LIST} | column -t -s ':' | sed -e 's/^/ /' | \
 		while IFS= read -r line; do \
-			if [[ "$$line" == *"]\*"* ]]; then \
+			if [[ "$$line" == *"]*"* ]]; then \
 				$(ECHO) "\033[1;33m$$line\033[0m"; \
 			else \
 				$(ECHO) "$$line"; \
@@ -43,23 +53,22 @@ help:
 #-------------------------------------------------------------------------------
 # Installation
 
-.PHONY: _validate_deps
-_validate_deps:
-	@ cd ./scripts && python3 ./dependency-check.py && cd ..
-
 .PHONY: install-tools-go
-## install-tools-go: [tools]* Install/upgrade the required tools for macOS, including Go packages.
-install-tools-go: _validate_deps
-	go install golang.org/x/vuln/cmd/govulncheck@latest
+## install-tools-go: [tools]* Install/upgrade the required Go packages.
+install-tools-go:
+	@ $(ECHO) " "
+	@ $(ECHO) "\033[1;33m=====> Installing Go packages...\033[0m"
 	go install github.com/google/osv-scanner/cmd/osv-scanner@v1
+	go install golang.org/x/perf/cmd/benchstat@latest
+	go install golang.org/x/tools/cmd/godoc@latest
+	go install golang.org/x/vuln/cmd/govulncheck@latest
 
 .PHONY: install-tools-mac
 ## install-tools-mac: [tools]* Install/upgrade the required tools for macOS, including Go packages.
-install-tools-mac: _validate_deps install-tools-go
+install-tools-mac: install-tools-go
 	@ $(ECHO) " "
 	@ $(ECHO) "\033[1;33m=====> Installing required packages for macOS (Homebrew)...\033[0m"
 	brew update && brew install $(HOMEBREW_PACKAGES) && brew upgrade $(HOMEBREW_PACKAGES)
-	cargo install --locked cocogitto
 	curl -sSLf https://raw.githubusercontent.com/mtdowling/chag/master/install.sh | bash
 
 	@ $(ECHO) " "
@@ -69,14 +78,11 @@ install-tools-mac: _validate_deps install-tools-go
 
 .PHONY: install-hooks
 ## install-hooks: [tools]* Install/upgrade the Git hooks used for ensuring consistency.
-install-hooks: _validate_deps
+install-hooks:
 	@ $(ECHO) " "
 	@ $(ECHO) "\033[1;33m=====> Installing Git hooks...\033[0m"
 	pre-commit install
 
-	@ $(ECHO) " "
-	@ $(ECHO) "\033[1;33mLearn more about `cog` at:\033[0m"
-	@ $(ECHO) "\033[1;33m    https://docs.cocogitto.io/guide/\033[0m"
 	@ $(ECHO) " "
 	@ $(ECHO) "\033[1;33mLearn more about `pre-commit` at:\033[0m"
 	@ $(ECHO) "\033[1;33m    https://pre-commit.com/\033[0m"
@@ -90,22 +96,18 @@ install-hooks: _validate_deps
 tidy:
 	@ $(ECHO) " "
 	@ $(ECHO) "\033[1;33m=====> Tidy and download the Go dependencies...\033[0m"
-	mkdir -p ./bin
 	$(GO) mod tidy -go=1.21 -v
 	$(GO) mod download -x
 	$(GO) get -v ./...
 
-.PHONY: build-release-prep
-## build-release-prep: [build] Post-development, ready to release steps.
-build-release-prep:
-	@ $(ECHO) " "
-	@ $(ECHO) "\033[1;33m=====> Download the Go dependencies...\033[0m"
-	$(GO) mod download
-
 .PHONY: build
 ## build: [build]* Builds and installs the Terraform provider.
 build: tidy
-	go install -v .
+	@ $(ECHO) " "
+	@ $(ECHO) "\033[1;33m=====> Building and installing the provider...\033[0m"
+	$(GO) install -v .
+	@ $(ECHO) " "
+	@ ls -lahF $(GOBIN)/$(BINARY_NAME)
 
 #-------------------------------------------------------------------------------
 # Clean
@@ -119,22 +121,21 @@ clean-go:
 
 .PHONY: clean-tests
 ## clean-tests: [clean] Cleans all files/folders inside the examples directory which begin with a ".".
-clean-tests: clean-logs
-	@ echo " "
-	@ echo "=====> Cleaning artifacts from tests..."
+clean-tests:
+	@ $(ECHO) " "
+	@ $(ECHO) "\033[1;33m=====> Cleaning artifacts from tests...\033[0m"
 	- find . -type d -name ".terraform" | xargs rm -Rf
-	- find ./ -type f -name ".terraform.lock.hcl" | xargs rm -Rf
+	- find . -type d -name "terratest-*" | xargs rm -Rf
+	- find . -type f -name "terraform.tfstate*" | xargs rm -Rf
 	- find ./examples -type d -name "\.*" | xargs rm -Rf
 
-.PHONY: clean-logs
-## clean-logs: [clean] Removes the log files.
-clean-logs:
-	@ echo " "
-	@ echo "=====> Cleaning log files..."
-	- rm -Rf ./terratest-*
-	- rm -Rf ./terraform.tfstate*
-	- rm -Rf ./**/terratest-*
-	- rm -Rf ./**/terraform.tfstate*
+.PHONY: clean-bench
+## clean-bench: [clean] Cleans all benchmarking-related files.
+clean-bench:
+	@ $(ECHO) " "
+	@ $(ECHO) "\033[1;33m=====> Cleaning artifacts from benchmarks...\033[0m"
+	- find . -type f -name "__*.out" | xargs rm -Rf
+	- find . -type f -name "*.test" | xargs rm -Rf
 
 .PHONY: clean-tf
 ## clean-tf: [clean] Clean Terraform leftovers.
@@ -146,106 +147,124 @@ clean-tf:
 	find . -type f -name ".terraform.lock.hcl" | xargs -I% rm -fv "%"
 
 .PHONY: clean
-## clean: [clean]* Runs ALL cleaning tasks.
-clean: clean-tf clean-tests clean-logs
+## clean: [clean]* Runs ALL cleaning tasks (except the Go cache).
+clean: clean-bench clean-tf clean-tests
 
 #-------------------------------------------------------------------------------
 # Documentation
 
 .PHONY: docs
-## docs: [docs]* Runs ALL documentation tasks.
-docs:
-	go generate -v ./...
+## docs: [docs]* Runs primary documentation tasks.
+docs: docs-provider docs-cli
+
+.PHONY: docs-provider
+## docs-provider: [docs] Generate Terraform Registry documentation.
+docs-provider:
+	@ $(ECHO) " "
+	@ $(ECHO) "\033[1;33m=====> Generating Terraform provider documentation...\033[0m"
+	$(GO) generate -v ./...
+
+.PHONY: docs-cli
+## docs-cli: [docs] Preview the Go library documentation on the CLI.
+docs-cli:
+	@ $(ECHO) " "
+	@ $(ECHO) "\033[1;33m=====> Displaying Go CLI documentation...\033[0m"
+	$(GO) doc -C corefunc/ -all
+
+.PHONY: docs-serve
+## docs-serve: [docs] Preview the Go library documentation as displayed on pkg.go.dev.
+docs-serve:
+	@ $(ECHO) " "
+	@ $(ECHO) "\033[1;33m=====> Displaying Go HTTP documentation...\033[0m"
+	open http://localhost:6060/pkg/github.com/northwood-labs/terraform-provider-corefunc/corefunc/
+	godoc -index -links
 
 #-------------------------------------------------------------------------------
 # Linting
 
-.PHONY: golint
-## golint: [lint] Runs `golangci-lint` (static analysis, formatting) against all Golang (*.go) code.
-golint:
-	@ echo " "
-	@ echo "=====> Running golangci-lint..."
-	golangci-lint run --fix ./...
-
-.PHONY: markdownlint
-## markdownlint: [lint] Runs `markdownlint` (formatting, spelling) against all Markdown (*.md) documents.
-markdownlint:
-	@ echo " "
-	@ echo "=====> Running Markdownlint..."
-	npx -y markdownlint-cli --fix '**/*.md' --ignore 'node_modules'
-
-# Formats all Terraform code to its canonical format.
-.PHONY: fmt
-## fmt: [lint] Runs `terraform fmt` (formatting) against all Terraform (*.tf) code.
-fmt: clean-tests
-	@ echo " "
-	@ echo "=====> Running Terraform format..."
-	terraform fmt
-	for dir in $$(find examples/ -type f -name "*.tf" | xargs -I% dirname % | uniq); do \
-		cd "$$dir" && \
-			terraform fmt ; \
-		cd $(current_dir) ; \
-	done
-
 .PHONY: vuln
-## vuln: [lint] Runs `govulncheck` (vulnerability scanning) against all Golang (*.go) code.
+## vuln: [lint]* Runs `govulncheck` (vulnerability scanning) against all Golang (*.go) code.
 vuln:
-	@ echo " "
-	@ echo "=====> Running govulncheck (https://go.dev/blog/vuln)..."
-	govulncheck -v ./...
+	@ $(ECHO) " "
+	@ $(ECHO) "\033[1;33m=====> Running govulncheck (https://go.dev/blog/vuln)...\033[0m"
+	govulncheck ./...
 
-	@ echo " "
-	@ echo "=====> Running govulncheck -test (https://go.dev/blog/vuln)..."
-	govulncheck -test -v ./...
+	@ $(ECHO) " "
+	@ $(ECHO) "\033[1;33m=====> Running govulncheck -test (https://go.dev/blog/vuln)...\033[0m"
+	govulncheck -test ./...
 
-	@ echo " "
-	@ echo "=====> Running osv-scanner (https://osv.dev)..."
+	@ $(ECHO) " "
+	@ $(ECHO) "\033[1;33m=====> Running osv-scanner (https://osv.dev)...\033[0m"
 	osv-scanner -r .
 
 .PHONY: lint
 ## lint: [lint]* Runs ALL linting/validation tasks.
-lint: fmt markdownlint golint vuln
-
-#-------------------------------------------------------------------------------
-# Profiling
-
-.PHONY: binsize
-## binsize: [profiling] Generate a chart of dependencies and their sizes in the binary.
-binsize:
+lint: vuln
 	@ $(ECHO) " "
-	@ $(ECHO) "\033[1;33m=====> Generating binsize chart...\033[0m"
-	go tool nm -size bin/$(BINARY_NAME) | go-binsize-treemap > binsize.svg && \
-		rsvg-convert --width=2000 --format=png --output="binsize.png" "binsize.svg";
-
-.PHONY: pprof
-## pprof: [profiling] Reads the profiler data (--profiler) and generates callgrind files.
-pprof:
-	@ $(ECHO) " "
-	@ $(ECHO) "\033[1;33m=====> Generating callgrind files from pprof files...\033[0m"
-	@ find . -type f -name "*.pprof" | xargs -I% bash -c '\
-		$(ECHO) "%" && \
-		cat "%" | pprof --callgrind bin/$(BINARY_NAME) "%" > "callgrind.%.profile";
-	'
+	@ $(ECHO) "\033[1;33m=====> Running pre-commit...\033[0m"
+	pre-commit run --all-files
 
 #-------------------------------------------------------------------------------
 # Testing
 # https://github.com/golang/go/wiki/TableDrivenTests
 # https://go.dev/doc/tutorial/fuzz
+# https://pkg.go.dev/testing
+# https://pkg.go.dev/golang.org/x/perf/cmd/benchstat
 
 .PHONY: test
-## test: [test] Runs ALL tests -- Unit, Acceptance, and Fuzz.
-test:
-	TF_ACC=1 go test -count=1 -parallel=$(shell nproc) -timeout 30s -v ./...
+## test: [test]* Runs ALL tests.
+test: unit acc
 
-.PHONY: unittest
-## unittest: [test] Runs Unit and Fuzz tests. Faster than Acceptance tests.
-unittest:
-	go test -count=1 -parallel=$(shell nproc) -timeout 30s -v ./...
+.PHONY: acc
+## acc: [test] Runs Terraform provider acceptance tests.
+acc:
+	@ $(ECHO) " "
+	@ $(ECHO) "\033[1;33m=====> Running unit and acceptance tests...\033[0m"
+	TF_ACC=1 go test -count=1 -parallel=$(shell nproc) -timeout 30s -coverpkg=./corefuncprovider/... -coverprofile=__coverage.out -v ./corefuncprovider/...
+
+.PHONY: unit
+## unit: [test] Runs unit and fuzz tests.
+unit:
+	@ $(ECHO) " "
+	@ $(ECHO) "\033[1;33m=====> Running unit tests...\033[0m"
+	go test -count=1 -parallel=$(shell nproc) -timeout 30s -coverpkg=./corefunc/... -coverprofile=__coverage.out -v ./corefunc/...
 
 .PHONY: fuzz
-## fuzz: [test] Runs the fuzzer for 10 minutes.
+## fuzz: [test]* Runs the fuzzer for 10 minutes.
 fuzz:
-	go test -fuzz=Fuzz -fuzztime 10m -v ./corefunc/.
+	@ $(ECHO) " "
+	@ $(ECHO) "\033[1;33m=====> Running the fuzzer (https://go.dev/doc/tutorial/fuzz)...\033[0m"
+	go test -fuzz=Fuzz -fuzztime 10m -parallel=$(shell nproc) -v ./corefunc/.
+
+.PHONY: quickbench
+## quickbench: [test]* Runs the benchmarks with minimal data for a quick check.
+quickbench:
+	go test -bench=. -timeout 60m ./corefunc
+
+.PHONY: bench
+## bench: [test]* Runs the benchmarks with enough data for analysis with benchstat.
+bench:
+	go test -bench=. -count=6 -timeout 60m -benchmem -cpuprofile=__cpu.out -memprofile=__mem.out -trace=__trace.out ./corefunc | tee __bench-$(shell date --utc "+%Y%m%dT%H%M%SZ").out
+
+.PHONY: view-cov
+## view-cov: [test] After running test or unittest, this will launch a browser to view the coverage report.
+view-cov:
+	go tool cover -html=__coverage.out
+
+.PHONY: view-cpupprof
+## view-cpupprof: [test] After running bench, this will launch a browser to view the CPU profiler results.
+view-cpupprof:
+	go tool pprof -http :8080 __cpu.out
+
+.PHONY: view-mempprof
+## view-mempprof: [test] After running bench, this will launch a browser to view the memory profiler results.
+view-mempprof:
+	go tool pprof -http :8080 __mem.out
+
+.PHONY: view-trace
+## view-trace: [test] After running bench, this will launch a browser to view the trace results.
+view-trace:
+	go tool trace _trace.out
 
 #-------------------------------------------------------------------------------
 # Git Tasks
