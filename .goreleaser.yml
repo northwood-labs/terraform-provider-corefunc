@@ -1,12 +1,13 @@
+---
 # Pro License
 variables:
-  SourceOrg: ""
+  SourceOrg: ''
   SourceRepo: terraform-provider-corefunc
-  Description: "Utilities that should have been Terraform_core functions."
+  Description: Utilities that should have been Terraform_core functions.
   MaintainerName: Northwood Labs
-  MaintainerEmail: ""
-  AppleCertificateID: ""
-  GPGKeyID: ""
+  MaintainerEmail: ''
+  AppleCertificateID: ''
+  GPGKeyID: ''
 
 project_name: terraform-provider-corefunc
 dist: ./dist
@@ -15,7 +16,7 @@ changelog:
   skip: false
 
 archives:
-  - id: "linux-archive"
+  - id: linux-archive
     builds:
       - linux
     allow_different_binary_count: false
@@ -23,9 +24,9 @@ archives:
     format: zip
     files:
       - none*
-    name_template: "{{ .ProjectName }}_v{{ .Version }}_{{ .Os }}_{{ .Arch }}"
+    name_template: '{{ .ProjectName }}_v{{ .Version }}_{{ .Os }}_{{ .Arch }}'
 
-  - id: "windows-archive"
+  - id: windows-archive
     builds:
       - windows
     allow_different_binary_count: false
@@ -33,9 +34,9 @@ archives:
     format: zip
     files:
       - none*
-    name_template: "{{ .ProjectName }}_v{{ .Version }}_{{ .Os }}_{{ .Arch }}"
+    name_template: '{{ .ProjectName }}_v{{ .Version }}_{{ .Os }}_{{ .Arch }}'
 
-  - id: "macos-archive"
+  - id: macos-archive
     builds:
       - macos-universal
     allow_different_binary_count: false
@@ -43,7 +44,7 @@ archives:
     format: zip
     files:
       - none*
-    name_template: "{{ .ProjectName }}_v{{ .Version }}_{{ .Os }}_universal"
+    name_template: '{{ .ProjectName }}_v{{ .Version }}_{{ .Os }}_universal'
 
 builds:
   #-----------------------------------------------------------------------------
@@ -52,7 +53,7 @@ builds:
   - id: linux
     dir: .
     main: .
-    binary: "{{ .ProjectName }}_v{{ .Version }}"
+    binary: '{{ .ProjectName }}_v{{ .Version }}'
     skip: false
     ldflags:
       - -s -w
@@ -84,7 +85,7 @@ builds:
   - id: windows
     dir: .
     main: .
-    binary: "{{ .ProjectName }}_v{{ .Version }}"
+    binary: '{{ .ProjectName }}_v{{ .Version }}'
     skip: false
     ldflags:
       - -s -w
@@ -116,7 +117,7 @@ builds:
   - id: macos
     dir: .
     main: .
-    binary: "{{ .ProjectName }}_v{{ .Version }}"
+    binary: '{{ .ProjectName }}_v{{ .Version }}'
     skip: false
     ldflags:
       - -s -w
@@ -144,16 +145,17 @@ universal_binaries:
   - id: macos-universal
     ids:
       - macos
-    name_template: "{{ .ProjectName }}_v{{ .Version }}"
+    name_template: '{{ .ProjectName }}_v{{ .Version }}'
     replace: true
     hooks:
       post:
         # Apple Account
         # https://developer.apple.com/account/resources/certificates/
-        - codesign -s {{.Var.AppleCertificateID}} -o runtime -v './dist/macos-universal_darwin_all/{{.ProjectName}}_v{{ .Version }}'
+        - codesign -s {{.Var.AppleCertificateID}} -o runtime -v './dist/macos-universal_darwin_all/{{.ProjectName}}_v{{ .Version
+          }}'
 
 checksum:
-  name_template: "{{ .ProjectName }}-checksums.txt"
+  name_template: '{{ .ProjectName }}-checksums.txt'
   algorithm: sha256
 
 signs:
@@ -161,46 +163,26 @@ signs:
     ids:
       - linux-archive
       - windows-archive
-    signature: "${artifact}.sig"
+    signature: ${artifact}.sig
     cmd: gpg2
-    args:
-      [
-        "-u",
-        "{{ .Var.GPGKeyID }}",
-        "--output",
-        "${signature}",
-        "--detach-sign",
-        "${artifact}",
-      ]
+    args: [-u, '{{ .Var.GPGKeyID }}', --output, '${signature}', --detach-sign, '${artifact}']
     artifacts: all
 
   - id: gatekeeper
     ids:
       - macos-archive
-    signature: "${artifact}"
+    signature: ${artifact}
     cmd: xcrun
-    args:
-      [
-        "notarytool",
-        "submit",
-        "./dist/{{ .ProjectName }}_v{{ .Version }}_darwin_universal.zip",
-        "--apple-id",
-        "{{ .Env.AC_APPLE_ID }}",
-        "--password",
-        "{{ .Env.AC_PASSWORD }}",
-        "--team-id",
-        "{{ .Env.AC_TEAM_ID }}",
-        "--progress",
-        "--wait",
-      ]
+    args: [notarytool, submit, './dist/{{ .ProjectName }}_v{{ .Version }}_darwin_universal.zip', --apple-id, '{{ .Env.AC_APPLE_ID
+          }}', --password, '{{ .Env.AC_PASSWORD }}', --team-id, '{{ .Env.AC_TEAM_ID }}', --progress, --wait]
     artifacts: all
 
 release:
   # Repo in which the release will be created.
   # Default is extracted from the origin remote URL or empty if its private hosted.
   github:
-    owner: "{{ .Var.SourceOrg }}"
-    name: "{{ .Var.SourceRepo }}"
+    owner: '{{ .Var.SourceOrg }}'
+    name: '{{ .Var.SourceRepo }}'
 
   # IDs of the archives to use.
   # Defaults to all.
