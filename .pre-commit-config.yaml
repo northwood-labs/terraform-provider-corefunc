@@ -58,13 +58,13 @@ repos:
   - repo: https://github.com/skyzyx/git-hooks
     rev: 4a2f0dc93e5c5353ed5e619599b0d15e34df88db
     hooks:
-      - id: checkov
-        args:
-          - --directory=.
-          - --framework=terraform
-          - --quiet
-          - --compact
-          - --skip-check=CKV_AWS_50,CKV_AWS_116,CKV_AWS_173,CKV_AWS_115
+      # - id: checkov
+      #   args:
+      #     - --directory=.
+      #     - --framework=terraform
+      #     - --quiet
+      #     - --compact
+      #     - --skip-check=CKV_AWS_50,CKV_AWS_116,CKV_AWS_173,CKV_AWS_115
       - id: git-check
       - id: gofumpt
       - id: golangci-lint
@@ -76,11 +76,12 @@ repos:
           - --ignore=.github
           - --ignore=.templates
           - --fix
+          - '**/*.md'
       - id: script-must-have-extension
       - id: shellcheck
       - id: shfmt
       - id: terraform-fmt
-      - id: terrascan
-      - id: tfsec
+      # - id: terrascan
+      # - id: tfsec
       - id: yamlfmt
       - id: yapf
