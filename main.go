@@ -1,6 +1,5 @@
 /*
-`main.go` is the entrypoint of the Terraform provider. See
-[`corefunc`](./corefunc) for the Go library code.
+See "corefunc" package for the Go library code.
 */
 package main
 
@@ -9,9 +8,8 @@ import (
 	"flag"
 	"log"
 
-	"github.com/northwood-labs/terraform-provider-corefunc/corefunc"
-
 	"github.com/hashicorp/terraform-plugin-framework/providerserver"
+	"github.com/northwood-labs/terraform-provider-corefunc/corefuncprovider"
 )
 
 // Provider documentation generation.
@@ -26,7 +24,7 @@ func main() {
 	// deep version?
 	flag.Parse()
 
-	err := providerserver.Serve(context.Background(), corefunc.New, providerserver.ServeOpts{
+	err := providerserver.Serve(context.Background(), corefuncprovider.New, providerserver.ServeOpts{
 		Address: "registry.terraform.io/northwood-labs/corefunc",
 		Debug:   debug,
 	})
