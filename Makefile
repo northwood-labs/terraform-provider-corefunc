@@ -216,55 +216,55 @@ lint: vuln
 test: unit acc
 
 .PHONY: acc
-## acc: [test] Runs Terraform provider acceptance tests.
+## acc: [test] Runs Terraform provider acceptance tests. Set NAME= (without 'Test') to run a specific test by name
 acc:
 	@ $(ECHO) " "
 	@ $(ECHO) "\033[1;33m=====> Running unit and acceptance tests...\033[0m"
-	TF_ACC=1 go test -count=1 -parallel=$(shell nproc) -timeout 30s -coverpkg=./corefuncprovider/... -coverprofile=__coverage.out -v ./corefuncprovider/...
+	TF_ACC=1 $(GO) test -run=TestAcc$(NAME) -count=1 -parallel=$(shell nproc) -timeout 30s -coverpkg=./corefuncprovider/... -coverprofile=__coverage.out -v ./corefuncprovider/...
 
 .PHONY: unit
-## unit: [test] Runs unit and fuzz tests.
+## unit: [test] Runs unit tests. Set NAME= (without 'Test') to run a specific test by name
 unit:
 	@ $(ECHO) " "
 	@ $(ECHO) "\033[1;33m=====> Running unit tests...\033[0m"
-	go test -count=1 -parallel=$(shell nproc) -timeout 30s -coverpkg=./corefunc/... -coverprofile=__coverage.out -v ./corefunc/...
+	$(GO) test -run=Test$(NAME) -count=1 -parallel=$(shell nproc) -timeout 30s -coverpkg=./corefunc/... -coverprofile=__coverage.out -v ./corefunc/...
 
 .PHONY: fuzz
-## fuzz: [test]* Runs the fuzzer for 10 minutes.
+## fuzz: [test]* Runs the fuzzer for 10 minutes. Set NAME= (without 'Fuzz') to run a specific test by name
 fuzz:
 	@ $(ECHO) " "
 	@ $(ECHO) "\033[1;33m=====> Running the fuzzer (https://go.dev/doc/tutorial/fuzz)...\033[0m"
-	go test -fuzz=Fuzz -fuzztime 10m -parallel=$(shell nproc) -v ./corefunc/.
+	$(GO) test -run='^$$' -fuzz=Fuzz$(NAME) -fuzztime 10m -parallel=$(shell nproc) -v ./corefunc/...
 
 .PHONY: quickbench
-## quickbench: [test]* Runs the benchmarks with minimal data for a quick check.
+## quickbench: [test]* Runs the benchmarks with minimal data for a quick check
 quickbench:
-	go test -bench=. -timeout 60m ./corefunc
+	$(GO) test -bench=. -timeout 60m ./corefunc
 
 .PHONY: bench
 ## bench: [test]* Runs the benchmarks with enough data for analysis with benchstat.
 bench:
-	go test -bench=. -count=6 -timeout 60m -benchmem -cpuprofile=__cpu.out -memprofile=__mem.out -trace=__trace.out ./corefunc | tee __bench-$(shell date --utc "+%Y%m%dT%H%M%SZ").out
+	$(GO) test -bench=. -count=6 -timeout 60m -benchmem -cpuprofile=__cpu.out -memprofile=__mem.out -trace=__trace.out ./corefunc | tee __bench-$(shell date --utc "+%Y%m%dT%H%M%SZ").out
 
 .PHONY: view-cov
 ## view-cov: [test] After running test or unittest, this will launch a browser to view the coverage report.
 view-cov:
-	go tool cover -html=__coverage.out
+	$(GO) tool cover -html=__coverage.out
 
 .PHONY: view-cpupprof
 ## view-cpupprof: [test] After running bench, this will launch a browser to view the CPU profiler results.
 view-cpupprof:
-	go tool pprof -http :8080 __cpu.out
+	$(GO) tool pprof -http :8080 __cpu.out
 
 .PHONY: view-mempprof
 ## view-mempprof: [test] After running bench, this will launch a browser to view the memory profiler results.
 view-mempprof:
-	go tool pprof -http :8080 __mem.out
+	$(GO) tool pprof -http :8080 __mem.out
 
 .PHONY: view-trace
 ## view-trace: [test] After running bench, this will launch a browser to view the trace results.
 view-trace:
-	go tool trace _trace.out
+	$(GO) tool trace _trace.out
 
 #-------------------------------------------------------------------------------
 # Git Tasks
