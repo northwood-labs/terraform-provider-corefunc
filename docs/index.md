@@ -63,7 +63,8 @@ terraform {
   }
 }
 
-# There are no configuration options.
+# There are no configuration options
+
 provider "corefunc" {}
 ```
 

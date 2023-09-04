@@ -122,7 +122,11 @@ The `nproc` binary is commonly available on most Linux distributions. If it's no
 This will run Unit and Fuzz tests. This tests the low-level Go code, but not the Terraform integration wrapped around it.
 
 ```bash
+# Run all unit tests
 make unit
+
+# Run one unit test
+make unit NAME=TruncateLabel
 ```
 
 You can view the code coverage report with:
@@ -136,7 +140,11 @@ make view-cov
 This will run all tests: Unit, Acceptance, and Fuzz. Acceptance tests run the code through Terraform and test the Terraform communication pathway.
 
 ```bash
+# Run all acceptance tests
 make acc
+
+# Run one acceptance test
+make acc NAME=TruncateLabel
 ```
 
 You can view the code coverage report with:
@@ -150,36 +158,8 @@ make view-cov
 This will run the fuzzer for 10 minutes. [Learn more about fuzzing](https://go.dev/doc/tutorial/fuzz).
 
 ```bash
-make fuzz
-```
-
-### Running individual tests
-
-We don't have `make` tasks for individual tests, however, if you run one of the testing `make` tasks, the first line of the output will show you the command being run. For example:
-
-```bash
-# Line breaks added for readability.
-go test \
-    -count=1 \
-    -parallel=$(nproc) \
-    -timeout 30s \
-    -coverpkg=./... \
-    -coverprofile=__coverage.out \
-    -v ./...
-```
-
-You can add `-run` followed by a Go regexp pattern to match the names of the tests you want to run.
-
-```bash
-# Line breaks added for readability.
-go test \
-    -run "TruncateLabel" \
-    -count=1 \
-    -parallel=$(nproc) \
-    -timeout 30s \
-    -coverpkg=./corefunc/... \
-    -coverprofile=__coverage.out \
-    -v ./corefunc/...
+# May only run one fuzz test at a time
+make fuzz NAME=TruncateLabel
 ```
 
 ## Benchmarks
