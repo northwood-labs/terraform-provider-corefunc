@@ -10,6 +10,50 @@ import (
 	"github.com/google/go-cmp/cmp"
 )
 
+func ExampleTruncateLabel() {
+	length1 := TruncateLabel(1, "NW-TEST-FIRST", "Name of my monitor")
+	fmt.Println(length1)
+
+	length3 := TruncateLabel(3, "NW-TEST-FIRST", "Name of my monitor")
+	fmt.Println(length3)
+
+	length5 := TruncateLabel(5, "NW-TEST-FIRST", "Name of my monitor")
+	fmt.Println(length5)
+
+	length7 := TruncateLabel(7, "NW-TEST-FIRST", "Name of my monitor")
+	fmt.Println(length7)
+
+	length10 := TruncateLabel(10, "NW-TEST-FIRST", "Name of my monitor")
+	fmt.Println(length10)
+
+	length20 := TruncateLabel(20, "NW-TEST-FIRST", "Name of my monitor")
+	fmt.Println(length20)
+
+	length32 := TruncateLabel(32, "NW-TEST-FIRST", "Name of my monitor")
+	fmt.Println(length32)
+
+	length64 := TruncateLabel(64, "NW-TEST-FIRST", "Name of my monitor")
+	fmt.Println(length64)
+
+	length128 := TruncateLabel(128, "NW-TEST-FIRST", "Name of my monitor")
+	fmt.Println(length128)
+
+	length256 := TruncateLabel(256, "NW-TEST-FIRST", "Name of my monitor")
+	fmt.Println(length256)
+
+	// Output:
+	// …
+	// …
+	// …: …
+	// …: Nam…
+	// N…: Name…
+	// NW-TES…: Name of my…
+	// NW-TEST-FIRS…: Name of my monit…
+	// NW-TEST-FIRST: Name of my monitor
+	// NW-TEST-FIRST: Name of my monitor
+	// NW-TEST-FIRST: Name of my monitor
+}
+
 func TestTruncateLabel(t *testing.T) {
 	for name, tc := range testfixtures.TruncateLabelTestTable {
 		t.Run(name, func(t *testing.T) {
