@@ -11,9 +11,9 @@ description: |-
 
 {{ .Description | trimspace }}
 
-## Example Usage
+{{ if .HasExample -}}## Example Usage
 
-{{ tffile (printf "examples/data-sources/%s/data-source.tf" .Name)}}
+{{ tffile (printf "examples/data-sources/%s/data-source.tf" .Name)}}{{- end }}
 
 {{ .SchemaMarkdown | trimspace }}
 

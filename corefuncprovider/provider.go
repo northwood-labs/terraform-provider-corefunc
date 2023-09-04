@@ -88,6 +88,7 @@ func (p *coreFuncProvider) DataSources(ctx context.Context) []func() datasource.
 
 	return []func() datasource.DataSource{
 		TruncateLabelDataSource,
+		EnvEnsureDataSource,
 	}
 }
 
