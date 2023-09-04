@@ -1,4 +1,4 @@
-# -------------------------------------------------------------------------
+#-------------------------------------------------------------------------
 # AWS_DEFAULT_REGION="us-east-1"
 
 data "corefunc_env_ensure" "aws_default_region" {
@@ -11,9 +11,9 @@ output "aws_default_region_value" {
   value = data.corefunc_env_ensure.aws_default_region.value
 }
 
-# => us-east-1
+#=> us-east-1
 
-# -------------------------------------------------------------------------
+#-------------------------------------------------------------------------
 # AWS_PAGER=""
 
 data "corefunc_env_ensure" "aws_pager" {
@@ -26,4 +26,4 @@ output "aws_pager_value" {
   value = data.corefunc_env_ensure.aws_pager.value
 }
 
-# => This will trigger an error
+#=> [Error] Undefined Environment Variable: environment variable AWS_PAGER is not defined
