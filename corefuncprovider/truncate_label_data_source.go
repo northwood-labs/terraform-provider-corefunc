@@ -1,9 +1,11 @@
-package corefunc
+package corefuncprovider
 
 import (
 	"context"
 	"fmt"
 	"strings"
+
+	"github.com/northwood-labs/terraform-provider-corefunc/corefunc"
 
 	"github.com/hashicorp/terraform-plugin-framework-validators/int64validator"
 	"github.com/hashicorp/terraform-plugin-framework-validators/stringvalidator"
@@ -182,7 +184,7 @@ func (d *truncateLabelDataSource) Read(
 	}
 
 	state.Value = types.StringValue(
-		TruncateLabel(
+		corefunc.TruncateLabel(
 			state.MaxLength.ValueInt64(),
 			state.Prefix.ValueString(),
 			state.Label.ValueString(),

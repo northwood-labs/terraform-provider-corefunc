@@ -1,4 +1,4 @@
-package corefunc
+package corefuncprovider
 
 import (
 	"context"
