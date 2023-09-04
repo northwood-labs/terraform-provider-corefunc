@@ -1,7 +1,6 @@
-package corefunc
+package corefuncprovider
 
 import (
-	"fmt"
 	"runtime"
 	"strings"
 )
@@ -20,13 +19,17 @@ func traceFuncName() string { // lint:allow_unused
 	frames := runtime.CallersFrames(pc[:n])
 	frame, _ := frames.Next()
 
-	return fmt.Sprintf(
-		"%s\n",
-		strings.TrimPrefix(
-			frame.Function,
-			"github.com/northwood-labs/terraform-provider-corefunc/corefunc.",
-		),
+	out := strings.TrimPrefix(
+		frame.Function,
+		"github.com/northwood-labs/terraform-provider-corefunc/corefunc.",
 	)
+
+	out = strings.TrimPrefix(
+		out,
+		"github.com/northwood-labs/terraform-provider-corefunc/corefuncprovider.",
+	)
+
+	return out + "\n"
 }
 
 func linkPackage(functionName string) string {

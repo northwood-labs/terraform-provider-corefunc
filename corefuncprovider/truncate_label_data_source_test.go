@@ -1,9 +1,11 @@
-package corefunc
+package corefuncprovider
 
 import (
 	"fmt"
 	"strings"
 	"testing"
+
+	"github.com/northwood-labs/terraform-provider-corefunc/testfixtures"
 
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/resource"
 )
@@ -31,10 +33,10 @@ func TestAccTruncateLabelDataSourceDefaultMaxLength64(t *testing.T) {
 	})
 }
 
-func TestAccTruncateLabelDataSourceTruncateTests(t *testing.T) {
+func TestAccTruncateLabelDataSource(t *testing.T) {
 	funcName := traceFuncName()
 
-	for name, tc := range tests {
+	for name, tc := range testfixtures.TruncateLabelTestTable {
 		fmt.Printf(
 			"=== RUN   %s/%s\n",
 			strings.TrimSpace(funcName),
@@ -47,15 +49,15 @@ func TestAccTruncateLabelDataSourceTruncateTests(t *testing.T) {
 				{
 					Config: providerConfig + `
 					data "corefunc_str_truncate_label" "label" {
-						prefix = "` + tc.prefix + `"
-						label = "` + tc.label + `"
+						prefix = "` + tc.Prefix + `"
+						label = "` + tc.Label + `"
 						max_length   = ` +
 						func() string {
-							if tc.maxLength == 0 {
-								tc.maxLength += 1
+							if tc.MaxLength == 0 {
+								tc.MaxLength += 1
 							}
 
-							return fmt.Sprint(tc.maxLength)
+							return fmt.Sprint(tc.MaxLength)
 						}() + `
 					}
 					`,
@@ -64,11 +66,11 @@ func TestAccTruncateLabelDataSourceTruncateTests(t *testing.T) {
 							"data.corefunc_str_truncate_label.label",
 							"value",
 							func() string {
-								if tc.expected == "" {
+								if tc.Expected == "" {
 									return "…"
 								}
 
-								return tc.expected
+								return tc.Expected
 							}(),
 						),
 					),
