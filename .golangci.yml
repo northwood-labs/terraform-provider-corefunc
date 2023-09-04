@@ -138,7 +138,7 @@ output:
   uniq-by-line: false
 
   # Add a prefix to the output file references. Default is no prefix.
-  path-prefix: ""
+  path-prefix: ''
 
   # Sort results by: filepath, line and column.
   sort-results: true
@@ -299,7 +299,7 @@ linters-settings:
       - NOTE
       - OPTIMIZE
       - TODO
-      - "@todo"
+      - '@todo'
 
   # goerr113:
 
@@ -309,7 +309,7 @@ linters-settings:
 
   gofumpt:
     # Select the Go version to target.
-    lang-version: "1.21"
+    lang-version: '1.21'
 
     # Module path which contains the source code being formatted.
     # Default: ""
@@ -341,8 +341,8 @@ linters-settings:
     # List of numbers to exclude from analysis. The numbers should be written as
     # string. Values always ignored: "1", "1.0", "0" and "0.0" Default: []
     ignored-numbers:
-      - "0666"
-      - "0755"
+      - '0666'
+      - '0755'
 
     # List of file patterns to exclude from analysis.
     # Values always ignored: `.+_test.go`
@@ -468,8 +468,7 @@ linters-settings:
 
     # List of aliases
     # Default: []
-    alias:
-      []
+    alias: []
       # # Using `servingv1` alias for `knative.dev/serving/pkg/apis/serving/v1` package.
       # - pkg: knative.dev/serving/pkg/apis/serving/v1
       #   alias: servingv1
@@ -547,7 +546,7 @@ linters-settings:
   staticcheck:
     # Select the Go version to target.
     # Default: "1.13"
-    go: "1.21"
+    go: '1.21'
 
     # https://staticcheck.io/docs/options#checks
     # https://staticcheck.io/docs/checks/
@@ -558,7 +557,7 @@ linters-settings:
   stylecheck:
     # Select the Go version to target.
     # Default: 1.13
-    go: "1.21"
+    go: '1.21'
 
     # https://staticcheck.io/docs/options#checks
     # https://staticcheck.io/docs/checks/
@@ -691,8 +690,7 @@ linters-settings:
 
     # An array of strings that specify regular expressions of interfaces to ignore.
     # Default: []
-    ignoreInterfaceRegexps:
-      []
+    ignoreInterfaceRegexps: []
       # - ^(?i)c(?-i)ach(ing|e)
 
   wsl:
@@ -756,11 +754,11 @@ issues:
   exclude:
     - should have a package comment
     - declaration of "(err|ctx)" shadows declaration at
-    - "`Println` arg list ends with redundant newline"
+    - '`Println` arg list ends with redundant newline'
     - Println arg list ends with redundant newline
     - type jsonschema.Schema has no field or method ValidateBytes
     - declarations should never be cuddled
-    - "unnamedResult: consider giving a name to these results"
+    - 'unnamedResult: consider giving a name to these results'
 
   # Excluding configuration per-path, per-linter, per-text and per-source
   exclude-rules:
@@ -785,7 +783,7 @@ issues:
         - gomnd
       source: lint:allow_raw_number
 
-    - text: "commentedOutCode: may want to remove commented-out code"
+    - text: 'commentedOutCode: may want to remove commented-out code'
       linters:
         - gocritic
       source: lint:allow_commented
@@ -845,6 +843,11 @@ issues:
       linters:
         - unused
       source: lint:allow_unused
+
+    - text: (is a program, not an importable package)
+      linters:
+        - typecheck
+      source: lint:allow_importable_program
 
   # Independently from option `exclude` we use default exclude patterns, it can be disabled by this
   # option. To list all excluded by default patterns execute `golangci-lint run --help`. Default
