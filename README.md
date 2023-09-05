@@ -42,5 +42,5 @@ See the `docs/` directory for user-facing documentation.
 
 ## Documentation
 
-* [TF Registry Documentation](https://registry.terraform.io/providers/northwood-labs/corefunc/)
+* [TF Registry Documentation](https://registry.terraform.io/providers/northwood-labs/corefunc/) (not published yet; see the `docs/` directory in the interim)
 * [Go Package Documentation](https://pkg.go.dev/github.com/northwood-labs/terraform-provider-corefunc)
