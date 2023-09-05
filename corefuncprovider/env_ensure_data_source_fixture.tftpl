@@ -1,0 +1,6 @@
+data "corefunc_env_ensure" "env" {
+    name = "{{ .EnvVarName }}"
+{{- with .Pattern }}
+    pattern = "{{ . }}"
+{{- end }}
+}

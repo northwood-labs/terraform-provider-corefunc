@@ -213,7 +213,7 @@ lint: vuln
 
 .PHONY: test
 ## test: [test]* Runs ALL tests.
-test: unit acc
+test: unit examples acc
 
 .PHONY: acc
 ## acc: [test] Runs Terraform provider acceptance tests. Set NAME= (without 'Test') to run a specific test by name
@@ -228,6 +228,13 @@ unit:
 	@ $(ECHO) " "
 	@ $(ECHO) "\033[1;33m=====> Running unit tests...\033[0m"
 	$(GO) test -run=Test$(NAME) -count=1 -parallel=$(shell nproc) -timeout 30s -coverpkg=./corefunc/... -coverprofile=__coverage.out -v ./corefunc/...
+
+.PHONY: examples
+## examples: [test] Runs tests for examples. Set NAME= (without 'Example') to run a specific test by name
+examples:
+	@ $(ECHO) " "
+	@ $(ECHO) "\033[1;33m=====> Running tests for examples...\033[0m"
+	$(GO) test -run=Example$(NAME) -count=1 -parallel=$(shell nproc) -timeout 30s -coverpkg=./corefunc/... -coverprofile=__coverage.out -v ./corefunc/...
 
 .PHONY: fuzz
 ## fuzz: [test]* Runs the fuzzer for 10 minutes. Set NAME= (without 'Fuzz') to run a specific test by name

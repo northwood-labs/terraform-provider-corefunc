@@ -1,9 +1,12 @@
 package corefuncprovider
 
 import (
+	"bytes"
 	"fmt"
+	"log"
 	"strings"
 	"testing"
+	"text/template"
 
 	"github.com/northwood-labs/terraform-provider-corefunc/testfixtures"
 
@@ -11,16 +14,21 @@ import (
 )
 
 func TestAccTruncateLabelDataSourceDefaultMaxLength64(t *testing.T) {
+	buf := new(bytes.Buffer)
+	tmpl := template.Must(
+		template.ParseFiles("truncate_label_data_source_fixture_default64.tftpl"),
+	)
+
+	err := tmpl.Execute(buf, nil)
+	if err != nil {
+		log.Fatalln(err)
+	}
+
 	resource.Test(t, resource.TestCase{
 		ProtoV6ProviderFactories: testAccProtoV6ProviderFactories,
 		Steps: []resource.TestStep{
 			{
-				Config: providerConfig + `
-				data "corefunc_str_truncate_label" "truncated" {
-					prefix = "NW-ZZZ-CLOUD-TEST-APP-CLOUD-PROD-CRIT"
-					label  = "K8S Pods Not Running Deployment Check"
-				}
-				`,
+				Config: providerConfig + buf.String(),
 				Check: resource.ComposeAggregateTestCheckFunc(
 					resource.TestCheckResourceAttr(
 						"data.corefunc_str_truncate_label.truncated",
@@ -43,24 +51,26 @@ func TestAccTruncateLabelDataSource(t *testing.T) {
 			strings.TrimSpace(name),
 		)
 
+		buf := new(bytes.Buffer)
+		tmpl := template.Must(
+			template.ParseFiles("truncate_label_data_source_fixture_maxlength.tftpl"),
+		)
+
+		// Minimum value for the provider is 1.
+		if tc.MaxLength == 0 {
+			tc.MaxLength += 1
+		}
+
+		err := tmpl.Execute(buf, tc)
+		if err != nil {
+			log.Fatalln(err)
+		}
+
 		resource.Test(t, resource.TestCase{
 			ProtoV6ProviderFactories: testAccProtoV6ProviderFactories,
 			Steps: []resource.TestStep{
 				{
-					Config: providerConfig + `
-					data "corefunc_str_truncate_label" "label" {
-						prefix = "` + tc.Prefix + `"
-						label = "` + tc.Label + `"
-						max_length   = ` +
-						func() string {
-							if tc.MaxLength == 0 {
-								tc.MaxLength += 1
-							}
-
-							return fmt.Sprint(tc.MaxLength)
-						}() + `
-					}
-					`,
+					Config: providerConfig + buf.String(),
 					Check: resource.ComposeAggregateTestCheckFunc(
 						resource.TestCheckResourceAttr(
 							"data.corefunc_str_truncate_label.label",
