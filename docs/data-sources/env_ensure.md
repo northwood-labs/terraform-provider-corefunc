@@ -34,7 +34,6 @@ Maps to the [`corefunc.EnvEnsure()`](https://pkg.go.dev/github.com/northwood-lab
 ### `AWS_DEFAULT_REGION` is defined (no error)
 
 ```terraform
-#-------------------------------------------------------------------------
 # AWS_DEFAULT_REGION="us-east-1"
 
 data "corefunc_env_ensure" "aws_default_region" {
@@ -53,7 +52,6 @@ output "aws_default_region_value" {
 ### `AWS_PAGER` is set to an empty string (error)
 
 ```terraform
-#-------------------------------------------------------------------------
 # AWS_PAGER=""
 
 data "corefunc_env_ensure" "aws_pager" {
@@ -71,7 +69,6 @@ output "aws_pager_value" {
 ### `AWS_VAULT` is defined, but does not match pattern (error)
 
 ```terraform
-#-------------------------------------------------------------------------
 # AWS_VAULT="dev"
 
 data "corefunc_env_ensure" "aws_vault" {
