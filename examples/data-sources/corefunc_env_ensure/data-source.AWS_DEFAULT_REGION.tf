@@ -1,4 +1,3 @@
-#-------------------------------------------------------------------------
 # AWS_DEFAULT_REGION="us-east-1"
 
 data "corefunc_env_ensure" "aws_default_region" {
