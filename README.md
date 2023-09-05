@@ -17,29 +17,6 @@ The goal of this provider is not to call any APIs, but to provide pre-built func
 
 See the `docs/` directory for user-facing documentation.
 
-## Planned Functions
-
-* [ ] corefunc_dump(any)
-* [X] corefunc_env_ensure([]string)
-* [ ] corefunc_list_first(arr)
-* [ ] corefunc_list_last(arr)
-* [ ] corefunc_list_pop(array)
-* [ ] corefunc_list_push(arr, any)
-* [ ] corefunc_list_shift(arr, any)
-* [ ] corefunc_list_sort_icase(arr)
-* [ ] corefunc_list_sort_version(arr)
-* [ ] corefunc_list_unshift(arr)
-* [ ] corefunc_println(string)
-* [ ] corefunc_str_camel(string)
-* [ ] corefunc_str_constant(string)
-* [ ] corefunc_str_kebab(string)
-* [ ] corefunc_str_leftpad(any, string, length)
-* [ ] corefunc_str_recursive_replace(string, map[string]any)
-* [ ] corefunc_str_resolve_markers(string)
-* [ ] corefunc_str_snake(string)
-* [X] corefunc_str_truncate_label(int, string, string)
-* [ ] corefunc_str_word(string)
-
 ## Documentation
 
 * [TF Registry Documentation](https://registry.terraform.io/providers/northwood-labs/corefunc/) (not published yet; see the `docs/` directory in the interim)
