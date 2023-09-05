@@ -1,11 +1,14 @@
 package corefuncprovider
 
 import (
+	"bytes"
 	"fmt"
+	"log"
 	"os"
 	"regexp"
 	"strings"
 	"testing"
+	"text/template"
 
 	"github.com/northwood-labs/terraform-provider-corefunc/testfixtures"
 
@@ -24,17 +27,23 @@ func TestAccEnvEnsureDataSource(t *testing.T) {
 
 		_ = os.Setenv(tc.EnvVarName, tc.SetValue)
 
+		buf := new(bytes.Buffer)
+		tmpl := template.Must(
+			template.ParseFiles("env_ensure_data_source_fixture.tftpl"),
+		)
+
+		err := tmpl.Execute(buf, tc)
+		if err != nil {
+			log.Fatalln(err)
+		}
+
 		// We expect the error to be nil.
 		if tc.ExpectedErr == nil {
 			resource.Test(t, resource.TestCase{
 				ProtoV6ProviderFactories: testAccProtoV6ProviderFactories,
 				Steps: []resource.TestStep{
 					{
-						Config: providerConfig + `
-					data "corefunc_env_ensure" "env" {
-						name = "` + tc.EnvVarName + `"
-					}
-					`,
+						Config: providerConfig + buf.String(),
 						Check: resource.ComposeAggregateTestCheckFunc(
 							resource.TestCheckResourceAttr("data.corefunc_env_ensure.env", "value", tc.SetValue),
 						),
@@ -48,12 +57,8 @@ func TestAccEnvEnsureDataSource(t *testing.T) {
 				ProtoV6ProviderFactories: testAccProtoV6ProviderFactories,
 				Steps: []resource.TestStep{
 					{
-						Config: providerConfig + `
-                    data "corefunc_env_ensure" "env" {
-                        name = "` + tc.EnvVarName + `"
-                    }
-                    `,
-						ExpectError: regexp.MustCompile("environment variable (\\w+) is not defined"),
+						Config:      providerConfig + buf.String(),
+						ExpectError: regexp.MustCompile("environment variable (\\w+) (is not defined|does not match pattern)"),
 					},
 				},
 			})

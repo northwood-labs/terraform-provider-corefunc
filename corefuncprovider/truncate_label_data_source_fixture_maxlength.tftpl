@@ -1,0 +1,5 @@
+data "corefunc_str_truncate_label" "label" {
+    prefix     = "{{ .Prefix }}"
+    label      = "{{ .Label }}"
+    max_length = {{ .MaxLength }}
+}

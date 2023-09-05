@@ -4,9 +4,8 @@ import (
 	"context"
 	"fmt"
 	"os"
+	"regexp"
 	"strings"
-
-	"github.com/northwood-labs/terraform-provider-corefunc/corefunc"
 
 	"github.com/hashicorp/terraform-plugin-framework/datasource"
 	"github.com/hashicorp/terraform-plugin-framework/datasource/schema"
@@ -14,6 +13,7 @@ import (
 	"github.com/hashicorp/terraform-plugin-framework/types"
 	"github.com/hashicorp/terraform-plugin-log/tflog"
 	"github.com/lithammer/dedent"
+	"github.com/northwood-labs/terraform-provider-corefunc/corefunc"
 )
 
 // Ensure the implementation satisfies the expected interfaces.
@@ -28,9 +28,10 @@ type (
 
 	// envEnsureDataSourceModel maps the data source schema data.
 	envEnsureDataSourceModel struct {
-		ID    types.Int64  `tfsdk:"id"`
-		Name  types.String `tfsdk:"name"`
-		Value types.String `tfsdk:"value"`
+		ID      types.Int64  `tfsdk:"id"`
+		Name    types.String `tfsdk:"name"`
+		Pattern types.String `tfsdk:"pattern"`
+		Value   types.String `tfsdk:"value"`
 	}
 )
 
@@ -70,6 +71,11 @@ func (d *envEnsureDataSource) Schema(
         If the environment variable is unset or if it is set to an empty string,
         it will trigger a Terraform-level error.
 
+        Not every Terraform provider checks to ensure that the environment variables it
+        requires are properly set before performing work, leading to late-stage errors.
+        This will force an error to occur early in the execution if the environment
+        variable is not set, or if its value doesn't match the expected patttern.
+
         Maps to the ` + linkPackage("EnvEnsure") + ` Go method, which can be used in
         ` + Terratest + `.
         `)),
@@ -81,6 +87,10 @@ func (d *envEnsureDataSource) Schema(
 			"name": schema.StringAttribute{
 				Description: "The name of the environment variable to check.",
 				Required:    true,
+			},
+			"pattern": schema.StringAttribute{
+				Description: "A valid Go ([re2](https://github.com/google/re2/wiki/Syntax)) regular expression pattern.",
+				Optional:    true,
 			},
 			"value": schema.StringAttribute{
 				Description: "The value of the environment variable, if it exists.",
@@ -140,10 +150,13 @@ func (d *envEnsureDataSource) Read(
 
 	state.ID = types.Int64Value(1)
 
-	err := corefunc.EnvEnsure(state.Name.ValueString())
+	err := corefunc.EnvEnsure(
+		state.Name.ValueString(),
+		regexp.MustCompile(state.Pattern.ValueString()),
+	)
 	if err != nil {
 		resp.Diagnostics.AddError(
-			"Undefined Environment Variable",
+			"Problem with Environment Variable",
 			err.Error(),
 		)
 
