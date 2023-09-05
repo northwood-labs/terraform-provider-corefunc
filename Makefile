@@ -183,7 +183,7 @@ docs-serve:
 # Linting
 
 .PHONY: vuln
-## vuln: [lint]* Runs `govulncheck` (vulnerability scanning) against all Golang (*.go) code.
+## vuln: [lint]* Runs `govulncheck` (vulnerability scanning).
 vuln:
 	@ $(ECHO) " "
 	@ $(ECHO) "\033[1;33m=====> Running govulncheck (https://go.dev/blog/vuln)...\033[0m"
@@ -197,12 +197,16 @@ vuln:
 	@ $(ECHO) "\033[1;33m=====> Running osv-scanner (https://osv.dev)...\033[0m"
 	osv-scanner -r .
 
-.PHONY: lint
-## lint: [lint]* Runs ALL linting/validation tasks.
-lint: vuln
+.PHONY: pre-commit
+## pre-commit: [lint]* Runs `pre-commit` against all files.
+pre-commit:
 	@ $(ECHO) " "
 	@ $(ECHO) "\033[1;33m=====> Running pre-commit...\033[0m"
 	pre-commit run --all-files
+
+.PHONY: lint
+## lint: [lint]* Runs ALL linting/validation tasks.
+lint: vuln pre-commit
 
 #-------------------------------------------------------------------------------
 # Testing
