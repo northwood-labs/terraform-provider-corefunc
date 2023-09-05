@@ -3,6 +3,7 @@ package corefunc
 import (
 	"fmt"
 	"os"
+	"regexp"
 	"testing"
 
 	"github.com/northwood-labs/terraform-provider-corefunc/testfixtures"
@@ -27,11 +28,27 @@ func ExampleEnvEnsure() {
 	// environment variable MY_ENV_VAR_NOT_SET is not defined
 }
 
+func ExampleEnvEnsure_pattern() {
+	_ = os.Setenv("AWS_VAULT", "dev")
+
+	// This will not throw an error because it is defined, and there is no pattern to match.
+	err := EnvEnsure("AWS_VAULT")
+	fmt.Println(err)
+
+	// This will throw an error because the pattern does not match.
+	err = EnvEnsure("AWS_VAULT", regexp.MustCompile(`(non)?prod$`))
+	fmt.Println(err)
+
+	// Output:
+	// <nil>
+	// environment variable AWS_VAULT does not match pattern (non)?prod$
+}
+
 func TestEnvEnsure(t *testing.T) {
 	for name, tc := range testfixtures.EnvEnsureTestTable {
 		t.Run(name, func(t *testing.T) {
 			_ = os.Setenv(tc.EnvVarName, tc.SetValue)
-			err := EnvEnsure(tc.EnvVarName)
+			err := EnvEnsure(tc.EnvVarName, tc.Pattern)
 
 			if tc.ExpectedErr != nil {
 				expectedErrorMsg := tc.ExpectedErr.Error()
