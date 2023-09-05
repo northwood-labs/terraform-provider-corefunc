@@ -20,8 +20,7 @@ See the `docs/` directory for user-facing documentation.
 ## Planned Functions
 
 * [ ] corefunc_dump(any)
-* [ ] corefunc_env_ensure([]string)
-* [ ] corefunc_env_get(string, string)
+* [X] corefunc_env_ensure([]string)
 * [ ] corefunc_list_first(arr)
 * [ ] corefunc_list_last(arr)
 * [ ] corefunc_list_pop(array)
