@@ -71,7 +71,7 @@ func (d *envEnsureDataSource) Schema(
         If the environment variable is unset or if it is set to an empty string,
         it will trigger a Terraform-level error.
 
-        Not every Terraform provider checks to ensure that the environment variables it
+        -> Not every Terraform provider checks to ensure that the environment variables it
         requires are properly set before performing work, leading to late-stage errors.
         This will force an error to occur early in the execution if the environment
         variable is not set, or if its value doesn't match the expected patttern.
