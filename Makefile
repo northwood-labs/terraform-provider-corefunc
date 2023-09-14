@@ -58,10 +58,14 @@ help:
 install-tools-go:
 	@ $(ECHO) " "
 	@ $(ECHO) "\033[1;33m=====> Installing Go packages...\033[0m"
-	go install github.com/google/osv-scanner/cmd/osv-scanner@v1
-	go install golang.org/x/perf/cmd/benchstat@latest
-	go install golang.org/x/tools/cmd/godoc@latest
-	go install golang.org/x/vuln/cmd/govulncheck@latest
+	$(GO) install github.com/bitfield/gotestdox/cmd/gotestdox@latest
+	$(GO) install github.com/google/osv-scanner/cmd/osv-scanner@v1
+	$(GO) install github.com/goph/licensei/cmd/licensei@latest
+	$(GO) install github.com/pelletier/go-toml/v2/cmd/tomljson@latest
+	$(GO) install golang.org/x/perf/cmd/benchstat@latest
+	$(GO) install golang.org/x/tools/cmd/godoc@latest
+	$(GO) install golang.org/x/vuln/cmd/govulncheck@latest
+	$(GO) install gotest.tools/gotestsum@latest
 
 .PHONY: install-tools-mac
 ## install-tools-mac: [tools]* Install/upgrade the required tools for macOS, including Go packages.
@@ -205,9 +209,31 @@ pre-commit:
 	@ $(ECHO) "\033[1;33m=====> Running pre-commit...\033[0m"
 	pre-commit run --all-files
 
+.PHONY: license
+## license: [lint]* Checks the licenses of all files and dependencies.
+license:
+	@ $(ECHO) " "
+	@ $(ECHO) "\033[1;33m=====> Checking license statistics...\033[0m"
+	@ $(ECHO) "Ignored:"
+	@ tomljson .licensei.toml | jq -Mr '.ignored[] | " - \(.)"'
+	@ $(ECHO) " "
+	@ - licensei stat
+
+	@ $(ECHO) " "
+	@ $(ECHO) "\033[1;33m=====> Checking license compliance...\033[0m"
+	@ - licensei check
+	@ $(ECHO) " "
+	@ - licensei list
+
+	@ $(ECHO) " "
+	@ $(ECHO) "\033[1;33m=====> Checking license headers...\033[0m"
+	@ $(ECHO) "Missing/outdated:"
+	@ - licensei header
+	@ $(ECHO) " "
+
 .PHONY: lint
 ## lint: [lint]* Runs ALL linting/validation tasks.
-lint: vuln pre-commit
+lint: vuln license pre-commit
 
 #-------------------------------------------------------------------------------
 # Testing
@@ -225,21 +251,21 @@ test: unit examples acc
 acc:
 	@ $(ECHO) " "
 	@ $(ECHO) "\033[1;33m=====> Running acceptance tests...\033[0m"
-	TF_ACC=1 $(GO) test -run=TestAcc$(NAME) -count=1 -parallel=$(shell nproc) -timeout 30s -coverpkg=./corefuncprovider/... -coverprofile=__coverage.out -v ./corefuncprovider/...
+	TF_ACC=1 gotestsum --format testname -- -run=TestAcc$(NAME) -count=1 -parallel=$(shell nproc) -timeout 30s -coverpkg=./corefuncprovider/... -coverprofile=__coverage.out -v ./corefuncprovider/...
 
 .PHONY: unit
 ## unit: [test] Runs unit tests. Set NAME= (without 'Test') to run a specific test by name
 unit:
 	@ $(ECHO) " "
 	@ $(ECHO) "\033[1;33m=====> Running unit tests...\033[0m"
-	$(GO) test -run=Test$(NAME) -count=1 -parallel=$(shell nproc) -timeout 30s -coverpkg=./corefunc/... -coverprofile=__coverage.out -v ./corefunc/...
+	gotestsum --format testname -- -run=Test$(NAME) -count=1 -parallel=$(shell nproc) -timeout 30s -coverpkg=./corefunc/... -coverprofile=__coverage.out -v ./corefunc/...
 
 .PHONY: examples
 ## examples: [test] Runs tests for examples. Set NAME= (without 'Example') to run a specific test by name
 examples:
 	@ $(ECHO) " "
 	@ $(ECHO) "\033[1;33m=====> Running tests for examples...\033[0m"
-	$(GO) test -run=Example$(NAME) -count=1 -parallel=$(shell nproc) -timeout 30s -coverpkg=./corefunc/... -coverprofile=__coverage.out -v ./corefunc/...
+	gotestsum --format testname -- -run=Example$(NAME) -count=1 -parallel=$(shell nproc) -timeout 30s -coverpkg=./corefunc/... -coverprofile=__coverage.out -v ./corefunc/...
 
 .PHONY: fuzz
 ## fuzz: [test]* Runs the fuzzer for 10 minutes. Set NAME= (without 'Fuzz') to run a specific test by name

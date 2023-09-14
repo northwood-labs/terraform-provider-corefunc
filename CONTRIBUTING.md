@@ -53,6 +53,8 @@ The majority of development is done on macOS, so we have some helpers set-up to 
     | `style`    | Changes that do not affect the meaning of the code (whitespace, formatting, etc.). |
     | `test`     | Adding missing tests or correcting existing tests, benchmarks, fuzzing, etc.       |
 
+<!-- Code of Conduct? -->
+
 ## Contributing a code change
 
 In order to contribute a code change, you should fork the repository, make your changes, and then submit a pull request. Crucially, all code changes should be preceded by an issue that you've been assigned to. If an issue for the change you'd like to introduce already exists, please communicate in the issue that you'd like to take ownership of it. If an issue doesn't yet exist, please create one expressing your interest in working on it and discuss it first, prior to working on the code. Code changes without a related issue will generally be rejected.
@@ -71,14 +73,11 @@ Git has a built-in flag to append this line automatically:
 git commit -s -m 'This is my commit message'
 ```
 
-You can find more details about the DCO checker in the [DCO app repo](https://github.com/dcoapp/app).
+You can find more details about the _Developer Certificate of Origin_ checker in the [DCO app repo](https://github.com/dcoapp/app).
 
-Additionally, please update [the changelog](CHANGELOG.md) if you're making any user-facing changes.
+<!-- https://cla-assistant.io? -->
 
 ## Build provider from source
-
-> [!IMPORTANT]
-> You probably want **"Install provider (as a user)"** instead.
 
 This will build the provider for the current OS and CPU architecture, and install it into your Go binary path.
 
@@ -216,7 +215,7 @@ make bench
 Benchmark files are timestamped, so you can compare benchmark results across runs. See [benchstat documentation](https://pkg.go.dev/golang.org/x/perf/cmd/benchstat) to understand how to most effectively slice the results.
 
 > [!NOTE]
-> If you put old before new, values in the right-most column represent the size of the decrease (negative values are better). If you reverse them and push new before old, values in the right-most column represent the size of the increase (positive values are better).
+> If you put old (previous) before new (current), values in the right-most column represent the size of the decrease (negative values are better). If you reverse them and push new (current) before old (previous), values in the right-most column represent the size of the increase (positive values are better).
 
 ```bash
 benchstat Current=__bench-{new}.out Previous=__bench-{old}.out
@@ -313,22 +312,23 @@ make docs-serve
 
 ## Running the debugger
 
-> **IMPORTANT:** At present, we only provide support for debugging in VSCode. Debugging through other tools may work, but they are untested.
+> [!IMPORTANT]
+> At present, we only provide support for debugging in VS Code. Debugging through other tools may work, but they are untested.
 
-If you are unfamiliar with using VSCode's debugging functionality for Go, see:
+If you are unfamiliar with using VS Code's debugging functionality for Go, see:
 
 * <https://code.visualstudio.com/docs/editor/debugging>
 * <https://github.com/golang/vscode-go/blob/master/docs/debugging.md>
 
 To enable debugging for this Terraform provider:
 
-1. In VSCode, open the extension pane for _Run and Debug_.
+1. In VS Code, open the extension pane for _Run and Debug_.
 
 1. At the top of the pane, select _Debug Terraform Provider_ from the pulldown menu, then click the _Play_ icon (sideways triangle). The bottom statusbar will change color.
 
 1. If the console does not open automatically, you can open it with `⌘ ⇧ P`, search for "debug", and select _Debug Console: Focus on Debug Console View_.
 
-1. In the VSCode console, there will be a line of code that begins with `TF_REATTACH_PROVIDERS=` and then a JSON string. Copy the entire line, paste it into your Terminal, and **prefix** the command with the `export` keyword.
+1. In the VS Code console, there will be a line of code that begins with `TF_REATTACH_PROVIDERS=` and then a JSON string. Copy the entire line, paste it into your Terminal, and **prefix** the command with the `export` keyword.
 
     ```bash
     export TF_REATTACH_PROVIDERS='{"@TODO":…}'
@@ -353,3 +353,59 @@ To enable debugging for this Terraform provider:
     ```bash
     unset TF_REATTACH_PROVIDERS
     ```
+
+## Code
+
+### Dotfiles
+
+| File                 | Description                                                                                                                        |
+|----------------------|------------------------------------------------------------------------------------------------------------------------------------|
+| `.github/`           | GitHub repository project files.                                                                                                   |
+| `.vscode/`           | Standard configurations for VS Code users. (This is not the same as `.idea/` folders for JetBrains IDEs. This is actually useful.) |
+| `.dcignore`          | Configuration file for the [Snyk IDE Extension].                                                                                   |
+| `.editorconfig`      | Configuration file for [EditorConfig].                                                                                             |
+| `.gitattributes`     | Configuration file for Git. Helps ensure that file types are processed appropriately.                                              |
+| `.gitignore`         | Configuration file for Git. Helps determine which files should be ignored by Git.                                                  |
+| `.golangci.yml`      | Configuration file for [golangci-lint]. Helps ensure a high level of Go code quality.                                              |
+| `.goreleaser.yml`    | Configuration file for [GoReleaser].                                                                                               |
+| `.markdownlint.json` | Configuration file for [Markdownlint].                                                                                             |
+| `.tflint.hcl`        | Configuration file for [tflint].                                                                                                   |
+| `.yamllint`          | Configuration file for [yamllint].                                                                                                 |
+
+### Project files
+
+| File                               | Description                                                               |
+|------------------------------------|---------------------------------------------------------------------------|
+| `CHANGELOG.md`                     | The file containing the list of changes in each versionb of the software. |
+| `CONTRIBUTING.md`                  | This document.                                                            |
+| `find-go-bin.sh*`                  | Helps discover where installed Go executables live.                       |
+| `LICENSE`                          | The license for this project.                                             |
+| `Makefile`                         | A list of repeatable tasks used for managing this project.                |
+| `README.md`                        | User-facing documentation for the project.                                |
+| `terraform-registry-manifest.json` | A file that is required by the Terraform Registry.                        |
+| `VERSION`                          | The version of the release of the software.                               |
+
+### Source code
+
+| File                | Description                                                                                                            |
+|---------------------|------------------------------------------------------------------------------------------------------------------------|
+| `cmd/`              | This provider also has a couple of subcommands. These are implemented using [Cobra].                                   |
+| `corefunc/`         | The core Go library we provide to users. All core functionality is exposed through this library first.                 |
+| `corefuncprovider/` | The files which wrap the methods from the Go library as Terraform data sources.                                        |
+| `docs/`             | These are auto-generated from the `corefuncprovider/` files.                                                           |
+| `examples/`         | These are HCL examples which implement the data sources, are used for real tests, and as examples used in the `docs/`. |
+| `templates/`        | These are the templates used by the `tfplugindocs` app.                                                                |
+| `testfixtures/`     | Fixtures used by the test suites for both the Go tests, as well as the Terraform tests.                                |
+| `tools/`            | Includes the libraries that are part of the build process, but not part of the application.                            |
+| `go.mod`            | Go modules definition.                                                                                                 |
+| `go.sum`            | Go modules checksums.                                                                                                  |
+| `main.go`           | Bootstraps the application binary.                                                                                     |
+
+[Cobra]: https://cobra.dev
+[EditorConfig]: https://editorconfig.org
+[golangci-lint]: https://golangci-lint.run
+[GoReleaser]: https://goreleaser.com
+[Markdownlint]: https://www.npmjs.com/package/markdownlint-cli
+[Snyk IDE Extension]: https://docs.snyk.io/integrations/ide-tools/visual-studio-code-extension
+[tflint]: https://github.com/terraform-linters/tflint
+[yamllint]: https://github.com/adrienverge/yamllint
