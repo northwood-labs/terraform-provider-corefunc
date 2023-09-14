@@ -53,6 +53,28 @@ The majority of development is done on macOS, so we have some helpers set-up to 
     | `style`    | Changes that do not affect the meaning of the code (whitespace, formatting, etc.). |
     | `test`     | Adding missing tests or correcting existing tests, benchmarks, fuzzing, etc.       |
 
+## Contributing a code change
+
+In order to contribute a code change, you should fork the repository, make your changes, and then submit a pull request. Crucially, all code changes should be preceded by an issue that you've been assigned to. If an issue for the change you'd like to introduce already exists, please communicate in the issue that you'd like to take ownership of it. If an issue doesn't yet exist, please create one expressing your interest in working on it and discuss it first, prior to working on the code. Code changes without a related issue will generally be rejected.
+
+In order for a code change to be accepted, you'll also have to accept the (very lightweight) [Developer Certificate of Origin](https://developercertificate.org) (DCO). Acceptance is accomplished by signing-off your commits; you can do this by adding a `Signed-off-by` line to your commit message, like here:
+
+```plain
+This is my commit message
+
+Signed-off-by: Random Developer <random@developer.example.org>
+```
+
+Git has a built-in flag to append this line automatically:
+
+```bash
+git commit -s -m 'This is my commit message'
+```
+
+You can find more details about the DCO checker in the [DCO app repo](https://github.com/dcoapp/app).
+
+Additionally, please update [the changelog](CHANGELOG.md) if you're making any user-facing changes.
+
 ## Build provider from source
 
 > [!IMPORTANT]
