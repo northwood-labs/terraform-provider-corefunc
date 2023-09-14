@@ -86,11 +86,16 @@ install-tools-mac: install-tools-go
 install-hooks:
 	@ $(ECHO) " "
 	@ $(ECHO) "\033[1;33m=====> Installing Git hooks...\033[0m"
+	cp -vf .githooks/commit-msg.sh .git/hooks/commit-msg
+	chmod +x .git/hooks/*
 	pre-commit install
 
 	@ $(ECHO) " "
 	@ $(ECHO) "\033[1;33mLearn more about `pre-commit` at:\033[0m"
-	@ $(ECHO) "\033[1;33m    https://pre-commit.com/\033[0m"
+	@ $(ECHO) "\033[1;33m    https://pre-commit.com\033[0m"
+	@ $(ECHO) " "
+	@ $(ECHO) "\033[1;33mLearn more about `gommit` at:\033[0m"
+	@ $(ECHO) "\033[1;33m    https://github.com/antham/gommit\033[0m"
 	@ $(ECHO) " "
 
 #-------------------------------------------------------------------------------
