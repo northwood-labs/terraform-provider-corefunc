@@ -849,6 +849,11 @@ issues:
         - typecheck
       source: lint:allow_importable_program
 
+    - text: (don't use `init` function)
+      linters:
+        - gochecknoinits
+      source: lint:allow_init
+
   # Independently from option `exclude` we use default exclude patterns, it can be disabled by this
   # option. To list all excluded by default patterns execute `golangci-lint run --help`. Default
   # value for this option is true.
