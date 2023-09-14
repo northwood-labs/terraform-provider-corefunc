@@ -1,3 +1,17 @@
+// Copyright 2023, Ryan Parman
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//     http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
 package cmd
 
 import (
@@ -21,43 +35,13 @@ var (
 	Version = "dev"
 
 	// Commit represents the git commit hash of the software.
-	Commit = func() string {
-		if info, ok := debug.ReadBuildInfo(); ok {
-			for _, setting := range info.Settings {
-				if setting.Key == "vcs.revision" {
-					return setting.Value
-				}
-			}
-		}
-
-		return "unknown"
-	}()
+	Commit = vcs("vcs.revision", "unknown")
 
 	// BuildDate represents the date the software was built.
-	BuildDate = func() string {
-		if info, ok := debug.ReadBuildInfo(); ok {
-			for _, setting := range info.Settings {
-				if setting.Key == "vcs.time" {
-					return setting.Value
-				}
-			}
-		}
-
-		return "unknown"
-	}()
+	BuildDate = vcs("vcs.time", "unknown")
 
 	// Dirty represents whether or not the git repo was dirty when the software was built.
-	Dirty = func() string {
-		if info, ok := debug.ReadBuildInfo(); ok {
-			for _, setting := range info.Settings {
-				if setting.Key == "vcs.modified" {
-					return setting.Value
-				}
-			}
-		}
-
-		return "unknown"
-	}()
+	Dirty = vcs("vcs.modified", "unknown")
 
 	versionCmd = &cobra.Command{
 		Use:   "version",
@@ -112,4 +96,18 @@ version, and external dependencies.`,
 
 func init() { // lint:allow_init
 	rootCmd.AddCommand(versionCmd)
+}
+
+func vcs(key, fallback string) string {
+	if info, ok := debug.ReadBuildInfo(); ok {
+		for i := range info.Settings {
+			setting := info.Settings[i]
+
+			if setting.Key == key {
+				return setting.Value
+			}
+		}
+	}
+
+	return fallback
 }
