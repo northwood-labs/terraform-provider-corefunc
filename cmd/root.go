@@ -13,14 +13,13 @@ import (
 
 var (
 	debugMode bool
-	appName   string
 
 	// rootCmd represents the base command when called without any subcommands.
 	rootCmd = &cobra.Command{
 		Use:   "terraform-provider-corefunc",
 		Short: "Utilities that should have been Terraform core functions.",
 		Long: `--------------------------------------------------------------------------------
-` + appName + `
+terraform-provider-corefunc
 
 Utilities that should have been Terraform core functions.
 

@@ -102,10 +102,11 @@ tidy:
 
 .PHONY: build
 ## build: [build]* Builds and installs the Terraform provider.
+# $(GO) install -a -ldflags="-s -w -X github.com/northwood-labs/terraform-provider-corefunc/cmd.Version=$(BINARY_VERSION)" .
 build: tidy
 	@ $(ECHO) " "
 	@ $(ECHO) "\033[1;33m=====> Building and installing the provider...\033[0m"
-	$(GO) install -a -ldflags="-s -w -X github.com/northwood-labs/terraform-provider-corefunc/cmd.Version=$(BINARY_VERSION) -X github.com/northwood-labs/terraform-provider-corefunc/cmd.appName=$(BINARY_NAME)" .
+	$(GO) install -a -ldflags="-s -w" .
 	@ $(ECHO) " "
 	@ ls -lahF $(GOBIN)/$(BINARY_NAME)
 
