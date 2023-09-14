@@ -1,0 +1,7 @@
+---
+# https://github.com/dcoapp/app
+allowRemediationCommits:
+  individual: true
+
+require:
+  members: false
