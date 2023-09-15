@@ -101,9 +101,10 @@ func (p *coreFuncProvider) DataSources(ctx context.Context) []func() datasource.
 	tflog.Info(ctx, "Running Provider DataSources method.")
 
 	return []func() datasource.DataSource{
-		TruncateLabelDataSource,
 		EnvEnsureDataSource,
+		StrCamelDataSource,
 		StrSnakeDataSource,
+		TruncateLabelDataSource,
 	}
 }
 
