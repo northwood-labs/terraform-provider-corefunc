@@ -257,7 +257,7 @@ test: unit examples acc
 acc:
 	@ $(ECHO) " "
 	@ $(ECHO) "\033[1;33m=====> Running acceptance tests...\033[0m"
-	TF_ACC=1 gotestsum --format testname -- -run=TestAcc$(NAME) -count=1 -parallel=$(shell nproc) -timeout 30s -coverpkg=./corefuncprovider/... -coverprofile=__coverage.out -v ./corefuncprovider/...
+	TF_ACC=1 gotestsum --format testname -- -run=TestAcc$(NAME) -count=1 -parallel=$(shell nproc) -timeout 30m -coverpkg=./corefuncprovider/... -coverprofile=__coverage.out -v ./corefuncprovider/...
 
 .PHONY: unit
 ## unit: [test] Runs unit tests. Set NAME= (without 'Test') to run a specific test by name
