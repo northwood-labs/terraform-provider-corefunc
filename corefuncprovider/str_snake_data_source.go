@@ -93,7 +93,7 @@ func (d *strSnakeDataSource) Schema(
 				Required:    true,
 			},
 			"value": schema.StringAttribute{
-				Description: "The value of the environment variable, if it exists.",
+				Description: "The value of the string.",
 				Computed:    true,
 			},
 		},
