@@ -21,3 +21,9 @@ See the `docs/` directory for user-facing documentation.
 
 * [TF Registry Documentation](https://registry.terraform.io/providers/northwood-labs/corefunc/) (not published yet; see the `docs/` directory in the interim)
 * [Go Package Documentation](https://pkg.go.dev/github.com/northwood-labs/terraform-provider-corefunc)
+
+## Third-Party Libraries
+
+Don't reimplement things that already work well. This project leans on the following libraries:
+
+* [chanced/caps](https://github.com/chanced/caps) — Handles the case manipulation.
