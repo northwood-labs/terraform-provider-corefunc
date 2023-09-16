@@ -51,6 +51,8 @@ func TestAccEnvEnsureDataSource(t *testing.T) {
 			log.Fatalln(err)
 		}
 
+		// fmt.Fprintln(os.Stderr, buf.String())
+
 		// We expect the error to be nil.
 		if tc.ExpectedErr == nil {
 			resource.Test(t, resource.TestCase{

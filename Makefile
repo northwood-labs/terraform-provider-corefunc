@@ -12,7 +12,7 @@ current_dir := $(dir $(mkfile_path))
 # Global stuff.
 
 GO=$(shell which go)
-HOMEBREW_PACKAGES=bash coreutils findutils go jq nodejs pre-commit python@3.11
+HOMEBREW_PACKAGES=bash bats-core coreutils findutils go jq nodejs pre-commit python@3.11 tfschema
 
 # Determine the operating system and CPU arch.
 OS=$(shell uname -o | tr '[:upper:]' '[:lower:]')
@@ -250,7 +250,14 @@ lint: vuln license pre-commit
 
 .PHONY: test
 ## test: [test]* Runs ALL tests.
-test: unit examples acc
+test: unit examples acc bats
+
+.PHONY: bats
+## bats: [test] Tests the output of the provider using tfschema and BATS.
+bats: build
+	@ $(ECHO) " "
+	@ $(ECHO) "\033[1;33m=====> Running BATS/tfschema tests...\033[0m"
+	bats bats/*
 
 .PHONY: acc
 ## acc: [test] Runs Terraform provider acceptance tests. Set NAME= (without 'Test') to run a specific test by name
