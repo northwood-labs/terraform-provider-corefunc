@@ -14,10 +14,10 @@
 
 package testfixtures
 
-// StrCamelTestTable is used by both the standard Go tests and also the
+// StrPascalTestTable is used by both the standard Go tests and also the
 // Terraform acceptance tests.
 // <https://github.com/golang/go/wiki/TableDrivenTests>
-var StrCamelTestTable = map[string]struct {
+var StrPascalTestTable = map[string]struct {
 	Input       string
 	Expected    string
 	AcronymCaps bool
@@ -28,74 +28,73 @@ var StrCamelTestTable = map[string]struct {
 	},
 	"a": {
 		Input:    "a",
-		Expected: "a",
+		Expected: "A",
 	},
 	"aA": {
 		Input:    "aA",
-		Expected: "aA",
+		Expected: "AA",
 	},
 	"aAa": {
 		Input:    "aAa",
-		Expected: "aAa",
+		Expected: "AAa",
 	},
 	"AaA": {
 		Input:    "AaA",
-		Expected: "aaA",
+		Expected: "AaA",
 	},
 	"test_from_snake": {
 		Input:    "test_from_snake",
-		Expected: "testFromSnake",
+		Expected: "TestFromSnake",
 	},
 	"TestFromCamel": {
 		Input:    "TestFromCamel",
-		Expected: "testFromCamel",
+		Expected: "TestFromCamel",
 	},
 	"testFromLowerCamel": {
 		Input:    "testFromLowerCamel",
-		Expected: "testFromLowerCamel",
+		Expected: "TestFromLowerCamel",
 	},
 	"test_with_number_123": {
 		Input:    "test_with_number_123",
-		Expected: "testWithNumber123",
+		Expected: "TestWithNumber123",
 	},
 	"test with number -123": {
 		Input:    "test with number -123",
-		Expected: "testWithNumber123",
+		Expected: "TestWithNumber123",
 	},
 	"test with number -123.456": {
 		Input:    "test with number -123.456",
-		Expected: "testWithNumber123456",
+		Expected: "TestWithNumber123456",
 	},
 	"test with number -123.456e-2": {
 		Input:    "test with number -123.456e-2",
-		Expected: "testWithNumber123456e2",
+		Expected: "TestWithNumber123456e2",
 	},
 	"test initialisms ip html eof ascii cpu (AcronymCaps)": {
-		Input: "test initialisms ip html eof ascii cpu",
-		// AcronymCaps: true,
-		Expected: "testInitialismsIPHTMLEOFASCIICPU",
+		Input:       "test initialisms ip html eof ascii cpu",
+		AcronymCaps: true,
+		Expected:    "TestInitialismsIPHTMLEOFASCIICPU",
 	},
-	// "test initialisms ip html eof ascii cpu": {
-	// 	Input:    "test initialisms ip html eof ascii cpu",
-	// 	Expected: "testInitialismsIpHtmlEofAsciiCpu",
-	// },
+	"test initialisms ip html eof ascii cpu": {
+		Input:    "test initialisms ip html eof ascii cpu",
+		Expected: "TestInitialismsIpHtmlEofAsciiCpu",
+	},
 	"v3.2.2": {
 		Input:    "v3.2.2",
-		Expected: "v322",
+		Expected: "V322",
 	},
 	"This is [an] {example}${id32}. (AcronymCaps)": {
-		Input: "This is [an] {example}$${id32}.",
-		// AcronymCaps: true,
-		Expected: "thisIsAnExampleID32",
+		Input:       "This is [an] {example}$${id32}.",
+		AcronymCaps: true,
+		Expected:    "ThisIsAnExampleID32",
 	},
-	// "This is [an] {example}${id32}.": {
-	// 	Input:       "This is [an] {example}$${id32}.",
-	// 	AcronymCaps: false,
-	// 	Expected:    "thisIsAnExampleId32",
-	// },
+	"This is [an] {example}${id32}.": {
+		Input:    "This is [an] {example}$${id32}.",
+		Expected: "ThisIsAnExampleId32",
+	},
 	"entity id": {
-		Input: "entity id",
-		// AcronymCaps: true,
-		Expected: "entityID",
+		Input:       "entity id",
+		AcronymCaps: true,
+		Expected:    "EntityID",
 	},
 }
