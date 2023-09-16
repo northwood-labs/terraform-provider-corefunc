@@ -18,7 +18,6 @@ import (
 	"bytes"
 	"fmt"
 	"log"
-	"os"
 	"strings"
 	"testing"
 	"text/template"
@@ -48,7 +47,7 @@ func TestAccStrCamelDataSource(t *testing.T) {
 			log.Fatalln(err)
 		}
 
-		fmt.Fprintln(os.Stderr, buf.String())
+		// fmt.Fprintln(os.Stderr, buf.String())
 
 		resource.Test(t, resource.TestCase{
 			ProtoV6ProviderFactories: testAccProtoV6ProviderFactories,

@@ -80,6 +80,13 @@ repos:
       - id: script-must-have-extension
       - id: shellcheck
       - id: shfmt
+        args:
+          - -s
+          - -w
+          - -ln=auto
+          - -i=4
+          - -ci
+          - -sr
       - id: terraform-fmt
       # - id: terrascan
       # - id: tfsec

@@ -30,61 +30,61 @@ import (
 
 // Ensure the implementation satisfies the expected interfaces.
 var (
-	_ datasource.DataSource              = &strCamelDataSource{}
-	_ datasource.DataSourceWithConfigure = &strCamelDataSource{}
+	_ datasource.DataSource              = &strPascalDataSource{}
+	_ datasource.DataSourceWithConfigure = &strPascalDataSource{}
 )
 
-// strCamelDataSource is the data source implementation.
+// strPascalDataSource is the data source implementation.
 type (
-	strCamelDataSource struct{}
+	strPascalDataSource struct{}
 
-	// strCamelDataSourceModel maps the data source schema data.
-	strCamelDataSourceModel struct {
-		ID types.Int64 `tfsdk:"id"`
-		// AcronymCaps types.Bool   `tfsdk:"acronym_caps"`
-		String types.String `tfsdk:"string"`
-		Value  types.String `tfsdk:"value"`
+	// strPascalDataSourceModel maps the data source schema data.
+	strPascalDataSourceModel struct {
+		ID          types.Int64  `tfsdk:"id"`
+		AcronymCaps types.Bool   `tfsdk:"acronym_caps"`
+		String      types.String `tfsdk:"string"`
+		Value       types.String `tfsdk:"value"`
 	}
 )
 
-// StrCamelDataSource is a method that exposes its paired Go function as a
+// StrPascalDataSource is a method that exposes its paired Go function as a
 // Terraform Data Source.
-func StrCamelDataSource() datasource.DataSource { // lint:allow_return_interface
-	return &strCamelDataSource{}
+func StrPascalDataSource() datasource.DataSource { // lint:allow_return_interface
+	return &strPascalDataSource{}
 }
 
 // Metadata returns the data source type name.
-func (d *strCamelDataSource) Metadata(
+func (d *strPascalDataSource) Metadata(
 	ctx context.Context,
 	req datasource.MetadataRequest,
 	resp *datasource.MetadataResponse,
 ) {
-	tflog.Info(ctx, "Starting StrCamel DataSource Metadata method.")
+	tflog.Info(ctx, "Starting StrPascal DataSource Metadata method.")
 
-	resp.TypeName = req.ProviderTypeName + "_str_camel"
+	resp.TypeName = req.ProviderTypeName + "_str_pascal"
 
 	tflog.Debug(ctx, fmt.Sprintf("req.ProviderTypeName = %s", req.ProviderTypeName))
 	tflog.Debug(ctx, fmt.Sprintf("resp.TypeName = %s", resp.TypeName))
 
-	tflog.Info(ctx, "Ending StrCamel DataSource Metadata method.")
+	tflog.Info(ctx, "Ending StrPascal DataSource Metadata method.")
 }
 
 // Schema defines the schema for the data source.
-func (d *strCamelDataSource) Schema(
+func (d *strPascalDataSource) Schema(
 	ctx context.Context,
 	_ datasource.SchemaRequest,
 	resp *datasource.SchemaResponse,
 ) {
-	tflog.Info(ctx, "Starting StrCamel DataSource Schema method.")
+	tflog.Info(ctx, "Starting StrPascal DataSource Schema method.")
 
 	resp.Schema = schema.Schema{
 		MarkdownDescription: strings.TrimSpace(dedent.Dedent(`
-        Converts a string to ` + "`" + `camelCase` + "`" + `, removing any non-alphanumeric characters.
+        Converts a string to ` + "`" + `PascalCase` + "`" + `, removing any non-alphanumeric characters.
 
         -> Some acronyms are maintained as uppercase. See
         [caps: pkg-variables](https://pkg.go.dev/github.com/chanced/caps#pkg-variables) for a complete list.
 
-        Maps to the [` + "`" + `caps.ToLowerCamel()` + "`" + `](https://pkg.go.dev/github.com/chanced/caps#ToLowerCamel)
+        Maps to the [` + "`" + `caps.ToCamel()` + "`" + `](https://pkg.go.dev/github.com/chanced/caps#ToCamel)
         Go method, which can be used in ` + Terratest + `.
         `)),
 		Attributes: map[string]schema.Attribute{
@@ -93,15 +93,15 @@ func (d *strCamelDataSource) Schema(
 				Computed:    true,
 			},
 			"string": schema.StringAttribute{
-				Description: "The string to convert to `camelCase`.",
+				Description: "The string to convert to `PascalCase`.",
 				Required:    true,
 			},
-			// "acronym_caps": schema.BoolAttribute{
-			// 	Description: "Whether or not to keep acronyms as uppercase. A value of `true` means that acronyms " +
-			// 		"will be converted to uppercase. A value of `false` means that acronyms will using typical " +
-			// 		"casing. The default value is `false`.",
-			// 	Optional: true,
-			// },
+			"acronym_caps": schema.BoolAttribute{
+				Description: "Whether or not to keep acronyms as uppercase. A value of `true` means that acronyms " +
+					"will be converted to uppercase. A value of `false` means that acronyms will using typical " +
+					"casing. The default value is `false`.",
+				Optional: true,
+			},
 			"value": schema.StringAttribute{
 				Description: "The value of the string.",
 				Computed:    true,
@@ -109,32 +109,32 @@ func (d *strCamelDataSource) Schema(
 		},
 	}
 
-	tflog.Info(ctx, "Ending StrCamel DataSource Schema method.")
+	tflog.Info(ctx, "Ending StrPascal DataSource Schema method.")
 }
 
 // Configure adds the provider configured client to the data source.
-func (d *strCamelDataSource) Configure(
+func (d *strPascalDataSource) Configure(
 	ctx context.Context,
 	req datasource.ConfigureRequest,
 	_ *datasource.ConfigureResponse,
 ) {
-	tflog.Info(ctx, "Starting StrCamel DataSource Configure method.")
+	tflog.Info(ctx, "Starting StrPascal DataSource Configure method.")
 
 	if req.ProviderData == nil {
 		return
 	}
 
-	tflog.Info(ctx, "Ending StrCamel DataSource Configure method.")
+	tflog.Info(ctx, "Ending StrPascal DataSource Configure method.")
 }
 
-func (d strCamelDataSource) Create(
+func (d strPascalDataSource) Create(
 	ctx context.Context,
 	req resource.CreateRequest, // lint:allow_large_memory
 	resp *resource.CreateResponse,
 ) {
-	tflog.Info(ctx, "Starting StrCamel DataSource Create method.")
+	tflog.Info(ctx, "Starting StrPascal DataSource Create method.")
 
-	var plan strCamelDataSourceModel
+	var plan strPascalDataSourceModel
 
 	diags := req.Plan.Get(ctx, &plan)
 	resp.Diagnostics.Append(diags...)
@@ -143,35 +143,34 @@ func (d strCamelDataSource) Create(
 		return
 	}
 
-	tflog.Info(ctx, "Ending StrCamel DataSource Create method.")
+	tflog.Info(ctx, "Ending StrPascal DataSource Create method.")
 }
 
 // Read refreshes the Terraform state with the latest data.
-func (d *strCamelDataSource) Read(
+func (d *strPascalDataSource) Read(
 	ctx context.Context,
 	_ datasource.ReadRequest, // lint:allow_large_memory
 	resp *datasource.ReadResponse,
 ) {
-	tflog.Info(ctx, "Starting StrCamel DataSource Read method.")
+	tflog.Info(ctx, "Starting StrPascal DataSource Read method.")
 
-	var state strCamelDataSourceModel
+	var state strPascalDataSourceModel
 	diags := resp.State.Get(ctx, &state)
 	resp.Diagnostics.Append(diags...)
 
 	state.ID = types.Int64Value(1)
 
 	// Default values
-	// opts := caps.Opts{}
-	// opts := caps.WithReplaceStyleCamel()
+	opts := caps.Opts{}
 
-	// if state.AcronymCaps.ValueBool() { // lint:allow_commented
-	// 	opts = caps.WithReplaceStyleScreaming()
-	// }
+	if !state.AcronymCaps.ValueBool() {
+		opts = caps.WithReplaceStyleCamel()
+	}
 
 	state.Value = types.StringValue(
-		caps.ToLowerCamel(
+		caps.ToCamel(
 			state.String.ValueString(),
-			// opts,
+			opts,
 		),
 	)
 
@@ -182,5 +181,5 @@ func (d *strCamelDataSource) Read(
 		return
 	}
 
-	tflog.Info(ctx, "Ending StrCamel DataSource Read method.")
+	tflog.Info(ctx, "Ending StrPascal DataSource Read method.")
 }
