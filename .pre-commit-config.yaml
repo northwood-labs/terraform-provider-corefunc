@@ -92,3 +92,12 @@ repos:
       # - id: tfsec
       - id: yamlfmt
       - id: yapf
+
+  - repo: local
+    hooks:
+      - id: trufflehog
+        name: TruffleHog
+        description: Detect secrets in your data.
+        entry: bash -c 'trufflehog git file://. --since-commit HEAD --only-verified --fail --json 2>/dev/null | jq "."'
+        language: system
+        stages: [commit, push]
