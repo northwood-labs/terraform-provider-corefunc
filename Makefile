@@ -12,7 +12,7 @@ current_dir := $(dir $(mkfile_path))
 # Global stuff.
 
 GO=$(shell which go)
-HOMEBREW_PACKAGES=bash bats-core coreutils findutils go jq nodejs pre-commit python@3.11 tfschema
+HOMEBREW_PACKAGES=bash bats-core coreutils findutils go jq nodejs pre-commit python@3.11 tfschema trufflesecurity/trufflehog/trufflehog
 
 # Determine the operating system and CPU arch.
 OS=$(shell uname -o | tr '[:upper:]' '[:lower:]')
@@ -63,6 +63,7 @@ install-tools-go:
 	$(GO) install github.com/google/osv-scanner/cmd/osv-scanner@v1
 	$(GO) install github.com/goph/licensei/cmd/licensei@latest
 	$(GO) install github.com/pelletier/go-toml/v2/cmd/tomljson@latest
+	$(GO) install github.com/trufflesecurity/driftwood@latest
 	$(GO) install golang.org/x/perf/cmd/benchstat@latest
 	$(GO) install golang.org/x/tools/cmd/godoc@latest
 	$(GO) install golang.org/x/vuln/cmd/govulncheck@latest
@@ -194,7 +195,7 @@ docs-serve:
 # Linting
 
 .PHONY: vuln
-## vuln: [lint]* Runs `govulncheck` (vulnerability scanning).
+## vuln: [lint]* Checks for known security vulnerabilities.
 vuln:
 	@ $(ECHO) " "
 	@ $(ECHO) "\033[1;33m=====> Running govulncheck (https://go.dev/blog/vuln)...\033[0m"
@@ -207,6 +208,13 @@ vuln:
 	@ $(ECHO) " "
 	@ $(ECHO) "\033[1;33m=====> Running osv-scanner (https://osv.dev)...\033[0m"
 	osv-scanner -r .
+
+.PHONY: secrets
+## secrets: [lint]* Checks for verifiable secrets.
+secrets:
+	@ $(ECHO) " "
+	@ $(ECHO) "\033[1;33m=====> Running TruffleHog...\033[0m"
+	trufflehog git file://. --json --only-verified --concurrency=$(nproc) 2>/dev/null | jq '.'
 
 .PHONY: pre-commit
 ## pre-commit: [lint]* Runs `pre-commit` against all files.
