@@ -62,6 +62,7 @@ install-tools-go:
 	$(GO) install github.com/bitfield/gotestdox/cmd/gotestdox@latest
 	$(GO) install github.com/google/osv-scanner/cmd/osv-scanner@v1
 	$(GO) install github.com/goph/licensei/cmd/licensei@latest
+	$(GO) install github.com/orlangure/gocovsh@latest
 	$(GO) install github.com/pelletier/go-toml/v2/cmd/tomljson@latest
 	$(GO) install github.com/trufflesecurity/driftwood@latest
 	$(GO) install golang.org/x/perf/cmd/benchstat@latest
@@ -305,9 +306,14 @@ quickbench:
 bench:
 	$(GO) test -bench=. -count=6 -timeout 60m -benchmem -cpuprofile=__cpu.out -memprofile=__mem.out -trace=__trace.out ./corefunc | tee __bench-$(shell date --utc "+%Y%m%dT%H%M%SZ").out
 
-.PHONY: view-cov
-## view-cov: [test] After running test or unittest, this will launch a browser to view the coverage report.
-view-cov:
+.PHONY: view-cov-cli
+## view-cov-cli: [test] After running test or unittest, this will view the coverage report on the CLI.
+view-cov-cli:
+	gocovsh --profile=__coverage.out
+
+.PHONY: view-cov-html
+## view-cov-html: [test] After running test or unittest, this will launch a browser to view the coverage report.
+view-cov-html:
 	$(GO) tool cover -html=__coverage.out
 
 .PHONY: view-cpupprof

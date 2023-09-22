@@ -140,7 +140,7 @@ The `nproc` binary is commonly available on most Linux distributions. If it's no
 
 ### Unit tests (and code coverage)
 
-This will run Unit and Fuzz tests. This tests the low-level Go code, but not the Terraform integration wrapped around it.
+This will run Unit tests. This tests the low-level Go code, but not the Terraform integration wrapped around it.
 
 ```bash
 # Run all unit tests
@@ -150,15 +150,16 @@ make unit
 make unit NAME=TruncateLabel
 ```
 
-You can view the code coverage report with:
+You can view the code coverage report with either:
 
 ```bash
-make view-cov
+make view-cov-cli   # on the CLI
+make view-cov-html # in the browser
 ```
 
 ### Terraform provider acceptance tests (and code coverage)
 
-This will run all tests: Unit, Acceptance, and Fuzz. Acceptance tests run the code through Terraform and test the Terraform communication pathway.
+This will run Acceptance tests. Acceptance tests run the code through Terraform and test the Terraform communication pathway.
 
 ```bash
 # Run all acceptance tests
@@ -168,10 +169,27 @@ make acc
 make acc NAME=TruncateLabel
 ```
 
-You can view the code coverage report with:
+You can view the code coverage report with either:
 
 ```bash
-make view-cov
+make view-cov-cli   # on the CLI
+make view-cov-html # in the browser
+```
+
+### Documentation Examples as tests (and code coverage)
+
+This will run the Documentation Examples as tests. This ensures that the examples we put in front of users actually work.
+
+```bash
+# Run all example tests
+make examples
+```
+
+You can view the code coverage report with either:
+
+```bash
+make view-cov-cli   # on the CLI
+make view-cov-html # in the browser
 ```
 
 ### Fuzzer
