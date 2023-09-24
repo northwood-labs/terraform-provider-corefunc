@@ -51,7 +51,9 @@ func TestAccEnvEnsureDataSource(t *testing.T) {
 			log.Fatalln(err)
 		}
 
-		// fmt.Fprintln(os.Stderr, buf.String())
+		if os.Getenv("PROVIDER_DEBUG") != "" {
+			fmt.Fprintln(os.Stderr, buf.String())
+		}
 
 		// We expect the error to be nil.
 		if tc.ExpectedErr == nil {

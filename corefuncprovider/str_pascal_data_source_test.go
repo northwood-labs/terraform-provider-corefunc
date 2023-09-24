@@ -18,6 +18,7 @@ import (
 	"bytes"
 	"fmt"
 	"log"
+	"os"
 	"strings"
 	"testing"
 	"text/template"
@@ -47,7 +48,9 @@ func TestAccStrPascalDataSource(t *testing.T) {
 			log.Fatalln(err)
 		}
 
-		// fmt.Fprintln(os.Stderr, buf.String())
+		if os.Getenv("PROVIDER_DEBUG") != "" {
+			fmt.Fprintln(os.Stderr, buf.String())
+		}
 
 		resource.Test(t, resource.TestCase{
 			ProtoV6ProviderFactories: testAccProtoV6ProviderFactories,

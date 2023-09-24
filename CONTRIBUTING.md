@@ -153,9 +153,23 @@ make unit NAME=TruncateLabel
 You can view the code coverage report with either:
 
 ```bash
-make view-cov-cli   # on the CLI
+make view-cov-cli  # on the CLI
 make view-cov-html # in the browser
 ```
+
+#### How to write a unit test
+
+In the `testfixtures/` directory, there is a file for each function. This leverages a pattern known as [Table-Driven Testing](https://github.com/golang/go/wiki/TableDrivenTests), and composes all of the test cases in one place.
+
+The `corefunc/` directory contains the code and tests for the Go library. The `corefuncprovider/` directory contains the code and tests for the Terraform provider. The relevant `_test.go` files in each directory leverage the same test fixture. This ensures that the Go library code and the Terraform provider which implements the Go library function both pass the test cases.
+
+If we leverage a third-party package for functionality, there will not be a test in the `corefunc/` directory, but the Terraform provider implementation will have a test in the `corefuncprovider/` directory.
+
+* A unit test function lives in the `corefunc/` directory, and begins with the word `Test`.
+* [Tutorial: Add a test](https://go.dev/doc/tutorial/add-a-test)
+* [Documentation: Coverage profiling](https://go.dev/testing/coverage/)
+* [Documentation: Testing flags](https://pkg.go.dev/cmd/go#hdr-Testing_flags)
+* [Tutorial: Code coverage for Go integration tests](https://go.dev/blog/integration-test-coverage)
 
 ### Terraform provider acceptance tests (and code coverage)
 
@@ -167,14 +181,38 @@ make acc
 
 # Run one acceptance test
 make acc NAME=TruncateLabel
+
+# Run all acceptance tests with debug-level output
+make acc DEBUG=true
+
+# Run one acceptance test with debug-level output
+make acc NAME=TruncateLabel DEBUG=true
 ```
 
 You can view the code coverage report with either:
 
 ```bash
-make view-cov-cli   # on the CLI
+make view-cov-cli  # on the CLI
 make view-cov-html # in the browser
 ```
+
+#### How to write an acceptance test
+
+In the `testfixtures/` directory, there is a file for each function. This leverages a pattern known as [Table-Driven Testing](https://github.com/golang/go/wiki/TableDrivenTests), and composes all of the test cases in one place.
+
+The `corefunc/` directory contains the code and tests for the Go library. The `corefuncprovider/` directory contains the code and tests for the Terraform provider. The relevant `_test.go` files in each directory leverage the same test fixture. This ensures that the Go library code and the Terraform provider which implements the Go library function both pass the test cases.
+
+If we leverage a third-party package for functionality, there will not be a test in the `corefunc/` directory, but the Terraform provider implementation will have a test in the `corefuncprovider/` directory.
+
+To help keep things easy to understand, the acceptance tests use Go's [`text/template`](https://pkg.go.dev/text/template) package to generate the Terraform code that is used for the acceptance test. The documentation for the [`templatefile()`](https://developer.hashicorp.com/terraform/language/functions/templatefile) function says that templates for use with Terraform should use the `*.tftpl` extension:
+
+> `*.tftpl` is the recommended naming pattern to use for your template files. Terraform will not prevent you from using other names, but following this convention will help your editor understand the content and likely provide better editing experience as a result.
+
+* An acceptance test function lives in the `corefuncprovider/` directory, and begins with the word `TestAcc`.
+* [Tutorial: Add a test](https://go.dev/doc/tutorial/add-a-test)
+* [Documentation: Coverage profiling](https://go.dev/testing/coverage/)
+* [Documentation: Testing flags](https://pkg.go.dev/cmd/go#hdr-Testing_flags)
+* [Tutorial: Code coverage for Go integration tests](https://go.dev/blog/integration-test-coverage)
 
 ### Documentation Examples as tests (and code coverage)
 
@@ -192,7 +230,27 @@ make view-cov-cli   # on the CLI
 make view-cov-html # in the browser
 ```
 
+#### How to write a documentation example
+
+The `corefunc/` directory contains the code and tests for the Go library. If we leverage a third-party package for functionality, there will not be a test in the `corefunc/` directory.
+
+* An example test function lives in the `corefunc/` directory, and begins with the word `Example`.
+* [Tutorial: Documentation examples](https://go.dev/blog/examples)
+
+### Test the provider schema as tests
+
+This will use `tfschema` (reads the provider schema) and `bats` (CLI testing framework) to verify that the provider exposes the correct schema. This test requires compiling and installing the provoider (which `go test` doesn't require.)
+
+```bash
+# Run all BATS tests
+make bats
+```
+
+#### How to write a BATS test
+
 ### Fuzzer
+
+Fuzzing is a type of automated testing which continuously manipulates inputs to a program to find bugs. Go fuzzing uses coverage guidance to intelligently walk through the code being fuzzed to find and report failures to the user. Since it can reach edge cases which humans often miss, fuzz testing can be particularly valuable for finding security exploits and vulnerabilities.
 
 This will run the fuzzer for 10 minutes. [Learn more about fuzzing](https://go.dev/doc/tutorial/fuzz).
 
@@ -200,6 +258,14 @@ This will run the fuzzer for 10 minutes. [Learn more about fuzzing](https://go.d
 # May only run one fuzz test at a time
 make fuzz NAME=TruncateLabel
 ```
+
+#### How to write a fuzz test
+
+The `corefunc/` directory contains the code and tests for the Go library. If we leverage a third-party package for functionality, there will not be a test in the `corefunc/` directory.
+
+* A fuzzer test function lives in the `corefunc/` directory, and begins with the word `Fuzz`.
+* [Documentation: Go fuzzing](https://go.dev/security/fuzz/)
+* [Tutorial: Getting started with fuzzing](https://go.dev/doc/tutorial/fuzz)
 
 ## Benchmarks
 
@@ -270,7 +336,16 @@ The way that these are written, `TruncateLabel` is the test. `balanced{number}` 
 
 For the middle part (`balanced{number}`), the number represents the number of characters I truncated the label to. I know from the implementation that different truncation lengths can trigger different code paths, and that anything under `6` results in a near-immediate return with no calculation necessary. We also know that the longer lengths similarly have less truncation logic to perform.
 
-But the middle tests from ~10–80 are most likely to execute _all_ of the code in the function, which makes it the most intersting.
+But the middle tests from ~10–80 are most likely to execute _all_ of the code in the function, which makes it the most interesting.
+
+#### How to write a benchmark suite
+
+The `corefunc/` directory contains the code and tests for the Go library. If we leverage a third-party package for functionality, there will not be a test in the `corefunc/` directory.
+
+* A fuzzer test function lives in the `corefunc/` directory, and begins with the word `Benchmark`.
+* There is one `Benchmark` test which runs the tests serially. There is a second `Benchmark` test which runs the tests in parallel. This latter function has `Parallel` as the suffix of its name.
+* [API Reference: Benchmarks](https://pkg.go.dev/testing@go1.21.1#hdr-Benchmarks)
+* [API Reference: Benchstat](https://pkg.go.dev/golang.org/x/perf/cmd/benchstat)
 
 ### Exploring profiler data
 
@@ -298,6 +373,19 @@ When you're done, clean-up.
 make clean-bench
 ```
 
+#### How to understand profiling and tracing data
+
+* [Tutorial: Profiling Go Programs](https://go.dev/blog/pprof)
+* [Documentation: Diagnostics](https://go.dev/doc/diagnostics)
+* [Go: The Complete Guide to Profiling Your Code](https://hackernoon.com/go-the-complete-guide-to-profiling-your-code-h51r3waz)
+
+## Profile-guided optimization
+
+Profile-guided optimization (PGO), also known as feedback-directed optimization (FDO), is a compiler optimization technique that feeds information (a profile) from representative runs of the application back into to the compiler for the next build of the application, which uses that information to make more informed optimization decisions. For example, the compiler may decide to more aggressively inline functions which the profile indicates are called frequently.
+
+* [Documentation: Profile-guided optimization](https://go.dev/doc/pgo)
+* [Tutorial: Profile-guided optimization in Go 1.21](https://go.dev/blog/pgo)
+
 ## Scanning for vulnerabilities
 
 ```bash
@@ -314,6 +402,16 @@ Generate the Terraform Registry-facing documentation.
 make docs-provider
 ```
 
+#### Terraform Provider Documentation
+
+These are the patterns we follow for generating Terraform documentation. _Every_ resource/data source in the provider has at least one example. With a resource-specific template, we can implement multiple examples.
+
+See `examples/data-sources/corefunc_env_ensure/` as an example of a custom template with multiple examples.
+
+* [tfplugindocs: Conventional Paths](https://github.com/hashicorp/terraform-plugin-docs?tab=readme-ov-file#conventional-paths)
+* [Terraform: Provider Documentation](https://developer.hashicorp.com/terraform/registry/providers/docs)
+* [Terraform: Implement documentation generation](https://developer.hashicorp.com/terraform/tutorials/providers-plugin-framework/providers-plugin-framework-documentation-generation)
+
 ### Go CLI Documentation
 
 You can get the package documentation on the CLI using the `go doc` command.
@@ -322,11 +420,21 @@ You can get the package documentation on the CLI using the `go doc` command.
 make docs-cli
 ```
 
+#### How to write Go documentation comments and examples
+
+* [Documentation: Go Doc Comments](https://tip.golang.org/doc/comment)
+* [Tutorial: Testable Examples in Go](https://go.dev/blog/examples)
+
 ### Go Documentation Server
 
 ```bash
 make docs-serve
 ```
+
+#### How to write Go documentation comments and examples
+
+* [Documentation: Go Doc Comments](https://tip.golang.org/doc/comment)
+* [Tutorial: Testable Examples in Go](https://go.dev/blog/examples)
 
 ## Running the debugger
 
