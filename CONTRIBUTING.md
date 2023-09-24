@@ -19,11 +19,12 @@ The majority of development is done on macOS, so we have some helpers set-up to 
 
     Obviously, this won't work on Linux, so ensure that the following packages are installed from your system's package manager.
 
-    * Go 1.21+ (primary language)
-    * Node.js 18+ (linting tools)
-    * Python 3.11+ (linting tools)
-    * `jq` (shell scripting tools)
-    * `pre-commit` (linting tools)
+    * [Go] 1.21+ (primary language)
+    * [Node.js] 18+ (linting tools)
+    * [Python] 3.11+ (linting tools)
+    * [Git LFS] (storage of binary data)
+    * [`jq`][jq] (shell scripting tools)
+    * [`pre-commit`][pre-commit] (linting tools)
 
 1. Running `make` in the root of the repo, by itself, will display a list of tasks and what they do. The ones highlighted in yellow are the ones that are most frequently used, or combine running multiple sub-tasks with one convenient command.
 
@@ -529,9 +530,15 @@ To enable debugging for this Terraform provider:
 
 [Cobra]: https://cobra.dev
 [EditorConfig]: https://editorconfig.org
+[Git LFS]: https://git-lfs.com
+[Go]: https://go.dev
 [golangci-lint]: https://golangci-lint.run
 [GoReleaser]: https://goreleaser.com
+[jq]: https://jqlang.github.io/jq/
 [Markdownlint]: https://www.npmjs.com/package/markdownlint-cli
+[Node.js]: https://nodejs.org
+[pre-commit]: https://pre-commit.com
+[Python]: https://www.python.org
 [Snyk IDE Extension]: https://docs.snyk.io/integrations/ide-tools/visual-studio-code-extension
 [tflint]: https://github.com/terraform-linters/tflint
 [yamllint]: https://github.com/adrienverge/yamllint
