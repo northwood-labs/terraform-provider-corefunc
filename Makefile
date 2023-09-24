@@ -12,7 +12,7 @@ current_dir := $(dir $(mkfile_path))
 # Global stuff.
 
 GO=$(shell which go)
-HOMEBREW_PACKAGES=bash bats-core coreutils findutils go jq nodejs pre-commit python@3.11 tfschema trufflesecurity/trufflehog/trufflehog
+HOMEBREW_PACKAGES=bash bats-core coreutils findutils git git-lfs go jq nodejs pre-commit python@3.11 tfschema trufflesecurity/trufflehog/trufflehog
 
 # Determine the operating system and CPU arch.
 OS=$(shell uname -o | tr '[:upper:]' '[:lower:]')
