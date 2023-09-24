@@ -17,8 +17,10 @@ package cmd
 import (
 	"fmt"
 	"os"
+	"path/filepath"
 	"runtime"
 	"runtime/debug"
+	"strings"
 	"text/tabwriter"
 
 	"github.com/gookit/color"
@@ -43,6 +45,9 @@ var (
 	// Dirty represents whether or not the git repo was dirty when the software was built.
 	Dirty = vcs("vcs.modified", "unknown")
 
+	// PGOEnabled represents whether or not the build leveraged Profile-Guided Optimization (PGO).
+	PGOEnabled = vcs("-pgo", "false")
+
 	versionCmd = &cobra.Command{
 		Use:   "version",
 		Short: "Long-form version information",
@@ -58,6 +63,9 @@ version, and external dependencies.`,
 			fmt.Fprintf(w, " Git commit:\t%s\t\n", Commit)
 			if Dirty == "true" {
 				fmt.Fprintf(w, " Dirty repo:\t%s\t\n", Dirty)
+			}
+			if !strings.Contains(PGOEnabled, "false") {
+				fmt.Fprintf(w, " PGO:\t%s\t\n", filepath.Base(PGOEnabled))
 			}
 			fmt.Fprintf(w, " Build date:\t%s\t\n", BuildDate)
 			fmt.Fprintf(w, " OS/Arch:\t%s/%s\t\n", runtime.GOOS, runtime.GOARCH)
@@ -88,6 +96,14 @@ version, and external dependencies.`,
 			if err != nil {
 				exiterrorf.ExitErrorf(err)
 			}
+
+			// if info, ok := debug.ReadBuildInfo(); ok {
+			// 	for i := range info.Settings {
+			// 		setting := info.Settings[i]
+
+			// 		fmt.Printf("%s = %s\n", setting.Key, setting.Value)
+			// 	}
+			// }
 
 			fmt.Println("")
 		},

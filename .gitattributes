@@ -1,10 +1,8 @@
 # Helps Git use the right algorithms for diffs
 # https://git-scm.com/docs/gitattributes
-
 # Auto detect text files and perform LF normalization
 # https://www.davidlaing.com/2012/09/19/customise-your-gitattributes-to-become-a-git-ninja/
 *          text=auto
-
 # Front-end
 *.css      text eol=lf diff=css
 *.htm      text eol=lf diff=html
@@ -15,7 +13,6 @@
 *.scss     text eol=lf diff=css
 *.ts       text eol=lf
 *.xhtml    text eol=lf diff=html
-
 # Documents
 *.bibtex   text diff=bibtex
 *.doc      diff=astextplain
@@ -47,12 +44,10 @@
 *.mdtxt    text eol=lf diff=markdown
 *.mdtext   text eol=lf diff=markdown
 *.txt      text eol=lf
-
 # "Files"
 Dockerfile text eol=lf
 Makefile   text eol=lf
 *README*   text eol=lf
-
 # Graphics
 *.png      binary
 *.jpg      binary
@@ -65,7 +60,6 @@ Makefile   text eol=lf
 *.svg      text eol=lf
 *.svgz     binary
 *.webp     binary
-
 # Scripts
 *.bash     text eol=lf
 *.fish     text eol=lf
@@ -74,14 +68,12 @@ Makefile   text eol=lf
 *.bat      text eol=crlf
 *.cmd      text eol=crlf
 *.ps1      text eol=crlf
-
 # Fonts
 *.ttf      binary
 *.eot      binary
 *.otf      binary
 *.woff     binary
 *.woff2    binary
-
 # Serialization
 *.ini      text eol=lf
 *.json     text eol=lf
@@ -89,7 +81,6 @@ Makefile   text eol=lf
 *.xml      text eol=lf
 *.yaml     text eol=lf
 *.yml      text eol=lf
-
 # Configs
 *.conf            text eol=lf
 *.config          text eol=lf
@@ -99,34 +90,28 @@ Makefile   text eol=lf
 .gitconfig        text eol=lf
 *.lock            text eol=lf -diff
 package-lock.json text eol=lf -diff
-
 # Archives
 *.7z       binary
 *.gz       binary
 *.tar      binary
 *.tgz      binary
 *.zip      binary
-
 # Database
 *.sql      text eol=lf
-
 # Text files where line endings should be preserved
 *.patch    -text
-
 # Exclude files from exporting
 .gitattributes export-ignore
 .gitignore     export-ignore
 .gitkeep       export-ignore
-
 # Treat all Go files in this repo as binary, with no git magic updating
 # line endings. Windows users contributing to Go will need to use a
 # modern version of git and editors capable of LF line endings.
 *.go       -text diff=golang
-
 # Terraform
 *.tf       text eol=lf
 *.tfvars   text eol=lf
 *.hcl      text eol=lf
-
 # Ignore files (like .npmignore or .gitignore)
 *.*ignore  text eol=lf
+*.pgo filter=lfs diff=lfs merge=lfs -text
