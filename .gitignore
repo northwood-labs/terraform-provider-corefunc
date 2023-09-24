@@ -9,6 +9,7 @@ _provider.tf
 *_override.tf
 *_override.tf.json
 *.pprof
+*.test
 *.tfstate*
 *.zip
 **/.terraform/*
