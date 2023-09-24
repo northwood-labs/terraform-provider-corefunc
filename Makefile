@@ -269,11 +269,16 @@ bats: build
 	bats bats/*
 
 .PHONY: acc
-## acc: [test] Runs Terraform provider acceptance tests. Set NAME= (without 'Test') to run a specific test by name
+## acc: [test] Runs Terraform provider acceptance tests. Set NAME= (without 'TestAcc') to run a specific test by name
 acc:
 	@ $(ECHO) " "
 	@ $(ECHO) "\033[1;33m=====> Running acceptance tests...\033[0m"
+
+ifeq ($(DEBUG), true)
+	PROVIDER_DEBUG=1 TF_ACC=1 go test -run=TestAcc$(NAME) -count=1 -parallel=$(shell nproc) -timeout 30m -coverpkg=./corefuncprovider/... -coverprofile=__coverage.out -v ./corefuncprovider/...
+else
 	TF_ACC=1 gotestsum --format testname -- -run=TestAcc$(NAME) -count=1 -parallel=$(shell nproc) -timeout 30m -coverpkg=./corefuncprovider/... -coverprofile=__coverage.out -v ./corefuncprovider/...
+endif
 
 .PHONY: unit
 ## unit: [test] Runs unit tests. Set NAME= (without 'Test') to run a specific test by name
@@ -305,6 +310,11 @@ quickbench:
 ## bench: [test]* Runs the benchmarks with enough data for analysis with benchstat.
 bench:
 	$(GO) test -bench=. -count=6 -timeout 60m -benchmem -cpuprofile=__cpu.out -memprofile=__mem.out -trace=__trace.out ./corefunc | tee __bench-$(shell date --utc "+%Y%m%dT%H%M%SZ").out
+
+.PHONY: pgo
+## pgo: [test] Runs the benchmarks with enough data for use with Profile-Guided Optimization.
+pgo:
+	TF_ACC=1 go test -run=^TestAcc -count=6 -cpuprofile=default.pgo -parallel=$(shell nproc) -timeout 60m ./corefuncprovider/...
 
 .PHONY: view-cov-cli
 ## view-cov-cli: [test] After running test or unittest, this will view the coverage report on the CLI.
