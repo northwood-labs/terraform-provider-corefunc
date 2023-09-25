@@ -1,4 +1,5 @@
 #!/usr/bin/env bats
+# https://bats-core.readthedocs.io/en/stable/writing-tests.html
 
 @test "listing the data sources" {
     run tfschema data list corefunc
