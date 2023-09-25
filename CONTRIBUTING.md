@@ -249,6 +249,12 @@ make bats
 
 #### How to write a BATS test
 
+`tfschema` is a tool that can view the schema of any Terraform provider that is installed (via `terraform init` or `make build`). After installing the provider, we can run `tfschema` to generate output information. We use BATS to test that output against what is expected.
+
+* A BATS test lives in the `bats/` directory.
+* [BATS: Writing tests](https://bats-core.readthedocs.io/en/stable/writing-tests.html)
+* [tfschema: README](https://github.com/minamijoyo/tfschema)
+
 ### Fuzzer
 
 Fuzzing is a type of automated testing which continuously manipulates inputs to a program to find bugs. Go fuzzing uses coverage guidance to intelligently walk through the code being fuzzed to find and report failures to the user. Since it can reach edge cases which humans often miss, fuzz testing can be particularly valuable for finding security exploits and vulnerabilities.
