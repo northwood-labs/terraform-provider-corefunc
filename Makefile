@@ -3,7 +3,6 @@
 
 SHELL:=bash
 BINARY_NAME=terraform-provider-corefunc
-BINARY_VERSION=$(shell cat ./VERSION | tr -d '\n')
 GOBIN=$(shell ./find-go-bin.sh)
 mkfile_path := $(abspath $(lastword $(MAKEFILE_LIST)))
 current_dir := $(dir $(mkfile_path))
@@ -109,8 +108,7 @@ tidy:
 	@ $(ECHO) " "
 	@ $(ECHO) "\033[1;33m=====> Tidy and download the Go dependencies...\033[0m"
 	$(GO) mod tidy -go=1.21 -v
-	$(GO) mod download -x
-	$(GO) get -v ./...
+	$(GO) get -d -u -t -v ./...
 
 .PHONY: build
 ## build: [build]* Builds and installs the Terraform provider.
