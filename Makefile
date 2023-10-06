@@ -108,6 +108,12 @@ tidy:
 	@ $(ECHO) " "
 	@ $(ECHO) "\033[1;33m=====> Tidy and download the Go dependencies...\033[0m"
 	$(GO) mod tidy -go=1.21 -v
+
+.PHONY: godeps
+## godeps: [build] Updates go.mod and downloads dependencies.
+godeps:
+	@ $(ECHO) " "
+	@ $(ECHO) "\033[1;33m=====> Upgrade the minor versions of Go dependencies...\033[0m"
 	$(GO) get -d -u -t -v ./...
 
 .PHONY: build
@@ -117,7 +123,6 @@ build: tidy
 	@ $(ECHO) " "
 	@ $(ECHO) "\033[1;33m=====> Building and installing the provider...\033[0m"
 	$(GO) install -a -ldflags="-s -w" .
-	@ $(ECHO) " "
 	@ ls -lahF $(GOBIN)/$(BINARY_NAME)
 
 #-------------------------------------------------------------------------------
@@ -258,6 +263,32 @@ lint: vuln license pre-commit
 .PHONY: test
 ## test: [test]* Runs ALL tests.
 test: unit examples acc bats
+
+.PHONY: list-tests
+## list-tests: [test] Lists all of the tests that are available to run.
+list-tests:
+	@ $(ECHO) " "
+	@ $(ECHO) "\033[1;33m=====> Unit tests...\033[0m"
+	@ $(ECHO) "make unit"
+	@ cat ./corefunc/*_test.go | ggrep "func Test" | gsed 's/func\s//g' | gsed -r 's/\(.*//g' | gsed -r 's/Test/make unit NAME=/g'
+
+	@ $(ECHO) " "
+	@ $(ECHO) "\033[1;33m=====> Terraform acceptance tests...\033[0m"
+	@ $(ECHO) "make acc"
+	@ cat ./corefuncprovider/*_test.go | ggrep "func TestAcc" | gsed 's/func\s//g' | gsed -r 's/\(.*//g' | gsed -r 's/TestAcc/make acc NAME=/g'
+
+	@ $(ECHO) " "
+	@ $(ECHO) "\033[1;33m=====> Example tests...\033[0m"
+	@ $(ECHO) "make examples"
+	@ cat ./corefunc/*_test.go | ggrep "func Example" | gsed 's/func\s//g' | gsed -r 's/\(.*//g' | gsed -r 's/Example/make examples NAME=/g'
+
+	@ $(ECHO) " "
+	@ $(ECHO) "\033[1;33m=====> Fuzzing tests...\033[0m"
+	@ cat ./corefunc/*_test.go | ggrep "func Fuzz" | gsed 's/func\s//g' | gsed -r 's/\(.*//g' | gsed -r 's/Fuzz/make fuzz NAME=/g'
+
+	@ $(ECHO) " "
+	@ $(ECHO) "\033[1;33m=====> BATS tests...\033[0m"
+	@ $(ECHO) "make bats"
 
 .PHONY: bats
 ## bats: [test] Tests the output of the provider using tfschema and BATS.

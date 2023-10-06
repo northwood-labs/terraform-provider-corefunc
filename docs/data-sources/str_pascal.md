@@ -30,25 +30,25 @@ data "corefunc_str_pascal" "test_initialisms_ip_html_eof_ascii_cpu" {
 }
 
 #=> TestInitialismsIPHTMLEOFASCIICPU
+```
 
-#-----------------------------------------------------------------------
-
+```terraform
 data "corefunc_str_pascal" "test_from_camel" {
   string = "TestFromCamel"
 }
 
 #=> TestFromCamel
+```
 
-#-----------------------------------------------------------------------
-
+```terraform
 data "corefunc_str_pascal" "this_is_an_example" {
   string = "This is [an] {example}$${id32}."
 }
 
 #=> ThisIsAnExampleID32
+```
 
-#-----------------------------------------------------------------------
-
+```terraform
 data "corefunc_str_pascal" "test_with_number" {
   string = "test with number -123.456"
 }

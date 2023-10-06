@@ -7,9 +7,11 @@
     [ "$status" -eq 0 ]
     [[ ${lines[0]} == "corefunc_env_ensure" ]]
     [[ ${lines[1]} == "corefunc_str_camel" ]]
-    [[ ${lines[2]} == "corefunc_str_pascal" ]]
-    [[ ${lines[3]} == "corefunc_str_snake" ]]
-    [[ ${lines[4]} == "corefunc_str_truncate_label" ]]
+    [[ ${lines[2]} == "corefunc_str_kebab" ]]
+    [[ ${lines[3]} == "corefunc_str_pascal" ]]
+    [[ ${lines[4]} == "corefunc_str_snake" ]]
+    [[ ${lines[5]} == "corefunc_str_truncate_label" ]]
+
 }
 
 @test "corefunc_env_ensure: attrs" {
@@ -24,6 +26,15 @@
 
 @test "corefunc_str_camel: attrs" {
     run bash -c "tfschema data show -format=json corefunc_str_camel | jq -Mrc '.attributes[]'"
+
+    [ "$status" -eq 0 ]
+    [[ ${lines[0]} == '{"name":"id","type":"number","required":false,"optional":false,"computed":true,"sensitive":false}' ]]
+    [[ ${lines[1]} == '{"name":"string","type":"string","required":true,"optional":false,"computed":false,"sensitive":false}' ]]
+    [[ ${lines[2]} == '{"name":"value","type":"string","required":false,"optional":false,"computed":true,"sensitive":false}' ]]
+}
+
+@test "corefunc_str_kebab: attrs" {
+    run bash -c "tfschema data show -format=json corefunc_str_kebab | jq -Mrc '.attributes[]'"
 
     [ "$status" -eq 0 ]
     [[ ${lines[0]} == '{"name":"id","type":"number","required":false,"optional":false,"computed":true,"sensitive":false}' ]]
