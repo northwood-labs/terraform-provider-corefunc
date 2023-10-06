@@ -70,13 +70,6 @@ repos:
       - id: golangci-lint
       # - id: go-consistent
       - id: gomodupdate
-      - id: markdownlint
-        args:
-          - --ignore=node_modules
-          - --ignore=.github
-          - --ignore=.templates
-          - --fix
-          - '**/*.md'
       - id: script-must-have-extension
       - id: shellcheck
       - id: shfmt
@@ -92,6 +85,17 @@ repos:
       # - id: tfsec
       - id: yamlfmt
       - id: yapf
+
+  - repo: https://github.com/igorshubovych/markdownlint-cli
+    rev: v0.36.0
+    hooks:
+      - id: markdownlint
+        args:
+          - --ignore=node_modules
+          - --ignore=.github
+          - --ignore=.templates
+          - --fix
+          - '**/*.md'
 
   - repo: local
     hooks:

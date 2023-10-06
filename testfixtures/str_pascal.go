@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package testfixtures
+package testfixtures // lint:no_dupe
 
 // StrPascalTestTable is used by both the standard Go tests and also the
 // Terraform acceptance tests.
