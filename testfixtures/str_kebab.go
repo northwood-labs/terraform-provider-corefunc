@@ -14,10 +14,10 @@
 
 package testfixtures // lint:no_dupe
 
-// StrSnakeTestTable is used by both the standard Go tests and also the
+// StrKebabTestTable is used by both the standard Go tests and also the
 // Terraform acceptance tests.
 // <https://github.com/golang/go/wiki/TableDrivenTests>
-var StrSnakeTestTable = map[string]struct { // lint:no_dupe
+var StrKebabTestTable = map[string]struct { // lint:no_dupe
 	Input    string
 	Expected string
 }{
@@ -31,54 +31,54 @@ var StrSnakeTestTable = map[string]struct { // lint:no_dupe
 	},
 	"aA": {
 		Input:    "aA",
-		Expected: "a_a",
+		Expected: "a-a",
 	},
 	"aAa": {
 		Input:    "aAa",
-		Expected: "a_aa",
+		Expected: "a-aa",
 	},
 	"AaA": {
 		Input:    "AaA",
-		Expected: "aa_a",
+		Expected: "aa-a",
 	},
 	"test_from_snake": {
 		Input:    "test_from_snake",
-		Expected: "test_from_snake",
+		Expected: "test-from-snake",
 	},
 	"TestFromCamel": {
 		Input:    "TestFromCamel",
-		Expected: "test_from_camel",
+		Expected: "test-from-camel",
 	},
 	"testFromLowerCamel": {
 		Input:    "testFromLowerCamel",
-		Expected: "test_from_lower_camel",
+		Expected: "test-from-lower-camel",
 	},
 	"test_with_number_123": {
 		Input:    "test_with_number_123",
-		Expected: "test_with_number_123",
+		Expected: "test-with-number-123",
 	},
 	"test with number -123": {
 		Input:    "test with number -123",
-		Expected: "test_with_number_123",
+		Expected: "test-with-number-123",
 	},
 	"test with number -123.456": {
 		Input:    "test with number -123.456",
-		Expected: "test_with_number_123_456",
+		Expected: "test-with-number-123-456",
 	},
 	"test with number -123.456e-2": {
 		Input:    "test with number -123.456e-2",
-		Expected: "test_with_number_123_456e_2",
+		Expected: "test-with-number-123-456e-2",
 	},
 	"test initialisms ram tcp ttl ascii": {
 		Input:    "test initialisms ram tcp ttl ascii",
-		Expected: "test_initialisms_ram_tcp_ttl_ascii",
+		Expected: "test-initialisms-ram-tcp-ttl-ascii",
 	},
 	"v3.2.2": {
 		Input:    "v3.2.2",
-		Expected: "v3_2_2",
+		Expected: "v3-2-2",
 	},
 	"This is [an] {example}${id32}.": {
 		Input:    "This is [an] {example}$${id32}.",
-		Expected: "this_is_an_example_id_32",
+		Expected: "this-is-an-example-id-32",
 	},
 }

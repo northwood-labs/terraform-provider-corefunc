@@ -10,5 +10,4 @@ terraform {
 }
 
 # There are no configuration options
-
 provider "corefunc" {}

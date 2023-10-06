@@ -1,0 +1,26 @@
+<!--
+---
+page_title: "{{.Name}} {{.Type}} - {{.ProviderName}}"
+subcategory: ""
+description: |-
+{{ .Description | plainmarkdown | trimspace | prefixlines "  " }}
+---
+-->
+
+# {{.Name}} ({{.Type}})
+
+{{ .Description | trimspace }}
+
+## Example Usage
+
+{{ tffile "examples/data-sources/corefunc_str_kebab/data-source.v322.tf" }}
+
+{{ tffile "examples/data-sources/corefunc_str_kebab/data-source.test_from_camel.tf" }}
+
+{{ tffile "examples/data-sources/corefunc_str_kebab/data-source.test_with_number.tf" }}
+
+{{ tffile "examples/data-sources/corefunc_str_kebab/data-source.this_is_an_example.tf" }}
+
+{{ .SchemaMarkdown | trimspace }}
+
+<!-- Preview the provider docs with the Terraform registry provider docs preview tool: https://registry.terraform.io/tools/doc-preview -->

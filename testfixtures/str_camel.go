@@ -12,12 +12,12 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package testfixtures
+package testfixtures // lint:no_dupe
 
 // StrCamelTestTable is used by both the standard Go tests and also the
 // Terraform acceptance tests.
 // <https://github.com/golang/go/wiki/TableDrivenTests>
-var StrCamelTestTable = map[string]struct {
+var StrCamelTestTable = map[string]struct { // lint:no_dupe
 	Input       string
 	Expected    string
 	AcronymCaps bool
