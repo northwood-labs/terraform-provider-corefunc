@@ -1,7 +1,7 @@
 # Terraform Provider: Core Functions
 
 > [!NOTE]
-> We intend to support OpenTF in addition to Terraform.
+> We intend to support OpenTofu (née OpenTF) in addition to Terraform.
 
 Utilities that should have been Terraform _core functions_.
 
