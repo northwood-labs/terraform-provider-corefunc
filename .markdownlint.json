@@ -1,6 +1,5 @@
 {
-  "heading-increment": false,
-  "first-header-h1": true,
+  "heading-increment": true,
   "header-style": {
     "style": "atx"
   },
@@ -16,7 +15,6 @@
     "br_spaces": 2,
     "list_item_empty_lines": false
   },
-  "single-trailing-newline": true,
   "no-hard-tabs": {
     "code_blocks": false
   },
@@ -32,6 +30,8 @@
   "commands-show-output": false,
   "no-missing-space-atx": true,
   "no-multiple-space-atx": true,
+  "no-missing-space-closed-atx": true,
+  "no-multiple-space-closed-atx": true,
   "blanks-around-headers": {
     "lines_above": 1,
     "lines_below": 1
@@ -87,13 +87,34 @@
   "no-space-in-code": false,
   "no-space-in-links": true,
   "fenced-code-language": true,
-  "code-block-style": {
-    "style": "fenced"
-  },
   "first-line-h1": false,
   "no-empty-links": true,
   "proper-names": {
     "names": [],
-    "code_blocks": false
+    "code_blocks": false,
+    "html_elements": false
+  },
+  "no-alt-text": true,
+  "code-block-style": {
+    "style": "fenced"
+  },
+  "single-trailing-newline": true,
+  "code-fence-style": {
+    "style": "backtick"
+  },
+  "emphasis-style": {
+    "style": "underscore"
+  },
+  "strong-style": {
+    "style": "asterisk"
+  },
+  "link-fragments": true,
+  "reference-links-images": {
+    "shortcut_syntax": false
+  },
+  "link-image-reference-definitions": {
+    "ignored_definitions": [
+      "//"
+    ]
   }
 }
