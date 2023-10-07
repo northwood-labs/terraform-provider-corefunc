@@ -1,4 +1,4 @@
-data "corefunc_str_snake" "this_is_an_example" {
+data "corefunc_str_constant" "this_is_an_example" {
   string = "This is [an] {example}$${id32}."
 }
 

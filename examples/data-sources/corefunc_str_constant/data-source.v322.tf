@@ -1,4 +1,4 @@
-data "corefunc_str_snake" "v322" {
+data "corefunc_str_constant" "v322" {
   string = "v3.2.2"
 }
 
