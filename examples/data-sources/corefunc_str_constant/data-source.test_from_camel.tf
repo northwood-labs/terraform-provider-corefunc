@@ -1,4 +1,4 @@
-data "corefunc_str_snake" "test_from_camel" {
+data "corefunc_str_constant" "test_from_camel" {
   string = "TestFromCamel"
 }
 

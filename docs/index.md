@@ -53,7 +53,7 @@ pre-built functions in the form of _Data Sources_.
 
 ```terraform
 terraform {
-  required_version = "~> 1.1"
+  required_version = "~> 1.1, < 1.6"
 
   required_providers {
     corefunc = {
