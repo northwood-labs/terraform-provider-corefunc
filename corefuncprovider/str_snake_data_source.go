@@ -137,7 +137,7 @@ func (d strSnakeDataSource) Create(
 }
 
 // Read refreshes the Terraform state with the latest data.
-func (d *strSnakeDataSource) Read(
+func (d *strSnakeDataSource) Read( // lint:no_dupe
 	ctx context.Context,
 	_ datasource.ReadRequest, // lint:allow_large_memory
 	resp *datasource.ReadResponse,

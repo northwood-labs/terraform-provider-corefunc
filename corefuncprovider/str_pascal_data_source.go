@@ -147,7 +147,7 @@ func (d strPascalDataSource) Create(
 }
 
 // Read refreshes the Terraform state with the latest data.
-func (d *strPascalDataSource) Read(
+func (d *strPascalDataSource) Read( // lint:no_dupe
 	ctx context.Context,
 	_ datasource.ReadRequest, // lint:allow_large_memory
 	resp *datasource.ReadResponse,
