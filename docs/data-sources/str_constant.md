@@ -21,7 +21,7 @@ Go method, which can be used in [Terratest](https://terratest.gruntwork.io).
 ## Example Usage
 
 ```terraform
-data "corefunc_str_snake" "v322" {
+data "corefunc_str_constant" "v322" {
   string = "v3.2.2"
 }
 
@@ -29,7 +29,7 @@ data "corefunc_str_snake" "v322" {
 ```
 
 ```terraform
-data "corefunc_str_snake" "test_from_camel" {
+data "corefunc_str_constant" "test_from_camel" {
   string = "TestFromCamel"
 }
 
@@ -37,7 +37,7 @@ data "corefunc_str_snake" "test_from_camel" {
 ```
 
 ```terraform
-data "corefunc_str_snake" "test_with_number" {
+data "corefunc_str_constant" "test_with_number" {
   string = "test with number -123.456"
 }
 
@@ -45,7 +45,7 @@ data "corefunc_str_snake" "test_with_number" {
 ```
 
 ```terraform
-data "corefunc_str_snake" "this_is_an_example" {
+data "corefunc_str_constant" "this_is_an_example" {
   string = "This is [an] {example}$${id32}."
 }
 
