@@ -34,6 +34,8 @@ func main() {
 	}
 
 	fmt.Println("")
+	fmt.Println("Add " + varMap["PascalStrip"] + "DataSource" + " to " + getAbs("../corefuncprovider/provider.go"))
+	fmt.Println("")
 
 	// ../bats
 	writeFileFromTemplate(
@@ -97,9 +99,6 @@ func main() {
 		getAbs("./examples/versions.tftpl"),
 		getAbs(edsPath+"/versions.tftpl"),
 	)
-
-	fmt.Println("")
-	fmt.Println("Add " + varMap["PascalStrip"] + "DataSource" + " to " + getAbs("../corefuncprovider/provider.go"))
 }
 
 func getAbs(path string) string {
