@@ -837,6 +837,7 @@ issues:
 
     - linters:
         - tagliatelle
+        - gofumpt
       source: lint:allow_format
 
     - text: (is unused)

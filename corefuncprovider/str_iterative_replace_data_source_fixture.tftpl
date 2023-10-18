@@ -1,0 +1,12 @@
+data "corefunc_str_iterative_replace" "replacements" {
+    string = "{{ .Input }}"
+    replacements = [
+{{- with .Replacements }}{{- range . }}
+        {
+            old = "{{- .Old -}}"
+            new = "{{- .New -}}"
+        },
+{{- end }}{{- end }}
+    ]
+}
+#=> {{ .Expected }}

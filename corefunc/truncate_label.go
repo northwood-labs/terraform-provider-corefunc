@@ -30,11 +30,11 @@ string.
 
 ----
 
-* maxLength (int64): The maximum allowed length of the combined label.
+  - maxLength (int64): The maximum allowed length of the combined label.
 
-* prefix (string): The prefix to prepend to the label.
+  - prefix (string): The prefix to prepend to the label.
 
-* label (string): The label itself.
+  - label (string): The label itself.
 
 ----
 

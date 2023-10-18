@@ -32,9 +32,10 @@ variable is not set, or if its value doesn't match the expected patttern.
 
 ----
 
-* name (string): The name of the environment variable to check.
+  - name (string): The name of the environment variable to check.
 
-* pattern (*regexp.Regexp): The result of a call to `regexp.Compile()` or `regexp.MustCompile()`.
+  - pattern (*regexp.Regexp): The result of a call to `regexp.Compile()` or
+    `regexp.MustCompile()`.
 */
 func EnvEnsure(name string, pattern ...*regexp.Regexp) error {
 	if os.Getenv(name) == "" {
