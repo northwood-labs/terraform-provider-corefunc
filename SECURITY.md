@@ -16,7 +16,7 @@ currently being supported with security updates.
 
 ## Reporting a Vulnerability
 
-If you believe you have found a legitimate security vulnerability, please report it to <ryan@ryanparman.com>.
+If you believe you have found a legitimate security vulnerability, please [report it](https://github.com/northwood-labs/terraform-provider-corefunc/security/advisories/new).
 
 There is no bounty program, and there are no payments for discovering/reporting security vulnerabilities, but we **all** benefit from software that is more secure. Happy to provide public thanks once the issue has been resolved.
 
