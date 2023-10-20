@@ -5,7 +5,7 @@ contact_links:
     url: https://github.com/northwood-labs/terraform-provider-corefunc/discussions
     about: Please ask and answer questions here.
   - name: Documentation for the Go library.
-    url: https://pkg.go.dev/github.com/northwood-labs/terraform-provider-corefunc
+    url: https://pkg.go.dev/github.com/northwood-labs/terraform-provider-corefunc/corefunc
     about: Read Go library documentation.
   - name: Documentation for the Terraform provider.
     url: https://registry.terraform.io/providers/northwood-labs/corefunc
