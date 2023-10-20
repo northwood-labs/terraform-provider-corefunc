@@ -1,6 +1,6 @@
 ---
 name: Feature Request
-description: Request new functionality
+description: Request new functionality.
 title: '[Feature]: '
 labels: [feature, triage]
 assignees:
