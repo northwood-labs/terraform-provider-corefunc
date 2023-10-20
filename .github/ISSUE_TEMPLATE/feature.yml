@@ -14,7 +14,8 @@ body:
     id: what-do-you-want
     attributes:
       label: What functionality would you like to see?
-      description: This should be functionality that (a) is not built into Terraform, (b) can be implemented via a Terraform
+      description: |
+        This should be functionality that (a) is not built into Terraform, (b) can be implemented via a Terraform
         provider, and (c) can be implemented as a function in Go.
       placeholder: ''
       value: ''
