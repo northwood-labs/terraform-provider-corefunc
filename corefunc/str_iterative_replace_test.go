@@ -18,16 +18,14 @@ import (
 	"fmt"
 	"testing"
 
+	"github.com/northwood-labs/terraform-provider-corefunc/corefunc/types"
 	"github.com/northwood-labs/terraform-provider-corefunc/testfixtures"
 )
 
 func ExampleStrIterativeReplace() {
 	output := StrIterativeReplace(
 		"This is a string for testing replacements. New Relic. Set-up.",
-		[]struct {
-			Old string `tfsdk:"old"`
-			New string `tfsdk:"new"`
-		}{
+		[]types.Replacement{
 			{Old: ".", New: ""},
 			{Old: " ", New: "_"},
 			{Old: "-", New: "_"},
@@ -94,10 +92,7 @@ func FuzzStrIterativeReplace(f *testing.F) {
 
 	f.Fuzz(
 		func(t *testing.T, in string) {
-			_ = StrIterativeReplace(in, []struct {
-				Old string `tfsdk:"old"`
-				New string `tfsdk:"new"`
-			}{
+			_ = StrIterativeReplace(in, []types.Replacement{
 				{Old: in, New: in},
 			})
 		},

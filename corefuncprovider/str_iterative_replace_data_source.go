@@ -27,6 +27,7 @@ import (
 	"github.com/hashicorp/terraform-plugin-log/tflog"
 	"github.com/lithammer/dedent"
 	"github.com/northwood-labs/terraform-provider-corefunc/corefunc"
+	cfTypes "github.com/northwood-labs/terraform-provider-corefunc/corefunc/types"
 )
 
 // Ensure the implementation satisfies the expected interfaces.
@@ -41,13 +42,10 @@ type (
 
 	// strIterativeReplaceDataSourceModel maps the data source schema data.
 	strIterativeReplaceDataSourceModel struct {
-		ID           types.Int64  `tfsdk:"id"`
-		String       types.String `tfsdk:"string"`
-		Value        types.String `tfsdk:"value"`
-		Replacements []struct {
-			Old string `tfsdk:"old"`
-			New string `tfsdk:"new"`
-		} `tfsdk:"replacements"`
+		ID           types.Int64           `tfsdk:"id"`
+		String       types.String          `tfsdk:"string"`
+		Value        types.String          `tfsdk:"value"`
+		Replacements []cfTypes.Replacement `tfsdk:"replacements"`
 	}
 )
 

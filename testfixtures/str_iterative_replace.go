@@ -14,23 +14,19 @@
 
 package testfixtures // lint:no_dupe
 
-// StrIterativeReplaceTestTable is used by both the standard Go tests and also the
-// Terraform acceptance tests.
+import "github.com/northwood-labs/terraform-provider-corefunc/corefunc/types"
+
+// StrIterativeReplaceTestTable is used by both the standard Go tests and also
+// the Terraform acceptance tests.
 // <https://github.com/golang/go/wiki/TableDrivenTests>
 var StrIterativeReplaceTestTable = map[string]struct { // lint:no_dupe
-	Replacements []struct {
-		Old string `tfsdk:"old"`
-		New string `tfsdk:"new"`
-	}
-	Input    string
-	Expected string
+	Replacements []types.Replacement
+	Input        string
+	Expected     string
 }{
 	"replacements": {
 		Input: "This is a string for testing replacements. New Relic. Set-up.",
-		Replacements: []struct {
-			Old string `tfsdk:"old"`
-			New string `tfsdk:"new"`
-		}{
+		Replacements: []types.Replacement{
 			{Old: ".", New: ""},
 			{Old: " ", New: "_"},
 			{Old: "-", New: "_"},
