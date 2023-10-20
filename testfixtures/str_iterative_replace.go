@@ -18,18 +18,18 @@ package testfixtures // lint:no_dupe
 // Terraform acceptance tests.
 // <https://github.com/golang/go/wiki/TableDrivenTests>
 var StrIterativeReplaceTestTable = map[string]struct { // lint:no_dupe
-	Replacement []struct {
-		Old string
-		New string
+	Replacements []struct {
+		Old string `tfsdk:"old"`
+		New string `tfsdk:"new"`
 	}
 	Input    string
 	Expected string
 }{
 	"replacements": {
 		Input: "This is a string for testing replacements. New Relic. Set-up.",
-		Replacement: []struct {
-			Old string
-			New string
+		Replacements: []struct {
+			Old string `tfsdk:"old"`
+			New string `tfsdk:"new"`
 		}{
 			{Old: ".", New: ""},
 			{Old: " ", New: "_"},

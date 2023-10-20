@@ -25,8 +25,8 @@ func ExampleStrIterativeReplace() {
 	output := StrIterativeReplace(
 		"This is a string for testing replacements. New Relic. Set-up.",
 		[]struct {
-			Old string
-			New string
+			Old string `tfsdk:"old"`
+			New string `tfsdk:"new"`
 		}{
 			{Old: ".", New: ""},
 			{Old: " ", New: "_"},
@@ -46,7 +46,7 @@ func ExampleStrIterativeReplace() {
 func TestStrIterativeReplace(t *testing.T) {
 	for name, tc := range testfixtures.StrIterativeReplaceTestTable {
 		t.Run(name, func(t *testing.T) {
-			output := StrIterativeReplace(tc.Input, tc.Replacement)
+			output := StrIterativeReplace(tc.Input, tc.Replacements)
 
 			if output != tc.Expected {
 				t.Errorf("Expected %s, got %s", tc.Expected, output)
@@ -61,7 +61,7 @@ func BenchmarkStrIterativeReplace(b *testing.B) {
 		b.Run(name, func(b *testing.B) {
 			b.ResetTimer()
 			for i := 0; i < b.N; i++ {
-				_ = StrIterativeReplace(tc.Input, tc.Replacement)
+				_ = StrIterativeReplace(tc.Input, tc.Replacements)
 			}
 		})
 	}
@@ -74,7 +74,7 @@ func BenchmarkStrIterativeReplaceParallel(b *testing.B) {
 			b.ResetTimer()
 			b.RunParallel(func(pb *testing.PB) {
 				for pb.Next() {
-					_ = StrIterativeReplace(tc.Input, tc.Replacement)
+					_ = StrIterativeReplace(tc.Input, tc.Replacements)
 				}
 			})
 		})
@@ -86,7 +86,7 @@ func FuzzStrIterativeReplace(f *testing.F) {
 		f.Add(tc.Input)
 		f.Add(tc.Expected)
 
-		for _, r := range tc.Replacement {
+		for _, r := range tc.Replacements {
 			f.Add(r.Old)
 			f.Add(r.New)
 		}
@@ -95,8 +95,8 @@ func FuzzStrIterativeReplace(f *testing.F) {
 	f.Fuzz(
 		func(t *testing.T, in string) {
 			_ = StrIterativeReplace(in, []struct {
-				Old string
-				New string
+				Old string `tfsdk:"old"`
+				New string `tfsdk:"new"`
 			}{
 				{Old: in, New: in},
 			})

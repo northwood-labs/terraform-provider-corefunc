@@ -5,5 +5,8 @@
     run bash -c "tfschema data show -format=json corefunc_str_iterative_replace | jq -Mrc '.attributes[]'"
 
     [ "$status" -eq 0 ]
-    [[ ${lines[0]} == '@TODO' ]]
+    [[ ${lines[0]} == '{"name":"id","type":"number","required":false,"optional":false,"computed":true,"sensitive":false}' ]]
+    [[ ${lines[1]} == '{"name":"replacements","type":"list(object({new=string,old=string}))","required":true,"optional":false,"computed":false,"sensitive":false}' ]]
+    [[ ${lines[2]} == '{"name":"string","type":"string","required":true,"optional":false,"computed":false,"sensitive":false}' ]]
+    [[ ${lines[3]} == '{"name":"value","type":"string","required":false,"optional":false,"computed":true,"sensitive":false}' ]]
 }

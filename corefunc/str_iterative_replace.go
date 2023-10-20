@@ -19,9 +19,16 @@ import "strings"
 /*
 StrIterativeReplace iterates over a list of replacements. This allows you to
 accept a list of replacements of unknown length from users, and apply them all
-in sequence.
+in sequence. It is a wrapper around `strings.ReplaceAll()`.
 
-It is a wrapper around `strings.ReplaceAll()`.
+Unfortunately, we need to apply the `tfsdk` text every time we invoke this
+anonymous struct. As it turns out, Go treats this as part of its signature. Need
+to see if an interface will improve this syntactic mess.
+
+	[]struct {
+	    Old string `tfsdk:"old"`
+	    New string `tfsdk:"new"`
+	}
 
 ----
 
@@ -31,8 +38,8 @@ It is a wrapper around `strings.ReplaceAll()`.
     the string, in sequence.
 */
 func StrIterativeReplace(str string, replacements []struct {
-	Old string
-	New string
+	Old string `tfsdk:"old"`
+	New string `tfsdk:"new"`
 },
 ) string { // lint:allow_format
 	s := str

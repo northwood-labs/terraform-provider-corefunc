@@ -58,7 +58,7 @@ func TestAccStrIterativeReplaceDataSource(t *testing.T) {
 				{
 					Config: providerConfig + buf.String(),
 					Check: resource.ComposeAggregateTestCheckFunc(
-						resource.TestCheckResourceAttr("data.corefunc_str_iterative_replace.@TODO", "value", tc.Expected),
+						resource.TestCheckResourceAttr("data.corefunc_str_iterative_replace.replacements", "value", tc.Expected),
 					),
 				},
 			},

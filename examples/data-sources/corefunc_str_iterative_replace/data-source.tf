@@ -23,7 +23,7 @@ data "corefunc_str_iterative_replace" "replacements" {
     },
     {
       old = "Set_up"
-        new = "setup"
+      new = "setup"
     },
   ]
 }

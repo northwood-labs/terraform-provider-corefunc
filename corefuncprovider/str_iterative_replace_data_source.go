@@ -19,13 +19,14 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/chanced/caps"
+	"github.com/hashicorp/terraform-plugin-framework/attr"
 	"github.com/hashicorp/terraform-plugin-framework/datasource"
 	"github.com/hashicorp/terraform-plugin-framework/datasource/schema"
 	"github.com/hashicorp/terraform-plugin-framework/resource"
 	"github.com/hashicorp/terraform-plugin-framework/types"
 	"github.com/hashicorp/terraform-plugin-log/tflog"
 	"github.com/lithammer/dedent"
+	"github.com/northwood-labs/terraform-provider-corefunc/corefunc"
 )
 
 // Ensure the implementation satisfies the expected interfaces.
@@ -34,17 +35,19 @@ var (
 	_ datasource.DataSourceWithConfigure = &strIterativeReplaceDataSource{}
 )
 
-// strIterativeReplaceDataSource is the data source implementation.
 type (
+	// strIterativeReplaceDataSource is the data source implementation.
 	strIterativeReplaceDataSource struct{}
 
 	// strIterativeReplaceDataSourceModel maps the data source schema data.
 	strIterativeReplaceDataSourceModel struct {
-        // @TODO
-		ID types.Int64 `tfsdk:"id"`
-		// AcronymCaps types.Bool   `tfsdk:"acronym_caps"`
-		String types.String `tfsdk:"string"`
-		Value  types.String `tfsdk:"value"`
+		ID           types.Int64  `tfsdk:"id"`
+		String       types.String `tfsdk:"string"`
+		Value        types.String `tfsdk:"value"`
+		Replacements []struct {
+			Old string `tfsdk:"old"`
+			New string `tfsdk:"new"`
+		} `tfsdk:"replacements"`
 	}
 )
 
@@ -80,30 +83,35 @@ func (d *strIterativeReplaceDataSource) Schema(
 
 	resp.Schema = schema.Schema{
 		MarkdownDescription: strings.TrimSpace(dedent.Dedent(`
-        @TODO: Converts a string to ` + "`" + `FORMAT` + "`" + `, removing any non-alphanumeric characters.
+        Performs a series of replacements against a string. Allows a Terraform
+        module to accept a set of replacements from a user.
 
-        -> Some acronyms are maintained as uppercase. See
-        [caps: pkg-variables](https://pkg.go.dev/github.com/chanced/caps#pkg-variables) for a complete list.
-
-        Maps to the [` + "`" + `FUNCTION` + "`" + `](URL)
+        Maps to the [` + "`" + `corefunc.StrIterativeReplace()` + "`" + `](URL)
         Go method, which can be used in ` + Terratest + `.
         `)),
 		Attributes: map[string]schema.Attribute{
-            // @TODO
 			"id": schema.Int64Attribute{
 				Description: "Not used. Required by the " + TPF + ".",
 				Computed:    true,
 			},
 			"string": schema.StringAttribute{
-				Description: "The string to convert to `@TODO`.",
+				Description: "The string upon which replacements should be applied.",
 				Required:    true,
 			},
-			// "acronym_caps": schema.BoolAttribute{
-			// 	Description: "Whether or not to keep acronyms as uppercase. A value of `true` means that acronyms " +
-			// 		"will be converted to uppercase. A value of `false` means that acronyms will using typical " +
-			// 		"casing. The default value is `false`.",
-			// 	Optional: true,
-			// },
+			"replacements": schema.ListAttribute{
+				Description: strings.TrimSpace(dedent.Dedent(`
+                A list of maps. Each map has an ` + "`" + `old` + "`" + ` and ` + "`" + `new` + "`" +
+					` key. ` + "`" + `old` + "`" + ` represents the existing string to be replaced, and ` + "`" +
+					`new` + "`" + ` represents the replacement string.
+                `)),
+				Required: true,
+				ElementType: types.ObjectType{
+					AttrTypes: map[string]attr.Type{
+						"old": types.StringType,
+						"new": types.StringType,
+					},
+				},
+			},
 			"value": schema.StringAttribute{
 				Description: "The value of the string.",
 				Computed:    true,
@@ -162,7 +170,12 @@ func (d *strIterativeReplaceDataSource) Read( // lint:no_dupe
 
 	state.ID = types.Int64Value(1)
 
-	state.Value = types.StringValue(@TODO)
+	state.Value = types.StringValue(
+		corefunc.StrIterativeReplace(
+			state.String.ValueString(),
+			state.Replacements,
+		),
+	)
 
 	diags = resp.State.Set(ctx, &state)
 	resp.Diagnostics.Append(diags...)
