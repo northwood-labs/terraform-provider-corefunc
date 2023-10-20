@@ -104,6 +104,7 @@ func (p *coreFuncProvider) DataSources(ctx context.Context) []func() datasource.
 		EnvEnsureDataSource,
 		StrCamelDataSource,
 		StrConstantDataSource,
+		StrIterativeReplaceDataSource,
 		StrKebabDataSource,
 		StrPascalDataSource,
 		StrSnakeDataSource,
