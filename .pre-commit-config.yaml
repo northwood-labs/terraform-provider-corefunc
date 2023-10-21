@@ -96,8 +96,3 @@ repos:
         entry: bash -c 'trufflehog git file://. --since-commit HEAD --only-verified --fail --json 2>/dev/null | jq "."'
         language: system
         stages: [commit, push]
-
-  - repo: https://github.com/gitleaks/gitleaks
-    rev: v8.16.3
-    hooks:
-      - id: gitleaks

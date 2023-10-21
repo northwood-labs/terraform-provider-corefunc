@@ -3,7 +3,7 @@
 # by a third-party and are governed by separate terms of service, privacy
 # policy, and support documentation.
 
-name: Run govulncheck
+name: Govulncheck
 on:
   push:
     branches:
@@ -18,7 +18,7 @@ permissions: read-all
 jobs:
   govulncheck_job:
     runs-on: ubuntu-latest
-    name: Run govulncheck
+    name: Scan for vulns
     steps:
       - name: Harden Runner
         uses: step-security/harden-runner@1b05615854632b887b69ae1be8cbefe72d3ae423 # v2.6.0
