@@ -1,0 +1,27 @@
+---
+# This workflow uses actions that are not certified by GitHub. They are provided
+# by a third-party and are governed by separate terms of service, privacy
+# policy, and support documentation.
+
+name: Run govulncheck
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+# Declare default permissions as read only.
+permissions: read-all
+
+jobs:
+  osv_scanner_job:
+    runs-on: ubuntu-latest
+    name: Run osv-scanner
+    steps:
+      - name: Checkout Source
+        uses: actions/checkout@v4
+
+      - name: Check dependencies for security vulnerabilities
+        uses: g-rath/check-with-osv-detector@main

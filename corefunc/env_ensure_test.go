@@ -80,7 +80,7 @@ func BenchmarkEnvEnsure(b *testing.B) {
 		b.Run(name, func(b *testing.B) {
 			b.ResetTimer()
 			for i := 0; i < b.N; i++ {
-				EnvEnsure(tc.EnvVarName)
+				_ = EnvEnsure(tc.EnvVarName)
 			}
 		})
 	}
@@ -95,7 +95,7 @@ func BenchmarkEnvEnsureParallel(b *testing.B) {
 			b.ResetTimer()
 			b.RunParallel(func(pb *testing.PB) {
 				for pb.Next() {
-					EnvEnsure(tc.EnvVarName)
+					_ = EnvEnsure(tc.EnvVarName)
 				}
 			})
 		})

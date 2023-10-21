@@ -1,0 +1,29 @@
+---
+# This workflow uses actions that are not certified by GitHub. They are provided
+# by a third-party and are governed by separate terms of service, privacy
+# policy, and support documentation.
+
+name: Run gosec
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+# Declare default permissions as read only.
+permissions: read-all
+
+jobs:
+  gosec_job:
+    runs-on: ubuntu-latest
+    name: Run gosec
+    steps:
+      - name: Checkout Source
+        uses: actions/checkout@v4
+
+      - name: Run Gosec Security Scanner
+        uses: securego/gosec@master
+        with:
+          args: ./...
