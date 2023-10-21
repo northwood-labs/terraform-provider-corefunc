@@ -129,7 +129,7 @@ func writeFileFromTemplate(varMap map[string]string, templatePath, writePath str
 
 	tmpl := newTemplate(templatePath)
 
-	f, err := os.Create(writePath) // lint:allow_possible_insecure
+	f, err := os.Create(writePath) // #nosec G304 -- lint:allow_possible_insecure
 	if err != nil {
 		panic(err)
 	}

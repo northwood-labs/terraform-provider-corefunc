@@ -63,6 +63,7 @@ install-tools-go:
 	$(GO) install github.com/goph/licensei/cmd/licensei@latest
 	$(GO) install github.com/orlangure/gocovsh@latest
 	$(GO) install github.com/pelletier/go-toml/v2/cmd/tomljson@latest
+	$(GO) install github.com/securego/gosec/v2/cmd/gosec@latest
 	$(GO) install github.com/trufflesecurity/driftwood@latest
 	$(GO) install golang.org/x/perf/cmd/benchstat@latest
 	$(GO) install golang.org/x/tools/cmd/godoc@latest
@@ -212,6 +213,10 @@ vuln:
 	@ $(ECHO) " "
 	@ $(ECHO) "\033[1;33m=====> Running osv-scanner (https://osv.dev)...\033[0m"
 	osv-scanner -r .
+
+	@ $(ECHO) " "
+	@ $(ECHO) "\033[1;33m=====> Running gosec (https://github.com/securego/gosec)...\033[0m"
+	gosec -terse -tests ./...
 
 .PHONY: secrets
 ## secrets: [lint]* Checks for verifiable secrets.
