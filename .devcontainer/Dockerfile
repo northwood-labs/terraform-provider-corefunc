@@ -1,5 +1,5 @@
 # syntax=docker/dockerfile:1
-FROM --platform=$BUILDPLATFORM mcr.microsoft.com/devcontainers/base:ubuntu AS base-builder
+FROM --platform=$BUILDPLATFORM mcr.microsoft.com/devcontainers/base:ubuntu@sha256:a724e14d4175f641fd52ee317680e7b228d5c553c3ac1a558b069a3373688016 AS base-builder
 
 # Switch to proper Bash
 SHELL ["/bin/bash", "-euo", "pipefail", "-c"]
