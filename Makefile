@@ -11,7 +11,7 @@ current_dir := $(dir $(mkfile_path))
 # Global stuff.
 
 GO=$(shell which go)
-HOMEBREW_PACKAGES=bash bats-core coreutils findutils git git-lfs go jq nodejs pre-commit python@3.11 tfschema trufflesecurity/trufflehog/trufflehog
+HOMEBREW_PACKAGES=bash bats-core coreutils findutils git git-lfs go jq librsvg nodejs pre-commit python@3.11 tfschema trufflesecurity/trufflehog/trufflehog
 
 # Determine the operating system and CPU arch.
 OS=$(shell uname -o | tr '[:upper:]' '[:lower:]')
@@ -61,6 +61,7 @@ install-tools-go:
 	$(GO) install github.com/bitfield/gotestdox/cmd/gotestdox@latest
 	$(GO) install github.com/google/osv-scanner/cmd/osv-scanner@v1
 	$(GO) install github.com/goph/licensei/cmd/licensei@latest
+	$(GO) install github.com/nikolaydubina/go-binsize-treemap@latest
 	$(GO) install github.com/orlangure/gocovsh@latest
 	$(GO) install github.com/pelletier/go-toml/v2/cmd/tomljson@latest
 	$(GO) install github.com/securego/gosec/v2/cmd/gosec@latest
@@ -195,6 +196,14 @@ docs-serve:
 	@ $(ECHO) "\033[1;33m=====> Displaying Go HTTP documentation...\033[0m"
 	open http://localhost:6060/pkg/github.com/northwood-labs/terraform-provider-corefunc/corefunc/
 	godoc -index -links
+
+.PHONY: binsize
+## binsize: [docs] Analyze the size of the binary by Go package.
+binsize:
+	@ $(ECHO) " "
+	@ $(ECHO) "\033[1;33m=====> Displaying Go HTTP documentation...\033[0m"
+	$(GO) tool nm -size "$(GOBIN)/$(BINARY_NAME)" | go-binsize-treemap > binsize.svg
+	rsvg-convert --width=2000 --format=png --output="binsize.png" "binsize.svg"
 
 #-------------------------------------------------------------------------------
 # Linting
