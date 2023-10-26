@@ -55,11 +55,12 @@ func TestStrIterativeReplace(t *testing.T) {
 
 func BenchmarkStrIterativeReplace(b *testing.B) {
 	b.ReportAllocs()
+
 	for name, tc := range testfixtures.StrIterativeReplaceTestTable {
 		b.Run(name, func(b *testing.B) {
 			b.ResetTimer()
 			for i := 0; i < b.N; i++ {
-				_ = StrIterativeReplace(tc.Input, tc.Replacements)
+				_ = StrIterativeReplace(tc.Input, tc.Replacements) // lint:allow_unhandled
 			}
 		})
 	}
@@ -67,12 +68,13 @@ func BenchmarkStrIterativeReplace(b *testing.B) {
 
 func BenchmarkStrIterativeReplaceParallel(b *testing.B) {
 	b.ReportAllocs()
+
 	for name, tc := range testfixtures.StrIterativeReplaceTestTable {
 		b.Run(name, func(b *testing.B) {
 			b.ResetTimer()
 			b.RunParallel(func(pb *testing.PB) {
 				for pb.Next() {
-					_ = StrIterativeReplace(tc.Input, tc.Replacements)
+					_ = StrIterativeReplace(tc.Input, tc.Replacements) // lint:allow_unhandled
 				}
 			})
 		})
@@ -92,7 +94,7 @@ func FuzzStrIterativeReplace(f *testing.F) {
 
 	f.Fuzz(
 		func(t *testing.T, in string) {
-			_ = StrIterativeReplace(in, []types.Replacement{
+			_ = StrIterativeReplace(in, []types.Replacement{ // lint:allow_unhandled
 				{Old: in, New: in},
 			})
 		},

@@ -96,3 +96,17 @@ repos:
         entry: bash -c 'trufflehog git file://. --since-commit HEAD --only-verified --fail --json 2>/dev/null | jq "."'
         language: system
         stages: [commit, push]
+
+      - id: unconvert
+        name: 'Go: unconvert (current GOOS/GOARCH)'
+        description: Analyzes Go packages to identify unnecessary type conversions.
+        entry: bash -c 'unconvert -fastmath -tests -v ./...'
+        language: system
+        stages: [commit, push]
+
+      - id: smrcptr
+        name: 'Go: Same Receiver Pointer'
+        description: Don't mix receiver types. Choose either pointers or struct types for all available methods.
+        entry: bash -c 'smrcptr -skip-std=true --constructor=true ./...'
+        language: system
+        stages: [commit, push]

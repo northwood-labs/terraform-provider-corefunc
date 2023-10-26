@@ -47,6 +47,7 @@ func (p *coreFuncProvider) Metadata(
 	_ provider.MetadataRequest,
 	resp *provider.MetadataResponse,
 ) {
+
 	tflog.Info(ctx, "Starting Provider Metadata method.")
 
 	resp.TypeName = "corefunc"
@@ -92,6 +93,7 @@ func (p *coreFuncProvider) Configure(
 	_ provider.ConfigureRequest,
 	_ *provider.ConfigureResponse,
 ) {
+
 	tflog.Info(ctx, "Starting Provider Configure method.")
 	tflog.Info(ctx, "Ending Provider Configure method.")
 }

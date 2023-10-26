@@ -135,9 +135,9 @@ func writeFileFromTemplate(varMap map[string]string, templatePath, writePath str
 	}
 
 	defer func() {
-		err := f.Close()
-		if err != nil {
-			panic(err)
+		e := f.Close()
+		if e != nil {
+			panic(e)
 		}
 	}()
 

@@ -40,10 +40,10 @@ type (
 
 	// strPascalDataSourceModel maps the data source schema data.
 	strPascalDataSourceModel struct {
-		ID          types.Int64  `tfsdk:"id"`
-		AcronymCaps types.Bool   `tfsdk:"acronym_caps"`
 		String      types.String `tfsdk:"string"`
 		Value       types.String `tfsdk:"value"`
+		AcronymCaps types.Bool   `tfsdk:"acronym_caps"`
+		ID          types.Int64  `tfsdk:"id"`
 	}
 )
 
@@ -59,6 +59,7 @@ func (d *strPascalDataSource) Metadata(
 	req datasource.MetadataRequest,
 	resp *datasource.MetadataResponse,
 ) {
+
 	tflog.Info(ctx, "Starting StrPascal DataSource Metadata method.")
 
 	resp.TypeName = req.ProviderTypeName + "_str_pascal"
@@ -75,6 +76,7 @@ func (d *strPascalDataSource) Schema(
 	_ datasource.SchemaRequest,
 	resp *datasource.SchemaResponse,
 ) {
+
 	tflog.Info(ctx, "Starting StrPascal DataSource Schema method.")
 
 	resp.Schema = schema.Schema{
@@ -118,6 +120,7 @@ func (d *strPascalDataSource) Configure(
 	req datasource.ConfigureRequest,
 	_ *datasource.ConfigureResponse,
 ) {
+
 	tflog.Info(ctx, "Starting StrPascal DataSource Configure method.")
 
 	if req.ProviderData == nil {
@@ -127,11 +130,12 @@ func (d *strPascalDataSource) Configure(
 	tflog.Info(ctx, "Ending StrPascal DataSource Configure method.")
 }
 
-func (d strPascalDataSource) Create(
+func (d *strPascalDataSource) Create(
 	ctx context.Context,
 	req resource.CreateRequest, // lint:allow_large_memory
 	resp *resource.CreateResponse,
 ) {
+
 	tflog.Info(ctx, "Starting StrPascal DataSource Create method.")
 
 	var plan strPascalDataSourceModel
@@ -152,6 +156,7 @@ func (d *strPascalDataSource) Read( // lint:no_dupe
 	_ datasource.ReadRequest, // lint:allow_large_memory
 	resp *datasource.ReadResponse,
 ) {
+
 	tflog.Info(ctx, "Starting StrPascal DataSource Read method.")
 
 	var state strPascalDataSourceModel

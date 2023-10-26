@@ -14,81 +14,86 @@
 
 package testfixtures
 
+const (
+	TruncatePrefix = "NW-TEST-FIRST"
+	TruncateLabel  = "Name of my monitor"
+)
+
 // TruncateLabelTestTable is used by both the standard Go tests and also the
 // Terraform acceptance tests.
 // https://github.com/golang/go/wiki/TableDrivenTests
 var TruncateLabelTestTable = map[string]struct {
 	Prefix    string
 	Label     string
-	MaxLength int64
 	Expected  string
+	MaxLength int64
 }{
 	// ---------------------------------------------------------------------
 	// Very simple tests meant to illustrate the logic.
 
 	"simple0": {
-		Prefix:    "NW-TEST-FIRST",
-		Label:     "Name of my monitor",
+		Prefix:    TruncatePrefix,
+		Label:     TruncateLabel,
 		MaxLength: 0,
 		Expected:  "",
 	},
 	"simple3": {
-		Prefix:    "NW-TEST-FIRST",
-		Label:     "Name of my monitor",
+		Prefix:    TruncatePrefix,
+		Label:     TruncateLabel,
 		MaxLength: 3, // lint:allow_raw_number
 		Expected:  "…",
 	},
 	"simple5": {
-		Prefix:    "NW-TEST-FIRST",
-		Label:     "Name of my monitor",
+		Prefix:    TruncatePrefix,
+		Label:     TruncateLabel,
 		MaxLength: 5, // lint:allow_raw_number
 		Expected:  "…: …",
 	},
 	"simple7": {
-		Prefix:    "NW-TEST-FIRST",
-		Label:     "Name of my monitor",
+		Prefix:    TruncatePrefix,
+		Label:     TruncateLabel,
 		MaxLength: 7, // lint:allow_raw_number
 		Expected:  "…: Nam…",
 	},
 	"simple8": {
-		Prefix:    "NW-TEST-FIRST",
-		Label:     "Name of my monitor",
+		Prefix:    TruncatePrefix,
+		Label:     TruncateLabel,
 		MaxLength: 8, // lint:allow_raw_number
 		Expected:  "…: Name…",
 	},
 	"simple10": {
-		Prefix:    "NW-TEST-FIRST",
-		Label:     "Name of my monitor",
+		Prefix:    TruncatePrefix,
+		Label:     TruncateLabel,
 		MaxLength: 10, // lint:allow_raw_number
 		Expected:  "N…: Name…",
 	},
 	"simple20": {
-		Prefix:    "NW-TEST-FIRST",
-		Label:     "Name of my monitor",
+		Prefix:    TruncatePrefix,
+		Label:     TruncateLabel,
 		MaxLength: 20, // lint:allow_raw_number
 		Expected:  "NW-TES…: Name of my…",
 	},
 	"simple30": {
-		Prefix:    "NW-TEST-FIRST",
-		Label:     "Name of my monitor",
+		Prefix:    TruncatePrefix,
+		Label:     TruncateLabel,
 		MaxLength: 30, // lint:allow_raw_number
 		Expected:  "NW-TEST-FIR…: Name of my moni…",
 	},
 	"simple32": {
-		Prefix:    "NW-TEST-FIRST",
-		Label:     "Name of my monitor",
+		Prefix:    TruncatePrefix,
+		Label:     TruncateLabel,
 		MaxLength: 32, // lint:allow_raw_number
 		Expected:  "NW-TEST-FIRS…: Name of my monit…",
 	},
 	"simple33": {
-		Prefix:    "NW-TEST-FIRST",
-		Label:     "Name of my monitor",
+		Prefix:    TruncatePrefix,
+		Label:     TruncateLabel,
 		MaxLength: 33, // lint:allow_raw_number
 		Expected:  "NW-TEST-FIRST: Name of my monitor",
 	},
 	"simple64": {
-		Prefix:    "NW-TEST-FIRST",
-		Label:     "Name of my monitor",
+		Prefix:    TruncatePrefix,
+		Label:     TruncateLabel,
 		MaxLength: 64, // lint:allow_raw_number
 		Expected:  "NW-TEST-FIRST: Name of my monitor",
 	},
