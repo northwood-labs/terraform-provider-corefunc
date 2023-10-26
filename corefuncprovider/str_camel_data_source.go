@@ -44,6 +44,7 @@ type (
 		// AcronymCaps types.Bool   `tfsdk:"acronym_caps"`
 		String types.String `tfsdk:"string"`
 		Value  types.String `tfsdk:"value"`
+		ID     types.Int64  `tfsdk:"id"`
 	}
 )
 

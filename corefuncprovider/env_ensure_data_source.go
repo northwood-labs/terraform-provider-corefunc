@@ -46,6 +46,7 @@ type (
 		Name    types.String `tfsdk:"name"`
 		Pattern types.String `tfsdk:"pattern"`
 		Value   types.String `tfsdk:"value"`
+		ID      types.Int64  `tfsdk:"id"`
 	}
 )
 

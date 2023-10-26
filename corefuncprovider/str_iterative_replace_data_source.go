@@ -46,6 +46,7 @@ type (
 		String       types.String          `tfsdk:"string"`
 		Value        types.String          `tfsdk:"value"`
 		Replacements []cfTypes.Replacement `tfsdk:"replacements"`
+		ID           types.Int64           `tfsdk:"id"`
 	}
 )
 
