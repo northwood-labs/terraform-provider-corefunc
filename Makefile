@@ -11,7 +11,7 @@ current_dir := $(dir $(mkfile_path))
 # Global stuff.
 
 GO=$(shell which go)
-HOMEBREW_PACKAGES=bash bats-core coreutils findutils git git-lfs go jq librsvg nodejs pre-commit python@3.11 tfschema trufflesecurity/trufflehog/trufflehog
+HOMEBREW_PACKAGES=bash bats-core coreutils findutils git git-lfs go grep jq librsvg nodejs pre-commit python@3.11 tfschema trufflesecurity/trufflehog/trufflehog
 
 # Determine the operating system and CPU arch.
 OS=$(shell uname -o | tr '[:upper:]' '[:lower:]')
@@ -277,7 +277,7 @@ lint: vuln license pre-commit
 
 .PHONY: test
 ## test: [test]* Runs ALL tests.
-test: unit examples acc bats
+test: unit examples acc mutate bats
 
 .PHONY: list-tests
 ## list-tests: [test] Lists all of the tests that are available to run.
@@ -323,8 +323,8 @@ ifeq ($(DEBUG), true)
 else
 	TF_ACC=1 gotestsum --format testname -- -run=TestAcc$(NAME) -count=1 -parallel=$(shell nproc) -timeout 30m -coverpkg=./corefuncprovider/... -coverprofile=__coverage.out -v ./corefuncprovider/...
 endif
-	go-cover-treemap -coverprofile __coverage.out > acc-coverage.svg
-	rsvg-convert --width=2000 --format=png --output="acc-coverage.png" "acc-coverage.svg"
+	@ go-cover-treemap -coverprofile __coverage.out > acc-coverage.svg
+	@ rsvg-convert --width=2000 --format=png --output="acc-coverage.png" "acc-coverage.svg"
 
 .PHONY: unit
 ## unit: [test] Runs unit tests. Set NAME= (without 'Test') to run a specific test by name
@@ -332,8 +332,15 @@ unit:
 	@ $(ECHO) " "
 	@ $(ECHO) "\033[1;33m=====> Running unit tests...\033[0m"
 	gotestsum --format testname -- -run=Test$(NAME) -count=1 -parallel=$(shell nproc) -timeout 30s -coverpkg=./corefunc/... -coverprofile=__coverage.out -v ./corefunc/...
-	go-cover-treemap -coverprofile __coverage.out > unit-coverage.svg
-	rsvg-convert --width=2000 --format=png --output="unit-coverage.png" "unit-coverage.svg"
+	@ go-cover-treemap -coverprofile __coverage.out > unit-coverage.svg
+	@ rsvg-convert --width=2000 --format=png --output="unit-coverage.png" "unit-coverage.svg"
+
+.PHONY: mutate
+## mutate: [test] Runs mutation tests.
+mutate:
+	@ $(ECHO) " "
+	@ $(ECHO) "\033[1;33m=====> Running mutation tests...\033[0m"
+	cd ./corefunc && $(GO) test -tags=mutation -count=1 -parallel=$(shell nproc) -timeout 30s -ooze.v=true | ggrep -v "^[[:lower:]]" | ggrep -v "^)"
 
 .PHONY: examples
 ## examples: [test] Runs tests for examples. Set NAME= (without 'Example') to run a specific test by name
@@ -368,7 +375,7 @@ bench:
 pgo:
 	@ $(ECHO) " "
 	@ $(ECHO) "\033[1;33m=====> Running benchmark for PGO data...\033[0m"
-	TF_ACC=1 go test -run=^TestAcc -count=6 -cpuprofile=default.pgo -parallel=$(shell nproc) -timeout 60m ./corefuncprovider/...
+	TF_ACC=1 go test -run=^TestAcc -count=6 -timeout 60m -cpuprofile=default.pgo -parallel=$(shell nproc) ./corefuncprovider/...
 
 .PHONY: view-cov-cli
 ## view-cov-cli: [test] After running test or unittest, this will view the coverage report on the CLI.
