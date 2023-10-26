@@ -42,10 +42,10 @@ type (
 
 	// strIterativeReplaceDataSourceModel maps the data source schema data.
 	strIterativeReplaceDataSourceModel struct {
-		ID           types.Int64           `tfsdk:"id"`
 		String       types.String          `tfsdk:"string"`
 		Value        types.String          `tfsdk:"value"`
 		Replacements []cfTypes.Replacement `tfsdk:"replacements"`
+		ID           types.Int64           `tfsdk:"id"`
 	}
 )
 
@@ -61,6 +61,7 @@ func (d *strIterativeReplaceDataSource) Metadata(
 	req datasource.MetadataRequest,
 	resp *datasource.MetadataResponse,
 ) {
+
 	tflog.Info(ctx, "Starting StrIterativeReplace DataSource Metadata method.")
 
 	resp.TypeName = req.ProviderTypeName + "_str_iterative_replace"
@@ -77,6 +78,7 @@ func (d *strIterativeReplaceDataSource) Schema(
 	_ datasource.SchemaRequest,
 	resp *datasource.SchemaResponse,
 ) {
+
 	tflog.Info(ctx, "Starting StrIterativeReplace DataSource Schema method.")
 
 	resp.Schema = schema.Schema{
@@ -126,6 +128,7 @@ func (d *strIterativeReplaceDataSource) Configure(
 	req datasource.ConfigureRequest,
 	_ *datasource.ConfigureResponse,
 ) {
+
 	tflog.Info(ctx, "Starting StrIterativeReplace DataSource Configure method.")
 
 	if req.ProviderData == nil {
@@ -135,11 +138,12 @@ func (d *strIterativeReplaceDataSource) Configure(
 	tflog.Info(ctx, "Ending StrIterativeReplace DataSource Configure method.")
 }
 
-func (d strIterativeReplaceDataSource) Create(
+func (d *strIterativeReplaceDataSource) Create(
 	ctx context.Context,
 	req resource.CreateRequest, // lint:allow_large_memory
 	resp *resource.CreateResponse,
 ) {
+
 	tflog.Info(ctx, "Starting StrIterativeReplace DataSource Create method.")
 
 	var plan strIterativeReplaceDataSourceModel
@@ -160,6 +164,7 @@ func (d *strIterativeReplaceDataSource) Read( // lint:no_dupe
 	_ datasource.ReadRequest, // lint:allow_large_memory
 	resp *datasource.ReadResponse,
 ) {
+
 	tflog.Info(ctx, "Starting StrIterativeReplace DataSource Read method.")
 
 	var state strIterativeReplaceDataSourceModel

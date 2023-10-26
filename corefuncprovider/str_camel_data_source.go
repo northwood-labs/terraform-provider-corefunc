@@ -40,10 +40,10 @@ type (
 
 	// strCamelDataSourceModel maps the data source schema data.
 	strCamelDataSourceModel struct {
-		ID types.Int64 `tfsdk:"id"`
 		// AcronymCaps types.Bool   `tfsdk:"acronym_caps"`
 		String types.String `tfsdk:"string"`
 		Value  types.String `tfsdk:"value"`
+		ID     types.Int64  `tfsdk:"id"`
 	}
 )
 
@@ -59,6 +59,7 @@ func (d *strCamelDataSource) Metadata(
 	req datasource.MetadataRequest,
 	resp *datasource.MetadataResponse,
 ) {
+
 	tflog.Info(ctx, "Starting StrCamel DataSource Metadata method.")
 
 	resp.TypeName = req.ProviderTypeName + "_str_camel"
@@ -75,6 +76,7 @@ func (d *strCamelDataSource) Schema(
 	_ datasource.SchemaRequest,
 	resp *datasource.SchemaResponse,
 ) {
+
 	tflog.Info(ctx, "Starting StrCamel DataSource Schema method.")
 
 	resp.Schema = schema.Schema{
@@ -118,6 +120,7 @@ func (d *strCamelDataSource) Configure(
 	req datasource.ConfigureRequest,
 	_ *datasource.ConfigureResponse,
 ) {
+
 	tflog.Info(ctx, "Starting StrCamel DataSource Configure method.")
 
 	if req.ProviderData == nil {
@@ -127,11 +130,12 @@ func (d *strCamelDataSource) Configure(
 	tflog.Info(ctx, "Ending StrCamel DataSource Configure method.")
 }
 
-func (d strCamelDataSource) Create(
+func (d *strCamelDataSource) Create(
 	ctx context.Context,
 	req resource.CreateRequest, // lint:allow_large_memory
 	resp *resource.CreateResponse,
 ) {
+
 	tflog.Info(ctx, "Starting StrCamel DataSource Create method.")
 
 	var plan strCamelDataSourceModel
@@ -152,6 +156,7 @@ func (d *strCamelDataSource) Read( // lint:no_dupe
 	_ datasource.ReadRequest, // lint:allow_large_memory
 	resp *datasource.ReadResponse,
 ) {
+
 	tflog.Info(ctx, "Starting StrCamel DataSource Read method.")
 
 	var state strCamelDataSourceModel

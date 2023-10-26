@@ -40,9 +40,9 @@ type (
 
 	// strKebabDataSourceModel maps the data source schema data.
 	strKebabDataSourceModel struct {
-		ID     types.Int64  `tfsdk:"id"`
 		String types.String `tfsdk:"string"`
 		Value  types.String `tfsdk:"value"`
+		ID     types.Int64  `tfsdk:"id"`
 	}
 )
 
@@ -58,6 +58,7 @@ func (d *strKebabDataSource) Metadata(
 	req datasource.MetadataRequest,
 	resp *datasource.MetadataResponse,
 ) {
+
 	tflog.Info(ctx, "Starting StrKebab DataSource Metadata method.")
 
 	resp.TypeName = req.ProviderTypeName + "_str_kebab"
@@ -74,6 +75,7 @@ func (d *strKebabDataSource) Schema(
 	_ datasource.SchemaRequest,
 	resp *datasource.SchemaResponse,
 ) {
+
 	tflog.Info(ctx, "Starting StrKebab DataSource Schema method.")
 
 	resp.Schema = schema.Schema{
@@ -108,6 +110,7 @@ func (d *strKebabDataSource) Configure(
 	req datasource.ConfigureRequest,
 	_ *datasource.ConfigureResponse,
 ) {
+
 	tflog.Info(ctx, "Starting StrKebab DataSource Configure method.")
 
 	if req.ProviderData == nil {
@@ -117,11 +120,12 @@ func (d *strKebabDataSource) Configure(
 	tflog.Info(ctx, "Ending StrKebab DataSource Configure method.")
 }
 
-func (d strKebabDataSource) Create(
+func (d *strKebabDataSource) Create(
 	ctx context.Context,
 	req resource.CreateRequest, // lint:allow_large_memory
 	resp *resource.CreateResponse,
 ) {
+
 	tflog.Info(ctx, "Starting StrKebab DataSource Create method.")
 
 	var plan strKebabDataSourceModel
@@ -142,6 +146,7 @@ func (d *strKebabDataSource) Read( // lint:no_dupe
 	_ datasource.ReadRequest, // lint:allow_large_memory
 	resp *datasource.ReadResponse,
 ) {
+
 	tflog.Info(ctx, "Starting StrKebab DataSource Read method.")
 
 	var state strKebabDataSourceModel

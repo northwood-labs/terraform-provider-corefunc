@@ -42,10 +42,10 @@ type (
 
 	// envEnsureDataSourceModel maps the data source schema data.
 	envEnsureDataSourceModel struct {
-		ID      types.Int64  `tfsdk:"id"`
 		Name    types.String `tfsdk:"name"`
 		Pattern types.String `tfsdk:"pattern"`
 		Value   types.String `tfsdk:"value"`
+		ID      types.Int64  `tfsdk:"id"`
 	}
 )
 
@@ -61,6 +61,7 @@ func (d *envEnsureDataSource) Metadata(
 	req datasource.MetadataRequest,
 	resp *datasource.MetadataResponse,
 ) {
+
 	tflog.Info(ctx, "Starting EnvEnsure DataSource Metadata method.")
 
 	resp.TypeName = req.ProviderTypeName + "_env_ensure"
@@ -77,6 +78,7 @@ func (d *envEnsureDataSource) Schema(
 	_ datasource.SchemaRequest,
 	resp *datasource.SchemaResponse,
 ) {
+
 	tflog.Info(ctx, "Starting EnvEnsure DataSource Schema method.")
 
 	resp.Schema = schema.Schema{
@@ -122,6 +124,7 @@ func (d *envEnsureDataSource) Configure(
 	req datasource.ConfigureRequest,
 	_ *datasource.ConfigureResponse,
 ) {
+
 	tflog.Info(ctx, "Starting EnvEnsure DataSource Configure method.")
 
 	if req.ProviderData == nil {
@@ -131,11 +134,12 @@ func (d *envEnsureDataSource) Configure(
 	tflog.Info(ctx, "Ending EnvEnsure DataSource Configure method.")
 }
 
-func (d envEnsureDataSource) Create(
+func (d *envEnsureDataSource) Create(
 	ctx context.Context,
 	req resource.CreateRequest, // lint:allow_large_memory
 	resp *resource.CreateResponse,
 ) {
+
 	tflog.Info(ctx, "Starting EnvEnsure DataSource Create method.")
 
 	var plan envEnsureDataSourceModel
@@ -156,6 +160,7 @@ func (d *envEnsureDataSource) Read(
 	_ datasource.ReadRequest, // lint:allow_large_memory
 	resp *datasource.ReadResponse,
 ) {
+
 	tflog.Info(ctx, "Starting EnvEnsure DataSource Read method.")
 
 	var state envEnsureDataSourceModel

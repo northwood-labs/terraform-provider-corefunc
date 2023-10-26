@@ -17,7 +17,7 @@ body:
       description: |
         This should be functionality that (a) is not built into Terraform, (b) can be implemented via a Terraform
         provider, and (c) can be implemented as a function in Go.
-      placeholder: 'I would like to see…'
-      value: 'I would like to see…'
+      placeholder: I would like to see…
+      value: I would like to see…
     validations:
       required: true

@@ -40,9 +40,9 @@ type (
 
 	// strSnakeDataSourceModel maps the data source schema data.
 	strSnakeDataSourceModel struct {
-		ID     types.Int64  `tfsdk:"id"`
 		String types.String `tfsdk:"string"`
 		Value  types.String `tfsdk:"value"`
+		ID     types.Int64  `tfsdk:"id"`
 	}
 )
 
@@ -58,6 +58,7 @@ func (d *strSnakeDataSource) Metadata(
 	req datasource.MetadataRequest,
 	resp *datasource.MetadataResponse,
 ) {
+
 	tflog.Info(ctx, "Starting StrSnake DataSource Metadata method.")
 
 	resp.TypeName = req.ProviderTypeName + "_str_snake"
@@ -74,6 +75,7 @@ func (d *strSnakeDataSource) Schema(
 	_ datasource.SchemaRequest,
 	resp *datasource.SchemaResponse,
 ) {
+
 	tflog.Info(ctx, "Starting StrSnake DataSource Schema method.")
 
 	resp.Schema = schema.Schema{
@@ -108,6 +110,7 @@ func (d *strSnakeDataSource) Configure(
 	req datasource.ConfigureRequest,
 	_ *datasource.ConfigureResponse,
 ) {
+
 	tflog.Info(ctx, "Starting StrSnake DataSource Configure method.")
 
 	if req.ProviderData == nil {
@@ -117,11 +120,12 @@ func (d *strSnakeDataSource) Configure(
 	tflog.Info(ctx, "Ending StrSnake DataSource Configure method.")
 }
 
-func (d strSnakeDataSource) Create(
+func (d *strSnakeDataSource) Create(
 	ctx context.Context,
 	req resource.CreateRequest, // lint:allow_large_memory
 	resp *resource.CreateResponse,
 ) {
+
 	tflog.Info(ctx, "Starting StrSnake DataSource Create method.")
 
 	var plan strSnakeDataSourceModel
@@ -142,6 +146,7 @@ func (d *strSnakeDataSource) Read( // lint:no_dupe
 	_ datasource.ReadRequest, // lint:allow_large_memory
 	resp *datasource.ReadResponse,
 ) {
+
 	tflog.Info(ctx, "Starting StrSnake DataSource Read method.")
 
 	var state strSnakeDataSourceModel
