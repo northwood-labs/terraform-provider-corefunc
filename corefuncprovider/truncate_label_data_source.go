@@ -69,7 +69,6 @@ func (d *truncateLabelDataSource) Metadata(
 	req datasource.MetadataRequest,
 	resp *datasource.MetadataResponse,
 ) {
-
 	tflog.Info(ctx, "Starting TruncateLabel DataSource Metadata method.")
 
 	resp.TypeName = req.ProviderTypeName + "_str_truncate_label"
@@ -86,7 +85,6 @@ func (d *truncateLabelDataSource) Schema(
 	_ datasource.SchemaRequest,
 	resp *datasource.SchemaResponse,
 ) {
-
 	tflog.Info(ctx, "Starting TruncateLabel DataSource Schema method.")
 
 	resp.Schema = schema.Schema{
@@ -152,7 +150,6 @@ func (d *truncateLabelDataSource) Configure(
 	req datasource.ConfigureRequest,
 	_ *datasource.ConfigureResponse,
 ) {
-
 	tflog.Info(ctx, "Starting TruncateLabel DataSource Configure method.")
 
 	if req.ProviderData == nil {
@@ -167,7 +164,6 @@ func (d *truncateLabelDataSource) Create(
 	req resource.CreateRequest, // lint:allow_large_memory
 	resp *resource.CreateResponse,
 ) {
-
 	tflog.Info(ctx, "Starting TruncateLabel DataSource Create method.")
 
 	var plan truncateLabelDataSourceModel
@@ -188,7 +184,6 @@ func (d *truncateLabelDataSource) Read(
 	_ datasource.ReadRequest, // lint:allow_large_memory
 	resp *datasource.ReadResponse,
 ) {
-
 	tflog.Info(ctx, "Starting TruncateLabel DataSource Read method.")
 
 	var state truncateLabelDataSourceModel

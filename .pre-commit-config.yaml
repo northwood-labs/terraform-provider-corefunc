@@ -22,7 +22,7 @@ repos:
       - id: check-executables-have-shebangs
       - id: check-json
       - id: check-merge-conflict
-      - id: check-symlinks
+      # - id: check-symlinks
       - id: check-toml
       - id: check-xml
       - id: check-yaml
@@ -32,28 +32,28 @@ repos:
       - id: detect-private-key
       - id: end-of-file-fixer
       - id: fix-byte-order-marker
-      - id: fix-encoding-pragma
-        args:
-          - --remove
+      # - id: fix-encoding-pragma
+      #   args:
+      #     - --remove
       - id: mixed-line-ending
         args:
           - --fix=lf
-      - id: requirements-txt-fixer
+      # - id: requirements-txt-fixer
       - id: trailing-whitespace
 
-  - repo: https://github.com/asottile/pyupgrade
-    rev: c21b4c4d153be0633357686c7697f539ac194868
-    hooks:
-      - id: pyupgrade
-        args:
-          - --py311-plus
+  # - repo: https://github.com/asottile/pyupgrade
+  #   rev: c21b4c4d153be0633357686c7697f539ac194868
+  #   hooks:
+  #     - id: pyupgrade
+  #       args:
+  #         - --py311-plus
 
-  - repo: https://github.com/asottile/reorder_python_imports
-    rev: c4fe43d9809f1507508b3aba24ad1a72b5407f58
-    hooks:
-      - id: reorder-python-imports
-        args:
-          - --py311-plus
+  # - repo: https://github.com/asottile/reorder_python_imports
+  #   rev: c4fe43d9809f1507508b3aba24ad1a72b5407f58
+  #   hooks:
+  #     - id: reorder-python-imports
+  #       args:
+  #         - --py311-plus
 
   - repo: https://github.com/skyzyx/git-hooks
     rev: 4a2f0dc93e5c5353ed5e619599b0d15e34df88db
@@ -75,7 +75,7 @@ repos:
           - -sr
       - id: terraform-fmt
       - id: yamlfmt
-      - id: yapf
+      # - id: yapf
 
   - repo: https://github.com/igorshubovych/markdownlint-cli
     rev: v0.36.0
