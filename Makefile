@@ -205,6 +205,14 @@ binsize:
 	$(GO) tool nm -size "$(GOBIN)/$(BINARY_NAME)" | go-binsize-treemap > binsize.svg
 	rsvg-convert --width=2000 --format=png --output="binsize.png" "binsize.svg"
 
+.PHONY: binsize
+## binsize: [docs] Analyze the size of the binary by Go package.
+binsize:
+	@ $(ECHO) " "
+	@ $(ECHO) "\033[1;33m=====> Displaying Go HTTP documentation...\033[0m"
+	$(GO) tool nm -size "$(GOBIN)/$(BINARY_NAME)" | go-binsize-treemap > binsize.svg
+	rsvg-convert --width=2000 --format=png --output="binsize.png" "binsize.svg"
+
 #-------------------------------------------------------------------------------
 # Linting
 
