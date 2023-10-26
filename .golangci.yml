@@ -92,7 +92,7 @@ linters:
     # - godot
     - godox
     - gofmt
-    - gofumpt
+    # - gofumpt
     # - goheader
     - goimports
     # - golint # DEPRECATED
@@ -540,14 +540,14 @@ linters-settings:
       - pattern: a[b:len(a)]
         replacement: a[b:]
 
-  gofumpt:
-    # Module path which contains the source code being formatted.
-    # Default: ""
-    # module-path: github.com/org/project
+  # gofumpt:
+  #   # Module path which contains the source code being formatted.
+  #   # Default: ""
+  #   # module-path: github.com/org/project
 
-    # Choose whether to use the extra rules.
-    # Default: false
-    extra-rules: true
+  #   # Choose whether to use the extra rules.
+  #   # Default: false
+  #   extra-rules: true
 
   # goheader:
 
@@ -622,7 +622,7 @@ linters-settings:
     # Filter out the issues with a lower confidence than the given value.
     # Valid options are: low, medium, high.
     # Default: low
-    confidence: low
+    confidence: medium
 
     # Concurrency value.
     # Default: the number of logical CPUs usable by the current process.
@@ -1161,11 +1161,11 @@ linters-settings:
   whitespace:
     # Enforces newlines (or comments) after every multi-line if statement.
     # Default: false
-    multi-if: true
+    multi-if: false
 
     # Enforces newlines (or comments) after every multi-line function signature.
     # Default: false
-    multi-func: true
+    multi-func: false
 
   wrapcheck:
     # An array of strings that specify substrings of signatures to ignore.

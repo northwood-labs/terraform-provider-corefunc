@@ -58,7 +58,6 @@ func (d *strConstantDataSource) Metadata(
 	req datasource.MetadataRequest,
 	resp *datasource.MetadataResponse,
 ) {
-
 	tflog.Info(ctx, "Starting StrConstant DataSource Metadata method.")
 
 	resp.TypeName = req.ProviderTypeName + "_str_constant"
@@ -75,7 +74,6 @@ func (d *strConstantDataSource) Schema(
 	_ datasource.SchemaRequest,
 	resp *datasource.SchemaResponse,
 ) {
-
 	tflog.Info(ctx, "Starting StrConstant DataSource Schema method.")
 
 	resp.Schema = schema.Schema{
@@ -112,7 +110,6 @@ func (d *strConstantDataSource) Configure(
 	req datasource.ConfigureRequest,
 	_ *datasource.ConfigureResponse,
 ) {
-
 	tflog.Info(ctx, "Starting StrConstant DataSource Configure method.")
 
 	if req.ProviderData == nil {
@@ -127,7 +124,6 @@ func (d *strConstantDataSource) Create(
 	req resource.CreateRequest, // lint:allow_large_memory
 	resp *resource.CreateResponse,
 ) {
-
 	tflog.Info(ctx, "Starting StrConstant DataSource Create method.")
 
 	var plan strConstantDataSourceModel
@@ -148,7 +144,6 @@ func (d *strConstantDataSource) Read( // lint:no_dupe
 	_ datasource.ReadRequest, // lint:allow_large_memory
 	resp *datasource.ReadResponse,
 ) {
-
 	tflog.Info(ctx, "Starting StrConstant DataSource Read method.")
 
 	var state strConstantDataSourceModel
