@@ -61,7 +61,6 @@ func (d *envEnsureDataSource) Metadata(
 	req datasource.MetadataRequest,
 	resp *datasource.MetadataResponse,
 ) {
-
 	tflog.Info(ctx, "Starting EnvEnsure DataSource Metadata method.")
 
 	resp.TypeName = req.ProviderTypeName + "_env_ensure"
@@ -78,7 +77,6 @@ func (d *envEnsureDataSource) Schema(
 	_ datasource.SchemaRequest,
 	resp *datasource.SchemaResponse,
 ) {
-
 	tflog.Info(ctx, "Starting EnvEnsure DataSource Schema method.")
 
 	resp.Schema = schema.Schema{
@@ -124,7 +122,6 @@ func (d *envEnsureDataSource) Configure(
 	req datasource.ConfigureRequest,
 	_ *datasource.ConfigureResponse,
 ) {
-
 	tflog.Info(ctx, "Starting EnvEnsure DataSource Configure method.")
 
 	if req.ProviderData == nil {
@@ -139,7 +136,6 @@ func (d *envEnsureDataSource) Create(
 	req resource.CreateRequest, // lint:allow_large_memory
 	resp *resource.CreateResponse,
 ) {
-
 	tflog.Info(ctx, "Starting EnvEnsure DataSource Create method.")
 
 	var plan envEnsureDataSourceModel
@@ -160,7 +156,6 @@ func (d *envEnsureDataSource) Read(
 	_ datasource.ReadRequest, // lint:allow_large_memory
 	resp *datasource.ReadResponse,
 ) {
-
 	tflog.Info(ctx, "Starting EnvEnsure DataSource Read method.")
 
 	var state envEnsureDataSourceModel
