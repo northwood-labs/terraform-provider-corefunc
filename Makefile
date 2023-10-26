@@ -62,6 +62,7 @@ install-tools-go:
 	$(GO) install github.com/google/osv-scanner/cmd/osv-scanner@v1
 	$(GO) install github.com/goph/licensei/cmd/licensei@latest
 	$(GO) install github.com/nikolaydubina/go-binsize-treemap@latest
+	$(GO) install github.com/nikolaydubina/go-cover-treemap@latest
 	$(GO) install github.com/orlangure/gocovsh@latest
 	$(GO) install github.com/pelletier/go-toml/v2/cmd/tomljson@latest
 	$(GO) install github.com/securego/gosec/v2/cmd/gosec@latest
@@ -330,6 +331,8 @@ ifeq ($(DEBUG), true)
 else
 	TF_ACC=1 gotestsum --format testname -- -run=TestAcc$(NAME) -count=1 -parallel=$(shell nproc) -timeout 30m -coverpkg=./corefuncprovider/... -coverprofile=__coverage.out -v ./corefuncprovider/...
 endif
+	go-cover-treemap -coverprofile __coverage.out > acc-coverage.svg
+	rsvg-convert --width=2000 --format=png --output="acc-coverage.png" "acc-coverage.svg"
 
 .PHONY: unit
 ## unit: [test] Runs unit tests. Set NAME= (without 'Test') to run a specific test by name
@@ -337,6 +340,8 @@ unit:
 	@ $(ECHO) " "
 	@ $(ECHO) "\033[1;33m=====> Running unit tests...\033[0m"
 	gotestsum --format testname -- -run=Test$(NAME) -count=1 -parallel=$(shell nproc) -timeout 30s -coverpkg=./corefunc/... -coverprofile=__coverage.out -v ./corefunc/...
+	go-cover-treemap -coverprofile __coverage.out > unit-coverage.svg
+	rsvg-convert --width=2000 --format=png --output="unit-coverage.png" "unit-coverage.svg"
 
 .PHONY: examples
 ## examples: [test] Runs tests for examples. Set NAME= (without 'Example') to run a specific test by name
@@ -355,16 +360,22 @@ fuzz:
 .PHONY: quickbench
 ## quickbench: [test]* Runs the benchmarks with minimal data for a quick check
 quickbench:
+	@ $(ECHO) " "
+	@ $(ECHO) "\033[1;33m=====> Running "quick" benchmark...\033[0m"
 	$(GO) test -bench=. -timeout 60m ./corefunc
 
 .PHONY: bench
 ## bench: [test]* Runs the benchmarks with enough data for analysis with benchstat.
 bench:
+	@ $(ECHO) " "
+	@ $(ECHO) "\033[1;33m=====> Running "full" benchmark...\033[0m"
 	$(GO) test -bench=. -count=6 -timeout 60m -benchmem -cpuprofile=__cpu.out -memprofile=__mem.out -trace=__trace.out ./corefunc | tee __bench-$(shell date --utc "+%Y%m%dT%H%M%SZ").out
 
 .PHONY: pgo
 ## pgo: [test] Runs the benchmarks with enough data for use with Profile-Guided Optimization.
 pgo:
+	@ $(ECHO) " "
+	@ $(ECHO) "\033[1;33m=====> Running benchmark for PGO data...\033[0m"
 	TF_ACC=1 go test -run=^TestAcc -count=6 -cpuprofile=default.pgo -parallel=$(shell nproc) -timeout 60m ./corefuncprovider/...
 
 .PHONY: view-cov-cli
@@ -390,7 +401,7 @@ view-mempprof:
 .PHONY: view-trace
 ## view-trace: [test] After running bench, this will launch a browser to view the trace results.
 view-trace:
-	$(GO) tool trace _trace.out
+	$(GO) tool trace __trace.out
 
 #-------------------------------------------------------------------------------
 # Git Tasks
