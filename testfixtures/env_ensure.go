@@ -23,10 +23,10 @@ import (
 // Terraform acceptance tests.
 // <https://github.com/golang/go/wiki/TableDrivenTests>
 var EnvEnsureTestTable = map[string]struct {
+	Pattern     *regexp.Regexp
+	ExpectedErr error
 	EnvVarName  string
 	SetValue    string
-	ExpectedErr error
-	Pattern     *regexp.Regexp
 }{
 	"AWS_DEFAULT_REGION": {
 		EnvVarName: "AWS_DEFAULT_REGION",

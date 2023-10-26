@@ -82,6 +82,7 @@ func TestTruncateLabel(t *testing.T) {
 
 func BenchmarkTruncateLabel(b *testing.B) {
 	b.ReportAllocs()
+
 	for name, tc := range testfixtures.TruncateLabelTestTable {
 		b.ResetTimer()
 		b.Run(name, func(b *testing.B) {
@@ -94,6 +95,7 @@ func BenchmarkTruncateLabel(b *testing.B) {
 
 func BenchmarkTruncateLabelParallel(b *testing.B) {
 	b.ReportAllocs()
+
 	for name, tc := range testfixtures.TruncateLabelTestTable {
 		b.ResetTimer()
 		b.Run(name, func(b *testing.B) {

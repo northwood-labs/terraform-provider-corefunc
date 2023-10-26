@@ -61,6 +61,7 @@ install-tools-go:
 	$(GO) install github.com/bitfield/gotestdox/cmd/gotestdox@latest
 	$(GO) install github.com/google/osv-scanner/cmd/osv-scanner@v1
 	$(GO) install github.com/goph/licensei/cmd/licensei@latest
+	$(GO) install github.com/mdempsky/unconvert@latest
 	$(GO) install github.com/nikolaydubina/go-binsize-treemap@latest
 	$(GO) install github.com/nikolaydubina/go-cover-treemap@latest
 	$(GO) install github.com/orlangure/gocovsh@latest
@@ -281,7 +282,7 @@ unconvert:
 
 .PHONY: lint
 ## lint: [lint]* Runs ALL linting/validation tasks.
-lint: vuln license pre-commit
+lint: vuln license unconvert pre-commit
 
 #-------------------------------------------------------------------------------
 # Testing

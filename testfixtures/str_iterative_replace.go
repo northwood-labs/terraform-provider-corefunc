@@ -20,9 +20,9 @@ import "github.com/northwood-labs/terraform-provider-corefunc/corefunc/types"
 // the Terraform acceptance tests.
 // <https://github.com/golang/go/wiki/TableDrivenTests>
 var StrIterativeReplaceTestTable = map[string]struct { // lint:no_dupe
-	Replacements []types.Replacement
 	Input        string
 	Expected     string
+	Replacements []types.Replacement
 }{
 	"replacements": {
 		Input: "This is a string for testing replacements. New Relic. Set-up.",

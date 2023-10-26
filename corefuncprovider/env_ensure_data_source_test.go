@@ -33,20 +33,25 @@ func TestAccEnvEnsureDataSource(t *testing.T) {
 	funcName := traceFuncName()
 
 	for name, tc := range testfixtures.EnvEnsureTestTable {
+		var err error
+
 		fmt.Printf(
 			"=== RUN   %s/%s\n",
 			strings.TrimSpace(funcName),
 			strings.TrimSpace(name),
 		)
 
-		_ = os.Setenv(tc.EnvVarName, tc.SetValue)
+		err = os.Setenv(tc.EnvVarName, tc.SetValue)
+		if err != nil {
+			log.Fatalln(err)
+		}
 
 		buf := new(bytes.Buffer)
 		tmpl := template.Must(
 			template.ParseFiles("env_ensure_data_source_fixture.tftpl"),
 		)
 
-		err := tmpl.Execute(buf, tc)
+		err = tmpl.Execute(buf, tc)
 		if err != nil {
 			log.Fatalln(err)
 		}
@@ -76,7 +81,7 @@ func TestAccEnvEnsureDataSource(t *testing.T) {
 				Steps: []resource.TestStep{
 					{
 						Config:      providerConfig + buf.String(),
-						ExpectError: regexp.MustCompile("environment variable (\\w+) (is not defined|does not match pattern)"),
+						ExpectError: regexp.MustCompile(`environment variable (\w+) (is not defined|does not match pattern)`),
 					},
 				},
 			})
