@@ -5,13 +5,14 @@ on:
     branches:
       - main
 
-# The API requires write permission on the repository to submit dependencies
 permissions:
-  contents: write
+  contents: read
 
 jobs:
   go-action-detection:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - name: Harden Runner
         uses: step-security/harden-runner@1b05615854632b887b69ae1be8cbefe72d3ae423 # v2.6.0
