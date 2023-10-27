@@ -11,7 +11,7 @@ current_dir := $(dir $(mkfile_path))
 # Global stuff.
 
 GO=$(shell which go)
-HOMEBREW_PACKAGES=bash bats-core coreutils findutils git git-lfs go grep jq librsvg nodejs pre-commit python@3.11 tfschema trufflesecurity/trufflehog/trufflehog
+HOMEBREW_PACKAGES=bash bats-core coreutils findutils git git-lfs go grep jq librsvg nodejs pre-commit python@3.11 shellcheck tfschema trufflesecurity/trufflehog/trufflehog
 
 # Determine the operating system and CPU arch.
 OS=$(shell uname -o | tr '[:upper:]' '[:lower:]')
@@ -66,6 +66,7 @@ install-tools-go:
 	$(GO) install github.com/nikolaydubina/go-cover-treemap@latest
 	$(GO) install github.com/orlangure/gocovsh@latest
 	$(GO) install github.com/pelletier/go-toml/v2/cmd/tomljson@latest
+	$(GO) install github.com/rhysd/actionlint/cmd/actionlint@latest
 	$(GO) install github.com/securego/gosec/v2/cmd/gosec@latest
 	$(GO) install github.com/trufflesecurity/driftwood@latest
 	$(GO) install golang.org/x/perf/cmd/benchstat@latest
@@ -210,32 +211,6 @@ binsize:
 #-------------------------------------------------------------------------------
 # Linting
 
-.PHONY: vuln
-## vuln: [lint]* Checks for known security vulnerabilities.
-vuln:
-	@ $(ECHO) " "
-	@ $(ECHO) "\033[1;33m=====> Running govulncheck (https://go.dev/blog/vuln)...\033[0m"
-	govulncheck ./...
-
-	@ $(ECHO) " "
-	@ $(ECHO) "\033[1;33m=====> Running govulncheck -test (https://go.dev/blog/vuln)...\033[0m"
-	govulncheck -test ./...
-
-	@ $(ECHO) " "
-	@ $(ECHO) "\033[1;33m=====> Running osv-scanner (https://osv.dev)...\033[0m"
-	osv-scanner -r .
-
-	@ $(ECHO) " "
-	@ $(ECHO) "\033[1;33m=====> Running gosec (https://github.com/securego/gosec)...\033[0m"
-	gosec -terse -tests ./...
-
-.PHONY: secrets
-## secrets: [lint]* Checks for verifiable secrets.
-secrets:
-	@ $(ECHO) " "
-	@ $(ECHO) "\033[1;33m=====> Running TruffleHog...\033[0m"
-	trufflehog git file://. --json --only-verified --concurrency=$(nproc) 2>/dev/null | jq '.'
-
 .PHONY: pre-commit
 ## pre-commit: [lint]* Runs `pre-commit` against all files.
 pre-commit:
@@ -265,16 +240,9 @@ license:
 	@ - licensei header
 	@ $(ECHO) " "
 
-.PHONY: unconvert
-## unconvert: [lint]* Identify unnecessary type conversions. All GOOS/GOARCH matches.
-unconvert:
-	@ $(ECHO) " "
-	@ $(ECHO) "\033[1;33m=====> Running unconvert (all GOOS/GOARCH)...\033[0m"
-	unconvert -all -fastmath -tests -v ./...
-
 .PHONY: lint
 ## lint: [lint]* Runs ALL linting/validation tasks.
-lint: vuln license unconvert pre-commit
+lint: license pre-commit
 
 #-------------------------------------------------------------------------------
 # Testing
@@ -307,7 +275,7 @@ list-tests:
 
 	@ $(ECHO) " "
 	@ $(ECHO) "\033[1;33m=====> Fuzzing tests...\033[0m"
-	@ cat ./corefunc/*_test.go | ggrep "func Fuzz" | gsed 's/func\s//g' | gsed -r 's/\(.*//g' | gsed -r 's/Fuzz/make fuzz NAME=/g'
+	@ $(ECHO) "make fuzz"
 
 	@ $(ECHO) " "
 	@ $(ECHO) "\033[1;33m=====> BATS tests...\033[0m"
@@ -358,11 +326,13 @@ examples:
 	gotestsum --format testname -- -run=Example$(NAME) -count=1 -parallel=$(shell nproc) -timeout 30s -coverpkg=./corefunc/... -coverprofile=__coverage.out -v ./corefunc/...
 
 .PHONY: fuzz
-## fuzz: [test]* Runs the fuzzer for 10 minutes. Set NAME= (without 'Fuzz') to run a specific test by name
+## fuzz: [test]* Runs the fuzzer for 1 minute per test.
 fuzz:
 	@ $(ECHO) " "
 	@ $(ECHO) "\033[1;33m=====> Running the fuzzer (https://go.dev/doc/tutorial/fuzz)...\033[0m"
-	$(GO) test -run='^$$' -fuzz=Fuzz$(NAME) -fuzztime 10m -parallel=$(shell nproc) -v ./corefunc/...
+	$(GO) test -run='^$$' -fuzz=FuzzEnvEnsure -fuzztime 1m -v ./corefunc
+	$(GO) test -run='^$$' -fuzz=FuzzStrIterativeReplace -fuzztime 1m -v ./corefunc
+	$(GO) test -run='^$$' -fuzz=FuzzTruncateLabel -fuzztime 1m -v ./corefunc
 
 .PHONY: quickbench
 ## quickbench: [test]* Runs the benchmarks with minimal data for a quick check

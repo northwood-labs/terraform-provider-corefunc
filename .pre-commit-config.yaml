@@ -97,6 +97,13 @@ repos:
         language: system
         stages: [commit, push]
 
+      - id: actionlint
+        name: Actionlint
+        description: Lint GitHub Actions workflows
+        entry: bash -c 'actionlint'
+        language: system
+        stages: [commit, push]
+
       - id: unconvert
         name: 'Go: unconvert (current GOOS/GOARCH)'
         description: Analyzes Go packages to identify unnecessary type conversions.
@@ -108,5 +115,19 @@ repos:
         name: 'Go: Same Receiver Pointer'
         description: Don't mix receiver types. Choose either pointers or struct types for all available methods.
         entry: bash -c 'smrcptr -skip-std=true --constructor=true ./...'
+        language: system
+        stages: [commit, push]
+
+      - id: govulncheck
+        name: 'Go: Vulnerability check'
+        description: Check for Go security vulnerabilities. (https://go.dev/blog/vuln)
+        entry: bash -c 'govulncheck -test ./...'
+        language: system
+        stages: [commit, push]
+
+      - id: osvscanner
+        name: OSV Scanner
+        description: Check for security vulnerabilities. (https://osv.dev)
+        entry: bash -c 'osv-scanner -r .'
         language: system
         stages: [commit, push]
