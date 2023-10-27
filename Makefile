@@ -273,13 +273,6 @@ license:
 	@ - licensei header
 	@ $(ECHO) " "
 
-.PHONY: unconvert
-## unconvert: [lint]* Identify unnecessary type conversions. All GOOS/GOARCH matches.
-unconvert:
-	@ $(ECHO) " "
-	@ $(ECHO) "\033[1;33m=====> Running unconvert (all GOOS/GOARCH)...\033[0m"
-	unconvert -all -fastmath -tests -v ./...
-
 .PHONY: lint
 ## lint: [lint]* Runs ALL linting/validation tasks.
 lint: vuln license unconvert pre-commit
