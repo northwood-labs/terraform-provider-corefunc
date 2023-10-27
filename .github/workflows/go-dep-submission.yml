@@ -13,6 +13,11 @@ jobs:
   go-action-detection:
     runs-on: ubuntu-latest
     steps:
+      - name: Harden Runner
+        uses: step-security/harden-runner@1b05615854632b887b69ae1be8cbefe72d3ae423 # v2.6.0
+        with:
+          egress-policy: audit
+
       - name: Checkout Source
         uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
         with:
@@ -25,7 +30,7 @@ jobs:
           cache: true
 
       - name: Run snapshot action
-        uses: actions/go-dependency-submission@v1
+        uses: actions/go-dependency-submission@1694cb96294964b25b39ef4e8fa7430558d9bed9 # v1.0.3
         with:
           # Required: Define the repo path to the go.mod file used by the
           # build target
