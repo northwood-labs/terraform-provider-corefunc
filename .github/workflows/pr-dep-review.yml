@@ -8,7 +8,7 @@ permissions:
 jobs:
   dependency-review:
     runs-on: ubuntu-latest
-    name: Scan PR for dependency issues
+    name: Scan for issues
     permissions:
       pull-requests: write
     steps:
@@ -23,4 +23,8 @@ jobs:
       - name: Dependency Review
         uses: actions/dependency-review-action@6c5ccdad469c9f8a2996bfecaec55a631a347034 # v3.1.0
         with:
-          config-file: ./.github/dependency-review-config.yml
+          fail-on-severity: low
+          license-check: true
+          vulnerability-check: yes
+          comment-summary-in-pr: on-failure
+          allow-licenses: Apache-2.0, BSD-2-Clause, BSD-3-Clause, ISC, MPL-2.0, MIT
