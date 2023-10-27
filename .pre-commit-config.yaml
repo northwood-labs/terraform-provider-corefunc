@@ -131,3 +131,7 @@ repos:
         entry: bash -c 'osv-scanner -r .'
         language: system
         stages: [commit, push]
+  - repo: https://github.com/gitleaks/gitleaks
+    rev: v8.16.3
+    hooks:
+      - id: gitleaks
