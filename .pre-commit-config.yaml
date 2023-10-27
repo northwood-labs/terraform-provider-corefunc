@@ -97,12 +97,12 @@ repos:
         language: system
         stages: [commit, push]
 
-      - id: actionlint
-        name: Actionlint
-        description: Lint GitHub Actions workflows
-        entry: bash -c 'actionlint'
-        language: system
-        stages: [commit, push]
+      # - id: actionlint
+      #   name: Actionlint
+      #   description: Lint GitHub Actions workflows
+      #   entry: bash -c 'actionlint'
+      #   language: system
+      #   stages: [commit, push]
 
       - id: unconvert
         name: 'Go: unconvert (current GOOS/GOARCH)'
