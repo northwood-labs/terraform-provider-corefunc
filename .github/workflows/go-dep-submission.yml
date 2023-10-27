@@ -1,0 +1,32 @@
+---
+name: Go Dependency Submission
+on:
+  push:
+    branches:
+      - main
+
+# The API requires write permission on the repository to submit dependencies
+permissions:
+  contents: write
+
+jobs:
+  go-action-detection:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Source
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
+        with:
+          fetch-depth: 0
+
+      - name: Install Go
+        uses: actions/setup-go@93397bea11091df50f3d7e59dc26a7711a8bcfbe # v4.1.0
+        with:
+          go-version: latest
+          cache: true
+
+      - name: Run snapshot action
+        uses: actions/go-dependency-submission@v1
+        with:
+          # Required: Define the repo path to the go.mod file used by the
+          # build target
+          go-mod-path: go.mod
