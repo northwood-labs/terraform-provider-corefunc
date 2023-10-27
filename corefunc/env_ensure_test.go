@@ -49,6 +49,8 @@ func ExampleEnvEnsure() {
 	fmt.Println(err)
 	// Output:
 	// <nil>
+	// <nil>
+	// <nil>
 	// environment variable MY_ENV_VAR_EMPTY is not defined
 	// environment variable MY_ENV_VAR_NOT_SET is not defined
 }
@@ -74,6 +76,7 @@ func ExampleEnvEnsure_pattern() {
 	fmt.Println(err)
 
 	// Output:
+	// <nil>
 	// <nil>
 	// environment variable AWS_VAULT does not match pattern (non)?prod$
 }
