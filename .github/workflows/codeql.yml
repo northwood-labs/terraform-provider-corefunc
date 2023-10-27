@@ -20,6 +20,7 @@ jobs:
     permissions:
       actions: read
       contents: read
+      id-token: write
       security-events: write
 
     strategy:
@@ -48,3 +49,6 @@ jobs:
         uses: github/codeql-action/analyze@74483a38d39275f33fcff5f35b679b5ca4a26a99 # v2.22.5
         with:
           category: /language:${{matrix.language}}
+          output: codeql.sarif
+          cleanup-level: brutal
+          add-snippets: 'true'
