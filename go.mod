@@ -16,7 +16,7 @@ require (
 	github.com/lithammer/dedent v1.1.0
 	github.com/northwood-labs/golang-utils/archstring v0.0.0-20230302161720-ec685e2f274a
 	github.com/northwood-labs/golang-utils/exiterrorf v0.0.0-20230302161720-ec685e2f274a
-	github.com/spf13/cobra v1.7.0
+	github.com/spf13/cobra v1.8.0
 	github.com/stretchr/testify v1.8.4
 )
 
