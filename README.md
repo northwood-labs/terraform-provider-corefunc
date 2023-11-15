@@ -68,27 +68,27 @@ terraform-provider-corefunc version
 ```
 
 ```plain
- BASIC
- Version:    dev
- Go version: go1.21.1
- Git commit: 80ac4b1062bfeb81734e505f7fd977050bc4a3e9
- Dirty repo: true
- PGO:        default.pgo
- Build date: 2023-09-24T23:50:26Z
- OS/Arch:    darwin/arm64
- System:     macOS on Apple Silicon
- CPU Cores:  10
+BASIC
+Version:    dev
+Go version: go1.21.1
+Git commit: 80ac4b1062bfeb81734e505f7fd977050bc4a3e9
+Dirty repo: true
+PGO:        default.pgo
+Build date: 2023-09-24T23:50:26Z
+OS/Arch:    darwin/arm64
+System:     macOS on Apple Silicon
+CPU Cores:  10
 
- DEPENDENCIES
- github.com/chanced/caps                                    v1.0.1
- github.com/fatih/color                                     v1.15.0
- github.com/golang/protobuf                                 v1.5.3
- github.com/gookit/color                                    v1.5.4
- github.com/hashicorp/go-hclog                              v1.5.0
- github.com/hashicorp/go-plugin                             v1.5.1
- github.com/hashicorp/go-uuid                               v1.0.3
- github.com/hashicorp/terraform-plugin-framework            v1.4.0
- github.com/hashicorp/terraform-plugin-framework-validators v0.12.0
- github.com/hashicorp/terraform-plugin-go                   v0.19.0
- [...snip...]
+DEPENDENCIES
+github.com/chanced/caps                                    v1.0.1
+github.com/fatih/color                                     v1.15.0
+github.com/golang/protobuf                                 v1.5.3
+github.com/gookit/color                                    v1.5.4
+github.com/hashicorp/go-hclog                              v1.5.0
+github.com/hashicorp/go-plugin                             v1.5.1
+github.com/hashicorp/go-uuid                               v1.0.3
+github.com/hashicorp/terraform-plugin-framework            v1.4.0
+github.com/hashicorp/terraform-plugin-framework-validators v0.12.0
+github.com/hashicorp/terraform-plugin-go                   v0.19.0
+[...snip...]
 ```

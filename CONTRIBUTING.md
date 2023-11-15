@@ -318,8 +318,8 @@ It will show you something like this:
 goos: darwin
 goarch: arm64
 pkg: github.com/northwood-labs/terraform-provider-corefunc/corefunc
-                                       │    Current    │                 Previous                 │
-                                       │    sec/op     │     sec/op      vs base                  │
+                                        │    Current    │                 Previous                 │
+                                        │    sec/op     │     sec/op      vs base                  │
 TruncateLabel/balanced0-10                2.100n ±  1%   103.600n ±  3%   +4833.33% (p=0.002 n=6)
 TruncateLabel/balanced3-10                2.104n ±  0%   103.750n ±  2%   +4831.08% (p=0.002 n=6)
 TruncateLabel/balanced5-10                2.103n ±  1%   104.000n ±  1%   +4845.32% (p=0.002 n=6)
