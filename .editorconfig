@@ -1,5 +1,5 @@
 # Uses editorconfig to maintain consistent coding styles
-# http://EditorConfig.org
+# https://editorconfig.org
 
 root = true
 
@@ -10,24 +10,42 @@ indent_size = 4
 indent_style = space
 insert_final_newline = true
 max_line_length = 120
+tab_width = 4
 trim_trailing_whitespace = true
 
-[*.toml]
-indent_size = 4
+[Makefile*]
+indent_style = tab
+max_line_length = 20000
 
-[*.{css,html,js,json,less,sass,scss,yaml,yml}]
+# Web
+[*.{css,html,js,less,sass,scss}]
 indent_size = 2
 
-[*.{tf,tfvars}]
+# Configuration formats
+[*.{hcl,json,toml,yaml,yml}]
 indent_size = 2
-indent_style = space
+
+[*.go]
+indent_style = tab
+
+[*.{md,md.tmpl}]
+indent_size = 2
+max_line_length = 20000
 
 [*.py]
 indent_size = 4
 
-[*.md]
-max_line_length = 0
-trim_trailing_whitespace = false
+[*.sh]
+indent_size = 4
+max_line_length = 120
 
-[Makefile*]
-indent_style = tab
+# Terraform files
+[*.{tf,tftpl,tfvars}]
+indent_size = 2
+indent_style = space
+
+[.yamllint]
+indent_size = 2
+
+[bats/*.sh]
+max_line_length = 20000
