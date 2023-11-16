@@ -111,6 +111,13 @@ repos:
       #   language: system
       #   stages: [commit, push]
 
+      - id: go-consistent
+        name: 'Go: Consistent Patterns'
+        description: Analyzes Go packages to identify unnecessary type conversions.
+        entry: bash -c 'go-consistent ./corefunc/...; go-consistent ./corefuncprovider/...'
+        language: system
+        stages: [commit, push]
+
       - id: unconvert
         name: 'Go: unconvert (current GOOS/GOARCH)'
         description: Analyzes Go packages to identify unnecessary type conversions.

@@ -11,7 +11,7 @@ current_dir := $(dir $(mkfile_path))
 # Global stuff.
 
 GO=$(shell which go)
-HOMEBREW_PACKAGES=bash bats-core coreutils editorconfig-checker findutils git git-lfs go grep jq librsvg nodejs pre-commit python@3.11 shellcheck tfschema trufflesecurity/trufflehog/trufflehog
+HOMEBREW_PACKAGES=bash bats-core coreutils editorconfig-checker findutils git git-lfs go grep jq librsvg nodejs pre-commit python@3.11 shellcheck tfschema trivy trufflesecurity/trufflehog/trufflehog
 
 # Determine the operating system and CPU arch.
 OS=$(shell uname -o | tr '[:upper:]' '[:lower:]')
@@ -224,10 +224,6 @@ pre-commit:
 license:
 	@ $(ECHO) " "
 	@ $(ECHO) "\033[1;33m=====> Checking license statistics...\033[0m"
-	@ $(ECHO) "Ignored:"
-	@ tomljson .licensei.toml | jq -Mr '.ignored[] | " - \(.)"'
-	@ $(ECHO) " "
-	@ - licensei stat
 
 	@ $(ECHO) " "
 	@ $(ECHO) "\033[1;33m=====> Checking license compliance...\033[0m"

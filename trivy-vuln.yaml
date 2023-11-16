@@ -1,0 +1,57 @@
+cache:
+  backend: fs
+  clear: false
+db:
+  download-java-only: false
+  download-only: false
+  java-repository: ghcr.io/aquasecurity/trivy-java-db
+  java-skip-update: false
+  light: false
+  no-progress: false
+  repository: ghcr.io/aquasecurity/trivy-db
+  skip-update: false
+# debug: false
+dependency-tree: true
+exit-code: 1
+format: table
+ignore-policy: ""
+ignorefile: .trivyignore
+include-dev-deps: false
+insecure: false
+list-all-pkgs: true
+misconfiguration:
+  include-non-failures: false
+  policy-bundle-repository: ghcr.io/aquasecurity/defsec:0
+  reset-policy-bundle: false
+output: ""
+quiet: true
+report: all
+reset: false
+scan:
+  compliance: ""
+  file-patterns: []
+  offline: false
+  rekor-url: https://rekor.sigstore.dev
+  sbom-sources: []
+  scanners:
+    - vuln
+    - config
+    - secret
+  skip-dirs: []
+  skip-files: []
+  slow: false
+secret:
+  config: trivy-secret.yaml
+severity:
+  - UNKNOWN
+  - LOW
+  - MEDIUM
+  - HIGH
+  - CRITICAL
+timeout: 5m0s
+vulnerability:
+  ignore-status: []
+  ignore-unfixed: true
+  type:
+    - os
+    - library
