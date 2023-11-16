@@ -64,6 +64,7 @@ install-tools-go:
 	$(GO) install github.com/mdempsky/unconvert@latest
 	$(GO) install github.com/nikolaydubina/go-binsize-treemap@latest
 	$(GO) install github.com/nikolaydubina/go-cover-treemap@latest
+	$(GO) install github.com/nikolaydubina/smrcptr@latest
 	$(GO) install github.com/orlangure/gocovsh@latest
 	$(GO) install github.com/pelletier/go-toml/v2/cmd/tomljson@latest
 	$(GO) install github.com/rhysd/actionlint/cmd/actionlint@latest
