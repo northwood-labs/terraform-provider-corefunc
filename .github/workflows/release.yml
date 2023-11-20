@@ -9,12 +9,13 @@ on:
     tags:
       - '*'
 
-permissions:
-  contents: write
+permissions: read-all
 
 jobs:
   release_job:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     name: GoReleaser
     steps:
       - name: Harden Runner
