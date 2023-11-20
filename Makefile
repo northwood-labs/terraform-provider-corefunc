@@ -67,6 +67,7 @@ install-tools-go:
 	$(GO) install github.com/nikolaydubina/smrcptr@latest
 	$(GO) install github.com/orlangure/gocovsh@latest
 	$(GO) install github.com/pelletier/go-toml/v2/cmd/tomljson@latest
+	$(GO) install github.com/quasilyte/go-consistent@latest
 	$(GO) install github.com/rhysd/actionlint/cmd/actionlint@latest
 	$(GO) install github.com/securego/gosec/v2/cmd/gosec@latest
 	$(GO) install github.com/trufflesecurity/driftwood@latest
@@ -223,13 +224,9 @@ pre-commit:
 ## license: [lint]* Checks the licenses of all files and dependencies.
 license:
 	@ $(ECHO) " "
-	@ $(ECHO) "\033[1;33m=====> Checking license statistics...\033[0m"
-
-	@ $(ECHO) " "
-	@ $(ECHO) "\033[1;33m=====> Checking license compliance...\033[0m"
-	@ - licensei check
-	@ $(ECHO) " "
-	@ - licensei list
+	@ $(ECHO) "\033[1;33m=====> Checking license usage...\033[0m"
+	@ - trivy fs --config trivy-license.yaml --format json . 2>/dev/null > .licenses.cache.json
+	@ cat .licenses.cache.json | jq -Mr '[.Results[] | select(.Class == "license") | select(.Licenses) | .Licenses[]] | [group_by(.Name) | .[] | {Name: .[0].Name, Count: length} | "\(.Name): \(.Count)"] | .[]'
 
 	@ $(ECHO) " "
 	@ $(ECHO) "\033[1;33m=====> Checking license headers...\033[0m"

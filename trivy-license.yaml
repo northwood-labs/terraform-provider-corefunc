@@ -1,3 +1,4 @@
+---
 cache:
   backend: fs
   clear: false
@@ -12,14 +13,14 @@ db:
   skip-update: false
 # debug: false
 dependency-tree: true
-exit-code: 1
+exit-code: 0
 format: table
-ignore-policy: ""
+ignore-policy: ''
 ignorefile: .trivyignore
 include-dev-deps: false
 insecure: false
 license:
-  confidencelevel: "0.9"
+  confidencelevel: '0.9'
   forbidden:
     - AGPL-1.0
     - AGPL-3.0
@@ -170,12 +171,12 @@ misconfiguration:
   include-non-failures: false
   policy-bundle-repository: ghcr.io/aquasecurity/defsec:0
   reset-policy-bundle: false
-output: ""
+output: ''
 quiet: true
 report: all
 reset: false
 scan:
-  compliance: ""
+  compliance: ''
   file-patterns: []
   offline: false
   rekor-url: https://rekor.sigstore.dev
@@ -188,9 +189,9 @@ scan:
 secret:
   config: trivy-secret.yaml
 severity:
-  - UNKNOWN
-  - LOW
-  - MEDIUM
+  # - UNKNOWN
+  # - LOW
+  # - MEDIUM
   - HIGH
   - CRITICAL
 timeout: 5m0s
