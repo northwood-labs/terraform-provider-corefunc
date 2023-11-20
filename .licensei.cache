@@ -3,7 +3,7 @@
   confidence = 1.0
   license = "MIT"
   name = "github.com/xo/terminfo"
-  revision = "v0.0.0-20220910002029-abceb7e1c41e"
+  revision = "v0.0.0-20210125001918-ca9a967f8778"
   type = "gomod"
 
 [[dependencies]]
@@ -17,7 +17,7 @@
   confidence = 1.0
   license = "BSD-2-Clause"
   name = "github.com/vmihailenco/msgpack/v5"
-  revision = "v5.3.5"
+  revision = "v5.4.1"
   type = "gomod"
 
 [[dependencies]]
@@ -31,28 +31,28 @@
   confidence = 1.0
   license = "MPL-2.0"
   name = "github.com/hashicorp/terraform-plugin-go"
-  revision = "v0.19.0"
+  revision = "v0.19.1"
   type = "gomod"
 
 [[dependencies]]
   confidence = 1.0
   license = "MPL-2.0"
   name = "github.com/hashicorp/terraform-plugin-framework"
-  revision = "v1.4.0"
+  revision = "v1.4.2"
   type = "gomod"
 
 [[dependencies]]
   confidence = 1.0
   license = "BSD-3-Clause"
   name = "golang.org/x/sys"
-  revision = "v0.12.0"
+  revision = "v0.14.0"
   type = "gomod"
 
 [[dependencies]]
   confidence = 1.0
   license = "MIT"
   name = "github.com/mattn/go-isatty"
-  revision = "v0.0.19"
+  revision = "v0.0.17"
   type = "gomod"
 
 [[dependencies]]
@@ -66,7 +66,7 @@
   confidence = 1.0
   license = "MIT"
   name = "github.com/fatih/color"
-  revision = "v1.15.0"
+  revision = "v1.14.1"
   type = "gomod"
 
 [[dependencies]]
@@ -108,49 +108,49 @@
   confidence = 1.0
   license = "MPL-2.0"
   name = "github.com/hashicorp/go-plugin"
-  revision = "v1.5.1"
+  revision = "v1.5.2"
   type = "gomod"
 
 [[dependencies]]
   confidence = 1.0
   license = "BSD-3-Clause"
   name = "golang.org/x/net"
-  revision = "v0.15.0"
+  revision = "v0.17.0"
   type = "gomod"
 
 [[dependencies]]
   confidence = 1.0
   license = "Apache-2.0"
   name = "google.golang.org/grpc"
-  revision = "v1.58.0"
+  revision = "v1.59.0"
   type = "gomod"
 
 [[dependencies]]
   confidence = 1.0
   license = "Apache-2.0"
   name = "google.golang.org/genproto/googleapis/rpc"
-  revision = "v0.0.0-20230913181813-007df8e322eb"
+  revision = "v0.0.0-20230822172742-b8732ec3820d"
   type = "gomod"
 
 [[dependencies]]
   confidence = 1.0
   license = "BSD-3-Clause"
   name = "golang.org/x/text"
-  revision = "v0.13.0"
+  revision = "v0.14.0"
   type = "gomod"
 
 [[dependencies]]
   confidence = 1.0
   license = "MPL-2.0"
   name = "github.com/hashicorp/yamux"
-  revision = "v0.1.1"
+  revision = "v0.0.0-20181012175058-2f1d1f20f75d"
   type = "gomod"
 
 [[dependencies]]
   confidence = 1.0
   license = "Apache-2.0"
   name = "github.com/oklog/run"
-  revision = "v1.1.0"
+  revision = "v1.0.0"
   type = "gomod"
 
 [[dependencies]]
@@ -171,7 +171,7 @@
   confidence = 1.0
   license = "MPL-2.0"
   name = "github.com/hashicorp/terraform-registry-address"
-  revision = "v0.2.2"
+  revision = "v0.2.3"
   type = "gomod"
 
 [[dependencies]]
@@ -193,6 +193,13 @@
   license = "MIT"
   name = "github.com/northwood-labs/golang-utils/exiterrorf"
   revision = "v0.0.0-20230302161720-ec685e2f274a"
+  type = "gomod"
+
+[[dependencies]]
+  confidence = 1.0
+  license = "MIT"
+  name = "github.com/chanced/caps"
+  revision = "v1.0.1"
   type = "gomod"
 
 [[dependencies]]
@@ -220,5 +227,5 @@
   confidence = 1.0
   license = "Apache-2.0"
   name = "github.com/spf13/cobra"
-  revision = "v1.7.0"
+  revision = "v1.8.0"
   type = "gomod"

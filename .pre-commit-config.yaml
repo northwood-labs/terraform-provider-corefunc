@@ -111,6 +111,13 @@ repos:
       #   language: system
       #   stages: [commit, push]
 
+      - id: go-consistent
+        name: 'Go: Consistent Patterns'
+        description: Analyzes Go packages to identify unnecessary type conversions.
+        entry: bash -c 'go-consistent ./corefunc/...; go-consistent ./corefuncprovider/...'
+        language: system
+        stages: [commit, push]
+
       - id: unconvert
         name: 'Go: unconvert (current GOOS/GOARCH)'
         description: Analyzes Go packages to identify unnecessary type conversions.
@@ -136,5 +143,12 @@ repos:
         name: OSV Scanner
         description: Check for security vulnerabilities. (https://osv.dev)
         entry: bash -c 'osv-scanner -r .'
+        language: system
+        stages: [commit, push]
+
+      - id: trivy-vuln
+        name: Trivy (Vulnerabilities)
+        description: Check for security vulnerabilities. (https://trivy.dev)
+        entry: bash -c 'trivy fs --config trivy-vuln.yaml .'
         language: system
         stages: [commit, push]

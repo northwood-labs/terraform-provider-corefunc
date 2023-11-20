@@ -46,7 +46,7 @@ func TestAccEnvEnsureDataSource(t *testing.T) {
 			log.Fatalln(err)
 		}
 
-		buf := new(bytes.Buffer)
+		buf := &bytes.Buffer{}
 		tmpl := template.Must(
 			template.ParseFiles("env_ensure_data_source_fixture.tftpl"),
 		)
