@@ -82,4 +82,5 @@ release:
 
 # https://goreleaser.com/customization/changelog/
 changelog:
-  skip: true
+  skip: false
+  use: github-native
