@@ -28,7 +28,7 @@ jobs:
           fetch-depth: 0
 
       - name: Import GPG Signing Key
-        uses: crazy-max/ghaction-import-gpg@v6.0.0
+        uses: crazy-max/ghaction-import-gpg@82a020f1f7f605c65dd2449b392a52c3fcfef7ef # v6.0.0
         id: import_gpg
         with:
           gpg_private_key: ${{ secrets.GPG_KEY_B64 }}
@@ -40,7 +40,7 @@ jobs:
           git_tag_gpgsign: true
 
       - name: GoReleaser Action
-        uses: goreleaser/goreleaser-action@v5.0.0
+        uses: goreleaser/goreleaser-action@7ec5c2b0c6cdda6e8bbb49444bc797dd33d74dd8 # v5.0.0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GORELEASER_KEY: ${{ secrets.GORELEASER_KEY }}
