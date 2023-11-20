@@ -1,0 +1,51 @@
+---
+# This workflow uses actions that are not certified by GitHub. They are provided
+# by a third-party and are governed by separate terms of service, privacy
+# policy, and support documentation.
+
+name: Release
+on:
+  push:
+    tags:
+      - '*'
+
+permissions:
+  contents: write
+
+jobs:
+  release_job:
+    runs-on: ubuntu-latest
+    name: GoReleaser
+    steps:
+      - name: Harden Runner
+        uses: step-security/harden-runner@eb238b55efaa70779f274895e782ed17c84f2895 # v2.6.1
+        with:
+          egress-policy: audit
+
+      - name: Checkout Source
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
+        with:
+          fetch-depth: 0
+
+      - name: Import GPG Signing Key
+        uses: crazy-max/ghaction-import-gpg@v6.0.0
+        id: import_gpg
+        with:
+          gpg_private_key: ${{ secrets.GPG_KEY_B64 }}
+          passphrase: ${{ secrets.GPG_PWD }}
+          fingerprint: ${{ secrets.GPG_FINGERPRINT }}
+          trust_level: 5
+          git_user_signingkey: true
+          git_commit_gpgsign: true
+          git_tag_gpgsign: true
+
+      - name: GoReleaser Action
+        uses: goreleaser/goreleaser-action@v5.0.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GORELEASER_KEY: ${{ secrets.GORELEASER_KEY }}
+          GPG_FINGERPRINT: ${{ steps.import_gpg.outputs.fingerprint }}
+        with:
+          distribution: goreleaser-pro
+          version: latest
+          args: release --clean
