@@ -405,7 +405,7 @@ tag:
 	@echo " "
 
 	git add .
-	git commit -a -m "Preparing the $$(cat ./VERSION) release."
+	git commit -a -m "relprep: Preparing the $$(cat ./VERSION) release."
 	chag tag --sign
 
 .PHONY: version
