@@ -145,3 +145,10 @@ repos:
         entry: bash -c 'osv-scanner -r .'
         language: system
         stages: [commit, push]
+
+      - id: trivy-vuln
+        name: Trivy (Vulnerabilities)
+        description: Check for security vulnerabilities. (https://trivy.dev)
+        entry: bash -c 'trivy fs --config trivy-vuln.yaml .'
+        language: system
+        stages: [commit, push]
