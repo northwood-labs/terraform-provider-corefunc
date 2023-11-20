@@ -6,7 +6,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 [Semantic Versioning](https://semver.org), and uses
 [Conventional Commit](https://www.conventionalcommits.org) syntax.
 
-## Unreleased
+## 1.0.0 - 2023-11-20
 
 ### Bug Fixes
 
