@@ -8,12 +8,6 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 
 ## Unreleased
 
-### Miscellaneous Tasks
-
-* [`07dc031`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/07dc0315da588063861b54862b72e78d8f10fa74): Testing GoReleaser config changes.
-
-## 1.0.0-rc1 — 2023-11-20
-
 ### Bug Fixes
 
 * [`425bcd0`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/425bcd0c60b57c99e8811bb91e29fa194904ca96): Fixed the last failing test for `EnvEnsure()`.
@@ -156,6 +150,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`993304e`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/993304ed23f234cf5959c1ff236f9287180b07ea): Cleaned up some mis-named jobs.
 * [`d1276b3`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/d1276b3ffac3ab3d93d031d63f88c42de9393983): Cleaned up some mis-named jobs.
 * [`a1dd8ef`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/a1dd8efc0aef98d1269e4e3beccd709cfcec9003): Update the GoReleaser configuration.
+* [`07dc031`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/07dc0315da588063861b54862b72e78d8f10fa74): Testing GoReleaser config changes.
 
 ### Refactor
 
