@@ -83,7 +83,7 @@ release:
 # https://goreleaser.com/customization/changelog/
 changelog:
   skip: false
-  use: github
+  use: git
   sort: asc
   abbrev: 0
   groups:
