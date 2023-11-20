@@ -1,17 +1,17 @@
 [config]
 exclude-merge-commits = true
-check-summary-length = true
-summary-length = 80
+check-summary-length  = true
+summary-length        = 80
 
 [matchers]
-all = "(?:build|ci|deps|docs|feat|fix|lint|perf|refactor|style|test)(?:\\([^\\)]*\\))?: (?:.+)"
+all = "(?:build|ci|deps|docs|feat|fix|lint|perf|refactor|relprep|style|test)(?:\\([^\\)]*\\))?: (?:.+)"
 
 [examples]
 a_simple_commit = """
-[build|ci|deps|docs|feat|fix|lint|perf|refactor|style|test](module): A commit message
+[build|ci|deps|docs|feat|fix|lint|perf|refactor|relprep|style|test](module): A commit message
 """
 an_extended_commit = """
-[build|ci|deps|docs|feat|fix|lint|perf|refactor|style|test](module): A commit message
+[build|ci|deps|docs|feat|fix|lint|perf|refactor|relprep|style|test](module): A commit message
 
 * first line
 * second line

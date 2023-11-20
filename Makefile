@@ -124,8 +124,7 @@ godeps:
 	$(GO) get -d -u -t -v ./...
 
 .PHONY: build
-## build: [build]* Builds and installs the Terraform provider.
-# $(GO) install -a -ldflags="-s -w -X github.com/northwood-labs/terraform-provider-corefunc/cmd.Version=$(BINARY_VERSION)" .
+## build: [build]* Builds and installs the Terraform provider locally.
 build: tidy
 	@ $(ECHO) " "
 	@ $(ECHO) "\033[1;33m=====> Building and installing the provider...\033[0m"
@@ -384,6 +383,11 @@ view-trace:
 
 #-------------------------------------------------------------------------------
 # Git Tasks
+
+.PHONY: changelog
+## changelog: [release]* Generates the CHANGELOG for the release.
+changelog:
+	git cliff -o CHANGELOG.md
 
 .PHONY: tag
 ## tag: [release]* Tags (and GPG-signs) the release.

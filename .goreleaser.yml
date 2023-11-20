@@ -82,37 +82,4 @@ release:
 
 # https://goreleaser.com/customization/changelog/
 changelog:
-  skip: false
-  use: git
-  sort: asc
-  abbrev: 0
-  groups:
-    - title: Features
-      regexp: ^.*?feat(\([[:word:]]+\))??!?:.+$
-      order: 0
-    - title: Bug fixes
-      regexp: ^.*?fix(\([[:word:]]+\))??!?:.+$
-      order: 1
-    - title: Refactoring
-      regexp: ^.*?refactor(\([[:word:]]+\))??!?:.+$
-      order: 2
-    - title: Documentation
-      regexp: ^.*?docs(\([[:word:]]+\))??!?:.+$
-      order: 3
-    - title: Chores
-      regexp: ^.*?chore(\([[:word:]]+\))??!?:.+$
-      order: 4
-    - title: Continuous integration
-      regexp: ^.*?ci(\([[:word:]]+\))??!?:.+$
-      order: 5
-    - title: Project building
-      regexp: ^.*?build(\([[:word:]]+\))??!?:.+$
-      order: 6
-    - title: Linting and static analysis
-      regexp: ^.*?build(\([[:word:]]+\))??!?:.+$
-      order: 7
-    - title: Release preparation
-      regexp: ^.*?relprep(\([[:word:]]+\))??!?:.+$
-      order: 8
-    - title: Other
-      order: 999
+  skip: true
