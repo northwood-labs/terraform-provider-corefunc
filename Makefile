@@ -394,23 +394,23 @@ changelog:
 tag:
 	@ if [ $$(git status -s -uall | wc -l) != 1 ]; then echo 'ERROR: Git workspace must be clean.'; exit 1; fi;
 
-	@echo "This release will be tagged as: $$(cat ./VERSION)"
-	@echo "This version should match your release. If it doesn't, re-run 'make version'."
-	@echo "---------------------------------------------------------------------"
-	@read -p "Press any key to continue, or press Control+C to cancel. " x;
+	@ $(ECHO) "This release will be tagged as: v$$(cat ./VERSION)"
+	@ $(ECHO) "This version should match your release. If it doesn't, re-run 'make version'."
+	@ $(ECHO) "---------------------------------------------------------------------"
+	@ read -p "Press any key to continue, or press Control+C to cancel. " x;
 
-	@echo " "
-	@chag update $$(cat ./VERSION)
-	@echo " "
+	@ $(ECHO) " "
+	@ chag update v$$(cat ./VERSION)
+	@ $(ECHO) " "
 
-	@echo "These are the contents of the CHANGELOG for this release. Are these correct?"
-	@echo "---------------------------------------------------------------------"
-	@chag contents
-	@echo "---------------------------------------------------------------------"
-	@echo "Are these release notes correct? If not, cancel and update CHANGELOG.md."
-	@read -p "Press any key to continue, or press Control+C to cancel. " x;
+	@ $(ECHO) "These are the contents of the CHANGELOG for this release. Are these correct?"
+	@ $(ECHO) "---------------------------------------------------------------------"
+	@ chag contents
+	@ $(ECHO) "---------------------------------------------------------------------"
+	@ $(ECHO) "Are these release notes correct? If not, cancel and update CHANGELOG.md."
+	@ read -p "Press any key to continue, or press Control+C to cancel. " x;
 
-	@echo " "
+	@ $(ECHO) " "
 
 	git add .
 	git commit -a -m "relprep: Preparing the $$(cat ./VERSION) release."
@@ -419,6 +419,6 @@ tag:
 .PHONY: version
 ## version: [release]* Sets the version for the next release; pre-req for a release tag.
 version:
-	@echo "Current version: $$(cat ./VERSION)"
+	@ $(ECHO) "Current version: $$(cat ./VERSION)"
 	@read -p "Enter new version number: " nv; \
 	printf "$$nv" > ./VERSION
