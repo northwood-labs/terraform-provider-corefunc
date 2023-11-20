@@ -29,7 +29,7 @@ import (
 )
 
 func TestAccTruncateLabelDataSourceDefaultMaxLength64(t *testing.T) {
-	buf := new(bytes.Buffer)
+	buf := &bytes.Buffer{}
 	tmpl := template.Must(
 		template.ParseFiles("truncate_label_data_source_fixture_default64.tftpl"),
 	)
@@ -66,7 +66,7 @@ func TestAccTruncateLabelDataSource(t *testing.T) {
 			strings.TrimSpace(name),
 		)
 
-		buf := new(bytes.Buffer)
+		buf := &bytes.Buffer{}
 		tmpl := template.Must(
 			template.ParseFiles("truncate_label_data_source_fixture_maxlength.tftpl"),
 		)

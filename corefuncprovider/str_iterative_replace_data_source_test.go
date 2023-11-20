@@ -38,7 +38,7 @@ func TestAccStrIterativeReplaceDataSource(t *testing.T) {
 			strings.TrimSpace(name),
 		)
 
-		buf := new(bytes.Buffer)
+		buf := &bytes.Buffer{}
 		tmpl := template.Must(
 			template.ParseFiles("str_iterative_replace_data_source_fixture.tftpl"),
 		)
