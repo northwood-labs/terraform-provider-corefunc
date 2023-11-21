@@ -17,4 +17,26 @@ description: |-
 
 {{ tffile "examples/provider/provider.tf" }}
 
+## Updating your Terraform lockfile
+
+Running `terraform init` will download the provider and update the [_Dependency Lock File_](https://developer.hashicorp.com/terraform/language/files/dependency-lock) (`.terraform.lock.hcl`) for your _current_ OS and CPU architecture. If you have a team with multiple operating systems or multiple CPU architectures, the _Dependency Lock File_ will be incomplete, and other members on the team won't be able to use it.
+
+In order to resolve this, you can use the `terraform providers lock` command to generate a _Dependency Lock File_ that is compatible with all relevant operating systems and CPU architectures.
+
+### Recommended matrix
+
+Per [Recommended Provider Binary Operating Systems and Architectures](https://developer.hashicorp.com/terraform/registry/providers/os-arch):
+
+{{ codefile "shell" "examples/provider/lock.sh" }}
+
+### Extended matrix
+
+{{ codefile "shell" "examples/provider/lock-ext.sh" }}
+
+### Complete matrix
+
+This is the complete list of supported operating systems and architectures for this specific provider:
+
+{{ codefile "shell" "examples/provider/lock-all.sh" }}
+
 <!-- Preview the provider docs with the Terraform registry provider docs preview tool: https://registry.terraform.io/tools/doc-preview -->
