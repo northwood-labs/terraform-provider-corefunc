@@ -1,5 +1,7 @@
 # Terraform Provider: Core Functions
 
+[![Terraform Docs](https://img.shields.io/badge/Terraform-Docs-7B42BC?style=for-the-badge)](https://registry.terraform.io/providers/northwood-labs/corefunc/)
+[![Go Docs](https://img.shields.io/badge/Go-Docs-blue?style=for-the-badge)](https://pkg.go.dev/github.com/northwood-labs/terraform-provider-corefunc)
 [![GitHub](https://img.shields.io/github/license/northwood-labs/terraform-provider-corefunc?style=for-the-badge)](https://opensource.org/licenses/Apache-2.0)
 [![Go Report Card](https://goreportcard.com/badge/github.com/northwood-labs/terraform-provider-corefunc?style=for-the-badge)](https://goreportcard.com/report/github.com/northwood-labs/terraform-provider-corefunc)
 [![Open Source Insights](https://img.shields.io/badge/Open_Source-Insights-000000?style=for-the-badge)](https://deps.dev/project/github/northwood-labs%2Fterraform-provider-corefunc)
@@ -7,6 +9,8 @@
 [![GitHub contributors](https://img.shields.io/github/contributors/northwood-labs/terraform-provider-corefunc?style=for-the-badge)](https://github.com/northwood-labs/terraform-provider-corefunc/graphs/contributors)
 [![GitHub commit activity (branch)](https://img.shields.io/github/commit-activity/m/northwood-labs/terraform-provider-corefunc?style=for-the-badge)](https://github.com/northwood-labs/terraform-provider-corefunc/commits/main/)
 [![GitHub all releases](https://img.shields.io/github/downloads/northwood-labs/terraform-provider-corefunc/total?style=for-the-badge)](https://github.com/northwood-labs/terraform-provider-corefunc/releases)
+[![GitHub Workflow Status (with event)](https://img.shields.io/github/actions/workflow/status/northwood-labs/terraform-provider-corefunc/test.yml?style=for-the-badge&label=Tests)](https://github.com/northwood-labs/terraform-provider-corefunc/actions/workflows/test.yml)
+[![GitHub Workflow Status (with event)](https://img.shields.io/github/actions/workflow/status/northwood-labs/terraform-provider-corefunc/release.yml?style=for-the-badge&label=Release)](https://github.com/northwood-labs/terraform-provider-corefunc/actions/workflows/release.yml)
 
 > [!NOTE]
 > We intend to support OpenTofu (née OpenTF) in addition to Terraform.
@@ -27,8 +31,13 @@ See the `docs/` directory for user-facing documentation.
 
 ## Documentation
 
-* [TF Registry Documentation](https://registry.terraform.io/providers/northwood-labs/corefunc/) (not published yet; see the `docs/` directory in the interim)
-* [Go Package Documentation](https://pkg.go.dev/github.com/northwood-labs/terraform-provider-corefunc)
+### Terraform Registry
+
+If you are using this as a Terraform provider, see the documentation at [registry.terraform.io](https://registry.terraform.io/providers/northwood-labs/corefunc/).
+
+### Go Package
+
+If you are using this as a Go library, see the documentation at [pkg.go.dev](https://pkg.go.dev/github.com/northwood-labs/terraform-provider-corefunc).
 
 ## Third-Party Libraries
 
@@ -70,25 +79,24 @@ terraform-provider-corefunc version
 ```plain
 BASIC
 Version:    dev
-Go version: go1.21.1
-Git commit: 80ac4b1062bfeb81734e505f7fd977050bc4a3e9
+Go version: go1.21.4
+Git commit: c7b6411da19a792762d4037d2e17f4877d1f4e2b
 Dirty repo: true
-PGO:        default.pgo
-Build date: 2023-09-24T23:50:26Z
+Build date: 2023-11-21T08:10:30Z
 OS/Arch:    darwin/arm64
 System:     macOS on Apple Silicon
-CPU Cores:  10
+CPU Cores:  12
 
 DEPENDENCIES
 github.com/chanced/caps                                    v1.0.1
-github.com/fatih/color                                     v1.15.0
+github.com/fatih/color                                     v1.14.1
 github.com/golang/protobuf                                 v1.5.3
 github.com/gookit/color                                    v1.5.4
 github.com/hashicorp/go-hclog                              v1.5.0
-github.com/hashicorp/go-plugin                             v1.5.1
+github.com/hashicorp/go-plugin                             v1.5.2
 github.com/hashicorp/go-uuid                               v1.0.3
-github.com/hashicorp/terraform-plugin-framework            v1.4.0
+github.com/hashicorp/terraform-plugin-framework            v1.4.2
 github.com/hashicorp/terraform-plugin-framework-validators v0.12.0
-github.com/hashicorp/terraform-plugin-go                   v0.19.0
+github.com/hashicorp/terraform-plugin-go                   v0.19.1
 [...snip...]
 ```
