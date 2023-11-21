@@ -38,7 +38,7 @@
   },
   "header-start-left": true,
   "no-duplicate-header": {
-    "allow_different_nesting": true
+    "siblings_only": true
   },
   "single-h1": {
     "level": 1

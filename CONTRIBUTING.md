@@ -20,7 +20,7 @@ The majority of development is done on macOS, so we have some helpers set-up to 
     Obviously, this won't work on Linux, so ensure that the following packages are installed from your system's package manager.
 
     * [Go] 1.21+ (primary language)
-    * [Node.js] 18+ (linting tools)
+    * [Node.js] 20+ (linting tools)
     * [Python] 3.11+ (linting tools)
     * [Git LFS] (storage of binary data)
     * [`jq`][jq] (shell scripting tools)
@@ -395,8 +395,10 @@ Profile-guided optimization (PGO), also known as feedback-directed optimization 
 
 ## Scanning for vulnerabilities
 
+There are multiple vulnerability scans wrapped-up in:
+
 ```bash
-make vuln
+make lint
 ```
 
 ## Previewing documentation
@@ -427,18 +429,11 @@ You can get the package documentation on the CLI using the `go doc` command.
 make docs-cli
 ```
 
-#### How to write Go documentation comments and examples
-
-* [Documentation: Go Doc Comments](https://tip.golang.org/doc/comment)
-* [Tutorial: Testable Examples in Go](https://go.dev/blog/examples)
-
-### Go Documentation Server
+Or run it as a local server.
 
 ```bash
 make docs-serve
 ```
-
-#### How to write Go documentation comments and examples
 
 * [Documentation: Go Doc Comments](https://tip.golang.org/doc/comment)
 * [Tutorial: Testable Examples in Go](https://go.dev/blog/examples)
@@ -459,20 +454,6 @@ To enable debugging for this Terraform provider:
 
 1. At the top of the pane, select _Debug Terraform Provider_ from the pulldown menu, then click the _Play_ icon (sideways triangle). The bottom statusbar will change color.
 
-1. If the console does not open automatically, you can open it with `⌘ ⇧ P`, search for "debug", and select _Debug Console: Focus on Debug Console View_.
-
-1. In the VS Code console, there will be a line of code that begins with `TF_REATTACH_PROVIDERS=` and then a JSON string. Copy the entire line, paste it into your Terminal, and **prefix** the command with the `export` keyword.
-
-    ```bash
-    export TF_REATTACH_PROVIDERS='{"@TODO":…}'
-    ```
-
-1. In your Terminal, go to the data source example directory.
-
-    ```bash
-    cd @TODO
-    ```
-
 1. Once in the example directory, run a Terraform plan.
 
     ```bash
@@ -481,40 +462,47 @@ To enable debugging for this Terraform provider:
 
 1. The Terraform provider will run and block (with "time elapsed" updating every 10 seconds or so). Any breakpoints you have set in your code will show up in the VS Code debugger, and you can review variable values and step through the breakpoints to understand what's happening in the code.
 
-1. When you're done debugging, choose "Stop" (square) from the floating debugger controller. Alternatively, type `⇧ F5`. Once the debugger stops, and the bottom statusbar switches back to its standard color, cleanup your Terminal environment by unsetting the `TF_REATTACH_PROVIDERS` environment variable.
-
-    ```bash
-    unset TF_REATTACH_PROVIDERS
-    ```
-
 ## Code
 
 ### Dotfiles
 
-| File                 | Description                                                                                                                        |
-|----------------------|------------------------------------------------------------------------------------------------------------------------------------|
-| `.github/`           | GitHub repository project files.                                                                                                   |
-| `.vscode/`           | Standard configurations for VS Code users. (This is not the same as `.idea/` folders for JetBrains IDEs. This is actually useful.) |
-| `.dcignore`          | Configuration file for the [Snyk IDE Extension].                                                                                   |
-| `.editorconfig`      | Configuration file for [EditorConfig].                                                                                             |
-| `.gitattributes`     | Configuration file for Git. Helps ensure that file types are processed appropriately.                                              |
-| `.gitignore`         | Configuration file for Git. Helps determine which files should be ignored by Git.                                                  |
-| `.golangci.yml`      | Configuration file for [golangci-lint]. Helps ensure a high level of Go code quality.                                              |
-| `.goreleaser.yml`    | Configuration file for [GoReleaser].                                                                                               |
-| `.markdownlint.json` | Configuration file for [Markdownlint].                                                                                             |
-| `.tflint.hcl`        | Configuration file for [tflint].                                                                                                   |
-| `.yamllint`          | Configuration file for [yamllint].                                                                                                 |
+| File                      | Description                                                                                                                        |
+|---------------------------|------------------------------------------------------------------------------------------------------------------------------------|
+| `.githooks/`              | Files that get copied into the `.git/hooks/` directory to perform pre-commit actions.                                              |
+| `.github/`                | GitHub repository project files.                                                                                                   |
+| `.vscode/`                | Standard configurations for VS Code users. (This is not the same as `.idea/` folders for JetBrains IDEs. This is actually useful.) |
+| `.dcignore`               | Configuration file for the [Snyk IDE Extension].                                                                                   |
+| `.ecrc`                   | Configuration file for [editorconfig-checker].                                                                                     |
+| `.editorconfig`           | Configuration file for [EditorConfig].                                                                                             |
+| `.gitattributes`          | Configuration file for Git. Helps ensure that file types are processed appropriately.                                              |
+| `.gitignore`              | Configuration file for Git. Helps determine which files should be ignored by Git.                                                  |
+| `.golangci.yml`           | Configuration file for [golangci-lint]. Helps ensure a high level of Go code quality.                                              |
+| `.gommit.toml`            | Configuration file for [gommit]. Helps validate commit messages for conformity with [Conventional Commits].                        |
+| `.goreleaser.yml`         | Configuration file for [GoReleaser].                                                                                               |
+| `.licensei.*`             | Configuration file and cache for [licensei].                                                                                       |
+| `.licenses.cache.json`    | Cache file generated by [Trivy].                                                                                                   |
+| `.mailmap`                | Configuration file used by Git to map names to email addresses.                                                                    |
+| `.markdownlint.json`      | Configuration file for [Markdownlint].                                                                                             |
+| `.pre-commit-config.yaml` | Configuration file for [pre-commit]. Performs linting and tidiness tasks.                                                          |
+| `.tflint.hcl`             | Configuration file for [tflint].                                                                                                   |
+| `.yamllint`               | Configuration file for [yamllint].                                                                                                 |
+| `cliff.toml`              | Configuration file for [git-cliff]. Used for generating the CHANGELOG.                                                             |
+| `trivy-*.yaml`            | Configuration file for [Trivy]. Used for scanning for software licenses and identifying vulnerabilities.                           |
 
 ### Project files
 
 | File                               | Description                                                               |
 |------------------------------------|---------------------------------------------------------------------------|
+| `AUTHORS`                          | Auto-generated file with complete list of code authors.                   |
+| `BINSIZE.md`                       | Shows where the size of the Go binary comes from.                         |
 | `CHANGELOG.md`                     | The file containing the list of changes in each versionb of the software. |
 | `CONTRIBUTING.md`                  | This document.                                                            |
-| `find-go-bin.sh*`                  | Helps discover where installed Go executables live.                       |
-| `LICENSE`                          | The license for this project.                                             |
+| `COVERAGE.md`                      | Code coverage reports.                                                    |
+| `find-go-bin.sh`                   | Helps discover where installed Go executables live.                       |
+| `LICENSE.txt`                      | The license for this project.                                             |
 | `Makefile`                         | A list of repeatable tasks used for managing this project.                |
 | `README.md`                        | User-facing documentation for the project.                                |
+| `SECURITY.md`                      | User-facing security-related documentation for the project.               |
 | `terraform-registry-manifest.json` | A file that is required by the Terraform Registry.                        |
 | `VERSION`                          | The version of the release of the software.                               |
 
@@ -522,29 +510,60 @@ To enable debugging for this Terraform provider:
 
 | File                | Description                                                                                                            |
 |---------------------|------------------------------------------------------------------------------------------------------------------------|
+| `bats/`             | Functional tests written using the [BATS] test framework.                                                              |
 | `cmd/`              | This provider also has a couple of subcommands. These are implemented using [Cobra].                                   |
 | `corefunc/`         | The core Go library we provide to users. All core functionality is exposed through this library first.                 |
 | `corefuncprovider/` | The files which wrap the methods from the Go library as Terraform data sources.                                        |
-| `docs/`             | These are auto-generated from the `corefuncprovider/` files.                                                           |
+| `docs/`             | These are auto-generated Terraform documentation from the `corefuncprovider/` files.                                   |
 | `examples/`         | These are HCL examples which implement the data sources, are used for real tests, and as examples used in the `docs/`. |
+| `scripts/`          | Utility scripts.                                                                                                       |
 | `templates/`        | These are the templates used by the `tfplugindocs` app.                                                                |
 | `testfixtures/`     | Fixtures used by the test suites for both the Go tests, as well as the Terraform tests.                                |
-| `tools/`            | Includes the libraries that are part of the build process, but not part of the application.                            |
 | `go.mod`            | Go modules definition.                                                                                                 |
 | `go.sum`            | Go modules checksums.                                                                                                  |
 | `main.go`           | Bootstraps the application binary.                                                                                     |
 
+### Tools
+
+| File         | Description                                                                                 |
+|--------------|---------------------------------------------------------------------------------------------|
+| `generator/` | Scaffolding that generates stubs for new functions in the Terraform provider.               |
+| `tools/`     | Includes the libraries that are part of the build process, but not part of the application. |
+
+## Tagging and releasing
+
+* [ ] `make godeps tidy` — Update all Go dependencies to their latest releases.
+* [ ] `make docs` — Generate all documentation for review.
+* [ ] `make build binsize` — Generate a new _binsize_ report.
+* [ ] `pre-commit autoupdate --bleeding-edge` — Update the imported `pre-commit` actions.
+* [ ] `make test` — Runs the complete test suite. Will take a few minutes.
+* [ ] `make changelog` — Generates an updated CHANGELOG.
+* [ ] `make version` — Updates the version to use for the next release.
+* [ ] `make lint` — Run the various linter and code quality tooling.
+* [ ] `make clean` — Clean all non-essential files from the project.
+* [ ] Commit the changes with a `relprep:` message.
+* [ ] `make tag` — Will tag the release and add the CHANGELOG entry to the message.
+* [ ] `git push` — This will trigger the building of the release and stage the GitHub release as a _draft_.
+* [ ] Save draft as a release.
+
+[BATS]: https://bats-core.readthedocs.io
 [Cobra]: https://cobra.dev
+[Conventional Commits]: https://www.conventionalcommits.org
+[EditorConfig-Checker]: https://editorconfig-checker.github.io
 [EditorConfig]: https://editorconfig.org
 [Git LFS]: https://git-lfs.com
+[git-cliff]: https://git-cliff.org
 [Go]: https://go.dev
 [golangci-lint]: https://golangci-lint.run
+[gommit]: https://github.com/antham/gommit
 [GoReleaser]: https://goreleaser.com
 [jq]: https://jqlang.github.io/jq/
+[licensei]: https://github.com/goph/licensei
 [Markdownlint]: https://www.npmjs.com/package/markdownlint-cli
 [Node.js]: https://nodejs.org
 [pre-commit]: https://pre-commit.com
 [Python]: https://www.python.org
 [Snyk IDE Extension]: https://docs.snyk.io/integrations/ide-tools/visual-studio-code-extension
 [tflint]: https://github.com/terraform-linters/tflint
+[Trivy]: https://trivy.dev
 [yamllint]: https://github.com/adrienverge/yamllint
