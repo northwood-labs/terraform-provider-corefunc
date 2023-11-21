@@ -6,17 +6,29 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 [Semantic Versioning](https://semver.org), and uses
 [Conventional Commit](https://www.conventionalcommits.org) syntax.
 
-## v1.0.1 - 2023-11-20
+## Unreleased
+
+[Compare: v1.0.1 → `HEAD`](https://github.com/northwood-labs/terraform-provider-corefunc/compare/v1.0.1..HEAD)
+
+### Building and Dependencies
+
+* [`b267f1e`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/b267f1ee74b109510ceb38ef0f0e9e9a49f88d59): Prepping a new test tag to trigger the build.
+
+## 1.0.1 — 2023-11-21
+
+[Compare: v1.0.0 → v1.0.1](https://github.com/northwood-labs/terraform-provider-corefunc/compare/v1.0.0..v1.0.1)
 
 ### Building and Dependencies
 
 * [`33557b7`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/33557b7ca19fce19b28ded1b97c4cb0d62a3734b): Added git-cliff as a dependency for changelogs.
+* [`d3d344e`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/d3d344e370a173613d7cab7bfa80a832c2215707): Remove default.pgo.
 
 ### Miscellaneous Tasks
 
 * [`6901616`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/6901616b298e5be1bf159d4d6f7c54e6ec339894): Run GoReleaser on Git tag.
 * [`b6447ec`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/b6447ec9b6848f35c1d0449fe305bc2bc3d6afb9): Improving the security of the workflow.
 * [`eb9f7ae`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/eb9f7aecfdaa7bda9087b9b58229d3943571a863): Update the GoReleaser configuration.
+* [`a01b12e`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/a01b12e6870b821f561624bca79407e4c87c73cf): Trying to get the build to work.
 
 ### Styling
 
