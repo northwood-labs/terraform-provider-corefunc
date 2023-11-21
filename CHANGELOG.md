@@ -6,7 +6,17 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 [Semantic Versioning](https://semver.org), and uses
 [Conventional Commit](https://www.conventionalcommits.org) syntax.
 
-## v1.0.3 - 2023-11-21
+## Unreleased
+
+[Compare: v1.0.3 → `HEAD`](https://github.com/northwood-labs/terraform-provider-corefunc/compare/v1.0.3..HEAD)
+
+### Documentation
+
+* [`3b7d8ca`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/3b7d8cac9ddc38904505c5c9fbbd47fc15f54df5): Updated the `README.md`.
+
+## 1.0.3 — 2023-11-21
+
+[Compare: v1.0.0 → v1.0.3](https://github.com/northwood-labs/terraform-provider-corefunc/compare/v1.0.0..v1.0.3)
 
 ### Building and Dependencies
 

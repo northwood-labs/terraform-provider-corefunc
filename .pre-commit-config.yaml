@@ -12,7 +12,7 @@ fail_fast: false
 
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: d20d9444dfc759ebeeff1643f213132bb4dd491f
+    rev: 7b2234e6dd211438f6416cd261fa2e747ef498cf
     hooks:
       - id: check-added-large-files
         args:
