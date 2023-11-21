@@ -6,7 +6,23 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 [Semantic Versioning](https://semver.org), and uses
 [Conventional Commit](https://www.conventionalcommits.org) syntax.
 
-## 1.0.0 - 2023-11-20
+## Unreleased
+
+### Building and Dependencies
+
+* [`33557b7`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/33557b7ca19fce19b28ded1b97c4cb0d62a3734b): Added git-cliff as a dependency for changelogs.
+
+### Miscellaneous Tasks
+
+* [`6901616`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/6901616b298e5be1bf159d4d6f7c54e6ec339894): Run GoReleaser on Git tag.
+* [`b6447ec`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/b6447ec9b6848f35c1d0449fe305bc2bc3d6afb9): Improving the security of the workflow.
+* [`eb9f7ae`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/eb9f7aecfdaa7bda9087b9b58229d3943571a863): Update the GoReleaser configuration.
+
+### Styling
+
+* [`d451600`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/d451600b1b601c242979cae99f7c915f86742ec4): Minor adjustments to the Makefile and author script.
+
+## 1.0.0 — 2023-11-20
 
 ### Bug Fixes
 
@@ -151,6 +167,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`d1276b3`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/d1276b3ffac3ab3d93d031d63f88c42de9393983): Cleaned up some mis-named jobs.
 * [`a1dd8ef`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/a1dd8efc0aef98d1269e4e3beccd709cfcec9003): Update the GoReleaser configuration.
 * [`07dc031`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/07dc0315da588063861b54862b72e78d8f10fa74): Testing GoReleaser config changes.
+* [`e61c254`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/e61c254b8008b5b9a8c2e18f7c317024a92be0e7): Update CHANGELOG configuration for GoReleaser.
 
 ### Refactor
 
