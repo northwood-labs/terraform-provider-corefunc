@@ -19,23 +19,29 @@ builds:
     ldflags:
       - -s -w -X github.com/northwood-labs/terraform-provider-corefunc/cmd.Version={{.Version}}
     goos:
-      - freebsd
-      - openbsd
-      - solaris
-      - windows
-      - linux
       - darwin
+      - freebsd
+      - linux
+      - netbsd
+      - openbsd
+      - windows
     goarch:
-      - amd64
       - '386'
+      - amd64
       - arm
       - arm64
     ignore:
       - goos: darwin
         goarch: '386'
+      - goos: darwin
+        goarch: arm
       - goos: openbsd
         goarch: arm
       - goos: openbsd
+        goarch: arm64
+      - goos: netbsd
+        goarch: arm
+      - goos: netbsd
         goarch: arm64
     binary: '{{ .ProjectName }}_v{{ .Version }}'
 
@@ -67,17 +73,9 @@ release:
   draft: true
   prerelease: auto
   mode: replace
-  extra_files:
-    - glob: terraform-registry-manifest.json
-      name_template: '{{ .ProjectName }}_{{ .Version }}_manifest.json'
-  footer: |
-    ## Asset Naming
-
-    | Synonyms              | Description                  |
-    |-----------------------|------------------------------|
-    | `x86_64` and `amd64`  | 64-bit Intel and/or AMD CPUs |
-    | `aarch64` and `arm64` | 64-bit ARM CPUs              |
-
+  # extra_files:
+  #   - glob: terraform-registry-manifest.json
+  #     name_template: "{{ .ProjectName }}_{{ .Version }}_manifest.json"
   name_template: '{{.Version}} — {{time "2006-01-02"}}'
 
 # https://goreleaser.com/customization/changelog/
