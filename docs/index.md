@@ -67,4 +67,69 @@ terraform {
 provider "corefunc" {}
 ```
 
+## Updating your Terraform lockfile
+
+Running `terraform init` will download the provider and update the [_Dependency Lock File_](https://developer.hashicorp.com/terraform/language/files/dependency-lock) (`.terraform.lock.hcl`) for your _current_ OS and CPU architecture. If you have a team with multiple operating systems or multiple CPU architectures, the _Dependency Lock File_ will be incomplete, and other members on the team won't be able to use it.
+
+In order to resolve this, you can use the `terraform providers lock` command to generate a _Dependency Lock File_ that is compatible with all relevant operating systems and CPU architectures.
+
+### Recommended matrix
+
+Per [Recommended Provider Binary Operating Systems and Architectures](https://developer.hashicorp.com/terraform/registry/providers/os-arch):
+
+```shell
+terraform providers lock \
+    -platform=darwin_amd64 \
+    -platform=darwin_arm64 \
+    -platform=linux_amd64 \
+    -platform=linux_arm \
+    -platform=linux_arm64 \
+    -platform=windows_amd64 \
+    ;
+```
+
+### Extended matrix
+
+```shell
+terraform providers lock \
+    -platform=darwin_amd64 \
+    -platform=darwin_arm64 \
+    -platform=freebsd_386 \
+    -platform=freebsd_amd64 \
+    -platform=linux_386 \
+    -platform=linux_amd64 \
+    -platform=linux_arm \
+    -platform=linux_arm64 \
+    -platform=windows_386 \
+    -platform=windows_amd64 \
+    ;
+```
+
+### Complete matrix
+
+This is the complete list of supported operating systems and architectures for this specific provider:
+
+```shell
+terraform providers lock \
+    -platform=darwin_amd64 \
+    -platform=darwin_arm64 \
+    -platform=freebsd_386 \
+    -platform=freebsd_amd64 \
+    -platform=freebsd_arm \
+    -platform=freebsd_arm64 \
+    -platform=linux_386 \
+    -platform=linux_amd64 \
+    -platform=linux_arm \
+    -platform=linux_arm64 \
+    -platform=netbsd_386 \
+    -platform=netbsd_amd64 \
+    -platform=openbsd_386 \
+    -platform=openbsd_amd64 \
+    -platform=windows_386 \
+    -platform=windows_amd64 \
+    -platform=windows_arm \
+    -platform=windows_arm64 \
+    ;
+```
+
 <!-- Preview the provider docs with the Terraform registry provider docs preview tool: https://registry.terraform.io/tools/doc-preview -->
