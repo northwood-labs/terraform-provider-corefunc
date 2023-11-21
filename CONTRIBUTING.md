@@ -395,6 +395,8 @@ Profile-guided optimization (PGO), also known as feedback-directed optimization 
 
 ## Scanning for vulnerabilities
 
+There are multiple vulnerability scans wrapped-up in:
+
 ```bash
 make vuln
 ```
