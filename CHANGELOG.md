@@ -6,7 +6,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 [Semantic Versioning](https://semver.org), and uses
 [Conventional Commit](https://www.conventionalcommits.org) syntax.
 
-## Unreleased
+## v1.0.2 - 2023-11-20
 
 [Compare: v1.0.1 → `HEAD`](https://github.com/northwood-labs/terraform-provider-corefunc/compare/v1.0.1..HEAD)
 
