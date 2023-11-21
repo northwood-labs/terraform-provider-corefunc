@@ -71,6 +71,7 @@ data "corefunc_str_iterative_replace" "replacements" {
 ### Nested Schema for `replacements`
 
 Required:
+*
 
 * `new` (String)
 * `old` (String)
