@@ -5,10 +5,6 @@ dist: ./dist
 # https://goreleaser.com/customization/reportsizes/
 report_sizes: true
 
-before:
-  hooks:
-    - make tidy
-
 # https://goreleaser.com/customization/builds/
 builds:
   - env:
