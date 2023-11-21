@@ -40,11 +40,6 @@ jobs:
         with:
           gpg_private_key: ${{ secrets.GPG_KEY_B64 }}
           passphrase: ${{ secrets.GPG_PWD }}
-          fingerprint: ${{ secrets.GPG_FINGERPRINT }}
-          trust_level: 5
-          git_user_signingkey: true
-          git_commit_gpgsign: true
-          git_tag_gpgsign: true
 
       - name: GoReleaser Action
         uses: goreleaser/goreleaser-action@7ec5c2b0c6cdda6e8bbb49444bc797dd33d74dd8 # v5.0.0
