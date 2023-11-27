@@ -1,0 +1,8 @@
+data "corefunc_str_leftpad" "leftpad" {
+  string    = "{{ .Input }}"
+  pad_width = "{{ .PadWidth }}"
+{{- with .PadChar }}
+  pad_char  = "{{ . | printf "%c" }}"
+{{- end }}
+}
+#=> {{ .Expected }}

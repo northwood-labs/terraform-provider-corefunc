@@ -17,7 +17,6 @@ package corefunc
 import (
 	"fmt"
 	"testing"
-	"unicode/utf8"
 
 	"github.com/northwood-labs/terraform-provider-corefunc/testfixtures"
 )
@@ -37,7 +36,14 @@ func ExampleStrLeftPad() {
 func TestStrLeftPad(t *testing.T) {
 	for name, tc := range testfixtures.StrLeftPadTestTable {
 		t.Run(name, func(t *testing.T) {
-			output := StrLeftPad(tc.Input, tc.PadWidth, tc.PadStr)
+			output := ""
+			var emptyByte byte
+
+			if tc.PadChar == emptyByte {
+				output = StrLeftPad(tc.Input, tc.PadWidth)
+			} else {
+				output = StrLeftPad(tc.Input, tc.PadWidth, tc.PadChar)
+			}
 
 			if output != tc.Expected {
 				t.Errorf("Expected %s, got %s", tc.Expected, output)
@@ -53,7 +59,7 @@ func BenchmarkStrLeftPad(b *testing.B) {
 		b.Run(name, func(b *testing.B) {
 			b.ResetTimer()
 			for i := 0; i < b.N; i++ {
-				_ = StrLeftPad(tc.Input, tc.PadWidth, tc.PadStr) // lint:allow_unhandled
+				_ = StrLeftPad(tc.Input, tc.PadWidth, tc.PadChar) // lint:allow_unhandled
 			}
 		})
 	}
@@ -67,7 +73,7 @@ func BenchmarkStrLeftPadParallel(b *testing.B) {
 			b.ResetTimer()
 			b.RunParallel(func(pb *testing.PB) {
 				for pb.Next() {
-					_ = StrLeftPad(tc.Input, tc.PadWidth, tc.PadStr) // lint:allow_unhandled
+					_ = StrLeftPad(tc.Input, tc.PadWidth, tc.PadChar) // lint:allow_unhandled
 				}
 			})
 		})
@@ -82,8 +88,7 @@ func FuzzStrLeftPad(f *testing.F) {
 
 	f.Fuzz(
 		func(t *testing.T, in string) {
-			r, _ := utf8.DecodeRuneInString(in)
-			_ = StrLeftPad(in, len(in), r) // lint:allow_unhandled
+			_ = StrLeftPad(in, len(in)) // lint:allow_unhandled
 		},
 	)
 }
