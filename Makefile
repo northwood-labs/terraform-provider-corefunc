@@ -331,9 +331,7 @@ examples:
 fuzz:
 	@ $(ECHO) " "
 	@ $(ECHO) "\033[1;33m=====> Running the fuzzer (https://go.dev/doc/tutorial/fuzz)...\033[0m"
-	$(GO) test -run='^$$' -fuzz=FuzzEnvEnsure -fuzztime 1m -v ./corefunc
-	$(GO) test -run='^$$' -fuzz=FuzzStrIterativeReplace -fuzztime 1m -v ./corefunc
-	$(GO) test -run='^$$' -fuzz=FuzzTruncateLabel -fuzztime 1m -v ./corefunc
+	$(GO) test -list=Fuzz ./corefunc/... | grep ^Fuzz | xargs -I% $(GO) test -run='^$$' -fuzz=% -fuzztime 1m -v ./corefunc
 
 .PHONY: quickbench
 ## quickbench: [test]* Runs the benchmarks with minimal data for a quick check
