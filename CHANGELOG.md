@@ -18,11 +18,19 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 
 * [`3b7d8ca`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/3b7d8cac9ddc38904505c5c9fbbd47fc15f54df5): Updated the `README.md`.
 * [`d41ad2e`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/d41ad2e1dafbfac54dacf3ac9d49b50032122089): Updated the Terraform documentation to include the lockfile.
+* [`00b7206`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/00b7206578b826912a4e7563d7d6caa2588432a3): Updated the CHANGELOG.
+* [`92a73de`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/92a73de97de90a269afd08f4369ee4c5ad4aee59): Ran Markdownlint on the CHANGELOG.
+* [`6b7b0a3`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/6b7b0a375e9b17be41055a4f8a2c2dce6401b674): Added a note about base10 to `corefunc_int_leftpad`.
+* [`b83580e`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/b83580eeac1b986d8b0fd7d667da31356f7d8bd5): Regenerated the provider documentation.
 
 ### Features
 
 * [`1135f94`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/1135f9439b1966e3da849c2b9272f84eb89cfd36): Begin implementations of StrLeftPad and IntLeftPad.
 * [`92fbf6f`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/92fbf6f5e7f4fd17b1a33135a851143be1fd276e): Implemented the provider side of leftpad functions. ([#73](https://github.com/northwood-labs/terraform-provider-corefunc/issues/73))
+
+### Linting
+
+* [`89b97d3`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/89b97d37ea0495e56fefe181ef7f473680e73a0b): Updated the cache of dependency license information.
 
 ### Testing
 
