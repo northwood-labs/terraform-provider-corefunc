@@ -14,9 +14,7 @@
 
 package corefunc
 
-import (
-	"strings"
-)
+import "strings"
 
 /*
 StrLeftPad pads a string on the left side with a given string until it reaches
@@ -29,22 +27,23 @@ the desired width.
   - padWidth (int): The total width of the padded string. If `str` is equivalent
     length or longer, then no padding will be applied.
 
-  - padStr (string): The string to use as padding. If unspecified, will use a
+  - padChar (string): The string to use as padding. If unspecified, will use a
     single space character.
 */
-func StrLeftPad(str string, padWidth int, padStr ...rune) string {
-	if len(str) > padWidth {
+func StrLeftPad(str string, padWidth int, padChar ...byte) string {
+	if len(str) >= padWidth {
 		return str
 	}
 
-	pStr := ' '
+	var pStr byte
+	pStr = 0x20
 
 	if padWidth < 0 {
 		padWidth = 0
 	}
 
-	if len(padStr) > 0 {
-		pStr = padStr[0]
+	if len(padChar) > 0 {
+		pStr = padChar[0]
 	}
 
 	return strings.Repeat(string(pStr), padWidth-len(str)) + str
