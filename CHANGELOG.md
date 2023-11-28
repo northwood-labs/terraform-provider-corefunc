@@ -7,6 +7,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 [Conventional Commit](https://www.conventionalcommits.org) syntax.
 
 ## Unreleased
+
 [Compare: v1.0.3 → `HEAD`](https://github.com/northwood-labs/terraform-provider-corefunc/compare/v1.0.3..HEAD)
 
 ### Building and Dependencies
@@ -28,6 +29,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`57a7b85`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/57a7b85c17040f880dcaf6546c11cb9acd0a7615): Lookup and run fuzz tests programmatically.
 
 ## 1.0.3 — 2023-11-21
+
 [Compare: v1.0.0 → v1.0.3](https://github.com/northwood-labs/terraform-provider-corefunc/compare/v1.0.0..v1.0.3)
 
 ### Building and Dependencies
@@ -212,4 +214,3 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`d54db2d`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/d54db2d14880d822348a9f098828755f38bf5adb): Manually install latest Go for govulncheck.
 * [`f965fbe`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/f965fbe6a0246138cf8d80e50ea705a54ddde548): Manually install latest Go for govulncheck.
 * [`78966d5`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/78966d5edc0e3c57f7ab86827f8d3595b2442072): Allow `storage.googleapis.com:443` from GitHub Actions.
-
