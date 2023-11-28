@@ -78,6 +78,7 @@ In order to resolve this, you can use the `terraform providers lock` command to 
 Per [Recommended Provider Binary Operating Systems and Architectures](https://developer.hashicorp.com/terraform/registry/providers/os-arch):
 
 ```shell
+#!/usr/bin/env bash
 terraform providers lock \
     -platform=darwin_amd64 \
     -platform=darwin_arm64 \
@@ -91,6 +92,7 @@ terraform providers lock \
 ### Extended matrix
 
 ```shell
+#!/usr/bin/env bash
 terraform providers lock \
     -platform=darwin_amd64 \
     -platform=darwin_arm64 \
@@ -110,6 +112,7 @@ terraform providers lock \
 This is the complete list of supported operating systems and architectures for this specific provider:
 
 ```shell
+#!/usr/bin/env bash
 terraform providers lock \
     -platform=darwin_amd64 \
     -platform=darwin_arm64 \
