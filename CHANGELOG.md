@@ -7,15 +7,27 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 [Conventional Commit](https://www.conventionalcommits.org) syntax.
 
 ## Unreleased
-
 [Compare: v1.0.3 → `HEAD`](https://github.com/northwood-labs/terraform-provider-corefunc/compare/v1.0.3..HEAD)
+
+### Building and Dependencies
+
+* [`de4027c`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/de4027ce4f48f09525b5f0ce4c4000ebd6c75de1): **deps**: Bump `github/codeql-action` from 2.22.7 to 2.22.8 ([#72](https://github.com/northwood-labs/terraform-provider-corefunc/issues/72)) (dependabot[bot])
 
 ### Documentation
 
 * [`3b7d8ca`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/3b7d8cac9ddc38904505c5c9fbbd47fc15f54df5): Updated the `README.md`.
+* [`d41ad2e`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/d41ad2e1dafbfac54dacf3ac9d49b50032122089): Updated the Terraform documentation to include the lockfile.
+
+### Features
+
+* [`1135f94`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/1135f9439b1966e3da849c2b9272f84eb89cfd36): Begin implementations of StrLeftPad and IntLeftPad.
+* [`92fbf6f`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/92fbf6f5e7f4fd17b1a33135a851143be1fd276e): Implemented the provider side of leftpad functions. ([#73](https://github.com/northwood-labs/terraform-provider-corefunc/issues/73))
+
+### Testing
+
+* [`57a7b85`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/57a7b85c17040f880dcaf6546c11cb9acd0a7615): Lookup and run fuzz tests programmatically.
 
 ## 1.0.3 — 2023-11-21
-
 [Compare: v1.0.0 → v1.0.3](https://github.com/northwood-labs/terraform-provider-corefunc/compare/v1.0.0..v1.0.3)
 
 ### Building and Dependencies
@@ -200,3 +212,4 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`d54db2d`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/d54db2d14880d822348a9f098828755f38bf5adb): Manually install latest Go for govulncheck.
 * [`f965fbe`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/f965fbe6a0246138cf8d80e50ea705a54ddde548): Manually install latest Go for govulncheck.
 * [`78966d5`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/78966d5edc0e3c57f7ab86827f8d3595b2442072): Allow `storage.googleapis.com:443` from GitHub Actions.
+
