@@ -4,6 +4,7 @@ page_title: "corefunc_int_leftpad Data Source - corefunc"
 subcategory: ""
 description: |-
   Converts an integer to a string, and then pads it with zeroes on the left.
+  -> If the integer is NOT in base10 (decimal), it will be converted to base10 (decimal) before being padded.
   Maps to the corefunc.IntLeftPad() https://pkg.go.dev/github.com/northwood-labs/terraform-provider-corefunc/corefunc#IntLeftPad Go method, which can be used in Terratest https://terratest.gruntwork.io.
 ---
 -->
@@ -11,6 +12,8 @@ description: |-
 # corefunc_int_leftpad (Data Source)
 
 Converts an integer to a string, and then pads it with zeroes on the left.
+
+-> If the integer is NOT in base10 (decimal), it will be converted to base10 (decimal) _before_ being padded.
 
 Maps to the [`corefunc.IntLeftPad()`](https://pkg.go.dev/github.com/northwood-labs/terraform-provider-corefunc/corefunc#IntLeftPad) Go method, which can be used in [Terratest](https://terratest.gruntwork.io).
 
