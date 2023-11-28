@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 terraform providers lock \
     -platform=darwin_amd64 \
     -platform=darwin_arm64 \

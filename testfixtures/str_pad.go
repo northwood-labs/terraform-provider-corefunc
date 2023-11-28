@@ -21,48 +21,83 @@ var StrLeftPadTestTable = map[string]struct { // lint:no_dupe
 	Input    string
 	Expected string
 	PadWidth int
-	PadStr   rune
+	PadChar  byte
 }{
 	"Xn1": {
 		Input:    "foo",
 		PadWidth: -1, // lint:allow_raw_number
-		PadStr:   '.',
+		PadChar:  '.',
 		Expected: "foo",
 	},
 	"X0": {
 		Input:    "foo",
 		PadWidth: 0, // lint:allow_raw_number
-		PadStr:   '.',
+		PadChar:  '.',
 		Expected: "foo",
 	},
 	"X1": {
 		Input:    "foo",
 		PadWidth: 1, // lint:allow_raw_number
-		PadStr:   '.',
+		PadChar:  '.',
 		Expected: "foo",
 	},
 	"X2": {
 		Input:    "foo",
 		PadWidth: 2, // lint:allow_raw_number
-		PadStr:   '.',
+		PadChar:  '.',
 		Expected: "foo",
 	},
 	"X3": {
 		Input:    "foo",
 		PadWidth: 3, // lint:allow_raw_number
-		PadStr:   '.',
+		PadChar:  '.',
 		Expected: "foo",
 	},
 	"X4": {
 		Input:    "foo",
 		PadWidth: 4, // lint:allow_raw_number
-		PadStr:   '.',
+		PadChar:  '.',
 		Expected: ".foo",
 	},
 	"X5": {
 		Input:    "foo",
 		PadWidth: 5, // lint:allow_raw_number
-		PadStr:   '.',
+		PadChar:  '.',
 		Expected: "..foo",
+	},
+	"_Xn1": {
+		Input:    "foo",
+		PadWidth: -1, // lint:allow_raw_number
+		Expected: "foo",
+	},
+	"_X0": {
+		Input:    "foo",
+		PadWidth: 0, // lint:allow_raw_number
+		Expected: "foo",
+	},
+	"_X1": {
+		Input:    "foo",
+		PadWidth: 1, // lint:allow_raw_number
+		Expected: "foo",
+	},
+	"_X2": {
+		Input:    "foo",
+		PadWidth: 2, // lint:allow_raw_number
+		Expected: "foo",
+	},
+	"_X3": {
+		Input:    "foo",
+		PadWidth: 3, // lint:allow_raw_number
+		Expected: "foo",
+	},
+	"_X4": {
+		Input:    "foo",
+		PadWidth: 4, // lint:allow_raw_number
+		Expected: " foo",
+	},
+	"_X5": {
+		Input:    "foo",
+		PadWidth: 5, // lint:allow_raw_number
+		Expected: "  foo",
 	},
 }

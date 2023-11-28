@@ -102,10 +102,12 @@ func (p *coreFuncProvider) DataSources(ctx context.Context) []func() datasource.
 
 	return []func() datasource.DataSource{
 		EnvEnsureDataSource,
+		IntLeftpadDataSource,
 		StrCamelDataSource,
 		StrConstantDataSource,
 		StrIterativeReplaceDataSource,
 		StrKebabDataSource,
+		StrLeftpadDataSource,
 		StrPascalDataSource,
 		StrSnakeDataSource,
 		TruncateLabelDataSource,

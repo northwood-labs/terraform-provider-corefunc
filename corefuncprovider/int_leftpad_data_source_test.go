@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package corefuncprovider
+package corefuncprovider // lint:no_dupe
 
 import (
 	"bytes"
@@ -28,10 +28,10 @@ import (
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/resource"
 )
 
-func TestAcc{{ .PascalStrip }}DataSource(t *testing.T) {
+func TestAccIntLeftpadDataSource(t *testing.T) {
 	funcName := traceFuncName()
 
-	for name, tc := range testfixtures.{{ .PascalStrip }}TestTable {
+	for name, tc := range testfixtures.IntLeftPadTestTable {
 		fmt.Printf(
 			"=== RUN   %s/%s\n",
 			strings.TrimSpace(funcName),
@@ -40,7 +40,7 @@ func TestAcc{{ .PascalStrip }}DataSource(t *testing.T) {
 
 		buf := &bytes.Buffer{}
 		tmpl := template.Must(
-			template.ParseFiles("{{ .SnakeStrip }}_data_source_fixture.tftpl"),
+			template.ParseFiles("int_leftpad_data_source_fixture.tftpl"),
 		)
 
 		err := tmpl.Execute(buf, tc)
@@ -58,7 +58,7 @@ func TestAcc{{ .PascalStrip }}DataSource(t *testing.T) {
 				{
 					Config: providerConfig + buf.String(),
 					Check: resource.ComposeAggregateTestCheckFunc(
-						resource.TestCheckResourceAttr("data.corefunc_{{ .SnakeStrip }}.@TODO", "value", tc.Expected),
+						resource.TestCheckResourceAttr("data.corefunc_int_leftpad.leftpad", "value", tc.Expected),
 					),
 				},
 			},

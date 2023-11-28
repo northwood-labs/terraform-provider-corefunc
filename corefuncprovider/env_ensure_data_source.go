@@ -72,7 +72,7 @@ func (d *envEnsureDataSource) Metadata(
 }
 
 // Schema defines the schema for the data source.
-func (d *envEnsureDataSource) Schema(
+func (d *envEnsureDataSource) Schema( // lint:no_dupe
 	ctx context.Context,
 	_ datasource.SchemaRequest,
 	resp *datasource.SchemaResponse,
