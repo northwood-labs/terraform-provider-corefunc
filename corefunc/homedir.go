@@ -25,9 +25,9 @@ func Homedir() (string, error) {
 }
 
 /*
-Expand expands the path to include the home directory if the path is prefixed
+HomedirExpand expands the path to include the home directory if the path is prefixed
 with `~`. If it isn't prefixed with `~`, the path is returned as-is.
 */
-func Expand(path string) (string, error) {
+func HomedirExpand(path string) (string, error) {
 	return homedir.Expand(path) // lint:allow_unwrapped_errors
 }
