@@ -31,7 +31,7 @@ import (
 func TestAccStrIterativeReplaceDataSource(t *testing.T) {
 	funcName := traceFuncName()
 
-	for name, tc := range testfixtures.StrIterativeReplaceTestTable {
+	for name, tc := range testfixtures.StrIterativeReplaceTestTable { // lint:no_dupe
 		fmt.Printf(
 			"=== RUN   %s/%s\n",
 			strings.TrimSpace(funcName),

@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package corefuncprovider // lint:no_dupe
+package corefuncprovider
 
 import (
 	"bytes"
@@ -28,10 +28,14 @@ import (
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/resource"
 )
 
-func TestAccStrSnakeDataSource(t *testing.T) {
+func TestAccHomedirGetDataSource(t *testing.T) {
+	if os.Getenv("GITHUB_ACTIONS") == "" {
+		t.SkipNow()
+	}
+
 	funcName := traceFuncName()
 
-	for name, tc := range testfixtures.StrSnakeTestTable { // lint:no_dupe
+	for name, tc := range testfixtures.HomedirGetTestTable { // lint:no_dupe
 		fmt.Printf(
 			"=== RUN   %s/%s\n",
 			strings.TrimSpace(funcName),
@@ -40,7 +44,7 @@ func TestAccStrSnakeDataSource(t *testing.T) {
 
 		buf := &bytes.Buffer{}
 		tmpl := template.Must(
-			template.ParseFiles("str_snake_data_source_fixture.tftpl"),
+			template.ParseFiles("homedir_get_data_source_fixture.tftpl"),
 		)
 
 		err := tmpl.Execute(buf, tc)
@@ -58,7 +62,7 @@ func TestAccStrSnakeDataSource(t *testing.T) {
 				{
 					Config: providerConfig + buf.String(),
 					Check: resource.ComposeAggregateTestCheckFunc(
-						resource.TestCheckResourceAttr("data.corefunc_str_snake.snake", "value", tc.Expected),
+						resource.TestCheckResourceAttr("data.corefunc_homedir_get.home", "value", tc.Expected),
 					),
 				},
 			},
