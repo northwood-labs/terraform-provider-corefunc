@@ -81,6 +81,8 @@ func (d *intLeftpadDataSource) Schema( // lint:no_dupe
 		MarkdownDescription: strings.TrimSpace(dedent.Dedent(`
 		Converts an integer to a string, and then pads it with zeroes on the left.
 
+		-> If the integer is NOT in base10 (decimal), it will be converted to base10 (decimal) _before_ being padded.
+
 		Maps to the ` + linkPackage("IntLeftPad") + ` Go method, which can be used in ` + Terratest + `.`)),
 		Attributes: map[string]schema.Attribute{
 			"id": schema.Int64Attribute{
