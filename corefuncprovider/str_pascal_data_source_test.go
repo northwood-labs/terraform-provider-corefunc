@@ -31,7 +31,7 @@ import (
 func TestAccStrPascalDataSource(t *testing.T) {
 	funcName := traceFuncName()
 
-	for name, tc := range testfixtures.StrPascalTestTable {
+	for name, tc := range testfixtures.StrPascalTestTable { // lint:no_dupe
 		fmt.Printf(
 			"=== RUN   %s/%s\n",
 			strings.TrimSpace(funcName),

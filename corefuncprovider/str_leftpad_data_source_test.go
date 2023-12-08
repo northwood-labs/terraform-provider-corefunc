@@ -31,7 +31,7 @@ import (
 func TestAccStrLeftpadDataSource(t *testing.T) {
 	funcName := traceFuncName()
 
-	for name, tc := range testfixtures.StrLeftPadTestTable {
+	for name, tc := range testfixtures.StrLeftPadTestTable { // lint:no_dupe
 		fmt.Printf(
 			"=== RUN   %s/%s\n",
 			strings.TrimSpace(funcName),

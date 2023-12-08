@@ -31,7 +31,7 @@ import (
 func TestAccStrConstantDataSource(t *testing.T) {
 	funcName := traceFuncName()
 
-	for name, tc := range testfixtures.StrConstantTestTable {
+	for name, tc := range testfixtures.StrConstantTestTable { // lint:no_dupe
 		fmt.Printf(
 			"=== RUN   %s/%s\n",
 			strings.TrimSpace(funcName),

@@ -32,7 +32,7 @@ import (
 func TestAccEnvEnsureDataSource(t *testing.T) {
 	funcName := traceFuncName()
 
-	for name, tc := range testfixtures.EnvEnsureTestTable {
+	for name, tc := range testfixtures.EnvEnsureTestTable { // lint:no_dupe
 		var err error
 
 		fmt.Printf(

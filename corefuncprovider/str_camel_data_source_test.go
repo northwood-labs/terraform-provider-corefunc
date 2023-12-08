@@ -31,7 +31,7 @@ import (
 func TestAccStrCamelDataSource(t *testing.T) {
 	funcName := traceFuncName()
 
-	for name, tc := range testfixtures.StrCamelTestTable {
+	for name, tc := range testfixtures.StrCamelTestTable { // lint:no_dupe
 		fmt.Printf(
 			"=== RUN   %s/%s\n",
 			strings.TrimSpace(funcName),
