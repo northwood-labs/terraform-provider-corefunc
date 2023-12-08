@@ -14,6 +14,7 @@ require (
 	github.com/hashicorp/terraform-plugin-log v0.9.0
 	github.com/hashicorp/terraform-plugin-sdk/v2 v2.30.0
 	github.com/lithammer/dedent v1.1.0
+	github.com/mitchellh/go-homedir v1.1.0
 	github.com/northwood-labs/golang-utils/archstring v0.0.0-20230302161720-ec685e2f274a
 	github.com/northwood-labs/golang-utils/exiterrorf v0.0.0-20230302161720-ec685e2f274a
 	github.com/spf13/cobra v1.8.0
@@ -59,7 +60,6 @@ require (
 	github.com/mattn/go-isatty v0.0.20 // indirect
 	github.com/mitchellh/cli v1.1.5 // indirect
 	github.com/mitchellh/copystructure v1.2.0 // indirect
-	github.com/mitchellh/go-homedir v1.1.0 // indirect
 	github.com/mitchellh/go-testing-interface v1.14.1 // indirect
 	github.com/mitchellh/go-wordwrap v1.0.1 // indirect
 	github.com/mitchellh/mapstructure v1.5.0 // indirect
