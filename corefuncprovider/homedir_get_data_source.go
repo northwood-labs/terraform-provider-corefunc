@@ -40,8 +40,8 @@ type (
 
 	// homedirGetDataSourceModel maps the data source schema data.
 	homedirGetDataSourceModel struct {
-		ID    types.Int64  `tfsdk:"id"`
 		Value types.String `tfsdk:"value"`
+		ID    types.Int64  `tfsdk:"id"`
 	}
 )
 

@@ -35,7 +35,7 @@ func TestAccHomedirGetDataSource(t *testing.T) {
 
 	funcName := traceFuncName()
 
-	for name, tc := range testfixtures.HomedirGetTestTable {
+	for name, tc := range testfixtures.HomedirGetTestTable { // lint:no_dupe
 		fmt.Printf(
 			"=== RUN   %s/%s\n",
 			strings.TrimSpace(funcName),

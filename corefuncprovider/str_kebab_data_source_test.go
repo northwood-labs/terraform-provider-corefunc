@@ -31,7 +31,7 @@ import (
 func TestAccStrKebabDataSource(t *testing.T) {
 	funcName := traceFuncName()
 
-	for name, tc := range testfixtures.StrKebabTestTable {
+	for name, tc := range testfixtures.StrKebabTestTable { // lint:no_dupe
 		fmt.Printf(
 			"=== RUN   %s/%s\n",
 			strings.TrimSpace(funcName),

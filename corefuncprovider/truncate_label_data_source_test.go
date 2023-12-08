@@ -59,7 +59,7 @@ func TestAccTruncateLabelDataSourceDefaultMaxLength64(t *testing.T) {
 func TestAccTruncateLabelDataSource(t *testing.T) {
 	funcName := traceFuncName()
 
-	for name, tc := range testfixtures.TruncateLabelTestTable {
+	for name, tc := range testfixtures.TruncateLabelTestTable { // lint:no_dupe
 		fmt.Printf(
 			"=== RUN   %s/%s\n",
 			strings.TrimSpace(funcName),

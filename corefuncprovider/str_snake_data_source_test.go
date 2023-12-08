@@ -31,7 +31,7 @@ import (
 func TestAccStrSnakeDataSource(t *testing.T) {
 	funcName := traceFuncName()
 
-	for name, tc := range testfixtures.StrSnakeTestTable {
+	for name, tc := range testfixtures.StrSnakeTestTable { // lint:no_dupe
 		fmt.Printf(
 			"=== RUN   %s/%s\n",
 			strings.TrimSpace(funcName),
