@@ -15,17 +15,12 @@
 package corefunc
 
 import (
-	"os"
 	"testing"
 
 	"github.com/northwood-labs/terraform-provider-corefunc/testfixtures"
 )
 
 func TestHomedir(t *testing.T) {
-	if os.Getenv("GITHUB_ACTIONS") == "" {
-		t.SkipNow()
-	}
-
 	for name, tc := range testfixtures.HomedirGetTestTable {
 		t.Run(name, func(t *testing.T) {
 			output, err := Homedir()
