@@ -19,13 +19,13 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/chanced/caps"
 	"github.com/hashicorp/terraform-plugin-framework/datasource"
 	"github.com/hashicorp/terraform-plugin-framework/datasource/schema"
 	"github.com/hashicorp/terraform-plugin-framework/resource"
 	"github.com/hashicorp/terraform-plugin-framework/types"
 	"github.com/hashicorp/terraform-plugin-log/tflog"
 	"github.com/lithammer/dedent"
+	"github.com/northwood-labs/terraform-provider-corefunc/corefunc"
 )
 
 // Ensure the implementation satisfies the expected interfaces.
@@ -153,8 +153,9 @@ func (d *strConstantDataSource) Read( // lint:no_dupe
 	state.ID = types.Int64Value(1)
 
 	state.Value = types.StringValue(
-		caps.ToScreamingSnake(
+		corefunc.StrConstant(
 			state.String.ValueString(),
+			// opts,
 		),
 	)
 
