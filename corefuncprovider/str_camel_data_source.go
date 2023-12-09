@@ -19,13 +19,13 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/chanced/caps"
 	"github.com/hashicorp/terraform-plugin-framework/datasource"
 	"github.com/hashicorp/terraform-plugin-framework/datasource/schema"
 	"github.com/hashicorp/terraform-plugin-framework/resource"
 	"github.com/hashicorp/terraform-plugin-framework/types"
 	"github.com/hashicorp/terraform-plugin-log/tflog"
 	"github.com/lithammer/dedent"
+	"github.com/northwood-labs/terraform-provider-corefunc/corefunc"
 )
 
 // Ensure the implementation satisfies the expected interfaces.
@@ -84,9 +84,7 @@ func (d *strCamelDataSource) Schema(
         -> Some acronyms are maintained as uppercase. See
         [caps: pkg-variables](https://pkg.go.dev/github.com/chanced/caps#pkg-variables) for a complete list.
 
-        Maps to the [` + "`" + `caps.ToLowerCamel()` + "`" + `](https://pkg.go.dev/github.com/chanced/caps#ToLowerCamel)
-        Go method, which can be used in ` + Terratest + `.
-        `)),
+		Maps to the ` + linkPackage("StrCamel") + ` Go method, which can be used in ` + Terratest + `.`)),
 		Attributes: map[string]schema.Attribute{
 			"id": schema.Int64Attribute{
 				Description: "Not used. Required by the " + TPF + ".",
@@ -169,7 +167,7 @@ func (d *strCamelDataSource) Read( // lint:no_dupe
 	// }
 
 	state.Value = types.StringValue(
-		caps.ToLowerCamel(
+		corefunc.StrCamel(
 			state.String.ValueString(),
 			// opts,
 		),
