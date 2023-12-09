@@ -44,6 +44,7 @@ If you are using this as a Go library, see the documentation at [pkg.go.dev](htt
 Don't reimplement things that already work well. This project leans on the following libraries:
 
 * [chanced/caps](https://github.com/chanced/caps) — Handles the case manipulation.
+* [mitchellh/go-homedir](https://github.com/mitchellh/go-homedir) — Handles looking-up a user's home directory without CGO.
 
 ## More Information
 

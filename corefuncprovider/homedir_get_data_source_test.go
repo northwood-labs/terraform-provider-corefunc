@@ -29,10 +29,6 @@ import (
 )
 
 func TestAccHomedirGetDataSource(t *testing.T) {
-	if os.Getenv("GITHUB_ACTIONS") == "" {
-		t.SkipNow()
-	}
-
 	funcName := traceFuncName()
 
 	for name, tc := range testfixtures.HomedirGetTestTable { // lint:no_dupe
