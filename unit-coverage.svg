@@ -1,8 +1,8 @@
 
-<svg
-	xmlns="http://www.w3.org/2000/svg"
-	xmlns:xlink="http://www.w3.org/1999/xlink"
-	viewBox="0 0 1028.000000 640.000000"
+<svg 
+	xmlns="http://www.w3.org/2000/svg" 
+	xmlns:xlink="http://www.w3.org/1999/xlink" 
+	viewBox="0 0 1028.000000 640.000000" 
 	style="background: white none repeat scroll 0% 0%;"
 >
 
@@ -15,20 +15,24 @@
 	transform="translate(28.000000,35.600000) scale(1.000000)"
 	style="font-family: Open Sans, verdana, arial, sans-serif !important; font-size: 12px; fill: rgb(0, 0, 0, 65535); fill-opacity: 1; white-space: pre;"
 	data-math="N">github.com/northwood-labs/terraform-provider-corefunc/corefunc</text>
-
+		
 </g>
 
 
 <g>
 	<rect x="793.625000" y="41.600000" width="206.375000" height="377.600000" style="fill: rgba(64, 168, 88, 65535);opacity:1;fill-opacity:1;stroke:rgba(128,128,128,65535);stroke-width:1px;stroke-opacity:1;" />
 
-<text
-	data-notex="1"
+
+<g>
+	<rect x="448.000000" y="348.875000" width="253.333333" height="263.125000" style="fill: rgba(64, 168, 88, 65535);opacity:1;fill-opacity:1;stroke:rgba(128,128,128,65535);stroke-width:1px;stroke-opacity:1;" />
+	
+<text 
+	data-notex="1" 
 	text-anchor="start"
 	transform="translate(801.625000,57.200000) scale(1.000000)"
 	style="font-family: Open Sans, verdana, arial, sans-serif !important; font-size: 12px; fill: rgb(0, 0, 0, 65535); fill-opacity: 1; white-space: pre;"
 	data-math="N">env_ensure.go</text>
-
+		
 </g>
 
 
@@ -41,7 +45,7 @@
 	transform="translate(832.250000,442.800000) scale(1.000000)"
 	style="font-family: Open Sans, verdana, arial, sans-serif !important; font-size: 12px; fill: rgb(255, 255, 255, 65535); fill-opacity: 1; white-space: pre;"
 	data-math="N">homedir.go</text>
-
+		
 </g>
 
 
@@ -54,7 +58,7 @@
 	transform="translate(832.250000,571.333333) scale(1.000000)"
 	style="font-family: Open Sans, verdana, arial, sans-serif !important; font-size: 12px; fill: rgb(255, 255, 255, 65535); fill-opacity: 1; white-space: pre;"
 	data-math="N">int_pad.go</text>
-
+		
 </g>
 
 
@@ -67,7 +71,7 @@
 	transform="translate(526.000000,442.800000) scale(1.000000)"
 	style="font-family: Open Sans, verdana, arial, sans-serif !important; font-size: 12px; fill: rgb(255, 255, 255, 65535); fill-opacity: 1; white-space: pre;"
 	data-math="N">str_iterative_replace.go</text>
-
+		
 </g>
 
 
@@ -80,7 +84,7 @@
 	transform="translate(526.000000,57.200000) scale(1.000000)"
 	style="font-family: Open Sans, verdana, arial, sans-serif !important; font-size: 12px; fill: rgb(0, 0, 0, 65535); fill-opacity: 1; white-space: pre;"
 	data-math="N">str_pad.go</text>
-
+		
 </g>
 
 
