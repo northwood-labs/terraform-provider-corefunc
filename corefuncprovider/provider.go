@@ -103,6 +103,7 @@ func (p *coreFuncProvider) DataSources(ctx context.Context) []func() datasource.
 	return []func() datasource.DataSource{
 		EnvEnsureDataSource,
 		HomedirGetDataSource,
+		HomedirExpandDataSource,
 		IntLeftpadDataSource,
 		StrCamelDataSource,
 		StrConstantDataSource,
