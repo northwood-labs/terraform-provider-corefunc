@@ -15,8 +15,7 @@ description: |-
 
 Converts a string to `camelCase`, removing any non-alphanumeric characters.
 
--> Some acronyms are maintained as uppercase. See
-[caps: pkg-variables](https://pkg.go.dev/github.com/chanced/caps#pkg-variables) for a complete list.
+-> Some acronyms are maintained as uppercase. See [caps: pkg-variables](https://pkg.go.dev/github.com/chanced/caps#pkg-variables) for a complete list.
 
 Maps to the [`caps.ToLowerCamel()`](https://pkg.go.dev/github.com/chanced/caps#ToLowerCamel)
 Go method, which can be used in [Terratest](https://terratest.gruntwork.io).
