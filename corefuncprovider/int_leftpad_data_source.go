@@ -83,7 +83,8 @@ func (d *intLeftpadDataSource) Schema( // lint:no_dupe
 
 		-> If the integer is NOT in base10 (decimal), it will be converted to base10 (decimal) _before_ being padded.
 
-		Maps to the ` + linkPackage("IntLeftPad") + ` Go method, which can be used in ` + Terratest + `.`)),
+		Maps to the ` + linkPackage("IntLeftPad") + ` Go method, which can be used in ` + Terratest + `.
+		`)),
 		Attributes: map[string]schema.Attribute{
 			"id": schema.Int64Attribute{
 				Description: "Not used. Required by the " + TPF + ".",
