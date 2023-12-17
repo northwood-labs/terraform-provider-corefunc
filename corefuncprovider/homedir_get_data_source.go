@@ -79,14 +79,15 @@ func (d *homedirGetDataSource) Schema(
 		MarkdownDescription: strings.TrimSpace(dedent.Dedent(`
         Returns the path to the home directory of the current user.
 
-		Maps to the ` + linkPackage("Homedir") + ` Go method, which can be used in ` + Terratest + `.`)),
+		Maps to the ` + linkPackage("Homedir") + ` Go method, which can be used in ` + Terratest + `.
+		`)),
 		Attributes: map[string]schema.Attribute{
 			"id": schema.Int64Attribute{
 				Description: "Not used. Required by the " + TPF + ".",
 				Computed:    true,
 			},
 			"value": schema.StringAttribute{
-				Description: "The value of the string.",
+				Description: "The value of the home directory.",
 				Computed:    true,
 			},
 		},

@@ -30,110 +30,100 @@ import (
 
 // Ensure the implementation satisfies the expected interfaces.
 var (
-	_ datasource.DataSource              = &strCamelDataSource{}
-	_ datasource.DataSourceWithConfigure = &strCamelDataSource{}
+	_ datasource.DataSource              = &homedirExpandDataSource{}
+	_ datasource.DataSourceWithConfigure = &homedirExpandDataSource{}
 )
 
-// strCamelDataSource is the data source implementation.
+// homedirExpandDataSource is the data source implementation.
 type (
-	strCamelDataSource struct{}
+	homedirExpandDataSource struct{}
 
-	// strCamelDataSourceModel maps the data source schema data.
-	strCamelDataSourceModel struct {
-		// AcronymCaps types.Bool   `tfsdk:"acronym_caps"`
-		String types.String `tfsdk:"string"`
-		Value  types.String `tfsdk:"value"`
-		ID     types.Int64  `tfsdk:"id"`
+	// homedirExpandDataSourceModel maps the data source schema data.
+	homedirExpandDataSourceModel struct {
+		Path  types.String `tfsdk:"path"`
+		Value types.String `tfsdk:"value"`
+		ID    types.Int64  `tfsdk:"id"`
 	}
 )
 
-// StrCamelDataSource is a method that exposes its paired Go function as a
+// HomedirExpandDataSource is a method that exposes its paired Go function as a
 // Terraform Data Source.
-func StrCamelDataSource() datasource.DataSource { // lint:allow_return_interface
-	return &strCamelDataSource{}
+func HomedirExpandDataSource() datasource.DataSource { // lint:allow_return_interface
+	return &homedirExpandDataSource{}
 }
 
 // Metadata returns the data source type name.
-func (d *strCamelDataSource) Metadata(
+func (d *homedirExpandDataSource) Metadata(
 	ctx context.Context,
 	req datasource.MetadataRequest,
 	resp *datasource.MetadataResponse,
 ) {
-	tflog.Info(ctx, "Starting StrCamel DataSource Metadata method.")
+	tflog.Info(ctx, "Starting HomedirExpand DataSource Metadata method.")
 
-	resp.TypeName = req.ProviderTypeName + "_str_camel"
+	resp.TypeName = req.ProviderTypeName + "_homedir_expand"
 
 	tflog.Debug(ctx, fmt.Sprintf("req.ProviderTypeName = %s", req.ProviderTypeName))
 	tflog.Debug(ctx, fmt.Sprintf("resp.TypeName = %s", resp.TypeName))
 
-	tflog.Info(ctx, "Ending StrCamel DataSource Metadata method.")
+	tflog.Info(ctx, "Ending HomedirExpand DataSource Metadata method.")
 }
 
 // Schema defines the schema for the data source.
-func (d *strCamelDataSource) Schema(
+func (d *homedirExpandDataSource) Schema(
 	ctx context.Context,
 	_ datasource.SchemaRequest,
 	resp *datasource.SchemaResponse,
 ) {
-	tflog.Info(ctx, "Starting StrCamel DataSource Schema method.")
+	tflog.Info(ctx, "Starting HomedirExpand DataSource Schema method.")
 
 	resp.Schema = schema.Schema{
 		MarkdownDescription: strings.TrimSpace(dedent.Dedent(`
-        Converts a string to ` + "`" + `camelCase` + "`" + `, removing any non-alphanumeric characters.
+        Replaces the ~ character in a path with the current user's home directory.
 
-        -> Some acronyms are maintained as uppercase. See
-        [caps: pkg-variables](https://pkg.go.dev/github.com/chanced/caps#pkg-variables) for a complete list.
-
-		Maps to the ` + linkPackage("StrCamel") + ` Go method, which can be used in ` + Terratest + `.
+		Maps to the ` + linkPackage("Homedir") + ` Go method, which can be used in ` + Terratest + `.
 		`)),
 		Attributes: map[string]schema.Attribute{
 			"id": schema.Int64Attribute{
 				Description: "Not used. Required by the " + TPF + ".",
 				Computed:    true,
 			},
-			"string": schema.StringAttribute{
-				Description: "The string to convert to `camelCase`.",
+			"path": schema.StringAttribute{
+				Description: "The path to expand.",
 				Required:    true,
 			},
-			// "acronym_caps": schema.BoolAttribute{
-			// 	Description: "Whether or not to keep acronyms as uppercase. A value of `true` means that acronyms " +
-			// 		"will be converted to uppercase. A value of `false` means that acronyms will using typical " +
-			// 		"casing. The default value is `false`.",
-			// 	Optional: true,
-			// },
 			"value": schema.StringAttribute{
-				Description: "The value of the string.",
+				Description: "The path with the home directory expanded.",
 				Computed:    true,
 			},
 		},
 	}
 
-	tflog.Info(ctx, "Ending StrCamel DataSource Schema method.")
+	tflog.Info(ctx, "Ending HomedirExpand DataSource Schema method.")
 }
 
 // Configure adds the provider configured client to the data source.
-func (d *strCamelDataSource) Configure(
+func (d *homedirExpandDataSource) Configure(
 	ctx context.Context,
 	req datasource.ConfigureRequest,
 	_ *datasource.ConfigureResponse,
 ) {
-	tflog.Info(ctx, "Starting StrCamel DataSource Configure method.")
+	tflog.Info(ctx, "Starting HomedirExpand DataSource Configure method.")
 
 	if req.ProviderData == nil {
 		return
 	}
 
-	tflog.Info(ctx, "Ending StrCamel DataSource Configure method.")
+	tflog.Info(ctx, "Ending HomedirExpand DataSource Configure method.")
 }
 
-func (d *strCamelDataSource) Create(
+func (d *homedirExpandDataSource) Create(
 	ctx context.Context,
 	req resource.CreateRequest, // lint:allow_large_memory
 	resp *resource.CreateResponse,
 ) {
-	tflog.Info(ctx, "Starting StrCamel DataSource Create method.")
+	tflog.Info(ctx, "Starting HomedirExpand DataSource Create method.")
 
-	var plan strCamelDataSourceModel
+	var plan homedirExpandDataSourceModel
 
 	diags := req.Plan.Get(ctx, &plan)
 	resp.Diagnostics.Append(diags...)
@@ -142,37 +132,34 @@ func (d *strCamelDataSource) Create(
 		return
 	}
 
-	tflog.Info(ctx, "Ending StrCamel DataSource Create method.")
+	tflog.Info(ctx, "Ending HomedirExpand DataSource Create method.")
 }
 
 // Read refreshes the Terraform state with the latest data.
-func (d *strCamelDataSource) Read( // lint:no_dupe
+func (d *homedirExpandDataSource) Read( // lint:no_dupe
 	ctx context.Context,
 	_ datasource.ReadRequest, // lint:allow_large_memory
 	resp *datasource.ReadResponse,
 ) {
-	tflog.Info(ctx, "Starting StrCamel DataSource Read method.")
+	tflog.Info(ctx, "Starting HomedirExpand DataSource Read method.")
 
-	var state strCamelDataSourceModel
+	var state homedirExpandDataSourceModel
 	diags := resp.State.Get(ctx, &state)
 	resp.Diagnostics.Append(diags...)
 
 	state.ID = types.Int64Value(1)
 
-	// Default values
-	// opts := caps.Opts{}
-	// opts := caps.WithReplaceStyleCamel()
+	homedir, err := corefunc.HomedirExpand(state.Path.ValueString())
+	if err != nil {
+		resp.Diagnostics.AddError(
+			"Unable to resolve the path",
+			err.Error(),
+		)
 
-	// if state.AcronymCaps.ValueBool() { // lint:allow_commented
-	// 	opts = caps.WithReplaceStyleScreaming()
-	// }
+		return
+	}
 
-	state.Value = types.StringValue(
-		corefunc.StrCamel(
-			state.String.ValueString(),
-			// opts,
-		),
-	)
+	state.Value = types.StringValue(homedir)
 
 	diags = resp.State.Set(ctx, &state)
 	resp.Diagnostics.Append(diags...)
@@ -181,5 +168,5 @@ func (d *strCamelDataSource) Read( // lint:no_dupe
 		return
 	}
 
-	tflog.Info(ctx, "Ending StrCamel DataSource Read method.")
+	tflog.Info(ctx, "Ending HomedirExpand DataSource Read method.")
 }

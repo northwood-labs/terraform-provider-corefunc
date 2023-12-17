@@ -19,6 +19,7 @@ import (
 	"fmt"
 	"log"
 	"os"
+	"regexp"
 	"strings"
 	"testing"
 	"text/template"
@@ -28,10 +29,10 @@ import (
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/resource"
 )
 
-func TestAccHomedirGetDataSource(t *testing.T) {
+func TestAccHomedirExpandDataSource(t *testing.T) {
 	funcName := traceFuncName()
 
-	for name, tc := range testfixtures.HomedirGetTestTable { // lint:no_dupe
+	for name, tc := range testfixtures.HomedirExpandTestTable { // lint:no_dupe
 		fmt.Printf(
 			"=== RUN   %s/%s\n",
 			strings.TrimSpace(funcName),
@@ -40,7 +41,7 @@ func TestAccHomedirGetDataSource(t *testing.T) {
 
 		buf := &bytes.Buffer{}
 		tmpl := template.Must(
-			template.ParseFiles("homedir_get_data_source_fixture.tftpl"),
+			template.ParseFiles("homedir_expand_data_source_fixture.tftpl"),
 		)
 
 		err := tmpl.Execute(buf, tc)
@@ -52,16 +53,28 @@ func TestAccHomedirGetDataSource(t *testing.T) {
 			fmt.Fprintln(os.Stderr, buf.String())
 		}
 
-		resource.Test(t, resource.TestCase{
-			ProtoV6ProviderFactories: testAccProtoV6ProviderFactories,
-			Steps: []resource.TestStep{
-				{
-					Config: providerConfig + buf.String(),
-					Check: resource.ComposeAggregateTestCheckFunc(
-						resource.TestCheckResourceAttr("data.corefunc_homedir_get.home", "value", tc.Expected),
-					),
+		if tc.Err {
+			resource.Test(t, resource.TestCase{
+				ProtoV6ProviderFactories: testAccProtoV6ProviderFactories,
+				Steps: []resource.TestStep{
+					{
+						Config:      providerConfig + buf.String(),
+						ExpectError: regexp.MustCompile(`.*`),
+					},
 				},
-			},
-		})
+			})
+		} else {
+			resource.Test(t, resource.TestCase{
+				ProtoV6ProviderFactories: testAccProtoV6ProviderFactories,
+				Steps: []resource.TestStep{
+					{
+						Config: providerConfig + buf.String(),
+						Check: resource.ComposeAggregateTestCheckFunc(
+							resource.TestCheckResourceAttr("data.corefunc_homedir_expand.path", "value", tc.Expected),
+						),
+					},
+				},
+			})
+		}
 	}
 }

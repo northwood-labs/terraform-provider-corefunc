@@ -82,7 +82,8 @@ func (d *strLeftpadDataSource) Schema( // lint:no_dupe
 		MarkdownDescription: strings.TrimSpace(dedent.Dedent(`
 		Pads a string with additional characters on the left.
 
-		Maps to the ` + linkPackage("StrLeftPad") + ` Go method, which can be used in ` + Terratest + `.`)),
+		Maps to the ` + linkPackage("StrLeftPad") + ` Go method, which can be used in ` + Terratest + `.
+		`)),
 		Attributes: map[string]schema.Attribute{
 			"id": schema.Int64Attribute{
 				Description: "Not used. Required by the " + TPF + ".",
