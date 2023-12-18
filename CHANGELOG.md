@@ -13,6 +13,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 ### Building and Dependencies
 
 * [`de4027c`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/de4027ce4f48f09525b5f0ce4c4000ebd6c75de1): **deps**: Bump `github/codeql-action` from 2.22.7 to 2.22.8 ([#72](https://github.com/northwood-labs/terraform-provider-corefunc/issues/72)) (dependabot[bot])
+* [`98d8612`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/98d86121b239c9d15a1a3f429e90b07cf750399f): **deps**: Bump `actions/dependency-review-action` from 3.1.3 to 3.1.4 ([#74](https://github.com/northwood-labs/terraform-provider-corefunc/issues/74)) (dependabot[bot])
+* [`874d704`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/874d7046af06c46ed86ea818936e846188d612d6): **deps**: Bump `actions/setup-go` from 4.1.0 to 5.0.0 ([#75](https://github.com/northwood-labs/terraform-provider-corefunc/issues/75)) (dependabot[bot])
+* [`ca8c440`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/ca8c4409fb32db9b83647e085839b73923ded5ec): **deps**: Bump `github/codeql-action` from 2.22.8 to 2.22.9 ([#76](https://github.com/northwood-labs/terraform-provider-corefunc/issues/76)) (dependabot[bot])
+* [`232c76e`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/232c76e6ecaaa95e43e78182e02c259f2c8bb3b0): **deps**: Bump `github/codeql-action` from 2.22.9 to 3.22.11 ([#79](https://github.com/northwood-labs/terraform-provider-corefunc/issues/79)) (dependabot[bot])
+* [`415d3d3`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/415d3d3bf5a648cb3168ab1015059613d53046f4): **deps**: Bump `github.com/hashicorp/terraform-plugin-sdk/v2` ([#82](https://github.com/northwood-labs/terraform-provider-corefunc/issues/82)) (dependabot[bot])
+* [`78ec578`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/78ec578eb53836a96aaf93ae8b78cb69217941b8): **deps**: Bump `actions/upload-artifact` from 3.1.3 to 4.0.0 ([#80](https://github.com/northwood-labs/terraform-provider-corefunc/issues/80)) (dependabot[bot])
 
 ### Documentation
 
@@ -27,10 +33,17 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 
 * [`1135f94`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/1135f9439b1966e3da849c2b9272f84eb89cfd36): Begin implementations of StrLeftPad and IntLeftPad.
 * [`92fbf6f`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/92fbf6f5e7f4fd17b1a33135a851143be1fd276e): Implemented the provider side of leftpad functions. ([#73](https://github.com/northwood-labs/terraform-provider-corefunc/issues/73))
+* [`c047ee1`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/c047ee16b8db3378bcb76dc430d258be9730568c): Added support for `corefunc.Homedir()` and `corefunc_homedir_get`. ([#77](https://github.com/northwood-labs/terraform-provider-corefunc/issues/77))
+* [`e3985ba`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/e3985ba1d576e273a14fe930eefb81999a695c53): Added initial support for Homedir lookups.
+* [`290e1cc`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/290e1cc1a5138e533935d1d8160d86edecc5b065): Added `corefunc_homedir_expand`.
 
 ### Linting
 
 * [`89b97d3`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/89b97d37ea0495e56fefe181ef7f473680e73a0b): Updated the cache of dependency license information.
+
+### Refactor
+
+* [`2204ce8`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/2204ce86c8d36127cf84163559254549e819590f): Added wrapper corefunc functions for all caps functions.
 
 ### Testing
 
