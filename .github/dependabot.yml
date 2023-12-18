@@ -25,3 +25,8 @@ updates:
     directory: /generator
     schedule:
       interval: daily
+
+  - package-ecosystem: gomod
+    directory: /terratest
+    schedule:
+      interval: daily
