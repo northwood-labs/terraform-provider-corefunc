@@ -6,9 +6,36 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 [Semantic Versioning](https://semver.org), and uses
 [Conventional Commit](https://www.conventionalcommits.org) syntax.
 
-## v1.1.0 - 2023-12-17
+## Unreleased
 
-[Compare: v1.0.3 → `HEAD`](https://github.com/northwood-labs/terraform-provider-corefunc/compare/v1.0.3..HEAD)
+[Compare: v1.1.0 → `HEAD`](https://github.com/northwood-labs/terraform-provider-corefunc/compare/v1.1.0..HEAD)
+
+### Building and Dependencies
+
+* [`0c431c2`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/0c431c21046806396bfe392f32fdfa5ba67743f3): Remove the restriction to pre-1.6 versions of Terraform in examples.
+* [`27b9e60`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/27b9e60796e0bfdc3b972cae11bca284c4cfc8d2): Updated Go dependencies.
+* [`bc39137`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/bc391374137cb742fa719bd3790288cfa4a0c7cd): Pin the version of the GoSec action.
+* [`aa4e217`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/aa4e2178e06786ed2a0adb21e0095326854904fb): Pin the version of the Trufflehog action.
+* [`1d01f26`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/1d01f2686604a931602bdd0880a640ac13d312ce): **deps**: Bump `golang.org/x/crypto` in /terratest ([#90](https://github.com/northwood-labs/terraform-provider-corefunc/issues/90)) (dependabot[bot])
+* [`2f77df9`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/2f77df906e466c58ba3d4eb7d328684da4aab20e): **deps**: Bump `golang.org/x/crypto` from 0.3.0 to 0.17.0 in /generator ([#89](https://github.com/northwood-labs/terraform-provider-corefunc/issues/89)) (dependabot[bot])
+* [`07df7b9`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/07df7b911593bf1b65fbe060b005aae5b0e4faa6): **deps**: Bump `trufflesecurity/trufflehog` from 3.63.4 to 3.63.5 ([#91](https://github.com/northwood-labs/terraform-provider-corefunc/issues/91)) (dependabot[bot])
+* [`956339c`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/956339c396e8b199a35d2f4eeff058dd11175be3): **deps**: Bump `golang.org/x/crypto` from 0.16.0 to 0.17.0 ([#88](https://github.com/northwood-labs/terraform-provider-corefunc/issues/88)) (dependabot[bot])
+* [`543eb0a`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/543eb0ab95e3918f034c76a99099ff0f8fcdd490): Update the `go.sum` file.
+
+### Documentation
+
+* [`f3c07b2`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/f3c07b267eacc0cc4c3fabd81628112f8ea974f2): Updated copyright in all headers to include 2024.
+* [`1d00129`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/1d0012982e3c1760735a4fa53a6603781bad6930): Updated the `README.md` for the Terratest tests.
+* [`1c2bc3c`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/1c2bc3c6f91b6326cd188320d8978972e2aa78dc): Updated the templates used by tfplugindocs.
+
+### Testing
+
+* [`e0915df`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/e0915dfb90f9d2824be769dcc629501db99d1b8c): Added tests with Terratest to compare the Terraform provider with the Go library.
+* [`e5a810a`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/e5a810a8f9a5ffe2737928429df0be3a9a0a25c3): Make the GoSec scanning more robust.
+
+## 1.1.0 — 2023-12-18
+
+[Compare: v1.0.3 → v1.1.0](https://github.com/northwood-labs/terraform-provider-corefunc/compare/v1.0.3..v1.1.0)
 
 ### Building and Dependencies
 
