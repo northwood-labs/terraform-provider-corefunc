@@ -1,16 +1,26 @@
-# This file is maintained automatically by "terraform init".
+# This file is maintained automatically by "tofu init".
 # Manual edits may be lost in future updates.
 
-provider "registry.terraform.io/northwood-labs/corefunc" {
+provider "registry.opentofu.org/northwood-labs/corefunc" {
   version     = "1.1.0"
   constraints = "~> 1.0"
   hashes = [
     "h1:2AiAhFN5Thrz4akNGAFp2dpHFsjPlfkwFSFrTU3wwrs=",
+    "h1:8IT108lsFH5dzJ2VqDICyAX7IpJkfJUu8xLHypN+vTE=",
+    "h1:NqzIKuLA19eav9X7l2mdnbnZOFgoDpsGgorH7CmB36U=",
+    "h1:RUkyL5UWZqTbIn31kcetcZmbxDKhqbH0kuUO8C5sl4A=",
+    "h1:VU3YNcdtz+W+yUtcov+KUEJmp3z2PLieUWB31IIwrBs=",
+    "h1:Y15sNaF4YU7tenuEEYrFAUd/L4dN4iT9hS2Avmbihug=",
+    "h1:ZClwwBOxEOQhzPfeZAes/BG0RAyyW4crAJLfpKUbdPM=",
     "h1:ZGzWE/w9HPOLvTAZpPdKbfgYcRjqtsaIdE2zkI47UKo=",
     "h1:aLQHnsVyOXDu4zzESPzeiHAikdY7rgC9PVUozlh/e2k=",
+    "h1:bde20Wd+fTAEBMVdOH8LPFkdtJp48lEZrWhdpH+O9lw=",
     "h1:f8DUYp9X+9MOazx69TeSEdoQCWIhb2q2/Rec7BG8JfI=",
     "h1:hyjxE9YKom5SIaoklVub0VJCl5yjXtrTTuY+kZXhwjY=",
     "h1:oYJi7N+84nrEtXyeGweFzVrjm7h4kBiVbroxlG+z3vY=",
+    "h1:qjW2H+W9igqkgZzDzuRw2UFl5+j0wmJKQITkID1sX0o=",
+    "h1:ysC75lwjD+3S4IiqXBVneQKuXUprIQp1DJaxcsiBflc=",
+    "h1:zt2s8ystW8uTE5x7ByjvRPJxkRyBZYQ8RWLBopNJ08E=",
     "zh:0894fae0aa7179936f7958744b8fa66faa330388a0a8174c094bf53b3c283d50",
     "zh:28b869f57d54617e376d783c420702e436d92bd5f7e6d6870cbd61538fb81865",
     "zh:2bb6c49d909a979821a9da6a2843522a18e29e83c89ecef39e6540be978cc888",
