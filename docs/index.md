@@ -25,8 +25,6 @@ description: |-
 
 # Core Functions Provider
 
--> We intend to support both Terraform as well as OpenTF with this provider.
-
 Utilities that should have been Terraform _core functions_.
 
 While some of these _can_ be implemented in HCL, some of them begin to
@@ -67,11 +65,13 @@ terraform {
 provider "corefunc" {}
 ```
 
-## Updating your Terraform lockfile
+## Updating your lockfile
 
 Running `terraform init` will download the provider and update the [_Dependency Lock File_](https://developer.hashicorp.com/terraform/language/files/dependency-lock) (`.terraform.lock.hcl`) for your _current_ OS and CPU architecture. If you have a team with multiple operating systems or multiple CPU architectures, the _Dependency Lock File_ will be incomplete, and other members on the team won't be able to use it.
 
 In order to resolve this, you can use the `terraform providers lock` command to generate a _Dependency Lock File_ that is compatible with all relevant operating systems and CPU architectures.
+
+~> **NOTE:** For OpenTofu users, the `terraform` command can be replaced with `tofu`.
 
 ### Recommended matrix
 
@@ -134,5 +134,7 @@ terraform providers lock \
     -platform=windows_arm64 \
     ;
 ```
+
+~> **NOTE:** For OpenTofu users, avoid requesting the `netbsd` platform.
 
 <!-- Preview the provider docs with the Terraform registry provider docs preview tool: https://registry.terraform.io/tools/doc-preview -->
