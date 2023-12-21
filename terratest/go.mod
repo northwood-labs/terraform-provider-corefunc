@@ -4,7 +4,7 @@ go 1.21.5
 
 require (
 	github.com/gruntwork-io/terratest v0.46.8
-	github.com/northwood-labs/terraform-provider-corefunc v1.1.0
+	github.com/northwood-labs/terraform-provider-corefunc v1.1.1
 	github.com/stretchr/testify v1.8.4
 )
 
