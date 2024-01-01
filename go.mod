@@ -3,7 +3,7 @@ module github.com/northwood-labs/terraform-provider-corefunc
 go 1.21
 
 require (
-	github.com/chanced/caps v1.0.1
+	github.com/chanced/caps v1.0.2
 	github.com/google/go-cmp v0.6.0
 	github.com/gookit/color v1.5.4
 	github.com/gtramontina/ooze v0.2.0
