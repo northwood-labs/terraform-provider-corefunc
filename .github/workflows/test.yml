@@ -177,17 +177,12 @@ jobs:
             --proto '=https' \
             --tlsv1.2 \
             -fsSL \
-            -o ${{ runner.temp }}/install-opentofu.sh \
-            https://get.opentofu.org/install-opentofu.sh
+            -o ${{ runner.temp }}/tofu-${{ matrix.opentofu_version }}.zip \
+            https://github.com/opentofu/opentofu/releases/download/v${{ matrix.opentofu_version }}/tofu_${{ matrix.opentofu_version }}_linux_amd64.zip
 
-          chmod +x ${{ runner.temp }}/install-opentofu.sh
+          unzip -d ${{ runner.temp }}/tofu-${{ matrix.opentofu_version }} ${{ runner.temp }}/tofu-${{ matrix.opentofu_version }}.zip
 
-          GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }} ${{ runner.temp }}/install-opentofu.sh \
-            --skip-verify \
-            --install-method standalone \
-            --install-path ${{ runner.temp }}/${{ matrix.opentofu_version }} \
-            --opentofu-version ${{ matrix.opentofu_version }} \
-            --debug
+          ls -lahF ${{ runner.temp }}/
 
       - name: Run acceptance tests
         env:
