@@ -32,16 +32,14 @@ jobs:
           fetch-depth: 0
 
       - name: Generate artifacts
-        working-directory: $GITHUB_WORKSPACE
         run: |
           # Generate list of authors
-          /scripts/generate-artifacts.sh
+          ./scripts/generate-artifacts.sh
 
           # Generate CHANGELOG
           git cliff -o CHANGELOG.md
 
       - name: Generate artifacts
-        working-directory: $GITHUB_WORKSPACE
         run: |
           git add .
           git status | grep modified
