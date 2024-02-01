@@ -47,6 +47,16 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`9486823`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/9486823382c8c36f3895ffaeb58bfb325c1cf344): Discovered issue in calling GoSec.
 * [`472cb4c`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/472cb4cb3ff48742d01a4d97a656e653d54dd835): Discovered issue in calling GoSec.
 * [`8686958`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/8686958d2d46f52438279d249c1455e4a038ea04): Disable GoSec workflow for the time being.
+* [`bf75f94`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/bf75f945ffdbc872d138c9f6effaf29d64639b7a): Auto-update `AUTHORS.md` and CHANGELOG on commit.
+* [`6672a01`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/6672a0174d74b913a5462e1ea5856c3e37c900b2): Auto-update `AUTHORS.md` and CHANGELOG on commit.
+* [`834be43`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/834be43f30a1e68d1da701887e11ee3db623d124): Auto-update `AUTHORS.md` and CHANGELOG on commit.
+* [`40b77b8`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/40b77b88163ee6a711bd5770985f7a6fc5528ee4): Auto-update `AUTHORS.md` and CHANGELOG on commit.
+* [`e1e7b69`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/e1e7b695b4fc564b4b56a5ece28d674df3bb86a0): Auto-update `AUTHORS.md` and CHANGELOG on commit.
+* [`9749f52`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/9749f529e519a8f6978e40f55eeb3b1f4fdbd308): Auto-update `AUTHORS.md` and CHANGELOG on commit.
+* [`6949371`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/6949371a0332b730dad43c48c529dfd23714310c): Auto-update `AUTHORS.md` and CHANGELOG on commit.
+* [`157efbe`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/157efbe38e925b53deb4d5b729b650ecbfa014bc): Auto-update `AUTHORS.md` and CHANGELOG on commit.
+* [`9c09697`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/9c096972030ce0d870d2df5100bab7bfb2d37a71): Auto-update `AUTHORS.md` and CHANGELOG on commit.
+* [`7ddd3e8`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/7ddd3e86d64d49528e310aa42456420b7f41d2a5): Auto-update `AUTHORS.md` and CHANGELOG on commit.
 
 ## 1.1.1 — 2023-12-20
 
