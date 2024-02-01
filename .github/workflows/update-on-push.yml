@@ -66,8 +66,8 @@ jobs:
 
       - name: Git commit if changed
         run: |
-          git config user.name "Northwood Labs (Bot)"
-          git config user.email "bot@northwoodlabs.com"
+          git config user.name "Ryan Parman (Bot)"
+          git config user.email "ryan@ryanparman.com"
 
           git add .
           git status | grep modified
