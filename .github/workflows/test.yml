@@ -177,7 +177,6 @@ jobs:
             --proto '=https' \
             --tlsv1.2 \
             -fsSL \
-            -H "Authorization: token ${GITHUB_TOKEN}" \
             -o ${{ runner.temp }}/install-opentofu.sh \
             https://get.opentofu.org/install-opentofu.sh
 
