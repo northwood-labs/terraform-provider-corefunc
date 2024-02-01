@@ -182,7 +182,7 @@ jobs:
 
           chmod +x ${{ runner.temp }}/install-opentofu.sh
 
-          ${{ runner.temp }}/install-opentofu.sh \
+          GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }} ${{ runner.temp }}/install-opentofu.sh \
             --skip-verify \
             --install-method standalone \
             --install-path ${{ runner.temp }}/${{ matrix.opentofu_version }} \
