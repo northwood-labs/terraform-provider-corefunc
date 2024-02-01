@@ -147,6 +147,7 @@ jobs:
             checkpoint-api.hashicorp.com:443
             get.opentofu.org:443
             github.com:443
+            objects.githubusercontent.com:443
             proxy.golang.org:443
             releases.hashicorp.com:443
             storage.googleapis.com:443
@@ -177,12 +178,17 @@ jobs:
             --proto '=https' \
             --tlsv1.2 \
             -fsSL \
-            -o ${{ runner.temp }}/tofu-${{ matrix.opentofu_version }}.zip \
-            https://github.com/opentofu/opentofu/releases/download/v${{ matrix.opentofu_version }}/tofu_${{ matrix.opentofu_version }}_linux_amd64.zip
+            -o ${{ runner.temp }}/install-opentofu.sh \
+            https://get.opentofu.org/install-opentofu.sh
 
-          unzip -d ${{ runner.temp }}/tofu-${{ matrix.opentofu_version }} ${{ runner.temp }}/tofu-${{ matrix.opentofu_version }}.zip
+          chmod +x ${{ runner.temp }}/install-opentofu.sh
 
-          ls -lahF ${{ runner.temp }}/
+          ${{ runner.temp }}/install-opentofu.sh \
+            --skip-verify \
+            --install-method standalone \
+            --install-path ${{ runner.temp }}/${{ matrix.opentofu_version }} \
+            --opentofu-version ${{ matrix.opentofu_version }} \
+            --debug
 
       - name: Run acceptance tests
         env:
