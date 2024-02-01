@@ -35,10 +35,10 @@ jobs:
         working-directory: ${{ github.workspace }}
         run: |
           # Generate list of authors
-          scripts/generate-artifacts.sh
+          "${GITHUB_WORKSPACE}/scripts/generate-artifacts.sh"
 
           # Generate CHANGELOG
-          git cliff -o CHANGELOG.md
+          git cliff -o "${GITHUB_WORKSPACE}/CHANGELOG.md"
 
       - name: Generate artifacts
         working-directory: ${{ github.workspace }}
