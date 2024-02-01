@@ -144,6 +144,7 @@ jobs:
           disable-sudo: true
           egress-policy: block # audit
           allowed-endpoints: >
+            api.github.com:443
             checkpoint-api.hashicorp.com:443
             get.opentofu.org:443
             github.com:443
