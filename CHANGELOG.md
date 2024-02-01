@@ -57,6 +57,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`157efbe`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/157efbe38e925b53deb4d5b729b650ecbfa014bc): Auto-update `AUTHORS.md` and CHANGELOG on commit.
 * [`9c09697`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/9c096972030ce0d870d2df5100bab7bfb2d37a71): Auto-update `AUTHORS.md` and CHANGELOG on commit.
 * [`7ddd3e8`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/7ddd3e86d64d49528e310aa42456420b7f41d2a5): Auto-update `AUTHORS.md` and CHANGELOG on commit.
+* [`d7d77f2`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/d7d77f292f2f8c2b56fd35419d9d9e01ad774dec): Auto-update `AUTHORS.md` and CHANGELOG on commit.
 
 ## 1.1.1 — 2023-12-20
 
