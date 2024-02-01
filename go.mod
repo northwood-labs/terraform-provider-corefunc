@@ -12,7 +12,7 @@ require (
 	github.com/hashicorp/terraform-plugin-framework-validators v0.12.0
 	github.com/hashicorp/terraform-plugin-go v0.21.0
 	github.com/hashicorp/terraform-plugin-log v0.9.0
-	github.com/hashicorp/terraform-plugin-sdk/v2 v2.31.0
+	github.com/hashicorp/terraform-plugin-sdk/v2 v2.32.0
 	github.com/lithammer/dedent v1.1.0
 	github.com/mitchellh/go-homedir v1.1.0
 	github.com/northwood-labs/golang-utils/archstring v0.0.0-20230302161720-ec685e2f274a
@@ -81,12 +81,12 @@ require (
 	github.com/xo/terminfo v0.0.0-20220910002029-abceb7e1c41e // indirect
 	github.com/yuin/goldmark v1.6.0 // indirect
 	github.com/yuin/goldmark-meta v1.1.0 // indirect
-	github.com/zclconf/go-cty v1.14.1 // indirect
-	golang.org/x/crypto v0.17.0 // indirect
+	github.com/zclconf/go-cty v1.14.2 // indirect
+	golang.org/x/crypto v0.18.0 // indirect
 	golang.org/x/exp v0.0.0-20231206192017-f3f8817b8deb // indirect
 	golang.org/x/mod v0.14.0 // indirect
 	golang.org/x/net v0.19.0 // indirect
-	golang.org/x/sys v0.15.0 // indirect
+	golang.org/x/sys v0.16.0 // indirect
 	golang.org/x/text v0.14.0 // indirect
 	google.golang.org/appengine v1.6.8 // indirect
 	google.golang.org/genproto/googleapis/rpc v0.0.0-20231212172506-995d672761c0 // indirect
