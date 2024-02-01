@@ -20,6 +20,8 @@ jobs:
   update_on_push_job:
     runs-on: ubuntu-latest
     name: Auto-update on push
+    permissions:
+      contents: write
     steps:
       - name: Harden Runner
         uses: step-security/harden-runner@63c24ba6bd7ba022e95695ff85de572c04a18142 # v2.7.0
