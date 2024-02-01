@@ -34,7 +34,7 @@ jobs:
       - name: Generate artifacts
         run: |
           # Generate list of authors
-          ./scripts/generate-artifacts.sh
+          ./scripts/generate-authors.sh
 
           # Generate CHANGELOG
           git cliff -o CHANGELOG.md
