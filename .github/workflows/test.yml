@@ -164,7 +164,6 @@ jobs:
           go-version: ">= 1.21"
           cache: true
 
-      # Not working as expected.
       - name: Install OpenTofu ${{ matrix.opentofu_version }}
         uses: opentofu/setup-opentofu@v1
         with:
