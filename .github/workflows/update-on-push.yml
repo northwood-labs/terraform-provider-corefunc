@@ -42,8 +42,7 @@ jobs:
             "https://github.com/orhun/git-cliff/releases/download/v1.4.0/git-cliff-1.4.0-x86_64-unknown-linux-gnu.tar.gz" \
              --output ${{ runner.temp }}/git-cliff.tgz
 
-          mkdir -p "${{ runner.temp }}/git-cliff"
-          tar -zxvf ${{ runner.temp }}/git-cliff.tgz -C "${{ runner.temp }}/git-cliff"
+          tar -zxvf ${{ runner.temp }}/git-cliff.tgz -C "${{ runner.temp }}"
 
       - name: Generate artifacts
         run: |
@@ -51,7 +50,7 @@ jobs:
           ./scripts/generate-authors.sh
 
           # Generate CHANGELOG
-          ${{ runner.temp }}/git-cliff/git-cliff -o CHANGELOG.md
+          ${{ runner.temp }}/git-cliff*/git-cliff -o CHANGELOG.md
 
       - name: Git commit if changed
         run: |
