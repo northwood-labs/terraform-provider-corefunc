@@ -170,9 +170,19 @@ jobs:
       #     tofu_wrapper: false
 
       - name: Install OpenTofu ${{ matrix.opentofu_version }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          curl --proto '=https' --tlsv1.2 -fsSL https://get.opentofu.org/install-opentofu.sh -o ${{ runner.temp }}/install-opentofu.sh
+          curl \
+            --proto '=https' \
+            --tlsv1.2 \
+            -fsSL \
+            -H "Authorization: token ${GITHUB_TOKEN}" \
+            -o ${{ runner.temp }}/install-opentofu.sh \
+            https://get.opentofu.org/install-opentofu.sh
+
           chmod +x ${{ runner.temp }}/install-opentofu.sh
+
           ${{ runner.temp }}/install-opentofu.sh \
             --skip-verify \
             --install-method standalone \
