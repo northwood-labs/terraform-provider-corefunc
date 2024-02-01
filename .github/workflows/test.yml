@@ -74,7 +74,7 @@ jobs:
         run: |
           go test -count=1 -parallel=$(nproc) -timeout 30s -v ./corefunc/...
 
-  acc:
+  acc_terraform:
     runs-on: ubuntu-latest
     name: Acceptance (Terraform ${{ matrix.terraform_version }})
 
@@ -127,7 +127,7 @@ jobs:
         run: |
           go test -run=TestAcc -count=1 -parallel=$(nproc) -timeout 30m -v ./corefuncprovider/...
 
-  acc_tofu:
+  acc_opentofu:
     runs-on: ubuntu-latest
     name: Acceptance (OpenTofu ${{ matrix.opentofu_version }})
 
@@ -165,7 +165,7 @@ jobs:
       - name: Install OpenTofu ${{ matrix.opentofu_version }}
         uses: opentofu/setup-opentofu@v1
         with:
-          tofu_version: ~${{ matrix.opentofu_version }}
+          tofu_version: "~${{ matrix.opentofu_version }}"
           tofu_wrapper: false
 
       - name: Run acceptance tests
