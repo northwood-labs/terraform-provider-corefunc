@@ -54,6 +54,9 @@ jobs:
 
       - name: Git commit if changed
         run: |
+          git config user.name "Northwood Labs (Bot)"
+          git config user.email "bot@northwoodlabs.com"
+
           git add .
           git status | grep modified
           if [ $? -eq 0 ]; then
