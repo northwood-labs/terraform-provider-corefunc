@@ -21,7 +21,7 @@ jobs:
     name: Scan for vulns
     steps:
       - name: Harden Runner
-        uses: step-security/harden-runner@eb238b55efaa70779f274895e782ed17c84f2895 # v2.6.1
+        uses: step-security/harden-runner@63c24ba6bd7ba022e95695ff85de572c04a18142 # v2.7.0
         with:
           egress-policy: audit
 
@@ -31,10 +31,11 @@ jobs:
       - name: Run Gosec Security Scanner
         uses: securego/gosec@55d79496019a560e16e73e1948dee20a1fad631a # v2.18.2
         with:
-          args: -fmt sarif -out results.sarif ./...
+          # args: -fmt sarif -out results.sarif ./...
+          args: ./...
 
-      - name: Upload SARIF file
-        uses: github/codeql-action/upload-sarif@0b21cf2492b6b02c465a3e5d7c473717ad7721ba # v3.23.1
-        with:
-          # Path to SARIF file relative to the root of the repository
-          sarif_file: results.sarif
+      # - name: Upload SARIF file
+      #   uses: github/codeql-action/upload-sarif@0b21cf2492b6b02c465a3e5d7c473717ad7721ba # v3.23.1
+      #   with:
+      #     # Path to SARIF file relative to the root of the repository
+      #     sarif_file: results.sarif
