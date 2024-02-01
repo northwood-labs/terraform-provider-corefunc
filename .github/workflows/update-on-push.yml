@@ -31,15 +31,29 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Install git-cliff
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          curl -L \
+            -H "Accept: application/vnd.github+json" \
+            -H "Authorization: token ${GITHUB_TOKEN}" \
+            -H "X-GitHub-Api-Version: 2022-11-28" \
+            "https://github.com/orhun/git-cliff/releases/download/v1.4.0/git-cliff-1.4.0-x86_64-unknown-linux-gnu.tar.gz" \
+             --output ${{ runner.temp }}/git-cliff.tgz
+
+          mkdir -p "${{ runner.temp }}/git-cliff"
+          tar -zxvf ${{ runner.temp }}/git-cliff.tgz -C "${{ runner.temp }}/git-cliff"
+
       - name: Generate artifacts
         run: |
           # Generate list of authors
           ./scripts/generate-authors.sh
 
           # Generate CHANGELOG
-          git cliff -o CHANGELOG.md
+          ${{ runner.temp }}/git-cliff/git-cliff -o CHANGELOG.md
 
-      - name: Generate artifacts
+      - name: Git commit if changed
         run: |
           git add .
           git status | grep modified
