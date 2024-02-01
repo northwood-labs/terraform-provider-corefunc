@@ -1,0 +1,51 @@
+---
+# This workflow uses actions that are not certified by GitHub. They are provided
+# by a third-party and are governed by separate terms of service, privacy
+# policy, and support documentation.
+
+name: Auto-update on push
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+# Declare default permissions as read only.
+permissions: read-all
+
+jobs:
+  update_on_push_job:
+    runs-on: ubuntu-latest
+    name: Auto-update on push
+    steps:
+      - name: Harden Runner
+        uses: step-security/harden-runner@63c24ba6bd7ba022e95695ff85de572c04a18142 # v2.7.0
+        with:
+          egress-policy: audit
+
+      - name: Checkout Source
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
+        with:
+          fetch-depth: 0
+
+      - name: Generate artifacts
+        working-directory: ${{ github.workspace }}
+        run: |
+          # Generate list of authors
+          scripts/generate-artifacts.sh
+
+          # Generate CHANGELOG
+          git cliff -o CHANGELOG.md
+
+      - name: Generate artifacts
+        working-directory: ${{ github.workspace }}
+        run: |
+          git add .
+          git status | grep modified
+          if [ $? -eq 0 ]; then
+            git commit -a -m "automation: Updated AUTHORS and CHANGELOG on $(date)."
+            git push
+          fi
