@@ -76,7 +76,7 @@ jobs:
 
   acc:
     runs-on: ubuntu-latest
-    name: Acceptance (${{ matrix.terraform_version }})
+    name: Acceptance (Terraform ${{ matrix.terraform_version }})
 
     strategy:
       fail-fast: false
@@ -98,6 +98,7 @@ jobs:
           egress-policy: block # audit
           allowed-endpoints: >
             checkpoint-api.hashicorp.com:443
+            get.opentofu.org:443
             github.com:443
             proxy.golang.org:443
             releases.hashicorp.com:443
@@ -114,12 +115,64 @@ jobs:
           go-version: ">= 1.21"
           cache: true
 
-      - name: Install Terraform
+      - name: Install Terraform ${{ matrix.terraform_version }}
         uses: hashicorp/setup-terraform@a1502cd9e758c50496cc9ac5308c4843bcd56d36 # v3.0.0
         with:
           terraform_version: ${{ matrix.terraform_version }}
           terraform_wrapper: false
 
       - name: Run acceptance tests
+        env:
+          TF_ACC: 1
         run: |
-          TF_ACC=1 go test -run=TestAcc -count=1 -parallel=$(nproc) -timeout 30m -v ./corefuncprovider/...
+          go test -run=TestAcc -count=1 -parallel=$(nproc) -timeout 30m -v ./corefuncprovider/...
+
+  acc_tofu:
+    runs-on: ubuntu-latest
+    name: Acceptance (OpenTofu ${{ matrix.opentofu_version }})
+
+    strategy:
+      fail-fast: false
+      matrix:
+        opentofu_version:
+          - "1.6"
+
+    steps:
+      - name: Harden Runner
+        uses: step-security/harden-runner@63c24ba6bd7ba022e95695ff85de572c04a18142 # v2.7.0
+        with:
+          disable-sudo: true
+          egress-policy: block # audit
+          allowed-endpoints: >
+            checkpoint-api.hashicorp.com:443
+            get.opentofu.org:443
+            github.com:443
+            proxy.golang.org:443
+            releases.hashicorp.com:443
+            storage.googleapis.com:443
+
+      - name: Checkout Source
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
+        with:
+          fetch-depth: 0
+
+      - name: Install Go
+        uses: actions/setup-go@0c52d547c9bc32b1aa3301fd7a9cb496313a4491 # v5.0.0
+        with:
+          go-version: ">= 1.21"
+          cache: true
+
+      - name: Install OpenTofu ${{ matrix.opentofu_version }}
+        uses: opentofu/setup-opentofu@v1
+        with:
+          tofu_version: ${{ matrix.opentofu_version }}
+          tofu_wrapper: false
+
+      - name: Run acceptance tests
+        env:
+          TF_ACC: 1
+          TF_ACC_TERRAFORM_PATH: tofu
+          TF_ACC_PROVIDER_NAMESPACE: hashicorp
+          TF_ACC_PROVIDER_HOST: registry.opentofu.org
+        run: |
+          go test -run=TestAcc -count=1 -parallel=$(nproc) -timeout 30m -v ./corefuncprovider/...
