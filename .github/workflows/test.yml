@@ -135,7 +135,7 @@ jobs:
       fail-fast: false
       matrix:
         opentofu_version:
-          - "1.6.1"
+          - "1.6"
 
     steps:
       - name: Harden Runner
@@ -164,32 +164,11 @@ jobs:
           go-version: ">= 1.21"
           cache: true
 
-      # Not working as expected.
       - name: Install OpenTofu ${{ matrix.opentofu_version }}
         uses: opentofu/setup-opentofu@v1
         with:
           tofu_version: "~${{ matrix.opentofu_version }}"
           tofu_wrapper: false
-
-      # - name: Install OpenTofu ${{ matrix.opentofu_version }}
-      #   env:
-      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      #   run: |
-      #     curl \
-      #       --proto '=https' \
-      #       --tlsv1.2 \
-      #       -fsSL \
-      #       -o ${{ runner.temp }}/install-opentofu.sh \
-      #       https://get.opentofu.org/install-opentofu.sh
-
-      #     chmod +x ${{ runner.temp }}/install-opentofu.sh
-
-      #     ${{ runner.temp }}/install-opentofu.sh \
-      #       --skip-verify \
-      #       --install-method standalone \
-      #       --install-path ${{ runner.temp }}/${{ matrix.opentofu_version }} \
-      #       --opentofu-version ${{ matrix.opentofu_version }} \
-      #       --debug
 
       - name: Run acceptance tests
         env:
@@ -198,4 +177,5 @@ jobs:
           TF_ACC_PROVIDER_NAMESPACE: hashicorp
           TF_ACC_PROVIDER_HOST: registry.opentofu.org
         run: |
+          which tofu
           go test -run=TestAcc -count=1 -parallel=$(nproc) -timeout 30m -v ./corefuncprovider/...
