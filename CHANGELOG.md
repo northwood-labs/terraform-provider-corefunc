@@ -68,6 +68,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`ae243c3`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/ae243c36dba8429a3606b223495d2f94ec5b82e9): Work on adding automated OpenTofu testing.
 * [`56501ef`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/56501ef5e2e26ec6ca6c1c06a1aa1eb7987cb280): Work on adding automated OpenTofu testing.
 * [`4a1e899`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/4a1e899979c9a3593fd741484bdf1e8b3febfe4c): Work on adding automated OpenTofu testing.
+* [`a8b9724`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/a8b97249bf45c2fc71fc6d32ffc6470a5b3dc5c3): Work on adding automated OpenTofu testing.
 
 ## 1.1.1 — 2023-12-20
 
