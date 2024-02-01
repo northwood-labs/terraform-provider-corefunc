@@ -5,6 +5,7 @@
 
 name: Govulncheck
 on:
+  workflow_dispatch:
   push:
     branches:
       - main
@@ -28,11 +29,11 @@ jobs:
       - name: Install Go
         uses: actions/setup-go@0c52d547c9bc32b1aa3301fd7a9cb496313a4491 # v5.0.0
         with:
-          go-version: '>= 1.21'
+          go-version: ">= 1.21"
           cache: true
 
       - id: govulncheck
         uses: golang/govulncheck-action@7da72f730e37eeaad891fcff0a532d27ed737cd4 # v1.0.1
         with:
-          go-version-input: '>= 1.21'
+          go-version-input: ">= 1.21"
           check-latest: true
