@@ -135,7 +135,7 @@ jobs:
       fail-fast: false
       matrix:
         opentofu_version:
-          - "1.6.0"
+          - "1.6.1"
 
     steps:
       - name: Harden Runner
@@ -162,11 +162,23 @@ jobs:
           go-version: ">= 1.21"
           cache: true
 
+      # Not working as expected.
+      # - name: Install OpenTofu ${{ matrix.opentofu_version }}
+      #   uses: opentofu/setup-opentofu@v1
+      #   with:
+      #     tofu_version: "~${{ matrix.opentofu_version }}"
+      #     tofu_wrapper: false
+
       - name: Install OpenTofu ${{ matrix.opentofu_version }}
-        uses: opentofu/setup-opentofu@v1
-        with:
-          tofu_version: "~${{ matrix.opentofu_version }}"
-          tofu_wrapper: false
+        run: |
+          curl --proto '=https' --tlsv1.2 -fsSL https://get.opentofu.org/install-opentofu.sh -o ${{ runner.temp }}/install-opentofu.sh
+          chmod +x ${{ runner.temp }}/install-opentofu.sh
+          ${{ runner.temp }}/install-opentofu.sh \
+            --skip-verify \
+            --install-method standalone \
+            --install-path ${{ runner.temp }}/${{ matrix.opentofu_version }} \
+            --opentofu-version ${{ matrix.opentofu_version }} \
+            --debug
 
       - name: Run acceptance tests
         env:
