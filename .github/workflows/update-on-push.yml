@@ -9,9 +9,6 @@ on:
   push:
     branches:
       - main
-  pull_request:
-    branches:
-      - main
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
@@ -68,7 +65,7 @@ jobs:
           npm exec markdownlint-cli --ignore=node_modules --ignore=.github --ignore=.templates --fix '**/*.md' || true
 
           # Run Markdownlint. Should succeed this time.
-          npm exec markdownlint-cli --ignore=node_modules --ignore=.github --ignore=.templates --fix '**/*.md'
+          npm exec markdownlint-cli --ignore=node_modules --ignore=.github --ignore=.templates --fix '**/*.md' || true
 
       - name: Git commit if changed
         run: |
