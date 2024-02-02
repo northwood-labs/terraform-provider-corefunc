@@ -94,6 +94,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`acee3ef`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/acee3ef09ce457f074bb25f8aada3d029e474027): Add auto-cancelation for multiple CI runs of the same test.
 * [`85cfb6c`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/85cfb6c8dfed8d61bf84d246ba58eacbf91cc650): Setup Terratest testing for OpenTofu from the Makefile.
 * [`57b1e0e`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/57b1e0eb5f91a87e5450dba5d6f9492fb2c0b374): Improve switching between Terraform/OpenTofu in Terratest.
+* [`590c3bc`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/590c3bce781674b2627e494b203570b142555844): Improve switching between Terraform/OpenTofu in Terratest.
 ## 1.1.1 — 2023-12-20
 
 [Compare: v1.1.0 → v1.1.1](https://github.com/northwood-labs/terraform-provider-corefunc/compare/v1.1.0..v1.1.1)
