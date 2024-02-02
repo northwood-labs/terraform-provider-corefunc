@@ -78,10 +78,9 @@ func (d *strKebabDataSource) Schema(
 
 	resp.Schema = schema.Schema{
 		MarkdownDescription: strings.TrimSpace(dedent.Dedent(`
-        Converts a string to ` + "`" + `kebab-case` + "`" + `, removing any non-alphanumeric characters.
+		Converts a string to ` + "`" + `kebab-case` + "`" + `, removing any non-alphanumeric characters.
 
-        Maps to the [` + "`" + `caps.ToKebab()` + "`" + `](https://pkg.go.dev/github.com/chanced/caps#Caps.ToKebab)
-        Go method, which can be used in ` + Terratest + `.
+		Maps to the ` + linkPackage("StrKebab") + ` Go method, which can be used in ` + Terratest + `.
         `)),
 		Attributes: map[string]schema.Attribute{
 			"id": schema.Int64Attribute{

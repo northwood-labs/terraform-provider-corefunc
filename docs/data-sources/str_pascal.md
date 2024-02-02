@@ -6,8 +6,7 @@ description: |-
   Converts a string to PascalCase, removing any non-alphanumeric characters.
   -> Some acronyms are maintained as uppercase. See
   caps: pkg-variables https://pkg.go.dev/github.com/chanced/caps#pkg-variables for a complete list.
-  Maps to the caps.ToCamel() https://pkg.go.dev/github.com/chanced/caps#ToCamel
-  Go method, which can be used in Terratest https://terratest.gruntwork.io.
+  Maps to the corefunc.StrPascal() https://pkg.go.dev/github.com/northwood-labs/terraform-provider-corefunc/corefunc#StrPascal Go method, which can be used in Terratest https://terratest.gruntwork.io.
 ---
 -->
 
@@ -18,8 +17,7 @@ Converts a string to `PascalCase`, removing any non-alphanumeric characters.
 -> Some acronyms are maintained as uppercase. See
 [caps: pkg-variables](https://pkg.go.dev/github.com/chanced/caps#pkg-variables) for a complete list.
 
-Maps to the [`caps.ToCamel()`](https://pkg.go.dev/github.com/chanced/caps#ToCamel)
-Go method, which can be used in [Terratest](https://terratest.gruntwork.io).
+Maps to the [`corefunc.StrPascal()`](https://pkg.go.dev/github.com/northwood-labs/terraform-provider-corefunc/corefunc#StrPascal) Go method, which can be used in [Terratest](https://terratest.gruntwork.io).
 
 ## Example Usage
 

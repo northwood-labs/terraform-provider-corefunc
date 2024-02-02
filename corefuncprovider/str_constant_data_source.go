@@ -78,12 +78,10 @@ func (d *strConstantDataSource) Schema(
 
 	resp.Schema = schema.Schema{
 		MarkdownDescription: strings.TrimSpace(dedent.Dedent(`
-        Converts a string to ` + "`" + `CONSTANT_CASE` + "`" + `, removing any non-alphanumeric characters.
-        Also known as ` + "`" + `SCREAMING_SNAKE_CASE` + "`" + `.
+		Converts a string to ` + "`" + `CONSTANT_CASE` + "`" + `, removing any non-alphanumeric characters.
+		Also known as ` + "`" + `SCREAMING_SNAKE_CASE` + "`" + `.
 
-        Maps to the [` + "`" + `caps.ToScreamingSnake()` + "`" +
-			`](https://pkg.go.dev/github.com/chanced/caps#ToScreamingSnake)
-        Go method, which can be used in ` + Terratest + `.
+		Maps to the ` + linkPackage("StrConstant") + ` Go method, which can be used in ` + Terratest + `.
         `)),
 		Attributes: map[string]schema.Attribute{
 			"id": schema.Int64Attribute{
