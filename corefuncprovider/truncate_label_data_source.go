@@ -53,7 +53,6 @@ type (
 		Prefix    types.String `tfsdk:"prefix"`
 		Value     types.String `tfsdk:"value"`
 		MaxLength types.Int64  `tfsdk:"max_length"`
-		ID        types.Int64  `tfsdk:"id"`
 	}
 )
 
@@ -108,10 +107,6 @@ func (d *truncateLabelDataSource) Schema(
         ` + Terratest + `.
         `)),
 		Attributes: map[string]schema.Attribute{
-			"id": schema.Int64Attribute{
-				Description: "Not used. Required by the " + TPF + ".",
-				Computed:    true,
-			},
 			"max_length": schema.Int64Attribute{
 				Description: "The maximum allowed length of the combined label. " +
 					"Minimum value is `1`. The default value is `64`.",
@@ -189,8 +184,6 @@ func (d *truncateLabelDataSource) Read(
 	var state truncateLabelDataSourceModel
 	diags := resp.State.Get(ctx, &state)
 	resp.Diagnostics.Append(diags...)
-
-	state.ID = types.Int64Value(1)
 
 	// Default values
 	if state.MaxLength.ValueInt64() == 0 {

@@ -43,7 +43,6 @@ type (
 		PadChar  types.String `tfsdk:"pad_char"`
 		String   types.String `tfsdk:"string"`
 		Value    types.String `tfsdk:"value"`
-		ID       types.Int64  `tfsdk:"id"`
 		PadWidth types.Int64  `tfsdk:"pad_width"`
 	}
 )
@@ -85,10 +84,6 @@ func (d *strLeftpadDataSource) Schema( // lint:no_dupe
 		Maps to the ` + linkPackage("StrLeftPad") + ` Go method, which can be used in ` + Terratest + `.
 		`)),
 		Attributes: map[string]schema.Attribute{
-			"id": schema.Int64Attribute{
-				Description: "Not used. Required by the " + TPF + ".",
-				Computed:    true,
-			},
 			"pad_width": schema.Int64Attribute{
 				Description: "The max number of padding characters to pad the string with.",
 				Required:    true,
@@ -156,8 +151,6 @@ func (d *strLeftpadDataSource) Read( // lint:no_dupe
 	var state strLeftpadDataSourceModel
 	diags := resp.State.Get(ctx, &state)
 	resp.Diagnostics.Append(diags...)
-
-	state.ID = types.Int64Value(1)
 
 	// Grab the pad character, or use a space by default.
 	padChar := state.PadChar.ValueString()
