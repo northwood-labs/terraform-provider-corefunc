@@ -28,6 +28,12 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
+const (
+	errTerraformPath     = "failed to set TF_ACC_TERRAFORM_PATH"
+	errProviderNamespace = "failed to set TF_ACC_PROVIDER_NAMESPACE"
+	errProviderHost      = "failed to set TF_ACC_PROVIDER_HOST"
+)
+
 var (
 	err error
 
@@ -150,24 +156,24 @@ func setAndPrint(binary string) error {
 	// Set the necessary values.
 	err = os.Setenv("TF_ACC_TERRAFORM_PATH", which.Which(binary))
 	if err != nil {
-		return errors.Wrap(err, "failed to set TF_ACC_TERRAFORM_PATH")
+		return errors.Wrap(err, errTerraformPath)
 	}
 
 	err = os.Setenv("TF_ACC_PROVIDER_NAMESPACE", "northwood-labs")
 	if err != nil {
-		return errors.Wrap(err, "failed to set TF_ACC_PROVIDER_NAMESPACE")
+		return errors.Wrap(err, errProviderNamespace)
 	}
 
 	switch binary {
 	case "terraform":
 		err = os.Setenv("TF_ACC_PROVIDER_HOST", "registry.terraform.io")
 		if err != nil {
-			return errors.Wrap(err, "failed to set TF_ACC_PROVIDER_HOST")
+			return errors.Wrap(err, errProviderHost)
 		}
 	case "tofu":
 		err = os.Setenv("TF_ACC_PROVIDER_HOST", "registry.opentofu.org")
 		if err != nil {
-			return errors.Wrap(err, "failed to set TF_ACC_PROVIDER_HOST")
+			return errors.Wrap(err, errProviderHost)
 		}
 	}
 
@@ -187,17 +193,17 @@ func restoreEnv() error {
 	// Restore the original values.
 	err = os.Setenv("TF_ACC_TERRAFORM_PATH", origPath)
 	if err != nil {
-		return errors.Wrap(err, "failed to set TF_ACC_TERRAFORM_PATH")
+		return errors.Wrap(err, errTerraformPath)
 	}
 
 	err = os.Setenv("TF_ACC_PROVIDER_NAMESPACE", origNamespace)
 	if err != nil {
-		return errors.Wrap(err, "failed to set TF_ACC_PROVIDER_NAMESPACE")
+		return errors.Wrap(err, errProviderNamespace)
 	}
 
 	err = os.Setenv("TF_ACC_PROVIDER_HOST", origHostname)
 	if err != nil {
-		return errors.Wrap(err, "failed to set TF_ACC_PROVIDER_HOST")
+		return errors.Wrap(err, errProviderHost)
 	}
 
 	return nil
