@@ -28,6 +28,12 @@ jobs:
         with:
           egress-policy: audit
 
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "lts"
+          token: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Checkout Source
         uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
         with:
@@ -53,6 +59,9 @@ jobs:
 
           # Generate CHANGELOG
           ${{ runner.temp }}/git-cliff*/git-cliff -o CHANGELOG.md
+
+          # Run Markdownlint
+          npx markdownlint --ignore=node_modules --ignore=.github --ignore=.templates --fix '**/*.md'
 
       - name: Git commit if changed
         run: |
