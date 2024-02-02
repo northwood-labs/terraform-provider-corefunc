@@ -166,7 +166,7 @@ jobs:
           cache: true
 
       - name: Install OpenTofu ${{ matrix.opentofu_version }}
-        uses: opentofu/setup-opentofu@v1
+        uses: opentofu/setup-opentofu@da3271e0a2f8b8552a91e37cf85d03622c328ab7 # v1.0.2
         with:
           tofu_version: ~${{ matrix.opentofu_version }}
           tofu_wrapper: false
