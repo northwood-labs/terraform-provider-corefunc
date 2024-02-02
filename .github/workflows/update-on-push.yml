@@ -31,7 +31,7 @@ jobs:
       - name: Install Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: "lts"
+          node-version: "20"
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Checkout Source
