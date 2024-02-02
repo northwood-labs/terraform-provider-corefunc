@@ -173,7 +173,7 @@ jobs:
       - name: Run acceptance tests
         env:
           TF_ACC: 1
-          TF_ACC_TERRAFORM_PATH: ${{ runner.tool_cache }}/tofu
+          TF_ACC_TERRAFORM_PATH: ${{ runner.temp }}/tofu
           TF_ACC_PROVIDER_NAMESPACE: hashicorp
           TF_ACC_PROVIDER_HOST: registry.opentofu.org
         run: |
