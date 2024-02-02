@@ -43,7 +43,6 @@ type (
 		// AcronymCaps types.Bool   `tfsdk:"acronym_caps"`
 		String types.String `tfsdk:"string"`
 		Value  types.String `tfsdk:"value"`
-		ID     types.Int64  `tfsdk:"id"`
 	}
 )
 
@@ -87,10 +86,6 @@ func (d *strCamelDataSource) Schema(
 		Maps to the ` + linkPackage("StrCamel") + ` Go method, which can be used in ` + Terratest + `.
 		`)),
 		Attributes: map[string]schema.Attribute{
-			"id": schema.Int64Attribute{
-				Description: "Not used. Required by the " + TPF + ".",
-				Computed:    true,
-			},
 			"string": schema.StringAttribute{
 				Description: "The string to convert to `camelCase`.",
 				Required:    true,
@@ -156,8 +151,6 @@ func (d *strCamelDataSource) Read( // lint:no_dupe
 	var state strCamelDataSourceModel
 	diags := resp.State.Get(ctx, &state)
 	resp.Diagnostics.Append(diags...)
-
-	state.ID = types.Int64Value(1)
 
 	// Default values
 	// opts := caps.Opts{}

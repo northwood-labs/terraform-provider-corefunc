@@ -45,7 +45,6 @@ type (
 		String       types.String          `tfsdk:"string"`
 		Value        types.String          `tfsdk:"value"`
 		Replacements []cfTypes.Replacement `tfsdk:"replacements"`
-		ID           types.Int64           `tfsdk:"id"`
 	}
 )
 
@@ -88,10 +87,6 @@ func (d *strIterativeReplaceDataSource) Schema(
         Go method, which can be used in ` + Terratest + `.
         `)),
 		Attributes: map[string]schema.Attribute{
-			"id": schema.Int64Attribute{
-				Description: "Not used. Required by the " + TPF + ".",
-				Computed:    true,
-			},
 			"string": schema.StringAttribute{
 				Description: "The string upon which replacements should be applied.",
 				Required:    true,
@@ -165,8 +160,6 @@ func (d *strIterativeReplaceDataSource) Read( // lint:no_dupe
 	var state strIterativeReplaceDataSourceModel
 	diags := resp.State.Get(ctx, &state)
 	resp.Diagnostics.Append(diags...)
-
-	state.ID = types.Int64Value(1)
 
 	state.Value = types.StringValue(
 		corefunc.StrIterativeReplace(

@@ -41,7 +41,6 @@ type (
 	// intLeftpadDataSourceModel maps the data source schema data.
 	intLeftpadDataSourceModel struct {
 		Value    types.String `tfsdk:"value"`
-		ID       types.Int64  `tfsdk:"id"`
 		Num      types.Int64  `tfsdk:"num"`
 		PadWidth types.Int64  `tfsdk:"pad_width"`
 	}
@@ -86,10 +85,6 @@ func (d *intLeftpadDataSource) Schema( // lint:no_dupe
 		Maps to the ` + linkPackage("IntLeftPad") + ` Go method, which can be used in ` + Terratest + `.
 		`)),
 		Attributes: map[string]schema.Attribute{
-			"id": schema.Int64Attribute{
-				Description: "Not used. Required by the " + TPF + ".",
-				Computed:    true,
-			},
 			"num": schema.Int64Attribute{
 				Description: "The integer to pad with zeroes.",
 				Required:    true,
@@ -153,8 +148,6 @@ func (d *intLeftpadDataSource) Read( // lint:no_dupe
 	var state intLeftpadDataSourceModel
 	diags := resp.State.Get(ctx, &state)
 	resp.Diagnostics.Append(diags...)
-
-	state.ID = types.Int64Value(1)
 
 	state.Value = types.StringValue(
 		corefunc.IntLeftPad(
