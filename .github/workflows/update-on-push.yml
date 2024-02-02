@@ -61,7 +61,7 @@ jobs:
           ${{ runner.temp }}/git-cliff*/git-cliff -o CHANGELOG.md
 
           # Run Markdownlint
-          npm exec markdownlint --ignore=node_modules --ignore=.github --ignore=.templates --fix '**/*.md'
+          npm exec markdownlint-cli --ignore=node_modules --ignore=.github --ignore=.templates --fix '**/*.md'
 
       - name: Git commit if changed
         run: |
