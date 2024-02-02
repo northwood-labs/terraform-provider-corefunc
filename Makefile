@@ -247,7 +247,6 @@ license:
 	@ $(ECHO) "\033[1;33m=====> Checking license headers...\033[0m"
 	@ $(ECHO) "Missing/outdated:"
 	@ - licensei header
-	@ $(ECHO) " "
 
 .PHONY: lint
 ## lint: [lint]* Runs ALL linting/validation tasks.
@@ -262,7 +261,7 @@ lint: license pre-commit
 
 .PHONY: test
 ## test: [test]* Runs ALL tests.
-test: unit examples acc mutate bats
+test: unit examples acc mutate terratest bats
 
 .PHONY: list-tests
 ## list-tests: [test] Lists all of the tests that are available to run.
@@ -287,6 +286,10 @@ list-tests:
 	@ $(ECHO) "make fuzz"
 
 	@ $(ECHO) " "
+	@ $(ECHO) "\033[1;33m=====> Terratest tests...\033[0m"
+	@ $(ECHO) "make terratest"
+
+	@ $(ECHO) " "
 	@ $(ECHO) "\033[1;33m=====> BATS tests...\033[0m"
 	@ $(ECHO) "make bats"
 
@@ -298,13 +301,14 @@ bats: build
 	bats bats/*
 
 .PHONY: acc
-## acc: [test] Runs Terraform provider acceptance tests. Set NAME= (without 'TestAcc') to run a specific test by name
+## acc: [test] Runs Terraform provider acceptance tests. Set NAME= (without 'TestAcc') to run a specific test by name.
 acc:
 	@ $(ECHO) " "
 	@ $(ECHO) "\033[1;33m=====> Running acceptance tests...\033[0m"
-
 ifeq ($(DEBUG), true)
 	PROVIDER_DEBUG=1 TF_ACC=1 go test -run=TestAcc$(NAME) -count=1 -parallel=$(shell nproc) -timeout 30m -coverpkg=./corefuncprovider/... -coverprofile=__coverage.out -v ./corefuncprovider/...
+else ifeq ($(TOFU), true)
+	TF_ACC_PROVIDER_NAMESPACE=hashicorp TF_ACC_PROVIDER_HOST=registry.opentofu.org TF_ACC_TERRAFORM_PATH=$(shell which tofu) TF_ACC=1 go test -run=TestAcc$(NAME) -count=1 -parallel=$(shell nproc) -timeout 30m -coverpkg=./corefuncprovider/... -coverprofile=__coverage.out -v ./corefuncprovider/...
 else
 	TF_ACC=1 gotestsum --format testname -- -run=TestAcc$(NAME) -count=1 -parallel=$(shell nproc) -timeout 30m -coverpkg=./corefuncprovider/... -coverprofile=__coverage.out -v ./corefuncprovider/...
 endif
@@ -312,7 +316,7 @@ endif
 	@ rsvg-convert --width=2000 --format=png --output="acc-coverage.png" "acc-coverage.svg"
 
 .PHONY: unit
-## unit: [test] Runs unit tests. Set NAME= (without 'Test') to run a specific test by name
+## unit: [test] Runs unit tests. Set NAME= (without 'Test') to run a specific test by name.
 unit:
 	@ $(ECHO) " "
 	@ $(ECHO) "\033[1;33m=====> Running unit tests...\033[0m"
@@ -335,7 +339,7 @@ terratest:
 	cd ./terratest && $(GO) test -count 1
 
 .PHONY: examples
-## examples: [test] Runs tests for examples. Set NAME= (without 'Example') to run a specific test by name
+## examples: [test] Runs tests for examples. Set NAME= (without 'Example') to run a specific test by name.
 examples:
 	@ $(ECHO) " "
 	@ $(ECHO) "\033[1;33m=====> Running tests for examples...\033[0m"
@@ -349,7 +353,7 @@ fuzz:
 	$(GO) test -list=Fuzz ./corefunc/... | grep ^Fuzz | xargs -I% $(GO) test -run='^$$' -fuzz=% -fuzztime 1m -v ./corefunc
 
 .PHONY: quickbench
-## quickbench: [test]* Runs the benchmarks with minimal data for a quick check
+## quickbench: [test]* Runs the benchmarks with minimal data for a quick check.
 quickbench:
 	@ $(ECHO) " "
 	@ $(ECHO) "\033[1;33m=====> Running "quick" benchmark...\033[0m"
