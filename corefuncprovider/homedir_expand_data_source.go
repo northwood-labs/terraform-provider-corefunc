@@ -42,7 +42,6 @@ type (
 	homedirExpandDataSourceModel struct {
 		Path  types.String `tfsdk:"path"`
 		Value types.String `tfsdk:"value"`
-		ID    types.Int64  `tfsdk:"id"`
 	}
 )
 
@@ -83,10 +82,6 @@ func (d *homedirExpandDataSource) Schema(
 		Maps to the ` + linkPackage("Homedir") + ` Go method, which can be used in ` + Terratest + `.
 		`)),
 		Attributes: map[string]schema.Attribute{
-			"id": schema.Int64Attribute{
-				Description: "Not used. Required by the " + TPF + ".",
-				Computed:    true,
-			},
 			"path": schema.StringAttribute{
 				Description: "The path to expand.",
 				Required:    true,
@@ -146,8 +141,6 @@ func (d *homedirExpandDataSource) Read( // lint:no_dupe
 	var state homedirExpandDataSourceModel
 	diags := resp.State.Get(ctx, &state)
 	resp.Diagnostics.Append(diags...)
-
-	state.ID = types.Int64Value(1)
 
 	homedir, err := corefunc.HomedirExpand(state.Path.ValueString())
 	if err != nil {

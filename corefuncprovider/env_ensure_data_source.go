@@ -45,7 +45,6 @@ type (
 		Name    types.String `tfsdk:"name"`
 		Pattern types.String `tfsdk:"pattern"`
 		Value   types.String `tfsdk:"value"`
-		ID      types.Int64  `tfsdk:"id"`
 	}
 )
 
@@ -94,10 +93,6 @@ func (d *envEnsureDataSource) Schema( // lint:no_dupe
         ` + Terratest + `.
         `)),
 		Attributes: map[string]schema.Attribute{
-			"id": schema.Int64Attribute{
-				Description: "Not used. Required by the " + TPF + ".",
-				Computed:    true,
-			},
 			"name": schema.StringAttribute{
 				Description: "The name of the environment variable to check.",
 				Required:    true,
@@ -161,8 +156,6 @@ func (d *envEnsureDataSource) Read(
 	var state envEnsureDataSourceModel
 	diags := resp.State.Get(ctx, &state)
 	resp.Diagnostics.Append(diags...)
-
-	state.ID = types.Int64Value(1)
 
 	err := corefunc.EnvEnsure(
 		state.Name.ValueString(),

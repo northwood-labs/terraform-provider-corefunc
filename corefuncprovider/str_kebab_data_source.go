@@ -42,7 +42,6 @@ type (
 	strKebabDataSourceModel struct {
 		String types.String `tfsdk:"string"`
 		Value  types.String `tfsdk:"value"`
-		ID     types.Int64  `tfsdk:"id"`
 	}
 )
 
@@ -83,10 +82,6 @@ func (d *strKebabDataSource) Schema(
 		Maps to the ` + linkPackage("StrKebab") + ` Go method, which can be used in ` + Terratest + `.
         `)),
 		Attributes: map[string]schema.Attribute{
-			"id": schema.Int64Attribute{
-				Description: "Not used. Required by the " + TPF + ".",
-				Computed:    true,
-			},
 			"string": schema.StringAttribute{
 				Description: "The string to convert to `kebab-case`.",
 				Required:    true,
@@ -146,8 +141,6 @@ func (d *strKebabDataSource) Read( // lint:no_dupe
 	var state strKebabDataSourceModel
 	diags := resp.State.Get(ctx, &state)
 	resp.Diagnostics.Append(diags...)
-
-	state.ID = types.Int64Value(1)
 
 	state.Value = types.StringValue(
 		corefunc.StrKebab(
