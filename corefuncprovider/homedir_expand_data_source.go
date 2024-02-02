@@ -78,7 +78,7 @@ func (d *homedirExpandDataSource) Schema(
 
 	resp.Schema = schema.Schema{
 		MarkdownDescription: strings.TrimSpace(dedent.Dedent(`
-        Replaces the ~ character in a path with the current user's home directory.
+		Replaces the ~ character in a path with the current user's home directory.
 
 		Maps to the ` + linkPackage("Homedir") + ` Go method, which can be used in ` + Terratest + `.
 		`)),

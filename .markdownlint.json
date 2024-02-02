@@ -37,7 +37,7 @@
     "lines_below": 1
   },
   "header-start-left": true,
-  "no-duplicate-header": {
+  "no-duplicate-heading": {
     "siblings_only": true
   },
   "single-h1": {

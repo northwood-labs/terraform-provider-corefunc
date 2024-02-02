@@ -78,10 +78,9 @@ func (d *strSnakeDataSource) Schema(
 
 	resp.Schema = schema.Schema{
 		MarkdownDescription: strings.TrimSpace(dedent.Dedent(`
-        Converts a string to ` + "`" + `snake_case` + "`" + `, removing any non-alphanumeric characters.
+		Converts a string to ` + "`" + `snake_case` + "`" + `, removing any non-alphanumeric characters.
 
-        Maps to the [` + "`" + `caps.ToSnake()` + "`" + `](https://pkg.go.dev/github.com/chanced/caps#ToSnake)
-        Go method, which can be used in ` + Terratest + `.
+		Maps to the ` + linkPackage("StrSnake") + ` Go method, which can be used in ` + Terratest + `.
         `)),
 		Attributes: map[string]schema.Attribute{
 			"id": schema.Int64Attribute{

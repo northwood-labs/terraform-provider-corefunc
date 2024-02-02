@@ -79,10 +79,10 @@ func (d *strCamelDataSource) Schema(
 
 	resp.Schema = schema.Schema{
 		MarkdownDescription: strings.TrimSpace(dedent.Dedent(`
-        Converts a string to ` + "`" + `camelCase` + "`" + `, removing any non-alphanumeric characters.
+		Converts a string to ` + "`" + `camelCase` + "`" + `, removing any non-alphanumeric characters.
 
-        -> Some acronyms are maintained as uppercase. See
-        [caps: pkg-variables](https://pkg.go.dev/github.com/chanced/caps#pkg-variables) for a complete list.
+		-> Some acronyms are maintained as uppercase. See
+		[caps: pkg-variables](https://pkg.go.dev/github.com/chanced/caps#pkg-variables) for a complete list.
 
 		Maps to the ` + linkPackage("StrCamel") + ` Go method, which can be used in ` + Terratest + `.
 		`)),

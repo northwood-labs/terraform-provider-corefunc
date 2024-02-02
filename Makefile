@@ -186,6 +186,14 @@ docs-provider:
 	@ $(ECHO) "\033[1;33m=====> Generating Terraform provider documentation...\033[0m"
 	$(GO) generate -v ./...
 
+	@ $(ECHO) " "
+	# Will probably fail.
+	- pre-commit run --all-files markdownlint
+
+	@ $(ECHO) " "
+	# Will probably succeed. If not, there's a bigger issue.
+	pre-commit run --all-files markdownlint
+
 .PHONY: docs-cli
 ## docs-cli: [docs] Preview the Go library documentation on the CLI.
 docs-cli:
@@ -386,6 +394,7 @@ view-trace:
 ## changelog: [release]* Generates the CHANGELOG for the release.
 changelog:
 	git cliff -o CHANGELOG.md
+	pre-commit run --all-files markdownlint
 
 .PHONY: tag
 ## tag: [release]* Tags (and GPG-signs) the release.
