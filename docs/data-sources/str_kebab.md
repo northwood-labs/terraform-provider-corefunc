@@ -57,7 +57,6 @@ data "corefunc_str_kebab" "this_is_an_example" {
 
 ### Read-Only
 
-* `id` (Number) Not used. Required by the [Terraform Plugin Framework](https://developer.hashicorp.com/terraform/plugin/framework).
 * `value` (String) The value of the string.
 
 <!-- Preview the provider docs with the Terraform registry provider docs preview tool: https://registry.terraform.io/tools/doc-preview -->
