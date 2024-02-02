@@ -1,0 +1,58 @@
+---
+# This workflow uses actions that are not certified by GitHub. They are provided
+# by a third-party and are governed by separate terms of service, privacy
+# policy, and support documentation.
+
+name: Terratest (Post-Release)
+on:
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions: read-all
+
+jobs:
+  terratest:
+    runs-on: ubuntu-latest
+    name: Terratest
+    steps:
+      - name: Harden Runner
+        uses: step-security/harden-runner@63c24ba6bd7ba022e95695ff85de572c04a18142 # v2.7.0
+        with:
+          disable-sudo: true
+          egress-policy: block #audit
+          allowed-endpoints: >
+            api.github.com:443
+            checkpoint-api.hashicorp.com:443
+            github.com:443
+            objects.githubusercontent.com:443
+            proxy.golang.org:443
+
+      - name: Checkout Source
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
+        with:
+          fetch-depth: 0
+
+      - name: Install Go
+        uses: actions/setup-go@0c52d547c9bc32b1aa3301fd7a9cb496313a4491 # v5.0.0
+        with:
+          go-version: '>= 1.21'
+          cache: true
+
+      - name: Install Terraform
+        uses: hashicorp/setup-terraform@a1502cd9e758c50496cc9ac5308c4843bcd56d36 # v3.0.0
+        with:
+          terraform_version: 1.7
+          terraform_wrapper: false
+
+      - name: Install OpenTofu
+        uses: opentofu/setup-opentofu@da3271e0a2f8b8552a91e37cf85d03622c328ab7 # v1.0.2
+        with:
+          tofu_version: 1.6
+          tofu_wrapper: false
+
+      - name: Run Terratest
+        run: |
+          cd ./terratest && go test -count=1 -parallel=$(nproc)
