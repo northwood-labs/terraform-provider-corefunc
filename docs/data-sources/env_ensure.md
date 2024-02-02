@@ -133,7 +133,6 @@ You can apply this plan to save these new output values to the Terraform state, 
 
 ### Read-Only
 
-* `id` (Number) Not used. Required by the [Terraform Plugin Framework](https://developer.hashicorp.com/terraform/plugin/framework).
 * `value` (String) The value of the environment variable, if it exists.
 
 <!-- Preview the provider docs with the Terraform registry provider docs preview tool: https://registry.terraform.io/tools/doc-preview -->
