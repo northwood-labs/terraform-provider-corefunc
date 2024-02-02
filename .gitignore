@@ -6,6 +6,7 @@ _provider.tf
 .dccache
 .infracost
 .terraform
+.terraform.lock.hcl
 .terraformrc
 *_override.tf
 *_override.tf.json
