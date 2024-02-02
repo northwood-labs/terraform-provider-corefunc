@@ -41,6 +41,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 ### Documentation
 
 * [`c30e191`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/c30e1912d5e273e8238703d3f7bc67a492017e66): Added information about compatibility testing.
+* [`b35d3f8`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/b35d3f85fd3cb8ed0a8355b6f631878484f3be98): Adjust the git-cliff format.
 
 ### Linting
 
