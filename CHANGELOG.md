@@ -331,4 +331,3 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`d54db2d`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/d54db2d14880d822348a9f098828755f38bf5adb): Manually install latest Go for govulncheck.
 * [`f965fbe`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/f965fbe6a0246138cf8d80e50ea705a54ddde548): Manually install latest Go for govulncheck.
 * [`78966d5`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/78966d5edc0e3c57f7ab86827f8d3595b2442072): Allow `storage.googleapis.com:443` from GitHub Actions.
-

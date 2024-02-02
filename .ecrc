@@ -1,5 +1,6 @@
 {
     "Exclude": [
+        "\\.bak$",
         "\\.cache$",
         "\\.dcignore$",
         "\\.example$",
@@ -10,7 +11,6 @@
         "\\.svg$",
         "\\.terraform\\.lock\\.hcl$",
         "\\.txt$",
-        "composer\\.lock$",
         "go\\.mod$",
         "go\\.sum$",
         "package-lock\\.json$"

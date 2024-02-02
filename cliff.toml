@@ -39,7 +39,7 @@ body = """
     **{{ commit.scope }}**: {% endif %}{{ commit.message | upper_first | trim_end }}\
     {% if commit.author.name != "Ryan Parman" %} ({{ commit.author.name }}){% endif %}\
   {% endfor %}
-{% endfor %}\n
+{% endfor %}
 """
 
 # remove the leading and trailing whitespace from the template

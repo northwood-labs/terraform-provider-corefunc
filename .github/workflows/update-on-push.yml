@@ -41,8 +41,8 @@ jobs:
             -H "Accept: application/vnd.github+json" \
             -H "Authorization: token ${GITHUB_TOKEN}" \
             -H "X-GitHub-Api-Version: 2022-11-28" \
-            "https://github.com/orhun/git-cliff/releases/download/v1.4.0/git-cliff-1.4.0-x86_64-unknown-linux-gnu.tar.gz" \
-             --output ${{ runner.temp }}/git-cliff.tgz
+            -o ${{ runner.temp }}/git-cliff.tgz \
+            https://github.com/orhun/git-cliff/releases/download/v1.4.0/git-cliff-1.4.0-x86_64-unknown-linux-gnu.tar.gz
 
           tar -zxvf ${{ runner.temp }}/git-cliff.tgz -C "${{ runner.temp }}"
 
