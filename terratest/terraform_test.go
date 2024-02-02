@@ -24,36 +24,44 @@ import (
 	"github.com/hairyhenderson/go-which"
 	"github.com/northwood-labs/terraform-provider-corefunc/corefunc"
 	"github.com/northwood-labs/terraform-provider-corefunc/corefunc/types"
+	"github.com/pkg/errors"
 	"github.com/stretchr/testify/assert"
 )
 
 var (
+	err error
+
 	inputStr     = "This is [an] {example}$${id32}."
 	prefix       = "NW-ZZZ-CLOUD-TEST-APP-CLOUD-PROD-CRIT"
 	label        = "K8S Pods Not Running Deployment Check"
 	strToReplace = "This is a string for testing replacements. New Relic. Set-up."
+
+	origPath      = os.Getenv("TF_ACC_TERRAFORM_PATH")
+	origNamespace = os.Getenv("TF_ACC_PROVIDER_NAMESPACE")
+	origHostname  = os.Getenv("TF_ACC_PROVIDER_HOST")
+
+	// Both must be installed first.
+	binaries = []string{
+		"terraform",
+		"tofu",
+	}
 )
 
 func TestTerraform(t *testing.T) {
 	// https://golang.org/pkg/testing/#T.Parallel
 	t.Parallel()
 
-	// Both must be installed first.
-	binaries := []string{
-		"terraform",
-		"tofu",
-	}
-
 	for i := range binaries {
 		binary := binaries[i]
 
-		if _, err := os.Stat(which.Which(binary)); os.IsNotExist(err) {
+		if _, err = os.Stat(which.Which(binary)); os.IsNotExist(err) {
 			t.Fatalf("Binary %s must be installed first", binary)
 		}
 
-		fmt.Println("================================================================================")
-		fmt.Printf("Binary %s is installed\n", which.Which(binary))
-		fmt.Println("================================================================================")
+		err = setAndPrint(binary)
+		if err != nil {
+			t.Fatal(err)
+		}
 
 		// https://pkg.go.dev/github.com/gruntwork-io/terratest/modules/terraform#Options
 		terraformOptions := &terraform.Options{
@@ -111,14 +119,17 @@ func TestTerraform(t *testing.T) {
 			),
 		)
 
-		homedir, err := corefunc.Homedir()
+		homedir := ""
+		homedirPath := ""
+
+		homedir, err = corefunc.Homedir()
 		if err != nil {
 			t.Fatal(err)
 		}
 
 		assert.Equal(t, terraform.Output(t, terraformOptions, "homedir_get"), homedir)
 
-		homedirPath, err := corefunc.HomedirExpand("~/.aws")
+		homedirPath, err = corefunc.HomedirExpand("~/.aws")
 		if err != nil {
 			t.Fatal(err)
 		}
@@ -126,6 +137,68 @@ func TestTerraform(t *testing.T) {
 		assert.Equal(t, terraform.Output(t, terraformOptions, "homedir_expand"), homedirPath)
 
 		// At the end of the test, run `terraform destroy` to clean up any resources that were created
+		err = restoreEnv()
+		if err != nil {
+			t.Fatal(err)
+		}
+
 		terraform.Destroy(t, terraformOptions)
 	}
+}
+
+func setAndPrint(binary string) error {
+	// Set the necessary values.
+	err = os.Setenv("TF_ACC_TERRAFORM_PATH", which.Which(binary))
+	if err != nil {
+		return errors.Wrap(err, "failed to set TF_ACC_TERRAFORM_PATH")
+	}
+
+	err = os.Setenv("TF_ACC_PROVIDER_NAMESPACE", "northwood-labs")
+	if err != nil {
+		return errors.Wrap(err, "failed to set TF_ACC_PROVIDER_NAMESPACE")
+	}
+
+	switch binary {
+	case "terraform":
+		err = os.Setenv("TF_ACC_PROVIDER_HOST", "registry.terraform.io")
+		if err != nil {
+			return errors.Wrap(err, "failed to set TF_ACC_PROVIDER_HOST")
+		}
+	case "tofu":
+		err = os.Setenv("TF_ACC_PROVIDER_HOST", "registry.opentofu.org")
+		if err != nil {
+			return errors.Wrap(err, "failed to set TF_ACC_PROVIDER_HOST")
+		}
+	}
+
+	fmt.Println("")
+	fmt.Println("================================================================================")
+	fmt.Printf("Binary %s is installed\n", which.Which(binary))
+	fmt.Println("TF_ACC_TERRAFORM_PATH=" + os.Getenv("TF_ACC_TERRAFORM_PATH"))
+	fmt.Println("TF_ACC_PROVIDER_NAMESPACE=" + os.Getenv("TF_ACC_PROVIDER_NAMESPACE"))
+	fmt.Println("TF_ACC_PROVIDER_HOST=" + os.Getenv("TF_ACC_PROVIDER_HOST"))
+	fmt.Println("================================================================================")
+	fmt.Println("")
+
+	return nil
+}
+
+func restoreEnv() error {
+	// Restore the original values.
+	err = os.Setenv("TF_ACC_TERRAFORM_PATH", origPath)
+	if err != nil {
+		return errors.Wrap(err, "failed to set TF_ACC_TERRAFORM_PATH")
+	}
+
+	err = os.Setenv("TF_ACC_PROVIDER_NAMESPACE", origNamespace)
+	if err != nil {
+		return errors.Wrap(err, "failed to set TF_ACC_PROVIDER_NAMESPACE")
+	}
+
+	err = os.Setenv("TF_ACC_PROVIDER_HOST", origHostname)
+	if err != nil {
+		return errors.Wrap(err, "failed to set TF_ACC_PROVIDER_HOST")
+	}
+
+	return nil
 }
