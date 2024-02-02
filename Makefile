@@ -392,14 +392,14 @@ changelog:
 ## tag: [release]* Tags (and GPG-signs) the release.
 tag:
 	@ if [ $$(git status -s -uall | wc -l) != 1 ]; then echo 'ERROR: Git workspace must be clean.'; exit 1; fi;
+	NEXT_VERSION=$(shell git cliff --bump --unreleased --context | jq -r .[0].version)
 
-	@ $(ECHO) "This release will be tagged as: v$$(cat ./VERSION)"
-	@ $(ECHO) "This version should match your release. If it doesn't, re-run 'make version'."
+	@ $(ECHO) "This release will be tagged as: v${NEXT_VERSION}"
 	@ $(ECHO) "---------------------------------------------------------------------"
 	@ read -p "Press any key to continue, or press Control+C to cancel. " x;
 
 	@ $(ECHO) " "
-	@ chag update v$$(cat ./VERSION)
+	@ chag update v${NEXT_VERSION}
 	@ $(ECHO) " "
 
 	@ $(ECHO) "These are the contents of the CHANGELOG for this release. Are these correct?"
@@ -412,12 +412,5 @@ tag:
 	@ $(ECHO) " "
 
 	git add .
-	git commit -a -m "relprep: Preparing the $$(cat ./VERSION) release."
+	git commit -a -m "relprep: Preparing the v${NEXT_VERSION} release."
 	chag tag --sign
-
-.PHONY: version
-## version: [release]* Sets the version for the next release; pre-req for a release tag.
-version:
-	@ $(ECHO) "Current version: $$(cat ./VERSION)"
-	@read -p "Enter new version number: " nv; \
-	printf "$$nv" > ./VERSION

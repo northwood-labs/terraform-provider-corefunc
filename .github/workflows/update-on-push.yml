@@ -28,6 +28,12 @@ jobs:
         with:
           egress-policy: audit
 
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "lts"
+          token: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Checkout Source
         uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
         with:
@@ -42,7 +48,7 @@ jobs:
             -H "Authorization: token ${GITHUB_TOKEN}" \
             -H "X-GitHub-Api-Version: 2022-11-28" \
             -o ${{ runner.temp }}/git-cliff.tgz \
-            https://github.com/orhun/git-cliff/releases/download/v1.4.0/git-cliff-1.4.0-x86_64-unknown-linux-gnu.tar.gz
+            https://github.com/orhun/git-cliff/releases/download/v1.3.1/git-cliff-1.3.1-x86_64-unknown-linux-gnu.tar.gz
 
           tar -zxvf ${{ runner.temp }}/git-cliff.tgz -C "${{ runner.temp }}"
 
@@ -53,6 +59,9 @@ jobs:
 
           # Generate CHANGELOG
           ${{ runner.temp }}/git-cliff*/git-cliff -o CHANGELOG.md
+
+          # Run Markdownlint
+          npx markdownlint --ignore=node_modules --ignore=.github --ignore=.templates --fix '**/*.md'
 
       - name: Git commit if changed
         run: |
