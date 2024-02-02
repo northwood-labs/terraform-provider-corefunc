@@ -327,6 +327,13 @@ mutate:
 	@ $(ECHO) "\033[1;33m=====> Running mutation tests...\033[0m"
 	cd ./corefunc && $(GO) test -tags=mutation -count=1 -parallel=$(shell nproc) -timeout 30s -ooze.v=true | ggrep -v "^[[:lower:]]" | ggrep -v "^)"
 
+.PHONY: terratest
+## terratest: [test] Runs Terratest tests.
+terratest:
+	@ $(ECHO) " "
+	@ $(ECHO) "\033[1;33m=====> Running Terratest tests...\033[0m"
+	cd ./terratest && $(GO) test -count 1
+
 .PHONY: examples
 ## examples: [test] Runs tests for examples. Set NAME= (without 'Example') to run a specific test by name
 examples:
