@@ -1,6 +1,6 @@
 {
   "SchemaVersion": 2,
-  "CreatedAt": "2024-02-01T17:28:58.217345-07:00",
+  "CreatedAt": "2024-02-01T18:01:22.439332-07:00",
   "ArtifactName": ".",
   "ArtifactType": "filesystem",
   "Metadata": {
@@ -55,9 +55,9 @@
           ],
           "Indirect": true,
           "DependsOn": [
+            "github.com/stretchr/testify@v1.8.4",
             "github.com/yuin/goldmark@v1.6.0",
-            "github.com/mattn/go-runewidth@v0.0.9",
-            "github.com/stretchr/testify@v1.8.4"
+            "github.com/mattn/go-runewidth@v0.0.9"
           ],
           "Layer": {}
         },
@@ -90,16 +90,16 @@
           ],
           "Indirect": true,
           "DependsOn": [
-            "golang.org/x/crypto@v0.18.0",
             "github.com/huandu/xstrings@v1.4.0",
             "github.com/mitchellh/copystructure@v1.2.0",
-            "github.com/google/uuid@v1.5.0",
-            "github.com/imdario/mergo@v0.3.16",
-            "github.com/shopspring/decimal@v1.3.1",
             "github.com/spf13/cast@v1.6.0",
             "github.com/stretchr/testify@v1.8.4",
+            "golang.org/x/crypto@v0.18.0",
             "github.com/Masterminds/goutils@v1.1.1",
-            "github.com/Masterminds/semver/v3@v3.2.1"
+            "github.com/Masterminds/semver/v3@v3.2.1",
+            "github.com/google/uuid@v1.5.0",
+            "github.com/imdario/mergo@v0.3.16",
+            "github.com/shopspring/decimal@v1.3.1"
           ],
           "Layer": {}
         },
@@ -226,8 +226,8 @@
           ],
           "Indirect": true,
           "DependsOn": [
-            "google.golang.org/protobuf@v1.32.0",
-            "github.com/google/go-cmp@v0.6.0"
+            "github.com/google/go-cmp@v0.6.0",
+            "google.golang.org/protobuf@v1.32.0"
           ],
           "Layer": {}
         },
@@ -272,9 +272,9 @@
             "MIT"
           ],
           "DependsOn": [
-            "github.com/fatih/color@v1.16.0",
             "github.com/hexops/gotextdiff@v1.0.3",
-            "github.com/stretchr/testify@v1.8.4"
+            "github.com/stretchr/testify@v1.8.4",
+            "github.com/fatih/color@v1.16.0"
           ],
           "Layer": {}
         },
@@ -287,12 +287,12 @@
           ],
           "Indirect": true,
           "DependsOn": [
-            "github.com/armon/go-radix@v1.0.0",
-            "github.com/mattn/go-isatty@v0.0.20",
             "github.com/Masterminds/sprig/v3@v3.2.3",
-            "github.com/bgentry/speakeasy@v0.1.0",
             "github.com/posener/complete@v1.2.3",
-            "github.com/fatih/color@v1.16.0"
+            "github.com/bgentry/speakeasy@v0.1.0",
+            "github.com/fatih/color@v1.16.0",
+            "github.com/armon/go-radix@v1.0.0",
+            "github.com/mattn/go-isatty@v0.0.20"
           ],
           "Layer": {}
         },
@@ -339,9 +339,9 @@
           ],
           "Indirect": true,
           "DependsOn": [
+            "golang.org/x/text@v0.14.0",
             "github.com/google/go-cmp@v0.6.0",
-            "github.com/vmihailenco/msgpack@v4.0.4+incompatible",
-            "golang.org/x/text@v0.14.0"
+            "github.com/vmihailenco/msgpack@v4.0.4+incompatible"
           ],
           "Layer": {}
         },
@@ -383,12 +383,12 @@
           ],
           "Indirect": true,
           "DependsOn": [
-            "github.com/hashicorp/yamux@v0.1.1",
-            "google.golang.org/grpc@v1.61.0",
-            "google.golang.org/protobuf@v1.32.0",
             "github.com/golang/protobuf@v1.5.3",
             "github.com/hashicorp/go-hclog@v1.5.0",
+            "github.com/hashicorp/yamux@v0.1.1",
+            "google.golang.org/protobuf@v1.32.0",
             "github.com/mitchellh/go-testing-interface@v1.14.1",
+            "google.golang.org/grpc@v1.61.0",
             "github.com/oklog/run@v1.1.0"
           ],
           "Layer": {}
@@ -422,14 +422,14 @@
           ],
           "Indirect": true,
           "DependsOn": [
-            "github.com/google/go-cmp@v0.6.0",
             "github.com/hashicorp/go-multierror@v1.1.1",
             "github.com/hashicorp/go-version@v1.6.0",
-            "github.com/hashicorp/go-checkpoint@v0.5.0",
+            "github.com/google/go-cmp@v0.6.0",
             "github.com/hashicorp/go-cleanhttp@v0.5.2",
-            "github.com/ProtonMail/go-crypto@v0.0.0-20230923063757-afb1ddc0824c",
             "github.com/hashicorp/logutils@v1.0.0",
-            "golang.org/x/mod@v0.14.0"
+            "golang.org/x/mod@v0.14.0",
+            "github.com/ProtonMail/go-crypto@v0.0.0-20230923063757-afb1ddc0824c",
+            "github.com/hashicorp/go-checkpoint@v0.5.0"
           ],
           "Layer": {}
         },
@@ -442,15 +442,15 @@
           ],
           "Indirect": true,
           "DependsOn": [
-            "github.com/mitchellh/go-wordwrap@v1.0.1",
-            "github.com/agext/levenshtein@v1.2.3",
             "github.com/google/go-cmp@v0.6.0",
-            "github.com/go-test/deep@v1.0.7",
             "github.com/spf13/pflag@v1.0.5",
+            "github.com/zclconf/go-cty@v1.14.2",
+            "github.com/agext/levenshtein@v1.2.3",
             "github.com/apparentlymart/go-textseg/v15@v15.0.0",
-            "github.com/davecgh/go-spew@v1.1.1",
+            "github.com/go-test/deep@v1.0.7",
             "golang.org/x/crypto@v0.18.0",
-            "github.com/zclconf/go-cty@v1.14.2"
+            "github.com/davecgh/go-spew@v1.1.1",
+            "github.com/mitchellh/go-wordwrap@v1.0.1"
           ],
           "Layer": {}
         },
@@ -473,11 +473,11 @@
           ],
           "Indirect": true,
           "DependsOn": [
-            "github.com/hashicorp/go-version@v1.6.0",
-            "github.com/hashicorp/terraform-json@v0.21.0",
+            "github.com/zclconf/go-cty@v1.14.2",
             "github.com/hashicorp/hc-install@v0.6.2",
+            "github.com/hashicorp/terraform-json@v0.21.0",
             "github.com/google/go-cmp@v0.6.0",
-            "github.com/zclconf/go-cty@v1.14.2"
+            "github.com/hashicorp/go-version@v1.6.0"
           ],
           "Layer": {}
         },
@@ -490,11 +490,11 @@
           ],
           "Indirect": true,
           "DependsOn": [
-            "github.com/google/go-cmp@v0.6.0",
             "github.com/hashicorp/go-version@v1.6.0",
             "github.com/mitchellh/copystructure@v1.2.0",
-            "github.com/davecgh/go-spew@v1.1.1",
-            "github.com/zclconf/go-cty@v1.14.2"
+            "github.com/google/go-cmp@v0.6.0",
+            "github.com/zclconf/go-cty@v1.14.2",
+            "github.com/davecgh/go-spew@v1.1.1"
           ],
           "Layer": {}
         },
@@ -506,20 +506,20 @@
             "MPL-2.0"
           ],
           "DependsOn": [
-            "github.com/zclconf/go-cty@v1.14.2",
-            "golang.org/x/text@v0.14.0",
-            "github.com/Kunde21/markdownfmt/v3@v3.1.0",
-            "github.com/hashicorp/go-version@v1.6.0",
-            "github.com/hashicorp/terraform-json@v0.21.0",
-            "github.com/yuin/goldmark@v1.6.0",
-            "github.com/yuin/goldmark-meta@v1.1.0",
-            "golang.org/x/exp@v0.0.0-20231206192017-f3f8817b8deb",
-            "github.com/mattn/go-colorable@v0.1.13",
+            "github.com/hashicorp/terraform-exec@v0.20.0",
             "github.com/russross/blackfriday@v1.6.0",
             "github.com/hashicorp/cli@v1.1.6",
+            "github.com/hashicorp/terraform-json@v0.21.0",
+            "github.com/mattn/go-colorable@v0.1.13",
+            "github.com/Kunde21/markdownfmt/v3@v3.1.0",
+            "github.com/yuin/goldmark-meta@v1.1.0",
+            "github.com/zclconf/go-cty@v1.14.2",
+            "golang.org/x/text@v0.14.0",
             "github.com/hashicorp/hc-install@v0.6.2",
+            "github.com/yuin/goldmark@v1.6.0",
+            "golang.org/x/exp@v0.0.0-20231206192017-f3f8817b8deb",
             "github.com/google/go-cmp@v0.6.0",
-            "github.com/hashicorp/terraform-exec@v0.20.0"
+            "github.com/hashicorp/go-version@v1.6.0"
           ],
           "Layer": {}
         },
@@ -531,8 +531,8 @@
             "MPL-2.0"
           ],
           "DependsOn": [
-            "github.com/hashicorp/terraform-plugin-log@v0.9.0",
             "github.com/google/go-cmp@v0.6.0",
+            "github.com/hashicorp/terraform-plugin-log@v0.9.0",
             "github.com/hashicorp/terraform-plugin-go@v0.21.0"
           ],
           "Layer": {}
@@ -545,8 +545,8 @@
             "MPL-2.0"
           ],
           "DependsOn": [
-            "github.com/google/go-cmp@v0.6.0",
             "github.com/hashicorp/terraform-plugin-go@v0.21.0",
+            "github.com/google/go-cmp@v0.6.0",
             "github.com/hashicorp/terraform-plugin-framework@v1.5.0"
           ],
           "Layer": {}
@@ -559,16 +559,16 @@
             "MPL-2.0"
           ],
           "DependsOn": [
-            "github.com/hashicorp/terraform-plugin-log@v0.9.0",
-            "github.com/hashicorp/go-uuid@v1.0.3",
-            "github.com/vmihailenco/msgpack/v5@v5.4.1",
-            "github.com/google/go-cmp@v0.6.0",
-            "google.golang.org/grpc@v1.61.0",
-            "github.com/hashicorp/go-hclog@v1.5.0",
             "github.com/hashicorp/go-plugin@v1.6.0",
-            "github.com/hashicorp/terraform-registry-address@v0.2.3",
+            "github.com/vmihailenco/msgpack/v5@v5.4.1",
+            "google.golang.org/grpc@v1.61.0",
+            "google.golang.org/protobuf@v1.32.0",
+            "github.com/hashicorp/go-hclog@v1.5.0",
+            "github.com/hashicorp/go-uuid@v1.0.3",
+            "github.com/hashicorp/terraform-plugin-log@v0.9.0",
+            "github.com/google/go-cmp@v0.6.0",
             "github.com/mitchellh/go-testing-interface@v1.14.1",
-            "google.golang.org/protobuf@v1.32.0"
+            "github.com/hashicorp/terraform-registry-address@v0.2.3"
           ],
           "Layer": {}
         },
@@ -594,25 +594,25 @@
             "MPL-2.0"
           ],
           "DependsOn": [
-            "github.com/hashicorp/hcl/v2@v2.19.1",
+            "github.com/hashicorp/terraform-plugin-go@v0.21.0",
+            "github.com/mitchellh/mapstructure@v1.5.0",
+            "github.com/google/go-cmp@v0.6.0",
+            "github.com/hashicorp/go-version@v1.6.0",
+            "github.com/hashicorp/terraform-exec@v0.20.0",
+            "github.com/mitchellh/go-testing-interface@v1.14.1",
             "github.com/mitchellh/reflectwalk@v1.0.2",
             "github.com/zclconf/go-cty@v1.14.2",
-            "github.com/google/go-cmp@v0.6.0",
+            "github.com/hashicorp/hc-install@v0.6.2",
+            "github.com/hashicorp/go-uuid@v1.0.3",
             "github.com/hashicorp/go-cty@v1.4.1-0.20200414143053-d3edf31b6320",
             "github.com/hashicorp/go-hclog@v1.5.0",
-            "github.com/mitchellh/mapstructure@v1.5.0",
-            "golang.org/x/crypto@v0.18.0",
-            "github.com/hashicorp/hc-install@v0.6.2",
-            "github.com/hashicorp/terraform-json@v0.21.0",
-            "github.com/hashicorp/terraform-plugin-go@v0.21.0",
-            "github.com/mitchellh/go-testing-interface@v1.14.1",
-            "github.com/hashicorp/go-version@v1.6.0",
-            "github.com/hashicorp/terraform-plugin-log@v0.9.0",
-            "github.com/hashicorp/logutils@v1.0.0",
-            "github.com/mitchellh/copystructure@v1.2.0",
+            "github.com/hashicorp/hcl/v2@v2.19.1",
             "github.com/hashicorp/go-plugin@v1.6.0",
-            "github.com/hashicorp/go-uuid@v1.0.3",
-            "github.com/hashicorp/terraform-exec@v0.20.0"
+            "github.com/hashicorp/terraform-json@v0.21.0",
+            "github.com/hashicorp/terraform-plugin-log@v0.9.0",
+            "golang.org/x/crypto@v0.18.0",
+            "github.com/hashicorp/logutils@v1.0.0",
+            "github.com/mitchellh/copystructure@v1.2.0"
           ],
           "Layer": {}
         },
@@ -1021,10 +1021,10 @@
           ],
           "Indirect": true,
           "DependsOn": [
-            "github.com/vmihailenco/msgpack/v5@v5.4.1",
             "golang.org/x/text@v0.14.0",
             "github.com/apparentlymart/go-textseg/v15@v15.0.0",
-            "github.com/google/go-cmp@v0.6.0"
+            "github.com/google/go-cmp@v0.6.0",
+            "github.com/vmihailenco/msgpack/v5@v5.4.1"
           ],
           "Layer": {}
         },
@@ -1075,9 +1075,9 @@
           ],
           "Indirect": true,
           "DependsOn": [
+            "golang.org/x/text@v0.14.0",
             "golang.org/x/crypto@v0.18.0",
-            "golang.org/x/sys@v0.16.0",
-            "golang.org/x/text@v0.14.0"
+            "golang.org/x/sys@v0.16.0"
           ],
           "Layer": {}
         },
@@ -1138,13 +1138,13 @@
           ],
           "Indirect": true,
           "DependsOn": [
-            "google.golang.org/protobuf@v1.32.0",
-            "github.com/golang/protobuf@v1.5.3",
-            "github.com/google/go-cmp@v0.6.0",
-            "google.golang.org/genproto/googleapis/rpc@v0.0.0-20231212172506-995d672761c0",
-            "golang.org/x/net@v0.19.0",
+            "github.com/google/uuid@v1.5.0",
             "golang.org/x/sys@v0.16.0",
-            "github.com/google/uuid@v1.5.0"
+            "github.com/golang/protobuf@v1.5.3",
+            "golang.org/x/net@v0.19.0",
+            "google.golang.org/genproto/googleapis/rpc@v0.0.0-20231212172506-995d672761c0",
+            "github.com/google/go-cmp@v0.6.0",
+            "google.golang.org/protobuf@v1.32.0"
           ],
           "Layer": {}
         },
@@ -1199,19 +1199,19 @@
           ],
           "Indirect": true,
           "DependsOn": [
-            "google.golang.org/genproto/googleapis/rpc@v0.0.0-20231212172506-995d672761c0",
-            "golang.org/x/oauth2@v0.15.0",
-            "cloud.google.com/go/storage@v1.36.0",
-            "google.golang.org/genproto@v0.0.0-20231212172506-995d672761c0",
             "go.opencensus.io@v0.24.0",
+            "go.opentelemetry.io/otel@v1.21.0",
             "google.golang.org/protobuf@v1.31.0",
+            "google.golang.org/genproto/googleapis/rpc@v0.0.0-20231212172506-995d672761c0",
+            "cloud.google.com/go/storage@v1.36.0",
+            "golang.org/x/oauth2@v0.15.0",
+            "google.golang.org/genproto/googleapis/api@v0.0.0-20231212172506-995d672761c0",
+            "google.golang.org/genproto@v0.0.0-20231212172506-995d672761c0",
+            "go.opentelemetry.io/otel/trace@v1.21.0",
+            "google.golang.org/api@v0.154.0",
             "github.com/golang/protobuf@v1.5.3",
             "github.com/googleapis/gax-go/v2@v2.12.0",
-            "google.golang.org/genproto/googleapis/api@v0.0.0-20231212172506-995d672761c0",
-            "go.opentelemetry.io/otel@v1.21.0",
-            "go.opentelemetry.io/otel/trace@v1.21.0",
-            "google.golang.org/grpc@v1.60.0",
-            "google.golang.org/api@v0.154.0"
+            "google.golang.org/grpc@v1.60.0"
           ],
           "Layer": {}
         },
@@ -1224,13 +1224,13 @@
           ],
           "Indirect": true,
           "DependsOn": [
-            "google.golang.org/api@v0.154.0",
-            "google.golang.org/grpc@v1.60.0",
-            "google.golang.org/protobuf@v1.31.0",
-            "cloud.google.com/go@v0.111.0",
             "github.com/googleapis/gax-go/v2@v2.12.0",
+            "google.golang.org/genproto/googleapis/api@v0.0.0-20231212172506-995d672761c0",
+            "google.golang.org/protobuf@v1.31.0",
+            "google.golang.org/api@v0.154.0",
             "google.golang.org/genproto@v0.0.0-20231212172506-995d672761c0",
-            "google.golang.org/genproto/googleapis/api@v0.0.0-20231212172506-995d672761c0"
+            "google.golang.org/grpc@v1.60.0",
+            "cloud.google.com/go@v0.111.0"
           ],
           "Layer": {}
         },
@@ -1256,14 +1256,14 @@
           ],
           "Indirect": true,
           "DependsOn": [
-            "github.com/googleapis/gax-go/v2@v2.12.0",
+            "google.golang.org/genproto@v0.0.0-20231212172506-995d672761c0",
             "google.golang.org/grpc@v1.60.0",
-            "cloud.google.com/go@v0.111.0",
-            "google.golang.org/genproto/googleapis/api@v0.0.0-20231212172506-995d672761c0",
-            "google.golang.org/protobuf@v1.31.0",
             "github.com/golang/protobuf@v1.5.3",
+            "github.com/googleapis/gax-go/v2@v2.12.0",
             "google.golang.org/api@v0.154.0",
-            "google.golang.org/genproto@v0.0.0-20231212172506-995d672761c0"
+            "cloud.google.com/go@v0.111.0",
+            "google.golang.org/protobuf@v1.31.0",
+            "google.golang.org/genproto/googleapis/api@v0.0.0-20231212172506-995d672761c0"
           ],
           "Layer": {}
         },
@@ -1276,19 +1276,19 @@
           ],
           "Indirect": true,
           "DependsOn": [
-            "cloud.google.com/go/iam@v1.1.5",
-            "google.golang.org/api@v0.154.0",
-            "golang.org/x/xerrors@v0.0.0-20231012003039-104605ab7028",
-            "google.golang.org/protobuf@v1.31.0",
-            "cloud.google.com/go@v0.111.0",
+            "google.golang.org/grpc@v1.60.0",
+            "github.com/google/uuid@v1.5.0",
             "google.golang.org/genproto/googleapis/api@v0.0.0-20231212172506-995d672761c0",
             "google.golang.org/genproto@v0.0.0-20231212172506-995d672761c0",
-            "google.golang.org/grpc@v1.60.0",
-            "cloud.google.com/go/compute/metadata@v0.2.3",
+            "google.golang.org/protobuf@v1.31.0",
+            "golang.org/x/oauth2@v0.15.0",
+            "cloud.google.com/go/iam@v1.1.5",
             "github.com/golang/protobuf@v1.5.3",
             "github.com/googleapis/gax-go/v2@v2.12.0",
-            "golang.org/x/oauth2@v0.15.0",
-            "github.com/google/uuid@v1.5.0"
+            "cloud.google.com/go/compute/metadata@v0.2.3",
+            "google.golang.org/api@v0.154.0",
+            "cloud.google.com/go@v0.111.0",
+            "golang.org/x/xerrors@v0.0.0-20231012003039-104605ab7028"
           ],
           "Layer": {}
         },
@@ -1420,11 +1420,11 @@
           ],
           "Indirect": true,
           "DependsOn": [
-            "github.com/golang/protobuf@v1.5.3",
             "golang.org/x/crypto@v0.17.0",
             "golang.org/x/sync@v0.5.0",
+            "google.golang.org/protobuf@v1.31.0",
             "google.golang.org/grpc@v1.60.0",
-            "google.golang.org/protobuf@v1.31.0"
+            "github.com/golang/protobuf@v1.5.3"
           ],
           "Layer": {}
         },
@@ -1463,9 +1463,9 @@
           "DependsOn": [
             "google.golang.org/api@v0.154.0",
             "google.golang.org/genproto/googleapis/api@v0.0.0-20231212172506-995d672761c0",
-            "google.golang.org/grpc@v1.60.0",
             "google.golang.org/genproto/googleapis/rpc@v0.0.0-20231212172506-995d672761c0",
-            "google.golang.org/protobuf@v1.31.0"
+            "google.golang.org/protobuf@v1.31.0",
+            "google.golang.org/grpc@v1.60.0"
           ],
           "Layer": {}
         },
@@ -1477,25 +1477,25 @@
             "Apache-2.0"
           ],
           "DependsOn": [
-            "github.com/stretchr/testify@v1.8.4",
-            "github.com/aws/aws-sdk-go@v1.49.4",
-            "github.com/hashicorp/go-multierror@v1.1.1",
-            "github.com/google/uuid@v1.5.0",
-            "golang.org/x/oauth2@v0.15.0",
-            "github.com/hashicorp/go-version@v1.6.0",
-            "golang.org/x/crypto@v0.17.0",
-            "github.com/mattn/go-zglob@v0.0.4",
-            "cloud.google.com/go/storage@v1.36.0",
-            "github.com/hashicorp/terraform-json@v0.18.0",
-            "github.com/hashicorp/hcl/v2@v2.19.1",
             "github.com/mitchellh/go-homedir@v1.1.0",
-            "google.golang.org/api@v0.154.0",
-            "google.golang.org/genproto@v0.0.0-20231212172506-995d672761c0",
-            "github.com/hashicorp/go-getter@v1.7.3",
-            "github.com/zclconf/go-cty@v1.14.1",
+            "github.com/google/uuid@v1.5.0",
             "github.com/jinzhu/copier@v0.4.0",
-            "golang.org/x/net@v0.19.0",
-            "github.com/tmccombs/hcl2json@v0.6.0"
+            "github.com/tmccombs/hcl2json@v0.6.0",
+            "golang.org/x/crypto@v0.17.0",
+            "google.golang.org/genproto@v0.0.0-20231212172506-995d672761c0",
+            "google.golang.org/api@v0.154.0",
+            "github.com/hashicorp/go-getter@v1.7.3",
+            "github.com/stretchr/testify@v1.8.4",
+            "github.com/mattn/go-zglob@v0.0.4",
+            "github.com/zclconf/go-cty@v1.14.1",
+            "cloud.google.com/go/storage@v1.36.0",
+            "github.com/hashicorp/go-multierror@v1.1.1",
+            "golang.org/x/oauth2@v0.15.0",
+            "github.com/hashicorp/terraform-json@v0.18.0",
+            "github.com/hashicorp/go-version@v1.6.0",
+            "github.com/aws/aws-sdk-go@v1.49.4",
+            "github.com/hashicorp/hcl/v2@v2.19.1",
+            "golang.org/x/net@v0.19.0"
           ],
           "Layer": {}
         },
@@ -1528,18 +1528,18 @@
           ],
           "Indirect": true,
           "DependsOn": [
-            "github.com/hashicorp/go-cleanhttp@v0.5.2",
-            "github.com/hashicorp/go-safetemp@v1.0.0",
-            "github.com/ulikunitz/xz@v0.5.11",
-            "cloud.google.com/go/storage@v1.36.0",
-            "github.com/aws/aws-sdk-go@v1.49.4",
-            "github.com/mitchellh/go-homedir@v1.1.0",
-            "github.com/mitchellh/go-testing-interface@v1.14.1",
+            "github.com/klauspost/compress@v1.17.4",
             "google.golang.org/api@v0.154.0",
             "github.com/bgentry/go-netrc@v0.0.0-20140422174119-9fd32a8b3d3d",
             "github.com/hashicorp/go-version@v1.6.0",
-            "github.com/klauspost/compress@v1.17.4",
-            "golang.org/x/oauth2@v0.15.0"
+            "github.com/hashicorp/go-safetemp@v1.0.0",
+            "golang.org/x/oauth2@v0.15.0",
+            "cloud.google.com/go/storage@v1.36.0",
+            "github.com/aws/aws-sdk-go@v1.49.4",
+            "github.com/hashicorp/go-cleanhttp@v0.5.2",
+            "github.com/mitchellh/go-testing-interface@v1.14.1",
+            "github.com/mitchellh/go-homedir@v1.1.0",
+            "github.com/ulikunitz/xz@v0.5.11"
           ],
           "Layer": {}
         },
@@ -1593,8 +1593,8 @@
           "Indirect": true,
           "DependsOn": [
             "github.com/davecgh/go-spew@v1.1.1",
-            "github.com/hashicorp/go-version@v1.6.0",
-            "github.com/zclconf/go-cty@v1.14.1"
+            "github.com/zclconf/go-cty@v1.14.1",
+            "github.com/hashicorp/go-version@v1.6.0"
           ],
           "Layer": {}
         },
@@ -1678,9 +1678,9 @@
             "Apache-2.0"
           ],
           "DependsOn": [
-            "github.com/chanced/caps@v1.0.1",
             "github.com/stretchr/testify@v1.8.4",
-            "github.com/mitchellh/go-homedir@v1.1.0"
+            "github.com/mitchellh/go-homedir@v1.1.0",
+            "github.com/chanced/caps@v1.0.1"
           ],
           "Layer": {}
         },
@@ -1712,8 +1712,8 @@
           ],
           "Indirect": true,
           "DependsOn": [
-            "github.com/hashicorp/hcl/v2@v2.19.1",
-            "github.com/zclconf/go-cty@v1.14.1"
+            "github.com/zclconf/go-cty@v1.14.1",
+            "github.com/hashicorp/hcl/v2@v2.19.1"
           ],
           "Layer": {}
         },
@@ -1750,11 +1750,11 @@
           ],
           "Indirect": true,
           "DependsOn": [
+            "github.com/golang/groupcache@v0.0.0-20210331224755-41bb18bfe9da",
+            "github.com/golang/protobuf@v1.5.3",
             "github.com/stretchr/testify@v1.8.4",
             "golang.org/x/net@v0.19.0",
-            "google.golang.org/grpc@v1.60.0",
-            "github.com/golang/groupcache@v0.0.0-20210331224755-41bb18bfe9da",
-            "github.com/golang/protobuf@v1.5.3"
+            "google.golang.org/grpc@v1.60.0"
           ],
           "Layer": {}
         },
@@ -1767,11 +1767,11 @@
           ],
           "Indirect": true,
           "DependsOn": [
-            "github.com/stretchr/testify@v1.8.4",
-            "go.opentelemetry.io/otel@v1.21.0",
-            "google.golang.org/grpc@v1.60.0",
             "go.opentelemetry.io/otel/trace@v1.21.0",
             "google.golang.org/protobuf@v1.31.0",
+            "github.com/stretchr/testify@v1.8.4",
+            "google.golang.org/grpc@v1.60.0",
+            "go.opentelemetry.io/otel@v1.21.0",
             "go.opentelemetry.io/otel/metric@v1.21.0"
           ],
           "Layer": {}
@@ -1786,10 +1786,10 @@
           "Indirect": true,
           "DependsOn": [
             "github.com/stretchr/testify@v1.8.4",
-            "go.opentelemetry.io/otel/metric@v1.21.0",
-            "go.opentelemetry.io/otel/trace@v1.21.0",
+            "go.opentelemetry.io/otel@v1.21.0",
             "github.com/felixge/httpsnoop@v1.0.4",
-            "go.opentelemetry.io/otel@v1.21.0"
+            "go.opentelemetry.io/otel/metric@v1.21.0",
+            "go.opentelemetry.io/otel/trace@v1.21.0"
           ],
           "Layer": {}
         },
@@ -1804,8 +1804,8 @@
           "DependsOn": [
             "github.com/go-logr/logr@v1.3.0",
             "github.com/go-logr/stdr@v1.2.2",
-            "go.opentelemetry.io/otel/metric@v1.21.0",
             "github.com/stretchr/testify@v1.8.4",
+            "go.opentelemetry.io/otel/metric@v1.21.0",
             "go.opentelemetry.io/otel/trace@v1.21.0"
           ],
           "Layer": {}
@@ -1871,8 +1871,8 @@
           ],
           "Indirect": true,
           "DependsOn": [
-            "cloud.google.com/go/compute/metadata@v0.2.3",
-            "google.golang.org/appengine@v1.6.8"
+            "google.golang.org/appengine@v1.6.8",
+            "cloud.google.com/go/compute/metadata@v0.2.3"
           ],
           "Layer": {}
         },
@@ -1935,20 +1935,20 @@
           ],
           "Indirect": true,
           "DependsOn": [
-            "github.com/google/s2a-go@v0.1.7",
             "golang.org/x/oauth2@v0.15.0",
-            "golang.org/x/sync@v0.5.0",
-            "google.golang.org/genproto/googleapis/rpc@v0.0.0-20231212172506-995d672761c0",
-            "google.golang.org/protobuf@v1.31.0",
-            "go.opencensus.io@v0.24.0",
-            "go.opentelemetry.io/contrib/instrumentation/google.golang.org/grpc/otelgrpc@v0.46.1",
-            "golang.org/x/time@v0.5.0",
-            "go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp@v0.46.1",
-            "golang.org/x/net@v0.19.0",
             "github.com/google/uuid@v1.5.0",
+            "go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp@v0.46.1",
+            "github.com/google/s2a-go@v0.1.7",
             "github.com/googleapis/enterprise-certificate-proxy@v0.3.2",
-            "cloud.google.com/go/compute/metadata@v0.2.3",
+            "golang.org/x/net@v0.19.0",
+            "golang.org/x/sync@v0.5.0",
+            "go.opencensus.io@v0.24.0",
             "github.com/googleapis/gax-go/v2@v2.12.0",
+            "go.opentelemetry.io/contrib/instrumentation/google.golang.org/grpc/otelgrpc@v0.46.1",
+            "google.golang.org/protobuf@v1.31.0",
+            "cloud.google.com/go/compute/metadata@v0.2.3",
+            "google.golang.org/genproto/googleapis/rpc@v0.0.0-20231212172506-995d672761c0",
+            "golang.org/x/time@v0.5.0",
             "google.golang.org/grpc@v1.60.0"
           ],
           "Layer": {}
@@ -1972,14 +1972,14 @@
           ],
           "Indirect": true,
           "DependsOn": [
-            "google.golang.org/genproto/googleapis/api@v0.0.0-20231212172506-995d672761c0",
-            "google.golang.org/protobuf@v1.31.0",
-            "cloud.google.com/go/iam@v1.1.5",
-            "github.com/golang/protobuf@v1.5.3",
-            "cloud.google.com/go@v0.111.0",
             "google.golang.org/grpc@v1.60.0",
+            "cloud.google.com/go/iam@v1.1.5",
+            "google.golang.org/protobuf@v1.31.0",
             "google.golang.org/genproto/googleapis/rpc@v0.0.0-20231212172506-995d672761c0",
-            "cloud.google.com/go/compute@v1.23.3"
+            "cloud.google.com/go/compute@v1.23.3",
+            "google.golang.org/genproto/googleapis/api@v0.0.0-20231212172506-995d672761c0",
+            "cloud.google.com/go@v0.111.0",
+            "github.com/golang/protobuf@v1.5.3"
           ],
           "Layer": {}
         },
@@ -1992,10 +1992,10 @@
           ],
           "Indirect": true,
           "DependsOn": [
-            "google.golang.org/grpc@v1.60.0",
-            "google.golang.org/protobuf@v1.31.0",
             "google.golang.org/genproto@v0.0.0-20231212172506-995d672761c0",
-            "google.golang.org/genproto/googleapis/rpc@v0.0.0-20231212172506-995d672761c0"
+            "google.golang.org/genproto/googleapis/rpc@v0.0.0-20231212172506-995d672761c0",
+            "google.golang.org/grpc@v1.60.0",
+            "google.golang.org/protobuf@v1.31.0"
           ],
           "Layer": {}
         },
@@ -2018,14 +2018,14 @@
           ],
           "Indirect": true,
           "DependsOn": [
-            "golang.org/x/sys@v0.15.0",
-            "github.com/golang/protobuf@v1.5.3",
             "github.com/google/uuid@v1.5.0",
-            "golang.org/x/sync@v0.5.0",
             "golang.org/x/oauth2@v0.15.0",
-            "google.golang.org/protobuf@v1.31.0",
+            "github.com/golang/protobuf@v1.5.3",
             "golang.org/x/net@v0.19.0",
-            "google.golang.org/genproto/googleapis/rpc@v0.0.0-20231212172506-995d672761c0"
+            "golang.org/x/sys@v0.15.0",
+            "google.golang.org/genproto/googleapis/rpc@v0.0.0-20231212172506-995d672761c0",
+            "google.golang.org/protobuf@v1.31.0",
+            "golang.org/x/sync@v0.5.0"
           ],
           "Layer": {}
         },

@@ -47,11 +47,23 @@ Variables, and Outputs to expose new custom-built functionality.
 The goal of this provider is not to call any APIs, but to provide
 pre-built functions in the form of _Data Sources_.
 
+## Compatibility matrix
+
+Built using the [Terraform Plugin Framework][TPF], which speaks [Terraform Protocol v6][tfproto6].
+
+| Testing type | Details           | Description                                                                    |
+|--------------|-------------------|--------------------------------------------------------------------------------|
+| integration  | Terraform 1.0–1.7 | Executes the provider with this release, pulling from `registry.terraform.io`. |
+| integration  | OpenTofu 1.6      | Executes the provider with this release, pulling from `registry.opentofu.org`. |
+| unit         | Go 1.20–1.21      | Tests using these versions.                                                    |
+| mutation     | Go 1.20–1.21      | Tests using these versions.                                                    |
+| fuzz         | Go 1.20–1.21      | Tests using these versions.                                                    |
+
 ## Setting-up the provider
 
 ```terraform
 terraform {
-  required_version = "~> 1.1"
+  required_version = "~> 1.0"
 
   required_providers {
     corefunc = {
@@ -136,5 +148,8 @@ terraform providers lock \
 ```
 
 ~> **NOTE:** For OpenTofu users, avoid requesting the `netbsd` platform.
+
+[tfproto6]: https://developer.hashicorp.com/terraform/plugin/terraform-plugin-protocol#protocol-version-6
+[TPF]: https://github.com/hashicorp/terraform-plugin-framework
 
 <!-- Preview the provider docs with the Terraform registry provider docs preview tool: https://registry.terraform.io/tools/doc-preview -->

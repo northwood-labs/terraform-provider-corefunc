@@ -12,9 +12,6 @@
 [![GitHub Workflow Status (with event)](https://img.shields.io/github/actions/workflow/status/northwood-labs/terraform-provider-corefunc/test.yml?style=for-the-badge&label=Tests)](https://github.com/northwood-labs/terraform-provider-corefunc/actions/workflows/test.yml)
 [![GitHub Workflow Status (with event)](https://img.shields.io/github/actions/workflow/status/northwood-labs/terraform-provider-corefunc/release.yml?style=for-the-badge&label=Release)](https://github.com/northwood-labs/terraform-provider-corefunc/actions/workflows/release.yml)
 
-> [!NOTE]
-> We intend to support OpenTofu (née OpenTF) in addition to Terraform.
-
 Utilities that should have been Terraform _core functions_.
 
 While some of these _can_ be implemented in HCL, some of them begin to push up against the limits of Terraform and the HCL2 configuration language. We also perform testing using the [Terratest](https://terratest.gruntwork.io) framework on a regular basis. Exposing these functions as both a Go library as well as a Terraform provider enables us to use the same functionality in both our Terraform applies as well as while using a testing framework.
@@ -24,6 +21,20 @@ Since Terraform doesn't have the concept of user-defined functions, the next ste
 **This does not add new syntax or constructs to Terraform.** Instead it uses the _existing_ concepts around Providers, Resources, Data Sources, Variables, and Outputs to expose new custom-built functionality.
 
 The goal of this provider is not to call any APIs, but to provide pre-built functions in the form of _Data Sources_.
+
+## Compatibility testing
+
+* We have automated testing that runs on every commit and every pull request.
+* We intend for the Go libraries to work with all non-EOL versions of Go (i.e., current, current-1).
+* Built using the [Terraform Plugin Framework][TPF], which speaks [Terraform Protocol v6][tfproto6].
+
+| Testing type | Details           | Description                                                                    |
+|--------------|-------------------|--------------------------------------------------------------------------------|
+| integration  | Terraform 1.0–1.7 | Executes the provider with this release, pulling from `registry.terraform.io`. |
+| integration  | OpenTofu 1.6      | Executes the provider with this release, pulling from `registry.opentofu.org`. |
+| unit         | Go 1.20–1.21      | Tests using these versions.                                                    |
+| mutation     | Go 1.20–1.21      | Tests using these versions.                                                    |
+| fuzz         | Go 1.20–1.21      | Tests using these versions.                                                    |
 
 ## Usage Examples
 
@@ -101,3 +112,6 @@ github.com/hashicorp/terraform-plugin-framework-validators v0.12.0
 github.com/hashicorp/terraform-plugin-go                   v0.19.1
 [...snip...]
 ```
+
+[tfproto6]: https://developer.hashicorp.com/terraform/plugin/terraform-plugin-protocol#protocol-version-6
+[TPF]: https://github.com/hashicorp/terraform-plugin-framework
