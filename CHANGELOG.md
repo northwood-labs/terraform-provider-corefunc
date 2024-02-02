@@ -37,6 +37,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`f35b806`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/f35b806374aa31334d04075f0dd92e54e08b59ef): **deps**: Bump `github.com/hashicorp/terraform-plugin-sdk/v2` ([#123](https://github.com/northwood-labs/terraform-provider-corefunc/issues/123)) (dependabot[bot])
 * [`5396f2d`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/5396f2d698dfacaa6edc402d2c0e38b90fa34570): **deps**: Bump `step-security/harden-runner` from 2.6.1 to 2.7.0 ([#124](https://github.com/northwood-labs/terraform-provider-corefunc/issues/124)) (dependabot[bot])
 * [`d0df49d`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/d0df49d95113e5fbe29ba592d3f51717798472e6): **deps**: Bump `trufflesecurity/trufflehog` from 3.64.0 to 3.66.3 ([#126](https://github.com/northwood-labs/terraform-provider-corefunc/issues/126)) (dependabot[bot])
+* [`558c756`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/558c756c6a0b91d40233ee446d3dece24a1c3b53): **deps**: Bump `github.com/northwood-labs/terraform-provider-corefunc` ([#128](https://github.com/northwood-labs/terraform-provider-corefunc/issues/128)) (dependabot[bot])
 
 ### Documentation
 
