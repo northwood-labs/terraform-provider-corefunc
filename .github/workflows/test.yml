@@ -173,9 +173,8 @@ jobs:
       - name: Run acceptance tests
         env:
           TF_ACC: 1
-          TF_ACC_TERRAFORM_PATH: /usr/local/bin/tofu
+          TF_ACC_TERRAFORM_PATH: ${{ runner.tool_cache }}/tofu
           TF_ACC_PROVIDER_NAMESPACE: hashicorp
           TF_ACC_PROVIDER_HOST: registry.opentofu.org
         run: |
-          which tofu
           go test -run=TestAcc -count=1 -parallel=$(nproc) -timeout 30m -v ./corefuncprovider/...
