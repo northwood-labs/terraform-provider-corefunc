@@ -5,8 +5,8 @@ subcategory: ""
 description: |-
   Converts a string to camelCase, removing any non-alphanumeric characters.
   -> Some acronyms are maintained as uppercase. See
-  [caps: pkg-variables](https://pkg.go.dev/github.com/chanced/caps#pkg-variables) for a complete list.
-  Maps to the [`corefunc.StrCamel()`](https://pkg.go.dev/github.com/northwood-labs/terraform-provider-corefunc/corefunc#StrCamel) Go method, which can be used in [Terratest](https://terratest.gruntwork.io).
+  caps: pkg-variables https://pkg.go.dev/github.com/chanced/caps#pkg-variables for a complete list.
+  Maps to the corefunc.StrCamel() https://pkg.go.dev/github.com/northwood-labs/terraform-provider-corefunc/corefunc#StrCamel Go method, which can be used in Terratest https://terratest.gruntwork.io.
 ---
 -->
 
@@ -14,7 +14,8 @@ description: |-
 
 Converts a string to `camelCase`, removing any non-alphanumeric characters.
 
--> Some acronyms are maintained as uppercase. See [caps: pkg-variables](https://pkg.go.dev/github.com/chanced/caps#pkg-variables) for a complete list.
+-> Some acronyms are maintained as uppercase. See
+[caps: pkg-variables](https://pkg.go.dev/github.com/chanced/caps#pkg-variables) for a complete list.
 
 Maps to the [`corefunc.StrCamel()`](https://pkg.go.dev/github.com/northwood-labs/terraform-provider-corefunc/corefunc#StrCamel) Go method, which can be used in [Terratest](https://terratest.gruntwork.io).
 

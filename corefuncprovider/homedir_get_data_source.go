@@ -77,7 +77,7 @@ func (d *homedirGetDataSource) Schema(
 
 	resp.Schema = schema.Schema{
 		MarkdownDescription: strings.TrimSpace(dedent.Dedent(`
-        Returns the path to the home directory of the current user.
+		Returns the path to the home directory of the current user.
 
 		Maps to the ` + linkPackage("Homedir") + ` Go method, which can be used in ` + Terratest + `.
 		`)),

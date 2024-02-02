@@ -4,8 +4,7 @@ page_title: "corefunc_str_kebab Data Source - corefunc"
 subcategory: ""
 description: |-
   Converts a string to kebab-case, removing any non-alphanumeric characters.
-  Maps to the caps.ToKebab() https://pkg.go.dev/github.com/chanced/caps#Caps.ToKebab
-  Go method, which can be used in Terratest https://terratest.gruntwork.io.
+  Maps to the corefunc.StrKebab() https://pkg.go.dev/github.com/northwood-labs/terraform-provider-corefunc/corefunc#StrKebab Go method, which can be used in Terratest https://terratest.gruntwork.io.
 ---
 -->
 
@@ -13,8 +12,7 @@ description: |-
 
 Converts a string to `kebab-case`, removing any non-alphanumeric characters.
 
-Maps to the [`caps.ToKebab()`](https://pkg.go.dev/github.com/chanced/caps#Caps.ToKebab)
-Go method, which can be used in [Terratest](https://terratest.gruntwork.io).
+Maps to the [`corefunc.StrKebab()`](https://pkg.go.dev/github.com/northwood-labs/terraform-provider-corefunc/corefunc#StrKebab) Go method, which can be used in [Terratest](https://terratest.gruntwork.io).
 
 ## Example Usage
 
