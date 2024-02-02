@@ -1,6 +1,6 @@
-_/
 _*.out
 _*.txt
+_/
 _cache_/*
 _provider.tf
 .dccache
@@ -9,6 +9,7 @@ _provider.tf
 .terraformrc
 *_override.tf
 *_override.tf.json
+*.cache.json
 *.pprof
 *.test
 *.tfstate*
