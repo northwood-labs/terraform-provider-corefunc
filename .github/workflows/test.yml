@@ -167,7 +167,7 @@ jobs:
       - name: Install OpenTofu ${{ matrix.opentofu_version }}
         uses: opentofu/setup-opentofu@v1
         with:
-          tofu_version: "~${{ matrix.opentofu_version }}"
+          tofu_version: ~${{ matrix.opentofu_version }}
           tofu_wrapper: false
 
       - name: Run acceptance tests
