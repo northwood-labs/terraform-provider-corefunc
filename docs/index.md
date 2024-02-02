@@ -63,7 +63,7 @@ Built using the [Terraform Plugin Framework][TPF], which speaks [Terraform Proto
 
 ```terraform
 terraform {
-  required_version = "~> 1.1"
+  required_version = "~> 1.0"
 
   required_providers {
     corefunc = {

@@ -12,9 +12,6 @@
 [![GitHub Workflow Status (with event)](https://img.shields.io/github/actions/workflow/status/northwood-labs/terraform-provider-corefunc/test.yml?style=for-the-badge&label=Tests)](https://github.com/northwood-labs/terraform-provider-corefunc/actions/workflows/test.yml)
 [![GitHub Workflow Status (with event)](https://img.shields.io/github/actions/workflow/status/northwood-labs/terraform-provider-corefunc/release.yml?style=for-the-badge&label=Release)](https://github.com/northwood-labs/terraform-provider-corefunc/actions/workflows/release.yml)
 
-> [!NOTE]
-> We intend to support OpenTofu (née OpenTF) in addition to Terraform.
-
 Utilities that should have been Terraform _core functions_.
 
 While some of these _can_ be implemented in HCL, some of them begin to push up against the limits of Terraform and the HCL2 configuration language. We also perform testing using the [Terratest](https://terratest.gruntwork.io) framework on a regular basis. Exposing these functions as both a Go library as well as a Terraform provider enables us to use the same functionality in both our Terraform applies as well as while using a testing framework.
@@ -115,3 +112,6 @@ github.com/hashicorp/terraform-plugin-framework-validators v0.12.0
 github.com/hashicorp/terraform-plugin-go                   v0.19.1
 [...snip...]
 ```
+
+[tfproto6]: https://developer.hashicorp.com/terraform/plugin/terraform-plugin-protocol#protocol-version-6
+[TPF]: https://github.com/hashicorp/terraform-plugin-framework

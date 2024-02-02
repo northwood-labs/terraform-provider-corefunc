@@ -78,6 +78,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`b5f2b8e`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/b5f2b8e0382900ef4a85f0e5e0052c066b9da624): Work on adding automated OpenTofu testing.
 * [`6be7398`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/6be7398843e0a757ab4f0308a175843d8603c829): Work on adding automated OpenTofu testing.
 * [`66abdf2`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/66abdf213d2f88f3ee0e3d44b26dd0b557b25005): Work on adding automated OpenTofu testing.
+
 ## 1.1.1 — 2023-12-20
 
 [Compare: v1.1.0 → v1.1.1](https://github.com/northwood-labs/terraform-provider-corefunc/compare/v1.1.0..v1.1.1)
@@ -103,7 +104,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 ### Testing
 
 * [`e0915df`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/e0915dfb90f9d2824be769dcc629501db99d1b8c): Added tests with Terratest to compare the Terraform provider with the Go library.
+
 * [`e5a810a`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/e5a810a8f9a5ffe2737928429df0be3a9a0a25c3): Make the GoSec scanning more robust.
+
 ## 1.1.0 — 2023-12-18
 
 [Compare: v1.0.3 → v1.1.0](https://github.com/northwood-labs/terraform-provider-corefunc/compare/v1.0.3..v1.1.0)
@@ -146,6 +149,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 ### Testing
 
 * [`57a7b85`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/57a7b85c17040f880dcaf6546c11cb9acd0a7615): Lookup and run fuzz tests programmatically.
+
 ## 1.0.3 — 2023-11-21
 
 [Compare: v1.0.0 → v1.0.3](https://github.com/northwood-labs/terraform-provider-corefunc/compare/v1.0.0..v1.0.3)
@@ -153,6 +157,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 ### Building and Dependencies
 
 * [`14759b8`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/14759b8792c77530a0538d2fdb3ed2cacddd8d73): Bump `the` version number to 1.0.3. No changes from 1.0.0.
+
 ## 1.0.0 — 2023-11-21
 
 ### Bug Fixes
