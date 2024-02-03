@@ -1,112 +1,125 @@
 
-<svg 
-	xmlns="http://www.w3.org/2000/svg" 
-	xmlns:xlink="http://www.w3.org/1999/xlink" 
-	viewBox="0 0 1028.000000 640.000000" 
+<svg
+	xmlns="http://www.w3.org/2000/svg"
+	xmlns:xlink="http://www.w3.org/1999/xlink"
+	viewBox="0 0 1028.000000 640.000000"
 	style="background: white none repeat scroll 0% 0%;"
 >
 
 <g>
 	<rect x="20.000000" y="20.000000" width="988.000000" height="600.000000" style="fill: rgba(12, 129, 68, 65535);opacity:1;fill-opacity:1;stroke:rgba(128,128,128,65535);stroke-width:1px;stroke-opacity:1;" />
-	
-<text 
-	data-notex="1" 
+
+<text
+	data-notex="1"
 	text-anchor="start"
 	transform="translate(28.000000,35.600000) scale(1.000000)"
-	style="font-family: Open Sans, verdana, arial, sans-serif !important; font-size: 12px; fill: rgb(255, 255, 255, 65535); fill-opacity: 1; white-space: pre;" 
+	style="font-family: Open Sans, verdana, arial, sans-serif !important; font-size: 12px; fill: rgb(255, 255, 255, 65535); fill-opacity: 1; white-space: pre;"
 	data-math="N">github.com/northwood-labs/terraform-provider-corefunc/corefunc</text>
-		
+
 </g>
 
 
 <g>
-	<rect x="744.470588" y="41.600000" width="255.529412" height="299.275000" style="fill: rgba(0, 104, 55, 65535);opacity:1;fill-opacity:1;stroke:rgba(128,128,128,65535);stroke-width:1px;stroke-opacity:1;" />
-	
-<text 
-	data-notex="1" 
+	<rect x="741.003096" y="41.600000" width="258.996904" height="289.963636" style="fill: rgba(0, 104, 55, 65535);opacity:1;fill-opacity:1;stroke:rgba(128,128,128,65535);stroke-width:1px;stroke-opacity:1;" />
+
+<text
+	data-notex="1"
 	text-anchor="start"
-	transform="translate(752.470588,57.200000) scale(1.000000)"
-	style="font-family: Open Sans, verdana, arial, sans-serif !important; font-size: 12px; fill: rgb(255, 255, 255, 65535); fill-opacity: 1; white-space: pre;" 
+	transform="translate(749.003096,57.200000) scale(1.000000)"
+	style="font-family: Open Sans, verdana, arial, sans-serif !important; font-size: 12px; fill: rgb(255, 255, 255, 65535); fill-opacity: 1; white-space: pre;"
 	data-math="N">caps.go</text>
-		
+
 </g>
 
 
 <g>
-	<rect x="448.000000" y="348.875000" width="253.333333" height="263.125000" style="fill: rgba(64, 168, 88, 65535);opacity:1;fill-opacity:1;stroke:rgba(128,128,128,65535);stroke-width:1px;stroke-opacity:1;" />
-	
-<text 
-	data-notex="1" 
+	<rect x="440.631579" y="339.563636" width="240.223684" height="272.436364" style="fill: rgba(64, 168, 88, 65535);opacity:1;fill-opacity:1;stroke:rgba(128,128,128,65535);stroke-width:1px;stroke-opacity:1;" />
+
+<text
+	data-notex="1"
 	text-anchor="start"
-	transform="translate(456.000000,364.475000) scale(1.000000)"
-	style="font-family: Open Sans, verdana, arial, sans-serif !important; font-size: 12px; fill: rgb(0, 0, 0, 65535); fill-opacity: 1; white-space: pre;" 
+	transform="translate(448.631579,355.163636) scale(1.000000)"
+	style="font-family: Open Sans, verdana, arial, sans-serif !important; font-size: 12px; fill: rgb(0, 0, 0, 65535); fill-opacity: 1; white-space: pre;"
 	data-math="N">env_ensure.go</text>
-		
+
 </g>
 
 
 <g>
-	<rect x="896.000000" y="348.875000" width="104.000000" height="172.750000" style="fill: rgba(255, 255, 191, 65535);opacity:1;fill-opacity:1;stroke:rgba(128,128,128,65535);stroke-width:1px;stroke-opacity:1;" />
-	
-<text 
-	data-notex="1" 
+	<rect x="866.157895" y="339.563636" width="133.842105" height="132.218182" style="fill: rgba(255, 255, 191, 65535);opacity:1;fill-opacity:1;stroke:rgba(128,128,128,65535);stroke-width:1px;stroke-opacity:1;" />
+
+<text
+	data-notex="1"
 	text-anchor="start"
-	transform="translate(904.000000,364.475000) scale(0.916667)"
-	style="font-family: Open Sans, verdana, arial, sans-serif !important; font-size: 12px; fill: rgb(0, 0, 0, 65535); fill-opacity: 1; white-space: pre;" 
+	transform="translate(874.157895,355.163636) scale(1.000000)"
+	style="font-family: Open Sans, verdana, arial, sans-serif !important; font-size: 12px; fill: rgb(0, 0, 0, 65535); fill-opacity: 1; white-space: pre;"
 	data-math="N">homedir.go</text>
-		
+
 </g>
 
 
 <g>
-	<rect x="896.000000" y="529.625000" width="104.000000" height="82.375000" style="fill: rgba(0, 104, 55, 65535);opacity:1;fill-opacity:1;stroke:rgba(128,128,128,65535);stroke-width:1px;stroke-opacity:1;" />
-	
-<text 
-	data-notex="1" 
+	<rect x="866.157895" y="479.781818" width="62.921053" height="132.218182" style="fill: rgba(0, 104, 55, 65535);opacity:1;fill-opacity:1;stroke:rgba(128,128,128,65535);stroke-width:1px;stroke-opacity:1;" />
+
+<text
+	data-notex="1"
 	text-anchor="start"
-	transform="translate(904.000000,545.225000) scale(0.916667)"
-	style="font-family: Open Sans, verdana, arial, sans-serif !important; font-size: 12px; fill: rgb(255, 255, 255, 65535); fill-opacity: 1; white-space: pre;" 
+	transform="translate(874.157895,495.381818) scale(0.488761)"
+	style="font-family: Open Sans, verdana, arial, sans-serif !important; font-size: 12px; fill: rgb(255, 255, 255, 65535); fill-opacity: 1; white-space: pre;"
 	data-math="N">int_pad.go</text>
-		
+
 </g>
 
 
 <g>
-	<rect x="709.333333" y="348.875000" width="178.666667" height="263.125000" style="fill: rgba(0, 104, 55, 65535);opacity:1;fill-opacity:1;stroke:rgba(128,128,128,65535);stroke-width:1px;stroke-opacity:1;" />
-	
-<text 
-	data-notex="1" 
+	<rect x="688.855263" y="339.563636" width="169.302632" height="272.436364" style="fill: rgba(0, 104, 55, 65535);opacity:1;fill-opacity:1;stroke:rgba(128,128,128,65535);stroke-width:1px;stroke-opacity:1;" />
+
+<text
+	data-notex="1"
 	text-anchor="start"
-	transform="translate(717.333333,364.475000) scale(0.706019)"
-	style="font-family: Open Sans, verdana, arial, sans-serif !important; font-size: 12px; fill: rgb(255, 255, 255, 65535); fill-opacity: 1; white-space: pre;" 
+	transform="translate(696.855263,355.163636) scale(0.665376)"
+	style="font-family: Open Sans, verdana, arial, sans-serif !important; font-size: 12px; fill: rgb(255, 255, 255, 65535); fill-opacity: 1; white-space: pre;"
 	data-math="N">str_iterative_replace.go</text>
-		
+
 </g>
 
 
 <g>
-	<rect x="448.000000" y="41.600000" width="288.470588" height="299.275000" style="fill: rgba(38, 156, 82, 65535);opacity:1;fill-opacity:1;stroke:rgba(128,128,128,65535);stroke-width:1px;stroke-opacity:1;" />
-	
-<text 
-	data-notex="1" 
+	<rect x="440.631579" y="41.600000" width="292.371517" height="289.963636" style="fill: rgba(38, 156, 82, 65535);opacity:1;fill-opacity:1;stroke:rgba(128,128,128,65535);stroke-width:1px;stroke-opacity:1;" />
+
+<text
+	data-notex="1"
 	text-anchor="start"
-	transform="translate(456.000000,57.200000) scale(1.000000)"
-	style="font-family: Open Sans, verdana, arial, sans-serif !important; font-size: 12px; fill: rgb(0, 0, 0, 65535); fill-opacity: 1; white-space: pre;" 
+	transform="translate(448.631579,57.200000) scale(1.000000)"
+	style="font-family: Open Sans, verdana, arial, sans-serif !important; font-size: 12px; fill: rgb(0, 0, 0, 65535); fill-opacity: 1; white-space: pre;"
 	data-math="N">str_pad.go</text>
-		
+
 </g>
 
 
 <g>
-	<rect x="28.000000" y="41.600000" width="412.000000" height="570.400000" style="fill: rgba(0, 104, 55, 65535);opacity:1;fill-opacity:1;stroke:rgba(128,128,128,65535);stroke-width:1px;stroke-opacity:1;" />
-	
-<text 
-	data-notex="1" 
+	<rect x="28.000000" y="41.600000" width="404.631579" height="570.400000" style="fill: rgba(0, 104, 55, 65535);opacity:1;fill-opacity:1;stroke:rgba(128,128,128,65535);stroke-width:1px;stroke-opacity:1;" />
+
+<text
+	data-notex="1"
 	text-anchor="start"
 	transform="translate(36.000000,57.200000) scale(1.000000)"
-	style="font-family: Open Sans, verdana, arial, sans-serif !important; font-size: 12px; fill: rgb(255, 255, 255, 65535); fill-opacity: 1; white-space: pre;" 
+	style="font-family: Open Sans, verdana, arial, sans-serif !important; font-size: 12px; fill: rgb(255, 255, 255, 65535); fill-opacity: 1; white-space: pre;"
 	data-math="N">truncate_label.go</text>
-		
+
+</g>
+
+
+<g>
+	<rect x="937.078947" y="479.781818" width="62.921053" height="132.218182" style="fill: rgba(0, 104, 55, 65535);opacity:1;fill-opacity:1;stroke:rgba(128,128,128,65535);stroke-width:1px;stroke-opacity:1;" />
+
+<text
+	data-notex="1"
+	text-anchor="start"
+	transform="translate(945.078947,495.381818) scale(0.814602)"
+	style="font-family: Open Sans, verdana, arial, sans-serif !important; font-size: 12px; fill: rgb(255, 255, 255, 65535); fill-opacity: 1; white-space: pre;"
+	data-math="N">url.go</text>
+
 </g>
 
 </svg>

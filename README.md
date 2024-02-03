@@ -56,6 +56,7 @@ Don't reimplement things that already work well. This project leans on the follo
 
 * [chanced/caps](https://github.com/chanced/caps) — Handles the case manipulation.
 * [mitchellh/go-homedir](https://github.com/mitchellh/go-homedir) — Handles looking-up a user's home directory without CGO.
+* [nlnwa/whatwg-url](https://github.com/nlnwa/whatwg-url) — Handles WHATWG spec-compliant URL parsing.
 
 ## More Information
 

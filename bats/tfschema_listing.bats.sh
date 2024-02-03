@@ -4,7 +4,7 @@
 @test "listing the data sources" {
     run tfschema data list corefunc
 
-    [[ "${status}" -eq 0 ]]
+    [[ ${status} -eq 0 ]]
     [[ ${lines[0]} == "corefunc_env_ensure" ]]
     [[ ${lines[1]} == "corefunc_homedir_expand" ]]
     [[ ${lines[2]} == "corefunc_homedir_get" ]]
@@ -21,4 +21,5 @@
     [[ ${lines[13]} == "corefunc_str_pascal" ]]
     [[ ${lines[14]} == "corefunc_str_snake" ]]
     [[ ${lines[15]} == "corefunc_str_truncate_label" ]]
+    [[ ${lines[16]} == "corefunc_url_parse" ]]
 }
