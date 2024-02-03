@@ -13,14 +13,21 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 ### Bug Fixes
 
 * [`fc46b7f`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/fc46b7f8bf4542d86b8bfe7c7c1eb9ac2843dc9d): Updated testing framework to not require the 'id' attribute.
+* [`50affa9`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/50affa91e6aa6a6c0b59c529070a6d296afd0823): Lower provider logging messages from INFO to DEBUG.
 
 ### Documentation
 
 * [`00411fe`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/00411fee4350e0be6dcf78bbf2ade87ee0c5b03b): Updated docs to remove the 'id' attribute.
 
+### Features
+
+* [`1752c6e`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/1752c6e94daba7aec9a1b6c4740e16b7b3764be6): Implement new runtime data sources.
+
 ### Testing
 
 * [`5d992f3`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/5d992f31b4d5566e37bb12a0d133400d75d1763f): Regenerate test artifacts.
+* [`c4459ad`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/c4459ad7664dc6a1c93b3585705dc46d72cb76d2): Updated BATS tests with Shellcheck feedback.
+* [`6611f3f`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/6611f3fbd38af4997fb156c22d4157024bd8d76f): Generated updated test artifacts.
 ## 1.2.1 — 2024-02-02
 
 [Compare: v1.1.1 → v1.2.1](https://github.com/northwood-labs/terraform-provider-corefunc/compare/v1.1.1..v1.2.1)
