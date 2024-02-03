@@ -41,8 +41,6 @@ type (
 	// {{ .CamelStrip }}DataSourceModel maps the data source schema data.
 	{{ .CamelStrip }}DataSourceModel struct {
         // @TODO
-		ID types.Int64 `tfsdk:"id"`
-		// AcronymCaps types.Bool   `tfsdk:"acronym_caps"`
 		String types.String `tfsdk:"string"`
 		Value  types.String `tfsdk:"value"`
 	}
@@ -60,14 +58,14 @@ func (d *{{ .CamelStrip }}DataSource) Metadata(
 	req datasource.MetadataRequest,
 	resp *datasource.MetadataResponse,
 ) {
-	tflog.Info(ctx, "Starting {{ .PascalStrip }} DataSource Metadata method.")
+	tflog.Debug(ctx, "Starting {{ .PascalStrip }} DataSource Metadata method.")
 
 	resp.TypeName = req.ProviderTypeName + "_{{ .SnakeStrip }}"
 
 	tflog.Debug(ctx, fmt.Sprintf("req.ProviderTypeName = %s", req.ProviderTypeName))
 	tflog.Debug(ctx, fmt.Sprintf("resp.TypeName = %s", resp.TypeName))
 
-	tflog.Info(ctx, "Ending {{ .PascalStrip }} DataSource Metadata method.")
+	tflog.Debug(ctx, "Ending {{ .PascalStrip }} DataSource Metadata method.")
 }
 
 // Schema defines the schema for the data source.
@@ -76,7 +74,7 @@ func (d *{{ .CamelStrip }}DataSource) Schema(
 	_ datasource.SchemaRequest,
 	resp *datasource.SchemaResponse,
 ) {
-	tflog.Info(ctx, "Starting {{ .PascalStrip }} DataSource Schema method.")
+	tflog.Debug(ctx, "Starting {{ .PascalStrip }} DataSource Schema method.")
 
 	resp.Schema = schema.Schema{
 		MarkdownDescription: strings.TrimSpace(dedent.Dedent(`
@@ -90,20 +88,10 @@ func (d *{{ .CamelStrip }}DataSource) Schema(
         `)),
 		Attributes: map[string]schema.Attribute{
             // @TODO
-			"id": schema.Int64Attribute{
-				Description: "Not used. Required by the " + TPF + ".",
-				Computed:    true,
-			},
 			"string": schema.StringAttribute{
 				Description: "The string to convert to `@TODO`.",
 				Required:    true,
 			},
-			// "acronym_caps": schema.BoolAttribute{
-			// 	Description: "Whether or not to keep acronyms as uppercase. A value of `true` means that acronyms " +
-			// 		"will be converted to uppercase. A value of `false` means that acronyms will using typical " +
-			// 		"casing. The default value is `false`.",
-			// 	Optional: true,
-			// },
 			"value": schema.StringAttribute{
 				Description: "The value of the string.",
 				Computed:    true,
@@ -111,7 +99,7 @@ func (d *{{ .CamelStrip }}DataSource) Schema(
 		},
 	}
 
-	tflog.Info(ctx, "Ending {{ .PascalStrip }} DataSource Schema method.")
+	tflog.Debug(ctx, "Ending {{ .PascalStrip }} DataSource Schema method.")
 }
 
 // Configure adds the provider configured client to the data source.
@@ -120,13 +108,13 @@ func (d *{{ .CamelStrip }}DataSource) Configure(
 	req datasource.ConfigureRequest,
 	_ *datasource.ConfigureResponse,
 ) {
-	tflog.Info(ctx, "Starting {{ .PascalStrip }} DataSource Configure method.")
+	tflog.Debug(ctx, "Starting {{ .PascalStrip }} DataSource Configure method.")
 
 	if req.ProviderData == nil {
 		return
 	}
 
-	tflog.Info(ctx, "Ending {{ .PascalStrip }} DataSource Configure method.")
+	tflog.Debug(ctx, "Ending {{ .PascalStrip }} DataSource Configure method.")
 }
 
 func (d *{{ .CamelStrip }}DataSource) Create(
@@ -134,7 +122,7 @@ func (d *{{ .CamelStrip }}DataSource) Create(
 	req resource.CreateRequest, // lint:allow_large_memory
 	resp *resource.CreateResponse,
 ) {
-	tflog.Info(ctx, "Starting {{ .PascalStrip }} DataSource Create method.")
+	tflog.Debug(ctx, "Starting {{ .PascalStrip }} DataSource Create method.")
 
 	var plan {{ .CamelStrip }}DataSourceModel
 
@@ -145,7 +133,7 @@ func (d *{{ .CamelStrip }}DataSource) Create(
 		return
 	}
 
-	tflog.Info(ctx, "Ending {{ .PascalStrip }} DataSource Create method.")
+	tflog.Debug(ctx, "Ending {{ .PascalStrip }} DataSource Create method.")
 }
 
 // Read refreshes the Terraform state with the latest data.
@@ -154,13 +142,11 @@ func (d *{{ .CamelStrip }}DataSource) Read( // lint:no_dupe
 	_ datasource.ReadRequest, // lint:allow_large_memory
 	resp *datasource.ReadResponse,
 ) {
-	tflog.Info(ctx, "Starting {{ .PascalStrip }} DataSource Read method.")
+	tflog.Debug(ctx, "Starting {{ .PascalStrip }} DataSource Read method.")
 
 	var state {{ .CamelStrip }}DataSourceModel
 	diags := resp.State.Get(ctx, &state)
 	resp.Diagnostics.Append(diags...)
-
-	state.ID = types.Int64Value(1)
 
 	state.Value = types.StringValue(@TODO)
 
@@ -171,5 +157,5 @@ func (d *{{ .CamelStrip }}DataSource) Read( // lint:no_dupe
 		return
 	}
 
-	tflog.Info(ctx, "Ending {{ .PascalStrip }} DataSource Read method.")
+	tflog.Debug(ctx, "Ending {{ .PascalStrip }} DataSource Read method.")
 }

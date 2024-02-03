@@ -56,14 +56,14 @@ func (d *homedirGetDataSource) Metadata(
 	req datasource.MetadataRequest,
 	resp *datasource.MetadataResponse,
 ) {
-	tflog.Info(ctx, "Starting HomedirGet DataSource Metadata method.")
+	tflog.Debug(ctx, "Starting HomedirGet DataSource Metadata method.")
 
 	resp.TypeName = req.ProviderTypeName + "_homedir_get"
 
 	tflog.Debug(ctx, fmt.Sprintf("req.ProviderTypeName = %s", req.ProviderTypeName))
 	tflog.Debug(ctx, fmt.Sprintf("resp.TypeName = %s", resp.TypeName))
 
-	tflog.Info(ctx, "Ending HomedirGet DataSource Metadata method.")
+	tflog.Debug(ctx, "Ending HomedirGet DataSource Metadata method.")
 }
 
 // Schema defines the schema for the data source.
@@ -72,7 +72,7 @@ func (d *homedirGetDataSource) Schema(
 	_ datasource.SchemaRequest,
 	resp *datasource.SchemaResponse,
 ) {
-	tflog.Info(ctx, "Starting HomedirGet DataSource Schema method.")
+	tflog.Debug(ctx, "Starting HomedirGet DataSource Schema method.")
 
 	resp.Schema = schema.Schema{
 		MarkdownDescription: strings.TrimSpace(dedent.Dedent(`
@@ -88,7 +88,7 @@ func (d *homedirGetDataSource) Schema(
 		},
 	}
 
-	tflog.Info(ctx, "Ending HomedirGet DataSource Schema method.")
+	tflog.Debug(ctx, "Ending HomedirGet DataSource Schema method.")
 }
 
 // Configure adds the provider configured client to the data source.
@@ -97,13 +97,13 @@ func (d *homedirGetDataSource) Configure(
 	req datasource.ConfigureRequest,
 	_ *datasource.ConfigureResponse,
 ) {
-	tflog.Info(ctx, "Starting HomedirGet DataSource Configure method.")
+	tflog.Debug(ctx, "Starting HomedirGet DataSource Configure method.")
 
 	if req.ProviderData == nil {
 		return
 	}
 
-	tflog.Info(ctx, "Ending HomedirGet DataSource Configure method.")
+	tflog.Debug(ctx, "Ending HomedirGet DataSource Configure method.")
 }
 
 func (d *homedirGetDataSource) Create(
@@ -111,7 +111,7 @@ func (d *homedirGetDataSource) Create(
 	req resource.CreateRequest, // lint:allow_large_memory
 	resp *resource.CreateResponse,
 ) {
-	tflog.Info(ctx, "Starting HomedirGet DataSource Create method.")
+	tflog.Debug(ctx, "Starting HomedirGet DataSource Create method.")
 
 	var plan homedirGetDataSourceModel
 
@@ -122,7 +122,7 @@ func (d *homedirGetDataSource) Create(
 		return
 	}
 
-	tflog.Info(ctx, "Ending HomedirGet DataSource Create method.")
+	tflog.Debug(ctx, "Ending HomedirGet DataSource Create method.")
 }
 
 // Read refreshes the Terraform state with the latest data.
@@ -131,7 +131,7 @@ func (d *homedirGetDataSource) Read( // lint:no_dupe
 	_ datasource.ReadRequest, // lint:allow_large_memory
 	resp *datasource.ReadResponse,
 ) {
-	tflog.Info(ctx, "Starting HomedirGet DataSource Read method.")
+	tflog.Debug(ctx, "Starting HomedirGet DataSource Read method.")
 
 	var state homedirGetDataSourceModel
 	diags := resp.State.Get(ctx, &state)
@@ -156,5 +156,5 @@ func (d *homedirGetDataSource) Read( // lint:no_dupe
 		return
 	}
 
-	tflog.Info(ctx, "Ending HomedirGet DataSource Read method.")
+	tflog.Debug(ctx, "Ending HomedirGet DataSource Read method.")
 }
