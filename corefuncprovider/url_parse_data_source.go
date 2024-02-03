@@ -91,17 +91,15 @@ func (d *urlParseDataSource) Schema(
 
 	resp.Schema = schema.Schema{
 		MarkdownDescription: strings.TrimSpace(dedent.Dedent(`
-		URLParse is a WHATWG spec-compliant <https://url.spec.whatwg.org/#url-parsing>
-		URL parser returns a struct representing a parsed absolute URL. Will not resolve
-		relative URLs.
+		URLParse is a [WHATWG spec-compliant](https://url.spec.whatwg.org/#url-parsing) URL parser returns a struct
+		representing a parsed absolute URL. Will not resolve relative URLs.
 
-		The parser is up to date as of 2023-05-24
-		<https://url.spec.whatwg.org/commit-snapshots/eee49fdf4f99d59f717cbeb0bce29fda930196d4/>
-		and passes all relevant tests from web-platform-tests
-		<https://github.com/web-platform-tests/wpt/tree/master/url>.
+		The parser is up to date as of
+		[2023-05-24](https://url.spec.whatwg.org/commit-snapshots/eee49fdf4f99d59f717cbeb0bce29fda930196d4/)
+		and passes all relevant tests from
+		[web-platform-tests](https://github.com/web-platform-tests/wpt/tree/master/url).
 
-		Its API is similar to Chapter 6 in WHATWG URL Standard
-		<https://url.spec.whatwg.org/#api>.
+		Its API is similar to Chapter 6 in [WHATWG URL Standard](https://url.spec.whatwg.org/#api).
 
 		Maps to the ` + linkPackage("URLParse") + ` Go method, which can be used in ` + Terratest + `.
         `)),
