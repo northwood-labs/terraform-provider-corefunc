@@ -1369,6 +1369,11 @@ issues:
         - stylecheck
       source: lint:allow_no_pkg_comment
 
+    - text: (cognitive complexity)
+      linters:
+        - gocognit
+      source: lint:allow_complexity
+
   # If set to true exclude and exclude-rules regular expressions become case-sensitive.
   # Default: false
   exclude-case-sensitive: false
