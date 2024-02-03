@@ -20,6 +20,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`00411fe`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/00411fee4350e0be6dcf78bbf2ade87ee0c5b03b): Updated docs to remove the 'id' attribute.
 * [`e819279`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/e8192790d23b54e8120055b610b17ccc1682f1ee): Fixed a few typos.
 * [`88db492`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/88db4929008d062f86dc7bd65c36d7b52b997d30): Fixed some links in `corefunc_url_parse`.
+* [`ca6d540`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/ca6d5402046aa39a56f060f8fb4165fc35f688be): Fixed some typos in `corefunc_url_parse`.
 
 ### Features
 
