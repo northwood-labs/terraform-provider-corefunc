@@ -92,20 +92,19 @@ func (d *urlParseDataSource) Schema(
 	resp.Schema = schema.Schema{
 		MarkdownDescription: strings.TrimSpace(dedent.Dedent(`
 		URLParse is a [WHATWG spec-compliant](https://url.spec.whatwg.org/#url-parsing) URL parser returns a struct
-		representing a parsed absolute URL. Will not resolve relative URLs.
+		representing a parsed absolute URL.
 
-		The parser is up to date as of
+		Will not resolve relative URLs. The parser is up to date as of
 		[2023-05-24](https://url.spec.whatwg.org/commit-snapshots/eee49fdf4f99d59f717cbeb0bce29fda930196d4/)
 		and passes all relevant tests from
-		[web-platform-tests](https://github.com/web-platform-tests/wpt/tree/master/url).
-
-		Its API is similar to Chapter 6 in [WHATWG URL Standard](https://url.spec.whatwg.org/#api).
+		[web-platform-tests](https://github.com/web-platform-tests/wpt/tree/master/url). Its API is similar to Chapter 6
+		in [WHATWG URL Standard](https://url.spec.whatwg.org/#api).
 
 		Maps to the ` + linkPackage("URLParse") + ` Go method, which can be used in ` + Terratest + `.
         `)),
 		Attributes: map[string]schema.Attribute{
 			"url": schema.StringAttribute{
-				Description: "The absolute URL to parse according to the [WHATWG URL API](https://url.spec.whatwg.org/#api)",
+				Description: "The absolute URL to parse according to the [WHATWG URL API](https://url.spec.whatwg.org/#api).",
 				Required:    true,
 			},
 			"normalized": schema.StringAttribute{
@@ -117,7 +116,7 @@ func (d *urlParseDataSource) Schema(
 				Computed:    true,
 			},
 			"protocol": schema.StringAttribute{
-				Description: "The protocol of the URL, including the final ':'.",
+				Description: "The protocol of the URL, including the final `:`.",
 				Computed:    true,
 			},
 			"scheme": schema.StringAttribute{
@@ -154,7 +153,7 @@ func (d *urlParseDataSource) Schema(
 				Computed:    true,
 			},
 			"search": schema.StringAttribute{
-				Description: "The query string of the URL, including the preceding '?'.",
+				Description: "The query string of the URL, including the preceding `?`.",
 				Computed:    true,
 			},
 			"query": schema.StringAttribute{
@@ -162,7 +161,7 @@ func (d *urlParseDataSource) Schema(
 				Computed:    true,
 			},
 			"hash": schema.StringAttribute{
-				Description: "The fragment string of the URL, including the preceding '#'.",
+				Description: "The fragment string of the URL, including the preceding `#`.",
 				Computed:    true,
 			},
 			"fragment": schema.StringAttribute{
