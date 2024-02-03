@@ -3,32 +3,28 @@
 page_title: "corefunc_url_parse Data Source - corefunc"
 subcategory: ""
 description: |-
-  URLParse is a WHATWG spec-compliant https://url.spec.whatwg.org/#url-parsing
-  URL parser returns a struct representing a parsed absolute URL. Will not resolve
-  relative URLs.
-  The parser is up to date as of 2023-05-24
-  https://url.spec.whatwg.org/commit-snapshots/eee49fdf4f99d59f717cbeb0bce29fda930196d4/
-  and passes all relevant tests from web-platform-tests
-  https://github.com/web-platform-tests/wpt/tree/master/url.
-  Its API is similar to Chapter 6 in WHATWG URL Standard
-  https://url.spec.whatwg.org/#api.
+  URLParse is a WHATWG spec-compliant https://url.spec.whatwg.org/#url-parsing URL parser returns a struct
+  representing a parsed absolute URL. Will not resolve relative URLs.
+  The parser is up to date as of
+  2023-05-24 https://url.spec.whatwg.org/commit-snapshots/eee49fdf4f99d59f717cbeb0bce29fda930196d4/
+  and passes all relevant tests from
+  web-platform-tests https://github.com/web-platform-tests/wpt/tree/master/url.
+  Its API is similar to Chapter 6 in WHATWG URL Standard https://url.spec.whatwg.org/#api.
   Maps to the corefunc.URLParse() https://pkg.go.dev/github.com/northwood-labs/terraform-provider-corefunc/corefunc#URLParse Go method, which can be used in Terratest https://terratest.gruntwork.io.
 ---
 -->
 
 # corefunc_url_parse (Data Source)
 
-URLParse is a WHATWG spec-compliant <https://url.spec.whatwg.org/#url-parsing>
-URL parser returns a struct representing a parsed absolute URL. Will not resolve
-relative URLs.
+URLParse is a [WHATWG spec-compliant](https://url.spec.whatwg.org/#url-parsing) URL parser returns a struct
+representing a parsed absolute URL. Will not resolve relative URLs.
 
-The parser is up to date as of 2023-05-24
-<https://url.spec.whatwg.org/commit-snapshots/eee49fdf4f99d59f717cbeb0bce29fda930196d4/>
-and passes all relevant tests from web-platform-tests
-<https://github.com/web-platform-tests/wpt/tree/master/url>.
+The parser is up to date as of
+[2023-05-24](https://url.spec.whatwg.org/commit-snapshots/eee49fdf4f99d59f717cbeb0bce29fda930196d4/)
+and passes all relevant tests from
+[web-platform-tests](https://github.com/web-platform-tests/wpt/tree/master/url).
 
-Its API is similar to Chapter 6 in WHATWG URL Standard
-<https://url.spec.whatwg.org/#api>.
+Its API is similar to Chapter 6 in [WHATWG URL Standard](https://url.spec.whatwg.org/#api).
 
 Maps to the [`corefunc.URLParse()`](https://pkg.go.dev/github.com/northwood-labs/terraform-provider-corefunc/corefunc#URLParse) Go method, which can be used in [Terratest](https://terratest.gruntwork.io).
 
