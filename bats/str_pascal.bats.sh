@@ -4,7 +4,7 @@
 @test "corefunc_str_pascal: attrs" {
     run bash -c "tfschema data show -format=json corefunc_str_pascal | jq -Mrc '.attributes[]'"
 
-    [[ "${status}" -eq 0 ]]
+    [[ ${status} -eq 0 ]]
     [[ ${lines[0]} == '{"name":"acronym_caps","type":"bool","required":false,"optional":true,"computed":false,"sensitive":false}' ]]
     [[ ${lines[1]} == '{"name":"string","type":"string","required":true,"optional":false,"computed":false,"sensitive":false}' ]]
     [[ ${lines[2]} == '{"name":"value","type":"string","required":false,"optional":false,"computed":true,"sensitive":false}' ]]

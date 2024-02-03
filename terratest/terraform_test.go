@@ -103,6 +103,11 @@ func TestTerraform(t *testing.T) {
 		assert.Equal(t, terraform.Output(t, terraformOptions, "str_leftpad"), corefunc.StrLeftPad("abc", 5, '.'))
 		assert.Equal(t, terraform.Output(t, terraformOptions, "env_ensure"), os.Getenv("GOROOT"))
 
+		assert.Equal(t, terraform.Output(t, terraformOptions, "runtime_cpuarch"), runtime.GOARCH)
+		assert.Equal(t, terraform.Output(t, terraformOptions, "runtime_goroot"), runtime.GOROOT())
+		assert.Equal(t, terraform.Output(t, terraformOptions, "runtime_numcpus"), fmt.Sprint(runtime.NumCPU()))
+		assert.Equal(t, terraform.Output(t, terraformOptions, "runtime_os"), runtime.GOOS)
+
 		assert.Equal(
 			t,
 			terraform.Output(t, terraformOptions, "str_truncate"),

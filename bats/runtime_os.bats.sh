@@ -4,6 +4,6 @@
 @test "corefunc_runtime_os: attrs" {
     run bash -c "tfschema data show -format=json corefunc_runtime_os | jq -Mrc '.attributes[]'"
 
-    [[ "${status}" -eq 0 ]]
+    [[ ${status} -eq 0 ]]
     [[ ${lines[0]} == '{"name":"value","type":"string","required":false,"optional":false,"computed":true,"sensitive":false}' ]]
 }
