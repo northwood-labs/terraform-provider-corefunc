@@ -47,16 +47,16 @@ func (p *coreFuncProvider) Metadata(
 	_ provider.MetadataRequest,
 	resp *provider.MetadataResponse,
 ) {
-	tflog.Info(ctx, "Starting Provider Metadata method.")
+	tflog.Debug(ctx, "Starting Provider Metadata method.")
 
 	resp.TypeName = "corefunc"
 
-	tflog.Info(ctx, "Ending Provider Metadata method.")
+	tflog.Debug(ctx, "Ending Provider Metadata method.")
 }
 
 // Schema defines the provider-level schema for configuration data.
 func (p *coreFuncProvider) Schema(ctx context.Context, _ provider.SchemaRequest, resp *provider.SchemaResponse) {
-	tflog.Info(ctx, "Starting Provider Schema method.")
+	tflog.Debug(ctx, "Starting Provider Schema method.")
 
 	resp.Schema = schema.Schema{
 		MarkdownDescription: strings.TrimSpace(dedent.Dedent(`
@@ -84,7 +84,7 @@ func (p *coreFuncProvider) Schema(ctx context.Context, _ provider.SchemaRequest,
         `)),
 	}
 
-	tflog.Info(ctx, "Ending Provider Schema method.")
+	tflog.Debug(ctx, "Ending Provider Schema method.")
 }
 
 func (p *coreFuncProvider) Configure(
@@ -92,20 +92,23 @@ func (p *coreFuncProvider) Configure(
 	_ provider.ConfigureRequest,
 	_ *provider.ConfigureResponse,
 ) {
-	tflog.Info(ctx, "Starting Provider Configure method.")
-	tflog.Info(ctx, "Ending Provider Configure method.")
+	tflog.Debug(ctx, "Starting Provider Configure method.")
+	tflog.Debug(ctx, "Ending Provider Configure method.")
 }
 
 // DataSources defines the data sources implemented in the provider.
 func (p *coreFuncProvider) DataSources(ctx context.Context) []func() datasource.DataSource {
-	tflog.Info(ctx, "Running Provider DataSources method.")
+	tflog.Debug(ctx, "Running Provider DataSources method.")
 
 	return []func() datasource.DataSource{
 		EnvEnsureDataSource,
-		HomedirGetDataSource,
 		HomedirExpandDataSource,
 		HomedirGetDataSource,
 		IntLeftpadDataSource,
+		RuntimeCpuarchDataSource,
+		RuntimeGorootDataSource,
+		RuntimeNumcpusDataSource,
+		RuntimeOsDataSource,
 		StrCamelDataSource,
 		StrConstantDataSource,
 		StrIterativeReplaceDataSource,
@@ -119,7 +122,7 @@ func (p *coreFuncProvider) DataSources(ctx context.Context) []func() datasource.
 
 // Resources defines the resources implemented in the provider.
 func (p *coreFuncProvider) Resources(ctx context.Context) []func() resource.Resource {
-	tflog.Info(ctx, "Running Provider Resources method.")
+	tflog.Debug(ctx, "Running Provider Resources method.")
 
 	return []func() resource.Resource{}
 }
