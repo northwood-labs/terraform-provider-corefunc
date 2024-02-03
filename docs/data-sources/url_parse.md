@@ -4,12 +4,12 @@ page_title: "corefunc_url_parse Data Source - corefunc"
 subcategory: ""
 description: |-
   URLParse is a WHATWG spec-compliant https://url.spec.whatwg.org/#url-parsing URL parser returns a struct
-  representing a parsed absolute URL. Will not resolve relative URLs.
-  The parser is up to date as of
+  representing a parsed absolute URL.
+  Will not resolve relative URLs. The parser is up to date as of
   2023-05-24 https://url.spec.whatwg.org/commit-snapshots/eee49fdf4f99d59f717cbeb0bce29fda930196d4/
   and passes all relevant tests from
-  web-platform-tests https://github.com/web-platform-tests/wpt/tree/master/url.
-  Its API is similar to Chapter 6 in WHATWG URL Standard https://url.spec.whatwg.org/#api.
+  web-platform-tests https://github.com/web-platform-tests/wpt/tree/master/url. Its API is similar to Chapter 6
+  in WHATWG URL Standard https://url.spec.whatwg.org/#api.
   Maps to the corefunc.URLParse() https://pkg.go.dev/github.com/northwood-labs/terraform-provider-corefunc/corefunc#URLParse Go method, which can be used in Terratest https://terratest.gruntwork.io.
 ---
 -->
@@ -17,14 +17,13 @@ description: |-
 # corefunc_url_parse (Data Source)
 
 URLParse is a [WHATWG spec-compliant](https://url.spec.whatwg.org/#url-parsing) URL parser returns a struct
-representing a parsed absolute URL. Will not resolve relative URLs.
+representing a parsed absolute URL.
 
-The parser is up to date as of
+Will not resolve relative URLs. The parser is up to date as of
 [2023-05-24](https://url.spec.whatwg.org/commit-snapshots/eee49fdf4f99d59f717cbeb0bce29fda930196d4/)
 and passes all relevant tests from
-[web-platform-tests](https://github.com/web-platform-tests/wpt/tree/master/url).
-
-Its API is similar to Chapter 6 in [WHATWG URL Standard](https://url.spec.whatwg.org/#api).
+[web-platform-tests](https://github.com/web-platform-tests/wpt/tree/master/url). Its API is similar to Chapter 6
+in [WHATWG URL Standard](https://url.spec.whatwg.org/#api).
 
 Maps to the [`corefunc.URLParse()`](https://pkg.go.dev/github.com/northwood-labs/terraform-provider-corefunc/corefunc#URLParse) Go method, which can be used in [Terratest](https://terratest.gruntwork.io).
 
@@ -72,13 +71,13 @@ data "corefunc_url_parse" "complex" {
 
 ### Required
 
-* `url` (String) The absolute URL to parse according to the [WHATWG URL API](https://url.spec.whatwg.org/#api)
+* `url` (String) The absolute URL to parse according to the [WHATWG URL API](https://url.spec.whatwg.org/#api).
 
 ### Read-Only
 
 * `decoded_port` (Number) The port of the URL.
 * `fragment` (String) The fragment string of the URL.
-* `hash` (String) The fragment string of the URL, including the preceding '#'.
+* `hash` (String) The fragment string of the URL, including the preceding `#`.
 * `host` (String) The host of the URL, including the port if web browsers typically show the port in the URL bar.
 * `hostname` (String) The hostname of the URL.
 * `normalized` (String) The normalized form of the URL.
@@ -86,10 +85,10 @@ data "corefunc_url_parse" "complex" {
 * `password` (String) The password that was passed to the URL as basic authentication.
 * `path` (String) The path of the URL.
 * `port` (String) The port of the URL. May be blank if web browsers typically hide the port in the URL bar.
-* `protocol` (String) The protocol of the URL, including the final ':'.
+* `protocol` (String) The protocol of the URL, including the final `:`.
 * `query` (String) The query string of the URL.
 * `scheme` (String) The scheme of the URL.
-* `search` (String) The query string of the URL, including the preceding '?'.
+* `search` (String) The query string of the URL, including the preceding `?`.
 * `username` (String) The username that was passed to the URL as basic authentication.
 
 <!-- Preview the provider docs with the Terraform registry provider docs preview tool: https://registry.terraform.io/tools/doc-preview -->
