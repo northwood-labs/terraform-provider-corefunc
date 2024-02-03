@@ -1,8 +1,8 @@
 
-<svg 
-	xmlns="http://www.w3.org/2000/svg" 
-	xmlns:xlink="http://www.w3.org/1999/xlink" 
-	viewBox="0 0 1028.000000 640.000000" 
+<svg
+	xmlns="http://www.w3.org/2000/svg"
+	xmlns:xlink="http://www.w3.org/1999/xlink"
+	viewBox="0 0 1028.000000 640.000000"
 	style="background: white none repeat scroll 0% 0%;"
 >
 
@@ -15,7 +15,7 @@
 	transform="translate(28.000000,35.600000) scale(1.000000)"
 	style="font-family: Open Sans, verdana, arial, sans-serif !important; font-size: 12px; fill: rgb(0, 0, 0, 65535); fill-opacity: 1; white-space: pre;" 
 	data-math="N">github.com/northwood-labs/terraform-provider-corefunc/corefuncprovider</text>
-		
+
 </g>
 
 
@@ -28,7 +28,7 @@
 	transform="translate(36.000000,57.200000) scale(0.697893)"
 	style="font-family: Open Sans, verdana, arial, sans-serif !important; font-size: 12px; fill: rgb(0, 0, 0, 65535); fill-opacity: 1; white-space: pre;" 
 	data-math="N">env_ensure_data_source.go</text>
-		
+
 </g>
 
 
@@ -41,7 +41,7 @@
 	transform="translate(900.083959,560.657133) scale(0.957459)"
 	style="font-family: Open Sans, verdana, arial, sans-serif !important; font-size: 12px; fill: rgb(255, 255, 255, 65535); fill-opacity: 1; white-space: pre;" 
 	data-math="N">helpers.go</text>
-		
+
 </g>
 
 
@@ -54,7 +54,7 @@
 	transform="translate(36.000000,250.000000) scale(0.601632)"
 	style="font-family: Open Sans, verdana, arial, sans-serif !important; font-size: 12px; fill: rgb(0, 0, 0, 65535); fill-opacity: 1; white-space: pre;" 
 	data-math="N">homedir_expand_data_source.go</text>
-		
+
 </g>
 
 
@@ -67,7 +67,7 @@
 	transform="translate(36.000000,442.800000) scale(0.671051)"
 	style="font-family: Open Sans, verdana, arial, sans-serif !important; font-size: 12px; fill: rgb(0, 0, 0, 65535); fill-opacity: 1; white-space: pre;" 
 	data-math="N">homedir_get_data_source.go</text>
-		
+
 </g>
 
 
@@ -80,7 +80,7 @@
 	transform="translate(875.244807,207.433766) scale(0.467769)"
 	style="font-family: Open Sans, verdana, arial, sans-serif !important; font-size: 12px; fill: rgb(0, 0, 0, 65535); fill-opacity: 1; white-space: pre;" 
 	data-math="N">int_leftpad_data_source.go</text>
-		
+
 </g>
 
 
@@ -93,46 +93,46 @@
 	transform="translate(900.083959,438.874974) scale(0.870417)"
 	style="font-family: Open Sans, verdana, arial, sans-serif !important; font-size: 12px; fill: rgb(255, 255, 255, 65535); fill-opacity: 1; white-space: pre;" 
 	data-math="N">provider.go</text>
-		
+
 </g>
 
 
 <g>
-	<rect x="405.356322" y="427.200000" width="160.965517" height="184.800000" style="fill: rgba(166, 217, 106, 65535);opacity:1;fill-opacity:1;stroke:rgba(128,128,128,65535);stroke-width:1px;stroke-opacity:1;" />
-	
-<text 
-	data-notex="1" 
+	<rect x="716.714681" y="241.048276" width="137.642659" height="196.838770" style="fill: rgba(166, 217, 106, 65535);opacity:1;fill-opacity:1;stroke:rgba(128,128,128,65535);stroke-width:1px;stroke-opacity:1;" />
+
+<text
+	data-notex="1"
 	text-anchor="start"
-	transform="translate(413.356322,442.800000) scale(0.503352)"
-	style="font-family: Open Sans, verdana, arial, sans-serif !important; font-size: 12px; fill: rgb(0, 0, 0, 65535); fill-opacity: 1; white-space: pre;" 
+	transform="translate(724.714681,256.648276) scale(0.422370)"
+	style="font-family: Open Sans, verdana, arial, sans-serif !important; font-size: 12px; fill: rgb(0, 0, 0, 65535); fill-opacity: 1; white-space: pre;"
 	data-math="N">runtime_cpuarch_data_source.go</text>
-		
+
 </g>
 
 
 <g>
-	<rect x="405.356322" y="234.400000" width="160.965517" height="184.800000" style="fill: rgba(166, 217, 106, 65535);opacity:1;fill-opacity:1;stroke:rgba(128,128,128,65535);stroke-width:1px;stroke-opacity:1;" />
-	
-<text 
-	data-notex="1" 
+	<rect x="401.087719" y="431.391304" width="150.175439" height="180.608696" style="fill: rgba(166, 217, 106, 65535);opacity:1;fill-opacity:1;stroke:rgba(128,128,128,65535);stroke-width:1px;stroke-opacity:1;" />
+
+<text
+	data-notex="1"
 	text-anchor="start"
-	transform="translate(413.356322,250.000000) scale(0.520709)"
-	style="font-family: Open Sans, verdana, arial, sans-serif !important; font-size: 12px; fill: rgb(0, 0, 0, 65535); fill-opacity: 1; white-space: pre;" 
+	transform="translate(409.087719,446.991304) scale(0.481952)"
+	style="font-family: Open Sans, verdana, arial, sans-serif !important; font-size: 12px; fill: rgb(0, 0, 0, 65535); fill-opacity: 1; white-space: pre;"
 	data-math="N">runtime_goroot_data_source.go</text>
-		
+
 </g>
 
 
 <g>
-	<rect x="405.356322" y="41.600000" width="160.965517" height="184.800000" style="fill: rgba(166, 217, 106, 65535);opacity:1;fill-opacity:1;stroke:rgba(128,128,128,65535);stroke-width:1px;stroke-opacity:1;" />
-	
-<text 
-	data-notex="1" 
+	<rect x="401.087719" y="242.782609" width="150.175439" height="180.608696" style="fill: rgba(166, 217, 106, 65535);opacity:1;fill-opacity:1;stroke:rgba(128,128,128,65535);stroke-width:1px;stroke-opacity:1;" />
+
+<text
+	data-notex="1"
 	text-anchor="start"
-	transform="translate(413.356322,57.200000) scale(0.503352)"
-	style="font-family: Open Sans, verdana, arial, sans-serif !important; font-size: 12px; fill: rgb(0, 0, 0, 65535); fill-opacity: 1; white-space: pre;" 
+	transform="translate(409.087719,258.382609) scale(0.465887)"
+	style="font-family: Open Sans, verdana, arial, sans-serif !important; font-size: 12px; fill: rgb(0, 0, 0, 65535); fill-opacity: 1; white-space: pre;"
 	data-math="N">runtime_numcpus_data_source.go</text>
-		
+
 </g>
 
 
@@ -158,7 +158,7 @@
 	transform="translate(799.160920,57.200000) scale(0.836975)"
 	style="font-family: Open Sans, verdana, arial, sans-serif !important; font-size: 12px; fill: rgb(0, 0, 0, 65535); fill-opacity: 1; white-space: pre;" 
 	data-math="N">str_camel_data_source.go</text>
-		
+
 </g>
 
 
@@ -171,7 +171,7 @@
 	transform="translate(582.321839,207.433766) scale(0.494474)"
 	style="font-family: Open Sans, verdana, arial, sans-serif !important; font-size: 12px; fill: rgb(0, 0, 0, 65535); fill-opacity: 1; white-space: pre;" 
 	data-math="N">str_constant_data_source.go</text>
-		
+
 </g>
 
 
@@ -184,7 +184,7 @@
 	transform="translate(582.321839,421.516883) scale(0.370856)"
 	style="font-family: Open Sans, verdana, arial, sans-serif !important; font-size: 12px; fill: rgb(0, 0, 0, 65535); fill-opacity: 1; white-space: pre;" 
 	data-math="N">str_iterative_replace_data_source.go</text>
-		
+
 </g>
 
 
@@ -197,7 +197,7 @@
 	transform="translate(734.489615,207.433766) scale(0.506750)"
 	style="font-family: Open Sans, verdana, arial, sans-serif !important; font-size: 12px; fill: rgb(0, 0, 0, 65535); fill-opacity: 1; white-space: pre;" 
 	data-math="N">str_kebab_data_source.go</text>
-		
+
 </g>
 
 
@@ -210,7 +210,7 @@
 	transform="translate(227.494253,57.200000) scale(0.648486)"
 	style="font-family: Open Sans, verdana, arial, sans-serif !important; font-size: 12px; fill: rgb(0, 0, 0, 65535); fill-opacity: 1; white-space: pre;" 
 	data-math="N">str_leftpad_data_source.go</text>
-		
+
 </g>
 
 
@@ -223,7 +223,7 @@
 	transform="translate(227.494253,255.842424) scale(0.674425)"
 	style="font-family: Open Sans, verdana, arial, sans-serif !important; font-size: 12px; fill: rgb(0, 0, 0, 65535); fill-opacity: 1; white-space: pre;" 
 	data-math="N">str_pascal_data_source.go</text>
-		
+
 </g>
 
 
@@ -236,7 +236,7 @@
 	transform="translate(734.489615,438.874974) scale(0.614559)"
 	style="font-family: Open Sans, verdana, arial, sans-serif !important; font-size: 12px; fill: rgb(0, 0, 0, 65535); fill-opacity: 1; white-space: pre;" 
 	data-math="N">str_snake_data_source.go</text>
-		
+
 </g>
 
 

@@ -59,12 +59,12 @@ output "int_leftpad" {
 # Homedir
 
 output "homedir_get" {
-  description = "This should return the home directory of the running machine."
+  description = "This returns the home directory of the running machine."
   value       = data.corefunc_homedir_get.home.value
 }
 
 output "homedir_expand" {
-  description = "This should return the home directory of the running machine as part of the output."
+  description = "This returns the home directory of the running machine as part of the output."
   value       = data.corefunc_homedir_expand.home.value
 }
 
@@ -72,6 +72,29 @@ output "homedir_expand" {
 # Environment
 
 output "env_ensure" {
-  description = "This should return the GOROOT environment variable."
+  description = "This returns the GOROOT environment variable."
   value       = data.corefunc_env_ensure.goroot.value
+}
+
+# ------------------------------------------------------------------------------
+# Runtime
+
+output "runtime_cpuarch" {
+  description = "This returns the CPU architecture of the provider."
+  value       = data.corefunc_runtime_cpuarch.arch.value
+}
+
+output "runtime_goroot" {
+  description = "This returns the GOROOT directory, if it exists."
+  value       = data.corefunc_runtime_goroot.goroot.value
+}
+
+output "runtime_numcpus" {
+  description = "This returns the number of logical CPU cores."
+  value       = data.corefunc_runtime_numcpus.count.value
+}
+
+output "runtime_os" {
+  description = "This returns the operating system of the provider."
+  value       = data.corefunc_runtime_os.os.value
 }
