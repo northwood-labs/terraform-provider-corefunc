@@ -1,0 +1,1 @@
+data "corefunc_runtime_goroot" "goroot" {}
