@@ -95,7 +95,7 @@ func (d *urlParseDataSource) Schema(
 		URL parser returns a struct representing a parsed absolute URL. Will not resolve
 		relative URLs.
 
-		The parser is up to date as of 24 May2023
+		The parser is up to date as of 2023-05-24
 		<https://url.spec.whatwg.org/commit-snapshots/eee49fdf4f99d59f717cbeb0bce29fda930196d4/>
 		and passes all relevant tests from web-platform-tests
 		<https://github.com/web-platform-tests/wpt/tree/master/url>.
