@@ -21,14 +21,14 @@ import (
 	"github.com/northwood-labs/terraform-provider-corefunc/testfixtures"
 )
 
-const (
-	TestStrCamelInput  = "test_with_number_123"
-	TestStrCamelInput2 = "test with number -123.456e-2"
-
-	ExpectedGot = "Expected %s, got %s"
-)
+const ExpectedGot = "Expected %s, got %s"
 
 func ExampleStrCamel() {
+	const (
+		TestStrCamelInput  = "test_with_number_123"
+		TestStrCamelInput2 = "test with number -123.456e-2"
+	)
+
 	output1 := StrCamel(TestStrCamelInput)
 	fmt.Println(output1)
 
@@ -41,6 +41,11 @@ func ExampleStrCamel() {
 }
 
 func ExampleStrConstant() {
+	const (
+		TestStrCamelInput  = "test_with_number_123"
+		TestStrCamelInput2 = "test with number -123.456e-2"
+	)
+
 	output1 := StrConstant(TestStrCamelInput)
 	fmt.Println(output1)
 
@@ -53,6 +58,11 @@ func ExampleStrConstant() {
 }
 
 func ExampleStrKebab() {
+	const (
+		TestStrCamelInput  = "test_with_number_123"
+		TestStrCamelInput2 = "test with number -123.456e-2"
+	)
+
 	output1 := StrKebab(TestStrCamelInput)
 	fmt.Println(output1)
 
@@ -65,6 +75,11 @@ func ExampleStrKebab() {
 }
 
 func ExampleStrPascal() {
+	const (
+		TestStrCamelInput  = "test_with_number_123"
+		TestStrCamelInput2 = "test with number -123.456e-2"
+	)
+
 	output1 := StrPascal(TestStrCamelInput, false)
 	fmt.Println(output1)
 
@@ -77,6 +92,11 @@ func ExampleStrPascal() {
 }
 
 func ExampleStrSnake() {
+	const (
+		TestStrCamelInput  = "test_with_number_123"
+		TestStrCamelInput2 = "test with number -123.456e-2"
+	)
+
 	output1 := StrSnake(TestStrCamelInput)
 	fmt.Println(output1)
 
