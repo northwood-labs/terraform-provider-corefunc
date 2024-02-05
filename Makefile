@@ -12,6 +12,7 @@ current_dir := $(dir $(mkfile_path))
 
 GO=$(shell which go)
 HOMEBREW_PACKAGES=bash bats-core coreutils editorconfig-checker findutils git git-cliff git-lfs go grep jq librsvg nodejs pre-commit python@3.11 shellcheck tfschema trivy trufflesecurity/trufflehog/trufflehog
+NEXT_VERSION=$(shell git cliff --bump --unreleased --context | jq -r .[0].version)
 
 # Determine the operating system and CPU arch.
 OS=$(shell uname -o | tr '[:upper:]' '[:lower:]')
@@ -403,7 +404,6 @@ changelog:
 ## tag: [release]* Tags (and GPG-signs) the release.
 tag:
 	@ if [ $$(git status -s -uall | wc -l) != 1 ]; then echo 'ERROR: Git workspace must be clean.'; exit 1; fi;
-	NEXT_VERSION=$(shell git cliff --bump --unreleased --context | jq -r .[0].version)
 
 	@ $(ECHO) "This release will be tagged as: v$(NEXT_VERSION)"
 	@ $(ECHO) "---------------------------------------------------------------------"
