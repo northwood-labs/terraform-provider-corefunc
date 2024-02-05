@@ -146,6 +146,25 @@ func TestTerraform(t *testing.T) {
 		assert.Equal(t, urlParse["url"], "HTTP://u:p@example.com:80/foo?q=1#bar")
 		assert.Equal(t, urlParse["username"], "u")
 
+		// url_parse_gsb
+		urlParseGSB := terraform.OutputMap(t, terraformOptions, "url_parse_gsb")
+		assert.Equal(t, urlParseGSB["decoded_port"], fmt.Sprint(80))
+		assert.Equal(t, urlParseGSB["fragment"], "")
+		assert.Equal(t, urlParseGSB["hash"], "")
+		assert.Equal(t, urlParseGSB["host"], "example.com")
+		assert.Equal(t, urlParseGSB["hostname"], "example.com")
+		assert.Equal(t, urlParseGSB["normalized"], "http://u:p@example.com/foo?q=1")
+		assert.Equal(t, urlParseGSB["normalized_nofrag"], "http://u:p@example.com/foo?q=1")
+		assert.Equal(t, urlParseGSB["password"], "p")
+		assert.Equal(t, urlParseGSB["path"], "/foo")
+		assert.Equal(t, urlParseGSB["port"], "")
+		assert.Equal(t, urlParseGSB["protocol"], "http:")
+		assert.Equal(t, urlParseGSB["query"], "q=1")
+		assert.Equal(t, urlParseGSB["scheme"], "http")
+		assert.Equal(t, urlParseGSB["search"], "?q=1")
+		assert.Equal(t, urlParseGSB["url"], "HTTP://u:p@example.com:80/foo?q=1#bar")
+		assert.Equal(t, urlParseGSB["username"], "u")
+
 		homedir := ""
 		homedirPath := ""
 
