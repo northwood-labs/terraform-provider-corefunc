@@ -68,6 +68,9 @@ data "corefunc_url_parse" "complex" {
 
 ### Complex (with Google Safe Browsing canonicalizer)
 
+[Google Safe Browsing](https://developers.google.com/safe-browsing/v4/urls-hashing#canonicalization)
+is a URL canonicalizer with a different set of rules from standard WHATWG URLs.
+
 ```terraform
 data "corefunc_url_parse" "gsb" {
   url           = "HTTP://u:p@example.com:80/foo?q=1#bar"
