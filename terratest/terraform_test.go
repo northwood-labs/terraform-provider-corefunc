@@ -102,20 +102,11 @@ func TestTerraform(t *testing.T) {
 		assert.Equal(t, terraform.Output(t, terraformOptions, "int_leftpad"), corefunc.IntLeftPad(123, 5))
 		assert.Equal(t, terraform.Output(t, terraformOptions, "str_leftpad"), corefunc.StrLeftPad("abc", 5, '.'))
 		assert.Equal(t, terraform.Output(t, terraformOptions, "env_ensure"), os.Getenv("GOROOT"))
-
-		assert.Equal(t, terraform.Output(t, terraformOptions, "runtime_cpuarch"), runtime.GOARCH)
-		assert.Equal(t, terraform.Output(t, terraformOptions, "runtime_goroot"), runtime.GOROOT())
-		assert.Equal(t, terraform.Output(t, terraformOptions, "runtime_numcpus"), fmt.Sprint(runtime.NumCPU()))
-		assert.Equal(t, terraform.Output(t, terraformOptions, "runtime_os"), runtime.GOOS)
-
-		assert.Equal(
-			t,
+		assert.Equal(t,
 			terraform.Output(t, terraformOptions, "str_truncate"),
 			corefunc.TruncateLabel(64, prefix, label),
 		)
-
-		assert.Equal(
-			t,
+		assert.Equal(t,
 			terraform.Output(t, terraformOptions, "str_iterative_replace"),
 			corefunc.StrIterativeReplace(
 				strToReplace,
@@ -129,6 +120,31 @@ func TestTerraform(t *testing.T) {
 				},
 			),
 		)
+
+		// runtime
+		assert.Equal(t, terraform.Output(t, terraformOptions, "runtime_cpuarch"), runtime.GOARCH)
+		assert.Equal(t, terraform.Output(t, terraformOptions, "runtime_goroot"), runtime.GOROOT())
+		assert.Equal(t, terraform.Output(t, terraformOptions, "runtime_numcpus"), fmt.Sprint(runtime.NumCPU()))
+		assert.Equal(t, terraform.Output(t, terraformOptions, "runtime_os"), runtime.GOOS)
+
+		// url_parse
+		urlParse := terraform.OutputMap(t, terraformOptions, "url_parse")
+		assert.Equal(t, urlParse["decoded_port"], fmt.Sprint(80))
+		assert.Equal(t, urlParse["fragment"], "bar")
+		assert.Equal(t, urlParse["hash"], "#bar")
+		assert.Equal(t, urlParse["host"], "example.com")
+		assert.Equal(t, urlParse["hostname"], "example.com")
+		assert.Equal(t, urlParse["normalized"], "http://u:p@example.com/foo?q=1#bar")
+		assert.Equal(t, urlParse["normalized_nofrag"], "http://u:p@example.com/foo?q=1")
+		assert.Equal(t, urlParse["password"], "p")
+		assert.Equal(t, urlParse["path"], "/foo")
+		assert.Equal(t, urlParse["port"], "")
+		assert.Equal(t, urlParse["protocol"], "http:")
+		assert.Equal(t, urlParse["query"], "q=1")
+		assert.Equal(t, urlParse["scheme"], "http")
+		assert.Equal(t, urlParse["search"], "?q=1")
+		assert.Equal(t, urlParse["url"], "HTTP://u:p@example.com:80/foo?q=1#bar")
+		assert.Equal(t, urlParse["username"], "u")
 
 		homedir := ""
 		homedirPath := ""
