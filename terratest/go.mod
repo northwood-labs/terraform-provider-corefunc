@@ -4,7 +4,9 @@ go 1.21.5
 
 require (
 	github.com/gruntwork-io/terratest v0.46.11
-	github.com/northwood-labs/terraform-provider-corefunc v1.2.0
+	github.com/hairyhenderson/go-which v0.2.0
+	github.com/northwood-labs/terraform-provider-corefunc v1.2.1
+	github.com/pkg/errors v0.9.1
 	github.com/stretchr/testify v1.8.4
 )
 
@@ -29,7 +31,6 @@ require (
 	github.com/google/uuid v1.5.0 // indirect
 	github.com/googleapis/enterprise-certificate-proxy v0.3.2 // indirect
 	github.com/googleapis/gax-go/v2 v2.12.0 // indirect
-	github.com/hairyhenderson/go-which v0.2.0 // indirect
 	github.com/hashicorp/errwrap v1.1.0 // indirect
 	github.com/hashicorp/go-cleanhttp v0.5.2 // indirect
 	github.com/hashicorp/go-getter v1.7.3 // indirect
@@ -45,7 +46,6 @@ require (
 	github.com/mitchellh/go-homedir v1.1.0 // indirect
 	github.com/mitchellh/go-testing-interface v1.14.1 // indirect
 	github.com/mitchellh/go-wordwrap v1.0.1 // indirect
-	github.com/pkg/errors v0.9.1 // indirect
 	github.com/pmezard/go-difflib v1.0.0 // indirect
 	github.com/spf13/afero v1.11.0 // indirect
 	github.com/tmccombs/hcl2json v0.6.0 // indirect
