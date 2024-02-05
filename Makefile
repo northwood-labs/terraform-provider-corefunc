@@ -405,12 +405,12 @@ tag:
 	@ if [ $$(git status -s -uall | wc -l) != 1 ]; then echo 'ERROR: Git workspace must be clean.'; exit 1; fi;
 	NEXT_VERSION=$(shell git cliff --bump --unreleased --context | jq -r .[0].version)
 
-	@ $(ECHO) "This release will be tagged as: v${NEXT_VERSION}"
+	@ $(ECHO) "This release will be tagged as: v$(NEXT_VERSION)"
 	@ $(ECHO) "---------------------------------------------------------------------"
 	@ read -p "Press any key to continue, or press Control+C to cancel. " x;
 
 	@ $(ECHO) " "
-	@ chag update v${NEXT_VERSION}
+	@ chag update v$(NEXT_VERSION)
 	@ $(ECHO) " "
 
 	@ $(ECHO) "These are the contents of the CHANGELOG for this release. Are these correct?"
@@ -423,5 +423,5 @@ tag:
 	@ $(ECHO) " "
 
 	git add .
-	git commit -a -m "relprep: Preparing the v${NEXT_VERSION} release."
+	git commit -a -m "relprep: Preparing the v$(NEXT_VERSION) release."
 	chag tag --sign
