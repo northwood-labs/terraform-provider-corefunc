@@ -1,5 +1,8 @@
 data "corefunc_url_parse" "url" {
-    url = "{{ .InputURL }}"
+    url           = "{{ .InputURL }}"
+{{- with .Canonicalizer }}
+    canonicalizer = "{{ printf "%v" . }}"
+{{- end }}
 }
 #=> {{ .Href }}
 #=> {{ .Protocol }}

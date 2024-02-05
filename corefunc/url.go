@@ -14,7 +14,11 @@
 
 package corefunc
 
-import "github.com/nlnwa/whatwg-url/url"
+import (
+	"github.com/nlnwa/whatwg-url/canonicalizer"
+	"github.com/nlnwa/whatwg-url/url"
+	"github.com/northwood-labs/terraform-provider-corefunc/corefunc/types"
+)
 
 /*
 URLParse is a WHATWG spec-compliant <https://url.spec.whatwg.org/#url-parsing>
@@ -32,7 +36,21 @@ Its API is similar to Chapter 6 in WHATWG URL Standard
 ----
 
   - rawURL (string): An absolute URL.
+
+  - canon (types.URLCanonicalizer): An optional parameter that allows you to
+    specify which canonicalizer to use. If not specified, the standard
+    canonicalizer will be used.
 */
-func URLParse(rawURL string) (*url.Url, error) {
+func URLParse(rawURL string, canon ...types.URLCanonicalizer) (*url.Url, error) {
+	if len(canon) > 0 {
+		switch canon[0] {
+		case types.Standard:
+			return url.Parse(rawURL) // lint:allow_unwrapped_errors
+		case types.GoogleSafeBrowsing:
+			return canonicalizer.GoogleSafeBrowsing.Parse(rawURL) // lint:allow_unwrapped_errors
+		}
+	}
+
+	// Default
 	return url.Parse(rawURL) // lint:allow_unwrapped_errors
 }
