@@ -23,6 +23,9 @@ description: |-
 
 ### Complex (with Google Safe Browsing canonicalizer)
 
+[Google Safe Browsing](https://developers.google.com/safe-browsing/v4/urls-hashing#canonicalization)
+is a URL canonicalizer with a different set of rules from standard WHATWG URLs.
+
 {{ tffile "examples/data-sources/corefunc_url_parse/data-source-gsb.tf" }}
 
 {{ .SchemaMarkdown | trimspace }}
