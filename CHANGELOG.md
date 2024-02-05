@@ -34,6 +34,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`5d992f3`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/5d992f31b4d5566e37bb12a0d133400d75d1763f): Regenerate test artifacts.
 * [`c4459ad`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/c4459ad7664dc6a1c93b3585705dc46d72cb76d2): Updated BATS tests with Shellcheck feedback.
 * [`6611f3f`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/6611f3fbd38af4997fb156c22d4157024bd8d76f): Generated updated test artifacts.
+* [`d6f3437`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/d6f34376297dc934e195c379786053729b8625bb): Added Terratest tests for `corefunc_url_parse`.
 ## 1.2.1 — 2024-02-02
 
 [Compare: v1.1.1 → v1.2.1](https://github.com/northwood-labs/terraform-provider-corefunc/compare/v1.1.1..v1.2.1)
