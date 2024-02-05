@@ -21,6 +21,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`4cde8d8`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/4cde8d89e62d2201dcfb05a80b709f7b1258cf3f): **deps**: Bump `github.com/northwood-labs/terraform-provider-corefunc` ([#130](https://github.com/northwood-labs/terraform-provider-corefunc/issues/130)) (dependabot[bot])
 * [`1a298cb`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/1a298cb78cc4d9e6144a9b4282e71311a348b144): **deps**: Bump `github/codeql-action` from 3.23.2 to 3.24.0 ([#131](https://github.com/northwood-labs/terraform-provider-corefunc/issues/131)) (dependabot[bot])
 * [`68a3d4b`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/68a3d4b110cd6f4b36d4f12bb0df3160372847a1): **deps**: Bump `trufflesecurity/trufflehog` from 3.66.3 to 3.67.1 ([#132](https://github.com/northwood-labs/terraform-provider-corefunc/issues/132)) (dependabot[bot])
+* [`e548051`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/e54805173ee44bd7b13fac10406dd0d0e1968511): Small updates to the Makefile.
 
 ### Documentation
 
