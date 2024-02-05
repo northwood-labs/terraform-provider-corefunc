@@ -98,3 +98,11 @@ output "runtime_os" {
   description = "This returns the operating system of the provider."
   value       = data.corefunc_runtime_os.os.value
 }
+
+# ------------------------------------------------------------------------------
+# URL Parsing
+
+output "url_parse" {
+  description = "This returns a parsed URL."
+  value       = data.corefunc_url_parse.url
+}
