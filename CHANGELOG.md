@@ -6,7 +6,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 [Semantic Versioning](https://semver.org), and uses
 [Conventional Commit](https://www.conventionalcommits.org) syntax.
 
-## v1.2.2 - 2024-02-04
+## Unreleased
 
 [Compare: v1.2.1 → `HEAD`](https://github.com/northwood-labs/terraform-provider-corefunc/compare/v1.2.1..HEAD)
 
@@ -22,6 +22,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`1a298cb`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/1a298cb78cc4d9e6144a9b4282e71311a348b144): **deps**: Bump `github/codeql-action` from 3.23.2 to 3.24.0 ([#131](https://github.com/northwood-labs/terraform-provider-corefunc/issues/131)) (dependabot[bot])
 * [`68a3d4b`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/68a3d4b110cd6f4b36d4f12bb0df3160372847a1): **deps**: Bump `trufflesecurity/trufflehog` from 3.66.3 to 3.67.1 ([#132](https://github.com/northwood-labs/terraform-provider-corefunc/issues/132)) (dependabot[bot])
 * [`e548051`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/e54805173ee44bd7b13fac10406dd0d0e1968511): Small updates to the Makefile.
+* [`d4496cb`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/d4496cbae6c11de0c55511cdbf20d5a5b5b2c908): Small updates to the Makefile.
+* [`87f2772`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/87f277226fc1f3c7593438f78e590692dac45764): Small updates to the Makefile.
 
 ### Documentation
 
@@ -44,7 +46,6 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`c4459ad`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/c4459ad7664dc6a1c93b3585705dc46d72cb76d2): Updated BATS tests with Shellcheck feedback.
 * [`6611f3f`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/6611f3fbd38af4997fb156c22d4157024bd8d76f): Generated updated test artifacts.
 * [`d6f3437`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/d6f34376297dc934e195c379786053729b8625bb): Added Terratest tests for `corefunc_url_parse`.
-
 ## 1.2.1 — 2024-02-02
 
 [Compare: v1.1.1 → v1.2.1](https://github.com/northwood-labs/terraform-provider-corefunc/compare/v1.1.1..v1.2.1)
@@ -134,7 +135,6 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`85cfb6c`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/85cfb6c8dfed8d61bf84d246ba58eacbf91cc650): Setup Terratest testing for OpenTofu from the Makefile.
 * [`57b1e0e`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/57b1e0eb5f91a87e5450dba5d6f9492fb2c0b374): Improve switching between Terraform/OpenTofu in Terratest.
 * [`590c3bc`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/590c3bce781674b2627e494b203570b142555844): Improve switching between Terraform/OpenTofu in Terratest.
-
 ## 1.1.1 — 2023-12-20
 
 [Compare: v1.1.0 → v1.1.1](https://github.com/northwood-labs/terraform-provider-corefunc/compare/v1.1.0..v1.1.1)
@@ -161,7 +161,6 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 
 * [`e0915df`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/e0915dfb90f9d2824be769dcc629501db99d1b8c): Added tests with Terratest to compare the Terraform provider with the Go library.
 * [`e5a810a`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/e5a810a8f9a5ffe2737928429df0be3a9a0a25c3): Make the GoSec scanning more robust.
-
 ## 1.1.0 — 2023-12-18
 
 [Compare: v1.0.3 → v1.1.0](https://github.com/northwood-labs/terraform-provider-corefunc/compare/v1.0.3..v1.1.0)
@@ -204,7 +203,6 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 ### Testing
 
 * [`57a7b85`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/57a7b85c17040f880dcaf6546c11cb9acd0a7615): Lookup and run fuzz tests programmatically.
-
 ## 1.0.3 — 2023-11-21
 
 [Compare: v1.0.0 → v1.0.3](https://github.com/northwood-labs/terraform-provider-corefunc/compare/v1.0.0..v1.0.3)
@@ -212,7 +210,6 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 ### Building and Dependencies
 
 * [`14759b8`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/14759b8792c77530a0538d2fdb3ed2cacddd8d73): Bump `the` version number to 1.0.3. No changes from 1.0.0.
-
 ## 1.0.0 — 2023-11-21
 
 ### Bug Fixes
