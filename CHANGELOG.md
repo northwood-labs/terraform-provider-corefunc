@@ -16,6 +16,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`50affa9`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/50affa91e6aa6a6c0b59c529070a6d296afd0823): Lower provider logging messages from INFO to DEBUG.
 * [`6582fec`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/6582fecf49b9e400ba7c0d5bbf8b3d483a89aaf4): Fix examples and Shellcheck warnings.
 
+### Building and Dependencies
+
+* [`4cde8d8`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/4cde8d89e62d2201dcfb05a80b709f7b1258cf3f): **deps**: Bump `github.com/northwood-labs/terraform-provider-corefunc` ([#130](https://github.com/northwood-labs/terraform-provider-corefunc/issues/130)) (dependabot[bot])
+
 ### Documentation
 
 * [`00411fe`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/00411fee4350e0be6dcf78bbf2ade87ee0c5b03b): Updated docs to remove the 'id' attribute.
