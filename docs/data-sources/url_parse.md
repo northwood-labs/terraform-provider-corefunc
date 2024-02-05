@@ -101,7 +101,7 @@ data "corefunc_url_parse" "gsb" {
 
 ### Optional
 
-* `canonicalizer` (String) The method by which the URL should be canonicalized. Allowed values: `standard`, `google_safe_browsing`.
+* `canonicalizer` (String) The method by which the URL should be canonicalized. Allowed values: `standard`, `google_safe_browsing`. The default value is `standard`.
 
 ### Read-Only
 
