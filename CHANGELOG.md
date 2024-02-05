@@ -6,9 +6,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 [Semantic Versioning](https://semver.org), and uses
 [Conventional Commit](https://www.conventionalcommits.org) syntax.
 
-## v1.3.0 - 2024-02-04
+## 1.3.0 — 2024-02-05
 
-[Compare: v1.2.1 → `HEAD`](https://github.com/northwood-labs/terraform-provider-corefunc/compare/v1.2.1..HEAD)
+[Compare: v1.2.1 → v1.3.0](https://github.com/northwood-labs/terraform-provider-corefunc/compare/v1.2.1..v1.3.0)
 
 ### Bug Fixes
 
@@ -24,6 +24,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`e548051`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/e54805173ee44bd7b13fac10406dd0d0e1968511): Small updates to the Makefile.
 * [`d4496cb`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/d4496cbae6c11de0c55511cdbf20d5a5b5b2c908): Small updates to the Makefile.
 * [`87f2772`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/87f277226fc1f3c7593438f78e590692dac45764): Small updates to the Makefile.
+* [`b4232d2`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/b4232d2f0fa6f63ea05208730525cd0392adbebb): Small updates to the Makefile.
 
 ### Documentation
 
