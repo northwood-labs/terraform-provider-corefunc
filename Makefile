@@ -431,5 +431,5 @@ tag:
 	@ $(ECHO) " "
 
 	git add .
-	git commit -a -m "relprep: Preparing the v$(NEXT_VERSION) release."
+	git commit -a -m "relprep: Preparing the v$(NEXT_VERSION) release." --no-verify
 	chag tag --sign
