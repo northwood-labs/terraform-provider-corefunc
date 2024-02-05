@@ -19,6 +19,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 ### Building and Dependencies
 
 * [`4cde8d8`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/4cde8d89e62d2201dcfb05a80b709f7b1258cf3f): **deps**: Bump `github.com/northwood-labs/terraform-provider-corefunc` ([#130](https://github.com/northwood-labs/terraform-provider-corefunc/issues/130)) (dependabot[bot])
+* [`1a298cb`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/1a298cb78cc4d9e6144a9b4282e71311a348b144): **deps**: Bump `github/codeql-action` from 3.23.2 to 3.24.0 ([#131](https://github.com/northwood-labs/terraform-provider-corefunc/issues/131)) (dependabot[bot])
 
 ### Documentation
 
