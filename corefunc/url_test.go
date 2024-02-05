@@ -16,8 +16,10 @@ package corefunc
 
 import (
 	"fmt"
+	"strings"
 	"testing"
 
+	"github.com/northwood-labs/terraform-provider-corefunc/corefunc/types"
 	"github.com/northwood-labs/terraform-provider-corefunc/testfixtures"
 )
 
@@ -60,10 +62,56 @@ func ExampleURLParse() {
 	// 80
 }
 
+func ExampleURLParse_googleSafeBrowsing() {
+	// https://developers.google.com/safe-browsing/v4/urls-hashing#canonicalization
+	parsedURL, err := URLParse("HTTP://u:p@example.com:80/foo?q=1#bar", types.GoogleSafeBrowsing)
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+
+	fmt.Println("." + parsedURL.Href(false))
+	fmt.Println("." + parsedURL.Href(true))
+	fmt.Println("." + parsedURL.Protocol())
+	fmt.Println("." + parsedURL.Scheme())
+	fmt.Println("." + parsedURL.Username())
+	fmt.Println("." + parsedURL.Password())
+	fmt.Println("." + parsedURL.Host())
+	fmt.Println("." + parsedURL.Port())
+	fmt.Println("." + parsedURL.Pathname())
+	fmt.Println("." + parsedURL.Search())
+	fmt.Println("." + parsedURL.Query())
+	fmt.Println("." + parsedURL.Hash())
+	fmt.Println("." + parsedURL.Fragment())
+	fmt.Println("." + fmt.Sprint(parsedURL.DecodedPort()))
+
+	// Output:
+	// .http://u:p@example.com/foo?q=1
+	// .http://u:p@example.com/foo?q=1
+	// .http:
+	// .http
+	// .u
+	// .p
+	// .example.com
+	// .
+	// ./foo
+	// .?q=1
+	// .q=1
+	// .
+	// .
+	// .80
+}
+
 func TestURLParse(t *testing.T) { // lint:allow_complexity
 	for name, tc := range testfixtures.URLParseTestTable {
 		t.Run(name, func(t *testing.T) {
-			u, err := URLParse(tc.InputURL)
+			// Handle canonicalizer-switching
+			opts := types.Standard
+			if strings.EqualFold(tc.Canonicalizer, "google_safe_browsing") {
+				opts = types.GoogleSafeBrowsing
+			}
+
+			u, err := URLParse(tc.InputURL, opts)
 			if err != nil {
 				t.Errorf("unexpected error: %v", err)
 			}

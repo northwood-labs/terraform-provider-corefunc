@@ -106,3 +106,8 @@ output "url_parse" {
   description = "This returns a parsed URL."
   value       = data.corefunc_url_parse.url
 }
+
+output "url_parse_gsb" {
+  description = "This returns a parsed URL canonicalized for Google Safe Browsing."
+  value       = data.corefunc_url_parse.gsb
+}

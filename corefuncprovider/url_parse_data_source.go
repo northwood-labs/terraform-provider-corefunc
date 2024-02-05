@@ -26,6 +26,7 @@ import (
 	"github.com/hashicorp/terraform-plugin-log/tflog"
 	"github.com/lithammer/dedent"
 	"github.com/northwood-labs/terraform-provider-corefunc/corefunc"
+	cftypes "github.com/northwood-labs/terraform-provider-corefunc/corefunc/types"
 )
 
 // Ensure the implementation satisfies the expected interfaces.
@@ -41,6 +42,7 @@ type (
 	// urlParseDataSourceModel maps the data source schema data.
 	urlParseDataSourceModel struct {
 		InputURL         types.String `tfsdk:"url"`
+		Canonicalizer    types.String `tfsdk:"canonicalizer"`
 		Normalized       types.String `tfsdk:"normalized"`
 		NormalizedNoFrag types.String `tfsdk:"normalized_nofrag"`
 		Protocol         types.String `tfsdk:"protocol"`
@@ -106,6 +108,11 @@ func (d *urlParseDataSource) Schema(
 			"url": schema.StringAttribute{
 				Description: "The absolute URL to parse according to the [WHATWG URL API](https://url.spec.whatwg.org/#api).",
 				Required:    true,
+			},
+			"canonicalizer": schema.StringAttribute{
+				Description: "The method by which the URL should be canonicalized. " +
+					"Allowed values: `standard`, `google_safe_browsing`.",
+				Optional: true,
 			},
 			"normalized": schema.StringAttribute{
 				Description: "The normalized form of the URL.",
@@ -220,7 +227,14 @@ func (d *urlParseDataSource) Read( // lint:no_dupe
 	diags := resp.State.Get(ctx, &state)
 	resp.Diagnostics.Append(diags...)
 
-	url, err := corefunc.URLParse(state.InputURL.ValueString())
+	// Default
+	opts := cftypes.Standard
+	if strings.EqualFold(state.Canonicalizer.ValueString(), "google_safe_browsing") {
+		// Switch to Google Safe Browsing
+		opts = cftypes.GoogleSafeBrowsing
+	}
+
+	url, err := corefunc.URLParse(state.InputURL.ValueString(), opts)
 	if err != nil {
 		resp.Diagnostics.AddError("Could not parse the URL.", err.Error())
 		return
