@@ -4,6 +4,8 @@ go 1.21
 
 replace github.com/imdario/mergo => github.com/imdario/mergo v0.3.16
 
+replace github.com/imdario/mergo => github.com/imdario/mergo v0.3.16
+
 require (
 	github.com/chanced/caps v1.0.2
 	github.com/google/go-cmp v0.6.0
