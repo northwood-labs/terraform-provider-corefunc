@@ -12,9 +12,16 @@
 [![GitHub Workflow Status (with event)](https://img.shields.io/github/actions/workflow/status/northwood-labs/terraform-provider-corefunc/test.yml?style=for-the-badge&label=Tests)](https://github.com/northwood-labs/terraform-provider-corefunc/actions/workflows/test.yml)
 [![GitHub Workflow Status (with event)](https://img.shields.io/github/actions/workflow/status/northwood-labs/terraform-provider-corefunc/release.yml?style=for-the-badge&label=Release)](https://github.com/northwood-labs/terraform-provider-corefunc/actions/workflows/release.yml)
 
+## Overview
+
 Utilities that should have been Terraform _core functions_.
 
 While some of these _can_ be implemented in HCL, some of them begin to push up against the limits of Terraform and the HCL2 configuration language. We also perform testing using the [Terratest](https://terratest.gruntwork.io) framework on a regular basis. Exposing these functions as both a Go library as well as a Terraform provider enables us to use the same functionality in both our Terraform applies as well as while using a testing framework.
+
+> [!NOTE]
+> While it’s common knowledge that Terraform is great at standing up and managing Cloud infrastructure, it’s also good at running _anything with an API_. People regularly manage [code repositories], [DNS records], [feature flags], [identity and access management], [content delivery], [passwords], [monitoring], [alerts], [zero trust network access], [cryptographic signatures], and can even [order a pizza].
+>
+> This provider is more analogous to HashiCorp’s _utility_ providers such as [local], [external], and [archive].
 
 Since Terraform doesn't have the concept of user-defined functions, the next step to open up the possibilities is to write a custom Terraform Provider which has the functions built-in, using Terraform's existing support for inputs and outputs.
 
@@ -114,5 +121,19 @@ github.com/hashicorp/terraform-plugin-go                   v0.19.1
 [...snip...]
 ```
 
+[alerts]: https://registry.terraform.io/providers/PagerDuty/pagerduty/latest
+[archive]: https://registry.terraform.io/providers/hashicorp/archive/latest/docs
+[code repositories]: https://registry.terraform.io/providers/integrations/github/latest/docs
+[content delivery]: https://registry.terraform.io/providers/fastly/fastly/latest/docs
+[cryptographic signatures]: https://registry.terraform.io/providers/chainguard-dev/cosign/latest/docs
+[DNS records]: https://registry.terraform.io/providers/infobloxopen/infoblox/latest/docs
+[external]: https://registry.terraform.io/providers/hashicorp/external/latest/docs
+[feature flags]: https://registry.terraform.io/providers/launchdarkly/launchdarkly/latest/docs
+[identity and access management]: https://registry.terraform.io/providers/okta/okta/latest/docs
+[local]: https://registry.terraform.io/providers/hashicorp/local/latest/docs
+[monitoring]: https://registry.terraform.io/providers/DataDog/datadog/latest
+[order a pizza]: https://registry.terraform.io/providers/MNThomson/dominos/latest/docs
+[passwords]: https://registry.terraform.io/providers/1Password/onepassword/latest/docs
 [tfproto6]: https://developer.hashicorp.com/terraform/plugin/terraform-plugin-protocol#protocol-version-6
 [TPF]: https://github.com/hashicorp/terraform-plugin-framework
+[zero trust network access]: https://registry.terraform.io/providers/zscaler/zpa/latest/docs

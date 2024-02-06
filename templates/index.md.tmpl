@@ -11,6 +11,8 @@ description: |-
 
 {{ .Description | trimspace }}
 
+~> While it’s common knowledge that Terraform is great at standing up and managing Cloud infrastructure, it’s also good at running _anything with an API_. People regularly manage [code repositories], [DNS records], [feature flags], [identity and access management], [content delivery], [passwords], [monitoring], [alerts], [zero trust network access], [cryptographic signatures], and can even [order a pizza]. This provider is more analogous to HashiCorp’s _utility_ providers such as [local], [external], and [archive].
+
 ## Compatibility matrix
 
 Built using the [Terraform Plugin Framework][TPF], which speaks [Terraform Protocol v6][tfproto6].
@@ -53,7 +55,21 @@ This is the complete list of supported operating systems and architectures for t
 
 ~> **NOTE:** For OpenTofu users, avoid requesting the `netbsd` platform.
 
+[alerts]: https://registry.terraform.io/providers/PagerDuty/pagerduty/latest
+[archive]: https://registry.terraform.io/providers/hashicorp/archive/latest/docs
+[code repositories]: https://registry.terraform.io/providers/integrations/github/latest/docs
+[content delivery]: https://registry.terraform.io/providers/fastly/fastly/latest/docs
+[cryptographic signatures]: https://registry.terraform.io/providers/chainguard-dev/cosign/latest/docs
+[DNS records]: https://registry.terraform.io/providers/infobloxopen/infoblox/latest/docs
+[external]: https://registry.terraform.io/providers/hashicorp/external/latest/docs
+[feature flags]: https://registry.terraform.io/providers/launchdarkly/launchdarkly/latest/docs
+[identity and access management]: https://registry.terraform.io/providers/okta/okta/latest/docs
+[local]: https://registry.terraform.io/providers/hashicorp/local/latest/docs
+[monitoring]: https://registry.terraform.io/providers/DataDog/datadog/latest
+[order a pizza]: https://registry.terraform.io/providers/MNThomson/dominos/latest/docs
+[passwords]: https://registry.terraform.io/providers/1Password/onepassword/latest/docs
 [tfproto6]: https://developer.hashicorp.com/terraform/plugin/terraform-plugin-protocol#protocol-version-6
 [TPF]: https://github.com/hashicorp/terraform-plugin-framework
+[zero trust network access]: https://registry.terraform.io/providers/zscaler/zpa/latest/docs
 
 <!-- Preview the provider docs with the Terraform registry provider docs preview tool: https://registry.terraform.io/tools/doc-preview -->
