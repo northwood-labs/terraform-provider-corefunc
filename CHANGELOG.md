@@ -10,10 +10,15 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 
 [Compare: v1.3.0 → `HEAD`](https://github.com/northwood-labs/terraform-provider-corefunc/compare/v1.3.0..HEAD)
 
+### Building and Dependencies
+
+* [`08799f4`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/08799f414450923a2596b2914d748618ab641f36): Added a specific 'replace' clause to `go.mod`.
+
 ### Documentation
 
 * [`0f5913a`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/0f5913a747a9de59024fc0a1822b955227a283f2): Clarified documentation for `corefunc_url_parse`.canonicalizer.
 * [`e9e3b7a`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/e9e3b7a7df92d425b8af1165856b6137b14073b8): Clarified documentation for `corefunc_url_parse`.canonicalizer.
+* [`6dfac39`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/6dfac39a87673043a8a0f78362c1b2c8b5170ebb): Added note about different kinds of providers.
 ## 1.3.0 — 2024-02-05
 
 [Compare: v1.2.1 → v1.3.0](https://github.com/northwood-labs/terraform-provider-corefunc/compare/v1.2.1..v1.3.0)
