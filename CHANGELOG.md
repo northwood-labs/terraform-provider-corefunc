@@ -15,6 +15,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`08799f4`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/08799f414450923a2596b2914d748618ab641f36): Added a specific 'replace' clause to `go.mod`.
 * [`e72bd58`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/e72bd58d488f38ae0abffcc3353fca47bbfb66fd): **deps**: Bump `actions/upload-artifact` from 4.3.0 to 4.3.1 ([#145](https://github.com/northwood-labs/terraform-provider-corefunc/issues/145)) (dependabot[bot])
 * [`4812eb9`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/4812eb9a1cb294502840db8ee757ad8752ab4461): **deps**: Bump `github.com/northwood-labs/terraform-provider-corefunc` ([#147](https://github.com/northwood-labs/terraform-provider-corefunc/issues/147)) (dependabot[bot])
+* [`d5368da`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/d5368da178ed5596d12b6ff0f0e4431499926daf): **deps**: Bump `trufflesecurity/trufflehog` from 3.67.1 to 3.67.4 ([#148](https://github.com/northwood-labs/terraform-provider-corefunc/issues/148)) (dependabot[bot])
 
 ### Documentation
 
