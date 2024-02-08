@@ -13,6 +13,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 ### Building and Dependencies
 
 * [`08799f4`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/08799f414450923a2596b2914d748618ab641f36): Added a specific 'replace' clause to `go.mod`.
+* [`e72bd58`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/e72bd58d488f38ae0abffcc3353fca47bbfb66fd): **deps**: Bump `actions/upload-artifact` from 4.3.0 to 4.3.1 ([#145](https://github.com/northwood-labs/terraform-provider-corefunc/issues/145)) (dependabot[bot])
 
 ### Documentation
 
