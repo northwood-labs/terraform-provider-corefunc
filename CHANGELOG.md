@@ -17,6 +17,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`4812eb9`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/4812eb9a1cb294502840db8ee757ad8752ab4461): **deps**: Bump `github.com/northwood-labs/terraform-provider-corefunc` ([#147](https://github.com/northwood-labs/terraform-provider-corefunc/issues/147)) (dependabot[bot])
 * [`d5368da`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/d5368da178ed5596d12b6ff0f0e4431499926daf): **deps**: Bump `trufflesecurity/trufflehog` from 3.67.1 to 3.67.4 ([#148](https://github.com/northwood-labs/terraform-provider-corefunc/issues/148)) (dependabot[bot])
 * [`c49b3f2`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/c49b3f2356e2c49b923ab191862e094c4275d0d0): **deps**: Bump `actions/setup-node` from 4.0.1 to 4.0.2 ([#149](https://github.com/northwood-labs/terraform-provider-corefunc/issues/149)) (dependabot[bot])
+* [`d8e97c0`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/d8e97c01e838855d2c1c19476ce0483959e295d5): **deps**: Bump `trufflesecurity/trufflehog` from 3.67.4 to 3.67.5 ([#150](https://github.com/northwood-labs/terraform-provider-corefunc/issues/150)) (dependabot[bot])
 
 ### Documentation
 
