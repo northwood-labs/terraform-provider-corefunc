@@ -83,7 +83,7 @@ install-tools-mac: install-tools-go
 	@ $(ECHO) " "
 	@ $(ECHO) "\033[1;33m=====> Installing required packages for macOS (Homebrew)...\033[0m"
 	brew update && brew install $(HOMEBREW_PACKAGES) && brew upgrade $(HOMEBREW_PACKAGES)
-	curl -sSLf https://raw.githubusercontent.com/mtdowling/chag/master/install.sh | bash
+	curl -sSLf https://raw.githubusercontent.com/mtdowling/chag/master/install.sh | sudo bash
 
 	@ $(ECHO) " "
 	@ $(ECHO) "\033[1;33mTo update to the latest versions, run:\033[0m"
