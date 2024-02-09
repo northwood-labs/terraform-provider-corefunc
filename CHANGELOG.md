@@ -19,6 +19,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`c49b3f2`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/c49b3f2356e2c49b923ab191862e094c4275d0d0): **deps**: Bump `actions/setup-node` from 4.0.1 to 4.0.2 ([#149](https://github.com/northwood-labs/terraform-provider-corefunc/issues/149)) (dependabot[bot])
 * [`d8e97c0`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/d8e97c01e838855d2c1c19476ce0483959e295d5): **deps**: Bump `trufflesecurity/trufflehog` from 3.67.4 to 3.67.5 ([#150](https://github.com/northwood-labs/terraform-provider-corefunc/issues/150)) (dependabot[bot])
 * [`1912070`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/19120703de4526419d7509c7d4051757e14e2804): **deps**: Bump `golangci/golangci-lint-action` from 3.7.0 to 3.7.1 ([#151](https://github.com/northwood-labs/terraform-provider-corefunc/issues/151)) (dependabot[bot])
+* [`2dc57ba`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/2dc57ba40f5b2196f3e4ed1ee057d70e2e1166a7): Prepend sudo to chag installer.
 
 ### Documentation
 
