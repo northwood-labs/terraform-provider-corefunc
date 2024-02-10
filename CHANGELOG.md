@@ -20,12 +20,15 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`d8e97c0`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/d8e97c01e838855d2c1c19476ce0483959e295d5): **deps**: Bump `trufflesecurity/trufflehog` from 3.67.4 to 3.67.5 ([#150](https://github.com/northwood-labs/terraform-provider-corefunc/issues/150)) (dependabot[bot])
 * [`1912070`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/19120703de4526419d7509c7d4051757e14e2804): **deps**: Bump `golangci/golangci-lint-action` from 3.7.0 to 3.7.1 ([#151](https://github.com/northwood-labs/terraform-provider-corefunc/issues/151)) (dependabot[bot])
 * [`2dc57ba`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/2dc57ba40f5b2196f3e4ed1ee057d70e2e1166a7): Prepend sudo to chag installer.
+* [`6b11f0f`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/6b11f0f14aa4c37f5f275eb969a9d04b2af03038): Remove former dependencies.
 
 ### Documentation
 
 * [`0f5913a`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/0f5913a747a9de59024fc0a1822b955227a283f2): Clarified documentation for `corefunc_url_parse`.canonicalizer.
 * [`e9e3b7a`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/e9e3b7a7df92d425b8af1165856b6137b14073b8): Clarified documentation for `corefunc_url_parse`.canonicalizer.
 * [`6dfac39`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/6dfac39a87673043a8a0f78362c1b2c8b5170ebb): Added note about different kinds of providers.
+* [`761d230`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/761d230f025d6aa43d69d21a9a0f818453a3544d): Renamed `AUTHORS.md` to CONTRIBUTORS to better align with established patterns on the web.
+* [`2758a7e`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/2758a7e9a60c6f9909c326a71550ad5e5cefe755): Create a new `ACKNOWLEDGMENTS.md` file.
 ## 1.3.0 — 2024-02-05
 
 [Compare: v1.2.1 → v1.3.0](https://github.com/northwood-labs/terraform-provider-corefunc/compare/v1.2.1..v1.3.0)
