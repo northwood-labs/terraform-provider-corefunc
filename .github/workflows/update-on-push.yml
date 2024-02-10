@@ -56,7 +56,7 @@ jobs:
       - name: Generate artifacts
         run: |
           # Generate list of authors
-          ./scripts/generate-authors.sh
+          ./scripts/generate-contributors.sh
 
           # Generate CHANGELOG
           ${{ runner.temp }}/git-cliff*/git-cliff -o CHANGELOG.md
