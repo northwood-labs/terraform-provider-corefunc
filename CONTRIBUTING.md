@@ -1,8 +1,17 @@
 # Contribution Guide
 
+:+1::tada: First off, thanks for taking the time to contribute! :tada::+1:
+
+## Table of contents
+
+Click the _bulleted-list_ icon in the upper-left or upper-right of this document to view an outline of the document.
+
 ## Initial setup
 
 The majority of development is done on macOS, so we have some helpers set-up to streamline setup.
+
+> [!NOTE]
+> I’m strongly considering moving all of this into a [Development Container](https://containers.dev), I just haven't gotten there yet.
 
 ### Prerequisites
 
@@ -19,7 +28,7 @@ The majority of development is done on macOS, so we have some helpers set-up to 
 
     Obviously, this won't work on Linux, so ensure that the following packages are installed from your system's package manager.
 
-    * [Go] 1.21+ (primary language)
+    * [Go] 1.22+ (primary language)
     * [Node.js] 20+ (linting tools)
     * [Python] 3.11+ (linting tools)
     * [Git LFS] (storage of binary data)
@@ -38,27 +47,15 @@ The majority of development is done on macOS, so we have some helpers set-up to 
     make install-hooks
     ```
 
-1. This project uses [Conventional Commits](https://www.conventionalcommits.org). If you are unfamiliar with this pattern of writing your commit messages, please read the spec. This project supports the following keywords:
-
-    | Keyword    | Description                                                                        |
-    |------------|------------------------------------------------------------------------------------|
-    | `build`    | Changes that affect the build system or external dependencies.                     |
-    | `ci`       | Changes to our CI configuration files and scripts.                                 |
-    | `deps`     | Updating dependencies.                                                             |
-    | `docs`     | Documentation only changes.                                                        |
-    | `feat`     | A new feature.                                                                     |
-    | `fix`      | A bug fix.                                                                         |
-    | `lint`     | Linter or static analysis-related changes.                                         |
-    | `perf`     | A code change that improves performance.                                           |
-    | `refactor` | A code change that neither fixes a bug nor adds a feature.                         |
-    | `style`    | Changes that do not affect the meaning of the code (whitespace, formatting, etc.). |
-    | `test`     | Adding missing tests or correcting existing tests, benchmarks, fuzzing, etc.       |
-
 <!-- Code of Conduct? -->
 
 ## Contributing a code change
 
-In order to contribute a code change, you should fork the repository, make your changes, and then submit a pull request. Crucially, all code changes should be preceded by an issue that you've been assigned to. If an issue for the change you'd like to introduce already exists, please communicate in the issue that you'd like to take ownership of it. If an issue doesn't yet exist, please create one expressing your interest in working on it and discuss it first, prior to working on the code. Code changes without a related issue will generally be rejected.
+In order to contribute a code change, you should fork the repository, make your changes, and then submit a pull request.
+
+You should follow the best practices in [Effective Go](https://go.dev/doc/effective_go) and [Go Code Review Comments](https://go.dev/wiki/CodeReviewComments). If not, you should learn by running `make lint` and/or code review feedback and aim to improve over time.
+
+Crucially, all code changes should be preceded by an issue that you've been assigned to. If an issue for the change you'd like to introduce already exists, please communicate in the issue that you'd like to take ownership of it. If an issue doesn't yet exist, please create one expressing your interest in working on it and discuss it first, prior to working on the code. Code changes without a related issue will generally be rejected.
 
 In order for a code change to be accepted, you'll also have to accept the (very lightweight) [Developer Certificate of Origin](https://developercertificate.org) (DCO). Acceptance is accomplished by signing-off your commits; you can do this by adding a `Signed-off-by` line to your commit message, like here:
 
@@ -77,6 +74,102 @@ git commit -s -m 'This is my commit message'
 You can find more details about the _Developer Certificate of Origin_ checker in the [DCO app repo](https://github.com/dcoapp/app).
 
 <!-- https://cla-assistant.io? -->
+
+## Style guides
+
+### Files
+
+* Ensure your IDE/editor is configured to support [EditorConfig].
+* Run `make lint` while you're editing to help you catch/correct mistakes.
+
+### Markdown
+
+* Ensure your IDE/editor is configured to support [Markdownlint].
+* Run `make lint` while you're editing to help you catch/correct mistakes.
+
+### Python
+
+* Ensure your IDE/editor is configured to support [yapf].
+* Run `make lint` while you're editing to help you catch/correct mistakes.
+
+### Go
+
+* Ensure your IDE/editor is configured to support [golangci-lint].
+* Run `make lint` while you're editing to help you catch/correct mistakes.
+
+### Git commit messages
+
+* Follow _Conventional Commits_ (see below).
+* Use the past tense ("Added feature" not "Add feature").
+* Limit the first line to 80 characters or fewer.
+* The first line should be a complete sentence, ending with a period.
+* Reference issues and pull requests liberally after the first line.
+* When only changing documentation, include [ci skip] in the commit title.
+
+### Written prose
+
+* We use U.S. English spelling.
+    * :white_check_mark: color
+    * :x: colour
+
+* Brand-names should be spelled correctly.
+    * :white_check_mark: GitHub
+    * :x: Github
+    * :x: github
+    * :x: GH
+
+* Use the _Oxford comma_.
+    * :white_check_mark: This, that, and this.
+    * :x: This, that and this.
+
+* Instead of a single sentence that wraps 2–4 lines, see if you can break it up into multiple, shorter sentences.
+
+* Properly use a period (`.`) or an ellipsis (`…`).
+    * :white_check_mark: This is a sentence.
+    * :white_check_mark: This is a sentence that ends with an ellipsis…
+    * :x: The double-period (`..`) does not exist in the English language.
+
+* Aim for _clarity_ over _cleverness_.
+
+* Don't assume that other people have the same knowledge that you have. If there are dependencies or pre-requisites in order to accomplish the thing you're explaining, explain those dependencies as well (or link to a well-written guide).
+
+* Avoid long paragraphs because most people won't read them. Can you present the same idea with a picture, a table, or a list?
+
+* Section headers use sentence case, not title case.
+    * :white_check_mark: Section header for this next piece of information
+    * :x: Section Header for this Next Piece of Information
+
+* The word _default_ is an adjective (descriptor) not a verb (performs an action). "Default" describes a state. It is not an action.
+    * :white_check_mark: The default value is `1`.
+    * :x: Defaults to `1`.
+
+> [!IMPORTANT]
+> If you're not sure, use the existing language as a guide.
+
+### Using Conventional Commit messages
+
+This project uses [Conventional Commits](https://www.conventionalcommits.org). If you are unfamiliar with this pattern of writing your commit messages, please read the spec. This project supports the following keywords:
+
+| Keyword    | Description                                                                                                                                         |
+|------------|-----------------------------------------------------------------------------------------------------------------------------------------------------|
+| `build`    | Changes that affect the build system, Makefile, or project management.                                                                              |
+| `ci`       | Changes to our CI configuration files and scripts.                                                                                                  |
+| `deps`     | Updating dependencies.                                                                                                                              |
+| `docs`     | Documentation only changes.                                                                                                                         |
+| `feat`     | A new feature.                                                                                                                                      |
+| `fix`      | A bug fix.                                                                                                                                          |
+| `lint`     | Linter or static analysis-related changes.                                                                                                          |
+| `perf`     | A code change that improves performance.                                                                                                            |
+| `refactor` | A code change that neither fixes a bug nor adds a feature.                                                                                          |
+| `style`    | Changes that do not affect the meaning of the code (whitespace, formatting, etc.). `deps` or `lint` should be preferred over this when appropriate. |
+| `test`     | Adding missing tests or correcting existing tests, benchmarks, fuzzing, etc.                                                                        |
+
+#### Reserved keywords
+
+| Keyword      | Description                                       |
+|--------------|---------------------------------------------------|
+| `automation` | Any commits performed by the CI pipeline.         |
+| `relprep`    | Any manual step in preparing a release to go out. |
 
 ## Build provider from source
 
@@ -188,6 +281,9 @@ make acc DEBUG=true
 
 # Run one acceptance test with debug-level output
 make acc NAME=TruncateLabel DEBUG=true
+
+# Run all acceptance tests through OpenTofu instead of Terraform
+make acc TOFU=true
 ```
 
 You can view the code coverage report with either:
@@ -227,7 +323,7 @@ make examples
 You can view the code coverage report with either:
 
 ```bash
-make view-cov-cli   # on the CLI
+make view-cov-cli  # on the CLI
 make view-cov-html # in the browser
 ```
 
@@ -262,7 +358,10 @@ Fuzzing is a type of automated testing which continuously manipulates inputs to 
 This will run the fuzzer for 10 minutes. [Learn more about fuzzing](https://go.dev/doc/tutorial/fuzz).
 
 ```bash
-# May only run one fuzz test at a time
+# Run all fuzz tests
+make fuzz
+
+# Run one fuzz test
 make fuzz NAME=TruncateLabel
 ```
 
@@ -493,10 +592,11 @@ To enable debugging for this Terraform provider:
 
 | File                               | Description                                                               |
 |------------------------------------|---------------------------------------------------------------------------|
-| `AUTHORS`                          | Auto-generated file with complete list of code authors.                   |
+| `ACKNOWLEDGMENTS.md`               | List of other projects that make this project possible.                   |
 | `BINSIZE.md`                       | Shows where the size of the Go binary comes from.                         |
 | `CHANGELOG.md`                     | The file containing the list of changes in each versionb of the software. |
 | `CONTRIBUTING.md`                  | This document.                                                            |
+| `CONTRIBUTORS`                     | Auto-generated file with complete list of code contributors.              |
 | `COVERAGE.md`                      | Code coverage reports.                                                    |
 | `find-go-bin.sh`                   | Helps discover where installed Go executables live.                       |
 | `LICENSE.txt`                      | The license for this project.                                             |
@@ -508,20 +608,21 @@ To enable debugging for this Terraform provider:
 
 ### Source code
 
-| File                | Description                                                                                                            |
-|---------------------|------------------------------------------------------------------------------------------------------------------------|
-| `bats/`             | Functional tests written using the [BATS] test framework.                                                              |
-| `cmd/`              | This provider also has a couple of subcommands. These are implemented using [Cobra].                                   |
-| `corefunc/`         | The core Go library we provide to users. All core functionality is exposed through this library first.                 |
-| `corefuncprovider/` | The files which wrap the methods from the Go library as Terraform data sources.                                        |
-| `docs/`             | These are auto-generated Terraform documentation from the `corefuncprovider/` files.                                   |
-| `examples/`         | These are HCL examples which implement the data sources, are used for real tests, and as examples used in the `docs/`. |
-| `scripts/`          | Utility scripts.                                                                                                       |
-| `templates/`        | These are the templates used by the `tfplugindocs` app.                                                                |
-| `testfixtures/`     | Fixtures used by the test suites for both the Go tests, as well as the Terraform tests.                                |
-| `go.mod`            | Go modules definition.                                                                                                 |
-| `go.sum`            | Go modules checksums.                                                                                                  |
-| `main.go`           | Bootstraps the application binary.                                                                                     |
+| File                | Description                                                                                                                                    |
+|---------------------|------------------------------------------------------------------------------------------------------------------------------------------------|
+| `bats/`             | Functional tests written using the [BATS] test framework and [tfschema].                                                                       |
+| `cmd/`              | This provider also has a couple of subcommands. These are implemented using [Cobra].                                                           |
+| `corefunc/`         | The core Go library we provide to users. All core functionality is exposed through this library first.                                         |
+| `corefuncprovider/` | The files which wrap the methods from the Go library as Terraform data sources.                                                                |
+| `docs/`             | These are auto-generated Terraform documentation from the `corefuncprovider/` files.                                                           |
+| `examples/`         | These are HCL examples which implement the data sources, are used for real tests, and as examples used in the `docs/`.                         |
+| `scripts/`          | Utility scripts.                                                                                                                               |
+| `templates/`        | These are the templates used by the `tfplugindocs` app.                                                                                        |
+| `terratest/`        | Tests that flex the Go library and also the Terraform Provider to ensure consistent results between each other, as well as Terraform/OpenTofu. |
+| `testfixtures/`     | Fixtures used by the test suites for both the Go tests, as well as the Terraform tests.                                                        |
+| `go.mod`            | Go modules definition.                                                                                                                         |
+| `go.sum`            | Go modules checksums.                                                                                                                          |
+| `main.go`           | Bootstraps the application binary.                                                                                                             |
 
 ### Tools
 
@@ -565,5 +666,7 @@ To enable debugging for this Terraform provider:
 [Python]: https://www.python.org
 [Snyk IDE Extension]: https://docs.snyk.io/integrations/ide-tools/visual-studio-code-extension
 [tflint]: https://github.com/terraform-linters/tflint
+[tfschema]: https://github.com/minamijoyo/tfschema
 [Trivy]: https://trivy.dev
 [yamllint]: https://github.com/adrienverge/yamllint
+[yapf]: https://github.com/google/yapf
