@@ -57,14 +57,6 @@ If you are using this as a Terraform provider, see the documentation at [registr
 
 If you are using this as a Go library, see the documentation at [pkg.go.dev](https://pkg.go.dev/github.com/northwood-labs/terraform-provider-corefunc).
 
-## Third-Party Libraries
-
-Don't reimplement things that already work well. This project leans on the following libraries:
-
-* [chanced/caps](https://github.com/chanced/caps) — Handles the case manipulation.
-* [mitchellh/go-homedir](https://github.com/mitchellh/go-homedir) — Handles looking-up a user's home directory without CGO.
-* [nlnwa/whatwg-url](https://github.com/nlnwa/whatwg-url) — Handles WHATWG spec-compliant URL parsing.
-
 ## More Information
 
 After the provider is installed, you can run `terraform-provider-corefunc` on the CLI.
