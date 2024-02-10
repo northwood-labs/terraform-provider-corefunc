@@ -59,7 +59,6 @@ install-tools-go:
 	@ $(ECHO) " "
 	@ $(ECHO) "\033[1;33m=====> Installing Go packages...\033[0m"
 	$(GO) install github.com/antham/gommit@latest
-	$(GO) install github.com/bitfield/gotestdox/cmd/gotestdox@latest
 	$(GO) install github.com/google/osv-scanner/cmd/osv-scanner@v1
 	$(GO) install github.com/goph/licensei/cmd/licensei@latest
 	$(GO) install github.com/mdempsky/unconvert@latest
