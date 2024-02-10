@@ -21,6 +21,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`1912070`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/19120703de4526419d7509c7d4051757e14e2804): **deps**: Bump `golangci/golangci-lint-action` from 3.7.0 to 3.7.1 ([#151](https://github.com/northwood-labs/terraform-provider-corefunc/issues/151)) (dependabot[bot])
 * [`2dc57ba`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/2dc57ba40f5b2196f3e4ed1ee057d70e2e1166a7): Prepend sudo to chag installer.
 * [`6b11f0f`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/6b11f0f14aa4c37f5f275eb969a9d04b2af03038): Remove former dependencies.
+* [`091b22e`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/091b22e9d80efb729bdf22c7e0b338d7bcdb1c98): Keep default.pgo in the repo.
 
 ### Documentation
 
@@ -29,6 +30,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`6dfac39`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/6dfac39a87673043a8a0f78362c1b2c8b5170ebb): Added note about different kinds of providers.
 * [`761d230`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/761d230f025d6aa43d69d21a9a0f818453a3544d): Renamed `AUTHORS.md` to CONTRIBUTORS to better align with established patterns on the web.
 * [`2758a7e`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/2758a7e9a60c6f9909c326a71550ad5e5cefe755): Create a new `ACKNOWLEDGMENTS.md` file.
+* [`877ed3f`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/877ed3f137eba9f4a1706ab1e33c1037edf6b7ed): Updated the Contribution Guide.
 ## 1.3.0 — 2024-02-05
 
 [Compare: v1.2.1 → v1.3.0](https://github.com/northwood-labs/terraform-provider-corefunc/compare/v1.2.1..v1.3.0)
