@@ -107,6 +107,7 @@ func TestURLParse(t *testing.T) { // lint:allow_complexity
 		t.Run(name, func(t *testing.T) {
 			// Handle canonicalizer-switching
 			opts := types.Standard
+
 			if strings.EqualFold(tc.Canonicalizer, "google_safe_browsing") {
 				opts = types.GoogleSafeBrowsing
 			}
@@ -119,42 +120,55 @@ func TestURLParse(t *testing.T) { // lint:allow_complexity
 			if got := u.Href(false); got != tc.Href {
 				t.Errorf("Href() = %v, want %v", got, tc.Href)
 			}
+
 			if got := u.Protocol(); got != tc.Protocol {
 				t.Errorf("Protocol() = %v, want %v", got, tc.Protocol)
 			}
+
 			if got := u.Scheme(); got != tc.Scheme {
 				t.Errorf("Scheme() = %v, want %v", got, tc.Scheme)
 			}
+
 			if got := u.Username(); got != tc.Username {
 				t.Errorf("Username() = %v, want %v", got, tc.Username)
 			}
+
 			if got := u.Password(); got != tc.Password {
 				t.Errorf("Password() = %v, want %v", got, tc.Password)
 			}
+
 			if got := u.Hostname(); got != tc.Hostname {
 				t.Errorf("Hostname() = %v, want %v", got, tc.Host)
 			}
+
 			if got := u.Host(); got != tc.Host {
 				t.Errorf("Host() = %v, want %v", got, tc.Host)
 			}
+
 			if got := u.Port(); got != tc.Port {
 				t.Errorf("Port() = %v, want %v", got, tc.Port)
 			}
+
 			if got := u.DecodedPort(); got != tc.DecodedPort {
 				t.Errorf("DecodedPort() = %v, want %v", got, tc.DecodedPort)
 			}
+
 			if got := u.Pathname(); got != tc.Path {
 				t.Errorf("Pathname() = %v, want %v", got, tc.Path)
 			}
+
 			if got := u.Search(); got != tc.Search {
 				t.Errorf("Search() = %v, want %v", got, tc.Search)
 			}
+
 			if got := u.Query(); got != tc.Query {
 				t.Errorf("Query() = %v, want %v", got, tc.Query)
 			}
+
 			if got := u.Hash(); got != tc.Hash {
 				t.Errorf("Hash() = %v, want %v", got, tc.Hash)
 			}
+
 			if got := u.Fragment(); got != tc.Fragment {
 				t.Errorf("Fragment() = %v, want %v", got, tc.Fragment)
 			}

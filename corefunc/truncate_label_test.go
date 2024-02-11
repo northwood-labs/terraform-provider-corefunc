@@ -73,6 +73,7 @@ func TestTruncateLabel(t *testing.T) {
 		t.Run(name, func(t *testing.T) {
 			actual := TruncateLabel(tc.MaxLength, tc.Prefix, tc.Label)
 			diff := cmp.Diff(tc.Expected, actual)
+
 			if diff != "" {
 				t.Fatalf(diff)
 			}
