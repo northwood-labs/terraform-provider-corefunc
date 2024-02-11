@@ -59,6 +59,7 @@ func BenchmarkStrIterativeReplace(b *testing.B) {
 	for name, tc := range testfixtures.StrIterativeReplaceTestTable {
 		b.Run(name, func(b *testing.B) {
 			b.ResetTimer()
+
 			for i := 0; i < b.N; i++ {
 				_ = StrIterativeReplace(tc.Input, tc.Replacements) // lint:allow_unhandled
 			}

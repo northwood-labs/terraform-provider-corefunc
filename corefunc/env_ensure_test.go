@@ -103,6 +103,7 @@ func BenchmarkEnvEnsure(b *testing.B) {
 
 		b.Run(name, func(b *testing.B) {
 			b.ResetTimer()
+
 			for i := 0; i < b.N; i++ {
 				_ = EnvEnsure(tc.EnvVarName) // lint:allow_unhandled
 			}

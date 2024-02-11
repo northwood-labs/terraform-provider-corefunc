@@ -41,6 +41,7 @@ func BenchmarkHomedir(b *testing.B) {
 	for name := range testfixtures.HomedirGetTestTable {
 		b.Run(name, func(b *testing.B) {
 			b.ResetTimer()
+
 			for i := 0; i < b.N; i++ {
 				_, _ = Homedir() // lint:allow_unhandled
 			}

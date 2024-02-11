@@ -55,6 +55,7 @@ func BenchmarkIntLeftPad(b *testing.B) {
 	for name, tc := range testfixtures.IntLeftPadTestTable {
 		b.Run(name, func(b *testing.B) {
 			b.ResetTimer()
+
 			for i := 0; i < b.N; i++ {
 				_ = IntLeftPad(tc.Input, tc.PadWidth) // lint:allow_unhandled
 			}

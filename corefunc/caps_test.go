@@ -174,6 +174,7 @@ func BenchmarkStrCamel(b *testing.B) {
 	for name, tc := range testfixtures.StrCamelTestTable {
 		b.Run(name, func(b *testing.B) {
 			b.ResetTimer()
+
 			for i := 0; i < b.N; i++ {
 				_ = StrCamel(tc.Input) // lint:allow_unhandled
 			}
@@ -202,6 +203,7 @@ func BenchmarkStrConstant(b *testing.B) {
 	for name, tc := range testfixtures.StrConstantTestTable {
 		b.Run(name, func(b *testing.B) {
 			b.ResetTimer()
+
 			for i := 0; i < b.N; i++ {
 				_ = StrConstant(tc.Input) // lint:allow_unhandled
 			}
@@ -230,6 +232,7 @@ func BenchmarkStrKebab(b *testing.B) {
 	for name, tc := range testfixtures.StrKebabTestTable {
 		b.Run(name, func(b *testing.B) {
 			b.ResetTimer()
+
 			for i := 0; i < b.N; i++ {
 				_ = StrKebab(tc.Input) // lint:allow_unhandled
 			}
@@ -258,6 +261,7 @@ func BenchmarkStrPascal(b *testing.B) {
 	for name, tc := range testfixtures.StrPascalTestTable {
 		b.Run(name, func(b *testing.B) {
 			b.ResetTimer()
+
 			for i := 0; i < b.N; i++ {
 				_ = StrPascal(tc.Input, tc.AcronymCaps) // lint:allow_unhandled
 			}
@@ -286,6 +290,7 @@ func BenchmarkStrSnake(b *testing.B) {
 	for name, tc := range testfixtures.StrSnakeTestTable {
 		b.Run(name, func(b *testing.B) {
 			b.ResetTimer()
+
 			for i := 0; i < b.N; i++ {
 				_ = StrSnake(tc.Input) // lint:allow_unhandled
 			}
