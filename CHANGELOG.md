@@ -33,6 +33,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`2758a7e`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/2758a7e9a60c6f9909c326a71550ad5e5cefe755): Create a new `ACKNOWLEDGMENTS.md` file.
 * [`877ed3f`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/877ed3f137eba9f4a1706ab1e33c1037edf6b7ed): Updated the Contribution Guide.
 
+### Linting
+
+* [`113cb5f`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/113cb5f21e9cbf19d8e7c8cd9a48ab30491cce4c): Resolved issues caught by the Go linter.
 ## 1.3.0 — 2024-02-05
 
 [Compare: v1.2.1 → v1.3.0](https://github.com/northwood-labs/terraform-provider-corefunc/compare/v1.2.1..v1.3.0)
