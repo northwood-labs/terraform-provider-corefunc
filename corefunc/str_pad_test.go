@@ -37,6 +37,7 @@ func TestStrLeftPad(t *testing.T) {
 	for name, tc := range testfixtures.StrLeftPadTestTable {
 		t.Run(name, func(t *testing.T) {
 			output := ""
+
 			var emptyByte byte
 
 			if tc.PadChar == emptyByte {
@@ -58,6 +59,7 @@ func BenchmarkStrLeftPad(b *testing.B) {
 	for name, tc := range testfixtures.StrLeftPadTestTable {
 		b.Run(name, func(b *testing.B) {
 			b.ResetTimer()
+
 			for i := 0; i < b.N; i++ {
 				_ = StrLeftPad(tc.Input, tc.PadWidth, tc.PadChar) // lint:allow_unhandled
 			}
