@@ -22,6 +22,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`2dc57ba`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/2dc57ba40f5b2196f3e4ed1ee057d70e2e1166a7): Prepend sudo to chag installer.
 * [`6b11f0f`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/6b11f0f14aa4c37f5f275eb969a9d04b2af03038): Remove former dependencies.
 * [`091b22e`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/091b22e9d80efb729bdf22c7e0b338d7bcdb1c98): Keep default.pgo in the repo.
+* [`db40302`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/db40302a0763c2f3c052b294295ac3c39ef86531): Added the GPG Public Key used for signing.
 
 ### Documentation
 
