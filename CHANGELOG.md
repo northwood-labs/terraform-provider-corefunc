@@ -23,6 +23,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`6b11f0f`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/6b11f0f14aa4c37f5f275eb969a9d04b2af03038): Remove former dependencies.
 * [`091b22e`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/091b22e9d80efb729bdf22c7e0b338d7bcdb1c98): Keep default.pgo in the repo.
 * [`db40302`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/db40302a0763c2f3c052b294295ac3c39ef86531): Added the GPG Public Key used for signing.
+* [`77f1ea9`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/77f1ea9f970165e552e0183b2cf760a8345c3cc7): **deps**: Bump `github/codeql-action` from 3.24.0 to 3.24.1 ([#152](https://github.com/northwood-labs/terraform-provider-corefunc/issues/152)) (dependabot[bot])
+* [`71866d3`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/71866d3c9570ef4249e69139182dc6cce7a06f9f): **deps**: Bump `trufflesecurity/trufflehog` from 3.67.5 to 3.67.6 ([#153](https://github.com/northwood-labs/terraform-provider-corefunc/issues/153)) (dependabot[bot])
 
 ### Documentation
 
