@@ -25,6 +25,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`db40302`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/db40302a0763c2f3c052b294295ac3c39ef86531): Added the GPG Public Key used for signing.
 * [`77f1ea9`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/77f1ea9f970165e552e0183b2cf760a8345c3cc7): **deps**: Bump `github/codeql-action` from 3.24.0 to 3.24.1 ([#152](https://github.com/northwood-labs/terraform-provider-corefunc/issues/152)) (dependabot[bot])
 * [`71866d3`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/71866d3c9570ef4249e69139182dc6cce7a06f9f): **deps**: Bump `trufflesecurity/trufflehog` from 3.67.5 to 3.67.6 ([#153](https://github.com/northwood-labs/terraform-provider-corefunc/issues/153)) (dependabot[bot])
+* [`3b76f93`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/3b76f93ade1290f2895c2635aad30bddd2c8084e): Add support for running single benchmarks.
+* [`0533fbe`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/0533fbe8131c03d1e322727cfde0129733ed236e): Updated the dependencies to their latest minor/patch releases.
 
 ### Documentation
 
@@ -34,11 +36,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`761d230`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/761d230f025d6aa43d69d21a9a0f818453a3544d): Renamed `AUTHORS.md` to CONTRIBUTORS to better align with established patterns on the web.
 * [`2758a7e`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/2758a7e9a60c6f9909c326a71550ad5e5cefe755): Create a new `ACKNOWLEDGMENTS.md` file.
 * [`877ed3f`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/877ed3f137eba9f4a1706ab1e33c1037edf6b7ed): Updated the Contribution Guide.
+* [`c1cfa03`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/c1cfa0370008cb03771449d060c98107b401bbed): Updated the charts for test coverage and binsize.
+* [`9dffe13`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/9dffe130440ae850818a32bcb2776184c518d44e): Updated the Contribution Guide with more clarity.
 
 ### Linting
 
 * [`113cb5f`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/113cb5f21e9cbf19d8e7c8cd9a48ab30491cce4c): Resolved issues caught by the Go linter.
-
 ## 1.3.0 — 2024-02-05
 
 [Compare: v1.2.1 → v1.3.0](https://github.com/northwood-labs/terraform-provider-corefunc/compare/v1.2.1..v1.3.0)
@@ -80,7 +83,6 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`c4459ad`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/c4459ad7664dc6a1c93b3585705dc46d72cb76d2): Updated BATS tests with Shellcheck feedback.
 * [`6611f3f`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/6611f3fbd38af4997fb156c22d4157024bd8d76f): Generated updated test artifacts.
 * [`d6f3437`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/d6f34376297dc934e195c379786053729b8625bb): Added Terratest tests for `corefunc_url_parse`.
-
 ## 1.2.1 — 2024-02-02
 
 [Compare: v1.1.1 → v1.2.1](https://github.com/northwood-labs/terraform-provider-corefunc/compare/v1.1.1..v1.2.1)
@@ -170,7 +172,6 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`85cfb6c`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/85cfb6c8dfed8d61bf84d246ba58eacbf91cc650): Setup Terratest testing for OpenTofu from the Makefile.
 * [`57b1e0e`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/57b1e0eb5f91a87e5450dba5d6f9492fb2c0b374): Improve switching between Terraform/OpenTofu in Terratest.
 * [`590c3bc`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/590c3bce781674b2627e494b203570b142555844): Improve switching between Terraform/OpenTofu in Terratest.
-
 ## 1.1.1 — 2023-12-20
 
 [Compare: v1.1.0 → v1.1.1](https://github.com/northwood-labs/terraform-provider-corefunc/compare/v1.1.0..v1.1.1)
@@ -197,7 +198,6 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 
 * [`e0915df`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/e0915dfb90f9d2824be769dcc629501db99d1b8c): Added tests with Terratest to compare the Terraform provider with the Go library.
 * [`e5a810a`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/e5a810a8f9a5ffe2737928429df0be3a9a0a25c3): Make the GoSec scanning more robust.
-
 ## 1.1.0 — 2023-12-18
 
 [Compare: v1.0.3 → v1.1.0](https://github.com/northwood-labs/terraform-provider-corefunc/compare/v1.0.3..v1.1.0)
@@ -240,7 +240,6 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 ### Testing
 
 * [`57a7b85`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/57a7b85c17040f880dcaf6546c11cb9acd0a7615): Lookup and run fuzz tests programmatically.
-
 ## 1.0.3 — 2023-11-21
 
 [Compare: v1.0.0 → v1.0.3](https://github.com/northwood-labs/terraform-provider-corefunc/compare/v1.0.0..v1.0.3)
@@ -248,7 +247,6 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 ### Building and Dependencies
 
 * [`14759b8`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/14759b8792c77530a0538d2fdb3ed2cacddd8d73): Bump `the` version number to 1.0.3. No changes from 1.0.0.
-
 ## 1.0.0 — 2023-11-21
 
 ### Bug Fixes
