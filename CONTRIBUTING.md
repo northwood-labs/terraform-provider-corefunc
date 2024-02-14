@@ -166,10 +166,10 @@ This project uses [Conventional Commits](https://www.conventionalcommits.org). I
 
 #### Reserved keywords
 
-| Keyword      | Description                                       |
-|--------------|---------------------------------------------------|
-| `automation` | Any commits performed by the CI pipeline.         |
-| `relprep`    | Any manual step in preparing a release to go out. |
+| Keyword      | Description                                                                             |
+|--------------|-----------------------------------------------------------------------------------------|
+| `automation` | Any commits performed by the CI pipeline. These are omitted from the CHANGELOG.         |
+| `relprep`    | Any manual step in preparing a release to go out. These are omitted from the CHANGELOG. |
 
 ## Build provider from source
 
@@ -185,7 +185,7 @@ This will build the provider for the current OS and CPU architecture, and instal
 
 ### Configure Terraform Provider development mode
 
-By default, Terraform expects to download providers over the internet. Instead, we're going to download our own from GitHub Enterprise, and we need to tell Terraform how to find it.
+By default, Terraform expects to download providers over the internet. Instead, we're going to point to our own that we compiled, and we need to tell Terraform how to find it.
 
 1. Find where your installed Go binaries live.
 
@@ -230,11 +230,11 @@ You can apply this plan to save these new output values to the Terraform state, 
 
 ## Testing and fuzzing
 
-The `nproc` binary is commonly available on most Linux distributions. If it's not installed, go back to the top of this document and follow instructions.
+The `nproc` binary is commonly available on most Linux distributions. If it's not installed, go back to the top of this document and follow instructions under “Setting-up”.
 
 ### Unit tests (and code coverage)
 
-This will run Unit tests. This tests the low-level Go code, but not the Terraform integration wrapped around it.
+This will run Unit tests. This tests the low-level Go library code, but not the Terraform integration wrapped around it.
 
 ```bash
 # Run all unit tests
@@ -255,9 +255,9 @@ make view-cov-html # in the browser
 
 In the `testfixtures/` directory, there is a file for each function. This leverages a pattern known as [Table-Driven Testing](https://github.com/golang/go/wiki/TableDrivenTests), and composes all of the test cases in one place.
 
-The `corefunc/` directory contains the code and tests for the Go library. The `corefuncprovider/` directory contains the code and tests for the Terraform provider. The relevant `_test.go` files in each directory leverage the same test fixture. This ensures that the Go library code and the Terraform provider which implements the Go library function both pass the test cases.
+The `corefunc/` directory contains the code and tests for the Go library. The `corefuncprovider/` directory contains the code and tests for the Terraform provider. The relevant `_test.go` files in each directory leverage the same test fixture. This ensures that the Go library code and the Terraform provider which implements the Go library function both execute the same test cases.
 
-If we leverage a third-party package for functionality, there will not be a test in the `corefunc/` directory, but the Terraform provider implementation will have a test in the `corefuncprovider/` directory.
+If we leverage a third-party package for functionality, there will not be a test in the `corefunc/` directory (unless we've wrapped it), but the Terraform provider implementation will have a test in the `corefuncprovider/` directory.
 
 * A unit test function lives in the `corefunc/` directory, and begins with the word `Test`.
 * [Tutorial: Add a test](https://go.dev/doc/tutorial/add-a-test)
@@ -267,7 +267,7 @@ If we leverage a third-party package for functionality, there will not be a test
 
 ### Terraform provider acceptance tests (and code coverage)
 
-This will run Acceptance tests. Acceptance tests run the code through Terraform and test the Terraform communication pathway.
+This will run acceptance tests. Acceptance tests run the code through Terraform and test the Terraform communication pathway.
 
 ```bash
 # Run all acceptance tests
@@ -297,9 +297,9 @@ make view-cov-html # in the browser
 
 In the `testfixtures/` directory, there is a file for each function. This leverages a pattern known as [Table-Driven Testing](https://github.com/golang/go/wiki/TableDrivenTests), and composes all of the test cases in one place.
 
-The `corefunc/` directory contains the code and tests for the Go library. The `corefuncprovider/` directory contains the code and tests for the Terraform provider. The relevant `_test.go` files in each directory leverage the same test fixture. This ensures that the Go library code and the Terraform provider which implements the Go library function both pass the test cases.
+The `corefunc/` directory contains the code and tests for the Go library. The `corefuncprovider/` directory contains the code and tests for the Terraform provider. The relevant `_test.go` files in each directory leverage the same test fixture. This ensures that the Go library code and the Terraform provider which implements the Go library function both execute the same test cases.
 
-If we leverage a third-party package for functionality, there will not be a test in the `corefunc/` directory, but the Terraform provider implementation will have a test in the `corefuncprovider/` directory.
+If we leverage a third-party package for functionality, there will not be a test in the `corefunc/` directory (unless we've wrapped it), but the Terraform provider implementation will have a test in the `corefuncprovider/` directory.
 
 To help keep things easy to understand, the acceptance tests use Go's [`text/template`](https://pkg.go.dev/text/template) package to generate the Terraform code that is used for the acceptance test. The documentation for the [`templatefile()`](https://developer.hashicorp.com/terraform/language/functions/templatefile) function says that templates for use with Terraform should use the `*.tftpl` extension:
 
@@ -311,9 +311,9 @@ To help keep things easy to understand, the acceptance tests use Go's [`text/tem
 * [Documentation: Testing flags](https://pkg.go.dev/cmd/go#hdr-Testing_flags)
 * [Tutorial: Code coverage for Go integration tests](https://go.dev/blog/integration-test-coverage)
 
-### Documentation Examples as tests (and code coverage)
+### Documentation examples as tests (and code coverage)
 
-This will run the Documentation Examples as tests. This ensures that the examples we put in front of users actually work.
+This will run the documentation examples as tests. This ensures that the examples we put in front of users actually work.
 
 ```bash
 # Run all example tests
@@ -329,14 +329,14 @@ make view-cov-html # in the browser
 
 #### How to write a documentation example
 
-The `corefunc/` directory contains the code and tests for the Go library. If we leverage a third-party package for functionality, there will not be a test in the `corefunc/` directory.
+The `corefunc/` directory contains the code and tests for the Go library. If we leverage a third-party package for functionality, there will not be a test in the `corefunc/` directory (unless we've wrapped it).
 
-* An example test function lives in the `corefunc/` directory, and begins with the word `Example`.
+* An example test function lives in the `corefunc/` directory, in a `*_test.go` file, and begins with the word `Example`.
 * [Tutorial: Documentation examples](https://go.dev/blog/examples)
 
 ### Test the provider schema as tests
 
-This will use `tfschema` (reads the provider schema) and `bats` (CLI testing framework) to verify that the provider exposes the correct schema. This test requires compiling and installing the provoider (which `go test` doesn't require.)
+This will use `tfschema` (reads the provider schema) and `bats` (CLI testing framework) to verify that the provider exposes the correct schema. This test requires compiling and installing the provider (which `go test` doesn't require.)
 
 ```bash
 # Run all BATS tests
@@ -345,7 +345,7 @@ make bats
 
 #### How to write a BATS test
 
-`tfschema` is a tool that can view the schema of any Terraform provider that is installed (via `terraform init` or `make build`). After installing the provider, we can run `tfschema` to generate output information. We use BATS to test that output against what is expected.
+`tfschema` is a tool that can view the schema of any Terraform provider that is installed (via `terraform init` or `make build`). After installing the provider, we can run `tfschema` to generate output information. We use BATS to test that output against what is expected. This also helps us catch anything that has changed, or been added, which might require additional documentation or examples for end-users.
 
 * A BATS test lives in the `bats/` directory.
 * [BATS: Writing tests](https://bats-core.readthedocs.io/en/stable/writing-tests.html)
@@ -355,7 +355,7 @@ make bats
 
 Fuzzing is a type of automated testing which continuously manipulates inputs to a program to find bugs. Go fuzzing uses coverage guidance to intelligently walk through the code being fuzzed to find and report failures to the user. Since it can reach edge cases which humans often miss, fuzz testing can be particularly valuable for finding security exploits and vulnerabilities.
 
-This will run the fuzzer for 10 minutes. [Learn more about fuzzing](https://go.dev/doc/tutorial/fuzz).
+This will run each fuzzer test for 1 minute. [Learn more about fuzzing](https://go.dev/doc/tutorial/fuzz).
 
 ```bash
 # Run all fuzz tests
@@ -367,11 +367,19 @@ make fuzz NAME=TruncateLabel
 
 #### How to write a fuzz test
 
-The `corefunc/` directory contains the code and tests for the Go library. If we leverage a third-party package for functionality, there will not be a test in the `corefunc/` directory.
+The `corefunc/` directory contains the code and tests for the Go library. If we leverage a third-party package for functionality, there will not be a test in the `corefunc/` directory (unless we've wrapped it).
 
-* A fuzzer test function lives in the `corefunc/` directory, and begins with the word `Fuzz`.
+* A fuzzer test function lives in the `corefunc/` directory, in a `*_test.go` file, and begins with the word `Fuzz`.
 * [Documentation: Go fuzzing](https://go.dev/security/fuzz/)
 * [Tutorial: Getting started with fuzzing](https://go.dev/doc/tutorial/fuzz)
+
+### Mutation testing
+
+@TODO
+
+### Terratest testing
+
+@TODO
 
 ## Benchmarks
 
@@ -379,19 +387,30 @@ Benchmarks test the performance of a package.
 
 ### Quick benchmarks
 
-You can run a _quick_ benchmark (relatively speaking) that gets some data we can measure. It benchmarks the results of:
+You can run a _quick_ benchmark (relatively speaking) that gets some data we can measure. This runs each benchmark _once_ in order to give you a _ballpark_ understanding of performance.
+
+It benchmarks the results of:
 
 * Each test
 * …with each test case
 * …serially as well as in parallel
 
 ```bash
+# Run all quick benchmarks
 make quickbench
+
+# Run one quick benchmark
+make quickbench NAME=TruncateLabel
 ```
+
+> [!TIP]
+> Running all quick benchmarks takes ~500s (~8m:20s) as each test case executes for 1s.
 
 ### Benchmark analysis
 
-If you want to compare benchmarks between code changes, you'll need to run a _more complete_ benchmark which will provide enough data for analysis.  It benchmarks the results of:
+If you want to compare benchmarks between code changes, you'll need to run a _more complete_ benchmark which will provide enough data for analysis. This runs each benchmark _six times_ in order to give you a deeper understanding of performance, and is the minimum number of times to run a banchmark in order to get meaningful results from `benchstat`. It also performs CPU and memory profiling so that you can analyze the flamegraph to identify areas for optimization.
+
+It benchmarks the results of:
 
 * Each test
 * …with each test case
@@ -399,12 +418,19 @@ If you want to compare benchmarks between code changes, you'll need to run a _mo
 * …multiple times over
 
 ```bash
+# Run all benchmarks
 make bench
+
+# Run one benchmark
+make bench NAME=TruncateLabel
 ```
+
+> [!TIP]
+> Running all benchmarks takes ~50m as each test case executes for 1s × 6 runs.
 
 Benchmark files are timestamped, so you can compare benchmark results across runs. See [benchstat documentation](https://pkg.go.dev/golang.org/x/perf/cmd/benchstat) to understand how to most effectively slice the results.
 
-> [!NOTE]
+> [!TIP]
 > If you put old (previous) before new (current), values in the right-most column represent the size of the decrease (negative values are better). If you reverse them and push new (current) before old (previous), values in the right-most column represent the size of the increase (positive values are better).
 
 ```bash
@@ -448,14 +474,14 @@ But the middle tests from ~10–80 are most likely to execute _all_ of the code 
 
 The `corefunc/` directory contains the code and tests for the Go library. If we leverage a third-party package for functionality, there will not be a test in the `corefunc/` directory.
 
-* A fuzzer test function lives in the `corefunc/` directory, and begins with the word `Benchmark`.
+* A benchmark test function lives in the `corefunc/` directory, inside a `*_test.go` file, and begins with the word `Benchmark`.
 * There is one `Benchmark` test which runs the tests serially. There is a second `Benchmark` test which runs the tests in parallel. This latter function has `Parallel` as the suffix of its name.
 * [API Reference: Benchmarks](https://pkg.go.dev/testing@go1.21.1#hdr-Benchmarks)
 * [API Reference: Benchstat](https://pkg.go.dev/golang.org/x/perf/cmd/benchstat)
 
 ### Exploring profiler data
 
-Then, you can view the CPU profiler results…
+After running a full benchmark, you can view the CPU profiler results…
 
 ```bash
 make view-cpupprof
@@ -489,12 +515,21 @@ make clean-bench
 
 Profile-guided optimization (PGO), also known as feedback-directed optimization (FDO), is a compiler optimization technique that feeds information (a profile) from representative runs of the application back into to the compiler for the next build of the application, which uses that information to make more informed optimization decisions. For example, the compiler may decide to more aggressively inline functions which the profile indicates are called frequently.
 
+For lack of a better way to generate data, we generate PGO data from the benchmarks.
+
+```make
+make pgo
+```
+
+> [!TIP]
+> Generating PGO data takes about ~15m, and only needs to be done when adding meaningful new features to the _provider_ (i.e., in the `corefuncprovider/` directory).
+
 * [Documentation: Profile-guided optimization](https://go.dev/doc/pgo)
 * [Tutorial: Profile-guided optimization in Go 1.21](https://go.dev/blog/pgo)
 
-## Scanning for vulnerabilities
+## Linting, static analysis, and security vulnerabilities
 
-There are multiple vulnerability scans wrapped-up in:
+This runs the code and documentation through a variety of tools meant to ensure a high level of quality and consistency throughout the codebase. Markdownlint, Trivy, `golangci-lint`, TruffleHog, OSV scanner, `govulncheck`, and several more are run.
 
 ```bash
 make lint
@@ -504,7 +539,7 @@ make lint
 
 ### Terraform Documentation
 
-Generate the Terraform Registry-facing documentation.
+Generate the Terraform Registry-facing documentation. This will run `tfplugindocs` followed by Markdownlint to ensure that the generated (and non-templatable) Provider docs match our standards for Markdown.
 
 ```bash
 make docs-provider
@@ -563,7 +598,7 @@ To enable debugging for this Terraform provider:
 
 ## Code
 
-### Dotfiles
+### Configuration
 
 | File                      | Description                                                                                                                        |
 |---------------------------|------------------------------------------------------------------------------------------------------------------------------------|
