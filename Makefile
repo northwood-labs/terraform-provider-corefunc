@@ -349,14 +349,14 @@ fuzz:
 quickbench:
 	@ $(ECHO) " "
 	@ $(ECHO) "\033[1;33m=====> Running "quick" benchmark...\033[0m"
-	$(GO) test -bench=. -timeout 60m ./corefunc
+	$(GO) test -bench=. -run=^Benchmark$(NAME) -timeout 60m ./corefunc
 
 .PHONY: bench
 ## bench: [test]* Runs the benchmarks with enough data for analysis with benchstat.
 bench:
 	@ $(ECHO) " "
 	@ $(ECHO) "\033[1;33m=====> Running "full" benchmark...\033[0m"
-	$(GO) test -bench=. -count=6 -timeout 60m -benchmem -cpuprofile=__cpu.out -memprofile=__mem.out -trace=__trace.out ./corefunc | tee __bench-$(shell date --utc "+%Y%m%dT%H%M%SZ").out
+	$(GO) test -bench=. -run=^Benchmark$(NAME) -count=6 -timeout 60m -benchmem -cpuprofile=__cpu.out -memprofile=__mem.out -trace=__trace.out ./corefunc | tee __bench-$(shell date --utc "+%Y%m%dT%H%M%SZ").out
 
 .PHONY: pgo
 ## pgo: [test] Runs the benchmarks with enough data for use with Profile-Guided Optimization.
