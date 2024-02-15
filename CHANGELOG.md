@@ -27,6 +27,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`71866d3`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/71866d3c9570ef4249e69139182dc6cce7a06f9f): **deps**: Bump `trufflesecurity/trufflehog` from 3.67.5 to 3.67.6 ([#153](https://github.com/northwood-labs/terraform-provider-corefunc/issues/153)) (dependabot[bot])
 * [`3b76f93`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/3b76f93ade1290f2895c2635aad30bddd2c8084e): Add support for running single benchmarks.
 * [`0533fbe`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/0533fbe8131c03d1e322727cfde0129733ed236e): Updated the dependencies to their latest minor/patch releases.
+* [`23003f6`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/23003f6f9f9de0a8ecb1caf913e788986524fb65): **deps**: Bump `actions/dependency-review-action` from 4.0.0 to 4.1.0 ([#162](https://github.com/northwood-labs/terraform-provider-corefunc/issues/162)) (dependabot[bot])
 
 ### Documentation
 
