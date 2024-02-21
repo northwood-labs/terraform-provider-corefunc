@@ -30,6 +30,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`23003f6`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/23003f6f9f9de0a8ecb1caf913e788986524fb65): **deps**: Bump `actions/dependency-review-action` from 4.0.0 to 4.1.0 ([#162](https://github.com/northwood-labs/terraform-provider-corefunc/issues/162)) (dependabot[bot])
 * [`211ef6f`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/211ef6f57831f2fcdb1f4a86b3ae079b0cf10319): **deps**: Bump `trufflesecurity/trufflehog` from 3.67.6 to 3.67.7 ([#168](https://github.com/northwood-labs/terraform-provider-corefunc/issues/168)) (dependabot[bot])
 * [`fa4eef0`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/fa4eef06823503760efb0057c407faf3c5fd9480): **deps**: Bump `github/codeql-action` from 3.24.1 to 3.24.3 ([#164](https://github.com/northwood-labs/terraform-provider-corefunc/issues/164)) (dependabot[bot])
+* [`339904e`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/339904e7ac5af4a460525b1419874a773c105923): **deps**: Bump `actions/go-dependency-submission` from 2.0.0 to 2.0.1 ([#165](https://github.com/northwood-labs/terraform-provider-corefunc/issues/165)) (dependabot[bot])
 
 ### Documentation
 
