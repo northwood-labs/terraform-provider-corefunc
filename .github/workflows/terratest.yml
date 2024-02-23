@@ -22,7 +22,7 @@ jobs:
         uses: step-security/harden-runner@63c24ba6bd7ba022e95695ff85de572c04a18142 # v2.7.0
         with:
           disable-sudo: true
-          egress-policy: block #audit
+          egress-policy: block
           allowed-endpoints: >
             api.github.com:443
             checkpoint-api.hashicorp.com:443
@@ -38,7 +38,7 @@ jobs:
       - name: Install Go
         uses: actions/setup-go@0c52d547c9bc32b1aa3301fd7a9cb496313a4491 # v5.0.0
         with:
-          go-version: '>= 1.21'
+          go-version: ">= 1.22"
           cache: true
 
       - name: Install Terraform
