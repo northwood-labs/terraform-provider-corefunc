@@ -51,6 +51,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 ### Linting
 
 * [`113cb5f`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/113cb5f21e9cbf19d8e7c8cd9a48ab30491cce4c): Resolved issues caught by the Go linter.
+
+### Testing
+
+* [`68b0221`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/68b02214644de4a22ceb5338287c9d4dc2f5969b): Allow more network connections for test suite.
 ## 1.3.0 — 2024-02-05
 
 [Compare: v1.2.1 → v1.3.0](https://github.com/northwood-labs/terraform-provider-corefunc/compare/v1.2.1..v1.3.0)
