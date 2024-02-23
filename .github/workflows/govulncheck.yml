@@ -35,6 +35,7 @@ jobs:
             objects.githubusercontent.com:443
             proxy.golang.org:443
             sum.golang.org:443
+            vuln.go.dev:443
 
       - name: Install Go
         uses: actions/setup-go@0c52d547c9bc32b1aa3301fd7a9cb496313a4491 # v5.0.0
