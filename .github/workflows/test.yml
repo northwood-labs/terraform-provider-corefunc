@@ -29,7 +29,7 @@ jobs:
         uses: step-security/harden-runner@63c24ba6bd7ba022e95695ff85de572c04a18142 # v2.7.0
         with:
           disable-sudo: true
-          egress-policy: block #audit
+          egress-policy: block
           allowed-endpoints: >
             github.com:443
             proxy.golang.org:443
@@ -42,7 +42,7 @@ jobs:
       - name: Install Go
         uses: actions/setup-go@0c52d547c9bc32b1aa3301fd7a9cb496313a4491 # v5.0.0
         with:
-          go-version: '>= 1.21'
+          go-version: ">= 1.22"
           cache: true
 
       - name: Run mutation tests
@@ -71,7 +71,7 @@ jobs:
       - name: Install Go
         uses: actions/setup-go@0c52d547c9bc32b1aa3301fd7a9cb496313a4491 # v5.0.0
         with:
-          go-version: '>= 1.21'
+          go-version: ">= 1.22"
           cache: true
 
       - name: Run unit tests
@@ -86,14 +86,14 @@ jobs:
       fail-fast: false
       matrix:
         terraform_version:
-          - '1.0'
-          - '1.1'
-          - '1.2'
-          - '1.3'
-          - '1.4'
-          - '1.5'
-          - '1.6'
-          - '1.7'
+          - "1.0"
+          - "1.1"
+          - "1.2"
+          - "1.3"
+          - "1.4"
+          - "1.5"
+          - "1.6"
+          - "1.7"
 
     steps:
       - name: Harden Runner
@@ -117,7 +117,7 @@ jobs:
       - name: Install Go
         uses: actions/setup-go@0c52d547c9bc32b1aa3301fd7a9cb496313a4491 # v5.0.0
         with:
-          go-version: '>= 1.21'
+          go-version: ">= 1.22"
           cache: true
 
       - name: Install Terraform ${{ matrix.terraform_version }}
@@ -140,7 +140,7 @@ jobs:
       fail-fast: false
       matrix:
         opentofu_version:
-          - '1.6'
+          - "1.6"
 
     steps:
       - name: Harden Runner
@@ -166,7 +166,7 @@ jobs:
       - name: Install Go
         uses: actions/setup-go@0c52d547c9bc32b1aa3301fd7a9cb496313a4491 # v5.0.0
         with:
-          go-version: '>= 1.21'
+          go-version: ">= 1.22"
           cache: true
 
       - name: Install OpenTofu ${{ matrix.opentofu_version }}
