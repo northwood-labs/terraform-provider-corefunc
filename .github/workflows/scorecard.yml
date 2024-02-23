@@ -43,6 +43,7 @@ jobs:
           egress-policy: block
           allowed-endpoints: >
             api.github.com:443
+            api.osv.dev:443
             github.com:443
             objects.githubusercontent.com:443
             www.bestpractices.dev:443
