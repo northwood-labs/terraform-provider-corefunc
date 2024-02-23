@@ -33,6 +33,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`339904e`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/339904e7ac5af4a460525b1419874a773c105923): **deps**: Bump `actions/go-dependency-submission` from 2.0.0 to 2.0.1 ([#165](https://github.com/northwood-labs/terraform-provider-corefunc/issues/165)) (dependabot[bot])
 * [`6c924d8`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/6c924d85af3efbd7bdc2e2bcd911b15f52e81c34): **deps**: Bump `actions/dependency-review-action` from 4.1.0 to 4.1.3 ([#167](https://github.com/northwood-labs/terraform-provider-corefunc/issues/167)) (dependabot[bot])
 * [`b19428b`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/b19428b0fa575ef09806d2406489194ed62f9e22): **deps**: Bump `trufflesecurity/trufflehog` from 3.67.7 to 3.68.0 ([#169](https://github.com/northwood-labs/terraform-provider-corefunc/issues/169)) (dependabot[bot])
+* [`5cef9c0`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/5cef9c0aeb100119208dd771c9d84687484d6168): **deps**: Bump `golang/govulncheck-action` from 1.0.1 to 1.0.2 ([#170](https://github.com/northwood-labs/terraform-provider-corefunc/issues/170)) (dependabot[bot])
 
 ### Documentation
 
