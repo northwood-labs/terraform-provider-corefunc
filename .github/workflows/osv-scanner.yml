@@ -27,7 +27,7 @@ jobs:
       - name: Harden Runner
         uses: step-security/harden-runner@63c24ba6bd7ba022e95695ff85de572c04a18142 # v2.7.0
         with:
-          disable-sudo: true
+          disable-sudo: false
           egress-policy: block
           allowed-endpoints: >
             api.github.com:443
