@@ -46,6 +46,7 @@ jobs:
             api.osv.dev:443
             github.com:443
             objects.githubusercontent.com:443
+            oss-fuzz-build-logs.storage.googleapis.com:443
             www.bestpractices.dev:443
 
       - name: Checkout code
