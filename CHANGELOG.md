@@ -64,6 +64,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`0190c0b`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/0190c0bdf9b6b52e92d31d319d53445a67e7532b): Allow more network connections for test suite.
 * [`e9ed6e1`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/e9ed6e13f0e0345036a324eeaf7d763b7803ee66): Allow more network connections for test suite.
 * [`28306c5`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/28306c57cf0d812ff6ecf38bdb823a5c180fb29f): Allow more network connections for test suite.
+* [`237a6ee`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/237a6eea432d109504b98d10d851eb0d7c898935): Allow more outgoing connections from the runners.
+* [`0f7246f`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/0f7246fec05d3cf18ff796f605b910eb64cf8d2a): Allow more outgoing connections from the runners.
 ## 1.3.0 — 2024-02-05
 
 [Compare: v1.2.1 → v1.3.0](https://github.com/northwood-labs/terraform-provider-corefunc/compare/v1.2.1..v1.3.0)
