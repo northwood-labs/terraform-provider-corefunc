@@ -36,6 +36,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`5cef9c0`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/5cef9c0aeb100119208dd771c9d84687484d6168): **deps**: Bump `golang/govulncheck-action` from 1.0.1 to 1.0.2 ([#170](https://github.com/northwood-labs/terraform-provider-corefunc/issues/170)) (dependabot[bot])
 * [`355da49`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/355da49dd1be6f41dbdb4f5bbf1d5130e2e7d367): **deps**: Bump `github/codeql-action` from 3.24.3 to 3.24.4 ([#171](https://github.com/northwood-labs/terraform-provider-corefunc/issues/171)) (dependabot[bot])
 * [`0346ed9`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/0346ed99f2dc4ef5c6d68bcd7522044eefe0c9f1): **deps**: Bump `Go` to 1.22.
+* [`88ad2e8`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/88ad2e8a9359147972ef935397a90f067ea26576): **deps**: Bump `github/codeql-action` from 3.24.4 to 3.24.6 ([#177](https://github.com/northwood-labs/terraform-provider-corefunc/issues/177)) (dependabot[bot])
+* [`deb3174`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/deb31740b532d4311051c74a39abbcc286dd43d4): **deps**: Bump `trufflesecurity/trufflehog` from 3.68.0 to 3.68.3 ([#176](https://github.com/northwood-labs/terraform-provider-corefunc/issues/176)) (dependabot[bot])
 
 ### Documentation
 
