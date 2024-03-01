@@ -25,6 +25,7 @@ jobs:
           egress-policy: block
           allowed-endpoints: >
             github.com:443
+            goreleaser.com:443
             objects.githubusercontent.com:443
 
       - name: Checkout Source
