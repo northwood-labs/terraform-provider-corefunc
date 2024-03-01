@@ -5,41 +5,47 @@
 # Configuration options are organized into tables and keys.
 # See documentation for more information on available options.
 
+[remote.github]
+owner = "northwood-labs"
+repo  = "terraform-provider-corefunc"
+# token = ""
+
 [changelog]
-# changelog header
 header = """
 # CHANGELOG
 
 All notable changes to this project will be documented in this file.
 
-The format is based on [Keep a Changelog](https://keepachangelog.com), adheres to
-[Semantic Versioning](https://semver.org), and uses
-[Conventional Commit](https://www.conventionalcommits.org) syntax.
-
+The format is based on [Keep a Changelog](https://keepachangelog.com), adheres to [Semantic Versioning](https://semver.org), and uses [Conventional Commit](https://www.conventionalcommits.org) syntax.
 """
+
 # template for the changelog body
 # https://keats.github.io/tera/docs/#introduction
 body = """
-{% if version %}\
+{% if version %}
   ## {{ version | trim_start_matches(pat="v") }} — {{ timestamp | date(format="%Y-%m-%d") }}
   {% if previous.version %}
-    [Compare: {{ previous.version }} → {{ version }}](@REPO/compare/{{ previous.version }}..{{ version }})
+    [Compare: {{ previous.version }} → {{ version }}]({{ self::remote_url() }}/compare/{{ previous.version }}...{{ version }})
   {% endif %}\
-{% else %}\
+{% else %}
   ## Unreleased
   {% if previous.version %}
-    [Compare: {{ previous.version }} → `HEAD`](@REPO/compare/{{ previous.version }}..HEAD)
+    [Compare: {{ previous.version }} → `HEAD`]({{ self::remote_url() }}/compare/{{ previous.version }}..HEAD)
   {% endif %}\
 {% endif %}\
-{% for group, commits in commits | group_by(attribute="group") %}
+{% for group, commits in commits | filter(attribute="merge_commit", value=false) | group_by(attribute="group") %}
   ### {{ group | upper_first }}
   {% for commit in commits %}
+    {% set commit_message = commit.message -%}
     * {% if commit.breaking %}**[BC BREAK]** {% endif %}\
-    [`{{ commit.id | truncate(length=7, end="") }}`](@REPO/commit/{{ commit.id }}): {% if commit.scope %}\
-    **{{ commit.scope }}**: {% endif %}{{ commit.message | upper_first | trim_end }}\
-    {% if commit.author.name != "Ryan Parman" %} ({{ commit.author.name }}){% endif %}\
-  {% endfor %}
+    [`{{ commit.id | truncate(length=7, end="") }}`]({{ self::remote_url() }}/commit/{{ commit.id }}): {% if commit.scope %}\
+    **{{ commit.scope }}**: {% endif %}{{ commit_message | split(pat="\n") | first | upper_first | trim_end }} \
+    ({% if commit.github.username %}[@{{ commit.github.username | replace(from="[bot]", to="") }}](https://github.com/{{ commit.github.username | replace(from="[bot]", to="") }}){%- endif -%})\
+  {%- endfor %}
 {% endfor %}
+{%- macro remote_url() -%}
+  https://github.com/{{ remote.github.owner }}/{{ remote.github.repo }}
+{%- endmacro -%}
 """
 
 # remove the leading and trailing whitespace from the template
@@ -47,13 +53,15 @@ trim = true
 
 # changelog footer
 footer = """
+
+<p>Generated on {{ now() | date(format="%Y-%m-%d") }}.</p>
 """
 
 postprocessors = [
   { pattern = "linrinf", replace = "linting" },
   { pattern = "storage.googleapis.com:433", replace = "`storage.googleapis.com:443`" },
   { pattern = "([^ ]+)\\(\\)", replace = "`$0`" },
-  { pattern = "AUTHORS|CONTRIBUTING|README", replace = "$0.md" },
+  { pattern = "AUTHORS|CONTRIBUTORS|CONTRIBUTING|README", replace = "$0.md" },
   { pattern = "([^ ]+)\\.md", replace = "`$0`" },
   { pattern = "([^ ]+)\\.ya?ml", replace = "`$0`" },
   { pattern = "\\.md\\.md", replace = ".md" },
@@ -66,6 +74,7 @@ postprocessors = [
 ] # postprocessors
 
 [git]
+
 # parse the commits based on https://www.conventionalcommits.org
 conventional_commits = true
 
@@ -82,23 +91,23 @@ commit_preprocessors = [
 
 # regex for parsing and grouping commits
 commit_parsers = [
-  { message = "^feat", group = "Features" },
-  { message = "^fix", group = "Bug Fixes" },
-  { message = "^docs", group = "Documentation" },
-  { message = "^perf", group = "Performance" },
-  { message = "^refactor", group = "Refactor" },
-  { message = "^style", group = "Styling" },
-  { message = "^build|deps", group = "Building and Dependencies" },
-  { message = "^test", group = "Testing" },
-  { message = "^lint", group = "Linting" },
+  { message = "^feat", group = "<!-- 0 -->:rocket: Features" },
+  { message = "^fix", group = "<!-- 1 -->:bug: Bug Fixes" },
+  { message = "^perf", group = "<!-- 2 -->:racecar: Performance" },
+  { message = "^docs", group = ":books: Documentation" },
+  { message = "^refactor", group = ":tractor: Refactor" },
+  { message = "^style", group = ":art: Styling" },
+  { message = "^build|deps", group = ":dependabot: Building and Dependencies" },
+  { message = "^test", group = ":test_tube: Testing" },
+  { message = "^lint", group = ":soap: Linting" },
   { message = "^chore\\(release\\): prepare for", skip = true },
   { message = "^chore\\(deps\\)", skip = true },
   { message = "^chore\\(pr\\)", skip = true },
   { message = "^chore\\(pull\\)", skip = true },
   { message = "^relprep", skip = true },
-  { message = "^chore|ci", group = "Miscellaneous Tasks" },
-  { body = ".*security", group = "Security" },
-  { message = "^revert", group = "Revert" },
+  { message = "^chore|ci", group = "<!-- ZZZ -->:gear: Miscellaneous Tasks" },
+  { body = ".*security", group = ":closed_lock_with_key: Security" },
+  { message = "^revert", group = "<!-- ZYY -->:x: Revert" },
   { message = "^automation", skip = true },
 ]
 
@@ -112,10 +121,10 @@ filter_commits = false
 tag_pattern = "v[0-9].*"
 
 # regex for skipping tags
-# skip_tags = "v0.1.0-beta.1"
+skip_tags = "beta|alpha"
 
 # regex for ignoring tags
-ignore_tags = ""
+ignore_tags = "rc"
 
 # sort the tags topologically
 topo_order = true
