@@ -44,7 +44,7 @@ body = """
   {%- endfor %}
 {% endfor %}
 {%- macro remote_url() -%}
-  https://github.com/{{ remote.github.owner }}/{{ remote.github.repo }}
+  https://github.com/northwood-labs/terraform-provider-corefunc
 {%- endmacro -%}
 """
 
