@@ -35,6 +35,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`b19428b`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/b19428b0fa575ef09806d2406489194ed62f9e22): **deps**: Bump `trufflesecurity/trufflehog` from 3.67.7 to 3.68.0 ([#169](https://github.com/northwood-labs/terraform-provider-corefunc/issues/169)) (dependabot[bot])
 * [`5cef9c0`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/5cef9c0aeb100119208dd771c9d84687484d6168): **deps**: Bump `golang/govulncheck-action` from 1.0.1 to 1.0.2 ([#170](https://github.com/northwood-labs/terraform-provider-corefunc/issues/170)) (dependabot[bot])
 * [`355da49`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/355da49dd1be6f41dbdb4f5bbf1d5130e2e7d367): **deps**: Bump `github/codeql-action` from 3.24.3 to 3.24.4 ([#171](https://github.com/northwood-labs/terraform-provider-corefunc/issues/171)) (dependabot[bot])
+* [`0346ed9`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/0346ed99f2dc4ef5c6d68bcd7522044eefe0c9f1): **deps**: Bump `Go` to 1.22.
 
 ### Documentation
 
@@ -50,6 +51,19 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 ### Linting
 
 * [`113cb5f`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/113cb5f21e9cbf19d8e7c8cd9a48ab30491cce4c): Resolved issues caught by the Go linter.
+
+### Testing
+
+* [`68b0221`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/68b02214644de4a22ceb5338287c9d4dc2f5969b): Allow more network connections for test suite.
+* [`e8adfe2`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/e8adfe28f690e43d221808bfbdf749acb538a710): Allow more network connections for test suite.
+* [`6755d2a`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/6755d2aef20e433d56225333fa94754ab713c5fc): Allow more network connections for test suite.
+* [`8d2248e`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/8d2248ea3fa3b32cb3749a71afe0517b0bbb7ef4): Allow more network connections for test suite.
+* [`3b1289a`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/3b1289a48abaf53e84dc5e9c0673770123de44ab): Allow more network connections for test suite.
+* [`1174f10`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/1174f10e33f178acc449896aa8651ec00c5bb3cc): Allow more network connections for test suite.
+* [`25e7a69`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/25e7a69eb1e3167a7b47bb3baffcd3ecdf9cdb9e): Allow more network connections for test suite.
+* [`0190c0b`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/0190c0bdf9b6b52e92d31d319d53445a67e7532b): Allow more network connections for test suite.
+* [`e9ed6e1`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/e9ed6e13f0e0345036a324eeaf7d763b7803ee66): Allow more network connections for test suite.
+* [`28306c5`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/28306c57cf0d812ff6ecf38bdb823a5c180fb29f): Allow more network connections for test suite.
 ## 1.3.0 — 2024-02-05
 
 [Compare: v1.2.1 → v1.3.0](https://github.com/northwood-labs/terraform-provider-corefunc/compare/v1.2.1..v1.3.0)

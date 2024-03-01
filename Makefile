@@ -114,7 +114,7 @@ install-hooks:
 tidy:
 	@ $(ECHO) " "
 	@ $(ECHO) "\033[1;33m=====> Tidy and download the Go dependencies...\033[0m"
-	$(GO) mod tidy -go=1.21 -v
+	$(GO) mod tidy -go=1.22 -v
 
 .PHONY: godeps
 ## godeps: [build] Updates go.mod and downloads dependencies.
