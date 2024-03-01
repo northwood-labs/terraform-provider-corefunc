@@ -38,6 +38,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`0346ed9`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/0346ed99f2dc4ef5c6d68bcd7522044eefe0c9f1): **deps**: Bump `Go` to 1.22.
 * [`88ad2e8`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/88ad2e8a9359147972ef935397a90f067ea26576): **deps**: Bump `github/codeql-action` from 3.24.4 to 3.24.6 ([#177](https://github.com/northwood-labs/terraform-provider-corefunc/issues/177)) (dependabot[bot])
 * [`deb3174`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/deb31740b532d4311051c74a39abbcc286dd43d4): **deps**: Bump `trufflesecurity/trufflehog` from 3.68.0 to 3.68.3 ([#176](https://github.com/northwood-labs/terraform-provider-corefunc/issues/176)) (dependabot[bot])
+* [`c4624c0`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/c4624c0586b3781ec97895a99a1553e5540ff5dd): **deps**: Bump `github.com/hashicorp/terraform-plugin-framework` ([#175](https://github.com/northwood-labs/terraform-provider-corefunc/issues/175)) (dependabot[bot])
 
 ### Documentation
 
