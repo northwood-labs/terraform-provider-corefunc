@@ -177,8 +177,8 @@ github.com/mitchellh/reflectwalk v1.0.2 h1:G2LzWKi524PWgd3mLHV8Y5k7s6XUvT0Gef6zx
 github.com/mitchellh/reflectwalk v1.0.2/go.mod h1:mSTlrgnPZtwu0c4WaC2kGObEpuNDbx0jmZXqmk4esnw=
 github.com/nlnwa/whatwg-url v0.4.0 h1:B3kFb5EL7KILeBkhrlQvFi41Ex0p4ropVA9brt5ungI=
 github.com/nlnwa/whatwg-url v0.4.0/go.mod h1:pLzpJjFPtA+n7RCLvp0GBxvDHa/2ckNCBK9mfEeNOMQ=
-github.com/northwood-labs/golang-utils/archstring v0.0.0-20230302161720-ec685e2f274a h1:g5He4lP335CqRw/S1JgkC93EI3zVHOkmKzjHw6MWoiM=
-github.com/northwood-labs/golang-utils/archstring v0.0.0-20230302161720-ec685e2f274a/go.mod h1:ixVR+WTyw0LxuhcprIZzxgxAy7LyZRFkpyIwvyNdpcY=
+github.com/northwood-labs/golang-utils/archstring v0.0.0-20240301191325-850f76df0fb0 h1:A6haSdcgVM4c+C0iItY+l1O15849Jrloo6FMo2J5SoQ=
+github.com/northwood-labs/golang-utils/archstring v0.0.0-20240301191325-850f76df0fb0/go.mod h1:ixVR+WTyw0LxuhcprIZzxgxAy7LyZRFkpyIwvyNdpcY=
 github.com/northwood-labs/golang-utils/exiterrorf v0.0.0-20230302161720-ec685e2f274a h1:IvtxXAdMfCPmjDiUNhVKn/qoNDSU6xmutr9rlul4V9Q=
 github.com/northwood-labs/golang-utils/exiterrorf v0.0.0-20230302161720-ec685e2f274a/go.mod h1:DZOF/zxKfLJhhFfPhDNrUEU0/MvT5GpFeX3HL1UdYTY=
 github.com/oklog/run v1.1.0 h1:GEenZ1cK0+q0+wsJew9qUg/DyD8k3JzYsZAi5gYi2mA=

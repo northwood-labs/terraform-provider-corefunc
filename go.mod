@@ -22,7 +22,7 @@ require (
 	github.com/lithammer/dedent v1.1.0
 	github.com/mitchellh/go-homedir v1.1.0
 	github.com/nlnwa/whatwg-url v0.4.0
-	github.com/northwood-labs/golang-utils/archstring v0.0.0-20230302161720-ec685e2f274a
+	github.com/northwood-labs/golang-utils/archstring v0.0.0-20240301191325-850f76df0fb0
 	github.com/northwood-labs/golang-utils/exiterrorf v0.0.0-20230302161720-ec685e2f274a
 	github.com/spf13/cobra v1.8.0
 	github.com/stretchr/testify v1.9.0
