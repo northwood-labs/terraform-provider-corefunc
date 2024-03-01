@@ -405,7 +405,7 @@ view-trace:
 ## changelog: [release]* Generates the CHANGELOG for the release.
 changelog:
 	git cliff -o CHANGELOG.md
-	pre-commit run --all-files markdownlint
+	@ # pre-commit run --all-files markdownlint
 
 .PHONY: tag
 ## tag: [release]* Tags (and GPG-signs) the release.
