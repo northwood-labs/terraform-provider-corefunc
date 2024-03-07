@@ -1,8 +1,6 @@
 module github.com/northwood-labs/terraform-provider-corefunc
 
-go 1.22
-
-toolchain go1.22.0
+go 1.22.1
 
 replace github.com/imdario/mergo => github.com/imdario/mergo v0.3.16
 
@@ -22,8 +20,8 @@ require (
 	github.com/lithammer/dedent v1.1.0
 	github.com/mitchellh/go-homedir v1.1.0
 	github.com/nlnwa/whatwg-url v0.4.0
-	github.com/northwood-labs/golang-utils/archstring v0.0.0-20240301191325-850f76df0fb0
-	github.com/northwood-labs/golang-utils/exiterrorf v0.0.0-20230302161720-ec685e2f274a
+	github.com/northwood-labs/golang-utils/archstring v0.0.0-20240301221220-6be250811dab
+	github.com/northwood-labs/golang-utils/exiterrorf v0.0.0-20240301221220-6be250811dab
 	github.com/spf13/cobra v1.8.0
 	github.com/stretchr/testify v1.9.0
 )
@@ -43,7 +41,7 @@ require (
 	github.com/davecgh/go-spew v1.1.1 // indirect
 	github.com/fatih/color v1.16.0 // indirect
 	github.com/go-test/deep v1.0.7 // indirect
-	github.com/golang/protobuf v1.5.3 // indirect
+	github.com/golang/protobuf v1.5.4 // indirect
 	github.com/google/uuid v1.6.0 // indirect
 	github.com/hashicorp/cli v1.1.6 // indirect
 	github.com/hashicorp/errwrap v1.1.0 // indirect
@@ -97,11 +95,11 @@ require (
 	golang.org/x/net v0.21.0 // indirect
 	golang.org/x/sys v0.17.0 // indirect
 	golang.org/x/text v0.14.0 // indirect
-	golang.org/x/tools v0.18.0 // indirect
+	golang.org/x/tools v0.19.0 // indirect
 	google.golang.org/appengine v1.6.8 // indirect
-	google.golang.org/genproto/googleapis/rpc v0.0.0-20240228224816-df926f6c8641 // indirect
-	google.golang.org/grpc v1.62.0 // indirect
-	google.golang.org/protobuf v1.32.0 // indirect
+	google.golang.org/genproto/googleapis/rpc v0.0.0-20240304212257-790db918fca8 // indirect
+	google.golang.org/grpc v1.62.1 // indirect
+	google.golang.org/protobuf v1.33.0 // indirect
 	gopkg.in/yaml.v2 v2.3.0 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 )
