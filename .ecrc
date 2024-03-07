@@ -11,6 +11,7 @@
         "\\.svg$",
         "\\.terraform\\.lock\\.hcl$",
         "\\.txt$",
+        "cliff\\.toml$",
         "go\\.mod$",
         "go\\.sum$",
         "package-lock\\.json$"
