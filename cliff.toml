@@ -16,7 +16,8 @@ header = """
 
 All notable changes to this project will be documented in this file.
 
-The format is based on [Keep a Changelog](https://keepachangelog.com), adheres to [Semantic Versioning](https://semver.org), and uses [Conventional Commit](https://www.conventionalcommits.org) syntax.
+The format is based on [Keep a Changelog](https://keepachangelog.com), adheres to
+[Semantic Versioning](https://semver.org), and uses [Conventional Commit](https://www.conventionalcommits.org) syntax.
 """
 
 # template for the changelog body
@@ -25,7 +26,8 @@ body = """
 {% if version %}
   ## {{ version | trim_start_matches(pat="v") }} — {{ timestamp | date(format="%Y-%m-%d") }}
   {% if previous.version %}
-    [Compare: {{ previous.version }} → {{ version }}]({{ self::remote_url() }}/compare/{{ previous.version }}...{{ version }})
+    [Compare: {{ previous.version }} → \
+    {{ version }}]({{ self::remote_url() }}/compare/{{ previous.version }}...{{ version }})
   {% endif %}\
 {% else %}
   ## Unreleased
@@ -38,7 +40,8 @@ body = """
   {% for commit in commits %}
     {% set commit_message = commit.message -%}
     * {% if commit.breaking %}**[BC BREAK]** {% endif %}\
-    [`{{ commit.id | truncate(length=7, end="") }}`]({{ self::remote_url() }}/commit/{{ commit.id }}): {% if commit.scope %}\
+    [`{{ commit.id | truncate(length=7, end="") }}`]({{ self::remote_url() -
+      }}/commit/{{ commit.id }}): {% if commit.scope %}\
     **{{ commit.scope }}**: {% endif %}{{ commit_message | split(pat="\n") | first | upper_first | trim_end }} \
     ({% if commit.github.username %}[@{{ commit.github.username | replace(from="[bot]", to="") }}](https://github.com/{{ commit.github.username | replace(from="[bot]", to="") }}){%- endif -%})\
   {%- endfor %}
