@@ -8,7 +8,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 
 [Compare: v1.3.1 → `HEAD`](https://github.com/northwood-labs/terraform-provider-corefunc/compare/v1.3.1..HEAD)
 
-## 1.3.1 — 2024-03-01
+## 1.3.1 — 2024-03-07
 
 [Compare: v1.3.0 → v1.3.1](https://github.com/northwood-labs/terraform-provider-corefunc/compare/v1.3.0...v1.3.1)
 
