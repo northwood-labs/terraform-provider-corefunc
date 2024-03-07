@@ -1,4 +1,5 @@
-// Copyright 2023-2024, Ryan Parman
+// Copyright 2023-2024, Northwood Labs
+// Copyright 2023-2024, Ryan Parman <rparman@northwood-labs.com>
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -58,7 +59,11 @@ func TestAccStrIterativeReplaceDataSource(t *testing.T) {
 				{
 					Config: providerConfig + buf.String(),
 					Check: resource.ComposeAggregateTestCheckFunc(
-						resource.TestCheckResourceAttr("data.corefunc_str_iterative_replace.replacements", "value", tc.Expected),
+						resource.TestCheckResourceAttr(
+							"data.corefunc_str_iterative_replace.replacements",
+							"value",
+							tc.Expected,
+						),
 					),
 				},
 			},

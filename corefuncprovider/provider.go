@@ -1,4 +1,5 @@
-// Copyright 2023-2024, Ryan Parman
+// Copyright 2023-2024, Northwood Labs
+// Copyright 2023-2024, Ryan Parman <rparman@northwood-labs.com>
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -19,6 +20,7 @@ import (
 	"strings"
 
 	"github.com/hashicorp/terraform-plugin-framework/datasource"
+	"github.com/hashicorp/terraform-plugin-framework/function"
 	"github.com/hashicorp/terraform-plugin-framework/provider"
 	"github.com/hashicorp/terraform-plugin-framework/provider/schema"
 	"github.com/hashicorp/terraform-plugin-framework/resource"
@@ -118,6 +120,12 @@ func (p *coreFuncProvider) DataSources(ctx context.Context) []func() datasource.
 		StrSnakeDataSource,
 		TruncateLabelDataSource,
 		URLParseDataSource,
+	}
+}
+
+func (p *coreFuncProvider) Functions(ctx context.Context) []func() function.Function {
+	return []func() function.Function{
+		StrSnakeFunction,
 	}
 }
 
