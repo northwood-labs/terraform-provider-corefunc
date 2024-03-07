@@ -43,7 +43,9 @@ body = """
     [`{{ commit.id | truncate(length=7, end="") }}`]({{ self::remote_url() -
       }}/commit/{{ commit.id }}): {% if commit.scope %}\
     **{{ commit.scope }}**: {% endif %}{{ commit_message | split(pat="\n") | first | upper_first | trim_end }} \
-    ({% if commit.github.username %}[@{{ commit.github.username | replace(from="[bot]", to="") }}](https://github.com/{{ commit.github.username | replace(from="[bot]", to="") }}){%- endif -%})\
+    ({% if commit.github.username -%}
+      [@{{ commit.github.username | replace(from="[bot]", to="") -}}
+    ](https://github.com/{{ commit.github.username | replace(from="[bot]", to="") }}){%- endif -%})\
   {%- endfor %}
 {% endfor %}
 {%- macro remote_url() -%}
