@@ -12,7 +12,7 @@ on:
     inputs:
       version:
         description: "Release version"
-        required: true
+        required: false
         type: string
 
 permissions: read-all
@@ -54,6 +54,11 @@ jobs:
         with:
           gpg_private_key: ${{ secrets.GPG_KEY_B64 }}
           passphrase: ${{ secrets.GPG_PWD }}
+
+      - name: Checkout tag
+        if: ${{ github.event.inputs.version != '' }}
+        run: |
+          git checkout refs/tags/${{ github.event.inputs.version }}
 
       - name: GoReleaser Action
         uses: goreleaser/goreleaser-action@7ec5c2b0c6cdda6e8bbb49444bc797dd33d74dd8 # v5.0.0
