@@ -63,7 +63,10 @@ jobs:
           disable-sudo: true
           egress-policy: block #audit
           allowed-endpoints: >
+            api.github.com:443
             github.com:443
+            golang.org:443
+            objects.githubusercontent.com:443
             proxy.golang.org:443
 
       - name: Checkout Source
@@ -105,9 +108,12 @@ jobs:
           disable-sudo: true
           egress-policy: block # audit
           allowed-endpoints: >
+            api.github.com:443
             checkpoint-api.hashicorp.com:443
             get.opentofu.org:443
             github.com:443
+            golang.org:443
+            objects.githubusercontent.com:443
             proxy.golang.org:443
             releases.hashicorp.com:443
             storage.googleapis.com:443
@@ -156,6 +162,7 @@ jobs:
             checkpoint-api.hashicorp.com:443
             get.opentofu.org:443
             github.com:443
+            golang.org:443
             objects.githubusercontent.com:443
             proxy.golang.org:443
             releases.hashicorp.com:443
