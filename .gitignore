@@ -11,6 +11,7 @@ _provider.tf
 *_override.tf
 *_override.tf.json
 *.cache.json
+*.pgo
 *.pprof
 *.test
 *.tfstate*
