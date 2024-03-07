@@ -33,6 +33,7 @@ jobs:
           allowed-endpoints: >
             api.github.com:443
             github.com:443
+            objects.githubusercontent.com:443
             proxy.golang.org:443
 
       - name: Checkout Source
