@@ -16,6 +16,7 @@
 package main
 
 import (
+	"errors"
 	"fmt"
 	"os"
 	"path/filepath"
@@ -49,7 +50,11 @@ func main() {
 	}
 
 	fmt.Println("")
-	fmt.Println("Add " + varMap["PascalStrip"] + "DataSource" + " to " + getAbs("../corefuncprovider/provider.go"))
+	fmt.Println(
+		"Add " + varMap["PascalStrip"] + "DataSource and " + varMap["PascalStrip"] + "Function to " + getAbs(
+			"../corefuncprovider/provider.go",
+		),
+	)
 	fmt.Println("")
 
 	// ../bats
@@ -105,6 +110,11 @@ func main() {
 		getAbs("./templates/data-source.md.gotmpl"),
 		getAbs("../templates/data-sources/"+varMap["SnakeStrip"]+".md.tmpl"),
 	)
+	writeFileFromTemplate(
+		varMap,
+		getAbs("./templates/function.md.gotmpl"),
+		getAbs("../templates/functions/"+varMap["SnakeStrip"]+".md.tmpl"),
+	)
 
 	// ../examples
 	edsPath := "../examples/data-sources/" + varMap["Snake"]
@@ -144,7 +154,7 @@ func main() {
 	)
 	writeFileFromTemplate(
 		varMap,
-		getAbs("./examples/versions.tftpl"),
+		getAbs("./examples/versions.ds.tftpl"),
 		getAbs(edsPath+"/versions.tftpl"),
 	)
 }
@@ -163,21 +173,28 @@ func writeFileFromTemplate(varMap map[string]string, templatePath, writePath str
 
 	tmpl := newTemplate(templatePath)
 
-	f, err := os.Create(writePath) // #nosec G304 -- lint:allow_possible_insecure
-	if err != nil {
-		panic(err)
-	}
+	if _, err := os.Stat(writePath); errors.Is(err, os.ErrNotExist) {
+		var f *os.File
 
-	defer func() {
-		e := f.Close()
-		if e != nil {
-			panic(e)
+		f, err = os.Create(writePath) // #nosec G304 -- lint:allow_possible_insecure
+		if err != nil {
+			panic(err)
 		}
-	}()
 
-	err = tmpl.Execute(f, varMap)
-	if err != nil {
-		panic(err)
+		defer func() {
+			e := f.Close()
+			if e != nil {
+				panic(e)
+			}
+		}()
+
+		err = tmpl.Execute(f, varMap)
+		if err != nil {
+			panic(err)
+		}
+	} else {
+		fmt.Println("File " + writePath + " already exists. Skipping.")
+		fmt.Println("")
 	}
 }
 
