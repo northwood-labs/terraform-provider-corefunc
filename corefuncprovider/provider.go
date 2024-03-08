@@ -122,12 +122,6 @@ func (p *coreFuncProvider) DataSources(ctx context.Context) []func() datasource.
 	}
 }
 
-func (p *coreFuncProvider) Functions(ctx context.Context) []func() function.Function {
-	return []func() function.Function{
-		StrSnakeFunction,
-	}
-}
-
 // Resources defines the resources implemented in the provider.
 func (p *coreFuncProvider) Resources(ctx context.Context) []func() resource.Resource {
 	tflog.Debug(ctx, "Running Provider Resources method.")
