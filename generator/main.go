@@ -83,6 +83,21 @@ func main() {
 		getAbs("./corefuncprovider/data_source_fixture.tftpl"),
 		getAbs(cfpPath+"_data_source_fixture.tftpl"),
 	)
+	writeFileFromTemplate(
+		varMap,
+		getAbs("./corefuncprovider/function.gotmpl"),
+		getAbs(cfpPath+"_function.go"),
+	)
+	writeFileFromTemplate(
+		varMap,
+		getAbs("./corefuncprovider/function_test.gotmpl"),
+		getAbs(cfpPath+"_function_test.go"),
+	)
+	writeFileFromTemplate(
+		varMap,
+		getAbs("./corefuncprovider/function_fixture.tftpl"),
+		getAbs(cfpPath+"_function_fixture.tftpl"),
+	)
 
 	// ../templates
 	writeFileFromTemplate(
@@ -98,6 +113,24 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
+
+	efPath := "../examples/functions/" + varMap["Snake"]
+
+	err = os.MkdirAll(getAbs(efPath), dirPerms)
+	if err != nil {
+		panic(err)
+	}
+
+	writeFileFromTemplate(
+		varMap,
+		getAbs("./examples/function.tftpl"),
+		getAbs(efPath+"/function.tf"),
+	)
+	writeFileFromTemplate(
+		varMap,
+		getAbs("./examples/versions.fn.tftpl"),
+		getAbs(efPath+"/versions.tftpl"),
+	)
 
 	writeFileFromTemplate(
 		varMap,
