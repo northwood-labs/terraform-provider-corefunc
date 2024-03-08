@@ -1,0 +1,24 @@
+<!--
+---
+page_title: "{{ .Name }} {{ .Type }} - {{ .ProviderName }}"
+subcategory: ""
+description: |-
+{{ .Description | plainmarkdown | trimspace | prefixlines "  " }}
+---
+-->
+
+# {{ .Name }} ({{ .Type }})
+
+{{ .Description | trimspace }}
+
+## Signature
+
+{{ .FunctionSignatureMarkdown }}
+
+{{ if .HasExample -}}## Example Usage
+
+{{ tffile (printf "examples/functions/%s/function.tf" .Name)}}{{- end }}
+
+{{ .FunctionArgumentsMarkdown | trimspace }}
+
+<!-- Preview the provider docs with the Terraform registry provider docs preview tool: https://registry.terraform.io/tools/doc-preview -->
