@@ -30,6 +30,8 @@ import (
 )
 
 func TestAccStrSnakeDataSource(t *testing.T) {
+	t.Parallel()
+
 	funcName := traceFuncName()
 
 	for name, tc := range testfixtures.StrSnakeTestTable { // lint:no_dupe
