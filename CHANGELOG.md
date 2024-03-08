@@ -12,10 +12,6 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 
 * [`371ea5d`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/371ea5db284ad4b814bb3d19aa16527f967f401a): Updated the copyright block. ([#183](https://github.com/northwood-labs/terraform-provider-corefunc/issues/183)) ([@skyzyx](https://github.com/skyzyx))
 
-### :books: Documentation
-
-* [`371ea5d`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/371ea5db284ad4b814bb3d19aa16527f967f401a): Updated the copyright block. ([#183](https://github.com/northwood-labs/terraform-provider-corefunc/issues/183)) ([@skyzyx](https://github.com/skyzyx))
-
 ## 1.3.1 — 2024-03-07
 
 [Compare: v1.3.0 → v1.3.1](https://github.com/northwood-labs/terraform-provider-corefunc/compare/v1.3.0...v1.3.1)
