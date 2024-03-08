@@ -20,6 +20,7 @@ import (
 	"strings"
 
 	"github.com/hashicorp/terraform-plugin-framework/datasource"
+	"github.com/hashicorp/terraform-plugin-framework/function"
 	"github.com/hashicorp/terraform-plugin-framework/provider"
 	"github.com/hashicorp/terraform-plugin-framework/provider/schema"
 	"github.com/hashicorp/terraform-plugin-framework/resource"
@@ -119,6 +120,13 @@ func (p *coreFuncProvider) DataSources(ctx context.Context) []func() datasource.
 		StrSnakeDataSource,
 		TruncateLabelDataSource,
 		URLParseDataSource,
+	}
+}
+
+// Functions defines the functions implemented in the provider.
+func (p *coreFuncProvider) Functions(ctx context.Context) []func() function.Function {
+	return []func() function.Function{
+		StrSnakeFunction,
 	}
 }
 
