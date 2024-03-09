@@ -328,7 +328,8 @@ mutate:
 terratest:
 	@ $(ECHO) " "
 	@ $(ECHO) "\033[1;33m=====> Running Terratest tests...\033[0m"
-	cd ./terratest && $(GO) test -count 1
+	cd ./terratest/data-sources && $(GO) test -count 1
+	cd ./terratest/functions && $(GO) test -count 1
 
 .PHONY: examples
 ## examples: [test] Runs tests for examples. Set NAME= (without 'Example') to run a specific test by name.

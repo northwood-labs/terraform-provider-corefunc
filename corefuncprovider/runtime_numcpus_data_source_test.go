@@ -18,7 +18,6 @@ package corefuncprovider // lint:no_dupe
 import (
 	"bytes"
 	"fmt"
-	"log"
 	"os"
 	"strings"
 	"testing"
@@ -46,7 +45,7 @@ func TestAccRuntimeNumcpusDataSource(t *testing.T) {
 
 		err := tmpl.Execute(buf, tc)
 		if err != nil {
-			log.Fatalln(err)
+			t.Error(err)
 		}
 
 		if os.Getenv("PROVIDER_DEBUG") != "" {

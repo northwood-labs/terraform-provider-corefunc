@@ -18,7 +18,6 @@ package corefuncprovider // lint:no_dupe
 import (
 	"bytes"
 	"fmt"
-	"log"
 	"os"
 	"strings"
 	"testing"
@@ -37,7 +36,7 @@ func TestAccTruncateLabelDataSourceDefaultMaxLength64(t *testing.T) {
 
 	err := tmpl.Execute(buf, nil)
 	if err != nil {
-		log.Fatalln(err)
+		t.Error(err)
 	}
 
 	resource.Test(t, resource.TestCase{
@@ -79,7 +78,7 @@ func TestAccTruncateLabelDataSource(t *testing.T) {
 
 		err := tmpl.Execute(buf, tc)
 		if err != nil {
-			log.Fatalln(err)
+			t.Error(err)
 		}
 
 		if os.Getenv("PROVIDER_DEBUG") != "" {

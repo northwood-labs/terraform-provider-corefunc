@@ -26,25 +26,36 @@ import (
 
 	"github.com/northwood-labs/terraform-provider-corefunc/testfixtures"
 
+	"github.com/hashicorp/go-version"
 	"github.com/hashicorp/terraform-plugin-testing/helper/resource"
+	"github.com/hashicorp/terraform-plugin-testing/tfversion"
 )
 
-func TestAccHomedirExpandDataSource(t *testing.T) {
+func TestAccEnvEnsureFunction(t *testing.T) {
+	t.Parallel()
+
 	funcName := traceFuncName()
 
-	for name, tc := range testfixtures.HomedirExpandTestTable { // lint:no_dupe
+	for name, tc := range testfixtures.EnvEnsureTestTable { // lint:no_dupe
+		var err error
+
 		fmt.Printf(
 			"=== RUN   %s/%s\n",
 			strings.TrimSpace(funcName),
 			strings.TrimSpace(name),
 		)
 
+		err = os.Setenv(tc.EnvVarName, tc.SetValue)
+		if err != nil {
+			t.Error(err)
+		}
+
 		buf := &bytes.Buffer{}
 		tmpl := template.Must(
-			template.ParseFiles("homedir_expand_data_source_fixture.tftpl"),
+			template.ParseFiles("env_ensure_function_fixture.tftpl"),
 		)
 
-		err := tmpl.Execute(buf, tc)
+		err = tmpl.Execute(buf, tc)
 		if err != nil {
 			t.Error(err)
 		}
@@ -53,25 +64,37 @@ func TestAccHomedirExpandDataSource(t *testing.T) {
 			fmt.Fprintln(os.Stderr, buf.String())
 		}
 
-		if tc.Err {
-			resource.Test(t, resource.TestCase{
+		if tc.ExpectedErr == nil {
+			resource.UnitTest(t, resource.TestCase{
+				TerraformVersionChecks: []tfversion.TerraformVersionCheck{
+					tfversion.SkipBelow(
+						version.Must(version.NewVersion("1.7.999")),
+					),
+				},
+				ProtoV6ProviderFactories: testAccProtoV6ProviderFactories,
+				Steps: []resource.TestStep{
+					{
+						Config: providerConfig + buf.String(),
+						Check: resource.ComposeTestCheckFunc(
+							resource.TestCheckOutput("env_var", tc.SetValue),
+						),
+					},
+				},
+			})
+		} else {
+			// We DO expect an error.
+			// https://developer.hashicorp.com/terraform/plugin/testing/testing-patterns
+			resource.UnitTest(t, resource.TestCase{
+				TerraformVersionChecks: []tfversion.TerraformVersionCheck{
+					tfversion.SkipBelow(
+						version.Must(version.NewVersion("1.7.999")),
+					),
+				},
 				ProtoV6ProviderFactories: testAccProtoV6ProviderFactories,
 				Steps: []resource.TestStep{
 					{
 						Config:      providerConfig + buf.String(),
 						ExpectError: regexp.MustCompile(`.*`),
-					},
-				},
-			})
-		} else {
-			resource.Test(t, resource.TestCase{
-				ProtoV6ProviderFactories: testAccProtoV6ProviderFactories,
-				Steps: []resource.TestStep{
-					{
-						Config: providerConfig + buf.String(),
-						Check: resource.ComposeAggregateTestCheckFunc(
-							resource.TestCheckResourceAttr("data.corefunc_homedir_expand.path", "value", tc.Expected),
-						),
 					},
 				},
 			})
