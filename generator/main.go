@@ -139,7 +139,7 @@ func main() {
 	writeFileFromTemplate(
 		varMap,
 		getAbs("./examples/versions.fn.tftpl"),
-		getAbs(efPath+"/versions.tftpl"),
+		getAbs(efPath+"/versions.tf"),
 	)
 
 	writeFileFromTemplate(
