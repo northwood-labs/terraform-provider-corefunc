@@ -18,7 +18,6 @@ package corefuncprovider
 import (
 	"bytes"
 	"fmt"
-	"log"
 	"os"
 	"strings"
 	"testing"
@@ -47,7 +46,7 @@ func TestAccURLParseDataSource(t *testing.T) {
 
 		err := tmpl.Execute(buf, tc)
 		if err != nil {
-			log.Fatalln(err)
+			t.Error(err)
 		}
 
 		if os.Getenv("PROVIDER_DEBUG") != "" {

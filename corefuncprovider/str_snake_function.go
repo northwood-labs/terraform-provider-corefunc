@@ -98,15 +98,7 @@ func (f *strSnakeFunction) Run(ctx context.Context, req function.RunRequest, res
 		return
 	}
 
-	value := corefunc.StrSnake(
-		str,
-		// opts,
-	)
-
-	// Function errors need to be wrapped and passed to resp.Error.
-	// function.NewArgumentFuncError(1, "")
-	// https://github.com/Yantrio/terraform-provider-tfutils/blob/main/internal/provider/cidrcontains.go
-
+	value := corefunc.StrSnake(str)
 	resp.Error = function.ConcatFuncErrors(resp.Result.Set(ctx, value))
 
 	tflog.Debug(ctx, "Ending StrSnake Function Run method.")
