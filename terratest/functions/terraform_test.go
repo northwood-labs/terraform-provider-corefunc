@@ -105,7 +105,7 @@ func TestTerraform(t *testing.T) {
 		assert.Equal(t, terraform.Output(t, terraformOptions, "str_snake_fn"), corefunc.StrSnake(inputStr))
 		// assert.Equal(t, terraform.Output(t, terraformOptions, "int_leftpad_ds"), corefunc.IntLeftPad(123, 5))
 		// assert.Equal(t, terraform.Output(t, terraformOptions, "str_leftpad_ds"), corefunc.StrLeftPad("abc", 5, '.'))
-		assert.Equal(t, terraform.Output(t, terraformOptions, "env_ensure_fn"), os.Getenv("AWS_REGION"))
+		assert.Equal(t, terraform.Output(t, terraformOptions, "env_ensure_fn"), os.Getenv("GOROOT"))
 		// assert.Equal(t,
 		// 	terraform.Output(t, terraformOptions, "str_truncate_ds"),
 		// 	corefunc.TruncateLabel(64, prefix, label),
