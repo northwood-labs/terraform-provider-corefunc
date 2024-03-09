@@ -1,0 +1,17 @@
+Error: Invalid function argument
+
+  on function.AWS_PAGER.tf line 4, in output "aws_pager":
+  4:   value = provider::corefunc::env_ensure("AWS_PAGER")
+    ├────────────────
+    │ while calling provider::corefunc::env_ensure(name, pattern...)
+
+Invalid value for "name" parameter: environment variable AWS_PAGER is not defined.
+
+Error: Invalid function argument
+
+  on function.AWS_VAULT.tf line 4, in output "aws_vault":
+  4:   value = provider::corefunc::env_ensure("AWS_VAULT", "(non)?prod$") # Must end with "prod" or "nonprod".
+    ├────────────────
+    │ while calling provider::corefunc::env_ensure(name, pattern...)
+
+Invalid value for "name" parameter: environment variable AWS_VAULT does not match pattern (non)?prod$.

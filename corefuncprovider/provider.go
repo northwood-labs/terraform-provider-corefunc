@@ -126,6 +126,7 @@ func (p *coreFuncProvider) DataSources(ctx context.Context) []func() datasource.
 // Functions defines the functions implemented in the provider.
 func (p *coreFuncProvider) Functions(ctx context.Context) []func() function.Function {
 	return []func() function.Function{
+		EnvEnsureFunction,
 		StrSnakeFunction,
 	}
 }

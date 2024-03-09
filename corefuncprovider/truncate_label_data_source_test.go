@@ -36,7 +36,7 @@ func TestAccTruncateLabelDataSourceDefaultMaxLength64(t *testing.T) {
 
 	err := tmpl.Execute(buf, nil)
 	if err != nil {
-		log.Fatalln(err)
+		t.Error(err)
 	}
 
 	resource.Test(t, resource.TestCase{

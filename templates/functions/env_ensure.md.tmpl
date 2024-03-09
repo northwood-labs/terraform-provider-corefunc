@@ -1,0 +1,44 @@
+<!--
+---
+page_title: "{{ .Name }} {{ .Type }} - {{ .ProviderName }}"
+subcategory: ""
+description: |-
+{{ .Description | plainmarkdown | trimspace | prefixlines "  " }}
+---
+-->
+
+# {{ .Name }} ({{ .Type }})
+
+{{ .Description | trimspace }}
+
+## Signature
+
+{{ .FunctionSignatureMarkdown }}
+
+## Example Usage
+
+### `AWS_DEFAULT_REGION` is defined (no error)
+
+{{ tffile "examples/functions/corefunc_env_ensure/function.AWS_DEFAULT_REGION.tf" }}
+
+### `AWS_PAGER` is set to an empty string (error)
+
+{{ tffile "examples/functions/corefunc_env_ensure/function.AWS_PAGER.tf" }}
+
+### `AWS_VAULT` is defined, but does not match pattern (error)
+
+{{ tffile "examples/functions/corefunc_env_ensure/function.AWS_VAULT.tf" }}
+
+### Example plan output
+
+```bash
+AWS_DEFAULT_REGION="us-east-1" AWS_VAULT="dev" terraform plan
+```
+
+{{ codefile "plain" "examples/functions/corefunc_env_ensure/terraform-plan.example" }}
+
+## Arguments
+
+{{ .FunctionArgumentsMarkdown | trimspace }}
+
+<!-- Preview the provider docs with the Terraform registry provider docs preview tool: https://registry.terraform.io/tools/doc-preview -->

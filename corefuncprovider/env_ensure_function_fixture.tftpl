@@ -1,0 +1,9 @@
+{{ $root := . }}
+output "env_var" {
+{{- with .PatternStr }}
+    value = provider::corefunc::env_ensure("{{ $root.EnvVarName }}", "{{ . }}")
+{{- else }}
+    value = provider::corefunc::env_ensure("{{ $root.EnvVarName }}")
+{{- end }}
+}
+#=> {{ .ExpectedErr }}

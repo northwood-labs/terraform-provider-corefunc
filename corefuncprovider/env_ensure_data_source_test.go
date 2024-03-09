@@ -18,9 +18,7 @@ package corefuncprovider
 import (
 	"bytes"
 	"fmt"
-	"log"
 	"os"
-	"regexp"
 	"strings"
 	"testing"
 	"text/template"
@@ -44,7 +42,7 @@ func TestAccEnvEnsureDataSource(t *testing.T) {
 
 		err = os.Setenv(tc.EnvVarName, tc.SetValue)
 		if err != nil {
-			log.Fatalln(err)
+			t.Error(err)
 		}
 
 		buf := &bytes.Buffer{}
@@ -54,7 +52,7 @@ func TestAccEnvEnsureDataSource(t *testing.T) {
 
 		err = tmpl.Execute(buf, tc)
 		if err != nil {
-			log.Fatalln(err)
+			t.Error(err)
 		}
 
 		if os.Getenv("PROVIDER_DEBUG") != "" {
@@ -82,7 +80,7 @@ func TestAccEnvEnsureDataSource(t *testing.T) {
 				Steps: []resource.TestStep{
 					{
 						Config:      providerConfig + buf.String(),
-						ExpectError: regexp.MustCompile(`environment variable (\w+) (is not defined|does not match pattern)`),
+						ExpectError: tc.ExpectedErrRE,
 					},
 				},
 			})
