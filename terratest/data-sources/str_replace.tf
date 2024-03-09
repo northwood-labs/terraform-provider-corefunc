@@ -27,3 +27,8 @@ data "corefunc_str_iterative_replace" "replacements" {
     },
   ]
 }
+
+output "str_iterative_replace_ds" {
+  description = "This is a replacement output."
+  value       = data.corefunc_str_iterative_replace.replacements.value
+}

@@ -43,6 +43,10 @@ var (
 	label        = "K8S Pods Not Running Deployment Check"
 	strToReplace = "This is a string for testing replacements. New Relic. Set-up."
 
+	exampleCom       = "example.com"
+	exampleQuery     = "http://u:p@example.com/foo?q=1"
+	exampleQueryFrag = "http://u:p@example.com/foo?q=1#bar"
+
 	origPath      = os.Getenv("TF_ACC_TERRAFORM_PATH")
 	origNamespace = os.Getenv("TF_ACC_PROVIDER_NAMESPACE")
 	origHostname  = os.Getenv("TF_ACC_PROVIDER_HOST")
@@ -95,20 +99,20 @@ func TestTerraform(t *testing.T) {
 		terraform.InitAndApply(t, terraformOptions)
 
 		// Run `terraform output` to get the value of an output variable
-		assert.Equal(t, terraform.Output(t, terraformOptions, "str_camel"), corefunc.StrCamel(inputStr))
-		assert.Equal(t, terraform.Output(t, terraformOptions, "str_constant"), corefunc.StrConstant(inputStr))
-		assert.Equal(t, terraform.Output(t, terraformOptions, "str_kebab"), corefunc.StrKebab(inputStr))
-		assert.Equal(t, terraform.Output(t, terraformOptions, "str_pascal"), corefunc.StrPascal(inputStr, false))
-		assert.Equal(t, terraform.Output(t, terraformOptions, "str_snake"), corefunc.StrSnake(inputStr))
-		assert.Equal(t, terraform.Output(t, terraformOptions, "int_leftpad"), corefunc.IntLeftPad(123, 5))
-		assert.Equal(t, terraform.Output(t, terraformOptions, "str_leftpad"), corefunc.StrLeftPad("abc", 5, '.'))
-		assert.Equal(t, terraform.Output(t, terraformOptions, "env_ensure"), os.Getenv("GOROOT"))
+		assert.Equal(t, terraform.Output(t, terraformOptions, "str_camel_ds"), corefunc.StrCamel(inputStr))
+		assert.Equal(t, terraform.Output(t, terraformOptions, "str_constant_ds"), corefunc.StrConstant(inputStr))
+		assert.Equal(t, terraform.Output(t, terraformOptions, "str_kebab_ds"), corefunc.StrKebab(inputStr))
+		assert.Equal(t, terraform.Output(t, terraformOptions, "str_pascal_ds"), corefunc.StrPascal(inputStr, false))
+		assert.Equal(t, terraform.Output(t, terraformOptions, "str_snake_ds"), corefunc.StrSnake(inputStr))
+		assert.Equal(t, terraform.Output(t, terraformOptions, "int_leftpad_ds"), corefunc.IntLeftPad(123, 5))
+		assert.Equal(t, terraform.Output(t, terraformOptions, "str_leftpad_ds"), corefunc.StrLeftPad("abc", 5, '.'))
+		assert.Equal(t, terraform.Output(t, terraformOptions, "env_ensure_ds"), os.Getenv("GOROOT"))
 		assert.Equal(t,
-			terraform.Output(t, terraformOptions, "str_truncate"),
+			terraform.Output(t, terraformOptions, "str_truncate_ds"),
 			corefunc.TruncateLabel(64, prefix, label),
 		)
 		assert.Equal(t,
-			terraform.Output(t, terraformOptions, "str_iterative_replace"),
+			terraform.Output(t, terraformOptions, "str_iterative_replace_ds"),
 			corefunc.StrIterativeReplace(
 				strToReplace,
 				[]types.Replacement{
@@ -123,20 +127,20 @@ func TestTerraform(t *testing.T) {
 		)
 
 		// runtime
-		assert.Equal(t, terraform.Output(t, terraformOptions, "runtime_cpuarch"), runtime.GOARCH)
-		assert.Equal(t, terraform.Output(t, terraformOptions, "runtime_goroot"), runtime.GOROOT())
-		assert.Equal(t, terraform.Output(t, terraformOptions, "runtime_numcpus"), fmt.Sprint(runtime.NumCPU()))
-		assert.Equal(t, terraform.Output(t, terraformOptions, "runtime_os"), runtime.GOOS)
+		assert.Equal(t, terraform.Output(t, terraformOptions, "runtime_cpuarch_ds"), runtime.GOARCH)
+		assert.Equal(t, terraform.Output(t, terraformOptions, "runtime_goroot_ds"), runtime.GOROOT())
+		assert.Equal(t, terraform.Output(t, terraformOptions, "runtime_numcpus_ds"), fmt.Sprint(runtime.NumCPU()))
+		assert.Equal(t, terraform.Output(t, terraformOptions, "runtime_os_ds"), runtime.GOOS)
 
 		// url_parse
-		urlParse := terraform.OutputMap(t, terraformOptions, "url_parse")
+		urlParse := terraform.OutputMap(t, terraformOptions, "url_parse_ds")
 		assert.Equal(t, urlParse["decoded_port"], fmt.Sprint(80))
 		assert.Equal(t, urlParse["fragment"], "bar")
 		assert.Equal(t, urlParse["hash"], "#bar")
-		assert.Equal(t, urlParse["host"], "example.com")
-		assert.Equal(t, urlParse["hostname"], "example.com")
-		assert.Equal(t, urlParse["normalized"], "http://u:p@example.com/foo?q=1#bar")
-		assert.Equal(t, urlParse["normalized_nofrag"], "http://u:p@example.com/foo?q=1")
+		assert.Equal(t, urlParse["host"], exampleCom)
+		assert.Equal(t, urlParse["hostname"], exampleCom)
+		assert.Equal(t, urlParse["normalized"], exampleQueryFrag)
+		assert.Equal(t, urlParse["normalized_nofrag"], exampleQuery)
 		assert.Equal(t, urlParse["password"], "p")
 		assert.Equal(t, urlParse["path"], "/foo")
 		assert.Equal(t, urlParse["port"], "")
@@ -148,14 +152,14 @@ func TestTerraform(t *testing.T) {
 		assert.Equal(t, urlParse["username"], "u")
 
 		// url_parse_gsb
-		urlParseGSB := terraform.OutputMap(t, terraformOptions, "url_parse_gsb")
+		urlParseGSB := terraform.OutputMap(t, terraformOptions, "url_parse_gsb_ds")
 		assert.Equal(t, urlParseGSB["decoded_port"], fmt.Sprint(80))
 		assert.Equal(t, urlParseGSB["fragment"], "")
 		assert.Equal(t, urlParseGSB["hash"], "")
-		assert.Equal(t, urlParseGSB["host"], "example.com")
-		assert.Equal(t, urlParseGSB["hostname"], "example.com")
-		assert.Equal(t, urlParseGSB["normalized"], "http://u:p@example.com/foo?q=1")
-		assert.Equal(t, urlParseGSB["normalized_nofrag"], "http://u:p@example.com/foo?q=1")
+		assert.Equal(t, urlParseGSB["host"], exampleCom)
+		assert.Equal(t, urlParseGSB["hostname"], exampleCom)
+		assert.Equal(t, urlParseGSB["normalized"], exampleQuery)
+		assert.Equal(t, urlParseGSB["normalized_nofrag"], exampleQuery)
 		assert.Equal(t, urlParseGSB["password"], "p")
 		assert.Equal(t, urlParseGSB["path"], "/foo")
 		assert.Equal(t, urlParseGSB["port"], "")
@@ -174,14 +178,14 @@ func TestTerraform(t *testing.T) {
 			t.Fatal(err)
 		}
 
-		assert.Equal(t, terraform.Output(t, terraformOptions, "homedir_get"), homedir)
+		assert.Equal(t, terraform.Output(t, terraformOptions, "homedir_get_ds"), homedir)
 
 		homedirPath, err = corefunc.HomedirExpand("~/.aws")
 		if err != nil {
 			t.Fatal(err)
 		}
 
-		assert.Equal(t, terraform.Output(t, terraformOptions, "homedir_expand"), homedirPath)
+		assert.Equal(t, terraform.Output(t, terraformOptions, "homedir_expand_ds"), homedirPath)
 
 		// At the end of the test, run `terraform destroy` to clean up any resources that were created
 		err = restoreEnv()

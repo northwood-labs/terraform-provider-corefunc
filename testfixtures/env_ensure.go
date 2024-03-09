@@ -24,10 +24,12 @@ import (
 // Terraform acceptance tests.
 // <https://github.com/golang/go/wiki/TableDrivenTests>
 var EnvEnsureTestTable = map[string]struct {
-	Pattern     *regexp.Regexp
-	ExpectedErr error
-	EnvVarName  string
-	SetValue    string
+	Pattern       *regexp.Regexp
+	ExpectedErrRE *regexp.Regexp
+	ExpectedErr   error
+	EnvVarName    string
+	SetValue      string
+	PatternStr    string
 }{
 	"AWS_DEFAULT_REGION": {
 		EnvVarName: "AWS_DEFAULT_REGION",
@@ -36,19 +38,25 @@ var EnvEnsureTestTable = map[string]struct {
 	"AWS_REGION": {
 		EnvVarName: "AWS_REGION",
 		SetValue:   "us-east-1",
-		Pattern:    regexp.MustCompile(`^([a-z]{2})-([^-]+)-(\\d)$`),
+		// Pattern:    regexp.MustCompile(`^([a-z]{2})-([^-]+)-(\\d)$`),
+		PatternStr: `^([a-z]{2})-([^-]+)-(\\d)$`,
 	},
 	"AWS_VAULT": {
 		EnvVarName: "AWS_VAULT",
 		SetValue:   "dev",
 		Pattern:    regexp.MustCompile(`(non)?prod$`),
+		PatternStr: `(non)?prod$`,
 		ExpectedErr: errors.New(
 			"environment variable AWS_VAULT does not match pattern (non)?prod$",
 		), // lint:allow_errorf
+		ExpectedErrRE: regexp.MustCompile(
+			`environment variable AWS_VAULT does not match pattern \(non\)\?prod\$`,
+		), // lint:allow_errorf
 	},
 	"AWS_PAGER": {
-		EnvVarName:  "AWS_PAGER",
-		ExpectedErr: errors.New("environment variable AWS_PAGER is not defined"), // lint:allow_errorf
+		EnvVarName:    "AWS_PAGER",
+		ExpectedErr:   errors.New("environment variable AWS_PAGER is not defined"), // lint:allow_errorf
+		ExpectedErrRE: regexp.MustCompile(`environment variable AWS_PAGER is not defined`),
 	},
 	"BREW_PREFIX": {
 		EnvVarName: "BREW_PREFIX",
