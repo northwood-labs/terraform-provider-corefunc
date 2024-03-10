@@ -126,10 +126,10 @@ func TestTerraform(t *testing.T) {
 		// )
 
 		// runtime
-		// assert.Equal(t, terraform.Output(t, terraformOptions, "runtime_cpuarch_ds"), runtime.GOARCH)
-		// assert.Equal(t, terraform.Output(t, terraformOptions, "runtime_goroot_ds"), runtime.GOROOT())
-		// assert.Equal(t, terraform.Output(t, terraformOptions, "runtime_numcpus_ds"), fmt.Sprint(runtime.NumCPU()))
-		// assert.Equal(t, terraform.Output(t, terraformOptions, "runtime_os_ds"), runtime.GOOS)
+		assert.Equal(t, terraform.Output(t, terraformOptions, "runtime_cpuarch_fn"), runtime.GOARCH)
+		assert.Equal(t, terraform.Output(t, terraformOptions, "runtime_goroot_fn"), runtime.GOROOT())
+		assert.Equal(t, terraform.Output(t, terraformOptions, "runtime_numcpus_fn"), fmt.Sprint(runtime.NumCPU()))
+		assert.Equal(t, terraform.Output(t, terraformOptions, "runtime_os_fn"), runtime.GOOS)
 
 		// url_parse
 		// urlParse := terraform.OutputMap(t, terraformOptions, "url_parse_ds")
