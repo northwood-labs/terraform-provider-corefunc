@@ -61,7 +61,7 @@ func main() {
 	writeFileFromTemplate(
 		varMap,
 		getAbs("bats/test.tmpl"),
-		getAbs("../bats/"+varMap["SnakeStrip"]+".bats.sh"),
+		getAbs("../bats/ds_"+varMap["SnakeStrip"]+".bats.sh"),
 	)
 
 	// ../testfixtures
@@ -146,11 +146,6 @@ func main() {
 		varMap,
 		getAbs("./examples/data-source.tftpl"),
 		getAbs(edsPath+"/data-source.tf"),
-	)
-	writeFileFromTemplate(
-		varMap,
-		getAbs("./examples/terraform-plan.example.gotmpl"),
-		getAbs(edsPath+"/terraform-plan.example"),
 	)
 	writeFileFromTemplate(
 		varMap,
