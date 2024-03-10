@@ -69,7 +69,8 @@ output "aws_pager" {
 # AWS_VAULT="dev"
 
 output "aws_vault" {
-  value = provider::corefunc::env_ensure("AWS_VAULT", "(non)?prod$") # Must end with "prod" or "nonprod".
+  # Must end with "prod" or "nonprod".
+  value = provider::corefunc::env_ensure("AWS_VAULT", "(non)?prod$")
 }
 
 #=> [Error] Invalid value for "name" parameter:
@@ -86,7 +87,7 @@ AWS_DEFAULT_REGION="us-east-1" AWS_VAULT="dev" terraform plan
 Error: Invalid function argument
 
   on function.AWS_PAGER.tf line 4, in output "aws_pager":
-   4:   value = provider::corefunc::env_ensure("AWS_PAGER")
+  4:   value = provider::corefunc::env_ensure("AWS_PAGER")
     ├────────────────
     │ while calling provider::corefunc::env_ensure(name, pattern...)
 
@@ -95,7 +96,7 @@ Invalid value for "name" parameter: environment variable AWS_PAGER is not define
 Error: Invalid function argument
 
   on function.AWS_VAULT.tf line 4, in output "aws_vault":
-   4:   value = provider::corefunc::env_ensure("AWS_VAULT", "(non)?prod$") # Must end with "prod" or "nonprod".
+  4:   value = provider::corefunc::env_ensure("AWS_VAULT", "(non)?prod$") # Must end with "prod" or "nonprod".
     ├────────────────
     │ while calling provider::corefunc::env_ensure(name, pattern...)
 
