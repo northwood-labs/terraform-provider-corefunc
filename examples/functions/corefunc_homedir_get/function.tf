@@ -1,5 +1,3 @@
-output "@TODO" {
-  value = provider::corefunc::homedir_get("@TODO")
+output "homedir" {
+  value = provider::corefunc::homedir_get()
 }
-
-#=> @TODO
