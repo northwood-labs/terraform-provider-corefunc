@@ -68,7 +68,7 @@ func (f *homedirExpandFunction) Definition(
 		MarkdownDescription: strings.TrimSpace(dedent.Dedent(`
 		Replaces the ~ character in a path with the current user's home directory.
 
-		Maps to the ` + linkPackage("Homedir") + ` Go method, which can be used in ` + Terratest + `.
+		Maps to the ` + linkPackage("HomedirExpand") + ` Go method, which can be used in ` + Terratest + `.
 		`)),
 		Parameters: []function.Parameter{
 			function.StringParameter{
