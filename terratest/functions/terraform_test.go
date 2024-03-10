@@ -169,22 +169,22 @@ func TestTerraform(t *testing.T) {
 		// assert.Equal(t, urlParseGSB["url"], "HTTP://u:p@example.com:80/foo?q=1#bar")
 		// assert.Equal(t, urlParseGSB["username"], "u")
 
-		// homedir := ""
-		// homedirPath := ""
+		homedir := ""
+		homedirPath := ""
 
-		// homedir, err = corefunc.Homedir()
-		// if err != nil {
-		// 	t.Fatal(err)
-		// }
+		homedir, err = corefunc.Homedir()
+		if err != nil {
+			t.Fatal(err)
+		}
 
-		// assert.Equal(t, terraform.Output(t, terraformOptions, "homedir_get_ds"), homedir)
+		assert.Equal(t, terraform.Output(t, terraformOptions, "homedir_get_fn"), homedir)
 
-		// homedirPath, err = corefunc.HomedirExpand("~/.aws")
-		// if err != nil {
-		// 	t.Fatal(err)
-		// }
+		homedirPath, err = corefunc.HomedirExpand("~/.aws")
+		if err != nil {
+			t.Fatal(err)
+		}
 
-		// assert.Equal(t, terraform.Output(t, terraformOptions, "homedir_expand_ds"), homedirPath)
+		assert.Equal(t, terraform.Output(t, terraformOptions, "homedir_expand_fn"), homedirPath)
 
 		// At the end of the test, run `terraform destroy` to clean up any resources that were created
 		err = restoreEnv()

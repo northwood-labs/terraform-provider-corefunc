@@ -127,6 +127,8 @@ func (p *coreFuncProvider) DataSources(ctx context.Context) []func() datasource.
 func (p *coreFuncProvider) Functions(ctx context.Context) []func() function.Function {
 	return []func() function.Function{
 		EnvEnsureFunction,
+		HomedirExpandFunction,
+		HomedirGetFunction,
 		RuntimeCpuarchFunction,
 		RuntimeGorootFunction,
 		RuntimeNumcpusFunction,

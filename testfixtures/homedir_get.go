@@ -23,7 +23,6 @@ import (
 // Terraform acceptance tests.
 // <https://github.com/golang/go/wiki/TableDrivenTests>
 var HomedirGetTestTable = map[string]struct { // lint:no_dupe
-	Input    string
 	Expected string
 }{
 	"home": {
