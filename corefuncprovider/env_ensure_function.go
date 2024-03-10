@@ -124,7 +124,7 @@ func (f *envEnsureFunction) Run(ctx context.Context, req function.RunRequest, re
 		err = corefunc.EnvEnsure(name, rePattern)
 		if err != nil {
 			resp.Error = function.ConcatFuncErrors(
-				function.NewArgumentFuncError(0, err.Error()),
+				function.NewFuncError(err.Error()),
 			)
 
 			return

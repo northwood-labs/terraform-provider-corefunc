@@ -45,24 +45,24 @@ var (
 			Err:      false,
 		},
 		"home-foo": {
-			"~/foo",
-			filepath.Join(u.HomeDir, "foo"),
-			false,
+			Input:    "~/foo",
+			Expected: filepath.Join(u.HomeDir, "foo"),
+			Err:      false,
 		},
 		"empty": {
-			"",
-			"",
-			false,
+			Input:    "",
+			Expected: "",
+			Err:      false,
 		},
 		"home": {
-			"~",
-			u.HomeDir,
-			false,
+			Input:    "~",
+			Expected: u.HomeDir,
+			Err:      false,
 		},
 		"invalid": {
-			"~foo/foo",
-			"",
-			true,
+			Input:    "~foo/foo",
+			Expected: "",
+			Err:      true,
 		},
 	}
 )
