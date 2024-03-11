@@ -1,4 +1,3 @@
-<!--
 ---
 page_title: "str_kebab function - corefunc"
 subcategory: ""
@@ -6,7 +5,6 @@ description: |-
   Converts a string to kebab-case, removing any non-alphanumeric characters.
   Maps to the corefunc.StrKebab() https://pkg.go.dev/github.com/northwood-labs/terraform-provider-corefunc/corefunc#StrKebab Go method, which can be used in Terratest https://terratest.gruntwork.io.
 ---
--->
 
 # str_kebab (function)
 

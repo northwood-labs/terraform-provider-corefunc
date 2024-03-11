@@ -1,4 +1,3 @@
-<!--
 ---
 page_title: "str_constant function - corefunc"
 subcategory: ""
@@ -7,7 +6,6 @@ description: |-
   Also known as SCREAMING_SNAKE_CASE.
   Maps to the corefunc.StrConstant() https://pkg.go.dev/github.com/northwood-labs/terraform-provider-corefunc/corefunc#StrConstant Go method, which can be used in Terratest https://terratest.gruntwork.io.
 ---
--->
 
 # str_constant (function)
 

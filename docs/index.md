@@ -1,4 +1,3 @@
-<!--
 ---
 page_title: "Core Functions Provider"
 subcategory: ""
@@ -23,7 +22,6 @@ description: |-
   pre-built functions in the form of Data Sources or Provider
   Functions (1.8).
 ---
--->
 
 # Core Functions Provider
 

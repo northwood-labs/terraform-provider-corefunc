@@ -1,4 +1,3 @@
-<!--
 ---
 page_title: "env_ensure function - corefunc"
 subcategory: ""
@@ -13,7 +12,6 @@ description: |-
   Maps to the corefunc.EnvEnsure() https://pkg.go.dev/github.com/northwood-labs/terraform-provider-corefunc/corefunc#EnvEnsure Go method, which can be used in
   Terratest https://terratest.gruntwork.io.
 ---
--->
 
 # env_ensure (function)
 
