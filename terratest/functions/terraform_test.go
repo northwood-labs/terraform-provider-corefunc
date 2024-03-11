@@ -38,8 +38,8 @@ var (
 	err error
 
 	inputStr = "This is [an] {example}$${id32}."
-	// prefix       = "NW-ZZZ-CLOUD-TEST-APP-CLOUD-PROD-CRIT"
-	// label        = "K8S Pods Not Running Deployment Check"
+	prefix   = "NW-ZZZ-CLOUD-TEST-APP-CLOUD-PROD-CRIT"
+	label    = "K8S Pods Not Running Deployment Check"
 	// strToReplace = "This is a string for testing replacements. New Relic. Set-up."
 
 	// exampleCom       = "example.com"
@@ -106,10 +106,10 @@ func TestTerraform(t *testing.T) {
 		assert.Equal(t, terraform.Output(t, terraformOptions, "int_leftpad_fn"), corefunc.IntLeftPad(123, 5))
 		assert.Equal(t, terraform.Output(t, terraformOptions, "str_leftpad_fn"), corefunc.StrLeftPad("abc", 5, '.'))
 		assert.Equal(t, terraform.Output(t, terraformOptions, "env_ensure_fn"), os.Getenv("GOROOT"))
-		// assert.Equal(t,
-		// 	terraform.Output(t, terraformOptions, "str_truncate_ds"),
-		// 	corefunc.TruncateLabel(64, prefix, label),
-		// )
+		assert.Equal(t,
+			terraform.Output(t, terraformOptions, "str_truncate_fn"),
+			corefunc.TruncateLabel(64, prefix, label),
+		)
 		// assert.Equal(t,
 		// 	terraform.Output(t, terraformOptions, "str_iterative_replace_ds"),
 		// 	corefunc.StrIterativeReplace(

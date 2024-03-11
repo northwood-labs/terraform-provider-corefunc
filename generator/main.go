@@ -38,6 +38,12 @@ func main() {
 		"Name of the data source to generate stubs for. MUST be in snake_case, beginning with corefunc_.",
 	)
 
+	functionOpt := flag.Bool(
+		"function",
+		false,
+		"Only generate function stubs.",
+	)
+
 	flag.Parse()
 
 	varMap := createVarMap(nameOpt)
@@ -57,12 +63,14 @@ func main() {
 	)
 	fmt.Println("")
 
-	// ../bats
-	writeFileFromTemplate(
-		varMap,
-		getAbs("bats/test.tmpl"),
-		getAbs("../bats/ds_"+varMap["SnakeStrip"]+".bats.sh"),
-	)
+	if !*functionOpt {
+		// ../bats
+		writeFileFromTemplate(
+			varMap,
+			getAbs("bats/test.tmpl"),
+			getAbs("../bats/ds_"+varMap["SnakeStrip"]+".bats.sh"),
+		)
+	}
 
 	// ../testfixtures
 	writeFileFromTemplate(
@@ -73,21 +81,24 @@ func main() {
 
 	// ../corefuncprovider
 	cfpPath := "../corefuncprovider/" + varMap["SnakeStrip"]
-	writeFileFromTemplate(
-		varMap,
-		getAbs("./corefuncprovider/data_source.gotmpl"),
-		getAbs(cfpPath+"_data_source.go"),
-	)
-	writeFileFromTemplate(
-		varMap,
-		getAbs("./corefuncprovider/data_source_test.gotmpl"),
-		getAbs(cfpPath+"_data_source_test.go"),
-	)
-	writeFileFromTemplate(
-		varMap,
-		getAbs("./corefuncprovider/data_source_fixture.tftpl"),
-		getAbs(cfpPath+"_data_source_fixture.tftpl"),
-	)
+	if !*functionOpt {
+		writeFileFromTemplate(
+			varMap,
+			getAbs("./corefuncprovider/data_source.gotmpl"),
+			getAbs(cfpPath+"_data_source.go"),
+		)
+		writeFileFromTemplate(
+			varMap,
+			getAbs("./corefuncprovider/data_source_test.gotmpl"),
+			getAbs(cfpPath+"_data_source_test.go"),
+		)
+		writeFileFromTemplate(
+			varMap,
+			getAbs("./corefuncprovider/data_source_fixture.tftpl"),
+			getAbs(cfpPath+"_data_source_fixture.tftpl"),
+		)
+	}
+
 	writeFileFromTemplate(
 		varMap,
 		getAbs("./corefuncprovider/function.gotmpl"),
@@ -105,11 +116,21 @@ func main() {
 	)
 
 	// ../templates
-	writeFileFromTemplate(
-		varMap,
-		getAbs("./templates/data-source.md.gotmpl"),
-		getAbs("../templates/data-sources/"+varMap["SnakeStrip"]+".md.tmpl"),
-	)
+	edsPath := "../examples/data-sources/" + varMap["Snake"]
+
+	if !*functionOpt {
+		writeFileFromTemplate(
+			varMap,
+			getAbs("./templates/data-source.md.gotmpl"),
+			getAbs("../templates/data-sources/"+varMap["SnakeStrip"]+".md.tmpl"),
+		)
+
+		err = os.MkdirAll(getAbs(edsPath), dirPerms)
+		if err != nil {
+			panic(err)
+		}
+	}
+
 	writeFileFromTemplate(
 		varMap,
 		getAbs("./templates/function.md.gotmpl"),
@@ -117,13 +138,6 @@ func main() {
 	)
 
 	// ../examples
-	edsPath := "../examples/data-sources/" + varMap["Snake"]
-
-	err = os.MkdirAll(getAbs(edsPath), dirPerms)
-	if err != nil {
-		panic(err)
-	}
-
 	efPath := "../examples/functions/" + varMap["Snake"]
 
 	err = os.MkdirAll(getAbs(efPath), dirPerms)
@@ -142,16 +156,18 @@ func main() {
 		getAbs(efPath+"/versions.tf"),
 	)
 
-	writeFileFromTemplate(
-		varMap,
-		getAbs("./examples/data-source.tftpl"),
-		getAbs(edsPath+"/data-source.tf"),
-	)
-	writeFileFromTemplate(
-		varMap,
-		getAbs("./examples/versions.ds.tftpl"),
-		getAbs(edsPath+"/versions.tf"),
-	)
+	if !*functionOpt {
+		writeFileFromTemplate(
+			varMap,
+			getAbs("./examples/data-source.tftpl"),
+			getAbs(edsPath+"/data-source.tf"),
+		)
+		writeFileFromTemplate(
+			varMap,
+			getAbs("./examples/versions.ds.tftpl"),
+			getAbs(edsPath+"/versions.tf"),
+		)
+	}
 }
 
 func getAbs(path string) string {
