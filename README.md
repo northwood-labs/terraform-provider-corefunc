@@ -37,11 +37,11 @@ The goal of this provider is not to call any APIs, but to provide pre-built func
 
 | Testing type | Details           | Description                                                                    |
 |--------------|-------------------|--------------------------------------------------------------------------------|
-| integration  | Terraform 1.0–1.7 | Executes the provider with this release, pulling from `registry.terraform.io`. |
+| integration  | Terraform 1.0–1.8 | Executes the provider with this release, pulling from `registry.terraform.io`. |
 | integration  | OpenTofu 1.6      | Executes the provider with this release, pulling from `registry.opentofu.org`. |
-| unit         | Go 1.20–1.21      | Tests using these versions.                                                    |
-| mutation     | Go 1.20–1.21      | Tests using these versions.                                                    |
-| fuzz         | Go 1.20–1.21      | Tests using these versions.                                                    |
+| unit         | Go 1.21–1.22      | Tests using these versions.                                                    |
+| mutation     | Go 1.21–1.22      | Tests using these versions.                                                    |
+| fuzz         | Go 1.21–1.22      | Tests using these versions.                                                    |
 
 ## Usage Examples
 
