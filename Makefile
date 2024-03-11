@@ -168,6 +168,13 @@ clean-tf:
 	find . -type d -name ".terraform" | xargs -I% rm -Rfv "%"
 	find . -type f -name ".terraform.lock.hcl" | xargs -I% rm -fv "%"
 
+.PHONY: clean-ds
+## clean-ds: [clean] Clean .DS_Store files.
+clean-ds:
+	@ $(ECHO) " "
+	@ $(ECHO) "\033[1;33m=====> Cleaning .DS_Store files....\033[0m"
+	find . -type f -name ".DS_Store" | xargs -I% rm -fv "%"
+
 .PHONY: clean
 ## clean: [clean]* Runs ALL cleaning tasks (except the Go cache).
 clean: clean-bench clean-tf clean-tests
