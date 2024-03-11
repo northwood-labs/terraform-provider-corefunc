@@ -1,4 +1,3 @@
-<!--
 ---
 page_title: "corefunc_str_iterative_replace Data Source - corefunc"
 subcategory: ""
@@ -8,7 +7,6 @@ description: |-
   Maps to the corefunc.StrIterativeReplace() URL
   Go method, which can be used in Terratest https://terratest.gruntwork.io.
 ---
--->
 
 # corefunc_str_iterative_replace (Data Source)
 

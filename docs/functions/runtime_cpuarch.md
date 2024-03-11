@@ -1,4 +1,3 @@
-<!--
 ---
 page_title: "runtime_cpuarch function - corefunc"
 subcategory: ""
@@ -11,7 +10,6 @@ description: |-
   Maps to the runtime.GOARCH https://pkg.go.dev/runtime#GOARCH
   Go property, which can be used in Terratest https://terratest.gruntwork.io.
 ---
--->
 
 # runtime_cpuarch (function)
 

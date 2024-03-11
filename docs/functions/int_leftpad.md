@@ -1,4 +1,3 @@
-<!--
 ---
 page_title: "int_leftpad function - corefunc"
 subcategory: ""
@@ -7,7 +6,6 @@ description: |-
   -> If the integer is NOT in base10 (decimal), it will be converted to base10 (decimal) before being padded.
   Maps to the corefunc.IntLeftPad() https://pkg.go.dev/github.com/northwood-labs/terraform-provider-corefunc/corefunc#IntLeftPad Go method, which can be used in Terratest https://terratest.gruntwork.io.
 ---
--->
 
 # int_leftpad (function)
 
