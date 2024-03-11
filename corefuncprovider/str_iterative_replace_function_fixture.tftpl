@@ -1,0 +1,14 @@
+output "replacements" {
+  value = provider::corefunc::str_iterative_replace(
+    "{{ .Input }}",
+      [
+{{- with .Replacements }}{{- range . }}
+        {
+          old = "{{- .Old -}}"
+          new = "{{- .New -}}"
+        },
+{{- end }}{{- end }}
+    ]
+  )
+}
+#=> {{ .Expected }}
