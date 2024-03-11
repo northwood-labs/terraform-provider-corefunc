@@ -84,12 +84,12 @@ func (d *homedirExpandDataSource) Schema(
 		`)),
 		Attributes: map[string]schema.Attribute{
 			"path": schema.StringAttribute{
-				Description: "The path to expand.",
-				Required:    true,
+				MarkdownDescription: "The path to expand.",
+				Required:            true,
 			},
 			"value": schema.StringAttribute{
-				Description: "The path with the home directory expanded.",
-				Computed:    true,
+				MarkdownDescription: "The path with the home directory expanded.",
+				Computed:            true,
 			},
 		},
 	}

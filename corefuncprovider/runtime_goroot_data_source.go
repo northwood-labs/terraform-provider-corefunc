@@ -84,8 +84,8 @@ func (d *runtimeGorootDataSource) Schema(
 		`)),
 		Attributes: map[string]schema.Attribute{
 			"value": schema.StringAttribute{
-				Description: "Returns the GOROOT path for the current system, if one exists.",
-				Computed:    true,
+				MarkdownDescription: "Returns the GOROOT path for the current system, if one exists.",
+				Computed:            true,
 			},
 		},
 	}
