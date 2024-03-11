@@ -3,49 +3,53 @@
 page_title: "Core Functions Provider"
 subcategory: ""
 description: |-
-  Utilities that should have been Terraform core functions.
+  Utilities that should have been Terraform/OpenTofu core functions.
   While some of these can be implemented in HCL, some of them begin to
   push up against the limits of Terraform and the HCL2 configuration
   language. We also perform testing using the
   Terratest https://terratest.gruntwork.io framework on a regular basis.
-  Exposing these functions as both a Go library as well as a Terraform
-  provider enables us to use the same functionality in both our Terraform
+  Exposing these functions as both a Go library as well as a Terraform/OpenTofu
+  provider enables us to use the same functionality in both our Terraform/OpenTofu
   applies as well as while using a testing framework.
-  Since Terraform doesn't have the concept of user-defined functions, the
-  next step to open up the possibilities is to write a custom Terraform
-  Provider which has the functions built-in, using Terraform's existing
-  support for inputs and outputs.
-  This does not add new syntax or constructs to Terraform. Instead it
-  uses the existing concepts around Providers, Resources, Data Sources,
-  Variables, and Outputs to expose new custom-built functionality.
+  Since earlier versions of Terraform/OpenTofu didn't have the concept of
+  user-defined functions, the next step to open up the possibilities was
+  to write a custom Provider which has the functions built-in, using
+  existing support for inputs and outputs.
+  This does not add new syntax or constructs. Instead it uses the
+  existing concepts around Providers, Resources, Data Sources,
+  Variables, Outputs, and Functions (1.8) to expose new custom-built
+  functionality.
   The goal of this provider is not to call any APIs, but to provide
-  pre-built functions in the form of Data Sources.
+  pre-built functions in the form of Data Sources or Provider
+  Functions (1.8).
 ---
 -->
 
 # Core Functions Provider
 
-Utilities that should have been Terraform _core functions_.
+Utilities that should have been Terraform/OpenTofu _core functions_.
 
 While some of these _can_ be implemented in HCL, some of them begin to
 push up against the limits of Terraform and the HCL2 configuration
 language. We also perform testing using the
 [Terratest](https://terratest.gruntwork.io) framework on a regular basis.
-Exposing these functions as both a Go library as well as a Terraform
-provider enables us to use the same functionality in both our Terraform
+Exposing these functions as both a Go library as well as a Terraform/OpenTofu
+provider enables us to use the same functionality in both our Terraform/OpenTofu
 applies as well as while using a testing framework.
 
-Since Terraform doesn't have the concept of user-defined functions, the
-next step to open up the possibilities is to write a custom Terraform
-Provider which has the functions built-in, using Terraform's existing
-support for inputs and outputs.
+Since earlier versions of Terraform/OpenTofu didn't have the concept of
+user-defined functions, the next step to open up the possibilities was
+to write a custom Provider which has the functions built-in, using
+existing support for inputs and outputs.
 
-**This does not add new syntax or constructs to Terraform.** Instead it
-uses the _existing_ concepts around Providers, Resources, Data Sources,
-Variables, and Outputs to expose new custom-built functionality.
+**This does not add new syntax or constructs.** Instead it uses the
+_existing_ concepts around Providers, Resources, Data Sources,
+Variables, Outputs, and Functions (1.8) to expose new custom-built
+functionality.
 
 The goal of this provider is not to call any APIs, but to provide
-pre-built functions in the form of _Data Sources_.
+pre-built functions in the form of _Data Sources_ or _Provider
+Functions_ (1.8).
 
 ~> While it’s common knowledge that Terraform is great at standing up and managing Cloud infrastructure, it’s also good at running _anything with an API_. People regularly manage [code repositories], [DNS records], [feature flags], [identity and access management], [content delivery], [passwords], [monitoring], [alerts], [zero trust network access], [cryptographic signatures], and can even [order a pizza]. This provider is more analogous to HashiCorp’s _utility_ providers such as [local], [external], and [archive].
 
@@ -55,13 +59,15 @@ Built using the [Terraform Plugin Framework][TPF], which speaks [Terraform Proto
 
 | Testing type | Details           | Description                                                                    |
 |--------------|-------------------|--------------------------------------------------------------------------------|
-| integration  | Terraform 1.0–1.7 | Executes the provider with this release, pulling from `registry.terraform.io`. |
+| integration  | Terraform 1.0–1.8 | Executes the provider with this release, pulling from `registry.terraform.io`. |
 | integration  | OpenTofu 1.6      | Executes the provider with this release, pulling from `registry.opentofu.org`. |
-| unit         | Go 1.20–1.21      | Tests using these versions.                                                    |
-| mutation     | Go 1.20–1.21      | Tests using these versions.                                                    |
-| fuzz         | Go 1.20–1.21      | Tests using these versions.                                                    |
+| unit         | Go 1.21–1.22      | Tests using these versions.                                                    |
+| mutation     | Go 1.21–1.22      | Tests using these versions.                                                    |
+| fuzz         | Go 1.21–1.22      | Tests using these versions.                                                    |
 
 ## Setting-up the provider
+
+For users of Terraform 1.0 (and newer), all of the the _Data Source_ implementations are available. Their implementations (inputs, outputs) are consistent with the _Provider Function_ implementations, but exposed as _Data Sources_.
 
 ```terraform
 terraform {
@@ -71,6 +77,24 @@ terraform {
     corefunc = {
       source  = "northwood-labs/corefunc"
       version = "~> 1.0"
+    }
+  }
+}
+
+# There are no configuration options
+provider "corefunc" {}
+```
+
+For users of Terraform 1.8 (and newer), all of the the _Data Source_ and _Provider Function_ implementations are available. Their implementations (inputs, outputs) are consistent with each other, and will always return the same outputs from the same imputs. _Provider Functions_ require version 1.4.0 (or later) of this provider.
+
+```terraform
+terraform {
+  required_version = "~> 1.8"
+
+  required_providers {
+    corefunc = {
+      source  = "northwood-labs/corefunc"
+      version = "~> 1.4"
     }
   }
 }
