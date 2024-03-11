@@ -1,0 +1,4 @@
+output "leftpad" {
+    value = provider::corefunc::int_leftpad({{ .Input }}, {{ .PadWidth }})
+}
+#=> {{ .Expected }}
