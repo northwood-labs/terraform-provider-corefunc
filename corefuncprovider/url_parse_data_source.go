@@ -107,8 +107,9 @@ func (d *urlParseDataSource) Schema(
         `)),
 		Attributes: map[string]schema.Attribute{
 			"url": schema.StringAttribute{
-				MarkdownDescription: "The absolute URL to parse according to the [WHATWG URL API](https://url.spec.whatwg.org/#api).",
-				Required:            true,
+				MarkdownDescription: "The absolute URL to parse according to the " +
+					"[WHATWG URL API](https://url.spec.whatwg.org/#api).",
+				Required: true,
 			},
 			"canonicalizer": schema.StringAttribute{
 				MarkdownDescription: "The method by which the URL should be canonicalized. " +
@@ -149,8 +150,9 @@ func (d *urlParseDataSource) Schema(
 				Computed:            true,
 			},
 			"port": schema.StringAttribute{
-				MarkdownDescription: "The port of the URL. May be blank if web browsers typically hide the port in the URL bar.",
-				Computed:            true,
+				MarkdownDescription: "The port of the URL. May be blank if web browsers typically hide " +
+					"the port in the URL bar.",
+				Computed: true,
 			},
 			"decoded_port": schema.Int64Attribute{
 				MarkdownDescription: "The port of the URL.",
