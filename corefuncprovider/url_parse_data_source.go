@@ -116,7 +116,7 @@ func (d *urlParseDataSource) Schema(
 				Optional: true,
 			},
 			"canonicalizer": schema.StringAttribute{
-				Description: "The method by which the URL should be canonicalized. " +
+				MarkdownDescription: "The method by which the URL should be canonicalized. " +
 					"Allowed values: `standard`, `google_safe_browsing`. The default value is `standard`.",
 				Optional: true,
 			},
