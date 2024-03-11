@@ -27,62 +27,66 @@ import (
 )
 
 // Ensure the implementation satisfies the expected interfaces.
-var _ function.Function = &strSnakeFunction{}
+var _ function.Function = &strCamelFunction{}
 
 type (
-	// strSnakeFunction is the function implementation.
-	strSnakeFunction struct{}
+	// strCamelFunction is the function implementation.
+	strCamelFunction struct{}
 )
 
-// StrSnakeFunction is a method that exposes its paired Go function as a
+// StrCamelFunction is a method that exposes its paired Go function as a
 // Terraform Function.
-func StrSnakeFunction() function.Function { // lint:allow_return_interface
-	return &strSnakeFunction{}
+// https://developer.hashicorp.com/terraform/plugin/framework/functions/implementation
+func StrCamelFunction() function.Function { // lint:allow_return_interface
+	return &strCamelFunction{}
 }
 
-func (f *strSnakeFunction) Metadata(
+func (f *strCamelFunction) Metadata(
 	ctx context.Context,
 	req function.MetadataRequest,
 	resp *function.MetadataResponse,
 ) {
-	tflog.Debug(ctx, "Starting StrSnake Function Metadata method.")
+	tflog.Debug(ctx, "Starting StrCamel Function Metadata method.")
 
-	resp.Name = "str_snake"
+	resp.Name = "str_camel"
 
 	tflog.Debug(ctx, fmt.Sprintf("resp.Name = %s", resp.Name))
 
-	tflog.Debug(ctx, "Ending StrSnake Function Metadata method.")
+	tflog.Debug(ctx, "Ending StrCamel Function Metadata method.")
 }
 
 // Definition defines the parameters and return type for the function.
-func (f *strSnakeFunction) Definition(
+func (f *strCamelFunction) Definition(
 	ctx context.Context,
 	req function.DefinitionRequest,
 	resp *function.DefinitionResponse,
 ) {
-	tflog.Debug(ctx, "Starting StrSnake Function Definition method.")
+	tflog.Debug(ctx, "Starting StrCamel Function Definition method.")
 
 	resp.Definition = function.Definition{
-		Summary: "Converts a string to `snake_case` removing any non-alphanumeric characters.",
+		Summary: "Converts a string to `camelCase`, removing any non-alphanumeric characters.",
 		MarkdownDescription: strings.TrimSpace(dedent.Dedent(`
-		Converts a string to ` + "`" + `snake_case` + "`" + `, removing any non-alphanumeric characters.
+		Converts a string to ` + "`" + `camelCase` + "`" + `, removing any non-alphanumeric characters.
 
-		Maps to the ` + linkPackage("StrSnake") + ` Go method, which can be used in ` + Terratest + `.
-        `)),
+		-> Some acronyms are maintained as uppercase. See
+		[caps: pkg-variables](https://pkg.go.dev/github.com/chanced/caps#pkg-variables) for a complete list.
+
+		Maps to the ` + linkPackage("StrCamel") + ` Go method, which can be used in ` + Terratest + `.
+		`)),
 		Parameters: []function.Parameter{
 			function.StringParameter{
 				Name:                "str",
-				MarkdownDescription: "The string to convert to `snake_case`.",
+				MarkdownDescription: "The string to convert to `camelCase`.",
 			},
 		},
 		Return: function.StringReturn{},
 	}
 
-	tflog.Debug(ctx, "Ending StrSnake Function Definition method.")
+	tflog.Debug(ctx, "Ending StrCamel Function Definition method.")
 }
 
-func (f *strSnakeFunction) Run(ctx context.Context, req function.RunRequest, resp *function.RunResponse) {
-	tflog.Debug(ctx, "Starting StrSnake Function Run method.")
+func (f *strCamelFunction) Run(ctx context.Context, req function.RunRequest, resp *function.RunResponse) {
+	tflog.Debug(ctx, "Starting StrCamel Function Run method.")
 
 	var str string
 	err := req.Arguments.Get(ctx, &str)
@@ -92,8 +96,8 @@ func (f *strSnakeFunction) Run(ctx context.Context, req function.RunRequest, res
 		return
 	}
 
-	value := corefunc.StrSnake(str)
+	value := corefunc.StrCamel(str)
 	resp.Error = function.ConcatFuncErrors(resp.Result.Set(ctx, value))
 
-	tflog.Debug(ctx, "Ending StrSnake Function Run method.")
+	tflog.Debug(ctx, "Ending StrCamel Function Run method.")
 }
