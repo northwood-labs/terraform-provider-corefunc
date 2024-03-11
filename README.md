@@ -14,20 +14,20 @@
 
 ## Overview
 
-Utilities that should have been Terraform _core functions_.
+Utilities that should have been Terraform/OpenTofu _core functions_.
 
-While some of these _can_ be implemented in HCL, some of them begin to push up against the limits of Terraform and the HCL2 configuration language. We also perform testing using the [Terratest](https://terratest.gruntwork.io) framework on a regular basis. Exposing these functions as both a Go library as well as a Terraform provider enables us to use the same functionality in both our Terraform applies as well as while using a testing framework.
+While some of these _can_ be implemented in HCL, some of them begin to push up against the limits of Terraform and the HCL2 configuration language. We also perform testing using the [Terratest](https://terratest.gruntwork.io) framework on a regular basis. Exposing these functions as both a Go library as well as a Terraform/OpenTofu provider enables us to use the same functionality in both our Terraform/OpenTofu applies as well as while using a testing framework.
 
 > [!NOTE]
 > While it’s common knowledge that Terraform is great at standing up and managing Cloud infrastructure, it’s also good at running _anything with an API_. People regularly manage [code repositories], [DNS records], [feature flags], [identity and access management], [content delivery], [passwords], [monitoring], [alerts], [zero trust network access], [cryptographic signatures], and can even [order a pizza].
 >
 > This provider is more analogous to HashiCorp’s _utility_ providers such as [local], [external], and [archive].
 
-Since Terraform doesn't have the concept of user-defined functions, the next step to open up the possibilities is to write a custom Terraform Provider which has the functions built-in, using Terraform's existing support for inputs and outputs.
+Since earlier versions of Terraform/OpenTofu didn't have the concept of user-defined functions, the next step to open up the possibilities was to write a custom Provider which has the functions built-in, using existing support for inputs and outputs.
 
-**This does not add new syntax or constructs to Terraform.** Instead it uses the _existing_ concepts around Providers, Resources, Data Sources, Variables, and Outputs to expose new custom-built functionality.
+**This does not add new syntax or constructs.** Instead it uses the _existing_ concepts around Providers, Resources, Data Sources, Variables, Outputs, and Functions (1.8) to expose new custom-built functionality.
 
-The goal of this provider is not to call any APIs, but to provide pre-built functions in the form of _Data Sources_.
+The goal of this provider is not to call any APIs, but to provide pre-built functions in the form of _Data Sources_ or _Provider Functions_ (1.8).
 
 ## Compatibility testing
 
@@ -91,25 +91,24 @@ terraform-provider-corefunc version
 ```plain
 BASIC
 Version:    dev
-Go version: go1.21.4
-Git commit: c7b6411da19a792762d4037d2e17f4877d1f4e2b
-Dirty repo: true
-Build date: 2023-11-21T08:10:30Z
+Go version: go1.22.1
+Git commit: 822858fc0c80b34eebf2a5ddd1b48684414d71b3
+Build date: 2024-03-11T03:09:24Z
 OS/Arch:    darwin/arm64
 System:     macOS on Apple Silicon
-CPU Cores:  12
+CPU Cores:  10
 
 DEPENDENCIES
-github.com/chanced/caps                                    v1.0.1
-github.com/fatih/color                                     v1.14.1
-github.com/golang/protobuf                                 v1.5.3
+github.com/bits-and-blooms/bitset                          v1.13.0
+github.com/chanced/caps                                    v1.0.2
+github.com/fatih/color                                     v1.16.0
+github.com/golang/protobuf                                 v1.5.4
 github.com/gookit/color                                    v1.5.4
-github.com/hashicorp/go-hclog                              v1.5.0
-github.com/hashicorp/go-plugin                             v1.5.2
+github.com/hashicorp/go-hclog                              v1.6.2
+github.com/hashicorp/go-plugin                             v1.6.0
 github.com/hashicorp/go-uuid                               v1.0.3
-github.com/hashicorp/terraform-plugin-framework            v1.4.2
+github.com/hashicorp/terraform-plugin-framework            v1.6.1
 github.com/hashicorp/terraform-plugin-framework-validators v0.12.0
-github.com/hashicorp/terraform-plugin-go                   v0.19.1
 [...snip...]
 ```
 
