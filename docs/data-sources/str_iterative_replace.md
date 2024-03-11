@@ -23,36 +23,32 @@ Go method, which can be used in [Terratest](https://terratest.gruntwork.io).
 ```terraform
 data "corefunc_str_iterative_replace" "replacements" {
   string = "This is a string for testing replacements. New Relic. Set-up."
-
-  replacements {
-    old = "."
-    new = ""
-  }
-
-  replacements {
-    old = " "
-    new = "_"
-  }
-
-  replacements {
-    old = "-"
-    new = "_"
-  }
-
-  replacements {
-    old = "New_Relic"
-    new = "datadog"
-  }
-
-  replacements {
-    old = "This"
-    new = "this"
-  }
-
-  replacements {
-    old = "Set_up"
-    new = "setup"
-  }
+  replacements = [
+    {
+      old = "."
+      new = ""
+    },
+    {
+      old = " "
+      new = "_"
+    },
+    {
+      old = "-"
+      new = "_"
+    },
+    {
+      old = "New Relic"
+      new = "datadog"
+    },
+    {
+      old = "This"
+      new = "this"
+    },
+    {
+      old = "Set-up"
+      new = "setup"
+    },
+  ]
 }
 #=> this_is_a_string_for_testing_replacements_datadog_setup
 ```
@@ -62,7 +58,7 @@ data "corefunc_str_iterative_replace" "replacements" {
 
 ### Required
 
-* `replacements` (List of Object) A list of maps. Each map has an `old` and `new` key. `old` represents the existing string to be replaced, and `new` represents the replacement string. (see [below for nested schema](#nestedatt--replacements))
+* `replacements` (Attributes List) A list of maps. Each map has an `old` and `new` key. `old` represents the existing string to be replaced, and `new` represents the replacement string. (see [below for nested schema](#nestedatt--replacements))
 * `string` (String) The string upon which replacements should be applied.
 
 ### Read-Only
@@ -75,7 +71,7 @@ data "corefunc_str_iterative_replace" "replacements" {
 
 Required:
 
-* `new` (String)
-* `old` (String)
+* `new` (String) The replacement substring.
+* `old` (String) The substring to be replaced.
 
 <!-- Preview the provider docs with the Terraform registry provider docs preview tool: https://registry.terraform.io/tools/doc-preview -->
