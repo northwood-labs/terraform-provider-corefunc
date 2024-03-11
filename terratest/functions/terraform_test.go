@@ -42,9 +42,9 @@ var (
 	label    = "K8S Pods Not Running Deployment Check"
 	// strToReplace = "This is a string for testing replacements. New Relic. Set-up."
 
-	// exampleCom       = "example.com"
-	// exampleQuery     = "http://u:p@example.com/foo?q=1"
-	// exampleQueryFrag = "http://u:p@example.com/foo?q=1#bar"
+	exampleCom       = "example.com"
+	exampleQuery     = "http://u:p@example.com/foo?q=1"
+	exampleQueryFrag = "http://u:p@example.com/foo?q=1#bar"
 
 	origPath      = os.Getenv("TF_ACC_TERRAFORM_PATH")
 	origNamespace = os.Getenv("TF_ACC_PROVIDER_NAMESPACE")
@@ -132,42 +132,40 @@ func TestTerraform(t *testing.T) {
 		assert.Equal(t, terraform.Output(t, terraformOptions, "runtime_os_fn"), runtime.GOOS)
 
 		// url_parse
-		// urlParse := terraform.OutputMap(t, terraformOptions, "url_parse_ds")
-		// assert.Equal(t, urlParse["decoded_port"], fmt.Sprint(80))
-		// assert.Equal(t, urlParse["fragment"], "bar")
-		// assert.Equal(t, urlParse["hash"], "#bar")
-		// assert.Equal(t, urlParse["host"], exampleCom)
-		// assert.Equal(t, urlParse["hostname"], exampleCom)
-		// assert.Equal(t, urlParse["normalized"], exampleQueryFrag)
-		// assert.Equal(t, urlParse["normalized_nofrag"], exampleQuery)
-		// assert.Equal(t, urlParse["password"], "p")
-		// assert.Equal(t, urlParse["path"], "/foo")
-		// assert.Equal(t, urlParse["port"], "")
-		// assert.Equal(t, urlParse["protocol"], "http:")
-		// assert.Equal(t, urlParse["query"], "q=1")
-		// assert.Equal(t, urlParse["scheme"], "http")
-		// assert.Equal(t, urlParse["search"], "?q=1")
-		// assert.Equal(t, urlParse["url"], "HTTP://u:p@example.com:80/foo?q=1#bar")
-		// assert.Equal(t, urlParse["username"], "u")
+		urlParse := terraform.OutputMap(t, terraformOptions, "url_parse_fn")
+		assert.Equal(t, urlParse["decoded_port"], fmt.Sprint(80))
+		assert.Equal(t, urlParse["fragment"], "bar")
+		assert.Equal(t, urlParse["hash"], "#bar")
+		assert.Equal(t, urlParse["host"], exampleCom)
+		assert.Equal(t, urlParse["hostname"], exampleCom)
+		assert.Equal(t, urlParse["normalized"], exampleQueryFrag)
+		assert.Equal(t, urlParse["normalized_nofrag"], exampleQuery)
+		assert.Equal(t, urlParse["password"], "p")
+		assert.Equal(t, urlParse["path"], "/foo")
+		assert.Equal(t, urlParse["port"], "")
+		assert.Equal(t, urlParse["protocol"], "http:")
+		assert.Equal(t, urlParse["query"], "q=1")
+		assert.Equal(t, urlParse["scheme"], "http")
+		assert.Equal(t, urlParse["search"], "?q=1")
+		assert.Equal(t, urlParse["username"], "u")
 
 		// url_parse_gsb
-		// urlParseGSB := terraform.OutputMap(t, terraformOptions, "url_parse_gsb_ds")
-		// assert.Equal(t, urlParseGSB["decoded_port"], fmt.Sprint(80))
-		// assert.Equal(t, urlParseGSB["fragment"], "")
-		// assert.Equal(t, urlParseGSB["hash"], "")
-		// assert.Equal(t, urlParseGSB["host"], exampleCom)
-		// assert.Equal(t, urlParseGSB["hostname"], exampleCom)
-		// assert.Equal(t, urlParseGSB["normalized"], exampleQuery)
-		// assert.Equal(t, urlParseGSB["normalized_nofrag"], exampleQuery)
-		// assert.Equal(t, urlParseGSB["password"], "p")
-		// assert.Equal(t, urlParseGSB["path"], "/foo")
-		// assert.Equal(t, urlParseGSB["port"], "")
-		// assert.Equal(t, urlParseGSB["protocol"], "http:")
-		// assert.Equal(t, urlParseGSB["query"], "q=1")
-		// assert.Equal(t, urlParseGSB["scheme"], "http")
-		// assert.Equal(t, urlParseGSB["search"], "?q=1")
-		// assert.Equal(t, urlParseGSB["url"], "HTTP://u:p@example.com:80/foo?q=1#bar")
-		// assert.Equal(t, urlParseGSB["username"], "u")
+		urlParseGSB := terraform.OutputMap(t, terraformOptions, "url_parse_gsb_fn")
+		assert.Equal(t, urlParseGSB["decoded_port"], fmt.Sprint(80))
+		assert.Equal(t, urlParseGSB["fragment"], "")
+		assert.Equal(t, urlParseGSB["hash"], "")
+		assert.Equal(t, urlParseGSB["host"], exampleCom)
+		assert.Equal(t, urlParseGSB["hostname"], exampleCom)
+		assert.Equal(t, urlParseGSB["normalized"], exampleQuery)
+		assert.Equal(t, urlParseGSB["normalized_nofrag"], exampleQuery)
+		assert.Equal(t, urlParseGSB["password"], "p")
+		assert.Equal(t, urlParseGSB["path"], "/foo")
+		assert.Equal(t, urlParseGSB["port"], "")
+		assert.Equal(t, urlParseGSB["protocol"], "http:")
+		assert.Equal(t, urlParseGSB["query"], "q=1")
+		assert.Equal(t, urlParseGSB["scheme"], "http")
+		assert.Equal(t, urlParseGSB["search"], "?q=1")
+		assert.Equal(t, urlParseGSB["username"], "u")
 
 		homedir := ""
 		homedirPath := ""
