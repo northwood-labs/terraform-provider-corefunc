@@ -144,6 +144,7 @@ func (p *coreFuncProvider) Functions(ctx context.Context) []func() function.Func
 		StrPascalFunction,
 		StrSnakeFunction,
 		StrTruncateLabelFunction,
+		URLParseFunction,
 	}
 }
 
