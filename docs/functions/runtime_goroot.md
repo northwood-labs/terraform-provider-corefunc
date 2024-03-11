@@ -1,4 +1,3 @@
-<!--
 ---
 page_title: "runtime_goroot function - corefunc"
 subcategory: ""
@@ -7,7 +6,6 @@ description: |-
   Maps to the runtime.GOROOT() https://pkg.go.dev/runtime#GOROOT
   Go method, which can be used in Terratest https://terratest.gruntwork.io.
 ---
--->
 
 # runtime_goroot (function)
 
