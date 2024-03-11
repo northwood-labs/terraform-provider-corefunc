@@ -27,62 +27,64 @@ import (
 )
 
 // Ensure the implementation satisfies the expected interfaces.
-var _ function.Function = &strSnakeFunction{}
+var _ function.Function = &strConstantFunction{}
 
 type (
-	// strSnakeFunction is the function implementation.
-	strSnakeFunction struct{}
+	// strConstantFunction is the function implementation.
+	strConstantFunction struct{}
 )
 
-// StrSnakeFunction is a method that exposes its paired Go function as a
+// StrConstantFunction is a method that exposes its paired Go function as a
 // Terraform Function.
-func StrSnakeFunction() function.Function { // lint:allow_return_interface
-	return &strSnakeFunction{}
+// https://developer.hashicorp.com/terraform/plugin/framework/functions/implementation
+func StrConstantFunction() function.Function { // lint:allow_return_interface
+	return &strConstantFunction{}
 }
 
-func (f *strSnakeFunction) Metadata(
+func (f *strConstantFunction) Metadata(
 	ctx context.Context,
 	req function.MetadataRequest,
 	resp *function.MetadataResponse,
 ) {
-	tflog.Debug(ctx, "Starting StrSnake Function Metadata method.")
+	tflog.Debug(ctx, "Starting StrConstant Function Metadata method.")
 
-	resp.Name = "str_snake"
+	resp.Name = "str_constant"
 
 	tflog.Debug(ctx, fmt.Sprintf("resp.Name = %s", resp.Name))
 
-	tflog.Debug(ctx, "Ending StrSnake Function Metadata method.")
+	tflog.Debug(ctx, "Ending StrConstant Function Metadata method.")
 }
 
 // Definition defines the parameters and return type for the function.
-func (f *strSnakeFunction) Definition(
+func (f *strConstantFunction) Definition(
 	ctx context.Context,
 	req function.DefinitionRequest,
 	resp *function.DefinitionResponse,
 ) {
-	tflog.Debug(ctx, "Starting StrSnake Function Definition method.")
+	tflog.Debug(ctx, "Starting StrConstant Function Definition method.")
 
 	resp.Definition = function.Definition{
-		Summary: "Converts a string to `snake_case` removing any non-alphanumeric characters.",
+		Summary: "Converts a string to `CONSTANT_CASE`, removing any non-alphanumeric characters.",
 		MarkdownDescription: strings.TrimSpace(dedent.Dedent(`
-		Converts a string to ` + "`" + `snake_case` + "`" + `, removing any non-alphanumeric characters.
+		Converts a string to ` + "`" + `CONSTANT_CASE` + "`" + `, removing any non-alphanumeric characters.
+		Also known as ` + "`" + `SCREAMING_SNAKE_CASE` + "`" + `.
 
-		Maps to the ` + linkPackage("StrSnake") + ` Go method, which can be used in ` + Terratest + `.
+		Maps to the ` + linkPackage("StrConstant") + ` Go method, which can be used in ` + Terratest + `.
         `)),
 		Parameters: []function.Parameter{
 			function.StringParameter{
 				Name:                "str",
-				MarkdownDescription: "The string to convert to `snake_case`.",
+				MarkdownDescription: "The string to convert to `CONSTANT_CASE`.",
 			},
 		},
 		Return: function.StringReturn{},
 	}
 
-	tflog.Debug(ctx, "Ending StrSnake Function Definition method.")
+	tflog.Debug(ctx, "Ending StrConstant Function Definition method.")
 }
 
-func (f *strSnakeFunction) Run(ctx context.Context, req function.RunRequest, resp *function.RunResponse) {
-	tflog.Debug(ctx, "Starting StrSnake Function Run method.")
+func (f *strConstantFunction) Run(ctx context.Context, req function.RunRequest, resp *function.RunResponse) {
+	tflog.Debug(ctx, "Starting StrConstant Function Run method.")
 
 	var str string
 	err := req.Arguments.Get(ctx, &str)
@@ -92,8 +94,8 @@ func (f *strSnakeFunction) Run(ctx context.Context, req function.RunRequest, res
 		return
 	}
 
-	value := corefunc.StrSnake(str)
+	value := corefunc.StrConstant(str)
 	resp.Error = function.ConcatFuncErrors(resp.Result.Set(ctx, value))
 
-	tflog.Debug(ctx, "Ending StrSnake Function Run method.")
+	tflog.Debug(ctx, "Ending StrConstant Function Run method.")
 }

@@ -133,6 +133,10 @@ func (p *coreFuncProvider) Functions(ctx context.Context) []func() function.Func
 		RuntimeGorootFunction,
 		RuntimeNumcpusFunction,
 		RuntimeOsFunction,
+		StrCamelFunction,
+		StrConstantFunction,
+		StrKebabFunction,
+		StrPascalFunction,
 		StrSnakeFunction,
 	}
 }

@@ -98,10 +98,10 @@ func TestTerraform(t *testing.T) {
 		terraform.InitAndApply(t, terraformOptions)
 
 		// Run `terraform output` to get the value of an output variable
-		// assert.Equal(t, terraform.Output(t, terraformOptions, "str_camel_ds"), corefunc.StrCamel(inputStr))
-		// assert.Equal(t, terraform.Output(t, terraformOptions, "str_constant_ds"), corefunc.StrConstant(inputStr))
-		// assert.Equal(t, terraform.Output(t, terraformOptions, "str_kebab_ds"), corefunc.StrKebab(inputStr))
-		// assert.Equal(t, terraform.Output(t, terraformOptions, "str_pascal_ds"), corefunc.StrPascal(inputStr, false))
+		assert.Equal(t, terraform.Output(t, terraformOptions, "str_camel_fn"), corefunc.StrCamel(inputStr))
+		assert.Equal(t, terraform.Output(t, terraformOptions, "str_constant_fn"), corefunc.StrConstant(inputStr))
+		assert.Equal(t, terraform.Output(t, terraformOptions, "str_kebab_fn"), corefunc.StrKebab(inputStr))
+		assert.Equal(t, terraform.Output(t, terraformOptions, "str_pascal_fn"), corefunc.StrPascal(inputStr, false))
 		assert.Equal(t, terraform.Output(t, terraformOptions, "str_snake_fn"), corefunc.StrSnake(inputStr))
 		// assert.Equal(t, terraform.Output(t, terraformOptions, "int_leftpad_ds"), corefunc.IntLeftPad(123, 5))
 		// assert.Equal(t, terraform.Output(t, terraformOptions, "str_leftpad_ds"), corefunc.StrLeftPad("abc", 5, '.'))
