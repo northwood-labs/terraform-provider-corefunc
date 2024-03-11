@@ -87,8 +87,8 @@ func (d *runtimeNumcpusDataSource) Schema(
 		`)),
 		Attributes: map[string]schema.Attribute{
 			"value": schema.Int64Attribute{
-				Description: "The number of CPU cores (logical CPUs) for the current system.",
-				Computed:    true,
+				MarkdownDescription: "The number of CPU cores (logical CPUs) for the current system.",
+				Computed:            true,
 			},
 		},
 	}

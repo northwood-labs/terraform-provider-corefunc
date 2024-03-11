@@ -84,12 +84,12 @@ func (d *strKebabDataSource) Schema(
         `)),
 		Attributes: map[string]schema.Attribute{
 			"string": schema.StringAttribute{
-				Description: "The string to convert to `kebab-case`.",
-				Required:    true,
+				MarkdownDescription: "The string to convert to `kebab-case`.",
+				Required:            true,
 			},
 			"value": schema.StringAttribute{
-				Description: "The value of the string.",
-				Computed:    true,
+				MarkdownDescription: "The value of the string.",
+				Computed:            true,
 			},
 		},
 	}

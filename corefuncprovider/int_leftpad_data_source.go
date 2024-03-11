@@ -87,16 +87,16 @@ func (d *intLeftpadDataSource) Schema( // lint:no_dupe
 		`)),
 		Attributes: map[string]schema.Attribute{
 			"num": schema.Int64Attribute{
-				Description: "The integer to pad with zeroes.",
-				Required:    true,
+				MarkdownDescription: "The integer to pad with zeroes.",
+				Required:            true,
 			},
 			"pad_width": schema.Int64Attribute{
-				Description: "The max number of zeroes to pad the integer with.",
-				Required:    true,
+				MarkdownDescription: "The max number of zeroes to pad the integer with.",
+				Required:            true,
 			},
 			"value": schema.StringAttribute{
-				Description: "The value of the string.",
-				Computed:    true,
+				MarkdownDescription: "The value of the string.",
+				Computed:            true,
 			},
 		},
 	}

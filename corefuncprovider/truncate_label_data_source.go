@@ -109,7 +109,7 @@ func (d *truncateLabelDataSource) Schema(
         `)),
 		Attributes: map[string]schema.Attribute{
 			"max_length": schema.Int64Attribute{
-				Description: "The maximum allowed length of the combined label. " +
+				MarkdownDescription: "The maximum allowed length of the combined label. " +
 					"Minimum value is `1`. The default value is `64`.",
 				Optional: true,
 				Validators: []validator.Int64{
@@ -117,22 +117,22 @@ func (d *truncateLabelDataSource) Schema(
 				},
 			},
 			"prefix": schema.StringAttribute{
-				Description: "The prefix to prepend to the label.",
-				Required:    true,
+				MarkdownDescription: "The prefix to prepend to the label.",
+				Required:            true,
 				Validators: []validator.String{
 					stringvalidator.LengthBetween(0, validatorMaxLength),
 				},
 			},
 			"label": schema.StringAttribute{
-				Description: "The label itself.",
-				Required:    true,
+				MarkdownDescription: "The label itself.",
+				Required:            true,
 				Validators: []validator.String{
 					stringvalidator.LengthBetween(0, validatorMaxLength),
 				},
 			},
 			"value": schema.StringAttribute{
-				Description: "The value of the truncated label.",
-				Computed:    true,
+				MarkdownDescription: "The value of the truncated label.",
+				Computed:            true,
 			},
 		},
 	}

@@ -86,20 +86,20 @@ func (d *strLeftpadDataSource) Schema( // lint:no_dupe
 		`)),
 		Attributes: map[string]schema.Attribute{
 			"pad_width": schema.Int64Attribute{
-				Description: "The max number of padding characters to pad the string with.",
-				Required:    true,
+				MarkdownDescription: "The max number of padding characters to pad the string with.",
+				Required:            true,
 			},
 			"string": schema.StringAttribute{
-				Description: "The string to pad with padding characters.",
-				Required:    true,
+				MarkdownDescription: "The string to pad with padding characters.",
+				Required:            true,
 			},
 			"pad_char": schema.StringAttribute{
-				Description: "The padding character to use. Only supports a single byte. If more than one byte is provided, only the first byte will be used. The default value is a space character.", // lint:ignore_length
-				Optional:    true,
+				MarkdownDescription: "The padding character to use. Only supports a single byte. If more than one byte is provided, only the first byte will be used. The default value is a space character.", // lint:ignore_length
+				Optional:            true,
 			},
 			"value": schema.StringAttribute{
-				Description: "The value of the string.",
-				Computed:    true,
+				MarkdownDescription: "The value of the string.",
+				Computed:            true,
 			},
 		},
 	}

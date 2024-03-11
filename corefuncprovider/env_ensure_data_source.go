@@ -95,16 +95,16 @@ func (d *envEnsureDataSource) Schema( // lint:no_dupe
         `)),
 		Attributes: map[string]schema.Attribute{
 			"name": schema.StringAttribute{
-				Description: "The name of the environment variable to check.",
-				Required:    true,
+				MarkdownDescription: "The name of the environment variable to check.",
+				Required:            true,
 			},
 			"pattern": schema.StringAttribute{
-				Description: "A valid Go ([re2](https://github.com/google/re2/wiki/Syntax)) regular expression pattern.",
-				Optional:    true,
+				MarkdownDescription: "A valid Go ([re2](https://github.com/google/re2/wiki/Syntax)) regular expression pattern.",
+				Optional:            true,
 			},
 			"value": schema.StringAttribute{
-				Description: "The value of the environment variable, if it exists.",
-				Computed:    true,
+				MarkdownDescription: "The value of the environment variable, if it exists.",
+				Computed:            true,
 			},
 		},
 	}

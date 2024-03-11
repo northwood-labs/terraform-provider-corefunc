@@ -20,7 +20,6 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/hashicorp/terraform-plugin-framework/attr"
 	"github.com/hashicorp/terraform-plugin-framework/datasource"
 	"github.com/hashicorp/terraform-plugin-framework/datasource/schema"
 	"github.com/hashicorp/terraform-plugin-framework/resource"
@@ -89,26 +88,32 @@ func (d *strIterativeReplaceDataSource) Schema(
         `)),
 		Attributes: map[string]schema.Attribute{
 			"string": schema.StringAttribute{
-				Description: "The string upon which replacements should be applied.",
-				Required:    true,
+				MarkdownDescription: "The string upon which replacements should be applied.",
+				Required:            true,
 			},
-			"replacements": schema.ListAttribute{
-				Description: strings.TrimSpace(dedent.Dedent(`
+			"replacements": schema.ListNestedAttribute{
+				MarkdownDescription: strings.TrimSpace(dedent.Dedent(`
                 A list of maps. Each map has an ` + "`" + `old` + "`" + ` and ` + "`" + `new` + "`" +
 					` key. ` + "`" + `old` + "`" + ` represents the existing string to be replaced, and ` + "`" +
 					`new` + "`" + ` represents the replacement string.
                 `)),
-				Required: true,
-				ElementType: types.ObjectType{
-					AttrTypes: map[string]attr.Type{
-						"old": types.StringType,
-						"new": types.StringType,
+				NestedObject: schema.NestedAttributeObject{
+					Attributes: map[string]schema.Attribute{
+						"old": schema.StringAttribute{
+							MarkdownDescription: "The substring to be replaced.",
+							Required:            true,
+						},
+						"new": schema.StringAttribute{
+							MarkdownDescription: "The replacement substring.",
+							Required:            true,
+						},
 					},
 				},
+				Required: true,
 			},
 			"value": schema.StringAttribute{
-				Description: "The value of the string.",
-				Computed:    true,
+				MarkdownDescription: "The value of the string.",
+				Computed:            true,
 			},
 		},
 	}
