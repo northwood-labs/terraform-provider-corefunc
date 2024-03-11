@@ -55,11 +55,11 @@ Built using the [Terraform Plugin Framework][TPF], which speaks [Terraform Proto
 
 | Testing type | Details           | Description                                                                    |
 |--------------|-------------------|--------------------------------------------------------------------------------|
-| integration  | Terraform 1.0–1.7 | Executes the provider with this release, pulling from `registry.terraform.io`. |
+| integration  | Terraform 1.0–1.8 | Executes the provider with this release, pulling from `registry.terraform.io`. |
 | integration  | OpenTofu 1.6      | Executes the provider with this release, pulling from `registry.opentofu.org`. |
-| unit         | Go 1.20–1.21      | Tests using these versions.                                                    |
-| mutation     | Go 1.20–1.21      | Tests using these versions.                                                    |
-| fuzz         | Go 1.20–1.21      | Tests using these versions.                                                    |
+| unit         | Go 1.21–1.22      | Tests using these versions.                                                    |
+| mutation     | Go 1.21–1.22      | Tests using these versions.                                                    |
+| fuzz         | Go 1.21–1.22      | Tests using these versions.                                                    |
 
 ## Setting-up the provider
 
@@ -71,6 +71,24 @@ terraform {
     corefunc = {
       source  = "northwood-labs/corefunc"
       version = "~> 1.0"
+    }
+  }
+}
+
+# There are no configuration options
+provider "corefunc" {}
+```
+
+For users of Terraform 1.8 (and newer), all of the the _Data Source_ and _Provider Function_ implementations are available. Their implementations (inputs, outputs) are consistent with each other, and will always return the same outputs from the same imputs. _Provider Functions_ require version 1.4.0 (or later) of this provider.
+
+```terraform
+terraform {
+  required_version = "~> 1.8"
+
+  required_providers {
+    corefunc = {
+      source  = "northwood-labs/corefunc"
+      version = "~> 1.4"
     }
   }
 }
