@@ -107,11 +107,11 @@ func (d *urlParseDataSource) Schema(
         `)),
 		Attributes: map[string]schema.Attribute{
 			"url": schema.StringAttribute{
-				Description: "The absolute URL to parse according to the [WHATWG URL API](https://url.spec.whatwg.org/#api).",
-				Required:    true,
+				MarkdownDescription: "The absolute URL to parse according to the [WHATWG URL API](https://url.spec.whatwg.org/#api).",
+				Required:            true,
 			},
 			"canonicalizer": schema.StringAttribute{
-				Description: "The method by which the URL should be canonicalized. " +
+				MarkdownDescription: "The method by which the URL should be canonicalized. " +
 					"Allowed values: `standard`, `google_safe_browsing`. The default value is `standard`.",
 				Optional: true,
 			},
@@ -121,65 +121,65 @@ func (d *urlParseDataSource) Schema(
 				Optional: true,
 			},
 			"normalized": schema.StringAttribute{
-				Description: "The normalized form of the URL.",
-				Computed:    true,
+				MarkdownDescription: "The normalized form of the URL.",
+				Computed:            true,
 			},
 			"normalized_nofrag": schema.StringAttribute{
-				Description: "The normalized form of the URL, without the fragment.",
-				Computed:    true,
+				MarkdownDescription: "The normalized form of the URL, without the fragment.",
+				Computed:            true,
 			},
 			"protocol": schema.StringAttribute{
-				Description: "The protocol of the URL, including the final `:`.",
-				Computed:    true,
+				MarkdownDescription: "The protocol of the URL, including the final `:`.",
+				Computed:            true,
 			},
 			"scheme": schema.StringAttribute{
-				Description: "The scheme of the URL.",
-				Computed:    true,
+				MarkdownDescription: "The scheme of the URL.",
+				Computed:            true,
 			},
 			"username": schema.StringAttribute{
-				Description: "The username that was passed to the URL as basic authentication.",
-				Computed:    true,
+				MarkdownDescription: "The username that was passed to the URL as basic authentication.",
+				Computed:            true,
 			},
 			"password": schema.StringAttribute{
-				Description: "The password that was passed to the URL as basic authentication.",
-				Computed:    true,
+				MarkdownDescription: "The password that was passed to the URL as basic authentication.",
+				Computed:            true,
 			},
 			"host": schema.StringAttribute{
-				Description: "The host of the URL, including the port if web browsers typically show " +
+				MarkdownDescription: "The host of the URL, including the port if web browsers typically show " +
 					"the port in the URL bar.",
 				Computed: true,
 			},
 			"hostname": schema.StringAttribute{
-				Description: "The hostname of the URL.",
-				Computed:    true,
+				MarkdownDescription: "The hostname of the URL.",
+				Computed:            true,
 			},
 			"port": schema.StringAttribute{
-				Description: "The port of the URL. May be blank if web browsers typically hide the port in the URL bar.",
-				Computed:    true,
+				MarkdownDescription: "The port of the URL. May be blank if web browsers typically hide the port in the URL bar.",
+				Computed:            true,
 			},
 			"decoded_port": schema.Int64Attribute{
-				Description: "The port of the URL.",
-				Computed:    true,
+				MarkdownDescription: "The port of the URL.",
+				Computed:            true,
 			},
 			"path": schema.StringAttribute{
-				Description: "The path of the URL.",
-				Computed:    true,
+				MarkdownDescription: "The path of the URL.",
+				Computed:            true,
 			},
 			"search": schema.StringAttribute{
-				Description: "The query string of the URL, including the preceding `?`.",
-				Computed:    true,
+				MarkdownDescription: "The query string of the URL, including the preceding `?`.",
+				Computed:            true,
 			},
 			"query": schema.StringAttribute{
-				Description: "The query string of the URL.",
-				Computed:    true,
+				MarkdownDescription: "The query string of the URL.",
+				Computed:            true,
 			},
 			"hash": schema.StringAttribute{
-				Description: "The fragment string of the URL, including the preceding `#`.",
-				Computed:    true,
+				MarkdownDescription: "The fragment string of the URL, including the preceding `#`.",
+				Computed:            true,
 			},
 			"fragment": schema.StringAttribute{
-				Description: "The fragment string of the URL.",
-				Computed:    true,
+				MarkdownDescription: "The fragment string of the URL.",
+				Computed:            true,
 			},
 		},
 	}

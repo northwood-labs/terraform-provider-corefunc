@@ -83,8 +83,8 @@ func (d *homedirGetDataSource) Schema(
 		`)),
 		Attributes: map[string]schema.Attribute{
 			"value": schema.StringAttribute{
-				Description: "The value of the home directory.",
-				Computed:    true,
+				MarkdownDescription: "The value of the home directory.",
+				Computed:            true,
 			},
 		},
 	}

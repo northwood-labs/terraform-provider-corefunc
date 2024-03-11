@@ -89,8 +89,8 @@ func (d *runtimeCpuarchDataSource) Schema(
 		`)),
 		Attributes: map[string]schema.Attribute{
 			"value": schema.StringAttribute{
-				Description: "Returns the CPU architecture for which the provider was compiled.",
-				Computed:    true,
+				MarkdownDescription: "Returns the CPU architecture for which the provider was compiled.",
+				Computed:            true,
 			},
 		},
 	}
