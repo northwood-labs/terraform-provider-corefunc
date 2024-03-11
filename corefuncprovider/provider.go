@@ -129,6 +129,7 @@ func (p *coreFuncProvider) Functions(ctx context.Context) []func() function.Func
 		EnvEnsureFunction,
 		HomedirExpandFunction,
 		HomedirGetFunction,
+		IntLeftpadFunction,
 		RuntimeCpuarchFunction,
 		RuntimeGorootFunction,
 		RuntimeNumcpusFunction,
@@ -136,6 +137,7 @@ func (p *coreFuncProvider) Functions(ctx context.Context) []func() function.Func
 		StrCamelFunction,
 		StrConstantFunction,
 		StrKebabFunction,
+		StrLeftpadFunction,
 		StrPascalFunction,
 		StrSnakeFunction,
 	}

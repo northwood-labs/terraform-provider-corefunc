@@ -15,10 +15,15 @@ description: |-
 
 {{ .FunctionSignatureMarkdown }}
 
-{{ if .HasExample -}}## Example Usage
+## Example Usage
 
-{{ tffile (printf "examples/functions/%s/function.tf" .Name)}}{{- end }}
+{{ tffile (printf "examples/functions/corefunc_%s/function.tf" .Name)}}
+
+## Arguments
 
 {{ .FunctionArgumentsMarkdown | trimspace }}
+{{ if .HasVariadic -}}
+{{- .FunctionVariadicArgumentMarkdown | trimspace -}}
+{{- end }}
 
 <!-- Preview the provider docs with the Terraform registry provider docs preview tool: https://registry.terraform.io/tools/doc-preview -->
