@@ -172,7 +172,7 @@ output:
 
   # Add a prefix to the output file references.
   # Default is no prefix.
-  path-prefix: ''
+  path-prefix: ""
 
   # Sort results by: filepath, line and column.
   sort-results: true
@@ -524,7 +524,7 @@ linters-settings:
       - NOTE
       - OPTIMIZE
       - TODO
-      - '@TODO'
+      - "@TODO"
 
   gofmt:
     # Simplify code: gofmt with `-s` option.
@@ -573,8 +573,8 @@ linters-settings:
     # Values always ignored: "1", "1.0", "0" and "0.0"
     # Default: []
     ignored-numbers:
-      - '0666'
-      - '0755'
+      - "0666"
+      - "0755"
 
     # List of file patterns to exclude from analysis.
     # Values always ignored: `.+_test.go`
@@ -597,7 +597,7 @@ linters-settings:
   gosimple:
     # Sxxxx checks in https://staticcheck.io/docs/configuration/options/#checks
     # Default: ["*"]
-    checks: ['*']
+    checks: ["*"]
 
   gosec:
     # To select a subset of rules to run.
@@ -659,16 +659,16 @@ linters-settings:
 
         # Maximum allowed entropy of the string.
         # Default: "80.0"
-        entropy_threshold: '80.0'
+        entropy_threshold: "80.0"
 
         # Maximum allowed value of entropy/string length.
         # Is taken into account if entropy >= entropy_threshold/2.
         # Default: "3.0"
-        per_char_threshold: '3.0'
+        per_char_threshold: "3.0"
 
         # Calculate entropy for first N chars of the string.
         # Default: "16"
-        truncate: '16'
+        truncate: "16"
 
       # Additional functions to ignore while checking unhandled errors.
       # Following functions always ignored:
@@ -707,15 +707,15 @@ linters-settings:
 
       # Maximum allowed permissions mode for os.Mkdir and os.MkdirAll
       # Default: "0750"
-      G301: '0750'
+      G301: "0750"
 
       # Maximum allowed permissions mode for os.OpenFile and os.Chmod
       # Default: "0600"
-      G302: '0600'
+      G302: "0600"
 
       # Maximum allowed permissions mode for os.WriteFile and ioutil.WriteFile
       # Default: "0666"
-      G306: '0666'
+      G306: "0666"
 
   # gosmopolitan:
 
@@ -940,12 +940,12 @@ linters-settings:
     # https://staticcheck.io/docs/options#checks
     # https://staticcheck.io/docs/checks/
     # Default: ["*"]
-    checks: ['*']
+    checks: ["*"]
 
   stylecheck:
     # STxxxx checks in https://staticcheck.io/docs/configuration/options/#checks
     # Default: ["*"]
-    checks: ['*']
+    checks: ["*"]
 
     # https://staticcheck.io/docs/configuration/options/#dot_import_whitelist
     # Default: ["github.com/mmcloughlin/avo/build", "github.com/mmcloughlin/avo/operand", "github.com/mmcloughlin/avo/reg"]
@@ -1282,7 +1282,7 @@ issues:
         - gomnd
       source: lint:allow_raw_number
 
-    - text: 'commentedOutCode: may want to remove commented-out code'
+    - text: "commentedOutCode: may want to remove commented-out code"
       linters:
         - gocritic
       source: lint:allow_commented
@@ -1373,6 +1373,11 @@ issues:
       linters:
         - gocognit
       source: lint:allow_complexity
+
+    - text: (make it a constant)
+      linters:
+        - goconst
+      source: lint:no_const
 
   # If set to true exclude and exclude-rules regular expressions become case-sensitive.
   # Default: false
