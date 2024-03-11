@@ -27,78 +27,84 @@ import (
 )
 
 // Ensure the implementation satisfies the expected interfaces.
-var _ function.Function = &{{ .CamelStrip }}Function{}
+var _ function.Function = &intLeftpadFunction{}
 
 type (
-	// {{ .CamelStrip }}Function is the function implementation.
-	{{ .CamelStrip }}Function struct{}
+	// intLeftpadFunction is the function implementation.
+	intLeftpadFunction struct{}
 )
 
-// {{ .PascalStrip }}Function is a method that exposes its paired Go function as a
+// IntLeftpadFunction is a method that exposes its paired Go function as a
 // Terraform Function.
 // https://developer.hashicorp.com/terraform/plugin/framework/functions/implementation
-func {{ .PascalStrip }}Function() function.Function { // lint:allow_return_interface
-	return &{{ .CamelStrip }}Function{}
+func IntLeftpadFunction() function.Function { // lint:allow_return_interface
+	return &intLeftpadFunction{}
 }
 
-func (f *{{ .CamelStrip }}Function) Metadata(
+func (f *intLeftpadFunction) Metadata(
 	ctx context.Context,
 	req function.MetadataRequest,
 	resp *function.MetadataResponse,
 ) {
-	tflog.Debug(ctx, "Starting {{ .PascalStrip }} Function Metadata method.")
+	tflog.Debug(ctx, "Starting IntLeftpad Function Metadata method.")
 
-	resp.Name = "{{ .SnakeStrip }}"
+	resp.Name = "int_leftpad"
 
 	tflog.Debug(ctx, fmt.Sprintf("resp.Name = %s", resp.Name))
 
-	tflog.Debug(ctx, "Ending {{ .PascalStrip }} Function Metadata method.")
+	tflog.Debug(ctx, "Ending IntLeftpad Function Metadata method.")
 }
 
 // Definition defines the parameters and return type for the function.
-func (f *{{ .CamelStrip }}Function) Definition(
+func (f *intLeftpadFunction) Definition(
 	ctx context.Context,
 	req function.DefinitionRequest,
 	resp *function.DefinitionResponse,
 ) {
-	tflog.Debug(ctx, "Starting {{ .PascalStrip }} Function Definition method.")
+	tflog.Debug(ctx, "Starting IntLeftpad Function Definition method.")
 
 	resp.Definition = function.Definition{
-		Summary: "@TODO",
+		Summary: "Converts an integer to a string, and then pads it with zeroes on the left.",
 		MarkdownDescription: strings.TrimSpace(dedent.Dedent(`
-		Converts a string to ` + "`" + `snake_case` + "`" + `, removing any non-alphanumeric characters.
+		Converts an integer to a string, and then pads it with zeroes on the left.
 
-		Maps to the ` + linkPackage("{{ .PascalStrip }}") + ` Go method, which can be used in ` + Terratest + `.
-        `)),
+		-> If the integer is NOT in base10 (decimal), it will be converted to base10 (decimal) _before_ being padded.
+
+		Maps to the ` + linkPackage("IntLeftPad") + ` Go method, which can be used in ` + Terratest + `.
+		`)),
 		Parameters: []function.Parameter{
-			function.StringParameter{
-				Name:                "str",
-				MarkdownDescription: "@TODO",
+			function.Int64Parameter{
+				Name:                "num",
+				MarkdownDescription: "The integer to pad with zeroes.",
+			},
+			function.Int64Parameter{
+				Name:                "pad_width",
+				MarkdownDescription: "The max number of zeroes to pad the integer with.",
 			},
 		},
 		Return: function.StringReturn{},
 	}
 
-	tflog.Debug(ctx, "Ending {{ .PascalStrip }} Function Definition method.")
+	tflog.Debug(ctx, "Ending IntLeftpad Function Definition method.")
 }
 
-func (f *{{ .CamelStrip }}Function) Run(ctx context.Context, req function.RunRequest, resp *function.RunResponse) {
-	tflog.Debug(ctx, "Starting {{ .PascalStrip }} Function Run method.")
+func (f *intLeftpadFunction) Run(ctx context.Context, req function.RunRequest, resp *function.RunResponse) {
+	tflog.Debug(ctx, "Starting IntLeftpad Function Run method.")
 
-	var str string
-	err := req.Arguments.Get(ctx, &str)
+	var (
+		num      int64
+		padWidth int64
+	)
+
+	err := req.Arguments.Get(ctx, &num, &padWidth)
 
 	resp.Error = function.ConcatFuncErrors(err)
 	if resp.Error != nil {
 		return
 	}
 
-	value := corefunc.{{ .PascalStrip }}(
-		str,
-		// opts,
-	)
-
+	value := corefunc.IntLeftPad(num, int(padWidth))
 	resp.Error = function.ConcatFuncErrors(resp.Result.Set(ctx, value))
 
-	tflog.Debug(ctx, "Ending {{ .PascalStrip }} Function Run method.")
+	tflog.Debug(ctx, "Ending IntLeftpad Function Run method.")
 }

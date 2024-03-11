@@ -1,0 +1,9 @@
+{{ $root := . }}
+output "leftpad" {
+{{- with .PadChar }}
+    value = provider::corefunc::str_leftpad("{{ $root.Input }}", {{ $root.PadWidth }}, "{{ . | printf "%c" }}")
+{{- else }}
+    value = provider::corefunc::str_leftpad("{{ $root.Input }}", {{ $root.PadWidth }})
+{{- end }}
+}
+#=> {{ .Expected }}
