@@ -1,4 +1,3 @@
-<!--
 ---
 page_title: "runtime_os function - corefunc"
 subcategory: ""
@@ -8,7 +7,6 @@ description: |-
   Maps to the runtime.GOOS https://pkg.go.dev/runtime#GOOS
   Go property, which can be used in Terratest https://terratest.gruntwork.io.
 ---
--->
 
 # runtime_os (function)
 

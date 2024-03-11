@@ -1,4 +1,3 @@
-<!--
 ---
 page_title: "corefunc_url_parse Data Source - corefunc"
 subcategory: ""
@@ -12,7 +11,6 @@ description: |-
   in WHATWG URL Standard https://url.spec.whatwg.org/#api.
   Maps to the corefunc.URLParse() https://pkg.go.dev/github.com/northwood-labs/terraform-provider-corefunc/corefunc#URLParse Go method, which can be used in Terratest https://terratest.gruntwork.io.
 ---
--->
 
 # corefunc_url_parse (Data Source)
 

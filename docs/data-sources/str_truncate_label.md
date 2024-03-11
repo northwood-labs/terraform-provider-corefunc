@@ -1,4 +1,3 @@
-<!--
 ---
 page_title: "corefunc_str_truncate_label Data Source - corefunc"
 subcategory: ""
@@ -18,7 +17,6 @@ description: |-
   Maps to the corefunc.TruncateLabel() https://pkg.go.dev/github.com/northwood-labs/terraform-provider-corefunc/corefunc#TruncateLabel Go method, which can be used in
   Terratest https://terratest.gruntwork.io.
 ---
--->
 
 # corefunc_str_truncate_label (Data Source)
 

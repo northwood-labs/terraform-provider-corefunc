@@ -1,4 +1,3 @@
-<!--
 ---
 page_title: "str_leftpad function - corefunc"
 subcategory: ""
@@ -6,7 +5,6 @@ description: |-
   Pads a string with additional characters on the left.
   Maps to the corefunc.StrLeftPad() https://pkg.go.dev/github.com/northwood-labs/terraform-provider-corefunc/corefunc#StrLeftPad Go method, which can be used in Terratest https://terratest.gruntwork.io.
 ---
--->
 
 # str_leftpad (function)
 

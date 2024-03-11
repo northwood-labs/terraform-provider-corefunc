@@ -1,4 +1,3 @@
-<!--
 ---
 page_title: "homedir_get function - corefunc"
 subcategory: ""
@@ -6,7 +5,6 @@ description: |-
   Returns the path to the home directory of the current user.
   Maps to the corefunc.Homedir() https://pkg.go.dev/github.com/northwood-labs/terraform-provider-corefunc/corefunc#Homedir Go method, which can be used in Terratest https://terratest.gruntwork.io.
 ---
--->
 
 # homedir_get (function)
 
