@@ -27,62 +27,63 @@ import (
 )
 
 // Ensure the implementation satisfies the expected interfaces.
-var _ function.Function = &strSnakeFunction{}
+var _ function.Function = &strKebabFunction{}
 
 type (
-	// strSnakeFunction is the function implementation.
-	strSnakeFunction struct{}
+	// strKebabFunction is the function implementation.
+	strKebabFunction struct{}
 )
 
-// StrSnakeFunction is a method that exposes its paired Go function as a
+// StrKebabFunction is a method that exposes its paired Go function as a
 // Terraform Function.
-func StrSnakeFunction() function.Function { // lint:allow_return_interface
-	return &strSnakeFunction{}
+// https://developer.hashicorp.com/terraform/plugin/framework/functions/implementation
+func StrKebabFunction() function.Function { // lint:allow_return_interface
+	return &strKebabFunction{}
 }
 
-func (f *strSnakeFunction) Metadata(
+func (f *strKebabFunction) Metadata(
 	ctx context.Context,
 	req function.MetadataRequest,
 	resp *function.MetadataResponse,
 ) {
-	tflog.Debug(ctx, "Starting StrSnake Function Metadata method.")
+	tflog.Debug(ctx, "Starting StrKebab Function Metadata method.")
 
-	resp.Name = "str_snake"
+	resp.Name = "str_kebab"
 
 	tflog.Debug(ctx, fmt.Sprintf("resp.Name = %s", resp.Name))
 
-	tflog.Debug(ctx, "Ending StrSnake Function Metadata method.")
+	tflog.Debug(ctx, "Ending StrKebab Function Metadata method.")
 }
 
 // Definition defines the parameters and return type for the function.
-func (f *strSnakeFunction) Definition(
+func (f *strKebabFunction) Definition(
 	ctx context.Context,
 	req function.DefinitionRequest,
 	resp *function.DefinitionResponse,
 ) {
-	tflog.Debug(ctx, "Starting StrSnake Function Definition method.")
+	tflog.Debug(ctx, "Starting StrKebab Function Definition method.")
 
 	resp.Definition = function.Definition{
-		Summary: "Converts a string to `snake_case` removing any non-alphanumeric characters.",
+		Summary: "Converts a string to `kebab-case` removing any non-alphanumeric characters.",
 		MarkdownDescription: strings.TrimSpace(dedent.Dedent(`
-		Converts a string to ` + "`" + `snake_case` + "`" + `, removing any non-alphanumeric characters.
+		Converts a string to ` + "`" + `kebab-case` + "`" + `, removing any non-alphanumeric characters.
 
-		Maps to the ` + linkPackage("StrSnake") + ` Go method, which can be used in ` + Terratest + `.
+		Maps to the ` + linkPackage("StrKebab") + ` Go method, which can be used in ` + Terratest + `.
         `)),
 		Parameters: []function.Parameter{
 			function.StringParameter{
 				Name:                "str",
-				MarkdownDescription: "The string to convert to `snake_case`.",
+				MarkdownDescription: "The string to convert to `kebab-case`.",
 			},
 		},
 		Return: function.StringReturn{},
 	}
 
-	tflog.Debug(ctx, "Ending StrSnake Function Definition method.")
+	tflog.Debug(ctx, "Ending StrKebab Function Definition method.")
 }
 
-func (f *strSnakeFunction) Run(ctx context.Context, req function.RunRequest, resp *function.RunResponse) {
-	tflog.Debug(ctx, "Starting StrSnake Function Run method.")
+func (f *strKebabFunction) Run(ctx context.Context, req function.RunRequest, resp *function.RunResponse) {
+	tflog.Debug(ctx, "Starting StrKebab Function Run method.")
 
 	var str string
 	err := req.Arguments.Get(ctx, &str)
@@ -92,8 +93,8 @@ func (f *strSnakeFunction) Run(ctx context.Context, req function.RunRequest, res
 		return
 	}
 
-	value := corefunc.StrSnake(str)
+	value := corefunc.StrKebab(str)
 	resp.Error = function.ConcatFuncErrors(resp.Result.Set(ctx, value))
 
-	tflog.Debug(ctx, "Ending StrSnake Function Run method.")
+	tflog.Debug(ctx, "Ending StrKebab Function Run method.")
 }

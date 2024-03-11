@@ -1,0 +1,4 @@
+output "pascal" {
+    value = provider::corefunc::str_pascal("{{ .Input }}", {{ .AcronymCaps }})
+}
+#=> {{ .Expected }}
