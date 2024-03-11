@@ -85,12 +85,12 @@ func (d *strConstantDataSource) Schema(
         `)),
 		Attributes: map[string]schema.Attribute{
 			"string": schema.StringAttribute{
-				Description: "The string to convert to `CONSTANT_CASE`.",
-				Required:    true,
+				MarkdownDescription: "The string to convert to `CONSTANT_CASE`.",
+				Required:            true,
 			},
 			"value": schema.StringAttribute{
-				Description: "The value of the string.",
-				Computed:    true,
+				MarkdownDescription: "The value of the string.",
+				Computed:            true,
 			},
 		},
 	}

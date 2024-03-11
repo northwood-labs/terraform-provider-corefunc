@@ -90,11 +90,11 @@ func (d *{{ .CamelStrip }}DataSource) Schema(
 		Attributes: map[string]schema.Attribute{
             // @TODO
 			"string": schema.StringAttribute{
-				Description: "The string to convert to `@TODO`.",
+				MarkdownDescription: "The string to convert to `@TODO`.",
 				Required:    true,
 			},
 			"value": schema.StringAttribute{
-				Description: "The value of the string.",
+				MarkdownDescription: "The value of the string.",
 				Computed:    true,
 			},
 		},

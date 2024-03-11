@@ -88,18 +88,18 @@ func (d *strPascalDataSource) Schema(
         `)),
 		Attributes: map[string]schema.Attribute{
 			"string": schema.StringAttribute{
-				Description: "The string to convert to `PascalCase`.",
-				Required:    true,
+				MarkdownDescription: "The string to convert to `PascalCase`.",
+				Required:            true,
 			},
 			"acronym_caps": schema.BoolAttribute{
-				Description: "Whether or not to keep acronyms as uppercase. A value of `true` means that acronyms " +
+				MarkdownDescription: "Whether or not to keep acronyms as uppercase. A value of `true` means that acronyms " +
 					"will be converted to uppercase. A value of `false` means that acronyms will using typical " +
 					"casing. The default value is `false`.",
 				Optional: true,
 			},
 			"value": schema.StringAttribute{
-				Description: "The value of the string.",
-				Computed:    true,
+				MarkdownDescription: "The value of the string.",
+				Computed:            true,
 			},
 		},
 	}

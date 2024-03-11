@@ -85,8 +85,8 @@ func (d *runtimeOsDataSource) Schema(
 		`)),
 		Attributes: map[string]schema.Attribute{
 			"value": schema.StringAttribute{
-				Description: "Returns the operating system for which the provider was compiled.",
-				Computed:    true,
+				MarkdownDescription: "Returns the operating system for which the provider was compiled.",
+				Computed:            true,
 			},
 		},
 	}
