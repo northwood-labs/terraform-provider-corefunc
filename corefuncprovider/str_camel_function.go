@@ -63,15 +63,18 @@ func (f *strCamelFunction) Definition(
 ) {
 	tflog.Debug(ctx, "Starting StrCamel Function Definition method.")
 
-	resp.Definition = function.Definition{
-		Summary: "Converts a string to `camelCase`, removing any non-alphanumeric characters.",
-		MarkdownDescription: strings.TrimSpace(dedent.Dedent(`
-		Converts a string to ` + "`" + `camelCase` + "`" + `, removing any non-alphanumeric characters.
+	const desc = `, removing any non-alphanumeric characters.
 
 		-> Some acronyms are maintained as uppercase. See
 		[caps: pkg-variables](https://pkg.go.dev/github.com/chanced/caps#pkg-variables) for a complete list.
 
-		Maps to the ` + linkPackage("StrCamel") + ` Go method, which can be used in ` + Terratest + `.
+		Maps to the `
+
+	resp.Definition = function.Definition{
+		Summary: "Converts a string to `camelCase`, removing any non-alphanumeric characters.",
+		MarkdownDescription: strings.TrimSpace(dedent.Dedent(`
+		Converts a string to ` + "`" + `camelCase` + "`" + desc + linkPackage("StrCamel") +
+			` Go method, which can be used in ` + Terratest + `.
 		`)),
 		Parameters: []function.Parameter{
 			function.StringParameter{
