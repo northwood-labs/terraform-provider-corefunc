@@ -77,7 +77,6 @@ func (f *strSnakeFunction) Definition(
 		Parameters: []function.Parameter{
 			function.StringParameter{
 				Name:                "str",
-				Description:         "The string to convert to `snake_case`.",
 				MarkdownDescription: "The string to convert to `snake_case`.",
 			},
 		},
