@@ -1,0 +1,21 @@
+{{ $root := . }}
+output "url" {
+{{- with .Canonicalizer }}
+    value = provider::corefunc::url_parse("{{ $root.InputURL }}", "{{ printf "%v" . }}")
+{{- else }}
+    value = provider::corefunc::url_parse("{{ $root.InputURL }}")
+{{- end }}
+}
+#=> {{ .Href }}
+#=> {{ .Protocol }}
+#=> {{ .Scheme }}
+#=> {{ .Username }}
+#=> {{ .Password }}
+#=> {{ .Host }}
+#=> {{ .Port }}
+#=> {{ .Path }}
+#=> {{ .Search }}
+#=> {{ .Query }}
+#=> {{ .Hash }}
+#=> {{ .Fragment }}
+#=> {{ .DecodedPort }}
