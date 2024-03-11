@@ -1,4 +1,3 @@
-<!--
 ---
 page_title: "corefunc_runtime_numcpus Data Source - corefunc"
 subcategory: ""
@@ -9,7 +8,6 @@ description: |-
   Maps to the runtime.NumCPU() https://pkg.go.dev/runtime#NumCPU
   Go method, which can be used in Terratest https://terratest.gruntwork.io.
 ---
--->
 
 # corefunc_runtime_numcpus (Data Source)
 

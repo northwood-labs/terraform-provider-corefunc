@@ -1,4 +1,3 @@
-<!--
 ---
 page_title: "str_camel function - corefunc"
 subcategory: ""
@@ -8,7 +7,6 @@ description: |-
   caps: pkg-variables https://pkg.go.dev/github.com/chanced/caps#pkg-variables for a complete list.
   Maps to the corefunc.StrCamel() https://pkg.go.dev/github.com/northwood-labs/terraform-provider-corefunc/corefunc#StrCamel Go method, which can be used in Terratest https://terratest.gruntwork.io.
 ---
--->
 
 # str_camel (function)
 
