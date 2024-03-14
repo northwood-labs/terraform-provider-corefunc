@@ -12,6 +12,57 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 
 * [`371ea5d`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/371ea5db284ad4b814bb3d19aa16527f967f401a): Updated the copyright block. ([#183](https://github.com/northwood-labs/terraform-provider-corefunc/issues/183)) ([@skyzyx](https://github.com/skyzyx))
 
+### :books: Documentation
+
+* [`371ea5d`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/371ea5db284ad4b814bb3d19aa16527f967f401a): Updated the copyright block. ([#183](https://github.com/northwood-labs/terraform-provider-corefunc/issues/183)) ()
+* [`1911a71`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/1911a718ab20dc7d3cb62b7106caeaa8b0ebaaca): Generated an updated CHANGELOG. ()
+* [`e2be61d`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/e2be61d2837b3915055153566867435a97828ca2): Added Homedir functions. ()
+* [`8110aea`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/8110aeadbdc88d6d4e0aa7171c2245b4018b514c): Cleaned up some documentation. ()
+* [`fab52de`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/fab52deff79538fa4db72df32636a937212195d7): Updated docs around OpenTofu and TF 1.8. ()
+* [`eb651e9`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/eb651e9accfca5b83854ff2b42e3294f4fedf47d): Updated the `README.md`. ()
+* [`04e92d0`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/04e92d06f63fee92231c349439e2bd616fbf0ddb): Updated the `README.md`. ()
+* [`44caacf`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/44caacf70040b6707fb072e998996972ef1cc3fa): Small fixes to the docs. ()
+* [`a7f932f`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/a7f932f06e7b3c589344ae0cf2068763023d8dd4): Uncomment the YAML frontmatter in the Markdown pages. ()
+* [`5be683c`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/5be683caeed4d696d026c395a9837ee6281fc495): Polishing up the provider function documentation. ()
+* [`232e06d`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/232e06d3e587f04f4c58d0629b56a43f804aaff8): Updated the CHANGELOG. ()
+* [`0118a1a`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/0118a1af0896cd46e0f12e2b8d29137d3ade3790): Added OpenTofu 1.7.0-alpha1 to the test matrix. ()
+* [`aa2275a`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/aa2275a22f7479aebacb98e410db93c1cdd4305d): Added OpenTofu 1.7.0-alpha1 to the test matrix. ()
+* [`7fd7a70`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/7fd7a705855d5b21cfa457942ae7cd97f9c5a8b3): Added OpenTofu 1.7.0-alpha1 to the test matrix. ()
+
+### :dependabot: Building and Dependencies
+
+* [`7b33cc0`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/7b33cc0a804cc1e5866eada269f62559a7e861a9): Updated the Go dependencies and mod file. ()
+* [`7be699c`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/7be699ca5a3f9168ec17f3b5437aaa8efefd60f4): **deps**: Bump `trufflesecurity/trufflehog` from 3.68.4 to 3.68.5 ([#184](https://github.com/northwood-labs/terraform-provider-corefunc/issues/184)) ()
+* [`c88ce13`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/c88ce13c9b718ccdc24ed3ae37860a6e348b18be): **deps**: Bump `trufflesecurity/trufflehog` from 3.68.5 to 3.69.0 ([#187](https://github.com/northwood-labs/terraform-provider-corefunc/issues/187)) ()
+* [`5b43368`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/5b43368d03ebfe75beee8dbf66f944d0c5509731): **deps**: Bump `actions/checkout` from 4.1.1 to 4.1.2 ()
+* [`04ea900`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/04ea900f54b7abe1e00aee9fe8ee7ad9f1cf6309): **deps**: Bump `github/codeql-action` from 3.24.6 to 3.24.7 ()
+* [`889a425`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/889a42582ca07eb1b3b20fd9f7241d1215a6d8a1): **deps**: Bump `github.com/hashicorp/terraform-plugin-go` ()
+
+### :test_tube: Testing
+
+* [`c37a8d5`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/c37a8d5169bab412f5ba4d94410332c94377dcb7): Make some adjustments for the test suite. ()
+* [`32ccd04`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/32ccd04409301dfb4d94407a366a3b6fe6cb39db): Add Terraform 1.8-beta1 to the test matrix. ()
+* [`67e7625`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/67e76257adce414712775b5322d3efcb672c52f0): Added OpenTofu 1.7.0-alpha1 to the test matrix. ()
+* [`4c6c4ee`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/4c6c4eeea89c0c9f98010d2b67af9ce1df9df995): Migrate to official git-cliff action. ()
+
+### :tractor: Refactor
+
+* [`ad94772`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/ad94772b930b6c9da0f13ecd1130c8b8dbb5b8f9): Moved the provider.Functions function to this branch. ()
+* [`cea02c3`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/cea02c3b9ee6699d8f7669f35a78c2839ce1f6eb): Add more support for provider functions. ()
+* [`a982bad`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/a982bad51250b3b6fc0a8df3ce2d0fbed7127fd0): Switch Description to MarkdownDescription. Fix str_iterative_replace. ()
+
+### <!-- 0 -->:rocket: Features
+
+* [`e5efd1c`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/e5efd1c243f81571932e5129619f62694cb3a635): Implemented `str_snake()` as a function. ()
+* [`5599a3c`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/5599a3cefa5112e6705e7739104540d4f369a9e9): First feature-complete function implementation. ()
+* [`01c202d`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/01c202d63d317c5515f11b54c3b11d8e25590faf): Ported runtime functions to functions. ()
+* [`66dade4`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/66dade48cb26a9d1d1a4e4c059a8163b27c51abf): Added Homedir functions. ()
+* [`6de9499`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/6de949954d0fc1573f5c54521afb7dda8ffe88be): Implementation of string formatting as funcs. ()
+* [`238263e`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/238263eaeac7c37157bf3b966d7cdabaf4e18ac4): Implemented leftpads as functions. ()
+* [`098169b`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/098169bb1dd9eda481be898ff92d28da3c9e9907): Partial implementation of str_iterative_replace. ()
+* [`b1fa98d`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/b1fa98dc0290452404cdcd4319e3809fed7e3962): Implemented `str_truncate_label()` as a function. ()
+* [`2a3d46e`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/2a3d46e6e307ad90f7ba5dd3095675f24b6c3753): Implemented `url_parse()` as a function. ()
+
 ## 1.3.1 — 2024-03-07
 
 [Compare: v1.3.0 → v1.3.1](https://github.com/northwood-labs/terraform-provider-corefunc/compare/v1.3.0...v1.3.1)
