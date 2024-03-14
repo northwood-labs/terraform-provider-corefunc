@@ -42,6 +42,7 @@ The goal of this provider is not to call any APIs, but to provide pre-built func
 | unit         | Go 1.21–1.22      | Tests using these versions.                                                    |
 | mutation     | Go 1.21–1.22      | Tests using these versions.                                                    |
 | fuzz         | Go 1.21–1.22      | Tests using these versions.                                                    |
+| terratest    | Go 1.21–1.22      | Tests using these versions.                                                    |
 
 ## Usage Examples
 
