@@ -45,41 +45,29 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Install git-cliff
+      - name: Generate Changelog
+        uses: orhun/git-cliff-action@v3
+        with:
+          config: cliff.toml
+          args: --verbose
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          curl -L \
-            -H "Accept: application/vnd.github+json" \
-            -H "Authorization: token ${GITHUB_TOKEN}" \
-            -H "X-GitHub-Api-Version: 2022-11-28" \
-            -o ${{ runner.temp }}/git-cliff.tgz \
-            https://github.com/orhun/git-cliff/releases/download/v1.3.1/git-cliff-1.3.1-x86_64-unknown-linux-gnu.tar.gz
-
-          tar -zxvf ${{ runner.temp }}/git-cliff.tgz -C "${{ runner.temp }}"
+          OUTPUT: CHANGELOG.md
 
       - name: Generate artifacts
         run: |
           # Generate list of authors
           ./scripts/generate-contributors.sh
 
-          # Generate CHANGELOG
-          ${{ runner.temp }}/git-cliff*/git-cliff -o CHANGELOG.md
-
-          # Run Markdownlint. Will probably fail.
-          npm exec markdownlint-cli --ignore=node_modules --ignore=.github --ignore=.templates --fix '**/*.md' || true
-
-          # Run Markdownlint. Should succeed this time.
-          npm exec markdownlint-cli --ignore=node_modules --ignore=.github --ignore=.templates --fix '**/*.md' || true
-
       - name: Git commit if changed
         run: |
           git config user.name "Ryan Parman (Bot)"
           git config user.email "ryan@ryanparman.com"
 
+          set +e
+
           git add .
           git status | grep modified
           if [ $? -eq 0 ]; then
             git commit -a -m "automation: Updated AUTHORS and CHANGELOG on $(date)."
-            git push
+            git push https://${{ secrets.GITHUB_TOKEN }}@github.com/${GITHUB_REPOSITORY}.git main
           fi
