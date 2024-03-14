@@ -25,6 +25,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`aa2275a`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/aa2275a22f7479aebacb98e410db93c1cdd4305d): Added OpenTofu 1.7.0-alpha1 to the test matrix. ([@skyzyx](https://github.com/skyzyx))
 * [`7fd7a70`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/7fd7a705855d5b21cfa457942ae7cd97f9c5a8b3): Added OpenTofu 1.7.0-alpha1 to the test matrix. ([@skyzyx](https://github.com/skyzyx))
 * [`785655c`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/785655c933803402bac4193988a09fe2c2eac3cd): Updated the .mailmap. ([@skyzyx](https://github.com/skyzyx))
+* [`752ba3a`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/752ba3ac54366ac5463562db2da83216863752b6): Updates `CONTRIBUTING.md`. ([@skyzyx](https://github.com/skyzyx))
 
 ### :dependabot: Building and Dependencies
 
