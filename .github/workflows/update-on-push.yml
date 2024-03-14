@@ -77,6 +77,8 @@ jobs:
           git config user.name "Ryan Parman (Bot)"
           git config user.email "ryan@ryanparman.com"
 
+          set +e
+
           git add .
           git status | grep modified
           if [ $? -eq 0 ]; then
