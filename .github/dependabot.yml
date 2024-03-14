@@ -30,3 +30,13 @@ updates:
     directory: /terratest
     schedule:
       interval: daily
+
+  - package-ecosystem: gomod
+    directory: /terratest/data-sources
+    schedule:
+      interval: daily
+
+  - package-ecosystem: gomod
+    directory: /terratest/functions
+    schedule:
+      interval: daily
