@@ -666,6 +666,14 @@ To enable debugging for this Terraform provider:
 | `generator/` | Scaffolding that generates stubs for new functions in the Terraform provider.               |
 | `tools/`     | Includes the libraries that are part of the build process, but not part of the application. |
 
+## Automated SHA tagging of actions and Dependabot configuration
+
+[stepsecurity.io → northwood-labs/terraform-provider-corefunc](https://app.stepsecurity.io/securerepo?repo=https://github.com/northwood-labs/terraform-provider-corefunc)
+
+1. DO NOT select "Add CodeQL Workflow (SAST Tool)". (We already have this configured with GitHub's built-in integration.)
+1. DO NOT select "Update the pre-commit configuration" with `gitleaks`. We use TruffleHog instead.
+1. Other recommended changes are fine to accept. Open a PR from this tool.
+
 ## Tagging and releasing
 
 * [ ] `make godeps tidy` — Update all Go dependencies to their latest releases.
