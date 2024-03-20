@@ -42,6 +42,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`8302ee3`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/8302ee331b9e95066c43c4de48566b4a3b7f317e): **deps**: Bump `github/codeql-action` from 3.24.7 to 3.24.8 ([#197](https://github.com/northwood-labs/terraform-provider-corefunc/issues/197)) ([@dependabot](https://github.com/dependabot))
 * [`868864f`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/868864ff739f0e282bf0f9e0747c78722d506cfd): **deps**: Bump `github.com/gruntwork-io/terratest` ([#198](https://github.com/northwood-labs/terraform-provider-corefunc/issues/198)) ([@dependabot](https://github.com/dependabot))
 * [`ad5ab9f`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/ad5ab9f12dcf32c4dfb9e915db4cf0f6eda1af6f): **deps**: Bump `github.com/gruntwork-io/terratest` ([#199](https://github.com/northwood-labs/terraform-provider-corefunc/issues/199)) ([@dependabot](https://github.com/dependabot))
+* [`5e81d3d`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/5e81d3db8c89799e6317fa932010146885000e2d): Update godeps to update all `go.mod` files in project. ([@skyzyx](https://github.com/skyzyx))
 
 ### :test_tube: Testing
 
