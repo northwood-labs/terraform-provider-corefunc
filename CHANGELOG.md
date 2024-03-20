@@ -27,7 +27,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`785655c`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/785655c933803402bac4193988a09fe2c2eac3cd): Updated the .mailmap. ([@skyzyx](https://github.com/skyzyx))
 * [`752ba3a`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/752ba3ac54366ac5463562db2da83216863752b6): Updates `CONTRIBUTING.md`. ([@skyzyx](https://github.com/skyzyx))
 * [`2e23862`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/2e23862dca35045774dedf30fac7e0d1e362f175): Re-generate the documentation from the provider. ([@skyzyx](https://github.com/skyzyx))
-* [`c53e354`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/c53e354b3b565639ee59ea8fed191ae43459c054): Re-generated the provider docs. ()
+* [`c53e354`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/c53e354b3b565639ee59ea8fed191ae43459c054): Re-generated the provider docs. ([@skyzyx](https://github.com/skyzyx))
 
 ### :dependabot: Building and Dependencies
 
