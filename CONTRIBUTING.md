@@ -682,7 +682,6 @@ To enable debugging for this Terraform provider:
 * [ ] `pre-commit autoupdate --bleeding-edge` — Update the imported `pre-commit` actions.
 * [ ] `make test` — Runs the complete test suite. Will take a few minutes.
 * [ ] `make changelog` — Generates an updated CHANGELOG.
-* [ ] `make version` — Updates the version to use for the next release.
 * [ ] `make lint` — Run the various linter and code quality tooling.
 * [ ] `make clean` — Clean all non-essential files from the project.
 * [ ] Commit the changes with a `relprep:` message.
