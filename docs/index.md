@@ -58,12 +58,15 @@ Built using the [Terraform Plugin Framework][TPF], which speaks [Terraform Proto
 | Testing type | Details           | Description                                                                    |
 |--------------|-------------------|--------------------------------------------------------------------------------|
 | integration  | Terraform 1.0–1.8 | Executes the provider with this release, pulling from `registry.terraform.io`. |
-| integration  | OpenTofu 1.6      | Executes the provider with this release, pulling from `registry.opentofu.org`. |
+| integration  | OpenTofu 1.6–1.7  | Executes the provider with this release, pulling from `registry.opentofu.org`. |
 | unit         | Go 1.21–1.22      | Tests using these versions.                                                    |
 | mutation     | Go 1.21–1.22      | Tests using these versions.                                                    |
 | fuzz         | Go 1.21–1.22      | Tests using these versions.                                                    |
+| terratest    | Go 1.21–1.22      | Tests using these versions.                                                    |
 
 ## Setting-up the provider
+
+### Data Sources
 
 For users of Terraform 1.0 (and newer), all of the the _Data Source_ implementations are available. Their implementations (inputs, outputs) are consistent with the _Provider Function_ implementations, but exposed as _Data Sources_.
 
@@ -82,6 +85,8 @@ terraform {
 # There are no configuration options
 provider "corefunc" {}
 ```
+
+### Provider Functions
 
 For users of Terraform 1.8 (and newer), all of the the _Data Source_ and _Provider Function_ implementations are available. Their implementations (inputs, outputs) are consistent with each other, and will always return the same outputs from the same imputs. _Provider Functions_ require version 1.4.0 (or later) of this provider.
 
@@ -124,54 +129,6 @@ terraform providers lock \
     -platform=windows_amd64 \
     ;
 ```
-
-### Extended matrix
-
-```shell
-#!/usr/bin/env bash
-terraform providers lock \
-    -platform=darwin_amd64 \
-    -platform=darwin_arm64 \
-    -platform=freebsd_386 \
-    -platform=freebsd_amd64 \
-    -platform=linux_386 \
-    -platform=linux_amd64 \
-    -platform=linux_arm \
-    -platform=linux_arm64 \
-    -platform=windows_386 \
-    -platform=windows_amd64 \
-    ;
-```
-
-### Complete matrix
-
-This is the complete list of supported operating systems and architectures for this specific provider:
-
-```shell
-#!/usr/bin/env bash
-terraform providers lock \
-    -platform=darwin_amd64 \
-    -platform=darwin_arm64 \
-    -platform=freebsd_386 \
-    -platform=freebsd_amd64 \
-    -platform=freebsd_arm \
-    -platform=freebsd_arm64 \
-    -platform=linux_386 \
-    -platform=linux_amd64 \
-    -platform=linux_arm \
-    -platform=linux_arm64 \
-    -platform=netbsd_386 \
-    -platform=netbsd_amd64 \
-    -platform=openbsd_386 \
-    -platform=openbsd_amd64 \
-    -platform=windows_386 \
-    -platform=windows_amd64 \
-    -platform=windows_arm \
-    -platform=windows_arm64 \
-    ;
-```
-
-~> **NOTE:** For OpenTofu users, avoid requesting the `netbsd` platform.
 
 [alerts]: https://registry.terraform.io/providers/PagerDuty/pagerduty/latest
 [archive]: https://registry.terraform.io/providers/hashicorp/archive/latest/docs
