@@ -32,7 +32,7 @@ import (
 )
 
 func TestAccStrIterativeReplaceFunction(t *testing.T) {
-    t.Parallel()
+	t.Parallel()
 
 	funcName := traceFuncName()
 
@@ -68,7 +68,7 @@ func TestAccStrIterativeReplaceFunction(t *testing.T) {
 				{
 					Config: providerConfig + buf.String(),
 					Check: resource.ComposeTestCheckFunc(
-						resource.TestCheckOutput("@TODO", tc.Expected),
+						resource.TestCheckOutput("replacements", tc.Expected),
 					),
 					// ExpectError: tc.expectedError,
 				},
