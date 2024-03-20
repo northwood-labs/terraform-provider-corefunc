@@ -103,6 +103,8 @@ Invalid value for "name" parameter: environment variable AWS_VAULT does not matc
 
 ## Arguments
 
+1. `name` (String) The name of the environment variable to check.
+
 1. `pattern` (Variadic, String, Nullable) A valid Go ([re2](https://github.com/google/re2/wiki/Syntax)) regular expression pattern.
 
 <!-- Preview the provider docs with the Terraform registry provider docs preview tool: https://registry.terraform.io/tools/doc-preview -->

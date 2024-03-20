@@ -31,7 +31,6 @@ output "leftpad" {
 
 ## Arguments
 
-1. `str` (String) The string to pad with padding characters.
 1. `pad_width` (Number) The max number of padding characters to pad the string with.
 
 1. `pad_char` (Variadic, String) The padding character to use. Only supports a single byte. If more than one byte is provided, only the first byte will be used. The default value is a space character.

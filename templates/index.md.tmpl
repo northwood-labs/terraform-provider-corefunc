@@ -26,9 +26,13 @@ Built using the [Terraform Plugin Framework][TPF], which speaks [Terraform Proto
 
 ## Setting-up the provider
 
+### Data Sources
+
 For users of Terraform 1.0 (and newer), all of the the _Data Source_ implementations are available. Their implementations (inputs, outputs) are consistent with the _Provider Function_ implementations, but exposed as _Data Sources_.
 
 {{ tffile "examples/provider/provider_ds.tf" }}
+
+### Provider Functions
 
 For users of Terraform 1.8 (and newer), all of the the _Data Source_ and _Provider Function_ implementations are available. Their implementations (inputs, outputs) are consistent with each other, and will always return the same outputs from the same imputs. _Provider Functions_ require version 1.4.0 (or later) of this provider.
 
@@ -47,18 +51,6 @@ In order to resolve this, you can use the `terraform providers lock` command to 
 Per [Recommended Provider Binary Operating Systems and Architectures](https://developer.hashicorp.com/terraform/registry/providers/os-arch):
 
 {{ codefile "shell" "examples/provider/lock.sh" }}
-
-### Extended matrix
-
-{{ codefile "shell" "examples/provider/lock-ext.sh" }}
-
-### Complete matrix
-
-This is the complete list of supported operating systems and architectures for this specific provider:
-
-{{ codefile "shell" "examples/provider/lock-all.sh" }}
-
-~> **NOTE:** For OpenTofu users, avoid requesting the `netbsd` platform.
 
 [alerts]: https://registry.terraform.io/providers/PagerDuty/pagerduty/latest
 [archive]: https://registry.terraform.io/providers/hashicorp/archive/latest/docs

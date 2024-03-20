@@ -29,4 +29,6 @@ output "homedir" {
 
 ## Arguments
 
+1. `path` (String) The path to expand.
+
 <!-- Preview the provider docs with the Terraform registry provider docs preview tool: https://registry.terraform.io/tools/doc-preview -->
