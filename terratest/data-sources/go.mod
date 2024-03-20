@@ -3,7 +3,7 @@ module terratest
 go 1.22.1
 
 require (
-	github.com/gruntwork-io/terratest v0.46.11
+	github.com/gruntwork-io/terratest v0.46.12
 	github.com/hairyhenderson/go-which v0.2.0
 	github.com/northwood-labs/terraform-provider-corefunc v1.3.1
 	github.com/pkg/errors v0.9.1
@@ -68,7 +68,6 @@ require (
 	golang.org/x/text v0.14.0 // indirect
 	golang.org/x/time v0.5.0 // indirect
 	golang.org/x/tools v0.19.0 // indirect
-	golang.org/x/xerrors v0.0.0-20231012003039-104605ab7028 // indirect
 	google.golang.org/api v0.169.0 // indirect
 	google.golang.org/appengine v1.6.8 // indirect
 	google.golang.org/genproto v0.0.0-20240308144416-29370a3891b7 // indirect
