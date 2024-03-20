@@ -35,6 +35,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`5b43368`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/5b43368d03ebfe75beee8dbf66f944d0c5509731): **deps**: Bump `actions/checkout` from 4.1.1 to 4.1.2 ([@dependabot](https://github.com/dependabot))
 * [`04ea900`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/04ea900f54b7abe1e00aee9fe8ee7ad9f1cf6309): **deps**: Bump `github/codeql-action` from 3.24.6 to 3.24.7 ([@dependabot](https://github.com/dependabot))
 * [`889a425`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/889a42582ca07eb1b3b20fd9f7241d1215a6d8a1): **deps**: Bump `github.com/hashicorp/terraform-plugin-go` ([@dependabot](https://github.com/dependabot))
+* [`06ae530`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/06ae5307eee922f60cf9d5c3e8b2fe289d507b40): **deps**: Bump `opentofu/setup-opentofu` from 1.0.2 to 1.0.3 ([#195](https://github.com/northwood-labs/terraform-provider-corefunc/issues/195)) ([@dependabot](https://github.com/dependabot))
+* [`7d8a967`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/7d8a96710931aa1ac2efbcb08fc69156de9b0145): **deps**: Bump `trufflesecurity/trufflehog` from 3.69.0 to 3.70.2 ([#196](https://github.com/northwood-labs/terraform-provider-corefunc/issues/196)) ([@dependabot](https://github.com/dependabot))
+* [`8302ee3`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/8302ee331b9e95066c43c4de48566b4a3b7f317e): **deps**: Bump `github/codeql-action` from 3.24.7 to 3.24.8 ([#197](https://github.com/northwood-labs/terraform-provider-corefunc/issues/197)) ([@dependabot](https://github.com/dependabot))
 
 ### :test_tube: Testing
 
@@ -560,4 +563,4 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`eb9f7ae`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/eb9f7aecfdaa7bda9087b9b58229d3943571a863): Update the GoReleaser configuration. ([@skyzyx](https://github.com/skyzyx))
 * [`a01b12e`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/a01b12e6870b821f561624bca79407e4c87c73cf): Trying to get the build to work. ([@skyzyx](https://github.com/skyzyx))
 
-<p>Generated on 2024-03-14.</p>
+<p>Generated on 2024-03-20.</p>
