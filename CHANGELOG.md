@@ -66,6 +66,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`098169b`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/098169bb1dd9eda481be898ff92d28da3c9e9907): Partial implementation of str_iterative_replace. ([@skyzyx](https://github.com/skyzyx))
 * [`b1fa98d`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/b1fa98dc0290452404cdcd4319e3809fed7e3962): Implemented `str_truncate_label()` as a function. ([@skyzyx](https://github.com/skyzyx))
 * [`2a3d46e`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/2a3d46e6e307ad90f7ba5dd3095675f24b6c3753): Implemented `url_parse()` as a function. ([@skyzyx](https://github.com/skyzyx))
+* [`8481fbe`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/8481fbeba756f2ca3661ce8bb70c656c40052652): Finish implementing `str_iterative_replace()`. ([@skyzyx](https://github.com/skyzyx))
 
 ## 1.3.1 — 2024-03-07
 
