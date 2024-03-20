@@ -25,6 +25,7 @@ import (
 	"github.com/hashicorp/terraform-plugin-log/tflog"
 	"github.com/lithammer/dedent"
 	"github.com/northwood-labs/terraform-provider-corefunc/corefunc"
+	cftypes "github.com/northwood-labs/terraform-provider-corefunc/corefunc/types"
 )
 
 // Ensure the implementation satisfies the expected interfaces.
@@ -85,8 +86,10 @@ func (f *strIterativeReplaceFunction) Definition(
 					` key. ` + "`" + `old` + "`" + ` represents the existing string to be replaced, and ` + "`" +
 					`new` + "`" + ` represents the replacement string.
                 `)),
-				ElementType: types.MapType{},
-                // https://discuss.hashicorp.com/t/provider-functions-equivalent-to-schema-listnestedattribute/63585
+				// https://discuss.hashicorp.com/t/provider-functions-equivalent-to-schema-listnestedattribute/63585
+				ElementType: types.MapType{
+					ElemType: types.StringType,
+				},
 			},
 		},
 		Return: function.StringReturn{},
@@ -98,17 +101,32 @@ func (f *strIterativeReplaceFunction) Definition(
 func (f *strIterativeReplaceFunction) Run(ctx context.Context, req function.RunRequest, resp *function.RunResponse) {
 	tflog.Debug(ctx, "Starting StrIterativeReplace Function Run method.")
 
-	var str string
-	err := req.Arguments.Get(ctx, &str)
+	var (
+		str          string
+		replacements []map[string]string
+	)
+
+	err := req.Arguments.Get(ctx, &str, &replacements)
 
 	resp.Error = function.ConcatFuncErrors(err)
 	if resp.Error != nil {
 		return
 	}
 
+	// Remap!
+	repls := make([]cftypes.Replacement, len(replacements))
+
+	for i := range replacements {
+		r := replacements[i]
+		repls[i] = cftypes.Replacement{
+			Old: r["old"],
+			New: r["new"],
+		}
+	}
+
 	value := corefunc.StrIterativeReplace(
 		str,
-		// opts,
+		repls,
 	)
 
 	resp.Error = function.ConcatFuncErrors(resp.Result.Set(ctx, value))
