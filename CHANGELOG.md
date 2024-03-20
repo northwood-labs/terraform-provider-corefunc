@@ -70,6 +70,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`2a3d46e`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/2a3d46e6e307ad90f7ba5dd3095675f24b6c3753): Implemented `url_parse()` as a function. ([@skyzyx](https://github.com/skyzyx))
 * [`8481fbe`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/8481fbeba756f2ca3661ce8bb70c656c40052652): Finish implementing `str_iterative_replace()`. ([@skyzyx](https://github.com/skyzyx))
 
+### <!-- 1 -->:bug: Bug Fixes
+
+* [`a43a2d4`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/a43a2d4c69f43ee68aa5e1adf2979148f5a03fc7): Re-run tests, linter, and fix a couple small issues. ([@skyzyx](https://github.com/skyzyx))
+
 ## 1.3.1 — 2024-03-07
 
 [Compare: v1.3.0 → v1.3.1](https://github.com/northwood-labs/terraform-provider-corefunc/compare/v1.3.0...v1.3.1)
