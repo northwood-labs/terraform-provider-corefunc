@@ -121,7 +121,7 @@ tidy:
 godeps:
 	@ $(ECHO) " "
 	@ $(ECHO) "\033[1;33m=====> Upgrade the minor versions of Go dependencies...\033[0m"
-	$(GO) get -d -u -t -v ./...
+	gfind . -type f -name "go.mod" | gxargs -I% dirname "%" | gxargs -I@ bash -c 'cd "@" && go mod tidy -go=1.22 && go get -d -u -t -v ./...'
 
 .PHONY: build
 ## build: [build]* Builds and installs the Terraform provider locally.
