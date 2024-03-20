@@ -65,4 +65,11 @@ data "corefunc_str_iterative_replace" "replacements" {
 
 <a id="nestedatt--replacements"></a>
 
+### Nested Schema for `replacements`
+
+Required:
+
 * `new` (String) The replacement substring.
+* `old` (String) The substring to be replaced.
+
+<!-- Preview the provider docs with the Terraform registry provider docs preview tool: https://registry.terraform.io/tools/doc-preview -->
