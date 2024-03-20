@@ -139,7 +139,7 @@ func (p *coreFuncProvider) Functions(ctx context.Context) []func() function.Func
 		StrCamelFunction,
 		StrConstantFunction,
 		StrKebabFunction,
-		// StrIterativeReplaceFunction,
+		StrIterativeReplaceFunction,
 		StrLeftpadFunction,
 		StrPascalFunction,
 		StrSnakeFunction,
