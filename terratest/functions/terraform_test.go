@@ -24,6 +24,7 @@ import (
 	"github.com/gruntwork-io/terratest/modules/terraform"
 	"github.com/hairyhenderson/go-which"
 	"github.com/northwood-labs/terraform-provider-corefunc/corefunc"
+	"github.com/northwood-labs/terraform-provider-corefunc/corefunc/types"
 	"github.com/pkg/errors"
 	"github.com/stretchr/testify/assert"
 )
@@ -37,10 +38,10 @@ const (
 var (
 	err error
 
-	inputStr = "This is [an] {example}$${id32}."
-	prefix   = "NW-ZZZ-CLOUD-TEST-APP-CLOUD-PROD-CRIT"
-	label    = "K8S Pods Not Running Deployment Check"
-	// strToReplace = "This is a string for testing replacements. New Relic. Set-up."
+	inputStr     = "This is [an] {example}$${id32}."
+	prefix       = "NW-ZZZ-CLOUD-TEST-APP-CLOUD-PROD-CRIT"
+	label        = "K8S Pods Not Running Deployment Check"
+	strToReplace = "This is a string for testing replacements. New Relic. Set-up."
 
 	exampleCom       = "example.com"
 	exampleQuery     = "http://u:p@example.com/foo?q=1"
@@ -110,20 +111,20 @@ func TestTerraform(t *testing.T) {
 			terraform.Output(t, terraformOptions, "str_truncate_fn"),
 			corefunc.TruncateLabel(64, prefix, label),
 		)
-		// assert.Equal(t,
-		// 	terraform.Output(t, terraformOptions, "str_iterative_replace_ds"),
-		// 	corefunc.StrIterativeReplace(
-		// 		strToReplace,
-		// 		[]types.Replacement{
-		// 			{Old: ".", New: ""},
-		// 			{Old: " ", New: "_"},
-		// 			{Old: "-", New: "_"},
-		// 			{Old: "New_Relic", New: "datadog"},
-		// 			{Old: "This", New: "this"},
-		// 			{Old: "Set_up", New: "setup"},
-		// 		},
-		// 	),
-		// )
+		assert.Equal(t,
+			terraform.Output(t, terraformOptions, "str_iterative_replace_fn"),
+			corefunc.StrIterativeReplace(
+				strToReplace,
+				[]types.Replacement{
+					{Old: ".", New: ""},
+					{Old: " ", New: "_"},
+					{Old: "-", New: "_"},
+					{Old: "New_Relic", New: "datadog"},
+					{Old: "This", New: "this"},
+					{Old: "Set_up", New: "setup"},
+				},
+			),
+		)
 
 		// runtime
 		assert.Equal(t, terraform.Output(t, terraformOptions, "runtime_cpuarch_fn"), runtime.GOARCH)

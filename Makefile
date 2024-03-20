@@ -302,7 +302,7 @@ list-tests:
 bats: build
 	@ $(ECHO) " "
 	@ $(ECHO) "\033[1;33m=====> Running BATS/tfschema tests...\033[0m"
-	bats bats/*
+	cd ./bats && terraform init && bats *
 
 .PHONY: acc
 ## acc: [test] Runs Terraform provider acceptance tests. Set NAME= (without 'TestAcc') to run a specific test by name.
