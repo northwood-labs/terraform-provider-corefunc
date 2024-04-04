@@ -419,8 +419,8 @@ github.com/niemeyer/pretty v0.0.0-20200227124842-a10e7caefd8e h1:fD57ERR4JtEqsWb
 github.com/niemeyer/pretty v0.0.0-20200227124842-a10e7caefd8e/go.mod h1:zD1mROLANZcx1PVRCS0qkT7pwLkGfwJo4zjcN/Tysno=
 github.com/nlnwa/whatwg-url v0.4.0 h1:B3kFb5EL7KILeBkhrlQvFi41Ex0p4ropVA9brt5ungI=
 github.com/nlnwa/whatwg-url v0.4.0/go.mod h1:pLzpJjFPtA+n7RCLvp0GBxvDHa/2ckNCBK9mfEeNOMQ=
-github.com/northwood-labs/terraform-provider-corefunc v1.3.1 h1:OfzB5vUG9cgSnsOObFa5WkBXVkhUPJ0jtdSzM0l3/DU=
-github.com/northwood-labs/terraform-provider-corefunc v1.3.1/go.mod h1:bzmTRj0Q4sWAvq/eS3gEjwAAEtH8c4QHFEPA/lNYWXE=
+github.com/northwood-labs/terraform-provider-corefunc v1.4.0 h1:5UCdsduYq03DUsA70vG8mxPfsyg920WfAt79lvca6E4=
+github.com/northwood-labs/terraform-provider-corefunc v1.4.0/go.mod h1:F37Ra+SQYVH+Ab2HiaXUEJ45vmLoXuDRLP63jYmAH4w=
 github.com/pkg/errors v0.8.1/go.mod h1:bwawxfHBFNV+L2hUp1rHADufV3IMtnDRdf1r5NINEl0=
 github.com/pkg/errors v0.9.1 h1:FEBLx1zS214owpjy7qsBeixbURkuhQAwrK5UwLGTwt4=
 github.com/pkg/errors v0.9.1/go.mod h1:bwawxfHBFNV+L2hUp1rHADufV3IMtnDRdf1r5NINEl0=
