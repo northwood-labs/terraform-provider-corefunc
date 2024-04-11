@@ -26,6 +26,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`1e7b75c`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/1e7b75cd1ca3a3c12cb17ca550d5e59311d12f1b): **deps**: Bump `github/codeql-action` from 3.24.9 to 3.24.10 ([#216](https://github.com/northwood-labs/terraform-provider-corefunc/issues/216)) ([@dependabot](https://github.com/dependabot))
 * [`1e16d1c`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/1e16d1c98d053b5b0a12473fa73f1e30202ac4b5): Upgraded Go dependencies. ([@skyzyx](https://github.com/skyzyx))
 
+### Test
+
+* [`9141350`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/9141350105b7aa00534e96fdb60ff1bceaf31079): Update Terrform 1.8-beta1 to 1.8. ([@skyzyx](https://github.com/skyzyx))
+
 ## 1.4.0 — 2024-03-20
 
 [Compare: v1.3.1 → v1.4.0](https://github.com/northwood-labs/terraform-provider-corefunc/compare/v1.3.1...v1.4.0)
