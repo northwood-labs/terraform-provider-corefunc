@@ -22,6 +22,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`65a983f`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/65a983f55ca1f2911b6a340aed407e63019bd154): **deps**: Bump `github/codeql-action` from 3.24.8 to 3.24.9 ([#210](https://github.com/northwood-labs/terraform-provider-corefunc/issues/210)) ([@dependabot](https://github.com/dependabot))
 * [`e8e4e85`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/e8e4e85ff29ab83a115bc27f5c3f43cd6b2993c9): **deps**: Bump `actions/dependency-review-action` from 4.1.3 to 4.2.5 ([#211](https://github.com/northwood-labs/terraform-provider-corefunc/issues/211)) ([@dependabot](https://github.com/dependabot))
 * [`cb883f3`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/cb883f3b000f09ac05d743d65783bfa1c2e4c43c): **deps**: Bump `trufflesecurity/trufflehog` from 3.70.2 to 3.72.0 ([#215](https://github.com/northwood-labs/terraform-provider-corefunc/issues/215)) ([@dependabot](https://github.com/dependabot))
+* [`2487cab`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/2487cabd9e48ce9555e8b0f9cd39985a36d5b48c): **deps**: Bump `trufflesecurity/trufflehog` from 3.72.0 to 3.73.0 ([#217](https://github.com/northwood-labs/terraform-provider-corefunc/issues/217)) ([@dependabot](https://github.com/dependabot))
 
 ## 1.4.0 — 2024-03-20
 
