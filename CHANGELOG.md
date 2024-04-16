@@ -25,6 +25,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`2487cab`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/2487cabd9e48ce9555e8b0f9cd39985a36d5b48c): **deps**: Bump `trufflesecurity/trufflehog` from 3.72.0 to 3.73.0 ([#217](https://github.com/northwood-labs/terraform-provider-corefunc/issues/217)) ([@dependabot](https://github.com/dependabot))
 * [`1e7b75c`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/1e7b75cd1ca3a3c12cb17ca550d5e59311d12f1b): **deps**: Bump `github/codeql-action` from 3.24.9 to 3.24.10 ([#216](https://github.com/northwood-labs/terraform-provider-corefunc/issues/216)) ([@dependabot](https://github.com/dependabot))
 * [`1e16d1c`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/1e16d1c98d053b5b0a12473fa73f1e30202ac4b5): Upgraded Go dependencies. ([@skyzyx](https://github.com/skyzyx))
+* [`bfbf3fb`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/bfbf3fb55765654377ded16353ab9fcfaf8caa5e): **deps**: Bump `github/codeql-action` from 3.24.10 to 3.25.0 ([#219](https://github.com/northwood-labs/terraform-provider-corefunc/issues/219)) ([@dependabot](https://github.com/dependabot))
+* [`753bf53`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/753bf536d1f06107cca38a6111f8c75a55b1466c): **deps**: Bump `github.com/hashicorp/terraform-plugin-docs` ([#218](https://github.com/northwood-labs/terraform-provider-corefunc/issues/218)) ([@dependabot](https://github.com/dependabot))
 
 ### Test
 
@@ -599,4 +601,4 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`eb9f7ae`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/eb9f7aecfdaa7bda9087b9b58229d3943571a863): Update the GoReleaser configuration. ([@skyzyx](https://github.com/skyzyx))
 * [`a01b12e`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/a01b12e6870b821f561624bca79407e4c87c73cf): Trying to get the build to work. ([@skyzyx](https://github.com/skyzyx))
 
-<p>Generated on 2024-04-11.</p>
+<p>Generated on 2024-04-16.</p>
