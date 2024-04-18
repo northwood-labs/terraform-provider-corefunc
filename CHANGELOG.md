@@ -27,6 +27,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`1e16d1c`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/1e16d1c98d053b5b0a12473fa73f1e30202ac4b5): Upgraded Go dependencies. ([@skyzyx](https://github.com/skyzyx))
 * [`bfbf3fb`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/bfbf3fb55765654377ded16353ab9fcfaf8caa5e): **deps**: Bump `github/codeql-action` from 3.24.10 to 3.25.0 ([#219](https://github.com/northwood-labs/terraform-provider-corefunc/issues/219)) ([@dependabot](https://github.com/dependabot))
 * [`753bf53`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/753bf536d1f06107cca38a6111f8c75a55b1466c): **deps**: Bump `github.com/hashicorp/terraform-plugin-docs` ([#218](https://github.com/northwood-labs/terraform-provider-corefunc/issues/218)) ([@dependabot](https://github.com/dependabot))
+* [`ee90ba8`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/ee90ba8792227cdfd8493a8b6095d1143c9c1ba5): Updated the Go dependencies. ([@skyzyx](https://github.com/skyzyx))
 
 ### Test
 
@@ -601,4 +602,4 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`eb9f7ae`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/eb9f7aecfdaa7bda9087b9b58229d3943571a863): Update the GoReleaser configuration. ([@skyzyx](https://github.com/skyzyx))
 * [`a01b12e`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/a01b12e6870b821f561624bca79407e4c87c73cf): Trying to get the build to work. ([@skyzyx](https://github.com/skyzyx))
 
-<p>Generated on 2024-04-16.</p>
+<p>Generated on 2024-04-18.</p>
