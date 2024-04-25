@@ -29,6 +29,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`753bf53`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/753bf536d1f06107cca38a6111f8c75a55b1466c): **deps**: Bump `github.com/hashicorp/terraform-plugin-docs` ([#218](https://github.com/northwood-labs/terraform-provider-corefunc/issues/218)) ([@dependabot](https://github.com/dependabot))
 * [`ee90ba8`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/ee90ba8792227cdfd8493a8b6095d1143c9c1ba5): Updated the Go dependencies. ([@skyzyx](https://github.com/skyzyx))
 * [`fc24fb9`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/fc24fb906919e5b5ae30989fc2ac38297eb5b145): **deps**: Bump `actions/checkout` from 4.1.2 to 4.1.4 ([#235](https://github.com/northwood-labs/terraform-provider-corefunc/issues/235)) ([@dependabot](https://github.com/dependabot))
+* [`0b680d5`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/0b680d54eab2c92324d1d55c16cbfeecd559432e): **deps**: Bump `trufflesecurity/trufflehog` from 3.73.0 to 3.74.0 ([#233](https://github.com/northwood-labs/terraform-provider-corefunc/issues/233)) ([@dependabot](https://github.com/dependabot))
+* [`242c0a1`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/242c0a159884cdd7cf32eca86efcede1af0c8c51): **deps**: Bump `hashicorp/setup-terraform` from 3.0.0 to 3.1.0 ([#232](https://github.com/northwood-labs/terraform-provider-corefunc/issues/232)) ([@dependabot](https://github.com/dependabot))
 
 ### Test
 
