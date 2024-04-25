@@ -12,6 +12,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 
 * [`c9825aa`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/c9825aa0dc6a08ba1553ac7acd24d0e54ae2fade): Updated the CHANGELOG post-release. ([@skyzyx](https://github.com/skyzyx))
 * [`61873f5`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/61873f530c06f46c86094a51d2e65aedb60c5d66): OpenTofu is supporting functions in 1.7. ([@skyzyx](https://github.com/skyzyx))
+* [`0b8378c`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/0b8378c929a30fae7c56756b27ab9850d3a572c6): OpenTofu is supporting functions in 1.7. ([@skyzyx](https://github.com/skyzyx))
 
 ### :dependabot: Building and Dependencies
 
