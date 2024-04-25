@@ -36,6 +36,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`ded25e5`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/ded25e54df1fd4380aec8cf50a08b883aeb5009c): **deps**: Bump `github.com/hashicorp/terraform-plugin-docs` ([#228](https://github.com/northwood-labs/terraform-provider-corefunc/issues/228)) ([@dependabot](https://github.com/dependabot))
 * [`bba1ab1`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/bba1ab17f118399d4d5d8b9ddd396f9bc493b12f): **deps**: Bump `github.com/hashicorp/terraform-plugin-framework` ([#226](https://github.com/northwood-labs/terraform-provider-corefunc/issues/226)) ([@dependabot](https://github.com/dependabot))
 * [`87e1c97`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/87e1c97c593f7d27041cd99cc3990768f7e0b1e2): **deps**: Bump `github.com/gruntwork-io/terratest` ([#234](https://github.com/northwood-labs/terraform-provider-corefunc/issues/234)) ([@dependabot](https://github.com/dependabot))
+* [`7d0ee4e`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/7d0ee4e49b6b57a3fced9aba361c76c0145f80c0): **deps**: Bump `github.com/gruntwork-io/terratest` ([#231](https://github.com/northwood-labs/terraform-provider-corefunc/issues/231)) ([@dependabot](https://github.com/dependabot))
 
 ### Test
 
