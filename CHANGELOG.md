@@ -39,6 +39,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`429f7cb`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/429f7cbca46978c717f441725417ee760d077e82): **deps**: Bump `github.com/hashicorp/terraform-plugin-framework` ([#226](https://github.com/northwood-labs/terraform-provider-corefunc/issues/226)) ([@dependabot](https://github.com/dependabot))
 * [`302cba1`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/302cba17242af7950e11091c684b073206e97380): **deps**: Bump `github.com/gruntwork-io/terratest` ([#234](https://github.com/northwood-labs/terraform-provider-corefunc/issues/234)) ([@dependabot](https://github.com/dependabot))
 * [`062bcaf`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/062bcaf92d1aad01a7c814622c5bc0bbaccee5f7): **deps**: Bump `github.com/gruntwork-io/terratest` ([#231](https://github.com/northwood-labs/terraform-provider-corefunc/issues/231)) ([@dependabot](https://github.com/dependabot))
+* [`5f742b3`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/5f742b35566a4429e81e399a6fc47d853713fc67): Updated Go dependencies. ([@skyzyx](https://github.com/skyzyx))
 
 ### :test_tube: Testing
 
