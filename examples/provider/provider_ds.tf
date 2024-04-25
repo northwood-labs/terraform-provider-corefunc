@@ -9,5 +9,6 @@ terraform {
   }
 }
 
-# There are no configuration options
-provider "corefunc" {}
+provider "corefunc" {
+  # There are no configuration options
+}
