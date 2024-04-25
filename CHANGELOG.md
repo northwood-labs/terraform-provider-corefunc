@@ -28,6 +28,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`bfbf3fb`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/bfbf3fb55765654377ded16353ab9fcfaf8caa5e): **deps**: Bump `github/codeql-action` from 3.24.10 to 3.25.0 ([#219](https://github.com/northwood-labs/terraform-provider-corefunc/issues/219)) ([@dependabot](https://github.com/dependabot))
 * [`753bf53`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/753bf536d1f06107cca38a6111f8c75a55b1466c): **deps**: Bump `github.com/hashicorp/terraform-plugin-docs` ([#218](https://github.com/northwood-labs/terraform-provider-corefunc/issues/218)) ([@dependabot](https://github.com/dependabot))
 * [`ee90ba8`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/ee90ba8792227cdfd8493a8b6095d1143c9c1ba5): Updated the Go dependencies. ([@skyzyx](https://github.com/skyzyx))
+* [`fc24fb9`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/fc24fb906919e5b5ae30989fc2ac38297eb5b145): **deps**: Bump `actions/checkout` from 4.1.2 to 4.1.4 ([#235](https://github.com/northwood-labs/terraform-provider-corefunc/issues/235)) ([@dependabot](https://github.com/dependabot))
 
 ### Test
 
@@ -602,4 +603,4 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`eb9f7ae`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/eb9f7aecfdaa7bda9087b9b58229d3943571a863): Update the GoReleaser configuration. ([@skyzyx](https://github.com/skyzyx))
 * [`a01b12e`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/a01b12e6870b821f561624bca79407e4c87c73cf): Trying to get the build to work. ([@skyzyx](https://github.com/skyzyx))
 
-<p>Generated on 2024-04-18.</p>
+<p>Generated on 2024-04-25.</p>
