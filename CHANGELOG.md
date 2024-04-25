@@ -11,8 +11,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 ### :books: Documentation
 
 * [`c9825aa`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/c9825aa0dc6a08ba1553ac7acd24d0e54ae2fade): Updated the CHANGELOG post-release. ([@skyzyx](https://github.com/skyzyx))
-* [`61873f5`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/61873f530c06f46c86094a51d2e65aedb60c5d66): OpenTofu is supporting functions in 1.7. ([@skyzyx](https://github.com/skyzyx))
-* [`0b8378c`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/0b8378c929a30fae7c56756b27ab9850d3a572c6): OpenTofu is supporting functions in 1.7. ([@skyzyx](https://github.com/skyzyx))
+* [`80ba7cf`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/80ba7cf543a3300b3387a7a3a73f0763ae628560): OpenTofu is supporting functions in 1.7. ([@skyzyx](https://github.com/skyzyx))
+* [`e6054e2`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/e6054e252789797b1441ffcf90741d55ea81836f): OpenTofu is supporting functions in 1.7. ([@skyzyx](https://github.com/skyzyx))
 
 ### :dependabot: Building and Dependencies
 
@@ -27,26 +27,23 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`2487cab`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/2487cabd9e48ce9555e8b0f9cd39985a36d5b48c): **deps**: Bump `trufflesecurity/trufflehog` from 3.72.0 to 3.73.0 ([#217](https://github.com/northwood-labs/terraform-provider-corefunc/issues/217)) ([@dependabot](https://github.com/dependabot))
 * [`1e7b75c`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/1e7b75cd1ca3a3c12cb17ca550d5e59311d12f1b): **deps**: Bump `github/codeql-action` from 3.24.9 to 3.24.10 ([#216](https://github.com/northwood-labs/terraform-provider-corefunc/issues/216)) ([@dependabot](https://github.com/dependabot))
 * [`1e16d1c`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/1e16d1c98d053b5b0a12473fa73f1e30202ac4b5): Upgraded Go dependencies. ([@skyzyx](https://github.com/skyzyx))
-* [`bfbf3fb`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/bfbf3fb55765654377ded16353ab9fcfaf8caa5e): **deps**: Bump `github/codeql-action` from 3.24.10 to 3.25.0 ([#219](https://github.com/northwood-labs/terraform-provider-corefunc/issues/219)) ([@dependabot](https://github.com/dependabot))
-* [`753bf53`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/753bf536d1f06107cca38a6111f8c75a55b1466c): **deps**: Bump `github.com/hashicorp/terraform-plugin-docs` ([#218](https://github.com/northwood-labs/terraform-provider-corefunc/issues/218)) ([@dependabot](https://github.com/dependabot))
-* [`ee90ba8`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/ee90ba8792227cdfd8493a8b6095d1143c9c1ba5): Updated the Go dependencies. ([@skyzyx](https://github.com/skyzyx))
-* [`fc24fb9`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/fc24fb906919e5b5ae30989fc2ac38297eb5b145): **deps**: Bump `actions/checkout` from 4.1.2 to 4.1.4 ([#235](https://github.com/northwood-labs/terraform-provider-corefunc/issues/235)) ([@dependabot](https://github.com/dependabot))
-* [`0b680d5`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/0b680d54eab2c92324d1d55c16cbfeecd559432e): **deps**: Bump `trufflesecurity/trufflehog` from 3.73.0 to 3.74.0 ([#233](https://github.com/northwood-labs/terraform-provider-corefunc/issues/233)) ([@dependabot](https://github.com/dependabot))
-* [`242c0a1`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/242c0a159884cdd7cf32eca86efcede1af0c8c51): **deps**: Bump `hashicorp/setup-terraform` from 3.0.0 to 3.1.0 ([#232](https://github.com/northwood-labs/terraform-provider-corefunc/issues/232)) ([@dependabot](https://github.com/dependabot))
-* [`a8f0771`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/a8f0771e486775e07b0a2db5b4359cd873ec5e70): **deps**: Bump `actions/upload-artifact` from 4.3.1 to 4.3.3 ([#230](https://github.com/northwood-labs/terraform-provider-corefunc/issues/230)) ([@dependabot](https://github.com/dependabot))
-* [`318653a`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/318653ade8658e1815d99823e38133eac2ee951c): **deps**: Bump `github/codeql-action` from 3.25.0 to 3.25.2 ([#229](https://github.com/northwood-labs/terraform-provider-corefunc/issues/229)) ([@dependabot](https://github.com/dependabot))
-* [`ded25e5`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/ded25e54df1fd4380aec8cf50a08b883aeb5009c): **deps**: Bump `github.com/hashicorp/terraform-plugin-docs` ([#228](https://github.com/northwood-labs/terraform-provider-corefunc/issues/228)) ([@dependabot](https://github.com/dependabot))
-* [`bba1ab1`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/bba1ab17f118399d4d5d8b9ddd396f9bc493b12f): **deps**: Bump `github.com/hashicorp/terraform-plugin-framework` ([#226](https://github.com/northwood-labs/terraform-provider-corefunc/issues/226)) ([@dependabot](https://github.com/dependabot))
-* [`87e1c97`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/87e1c97c593f7d27041cd99cc3990768f7e0b1e2): **deps**: Bump `github.com/gruntwork-io/terratest` ([#234](https://github.com/northwood-labs/terraform-provider-corefunc/issues/234)) ([@dependabot](https://github.com/dependabot))
-* [`7d0ee4e`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/7d0ee4e49b6b57a3fced9aba361c76c0145f80c0): **deps**: Bump `github.com/gruntwork-io/terratest` ([#231](https://github.com/northwood-labs/terraform-provider-corefunc/issues/231)) ([@dependabot](https://github.com/dependabot))
+* [`cbf0f71`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/cbf0f71faf98db9540f36ada34b0ffc499aac2ce): **deps**: Bump `github/codeql-action` from 3.24.10 to 3.25.0 ([#219](https://github.com/northwood-labs/terraform-provider-corefunc/issues/219)) ([@dependabot](https://github.com/dependabot))
+* [`3ce0dec`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/3ce0dec86bd086182aa4696e5ae1edac20427419): **deps**: Bump `github.com/hashicorp/terraform-plugin-docs` ([#218](https://github.com/northwood-labs/terraform-provider-corefunc/issues/218)) ([@dependabot](https://github.com/dependabot))
+* [`3c11566`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/3c115664a80716568d25185ce6aaee57c541d8e2): Updated the Go dependencies. ([@skyzyx](https://github.com/skyzyx))
+* [`ae1677e`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/ae1677ee1f624d5af2588be1f6db89c47ef4b8aa): **deps**: Bump `actions/checkout` from 4.1.2 to 4.1.4 ([#235](https://github.com/northwood-labs/terraform-provider-corefunc/issues/235)) ([@dependabot](https://github.com/dependabot))
+* [`06eecdd`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/06eecdd5eb531a563a982f4bc92b98e12a02d44e): **deps**: Bump `trufflesecurity/trufflehog` from 3.73.0 to 3.74.0 ([#233](https://github.com/northwood-labs/terraform-provider-corefunc/issues/233)) ([@dependabot](https://github.com/dependabot))
+* [`172c655`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/172c65578207e220ff72be11bb7d2f9925c5b88f): **deps**: Bump `hashicorp/setup-terraform` from 3.0.0 to 3.1.0 ([#232](https://github.com/northwood-labs/terraform-provider-corefunc/issues/232)) ([@dependabot](https://github.com/dependabot))
+* [`13b10ba`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/13b10ba74d4d88ff39bb2a6fccf0d1ddfa2a65e5): **deps**: Bump `actions/upload-artifact` from 4.3.1 to 4.3.3 ([#230](https://github.com/northwood-labs/terraform-provider-corefunc/issues/230)) ([@dependabot](https://github.com/dependabot))
+* [`cc16398`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/cc1639823a3131fe3ae1214f02eec2da18daa2d2): **deps**: Bump `github/codeql-action` from 3.25.0 to 3.25.2 ([#229](https://github.com/northwood-labs/terraform-provider-corefunc/issues/229)) ([@dependabot](https://github.com/dependabot))
+* [`0eddcae`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/0eddcae99fdd9111a6acca758582946894960e84): **deps**: Bump `github.com/hashicorp/terraform-plugin-docs` ([#228](https://github.com/northwood-labs/terraform-provider-corefunc/issues/228)) ([@dependabot](https://github.com/dependabot))
+* [`429f7cb`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/429f7cbca46978c717f441725417ee760d077e82): **deps**: Bump `github.com/hashicorp/terraform-plugin-framework` ([#226](https://github.com/northwood-labs/terraform-provider-corefunc/issues/226)) ([@dependabot](https://github.com/dependabot))
+* [`302cba1`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/302cba17242af7950e11091c684b073206e97380): **deps**: Bump `github.com/gruntwork-io/terratest` ([#234](https://github.com/northwood-labs/terraform-provider-corefunc/issues/234)) ([@dependabot](https://github.com/dependabot))
+* [`062bcaf`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/062bcaf92d1aad01a7c814622c5bc0bbaccee5f7): **deps**: Bump `github.com/gruntwork-io/terratest` ([#231](https://github.com/northwood-labs/terraform-provider-corefunc/issues/231)) ([@dependabot](https://github.com/dependabot))
 
 ### :test_tube: Testing
 
-* [`24b88af`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/24b88af0bf2c55147b1bfbf57be185fe75264ba7): Update OpenTofu to 1.7.0-rc1. ([@skyzyx](https://github.com/skyzyx))
-
-### Test
-
-* [`9141350`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/9141350105b7aa00534e96fdb60ff1bceaf31079): Update Terrform 1.8-beta1 to 1.8. ([@skyzyx](https://github.com/skyzyx))
+* [`5a0053c`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/5a0053cf786bd53687ba6a7afa168cd2e4cdb279): Update Terrform 1.8-beta1 to 1.8. ([@skyzyx](https://github.com/skyzyx))
+* [`8c97573`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/8c975730916f48bfaa43eee25981c4841fa42211): Update OpenTofu to 1.7.0-rc1. ([@skyzyx](https://github.com/skyzyx))
 
 ## 1.4.0 — 2024-03-20
 
