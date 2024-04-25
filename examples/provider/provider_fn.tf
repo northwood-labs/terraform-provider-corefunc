@@ -1,5 +1,6 @@
 terraform {
-  required_version = "~> 1.8"
+  required_version = "~> 1.8" # Terraform
+  # required_version = "~> 1.7" # OpenTofu
 
   required_providers {
     corefunc = {
@@ -9,5 +10,6 @@ terraform {
   }
 }
 
-# There are no configuration options
-provider "corefunc" {}
+provider "corefunc" {
+  # There are no configuration options
+}
