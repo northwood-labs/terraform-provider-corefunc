@@ -33,6 +33,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`242c0a1`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/242c0a159884cdd7cf32eca86efcede1af0c8c51): **deps**: Bump `hashicorp/setup-terraform` from 3.0.0 to 3.1.0 ([#232](https://github.com/northwood-labs/terraform-provider-corefunc/issues/232)) ([@dependabot](https://github.com/dependabot))
 * [`a8f0771`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/a8f0771e486775e07b0a2db5b4359cd873ec5e70): **deps**: Bump `actions/upload-artifact` from 4.3.1 to 4.3.3 ([#230](https://github.com/northwood-labs/terraform-provider-corefunc/issues/230)) ([@dependabot](https://github.com/dependabot))
 * [`318653a`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/318653ade8658e1815d99823e38133eac2ee951c): **deps**: Bump `github/codeql-action` from 3.25.0 to 3.25.2 ([#229](https://github.com/northwood-labs/terraform-provider-corefunc/issues/229)) ([@dependabot](https://github.com/dependabot))
+* [`ded25e5`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/ded25e54df1fd4380aec8cf50a08b883aeb5009c): **deps**: Bump `github.com/hashicorp/terraform-plugin-docs` ([#228](https://github.com/northwood-labs/terraform-provider-corefunc/issues/228)) ([@dependabot](https://github.com/dependabot))
 
 ### Test
 
