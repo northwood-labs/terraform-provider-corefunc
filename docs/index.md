@@ -88,11 +88,12 @@ provider "corefunc" {}
 
 ### Provider Functions
 
-For users of Terraform 1.8 (and newer), all of the the _Data Source_ and _Provider Function_ implementations are available. Their implementations (inputs, outputs) are consistent with each other, and will always return the same outputs from the same imputs. _Provider Functions_ require version 1.4.0 (or later) of this provider.
+For users of Terraform 1.8/OpenTofu 1.7 (and newer), all of the the _Data Source_ and _Provider Function_ implementations are available. Their implementations (inputs, outputs) are consistent with each other, and will always return the same outputs from the same imputs. _Provider Functions_ require version 1.4.0 (or later) of this provider.
 
 ```terraform
 terraform {
-  required_version = "~> 1.8"
+  required_version = "~> 1.8" # Terraform
+  # required_version = "~> 1.7" # OpenTofu
 
   required_providers {
     corefunc = {
@@ -102,8 +103,9 @@ terraform {
   }
 }
 
-# There are no configuration options
-provider "corefunc" {}
+provider "corefunc" {
+  # There are no configuration options
+}
 ```
 
 ## Updating your lockfile
