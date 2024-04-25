@@ -40,6 +40,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`87e1c97`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/87e1c97c593f7d27041cd99cc3990768f7e0b1e2): **deps**: Bump `github.com/gruntwork-io/terratest` ([#234](https://github.com/northwood-labs/terraform-provider-corefunc/issues/234)) ([@dependabot](https://github.com/dependabot))
 * [`7d0ee4e`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/7d0ee4e49b6b57a3fced9aba361c76c0145f80c0): **deps**: Bump `github.com/gruntwork-io/terratest` ([#231](https://github.com/northwood-labs/terraform-provider-corefunc/issues/231)) ([@dependabot](https://github.com/dependabot))
 
+### :test_tube: Testing
+
+* [`24b88af`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/24b88af0bf2c55147b1bfbf57be185fe75264ba7): Update OpenTofu to 1.7.0-rc1. ([@skyzyx](https://github.com/skyzyx))
+
 ### Test
 
 * [`9141350`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/9141350105b7aa00534e96fdb60ff1bceaf31079): Update Terrform 1.8-beta1 to 1.8. ([@skyzyx](https://github.com/skyzyx))
