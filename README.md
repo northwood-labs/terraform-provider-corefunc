@@ -26,9 +26,9 @@ While some of these _can_ be implemented in HCL, some of them begin to push up a
 
 Since earlier versions of Terraform/OpenTofu didn't have the concept of user-defined functions, the next step to open up the possibilities was to write a custom Provider which has the functions built-in, using existing support for inputs and outputs.
 
-**This does not add new syntax or constructs.** Instead it uses the _existing_ concepts around Providers, Resources, Data Sources, Variables, Outputs, and Functions (1.8) to expose new custom-built functionality.
+**This does not add new syntax or constructs.** Instead it uses the _existing_ concepts around Providers, Resources, Data Sources, Variables, Outputs, and Functions to expose new custom-built functionality.
 
-The goal of this provider is not to call any APIs, but to provide pre-built functions in the form of _Data Sources_ or _Provider Functions_ (1.8).
+The goal of this provider is not to call any APIs, but to provide pre-built functions in the form of _Data Sources_ or _Provider Functions_.
 
 ## Compatibility testing
 
