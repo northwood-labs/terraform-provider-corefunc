@@ -5,7 +5,7 @@ go 1.22
 toolchain go1.22.1
 
 require (
-	github.com/gruntwork-io/terratest v0.46.13
+	github.com/gruntwork-io/terratest v0.46.14
 	github.com/hairyhenderson/go-which v0.2.0
 	github.com/northwood-labs/terraform-provider-corefunc v1.4.0
 	github.com/pkg/errors v0.9.1
@@ -16,7 +16,6 @@ require (
 	cloud.google.com/go v0.112.2 // indirect
 	cloud.google.com/go/auth v0.2.0 // indirect
 	cloud.google.com/go/auth/oauth2adapt v0.2.0 // indirect
-	cloud.google.com/go/compute v1.25.1 // indirect
 	cloud.google.com/go/compute/metadata v0.3.0 // indirect
 	cloud.google.com/go/iam v1.1.7 // indirect
 	cloud.google.com/go/storage v1.40.0 // indirect
