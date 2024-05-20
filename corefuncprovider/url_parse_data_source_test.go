@@ -24,6 +24,7 @@ import (
 	"text/template"
 
 	"github.com/hashicorp/terraform-plugin-testing/helper/resource"
+
 	"github.com/northwood-labs/terraform-provider-corefunc/testfixtures"
 )
 

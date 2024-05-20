@@ -21,8 +21,9 @@ import (
 	"regexp"
 	"testing"
 
-	"github.com/northwood-labs/terraform-provider-corefunc/testfixtures"
 	"github.com/stretchr/testify/assert"
+
+	"github.com/northwood-labs/terraform-provider-corefunc/testfixtures"
 )
 
 func ExampleEnvEnsure() {

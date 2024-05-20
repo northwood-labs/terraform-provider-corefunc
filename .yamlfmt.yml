@@ -1,0 +1,22 @@
+---
+line_ending: lf
+doublestar: false
+continue_on_error: true
+gitignore_excludes: true
+extensions:
+  - yaml
+  - yml
+output_format: default
+formatter:
+  type: basic
+  disallow_anchors: true
+  drop_merge_tag: true
+  include_document_start: true
+  indent: 2
+  indentless_arrays: false
+  line_ending: lf
+  max_line_length: 0
+  pad_line_comments: 1
+  retain_line_breaks_single: true
+  retain_line_breaks: true
+  scan_folded_as_literal: true

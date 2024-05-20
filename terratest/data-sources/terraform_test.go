@@ -23,10 +23,11 @@ import (
 
 	"github.com/gruntwork-io/terratest/modules/terraform"
 	"github.com/hairyhenderson/go-which"
-	"github.com/northwood-labs/terraform-provider-corefunc/corefunc"
-	"github.com/northwood-labs/terraform-provider-corefunc/corefunc/types"
 	"github.com/pkg/errors"
 	"github.com/stretchr/testify/assert"
+
+	"github.com/northwood-labs/terraform-provider-corefunc/corefunc"
+	"github.com/northwood-labs/terraform-provider-corefunc/corefunc/types"
 )
 
 const (
