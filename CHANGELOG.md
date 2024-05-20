@@ -53,6 +53,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`5a0053c`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/5a0053cf786bd53687ba6a7afa168cd2e4cdb279): Update Terrform 1.8-beta1 to 1.8. ([@skyzyx](https://github.com/skyzyx))
 * [`8c97573`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/8c975730916f48bfaa43eee25981c4841fa42211): Update OpenTofu to 1.7.0-rc1. ([@skyzyx](https://github.com/skyzyx))
 * [`55ec24f`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/55ec24f9135f51e2872dcf97023dad563ff341ba): Allow network calls for some jobs. ([@skyzyx](https://github.com/skyzyx))
+* [`3a6bc87`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/3a6bc8756768bb5fdd687746f9756b628d04a8f9): Add automation to auto-merge Dependabot PRs. ([@skyzyx](https://github.com/skyzyx))
 
 ## 1.4.0 — 2024-03-20
 
