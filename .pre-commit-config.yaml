@@ -28,20 +28,13 @@ repos:
         args:
           - --allow-multiple-documents
       - id: destroyed-symlinks
-      - id: detect-private-key
-      - id: end-of-file-fixer
+      # - id: detect-private-key
+      # - id: end-of-file-fixer
       - id: fix-byte-order-marker
       - id: mixed-line-ending
         args:
           - --fix=lf
-      - id: trailing-whitespace
-
-  # ----------------------------------------------------------------------------
-  # goplicate-start:shell
-  - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v4.5.0
-    hooks:
-      - id: check-executables-have-shebangs
+      # - id: trailing-whitespace
 
   # ----------------------------------------------------------------------------
   # goplicate-start:golang

@@ -15,12 +15,12 @@ db:
 dependency-tree: true
 exit-code: 0
 format: table
-ignore-policy: ''
+ignore-policy: ""
 ignorefile: .trivyignore
 include-dev-deps: false
 insecure: false
 license:
-  confidencelevel: '0.9'
+  confidencelevel: "0.9"
   forbidden:
     - AGPL-1.0
     - AGPL-3.0
@@ -171,12 +171,12 @@ misconfiguration:
   include-non-failures: false
   policy-bundle-repository: ghcr.io/aquasecurity/defsec:0
   reset-policy-bundle: false
-output: ''
+output: ""
 quiet: true
-report: all
+report: summary
 reset: false
 scan:
-  compliance: ''
+  compliance: ""
   file-patterns: []
   offline: false
   rekor-url: https://rekor.sigstore.dev
