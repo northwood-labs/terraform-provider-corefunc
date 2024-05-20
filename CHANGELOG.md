@@ -68,6 +68,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`55ec24f`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/55ec24f9135f51e2872dcf97023dad563ff341ba): Allow network calls for some jobs. ([@skyzyx](https://github.com/skyzyx))
 * [`3a6bc87`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/3a6bc8756768bb5fdd687746f9756b628d04a8f9): Add automation to auto-merge Dependabot PRs. ([@skyzyx](https://github.com/skyzyx))
 
+### :tractor: Refactor
+
+* [`5a94f66`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/5a94f667f3559f520152340558f61e26d40e1715): Begin adopting Lefthook as a replacement for pre-commit. ([@skyzyx](https://github.com/skyzyx))
+
 ## 1.4.0 — 2024-03-20
 
 [Compare: v1.3.1 → v1.4.0](https://github.com/northwood-labs/terraform-provider-corefunc/compare/v1.3.1...v1.4.0)
