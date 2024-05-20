@@ -25,9 +25,10 @@ import (
 	"text/tabwriter"
 
 	"github.com/gookit/color"
+	"github.com/spf13/cobra"
+
 	"github.com/northwood-labs/golang-utils/archstring"
 	"github.com/northwood-labs/golang-utils/exiterrorf"
-	"github.com/spf13/cobra"
 )
 
 var (

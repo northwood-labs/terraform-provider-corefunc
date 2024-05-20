@@ -1,4 +1,4 @@
-module github.com/northwood-labs/terraform-provider-corefunc/generator
+module generator
 
 go 1.22
 

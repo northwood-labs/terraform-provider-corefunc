@@ -18,6 +18,7 @@ package corefunc
 import (
 	"github.com/nlnwa/whatwg-url/canonicalizer"
 	"github.com/nlnwa/whatwg-url/url"
+
 	"github.com/northwood-labs/terraform-provider-corefunc/corefunc/types"
 )
 
