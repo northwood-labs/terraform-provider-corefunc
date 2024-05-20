@@ -40,6 +40,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`302cba1`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/302cba17242af7950e11091c684b073206e97380): **deps**: Bump `github.com/gruntwork-io/terratest` ([#234](https://github.com/northwood-labs/terraform-provider-corefunc/issues/234)) ([@dependabot](https://github.com/dependabot))
 * [`062bcaf`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/062bcaf92d1aad01a7c814622c5bc0bbaccee5f7): **deps**: Bump `github.com/gruntwork-io/terratest` ([#231](https://github.com/northwood-labs/terraform-provider-corefunc/issues/231)) ([@dependabot](https://github.com/dependabot))
 * [`5f742b3`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/5f742b35566a4429e81e399a6fc47d853713fc67): Updated Go dependencies. ([@skyzyx](https://github.com/skyzyx))
+* [`6873913`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/6873913d13e0dbc621af83cf14f06cdd80f1a940): **deps**: Bump `step-security/harden-runner` from 2.7.0 to 2.7.1 ([#238](https://github.com/northwood-labs/terraform-provider-corefunc/issues/238)) ([@dependabot](https://github.com/dependabot))
 
 ### :test_tube: Testing
 
