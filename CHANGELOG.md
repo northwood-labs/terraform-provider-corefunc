@@ -42,6 +42,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`5f742b3`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/5f742b35566a4429e81e399a6fc47d853713fc67): Updated Go dependencies. ([@skyzyx](https://github.com/skyzyx))
 * [`6873913`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/6873913d13e0dbc621af83cf14f06cdd80f1a940): **deps**: Bump `step-security/harden-runner` from 2.7.0 to 2.7.1 ([#238](https://github.com/northwood-labs/terraform-provider-corefunc/issues/238)) ([@dependabot](https://github.com/dependabot))
 * [`1cdfe96`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/1cdfe961a69c6b2ed0c74d215d7846b6401cd1c2): **deps**: Bump `github.com/hashicorp/terraform-plugin-docs` from 0.19.1 to 0.19.2 ([#241](https://github.com/northwood-labs/terraform-provider-corefunc/issues/241)) ([@dependabot](https://github.com/dependabot))
+* [`cd03137`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/cd03137e8b19f81fa03e718f6868d3a27f2dabfc): **deps**: Bump `actions/dependency-review-action` from 4.2.5 to 4.3.2 ([#242](https://github.com/northwood-labs/terraform-provider-corefunc/issues/242)) ([@dependabot](https://github.com/dependabot))
+* [`e4623fe`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/e4623fe91974cd9b30e62fbd32d318f12d65e131): **deps**: Bump `actions/setup-go` from 5.0.0 to 5.0.1 ([#243](https://github.com/northwood-labs/terraform-provider-corefunc/issues/243)) ([@dependabot](https://github.com/dependabot))
 
 ### :test_tube: Testing
 
