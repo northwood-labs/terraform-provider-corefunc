@@ -8,6 +8,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 
 [Compare: v1.4.0 → `HEAD`](https://github.com/northwood-labs/terraform-provider-corefunc/compare/v1.4.0..HEAD)
 
+### :art: Styling
+
+* [`4cdc792`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/4cdc7927418e754dd833d80e3056e823520a4cac): Added yamlfmt config and performed updates. ([@skyzyx](https://github.com/skyzyx))
+
 ### :books: Documentation
 
 * [`c9825aa`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/c9825aa0dc6a08ba1553ac7acd24d0e54ae2fade): Updated the CHANGELOG post-release. ([@skyzyx](https://github.com/skyzyx))
