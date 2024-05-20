@@ -46,6 +46,14 @@ run:
   # Default: use Go version from the go.mod file, fallback on the env var `GOVERSION`, fallback on 1.18
   # go: "1.21"
 
+# goplicate-end:run
+
+# goplicate-start:severity
+severity:
+  case-sensitive: false
+# goplicate-end:severity
+
+# goplicate-start:linters
 linters:
   # please, do not use `enable-all`: it's deprecated and will be removed soon.
   # inverted configuration with `enable-all` and `disable` is not scalable
@@ -497,15 +505,15 @@ linters-settings:
         # Default: ""
         # rules: ''
 
-        # Comma-separated list of enabled groups or skip empty to enable everything.
-        # Tags can be defined with # character prefix.
-        # Default: "<all>"
-        # enable: "myGroupName,#myTagName"
+      # Comma-separated list of enabled groups or skip empty to enable everything.
+      # Tags can be defined with # character prefix.
+      # Default: "<all>"
+      # enable: "myGroupName,#myTagName"
 
-        # Comma-separated list of disabled groups or skip empty to enable everything.
-        # Tags can be defined with # character prefix.
-        # Default: ""
-        # disable: "myGroupName,#myTagName"
+      # Comma-separated list of disabled groups or skip empty to enable everything.
+      # Tags can be defined with # character prefix.
+      # Default: ""
+      # disable: "myGroupName,#myTagName"
 
       tooManyResultsChecker:
         # Maximum number of results.
@@ -1328,6 +1336,7 @@ linters-settings:
     # assigned, called or used on the line above.
     strict-append: true
 
+# goplicate-start:issues
 issues:
   # List of regexps of issue texts to exclude, empty list by default. But independently from this
   # option we use default exclude patterns, it can be disabled by `exclude-use-default: false`. To
