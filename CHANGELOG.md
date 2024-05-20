@@ -51,6 +51,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`3e5a490`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/3e5a490333b5c280f0dcf740bddc72671f88c1c3): **deps**: Bump `golangci/golangci-lint-action` from 4.0.0 to 6.0.1 ([#247](https://github.com/northwood-labs/terraform-provider-corefunc/issues/247)) ([@dependabot](https://github.com/dependabot))
 * [`e1ca40b`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/e1ca40b2233bbf6abda80d883ec7d3f06fd4018c): **deps**: Bump `github/codeql-action` from 3.25.2 to 3.25.5 ([#249](https://github.com/northwood-labs/terraform-provider-corefunc/issues/249)) ([@dependabot](https://github.com/dependabot))
 * [`4fcfbd3`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/4fcfbd38f8762079016d5d8a4ff12c2fa55f9442): **deps**: Bump `github.com/hashicorp/terraform-plugin-testing` from 1.7.0 to 1.8.0 ([#250](https://github.com/northwood-labs/terraform-provider-corefunc/issues/250)) ([@dependabot](https://github.com/dependabot))
+* [`92dcf77`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/92dcf77da07ded956ffec18dea491ed515703ba5): **deps**: Bump `hashicorp/setup-terraform` from 3.1.0 to 3.1.1 ([#255](https://github.com/northwood-labs/terraform-provider-corefunc/issues/255)) ([@dependabot](https://github.com/dependabot))
 
 ### :test_tube: Testing
 
