@@ -1,0 +1,84 @@
+##
+# Generate with:
+#   tomljson ecrc.toml > .ecrc
+##
+
+# goplicate-start:config
+Debug           = false
+IgnoreDefaults  = true
+NoColor         = false
+SpacesAfterTabs = false
+Verbose         = false
+# goplicate-end:config
+
+Exclude = [
+  # goplicate-start:excludes
+  "\\.7z$",
+  "\\.avif",
+  "\\.bak$",
+  "\\.bin$",
+  "\\.bz2$",
+  "\\.cache$",
+  "\\.css\\.map$",
+  "\\.dcignore$",
+  "\\.ecrc$",
+  "\\.eot$",
+  "\\.example$",
+  "\\.gif$",
+  "\\.git/.*$",
+  "\\.go$",
+  "\\.golangci.yml$",
+  "\\.goreleaser.yml$",
+  "\\.gotmpl$",
+  "\\.gz$",
+  "\\.ico$",
+  "\\.infracost/.*$",
+  "\\.terraform/.*$",
+  "\\.lefthook/.*$",
+  "\\.lefthook-local/.*$",
+  "\\.jpeg$",
+  "\\.jpg$",
+  "\\.js\\.map$",
+  "\\.log$",
+  "\\.mp4$",
+  "\\.otf$",
+  "\\.out$",
+  "\\.patch$",
+  "\\.pbm",
+  "\\.pdf$",
+  "\\.pgm",
+  "\\.png$",
+  "\\.pnm",
+  "\\.ppm",
+  "\\.snap$",
+  "\\.svg$",
+  "\\.tar$",
+  "\\.terraform-docs\\.yml$",
+  "\\.terraform\\.lock\\.hcl$",
+  "\\.tfstate\\.backup$",
+  "\\.tfstate$",
+  "\\.ttf$",
+  "\\.txt$",
+  "\\.vscode/.*?\\.json$",
+  "\\.webp$",
+  "\\.wmv$",
+  "\\.woff$",
+  "\\.woff2$",
+  "\\.zip$",
+  "^\\.pnp\\.cjs$",
+  "^\\.pnp\\.js$",
+  "^\\.pnp\\.loader\\.mjs$",
+  "^\\.yarn/",
+  "^Cargo\\.lock$",
+  "^composer\\.lock$",
+  "^package-lock\\.json$",
+  "^yarn\\.lock$",
+  "cliff\\.toml$",
+  "go\\.mod$",
+  "go\\.sum$",
+  "min\\.css$",
+  "min\\.js$",
+  "package-lock\\.json$",
+  "standard\\.mk$",
+  # goplicate-end:excludes
+]

@@ -1,0 +1,85 @@
+---
+assert_lefthook_installed: true
+colors: true
+no_tty: false
+min_version: 1.4.11
+
+rc: ~/.lefthookrc
+source_dir: .lefthook/
+source_dir_local: .lefthook-local/
+
+output:
+  - summary
+  - empty_summary
+  - success
+  - failure
+
+pre-commit:
+  parallel: true
+  commands:
+    ec-check:
+      tags: "always,formatting"
+      run: tomljson ecrc.toml > .ecrc && editorconfig-checker .
+      stage_fixed: true
+
+    # git-check:
+    #   tags: "always,git"
+    #   run: >-
+    #     git diff-index --check "$(git hash-object -t tree /dev/null)"
+    #   stage_fixed: true
+
+    markdownlint:
+      tags: "always,docs,formatting"
+      glob: "**/*.md"
+      run: >-
+        npx -y markdownlint-cli@0.40.0 --ignore=node_modules --ignore=.github --ignore=.templates --fix "{all_files}"
+      stage_fixed: true
+
+    shellcheck:
+      tags: "always,shell"
+      glob: "**/*.sh"
+      run: >-
+        shellcheck {staged_files}
+      stage_fixed: false
+
+    shfmt:
+      tags: "always,shell"
+      glob: "**/*.sh"
+      run: >-
+        shfmt --simplify --write --language-dialect=auto --indent=4 --case-indent --space-redirects {staged_files}
+      stage_fixed: true
+
+    # trivy-vuln:
+    #   tags: "always,secrets"
+    #   run: >-
+    #     trivy fs --config trivy-vuln.yaml --ignorefile .trivyignore.yaml {staged_files}
+    #   stage_fixed: false
+
+    # trivy-license:
+    #   tags: "always,secrets"
+    #   run: >-
+    #     trivy fs --config trivy-license.yaml --ignorefile .trivyignore.yaml {staged_files}
+    #   stage_fixed: false
+
+    trufflehog:
+      tags: "always,secrets"
+      run: >-
+        trufflehog git file://. --since-commit HEAD --only-verified --fail --json 2>/dev/null | jq '.'
+      stage_fixed: false
+
+    yamlfmt:
+      tags: "always,secrets"
+      glob: "**/*.ya?ml"
+      run: "yamlfmt {staged_files}"
+      stage_fixed: true
+
+  scripts:
+    "executable_must_have_hashbang.sh":
+      runner: bash
+    "script_must_have_extension.sh":
+      runner: bash
+
+commit-msg:
+  commands:
+    conventional_commit:
+      run: gommit check message "$(cat {1})"

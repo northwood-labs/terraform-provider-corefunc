@@ -36,74 +36,12 @@ repos:
           - --fix=lf
       - id: trailing-whitespace
 
-  - repo: https://github.com/skyzyx/git-hooks
-    rev: 4a2f0dc93e5c5353ed5e619599b0d15e34df88db
-    hooks:
-      - id: git-check
-
-  - repo: https://github.com/igorshubovych/markdownlint-cli
-    rev: v0.39.0
-    hooks:
-      - id: markdownlint
-        args:
-          - --ignore=node_modules
-          - --ignore=.github
-          - --ignore=.templates
-          - --fix
-          - "**/*.md"
-
-  - repo: local
-    hooks:
-      - id: editorconfig-checker
-        name: editorconfig-checker
-        description: Double-check editorconfig compliance
-        entry: bash -c 'editorconfig-checker'
-        language: system
-        stages: [commit, push]
-
-      - id: trufflehog
-        name: TruffleHog
-        description: Detect secrets in your data.
-        entry: bash -c 'trufflehog git file://. --since-commit HEAD --only-verified --fail --json 2>/dev/null | jq "."'
-        language: system
-        stages: [commit, push]
-
-      - id: trivy-vuln
-        name: Trivy (Vulnerabilities)
-        description: Check for security vulnerabilities. (https://trivy.dev)
-        entry: bash -c 'trivy fs --config trivy-vuln.yaml --ignorefile .trivyignore.yaml .'
-        language: system
-        stages: [commit, push]
-
-      - id: yamlfmt
-        name: yamlfmt
-        description: Format YAML to canonical style
-        entry: bash -c 'yamlfmt .'
-        language: system
-        stages: [commit, push]
-  # goplicate-end:always
-
   # ----------------------------------------------------------------------------
   # goplicate-start:shell
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v4.5.0
     hooks:
       - id: check-executables-have-shebangs
-
-  - repo: https://github.com/skyzyx/git-hooks
-    rev: 4a2f0dc93e5c5353ed5e619599b0d15e34df88db
-    hooks:
-      - id: script-must-have-extension
-      - id: shellcheck
-      - id: shfmt
-        args:
-          - --simplify
-          - --write
-          - --language-dialect=auto
-          - --indent=4
-          - --case-indent
-          - --space-redirects
-  # goplicate-end:shell
 
   # ----------------------------------------------------------------------------
   # goplicate-start:golang
