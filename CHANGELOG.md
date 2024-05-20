@@ -72,6 +72,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 
 * [`5a94f66`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/5a94f667f3559f520152340558f61e26d40e1715): Begin adopting Lefthook as a replacement for pre-commit. ([@skyzyx](https://github.com/skyzyx))
 
+### :tractor: Refactor
+
+* [`5a94f66`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/5a94f667f3559f520152340558f61e26d40e1715): Begin adopting Lefthook as a replacement for pre-commit. ([@skyzyx](https://github.com/skyzyx))
+
 ## 1.4.0 — 2024-03-20
 
 [Compare: v1.3.1 → v1.4.0](https://github.com/northwood-labs/terraform-provider-corefunc/compare/v1.3.1...v1.4.0)
