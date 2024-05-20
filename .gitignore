@@ -1,25 +1,32 @@
+# goplicate-start:always
 _*.out
-_*.txt
 _/
 _cache_/*
-_provider.tf
 .dccache
+.lefthook-local/
+.private.env
+*.cache.json
+*.zip
+dist/
+# goplicate-end:always
+
+# goplicate-start:go
+*.pgo
+*.pprof
+*.test
+callgrind.*
+# goplicate-end:go
+
+# goplicate-start:terraform
 .infracost
 .terraform
 .terraform.lock.hcl
 .terraformrc
 *_override.tf
 *_override.tf.json
-*.cache.json
-*.pgo
-*.pprof
-*.test
+_provider.tf
 *.tfstate*
-*.zip
 **/.terraform/*
-callgrind.*
-corefunc.test
-dist/
 override.tf
 override.tf.json
 secrets.auto.tfvars
@@ -33,3 +40,4 @@ tests/**/terratest-*
 tests/terraform.*
 tests/terratest-*
 tfplan
+# goplicate-end:terraform
