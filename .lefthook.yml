@@ -49,17 +49,17 @@ pre-commit:
         shfmt --simplify --write --language-dialect=auto --indent=4 --case-indent --space-redirects {staged_files}
       stage_fixed: true
 
-    # trivy-vuln:
-    #   tags: "always,secrets"
-    #   run: >-
-    #     trivy fs --config trivy-vuln.yaml --ignorefile .trivyignore.yaml {staged_files}
-    #   stage_fixed: false
+    trivy-vuln:
+      tags: "always,secrets"
+      run: >-
+        trivy fs --config trivy-vuln.yaml --ignorefile .trivyignore.yaml .
+      stage_fixed: false
 
-    # trivy-license:
-    #   tags: "always,secrets"
-    #   run: >-
-    #     trivy fs --config trivy-license.yaml --ignorefile .trivyignore.yaml {staged_files}
-    #   stage_fixed: false
+    trivy-license:
+      tags: "always,secrets"
+      run: >-
+        trivy fs --config trivy-license.yaml --ignorefile .trivyignore.yaml .
+      stage_fixed: false
 
     trufflehog:
       tags: "always,secrets"
@@ -74,10 +74,21 @@ pre-commit:
       stage_fixed: true
 
   scripts:
+    # If the file is marked as executable, it should start with a hashbang.
     "executable_must_have_hashbang.sh":
       runner: bash
+
+    # Shell scripts MUST have a file extension.
     "script_must_have_extension.sh":
       runner: bash
+
+    # File MUST always end with a trailing linebreak.
+    "end_of_file.py":
+      runner: python3.10
+
+    # Remove trailing whitespace from lines.
+    "remove_trailing_whitespace.py":
+      runner: python3.10
 
 commit-msg:
   commands:
