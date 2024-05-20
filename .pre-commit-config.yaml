@@ -2,7 +2,7 @@
 # See https://pre-commit.com for more information
 # See https://pre-commit.com/hooks.html for more hooks
 default_language_version:
-  python: python3.11
+  python: python3.10
 
 default_stages:
   - commit
@@ -11,6 +11,8 @@ default_stages:
 fail_fast: false
 
 repos:
+  # ----------------------------------------------------------------------------
+  # goplicate-start:always
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v4.5.0
     hooks:
@@ -19,10 +21,7 @@ repos:
           - --maxkb=500
           - --enforce-all
       - id: check-case-conflict
-      - id: check-executables-have-shebangs
-      - id: check-json
       - id: check-merge-conflict
-      # - id: check-symlinks
       - id: check-toml
       - id: check-xml
       - id: check-yaml
@@ -32,50 +31,15 @@ repos:
       - id: detect-private-key
       - id: end-of-file-fixer
       - id: fix-byte-order-marker
-      # - id: fix-encoding-pragma
-      #   args:
-      #     - --remove
       - id: mixed-line-ending
         args:
           - --fix=lf
-      # - id: requirements-txt-fixer
       - id: trailing-whitespace
-
-  # - repo: https://github.com/asottile/pyupgrade
-  #   rev: c21b4c4d153be0633357686c7697f539ac194868
-  #   hooks:
-  #     - id: pyupgrade
-  #       args:
-  #         - --py311-plus
-
-  # - repo: https://github.com/asottile/reorder_python_imports
-  #   rev: c4fe43d9809f1507508b3aba24ad1a72b5407f58
-  #   hooks:
-  #     - id: reorder-python-imports
-  #       args:
-  #         - --py311-plus
 
   - repo: https://github.com/skyzyx/git-hooks
     rev: 4a2f0dc93e5c5353ed5e619599b0d15e34df88db
     hooks:
       - id: git-check
-      - id: gofumpt
-      - id: golangci-lint
-      # - id: go-consistent
-      - id: gomodupdate
-      - id: script-must-have-extension
-      - id: shellcheck
-      - id: shfmt
-        args:
-          - -s
-          - -w
-          - -ln=auto
-          - -i=4
-          - -ci
-          - -sr
-      - id: terraform-fmt
-      - id: yamlfmt
-      # - id: yapf
 
   - repo: https://github.com/igorshubovych/markdownlint-cli
     rev: v0.39.0
@@ -86,7 +50,7 @@ repos:
           - --ignore=.github
           - --ignore=.templates
           - --fix
-          - '**/*.md'
+          - "**/*.md"
 
   - repo: local
     hooks:
@@ -104,36 +68,69 @@ repos:
         language: system
         stages: [commit, push]
 
-      # - id: actionlint
-      #   name: Actionlint
-      #   description: Lint GitHub Actions workflows
-      #   entry: bash -c 'actionlint'
-      #   language: system
-      #   stages: [commit, push]
-
-      - id: go-consistent
-        name: 'Go: Consistent Patterns'
-        description: Analyzes Go packages to identify unnecessary type conversions.
-        entry: bash -c 'go-consistent ./corefunc/...; go-consistent ./corefuncprovider/...'
+      - id: trivy-vuln
+        name: Trivy (Vulnerabilities)
+        description: Check for security vulnerabilities. (https://trivy.dev)
+        entry: bash -c 'trivy fs --config trivy-vuln.yaml --ignorefile .trivyignore.yaml .'
         language: system
         stages: [commit, push]
 
+      - id: yamlfmt
+        name: yamlfmt
+        description: Format YAML to canonical style
+        entry: bash -c 'yamlfmt .'
+        language: system
+        stages: [commit, push]
+  # goplicate-end:always
+
+  # ----------------------------------------------------------------------------
+  # goplicate-start:shell
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.5.0
+    hooks:
+      - id: check-executables-have-shebangs
+
+  - repo: https://github.com/skyzyx/git-hooks
+    rev: 4a2f0dc93e5c5353ed5e619599b0d15e34df88db
+    hooks:
+      - id: script-must-have-extension
+      - id: shellcheck
+      - id: shfmt
+        args:
+          - --simplify
+          - --write
+          - --language-dialect=auto
+          - --indent=4
+          - --case-indent
+          - --space-redirects
+  # goplicate-end:shell
+
+  # ----------------------------------------------------------------------------
+  # goplicate-start:golang
+  - repo: https://github.com/skyzyx/git-hooks
+    rev: 4a2f0dc93e5c5353ed5e619599b0d15e34df88db
+    hooks:
+      - id: gofumpt
+      - id: golangci-lint
+
+  - repo: local
+    hooks:
       - id: unconvert
-        name: 'Go: unconvert (current GOOS/GOARCH)'
+        name: "Go: unconvert (current GOOS/GOARCH)"
         description: Analyzes Go packages to identify unnecessary type conversions.
         entry: bash -c 'unconvert -fastmath -tests -v ./...'
         language: system
         stages: [commit, push]
 
       - id: smrcptr
-        name: 'Go: Same Receiver Pointer'
+        name: "Go: Same Receiver Pointer"
         description: Don't mix receiver types. Choose either pointers or struct types for all available methods.
         entry: bash -c 'smrcptr -skip-std=true --constructor=true ./...'
         language: system
         stages: [commit, push]
 
       - id: govulncheck
-        name: 'Go: Vulnerability check'
+        name: "Go: Vulnerability check"
         description: Check for Go security vulnerabilities. (https://go.dev/blog/vuln)
         entry: bash -c 'govulncheck -test ./...'
         language: system
@@ -145,10 +142,22 @@ repos:
         entry: bash -c 'osv-scanner -r .'
         language: system
         stages: [commit, push]
+  # goplicate-end:golang
 
-      - id: trivy-vuln
-        name: Trivy (Vulnerabilities)
-        description: Check for security vulnerabilities. (https://trivy.dev)
-        entry: bash -c 'trivy fs --config trivy-vuln.yaml .'
+  # ----------------------------------------------------------------------------
+  # goplicate-start:terraform
+  - repo: https://github.com/skyzyx/git-hooks
+    rev: 4a2f0dc93e5c5353ed5e619599b0d15e34df88db
+    hooks:
+      - id: terraform-fmt
+  # goplicate-end:terraform
+
+  # Project-specific tasks
+  - repo: local
+    hooks:
+      - id: go-consistent
+        name: "Go: Consistent Patterns"
+        description: Analyzes Go packages to identify unnecessary type conversions.
+        entry: bash -c 'go-consistent ./corefunc/...; go-consistent ./corefuncprovider/...'
         language: system
         stages: [commit, push]

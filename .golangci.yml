@@ -1,8 +1,8 @@
 ---
-# This file contains all available configuration options with their default
-# values.
+# https://github.com/golangci/golangci-lint/blob/master/.golangci.reference.yml
+# https://golangci-lint.run/jsonschema/golangci.jsonschema.json
 
-# options for analysis running
+# goplicate-start:run
 run:
   # The default concurrency value is the number of available CPU.
   # concurrency: 4
@@ -86,7 +86,6 @@ linters:
     - gofumpt
     # - goheader
     - goimports
-    - gomnd
     # - gomoddirectives
     # - gomodguard
     - gosec
@@ -102,6 +101,7 @@ linters:
     - maintidx
     - makezero
     - misspell
+    - mnd
     # - musttag
     - nakedret
     - nestif
@@ -134,7 +134,9 @@ linters:
     - wrapcheck
     - wsl
 
-# output configuration options
+# goplicate-end:linters
+
+# goplicate-start:output
 output:
   # The formats used to render issues.
   # Format: `colored-line-number`, `line-number`, `json`, `colored-tab`, `tab`, `checkstyle`, `code-climate`, `junit-xml`, `github-actions`, `teamcity`
@@ -194,18 +196,29 @@ output:
   # Default: false
   show-stats: true
 
-# all available settings of specific linters
-linters-settings:
-  # asasalint:
-  # bidichk:
+# goplicate-end:output
 
+linters-settings:
+  # goplicate-start:settings-asasalint
+  # asasalint:
+  # goplicate-end:settings-asasalint
+
+  # goplicate-start:settings-bidichk
+  # bidichk:
+  # goplicate-end:settings-bidichk
+
+  # goplicate-start:settings-copyloopvar
   copyloopvar:
     # If true, ignore aliasing of loop variables.
     # Default: false
     ignore-alias: false
+  # goplicate-end:settings-copyloopvar
 
+  # goplicate-start:settings-cyclop
   # cyclop:
+  # goplicate-end:settings-cyclop
 
+  # goplicate-start:settings-decorder
   decorder:
     # Required order of `type`, `const`, `var` and `func` declarations inside a file.
     # Default: types before constants before variables before functions.
@@ -226,17 +239,25 @@ linters-settings:
     # If true, multiple global `type`, `const` and `var` declarations are allowed.
     # Default: true (disabled)
     disable-dec-num-check: false
+  # goplicate-end:settings-decorder
 
+  # goplicate-start:settings-depguard
   # depguard:
+  # goplicate-end:settings-depguard
 
+  # goplicate-start:settings-dogsled
   dogsled:
     # checks assignments with too many blank identifiers; default is 2
     max-blank-identifiers: 2
+  # goplicate-end:settings-dogsled
 
+  # goplicate-start:settings-dupl
   dupl:
     # tokens count to trigger issue, 150 by default
     threshold: 100
+  # goplicate-end:settings-dupl
 
+  # goplicate-start:settings-dupword
   dupword:
     # Keywords for detecting duplicate words.
     # If this list is not empty, only the words defined in this list will be detected.
@@ -253,7 +274,9 @@ linters-settings:
     # Keywords used to ignore detection.
     # Default: []
     # ignore: []
+  # goplicate-end:settings-dupword
 
+  # goplicate-start:settings-errcheck
   errcheck:
     # report about not checking of errors in type assetions: `a := b.(MyStruct)`;
     # default is false: such cases aren't reported by default.
@@ -262,7 +285,9 @@ linters-settings:
     # report about assignment of errors to blank identifier: `num, _ := strconv.Atoi(numStr)`;
     # default is false: such cases aren't reported by default.
     check-blank: false
+  # goplicate-end:settings-errcheck
 
+  # goplicate-start:settings-errchkjson
   errchkjson:
     # With check-error-free-encoding set to true, errchkjson does warn about
     # errors from json encoding functions that are safe to be ignored, because
@@ -284,7 +309,9 @@ linters-settings:
     # Issue on struct encoding that doesn't have exported fields.
     # Default: false
     report-no-exported: false
+  # goplicate-end:settings-errchkjson
 
+  # goplicate-start:settings-errorlint
   errorlint:
     # Check whether fmt.Errorf uses the %w verb for formatting errors.
     # See the https://github.com/polyfloyd/go-errorlint for caveats.
@@ -298,7 +325,9 @@ linters-settings:
     # Check for plain error comparisons.
     # Default: true
     comparison: true
+  # goplicate-end:settings-errorlint
 
+  # goplicate-start:settings-exhaustive
   exhaustive:
     # Program elements to check for exhaustiveness.
     # Default: [ switch ]
@@ -336,19 +365,25 @@ linters-settings:
     # Only run exhaustive check on map literals with "//exhaustive:enforce" comment.
     # Default: false
     explicit-exhaustive-map: false
+  # goplicate-end:settings-exhaustive
 
+  # goplicate-start:settings-exhaustruct
   exhaustruct:
-    # List of regular expressions to match struct packages and names.
-    # If this list is empty, all structs are tested.
-    # Default: []
-    # include: []
+  # List of regular expressions to match struct packages and names.
+  # If this list is empty, all structs are tested.
+  # Default: []
+  # include: []
 
-    # List of regular expressions to exclude struct packages and names from check.
-    # Default: []
-    # exclude: []
+  # List of regular expressions to exclude struct packages and names from check.
+  # Default: []
+  # exclude: []
+  # goplicate-end:settings-exhaustruct
 
+  # goplicate-start:settings-forbidigo
   # forbidigo:
+  # goplicate-end:settings-forbidigo
 
+  # goplicate-start:settings-funlen
   funlen:
     # Checks the number of lines in a function.
     # If lower than 0, disable the check.
@@ -363,14 +398,20 @@ linters-settings:
     # Ignore comments when counting lines.
     # Default false
     ignore-comments: true
+  # goplicate-end:settings-funlen
 
+  # goplicate-start:settings-ginkgolinter
   # ginkgolinter:
+  # goplicate-end:settings-ginkgolinter
 
+  # goplicate-start:settings-gocognit
   gocognit:
     # Minimal code complexity to report.
     # Default: 30 (but we recommend 10-20)
     min-complexity: 20
+  # goplicate-end:settings-gocognit
 
+  # goplicate-start:settings-goconst
   goconst:
     # Minimal length of string constant.
     # Default: 3
@@ -403,7 +444,9 @@ linters-settings:
     # Ignore when constant is not used as function argument.
     # Default: true
     ignore-calls: true
+  # goplicate-end:settings-goconst
 
+  # goplicate-start:settings-gocritic
   gocritic:
     # Disable all checks.
     # Default: false
@@ -475,35 +518,35 @@ linters-settings:
         skipTestFuncs: true
 
       ruleguard:
-        # Enable debug to identify which 'Where' condition was rejected.
-        # The value of the parameter is the name of a function in a ruleguard file.
-        #
-        # When a rule is evaluated:
-        # If:
-        #   The Match() clause is accepted; and
-        #   One of the conditions in the Where() clause is rejected,
-        # Then:
-        #   ruleguard prints the specific Where() condition that was rejected.
-        #
-        # The flag is passed to the ruleguard 'debug-group' argument.
-        # Default: ""
-        # debug: ''
+      # Enable debug to identify which 'Where' condition was rejected.
+      # The value of the parameter is the name of a function in a ruleguard file.
+      #
+      # When a rule is evaluated:
+      # If:
+      #   The Match() clause is accepted; and
+      #   One of the conditions in the Where() clause is rejected,
+      # Then:
+      #   ruleguard prints the specific Where() condition that was rejected.
+      #
+      # The flag is passed to the ruleguard 'debug-group' argument.
+      # Default: ""
+      # debug: ''
 
-        # Determines the behavior when an error occurs while parsing ruleguard files.
-        # If flag is not set, log error and skip rule files that contain an error.
-        # If flag is set, the value must be a comma-separated list of error conditions.
-        # - 'all':    fail on all errors.
-        # - 'import': ruleguard rule imports a package that cannot be found.
-        # - 'dsl':    gorule file does not comply with the ruleguard DSL.
-        # Default: ""
-        # failOn: ''
+      # Determines the behavior when an error occurs while parsing ruleguard files.
+      # If flag is not set, log error and skip rule files that contain an error.
+      # If flag is set, the value must be a comma-separated list of error conditions.
+      # - 'all':    fail on all errors.
+      # - 'import': ruleguard rule imports a package that cannot be found.
+      # - 'dsl':    gorule file does not comply with the ruleguard DSL.
+      # Default: ""
+      # failOn: ''
 
-        # Comma-separated list of file paths containing ruleguard rules.
-        # If a path is relative, it is relative to the directory where the golangci-lint command is executed.
-        # The special '${configDir}' variable is substituted with the absolute directory containing the golangci config file.
-        # Glob patterns such as 'rules-*.go' may be specified.
-        # Default: ""
-        # rules: ''
+      # Comma-separated list of file paths containing ruleguard rules.
+      # If a path is relative, it is relative to the directory where the golangci-lint command is executed.
+      # The special '${configDir}' variable is substituted with the absolute directory containing the golangci config file.
+      # Glob patterns such as 'rules-*.go' may be specified.
+      # Default: ""
+      # rules: ''
 
       # Comma-separated list of enabled groups or skip empty to enable everything.
       # Tags can be defined with # character prefix.
@@ -534,10 +577,17 @@ linters-settings:
         # Whether to check exported functions.
         # Default: false
         checkExported: false
+  # goplicate-end:settings-gocritic
 
+  # goplicate-start:settings-gocyclo
   # gocyclo:
-  # godot:
+  # goplicate-end:settings-gocyclo
 
+  # goplicate-start:settings-godot
+  # godot:
+  # goplicate-end:settings-godot
+
+  # goplicate-start:settings-godox
   godox:
     # report any comments starting with keywords, this is useful for TODO or
     # FIXME comments that might be left in the code accidentally and should be
@@ -550,7 +600,9 @@ linters-settings:
       - OPTIMIZE
       - TODO
       - "@TODO"
+  # goplicate-end:settings-godox
 
+  # goplicate-start:settings-gofmt
   gofmt:
     # Simplify code: gofmt with `-s` option.
     # Default: true
@@ -564,7 +616,9 @@ linters-settings:
         replacement: any
       - pattern: a[b:len(a)]
         replacement: a[b:]
+  # goplicate-end:settings-gofmt
 
+  # goplicate-start:settings-gofumpt
   # gofumpt:
   #   # Module path which contains the source code being formatted.
   #   # Default: ""
@@ -573,16 +627,22 @@ linters-settings:
   #   # Choose whether to use the extra rules.
   #   # Default: false
   #   extra-rules: true
+  # goplicate-end:settings-gofumpt
 
+  # goplicate-start:settings-goheader
   # goheader:
+  # goplicate-end:settings-goheader
 
+  # goplicate-start:settings-goimports
   goimports:
     # A comma-separated list of prefixes, which, if set, checks import paths
     # with the given prefixes are grouped after 3rd-party packages.
     # Default: ""
-    # local-prefixes: github.mycompany.com
+    local-prefixes: github.com/northwood-labs/
+  # goplicate-end:settings-goimports
 
-  gomnd:
+  # goplicate-start:settings-mnd
+  mnd:
     # List of enabled checks, see https://github.com/tommy-muehle/go-mnd/#checks for description.
     # Default: ["argument", "case", "condition", "operation", "return", "assign"]
     checks:
@@ -615,15 +675,24 @@ linters-settings:
     # ignored-functions:
     #   - '^math\.'
     #   - '^http\.StatusText$'
+  # goplicate-end:settings-mnd
 
+  # goplicate-start:settings-gomoddirectives
   # gomoddirectives:
-  # gomodguard:
+  # goplicate-end:settings-gomoddirectives
 
+  # goplicate-start:settings-gomodguard
+  # gomodguard:
+  # goplicate-end:settings-gomodguard
+
+  # goplicate-start:settings-gosimple
   gosimple:
     # Sxxxx checks in https://staticcheck.io/docs/configuration/options/#checks
     # Default: ["*"]
     checks: ["*"]
+  # goplicate-end:settings-gosimple
 
+  # goplicate-start:settings-gosec
   gosec:
     # To select a subset of rules to run.
     # Available rules: https://github.com/securego/gosec#available-rules
@@ -741,9 +810,13 @@ linters-settings:
       # Maximum allowed permissions mode for os.WriteFile and ioutil.WriteFile
       # Default: "0666"
       G306: "0666"
+  # goplicate-end:settings-gosec
 
+  # goplicate-start:settings-gosmopolitan
   # gosmopolitan:
+  # goplicate-end:settings-gosmopolitan
 
+  # goplicate-start:settings-govet
   govet:
     # Enable analyzers by name.
     # (in addition to default:
@@ -824,9 +897,13 @@ linters-settings:
       unusedresult:
         funcs: true
         stringmethods: true
+  # goplicate-end:settings-govet
 
+  # goplicate-start:settings-grouper
   # grouper:
+  # goplicate-end:settings-grouper
 
+  # goplicate-start:settings-importas
   importas:
     # Do not allow unaliased imports of aliased packages.
     # Default: false
@@ -849,14 +926,20 @@ linters-settings:
     # # see https://github.com/julz/importas#use-regular-expression for details
     # - pkg: knative.dev/serving/pkg/apis/(\w+)/(v[\w\d]+)
     #   alias: $1$2
+  # goplicate-end:settings-importas
 
+  # goplicate-start:settings-interfacebloat
   interfacebloat:
     # The maximum number of methods allowed for an interface.
     # Default: 10
     max: 10
+  # goplicate-end:settings-interfacebloat
 
+  # goplicate-start:settings-ireturn
   # ireturn:
+  # goplicate-end:settings-ireturn
 
+  # goplicate-start:settings-lll
   lll:
     # max line length, lines longer will be reported. Default is 120. '\t' is counted as 1 character
     # by default, and can be changed with the tab-width option
@@ -864,20 +947,28 @@ linters-settings:
 
     # tab width in spaces. Default to 1.
     tab-width: 1
+  # goplicate-end:settings-lll
 
+  # goplicate-start:settings-loggercheck
   # loggercheck:
+  # goplicate-end:settings-loggercheck
 
+  # goplicate-start:settings-maintidx
   maintidx:
     # Show functions with maintainability index lower than N. A high index indicates better
     # maintainability (it's kind of the opposite of complexity).
     # Default: 20
     under: 20
+  # goplicate-end:settings-maintidx
 
+  # goplicate-start:settings-makezero
   makezero:
     # Allow only slices initialized with a length of zero.
     # Default: false
     always: false
+  # goplicate-end:settings-makezero
 
+  # goplicate-start:settings-misspell
   misspell:
     # Correct spellings using locale preferences for US or UK.
     # Setting locale to US will correct the British spelling of 'colour' to 'color'.
@@ -899,17 +990,25 @@ linters-settings:
         correction: "if"
       - typo: "cancelation"
         correction: "cancellation"
+  # goplicate-end:settings-misspell
 
+  # goplicate-start:settings-musttag
   # musttag:
+  # goplicate-end:settings-musttag
 
+  # goplicate-start:settings-nakedret
   nakedret:
     # make an issue if func has more lines of code than this setting and it has naked returns;
     # default is 30
     max-func-lines: 30
+  # goplicate-end:settings-nakedret
 
+  # goplicate-start:settings-nestif
   nestif:
     min-complexity: 10
+  # goplicate-end:settings-nestif
 
+  # goplicate-start:settings-nilnil
   nilnil:
     # Checks that there is no simultaneous return of `nil` error and an invalid value.
     # Default: ["ptr", "func", "iface", "map", "chan"]
@@ -919,20 +1018,28 @@ linters-settings:
       - iface
       - map
       - chan
+  # goplicate-end:settings-nilnil
 
+  # goplicate-start:settings-nlreturn
   nlreturn:
     # Size of the block (including return statement that is still "OK")
     # so no return split required.
     # Default: 1
     block-size: 2
+  # goplicate-end:settings-nlreturn
 
+  # goplicate-start:settings-nolintlint
   # nolintlint:
+  # goplicate-end:settings-nolintlint
 
+  # goplicate-start:settings-nonamedreturns
   nonamedreturns:
     # Report named error if it is assigned inside defer.
     # Default: false
     report-error-in-defer: false
+  # goplicate-end:settings-nonamedreturns
 
+  # goplicate-start:settings-paralleltest
   paralleltest:
     # Ignore missing calls to `t.Parallel()` and only report incorrect uses of it.
     # Default: false
@@ -942,7 +1049,9 @@ linters-settings:
     # still required to have `t.Parallel`, but subtests are allowed to skip it.
     # Default: false
     ignore-missing-subtests: true
+  # goplicate-end:settings-paralleltest
 
+  # goplicate-start:settings-perfsprint
   perfsprint:
     # Optimizes even if it requires an int or uint type cast.
     # Default: true
@@ -963,14 +1072,33 @@ linters-settings:
     # Optimizes into strings concatenation.
     # Default: true
     strconcat: true
+  # goplicate-end:settings-perfsprint
 
+  # goplicate-start:settings-prealloc
   # prealloc:
-  # predeclared:
-  # promlinter:
-  # reassign:
-  # revive: @TODO: Review and enable.
-  # rowserrcheck:
+  # goplicate-end:settings-prealloc
 
+  # goplicate-start:settings-predeclared
+  # predeclared:
+  # goplicate-end:settings-predeclared
+
+  # goplicate-start:settings-promlinter
+  # promlinter:
+  # goplicate-end:settings-promlinter
+
+  # goplicate-start:settings-reassign
+  # reassign:
+  # goplicate-end:settings-reassign
+
+  # goplicate-start:settings-revive
+  # revive: @TODO: Review and enable.
+  # goplicate-end:settings-revive
+
+  # goplicate-start:settings-rowserrcheck
+  # rowserrcheck:
+  # goplicate-end:settings-rowserrcheck
+
+  # goplicate-start:settings-sloglint
   sloglint:
     # See also https://github.com/go-simpler/sloggen
 
@@ -989,32 +1117,38 @@ linters-settings:
     # Enforce putting arguments on separate lines.
     # Default: false
     args-on-sep-lines: false
+  # goplicate-end:settings-sloglint
 
+  # goplicate-start:settings-spancheck
   spancheck:
-    # Checks to enable.
-    # Options include:
-    # - `end`: check that `span.End()` is called
-    # - `record-error`: check that `span.RecordError(err)` is called when an error is returned
-    # - `set-status`: check that `span.SetStatus(codes.Error, msg)` is called when an error is returned
-    # Default: ["end"]
-    # checks:
-    #   - end
-    #   - record-error
-    #   - set-status
+  # Checks to enable.
+  # Options include:
+  # - `end`: check that `span.End()` is called
+  # - `record-error`: check that `span.RecordError(err)` is called when an error is returned
+  # - `set-status`: check that `span.SetStatus(codes.Error, msg)` is called when an error is returned
+  # Default: ["end"]
+  # checks:
+  #   - end
+  #   - record-error
+  #   - set-status
 
-    # A list of regexes for function signatures that silence `record-error` and `set-status` reports
-    # if found in the call path to a returned error.
-    # https://github.com/jjti/go-spancheck#ignore-check-signatures
-    # Default: []
-    # ignore-check-signatures:
-    #   - "telemetry.RecordError"
+  # A list of regexes for function signatures that silence `record-error` and `set-status` reports
+  # if found in the call path to a returned error.
+  # https://github.com/jjti/go-spancheck#ignore-check-signatures
+  # Default: []
+  # ignore-check-signatures:
+  #   - "telemetry.RecordError"
+  # goplicate-end:settings-spancheck
 
+  # goplicate-start:settings-staticcheck
   staticcheck:
     # https://staticcheck.io/docs/options#checks
     # https://staticcheck.io/docs/checks/
     # Default: ["*"]
     checks: ["*"]
+  # goplicate-end:settings-staticcheck
 
+  # goplicate-start:settings-stylecheck
   stylecheck:
     # STxxxx checks in https://staticcheck.io/docs/configuration/options/#checks
     # Default: ["*"]
@@ -1032,7 +1166,9 @@ linters-settings:
     # https://staticcheck.io/docs/configuration/options/#http_status_code_whitelist
     # Default: ["200", "400", "404", "500"]
     # http-status-code-whitelist: [ "200", "400", "404", "500" ]
+  # goplicate-end:settings-stylecheck
 
+  # goplicate-start:settings-tagalign
   tagalign:
     # Align and sort can be used together or separately.
     #
@@ -1067,7 +1203,9 @@ linters-settings:
     # Note: This option will be ignored if 'align' or 'sort' is false.
     # Default: false
     strict: true
+  # goplicate-end:settings-tagalign
 
+  # goplicate-start:settings-tagliatelle
   tagliatelle:
     # Check the struct tag name case.
     case:
@@ -1090,11 +1228,21 @@ linters-settings:
         toml: snake
         xml: camel
         yaml: camel
+  # goplicate-end:settings-tagliatelle
 
+  # goplicate-start:settings-tenv
   # tenv:
-  # testifylint:
-  # testpackage:
+  # goplicate-end:settings-tenv
 
+  # goplicate-start:settings-testifylint
+  # testifylint:
+  # goplicate-end:settings-testifylint
+
+  # goplicate-start:settings-testpackage
+  # testpackage:
+  # goplicate-end:settings-testpackage
+
+  # goplicate-start:settings-thelper
   thelper:
     test:
       # Check *testing.T is first param (or after context.Context) of helper function.
@@ -1147,7 +1295,9 @@ linters-settings:
       # Check f.Helper() begins helper function.
       # Default: true
       begin: true
+  # goplicate-end:settings-thelper
 
+  # goplicate-start:settings-usestdlibvars
   usestdlibvars:
     # Suggest the use of http.MethodXX.
     # Default: true
@@ -1188,7 +1338,9 @@ linters-settings:
     # Suggest the use of constant.Kind.String().
     # Default: false
     constant-kind: false
+  # goplicate-end:settings-usestdlibvars
 
+  # goplicate-start:settings-unconvert
   unconvert:
     # Remove conversions that force intermediate rounding.
     # Default: false
@@ -1197,7 +1349,9 @@ linters-settings:
     # Be more conservative (experimental).
     # Default: false
     safe: false
+  # goplicate-end:settings-unconvert
 
+  # goplicate-start:settings-unparam
   unparam:
     # Inspect exported functions.
     #
@@ -1208,7 +1362,9 @@ linters-settings:
     #
     # Default: false
     check-exported: false
+  # goplicate-end:settings-unparam
 
+  # goplicate-start:settings-unused
   unused:
     # Mark all struct fields that have been written to as used.
     # Default: true
@@ -1237,9 +1393,13 @@ linters-settings:
     # Mark all identifiers inside generated files as used.
     # Default: true
     generated-is-used: true
+  # goplicate-end:settings-unused
 
+  # goplicate-start:settings-varnamelen
   # varnamelen:
+  # goplicate-end:settings-varnamelen
 
+  # goplicate-start:settings-whitespace
   whitespace:
     # Enforces newlines (or comments) after every multi-line if statement.
     # Default: false
@@ -1248,7 +1408,9 @@ linters-settings:
     # Enforces newlines (or comments) after every multi-line function signature.
     # Default: false
     multi-func: false
+  # goplicate-end:settings-whitespace
 
+  # goplicate-start:settings-wrapcheck
   wrapcheck:
     # An array of strings that specify substrings of signatures to ignore.
     # If this set, it will override the default set of ignored signatures.
@@ -1280,7 +1442,9 @@ linters-settings:
     # Default: []
     # ignoreInterfaceRegexps:
     #   - ^(?i)c(?-i)ach(ing|e)
+  # goplicate-end:settings-wrapcheck
 
+  # goplicate-start:settings-wsl
   wsl:
     # See https://github.com/bombsimon/wsl/blob/master/doc/configuration.md for documentation of available settings.
     # These are the defaults for `golangci-lint`.
@@ -1335,6 +1499,7 @@ linters-settings:
     # this is set to true - the append call must append either a variable
     # assigned, called or used on the line above.
     strict-append: true
+    # goplicate-end:settings-wsl
 
 # goplicate-start:issues
 issues:
@@ -1342,6 +1507,73 @@ issues:
   # option we use default exclude patterns, it can be disabled by `exclude-use-default: false`. To
   # list all excluded by default patterns execute `golangci-lint run --help`
   # exclude:
+
+  # If set to true exclude and exclude-rules regular expressions become case-sensitive.
+  # Default: false
+  exclude-case-sensitive: false
+
+  # Independently from option `exclude` we use default exclude patterns, it can be disabled by this
+  # option. To list all excluded by default patterns execute `golangci-lint run --help`. Default
+  # value for this option is true.
+  exclude-use-default: false
+
+  # Which dirs to exclude: issues from them won't be reported.
+  # Can use regexp here: `generated.*`, regexp is applied on full path,
+  # including the path prefix if one is set.
+  # Default dirs are skipped independently of this option's value (see exclude-dirs-use-default).
+  # "/" will be replaced by current OS file path separator to properly work on Windows.
+  # Default: []
+  # exclude-dirs:
+  #   - src/external_libs
+  #   - autogenerated_by_my_lib
+
+  # Enables exclude of directories:
+  # - vendor$, third_party$, testdata$, examples$, Godeps$, builtin$
+  # Default: true
+  exclude-dirs-use-default: false
+
+  # Which files to exclude: they will be analyzed, but issues from them won't be reported.
+  # There is no need to include all autogenerated files,
+  # we confidently recognize autogenerated files.
+  # If it's not, please let us know.
+  # "/" will be replaced by current OS file path separator to properly work on Windows.
+  # Default: []
+  # exclude-files:
+  #   - ".*\\.my\\.go$"
+  #   - lib/bad.go
+
+  # To follow strictly the Go generated file convention.
+  #
+  # If set to true, source files that have lines matching only the following regular expression will be excluded:
+  #   `^// Code generated .* DO NOT EDIT\.$`
+  # This line must appear before the first non-comment, non-blank text in the file.
+  # https://go.dev/s/generatedcode
+  #
+  # By default, a lax pattern is applied:
+  # sources are excluded if they contain lines `autogenerated file`, `code generated`, `do not edit`, etc.
+  # Default: false
+  exclude-generated-strict: false
+
+  # Fix found issues (if it's supported by the linter).
+  fix: false
+
+  # Maximum issues count per one linter. Set to 0 to disable. Default is 50.
+  max-issues-per-linter: 0
+
+  # Maximum count of issues with the same text. Set to 0 to disable. Default is 3.
+  max-same-issues: 0
+
+  # Show only new issues: if there are unstaged changes or untracked files, only those changes are
+  # analyzed, else only changes in HEAD~ are analyzed. It's a super-useful option for integration of
+  # golangci-lint into existing large codebase. It's not practical to fix all existing issues at the
+  # moment of integration: much better don't allow issues in new code. Default is false.
+  new: false
+
+  # Show only new issues created after git revision `REV`
+  # new-from-rev: REV
+
+  # Show only new issues created in git patch with set file path.
+  # new-from-patch: path/to/patch/file
 
   # Excluding configuration per-path, per-linter, per-text and per-source
   exclude-rules:
@@ -1363,7 +1595,7 @@ issues:
       source: lint:allow_param
 
     - linters:
-        - gomnd
+        - mnd
       source: lint:allow_raw_number
 
     - text: "commentedOutCode: may want to remove commented-out code"
@@ -1462,99 +1694,4 @@ issues:
       linters:
         - goconst
       source: lint:no_const
-
-  # If set to true exclude and exclude-rules regular expressions become case-sensitive.
-  # Default: false
-  exclude-case-sensitive: false
-
-  # Independently from option `exclude` we use default exclude patterns, it can be disabled by this
-  # option. To list all excluded by default patterns execute `golangci-lint run --help`. Default
-  # value for this option is true.
-  exclude-use-default: false
-
-  # Which dirs to exclude: issues from them won't be reported.
-  # Can use regexp here: `generated.*`, regexp is applied on full path,
-  # including the path prefix if one is set.
-  # Default dirs are skipped independently of this option's value (see exclude-dirs-use-default).
-  # "/" will be replaced by current OS file path separator to properly work on Windows.
-  # Default: []
-  # exclude-dirs:
-  #   - src/external_libs
-  #   - autogenerated_by_my_lib
-
-  # Enables exclude of directories:
-  # - vendor$, third_party$, testdata$, examples$, Godeps$, builtin$
-  # Default: true
-  exclude-dirs-use-default: false
-
-  # Which files to exclude: they will be analyzed, but issues from them won't be reported.
-  # There is no need to include all autogenerated files,
-  # we confidently recognize autogenerated files.
-  # If it's not, please let us know.
-  # "/" will be replaced by current OS file path separator to properly work on Windows.
-  # Default: []
-  # exclude-files:
-  #   - ".*\\.my\\.go$"
-  #   - lib/bad.go
-
-  # To follow strictly the Go generated file convention.
-  #
-  # If set to true, source files that have lines matching only the following regular expression will be excluded:
-  #   `^// Code generated .* DO NOT EDIT\.$`
-  # This line must appear before the first non-comment, non-blank text in the file.
-  # https://go.dev/s/generatedcode
-  #
-  # By default, a lax pattern is applied:
-  # sources are excluded if they contain lines `autogenerated file`, `code generated`, `do not edit`, etc.
-  # Default: false
-  exclude-generated-strict: false
-
-  # Fix found issues (if it's supported by the linter).
-  fix: false
-
-  # Maximum issues count per one linter. Set to 0 to disable. Default is 50.
-  max-issues-per-linter: 0
-
-  # Maximum count of issues with the same text. Set to 0 to disable. Default is 3.
-  max-same-issues: 0
-
-  # Show only new issues: if there are unstaged changes or untracked files, only those changes are
-  # analyzed, else only changes in HEAD~ are analyzed. It's a super-useful option for integration of
-  # golangci-lint into existing large codebase. It's not practical to fix all existing issues at the
-  # moment of integration: much better don't allow issues in new code. Default is false.
-  new: false
-
-  # Show only new issues created after git revision `REV`
-  # new-from-rev: REV
-
-  # Show only new issues created in git patch with set file path.
-  # new-from-patch: path/to/patch/file
-
-severity:
-  # Set the default severity for issues.
-  #
-  # If severity rules are defined and the issues do not match or no severity is provided to the rule
-  # this will be the default severity applied.
-  # Severities should match the supported severity names of the selected out format.
-  # - Code climate: https://docs.codeclimate.com/docs/issues#issue-severity
-  # - Checkstyle: https://checkstyle.sourceforge.io/property_types.html#SeverityLevel
-  # - GitHub: https://help.github.com/en/actions/reference/workflow-commands-for-github-actions#setting-an-error-message
-  # - TeamCity: https://www.jetbrains.com/help/teamcity/service-messages.html#Inspection+Instance
-  #
-  # Default value is an empty string.
-  # default-severity: error
-
-  # If set to true `severity-rules` regular expressions become case-sensitive.
-  # Default: false
-  case-sensitive: false
-
-  # When a list of severity rules are provided, severity information will be added to lint issues.
-  # Severity rules have the same filtering capability as exclude rules
-  # except you are allowed to specify one matcher per severity rule.
-  # Only affects out formats that support setting severity information.
-  #
-  # Default: []
-  # rules:
-  #   - linters:
-  #       - dupl
-  #     severity: info
+# goplicate-end:issues
