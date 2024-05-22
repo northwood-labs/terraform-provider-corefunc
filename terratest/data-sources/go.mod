@@ -5,7 +5,7 @@ go 1.22
 toolchain go1.22.1
 
 require (
-	github.com/gruntwork-io/terratest v0.46.14
+	github.com/gruntwork-io/terratest v0.46.15
 	github.com/hairyhenderson/go-which v0.2.0
 	github.com/northwood-labs/terraform-provider-corefunc v1.4.0
 	github.com/pkg/errors v0.9.1
