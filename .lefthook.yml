@@ -70,13 +70,22 @@ pre-commit:
     yamlfmt:
       tags: "always,secrets"
       glob: "**/*.ya?ml"
-      run: "yamlfmt {staged_files}"
+      run: >-
+        yamlfmt "{staged_files}"
       stage_fixed: true
 
+    # executable_must_have_hashbang:
+    #   tags: "always,git"
+    #   run: >-
+    #     executable_must_have_hashbang "{staged_files}"
+    #   # run: >-
+    #   #   go run scripts/executable_must_have_hashbang.go "{staged_files}"
+    #   stage_fixed: false
+
   scripts:
-    # If the file is marked as executable, it should start with a hashbang.
-    "executable_must_have_hashbang.sh":
-      runner: bash
+    # # If the file is marked as executable, it should start with a hashbang.
+    # "executable_must_have_hashbang.go":
+    #   runner: go run
 
     # Shell scripts MUST have a file extension.
     "script_must_have_extension.sh":
