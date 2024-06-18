@@ -23,7 +23,7 @@ require (
 	github.com/nlnwa/whatwg-url v0.4.1
 	github.com/northwood-labs/golang-utils/archstring v0.0.0-20240514195441-31b98331cf9f
 	github.com/northwood-labs/golang-utils/exiterrorf v0.0.0-20240514195441-31b98331cf9f
-	github.com/spf13/cobra v1.8.0
+	github.com/spf13/cobra v1.8.1
 	github.com/stretchr/testify v1.9.0
 )
 
