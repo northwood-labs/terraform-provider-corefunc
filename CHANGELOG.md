@@ -56,6 +56,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`6c36be1`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/6c36be175e3a3a4cfb71f9c83011c094305dff3d): **deps**: Bump `goreleaser/goreleaser-action` from 5.0.0 to 5.1.0 ([#253](https://github.com/northwood-labs/terraform-provider-corefunc/issues/253)) ([@dependabot](https://github.com/dependabot))
 * [`36ce730`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/36ce7307a044525e0a860a95195683ba468a185f): **deps**: Bump `github/codeql-action` from 3.25.5 to 3.25.6 ([#252](https://github.com/northwood-labs/terraform-provider-corefunc/issues/252)) ([@dependabot](https://github.com/dependabot))
 * [`20baa4b`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/20baa4b11bf1d16caa8b36569913e31e174fa94f): **deps**: Bump `trufflesecurity/trufflehog` from 3.74.0 to 3.76.3 ([#251](https://github.com/northwood-labs/terraform-provider-corefunc/issues/251)) ([@dependabot](https://github.com/dependabot))
+* [`d3c17e5`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/d3c17e507a0f023b00f9af6d5bbc6192159c2952): **deps**: Bump `github.com/hashicorp/go-version` from 1.6.0 to 1.7.0 ([#262](https://github.com/northwood-labs/terraform-provider-corefunc/issues/262)) ([@dependabot](https://github.com/dependabot))
+* [`9e16719`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/9e167198d9294918021c78c8290851cdf7b28716): **deps**: Bump `orhun/git-cliff-action` from 3.0.2 to 3.2.0 ([#266](https://github.com/northwood-labs/terraform-provider-corefunc/issues/266)) ([@dependabot](https://github.com/dependabot))
 
 ### :test_tube: Testing
 
