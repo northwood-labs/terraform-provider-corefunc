@@ -63,6 +63,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`890bafb`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/890bafbafb5d51e057282159bed5470a4a148a62): **deps**: Bump `step-security/harden-runner` from 2.7.1 to 2.8.1 ([#271](https://github.com/northwood-labs/terraform-provider-corefunc/issues/271)) ([@dependabot](https://github.com/dependabot))
 * [`9a863b3`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/9a863b362320a4986e52b68559f97cbb98fcbbbc): **deps**: Bump `trufflesecurity/trufflehog` from 3.76.3 to 3.78.1 ([#272](https://github.com/northwood-labs/terraform-provider-corefunc/issues/272)) ([@dependabot](https://github.com/dependabot))
 * [`6500e54`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/6500e54c1fde6e0b3dc3db17dd301c425cef351d): **deps**: Bump `github/codeql-action` from 3.25.6 to 3.25.10 ([#274](https://github.com/northwood-labs/terraform-provider-corefunc/issues/274)) ([@dependabot](https://github.com/dependabot))
+* [`02df9f9`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/02df9f9802809967b2ce5772ca8ef3f84a1c7255): **deps**: Bump `github.com/spf13/cobra` from 1.8.0 to 1.8.1 ([#275](https://github.com/northwood-labs/terraform-provider-corefunc/issues/275)) ([@dependabot](https://github.com/dependabot))
 
 ### :test_tube: Testing
 
