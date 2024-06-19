@@ -36,7 +36,7 @@ jobs:
             osv-vulnerabilities.storage.googleapis.com:443
 
       - name: Checkout Source
-        uses: actions/checkout@a5ac7e51b41094c92402da3b24376905380afc29 # v4.1.6
+        uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
 
       - name: Check dependencies for security vulnerabilities
         uses: g-rath/check-with-osv-detector@0e8c0f954d8618a3a4671eca1918b30b2d085af3 # main
