@@ -25,7 +25,7 @@ jobs:
           PR_URL: ${{github.event.pull_request.html_url}}
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
         run: |
-          gh pr merge --auto --merge "${PR_URL}"
+          gh pr merge --auto --squash "${PR_URL}"
 
       - name: Auto-merge Dependabot PRs for semver-patch updates
         if: ${{steps.metadata.outputs.update-type == 'version-update:semver-patch'}}
@@ -33,4 +33,4 @@ jobs:
           PR_URL: ${{github.event.pull_request.html_url}}
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
         run: |
-          gh pr merge --auto --merge "${PR_URL}"
+          gh pr merge --auto --squash "${PR_URL}"
