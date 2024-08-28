@@ -80,6 +80,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`c0ebbb0`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/c0ebbb0377f3957596ce13b847e80584902fae54): **deps**: Bump `actions/dependency-review-action` from 4.3.2 to 4.3.4 ([#290](https://github.com/northwood-labs/terraform-provider-corefunc/issues/290)) ([@dependabot](https://github.com/dependabot))
 * [`ee29982`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/ee299824f3b8f0798c92d849231802637438738c): **deps**: Bump `github.com/gruntwork-io/terratest` from 0.46.15 to 0.46.16 in /terratest/data-sources ([#284](https://github.com/northwood-labs/terraform-provider-corefunc/issues/284)) ([@dependabot](https://github.com/dependabot))
 * [`91c3864`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/91c3864830bcc3a0316f3f79684fc79e0b9f4c67): **deps**: Bump `github.com/gruntwork-io/terratest` from 0.46.15 to 0.47.0 in /terratest/data-sources ([#291](https://github.com/northwood-labs/terraform-provider-corefunc/issues/291)) ([@dependabot](https://github.com/dependabot))
+* [`df2f04b`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/df2f04b980dd4a5d264203728882c7136a151059): **deps**: Bump `github.com/hashicorp/terraform-plugin-framework-validators` from 0.12.0 to 0.13.0 ([#288](https://github.com/northwood-labs/terraform-provider-corefunc/issues/288)) ([@dependabot](https://github.com/dependabot))
 
 ### :test_tube: Testing
 
