@@ -81,6 +81,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 ### <!-- 1 -->:bug: Bug Fixes
 
 * [`629a490`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/629a4904e33654c7a8fc7478f84267d2485b1e03): Re-enable some pre-commit hooks. ([@skyzyx](https://github.com/skyzyx))
+* [`54b6a79`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/54b6a79c75ec3761e020f8bd0e652a47ec17a53d): Updated the versions of Terraform/OpenTofu to test against. ([@skyzyx](https://github.com/skyzyx))
 
 ## 1.4.0 — 2024-03-20
 
