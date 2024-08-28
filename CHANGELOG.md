@@ -64,6 +64,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`9a863b3`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/9a863b362320a4986e52b68559f97cbb98fcbbbc): **deps**: Bump `trufflesecurity/trufflehog` from 3.76.3 to 3.78.1 ([#272](https://github.com/northwood-labs/terraform-provider-corefunc/issues/272)) ([@dependabot](https://github.com/dependabot))
 * [`6500e54`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/6500e54c1fde6e0b3dc3db17dd301c425cef351d): **deps**: Bump `github/codeql-action` from 3.25.6 to 3.25.10 ([#274](https://github.com/northwood-labs/terraform-provider-corefunc/issues/274)) ([@dependabot](https://github.com/dependabot))
 * [`02df9f9`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/02df9f9802809967b2ce5772ca8ef3f84a1c7255): **deps**: Bump `github.com/spf13/cobra` from 1.8.0 to 1.8.1 ([#275](https://github.com/northwood-labs/terraform-provider-corefunc/issues/275)) ([@dependabot](https://github.com/dependabot))
+* [`ea6f3e2`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/ea6f3e2b4aec1788cae68539b600ed3ad4980b8c): **deps**: Bump `goreleaser/goreleaser-action` from 5.1.0 to 6.0.0 ([#276](https://github.com/northwood-labs/terraform-provider-corefunc/issues/276)) ([@dependabot](https://github.com/dependabot))
+* [`f7afbda`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/f7afbda0763eaed2b83449bd9057291b90cfe349): **deps**: Bump `github.com/hashicorp/go-getter` from 1.7.4 to 1.7.5 in /terratest/data-sources in the go_modules group ([#281](https://github.com/northwood-labs/terraform-provider-corefunc/issues/281)) ([@dependabot](https://github.com/dependabot))
+* [`cebd47c`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/cebd47cba0209626c2ab033eef27805addf7d2d2): **deps**: Bump `google.golang.org/grpc` from 1.64.0 to 1.64.1 in the go_modules group ([#286](https://github.com/northwood-labs/terraform-provider-corefunc/issues/286)) ([@dependabot](https://github.com/dependabot))
+* [`31e38a6`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/31e38a6018c44cbf1cb9f5e7743a420e1ab1ad53): **deps**: Bump `github.com/gruntwork-io/terratest` from 0.46.15 to 0.46.16 in /terratest/functions ([#285](https://github.com/northwood-labs/terraform-provider-corefunc/issues/285)) ([@dependabot](https://github.com/dependabot))
 
 ### :test_tube: Testing
 
@@ -71,11 +75,18 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`8c97573`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/8c975730916f48bfaa43eee25981c4841fa42211): Update OpenTofu to 1.7.0-rc1. ([@skyzyx](https://github.com/skyzyx))
 * [`55ec24f`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/55ec24f9135f51e2872dcf97023dad563ff341ba): Allow network calls for some jobs. ([@skyzyx](https://github.com/skyzyx))
 * [`3a6bc87`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/3a6bc8756768bb5fdd687746f9756b628d04a8f9): Add automation to auto-merge Dependabot PRs. ([@skyzyx](https://github.com/skyzyx))
+* [`f529a51`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/f529a512bb345a67e52033367102c76006f0f830): Switch auto-merging to use squash commits. ([@skyzyx](https://github.com/skyzyx))
+* [`9b7d2bd`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/9b7d2bdfde32bbe57a40ee613e40ad44359a2196): Add api.securityscorecards.dev to allowlist. ([@skyzyx](https://github.com/skyzyx))
 
 ### :tractor: Refactor
 
 * [`5a94f66`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/5a94f667f3559f520152340558f61e26d40e1715): Begin adopting Lefthook as a replacement for pre-commit. ([@skyzyx](https://github.com/skyzyx))
 * [`6ca38dc`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/6ca38dc2e8e8276900c9752adec9b0641f98f87d): Implement more Lefthook functionality. ([@skyzyx](https://github.com/skyzyx))
+
+### <!-- 1 -->:bug: Bug Fixes
+
+* [`629a490`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/629a4904e33654c7a8fc7478f84267d2485b1e03): Re-enable some pre-commit hooks. ([@skyzyx](https://github.com/skyzyx))
+* [`54b6a79`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/54b6a79c75ec3761e020f8bd0e652a47ec17a53d): Updated the versions of Terraform/OpenTofu to test against. ([@skyzyx](https://github.com/skyzyx))
 
 ## 1.4.0 — 2024-03-20
 
@@ -646,4 +657,4 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`eb9f7ae`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/eb9f7aecfdaa7bda9087b9b58229d3943571a863): Update the GoReleaser configuration. ([@skyzyx](https://github.com/skyzyx))
 * [`a01b12e`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/a01b12e6870b821f561624bca79407e4c87c73cf): Trying to get the build to work. ([@skyzyx](https://github.com/skyzyx))
 
-<p>Generated on 2024-06-18.</p>
+<p>Generated on 2024-08-28.</p>
