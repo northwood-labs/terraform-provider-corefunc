@@ -78,6 +78,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`91c3864`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/91c3864830bcc3a0316f3f79684fc79e0b9f4c67): **deps**: Bump `github.com/gruntwork-io/terratest` from 0.46.15 to 0.47.0 in /terratest/data-sources ([#291](https://github.com/northwood-labs/terraform-provider-corefunc/issues/291)) ([@dependabot](https://github.com/dependabot))
 * [`df2f04b`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/df2f04b980dd4a5d264203728882c7136a151059): **deps**: Bump `github.com/hashicorp/terraform-plugin-framework-validators` from 0.12.0 to 0.13.0 ([#288](https://github.com/northwood-labs/terraform-provider-corefunc/issues/288)) ([@dependabot](https://github.com/dependabot))
 * [`013dd6c`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/013dd6c98d77e63807da3f669d4399ae41d7d02d): **deps**: Bump `github.com/hashicorp/go-getter` from 1.7.4 to 1.7.5 in /terratest/functions in the go_modules group ([#282](https://github.com/northwood-labs/terraform-provider-corefunc/issues/282)) ([@dependabot](https://github.com/dependabot))
+* [`d9bf03a`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/d9bf03a64cf90058b770d76f783d080cbacb35ff): **deps**: Bump `golang/govulncheck-action` from 1.0.2 to 1.0.3 ([#277](https://github.com/northwood-labs/terraform-provider-corefunc/issues/277)) ([@dependabot](https://github.com/dependabot))
 
 ### :test_tube: Testing
 
