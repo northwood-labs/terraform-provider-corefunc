@@ -44,13 +44,13 @@ jobs:
       - name: Install Terraform
         uses: hashicorp/setup-terraform@651471c36a6092792c552e8b1bef71e592b462d8 # v3.1.1
         with:
-          terraform_version: 1.7
+          terraform_version: 1.9
           terraform_wrapper: false
 
       - name: Install OpenTofu
         uses: opentofu/setup-opentofu@ae80d4ecaab946d8f5ff18397fbf6d0686c6d46a # v1.0.3
         with:
-          tofu_version: 1.6
+          tofu_version: 1.8
           tofu_wrapper: false
 
       - name: Run Terratest

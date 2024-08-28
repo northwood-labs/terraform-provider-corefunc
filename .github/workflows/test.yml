@@ -101,6 +101,7 @@ jobs:
           - "1.6"
           - "1.7"
           - "1.8"
+          - "1.9"
 
     steps:
       - name: Harden Runner
@@ -151,7 +152,8 @@ jobs:
       matrix:
         opentofu_version:
           - "1.6"
-          - "1.7.0-rc1"
+          - "1.7"
+          - "1.8"
 
     steps:
       - name: Harden Runner
