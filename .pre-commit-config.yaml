@@ -29,12 +29,12 @@ repos:
           - --allow-multiple-documents
       - id: destroyed-symlinks
       # - id: detect-private-key
-      # - id: end-of-file-fixer
+      - id: end-of-file-fixer
       - id: fix-byte-order-marker
       - id: mixed-line-ending
         args:
           - --fix=lf
-      # - id: trailing-whitespace
+      - id: trailing-whitespace
 
   # ----------------------------------------------------------------------------
   # goplicate-start:golang
