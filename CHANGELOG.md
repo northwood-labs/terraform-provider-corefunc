@@ -75,6 +75,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`a9539f3`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/a9539f3666ed8b0149837928f45a40efc6c7d6d7): **deps**: Bump `actions/checkout` from 4.1.6 to 4.1.7 ([#278](https://github.com/northwood-labs/terraform-provider-corefunc/issues/278)) ([@dependabot](https://github.com/dependabot))
 * [`c0ebbb0`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/c0ebbb0377f3957596ce13b847e80584902fae54): **deps**: Bump `actions/dependency-review-action` from 4.3.2 to 4.3.4 ([#290](https://github.com/northwood-labs/terraform-provider-corefunc/issues/290)) ([@dependabot](https://github.com/dependabot))
 * [`ee29982`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/ee299824f3b8f0798c92d849231802637438738c): **deps**: Bump `github.com/gruntwork-io/terratest` from 0.46.15 to 0.46.16 in /terratest/data-sources ([#284](https://github.com/northwood-labs/terraform-provider-corefunc/issues/284)) ([@dependabot](https://github.com/dependabot))
+* [`91c3864`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/91c3864830bcc3a0316f3f79684fc79e0b9f4c67): **deps**: Bump `github.com/gruntwork-io/terratest` from 0.46.15 to 0.47.0 in /terratest/data-sources ([#291](https://github.com/northwood-labs/terraform-provider-corefunc/issues/291)) ([@dependabot](https://github.com/dependabot))
 
 ### :test_tube: Testing
 
