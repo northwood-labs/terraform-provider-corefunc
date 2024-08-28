@@ -64,6 +64,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`9a863b3`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/9a863b362320a4986e52b68559f97cbb98fcbbbc): **deps**: Bump `trufflesecurity/trufflehog` from 3.76.3 to 3.78.1 ([#272](https://github.com/northwood-labs/terraform-provider-corefunc/issues/272)) ([@dependabot](https://github.com/dependabot))
 * [`6500e54`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/6500e54c1fde6e0b3dc3db17dd301c425cef351d): **deps**: Bump `github/codeql-action` from 3.25.6 to 3.25.10 ([#274](https://github.com/northwood-labs/terraform-provider-corefunc/issues/274)) ([@dependabot](https://github.com/dependabot))
 * [`02df9f9`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/02df9f9802809967b2ce5772ca8ef3f84a1c7255): **deps**: Bump `github.com/spf13/cobra` from 1.8.0 to 1.8.1 ([#275](https://github.com/northwood-labs/terraform-provider-corefunc/issues/275)) ([@dependabot](https://github.com/dependabot))
+* [`ea6f3e2`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/ea6f3e2b4aec1788cae68539b600ed3ad4980b8c): **deps**: Bump `goreleaser/goreleaser-action` from 5.1.0 to 6.0.0 ([#276](https://github.com/northwood-labs/terraform-provider-corefunc/issues/276)) ([@dependabot](https://github.com/dependabot))
 
 ### :test_tube: Testing
 
@@ -646,4 +647,4 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`eb9f7ae`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/eb9f7aecfdaa7bda9087b9b58229d3943571a863): Update the GoReleaser configuration. ([@skyzyx](https://github.com/skyzyx))
 * [`a01b12e`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/a01b12e6870b821f561624bca79407e4c87c73cf): Trying to get the build to work. ([@skyzyx](https://github.com/skyzyx))
 
-<p>Generated on 2024-06-18.</p>
+<p>Generated on 2024-08-28.</p>
