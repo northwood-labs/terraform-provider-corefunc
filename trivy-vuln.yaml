@@ -1,15 +1,12 @@
 ---
 cache:
   backend: fs
-  clear: false
 db:
   download-java-only: false
   download-only: false
-  java-repository: ghcr.io/aquasecurity/trivy-java-db
   java-skip-update: false
   light: false
   no-progress: false
-  repository: ghcr.io/aquasecurity/trivy-db
   skip-update: false
 # debug: false
 dependency-tree: true
@@ -22,18 +19,13 @@ insecure: false
 list-all-pkgs: true
 misconfiguration:
   include-non-failures: false
-  policy-bundle-repository: ghcr.io/aquasecurity/defsec:0
-  reset-policy-bundle: false
 output: ""
 quiet: true
 report: summary
-reset: false
 scan:
   compliance: ""
   file-patterns: []
   offline: false
-  rekor-url: https://rekor.sigstore.dev
-  sbom-sources: []
   scanners:
     - vuln
     - config
