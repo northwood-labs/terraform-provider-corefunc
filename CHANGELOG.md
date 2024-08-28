@@ -65,6 +65,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`6500e54`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/6500e54c1fde6e0b3dc3db17dd301c425cef351d): **deps**: Bump `github/codeql-action` from 3.25.6 to 3.25.10 ([#274](https://github.com/northwood-labs/terraform-provider-corefunc/issues/274)) ([@dependabot](https://github.com/dependabot))
 * [`02df9f9`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/02df9f9802809967b2ce5772ca8ef3f84a1c7255): **deps**: Bump `github.com/spf13/cobra` from 1.8.0 to 1.8.1 ([#275](https://github.com/northwood-labs/terraform-provider-corefunc/issues/275)) ([@dependabot](https://github.com/dependabot))
 * [`ea6f3e2`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/ea6f3e2b4aec1788cae68539b600ed3ad4980b8c): **deps**: Bump `goreleaser/goreleaser-action` from 5.1.0 to 6.0.0 ([#276](https://github.com/northwood-labs/terraform-provider-corefunc/issues/276)) ([@dependabot](https://github.com/dependabot))
+* [`f7afbda`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/f7afbda0763eaed2b83449bd9057291b90cfe349): **deps**: Bump `github.com/hashicorp/go-getter` from 1.7.4 to 1.7.5 in /terratest/data-sources in the go_modules group ([#281](https://github.com/northwood-labs/terraform-provider-corefunc/issues/281)) ([@dependabot](https://github.com/dependabot))
+* [`cebd47c`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/cebd47cba0209626c2ab033eef27805addf7d2d2): **deps**: Bump `google.golang.org/grpc` from 1.64.0 to 1.64.1 in the go_modules group ([#286](https://github.com/northwood-labs/terraform-provider-corefunc/issues/286)) ([@dependabot](https://github.com/dependabot))
+* [`31e38a6`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/31e38a6018c44cbf1cb9f5e7743a420e1ab1ad53): **deps**: Bump `github.com/gruntwork-io/terratest` from 0.46.15 to 0.46.16 in /terratest/functions ([#285](https://github.com/northwood-labs/terraform-provider-corefunc/issues/285)) ([@dependabot](https://github.com/dependabot))
+* [`2955341`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/295534111dcfd95104e09a9072f58c0d0585cbdc): **deps**: Bump `github.com/hashicorp/terraform-plugin-testing` ([#304](https://github.com/northwood-labs/terraform-provider-corefunc/issues/304)) ([@dependabot](https://github.com/dependabot))
+* [`bb56052`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/bb56052fb892f6f33dd74d3935831d8b5f7218e8): **deps**: Bump `github.com/gruntwork-io/terratest` ([#292](https://github.com/northwood-labs/terraform-provider-corefunc/issues/292)) ([@dependabot](https://github.com/dependabot))
+* [`810f770`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/810f770a11bc6891160f1b45ce929d13f1836acf): **deps**: Bump `github.com/hashicorp/terraform-plugin-framework` ([#301](https://github.com/northwood-labs/terraform-provider-corefunc/issues/301)) ([@dependabot](https://github.com/dependabot))
+* [`b5b1872`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/b5b1872f04df5a3cd56753414cfd6ba645db5f76): **deps**: Bump `trufflesecurity/trufflehog` from 3.78.1 to 3.81.9 ([#306](https://github.com/northwood-labs/terraform-provider-corefunc/issues/306)) ([@dependabot](https://github.com/dependabot))
 
 ### :test_tube: Testing
 
@@ -73,6 +80,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`55ec24f`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/55ec24f9135f51e2872dcf97023dad563ff341ba): Allow network calls for some jobs. ([@skyzyx](https://github.com/skyzyx))
 * [`3a6bc87`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/3a6bc8756768bb5fdd687746f9756b628d04a8f9): Add automation to auto-merge Dependabot PRs. ([@skyzyx](https://github.com/skyzyx))
 * [`f529a51`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/f529a512bb345a67e52033367102c76006f0f830): Switch auto-merging to use squash commits. ([@skyzyx](https://github.com/skyzyx))
+* [`9b7d2bd`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/9b7d2bdfde32bbe57a40ee613e40ad44359a2196): Add api.securityscorecards.dev to allowlist. ([@skyzyx](https://github.com/skyzyx))
 
 ### :tractor: Refactor
 
