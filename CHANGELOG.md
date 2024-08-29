@@ -83,6 +83,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`d364a39`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/d364a39f1bdf74b3768b8508d4fc801d3f023839): **deps**: Bump `ossf/scorecard-action` from 2.3.3 to 2.4.0 ([#308](https://github.com/northwood-labs/terraform-provider-corefunc/issues/308)) ([@dependabot](https://github.com/dependabot))
 * [`eba3fa8`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/eba3fa886dbd5ed3d7d73f6af4f1d0d26c7e6437): **deps**: Bump `opentofu/setup-opentofu` from 1.0.3 to 1.0.4 ([#310](https://github.com/northwood-labs/terraform-provider-corefunc/issues/310)) ([@dependabot](https://github.com/dependabot))
 * [`e2cc059`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/e2cc059733606a4d8793c437d23d7e561f2b7c23): **deps**: Bump `actions/setup-go` from 5.0.1 to 5.0.2 ([#309](https://github.com/northwood-labs/terraform-provider-corefunc/issues/309)) ([@dependabot](https://github.com/dependabot))
+* [`d187d6d`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/d187d6da6258b113691bb2d5c6b7771765c6cc9a): **deps**: Bump `actions/upload-artifact` from 4.3.3 to 4.3.6 ([#311](https://github.com/northwood-labs/terraform-provider-corefunc/issues/311)) ([@dependabot](https://github.com/dependabot))
+* [`1f06ee3`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/1f06ee32bcc7fefcaeca454fddd639e8987400bc): **deps**: Bump `orhun/git-cliff-action` from 3.2.0 to 4.0.0 ([#312](https://github.com/northwood-labs/terraform-provider-corefunc/issues/312)) ([@dependabot](https://github.com/dependabot))
 
 ### :test_tube: Testing
 
