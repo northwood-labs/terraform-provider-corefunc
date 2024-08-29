@@ -79,6 +79,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`df2f04b`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/df2f04b980dd4a5d264203728882c7136a151059): **deps**: Bump `github.com/hashicorp/terraform-plugin-framework-validators` from 0.12.0 to 0.13.0 ([#288](https://github.com/northwood-labs/terraform-provider-corefunc/issues/288)) ([@dependabot](https://github.com/dependabot))
 * [`013dd6c`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/013dd6c98d77e63807da3f669d4399ae41d7d02d): **deps**: Bump `github.com/hashicorp/go-getter` from 1.7.4 to 1.7.5 in /terratest/functions in the go_modules group ([#282](https://github.com/northwood-labs/terraform-provider-corefunc/issues/282)) ([@dependabot](https://github.com/dependabot))
 * [`d9bf03a`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/d9bf03a64cf90058b770d76f783d080cbacb35ff): **deps**: Bump `golang/govulncheck-action` from 1.0.2 to 1.0.3 ([#277](https://github.com/northwood-labs/terraform-provider-corefunc/issues/277)) ([@dependabot](https://github.com/dependabot))
+* [`bc5c0b9`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/bc5c0b9e0557fbdabc6cccf10ba4d8be21e2abf3): **deps**: Bump `dependabot/fetch-metadata` from 2.1.0 to 2.2.0 ([#307](https://github.com/northwood-labs/terraform-provider-corefunc/issues/307)) ([@dependabot](https://github.com/dependabot))
+* [`d364a39`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/d364a39f1bdf74b3768b8508d4fc801d3f023839): **deps**: Bump `ossf/scorecard-action` from 2.3.3 to 2.4.0 ([#308](https://github.com/northwood-labs/terraform-provider-corefunc/issues/308)) ([@dependabot](https://github.com/dependabot))
+* [`eba3fa8`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/eba3fa886dbd5ed3d7d73f6af4f1d0d26c7e6437): **deps**: Bump `opentofu/setup-opentofu` from 1.0.3 to 1.0.4 ([#310](https://github.com/northwood-labs/terraform-provider-corefunc/issues/310)) ([@dependabot](https://github.com/dependabot))
+* [`e2cc059`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/e2cc059733606a4d8793c437d23d7e561f2b7c23): **deps**: Bump `actions/setup-go` from 5.0.1 to 5.0.2 ([#309](https://github.com/northwood-labs/terraform-provider-corefunc/issues/309)) ([@dependabot](https://github.com/dependabot))
 
 ### :test_tube: Testing
 
@@ -668,4 +672,4 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`eb9f7ae`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/eb9f7aecfdaa7bda9087b9b58229d3943571a863): Update the GoReleaser configuration. ([@skyzyx](https://github.com/skyzyx))
 * [`a01b12e`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/a01b12e6870b821f561624bca79407e4c87c73cf): Trying to get the build to work. ([@skyzyx](https://github.com/skyzyx))
 
-<p>Generated on 2024-08-28.</p>
+<p>Generated on 2024-08-29.</p>
