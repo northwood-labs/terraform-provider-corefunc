@@ -89,6 +89,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`e2cc059`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/e2cc059733606a4d8793c437d23d7e561f2b7c23): **deps**: Bump `actions/setup-go` from 5.0.1 to 5.0.2 ([#309](https://github.com/northwood-labs/terraform-provider-corefunc/issues/309)) ([@dependabot](https://github.com/dependabot))
 * [`d187d6d`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/d187d6da6258b113691bb2d5c6b7771765c6cc9a): **deps**: Bump `actions/upload-artifact` from 4.3.3 to 4.3.6 ([#311](https://github.com/northwood-labs/terraform-provider-corefunc/issues/311)) ([@dependabot](https://github.com/dependabot))
 * [`1f06ee3`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/1f06ee32bcc7fefcaeca454fddd639e8987400bc): **deps**: Bump `orhun/git-cliff-action` from 3.2.0 to 4.0.0 ([#312](https://github.com/northwood-labs/terraform-provider-corefunc/issues/312)) ([@dependabot](https://github.com/dependabot))
+* [`fccbe48`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/fccbe48344575ab29cff27849c0526a12301ea36): **deps**: Bump `golangci/golangci-lint-action` from 6.0.1 to 6.1.0 ([#315](https://github.com/northwood-labs/terraform-provider-corefunc/issues/315)) ([@dependabot](https://github.com/dependabot))
+* [`ce029ee`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/ce029ee4596d11af2a644741c5407aedc23b2659): **deps**: Bump `actions/setup-node` from 4.0.2 to 4.0.3 ([#316](https://github.com/northwood-labs/terraform-provider-corefunc/issues/316)) ([@dependabot](https://github.com/dependabot))
+* [`51da803`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/51da8030d6678ae788d7a938c01313ac307902cf): **deps**: Bump `github/codeql-action` from 3.25.10 to 3.26.6 ([#317](https://github.com/northwood-labs/terraform-provider-corefunc/issues/317)) ([@dependabot](https://github.com/dependabot))
+* [`599380b`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/599380bd77ef97548b63b2d86ba3bd9e0299138b): **deps**: Bump `hashicorp/setup-terraform` from 3.1.1 to 3.1.2 ([#318](https://github.com/northwood-labs/terraform-provider-corefunc/issues/318)) ([@dependabot](https://github.com/dependabot))
+* [`47e9a4c`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/47e9a4c34c7d87d3b5185d4b49e96f3412984083): **deps**: Bump `trufflesecurity/trufflehog` from 3.81.9 to 3.81.10 ([#320](https://github.com/northwood-labs/terraform-provider-corefunc/issues/320)) ([@dependabot](https://github.com/dependabot))
+* [`5359bcc`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/5359bcce7b9fb47d1cfacc657a4c6f2e3c33b61e): **deps**: Bump `step-security/harden-runner` from 2.8.1 to 2.9.1 ([#319](https://github.com/northwood-labs/terraform-provider-corefunc/issues/319)) ([@dependabot](https://github.com/dependabot))
 
 ### :test_tube: Testing
 
@@ -683,4 +689,4 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`eb9f7ae`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/eb9f7aecfdaa7bda9087b9b58229d3943571a863): Update the GoReleaser configuration. ([@skyzyx](https://github.com/skyzyx))
 * [`a01b12e`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/a01b12e6870b821f561624bca79407e4c87c73cf): Trying to get the build to work. ([@skyzyx](https://github.com/skyzyx))
 
-<p>Generated on 2024-08-29.</p>
+<p>Generated on 2024-09-01.</p>
