@@ -20,7 +20,7 @@ require (
 	github.com/hashicorp/terraform-plugin-testing v1.10.0
 	github.com/lithammer/dedent v1.1.0
 	github.com/mitchellh/go-homedir v1.1.0
-	github.com/nlnwa/whatwg-url v0.4.1
+	github.com/nlnwa/whatwg-url v0.5.0
 	github.com/northwood-labs/golang-utils/archstring v0.0.0-20240514195441-31b98331cf9f
 	github.com/northwood-labs/golang-utils/exiterrorf v0.0.0-20240514195441-31b98331cf9f
 	github.com/spf13/cobra v1.8.1
