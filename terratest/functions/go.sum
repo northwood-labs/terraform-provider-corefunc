@@ -351,8 +351,8 @@ github.com/googleapis/gax-go/v2 v2.12.3 h1:5/zPPDvw8Q1SuXjrqrZslrqT7dL/uJT2CQii/
 github.com/googleapis/gax-go/v2 v2.12.3/go.mod h1:AKloxT6GtNbaLm8QTNSidHUVsHYcBHwWRvkNFJUQcS4=
 github.com/googleapis/go-type-adapters v1.0.0/go.mod h1:zHW75FOG2aur7gAO2B+MLby+cLsWGBF62rFAi7WjWO4=
 github.com/grpc-ecosystem/grpc-gateway v1.16.0/go.mod h1:BDjrQk3hbvj6Nolgz8mAMFbcEtjT1g+wF4CSlocrBnw=
-github.com/gruntwork-io/terratest v0.47.1 h1:qOaxnL7Su5+KpDHYUN/ek1jn8ImvCKtOkaY4OSMS4tI=
-github.com/gruntwork-io/terratest v0.47.1/go.mod h1:LnYX8BN5WxUMpDr8rtD39oToSL4CBERWSCusbJ0d/64=
+github.com/gruntwork-io/terratest v0.47.2 h1:t6iWwsqJH7Gx0RwXleU/vjc+2c0JXRMdj3DxYXTBssQ=
+github.com/gruntwork-io/terratest v0.47.2/go.mod h1:LnYX8BN5WxUMpDr8rtD39oToSL4CBERWSCusbJ0d/64=
 github.com/gtramontina/ooze v0.2.0 h1:QDW1zeq1TQgTLbIWuk76GCgNV3adkamYxY1aJNYp/Bc=
 github.com/gtramontina/ooze v0.2.0/go.mod h1:e0dltGb+Ws7SQKfoj4XkKf9C/UaIAK2YGWbLKLPwL6k=
 github.com/hairyhenderson/go-which v0.2.0 h1:vxoCKdgYc6+MTBzkJYhWegksHjjxuXPNiqo5G2oBM+4=
