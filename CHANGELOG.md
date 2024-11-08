@@ -21,6 +21,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`c9825aa`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/c9825aa0dc6a08ba1553ac7acd24d0e54ae2fade): Updated the CHANGELOG post-release. ([@skyzyx](https://github.com/skyzyx))
 * [`80ba7cf`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/80ba7cf543a3300b3387a7a3a73f0763ae628560): OpenTofu is supporting functions in 1.7. ([@skyzyx](https://github.com/skyzyx))
 * [`e6054e2`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/e6054e252789797b1441ffcf90741d55ea81836f): OpenTofu is supporting functions in 1.7. ([@skyzyx](https://github.com/skyzyx))
+* [`a8d2f4f`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/a8d2f4f3be18fd982ef900718d5d5c4688cd580b): Updated the `README.md`. ([@skyzyx](https://github.com/skyzyx))
 
 ### :dependabot: Building and Dependencies
 
@@ -748,4 +749,4 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`eb9f7ae`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/eb9f7aecfdaa7bda9087b9b58229d3943571a863): Update the GoReleaser configuration. ([@skyzyx](https://github.com/skyzyx))
 * [`a01b12e`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/a01b12e6870b821f561624bca79407e4c87c73cf): Trying to get the build to work. ([@skyzyx](https://github.com/skyzyx))
 
-<p>Generated on 2024-09-01.</p>
+<p>Generated on 2024-11-08.</p>
