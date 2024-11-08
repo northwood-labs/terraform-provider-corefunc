@@ -34,6 +34,7 @@ jobs:
             api.cloudflare.com:443
             ghcr.io:443
             github.com:443
+            gitlab.com:443
             pkg-containers.githubusercontent.com:443
 
       - name: Checkout Source
