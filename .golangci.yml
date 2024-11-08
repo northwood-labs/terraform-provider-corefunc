@@ -1665,11 +1665,6 @@ issues:
         - unused
       source: lint:allow_unused
 
-    - text: (is a program, not an importable package)
-      linters:
-        - typecheck
-      source: lint:allow_importable_program
-
     - text: (don't use `init` function)
       linters:
         - gochecknoinits
@@ -1694,4 +1689,9 @@ issues:
       linters:
         - goconst
       source: lint:no_const
+
+    - text: (is not checked)
+      linters:
+        - errcheck
+      source: fmt.Fprint
 # goplicate-end:issues
