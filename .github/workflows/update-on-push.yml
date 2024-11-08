@@ -54,6 +54,10 @@ jobs:
         env:
           OUTPUT: CHANGELOG.md
 
+      - name: Remove git-cliff artifacts
+        run: |
+          rm -Rf git-cliff*
+
       - name: Generate artifacts
         run: |
           # Generate list of authors
