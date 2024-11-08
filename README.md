@@ -1,4 +1,4 @@
-# Terraform Provider: Core Functions
+# Terraform/OpenTofu Provider: Core Functions
 
 [![Terraform Docs](https://img.shields.io/badge/Terraform-Docs-7B42BC?style=for-the-badge)](https://registry.terraform.io/providers/northwood-labs/corefunc/)
 [![Library.tf](https://img.shields.io/badge/Library.tf-Docs-B3DBF1?style=for-the-badge)](https://library.tf/providers/northwood-labs/corefunc/latest)
