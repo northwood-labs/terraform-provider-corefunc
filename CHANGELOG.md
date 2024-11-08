@@ -158,6 +158,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 
 * [`7d4212f`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/7d4212f31922972a2bc483477a659dbb21ac5e4e): Update all Go dependencies. ([@skyzyx](https://github.com/skyzyx))
 
+### :soap: Linting
+
+* [`7d4212f`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/7d4212f31922972a2bc483477a659dbb21ac5e4e): Update all Go dependencies. ([@skyzyx](https://github.com/skyzyx))
+
 ### :test_tube: Testing
 
 * [`5a0053c`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/5a0053cf786bd53687ba6a7afa168cd2e4cdb279): Update Terrform 1.8-beta1 to 1.8. ([@skyzyx](https://github.com/skyzyx))
