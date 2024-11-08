@@ -1,7 +1,6 @@
 module github.com/northwood-labs/terraform-provider-corefunc
 
-go 1.22
-toolchain go1.22.9
+go 1.23
 
 replace github.com/imdario/mergo => github.com/imdario/mergo v0.3.16
 
