@@ -168,13 +168,6 @@ clean-tf:
 	find . -type d -name ".terraform" | xargs -I% rm -Rfv "%"
 	find . -type f -name ".terraform.lock.hcl" | xargs -I% rm -fv "%"
 
-.PHONY: clean-ds
-## clean-ds: [clean] Clean .DS_Store files.
-clean-ds:
-	@ $(ECHO) " "
-	@ $(ECHO) "\033[1;33m=====> Cleaning .DS_Store files....\033[0m"
-	find . -type f -name ".DS_Store" | xargs -I% rm -fv "%"
-
 .PHONY: clean
 ## clean: [clean]* Runs ALL cleaning tasks (except the Go cache).
 clean: clean-bench clean-tf clean-tests
@@ -232,8 +225,7 @@ binsize:
 .PHONY: binsize
 ## binsize: [docs] Analyze the size of the binary by Go package.
 binsize:
-	@ $(ECHO) " "
-	@ $(ECHO) "\033[1;33m=====> Displaying Go HTTP documentation...\033[0m"
+	@ $(HEADER) "=====> Displaying Go HTTP documentation..."
 	$(GO) tool nm -size "$(GOBIN)/$(BINARY_NAME)" | go-binsize-treemap > binsize.svg
 	rsvg-convert --width=2000 --format=png --output="binsize.png" "binsize.svg"
 
@@ -346,8 +338,7 @@ mutate:
 .PHONY: terratest
 ## terratest: [test] Runs Terratest tests.
 terratest:
-	@ $(ECHO) " "
-	@ $(ECHO) "\033[1;33m=====> Running Terratest tests...\033[0m"
+	@ $(HEADER) "=====> Running Terratest tests..."
 	cd ./terratest/data-sources && $(GO) test -count 1
 	cd ./terratest/functions && $(GO) test -count 1
 
@@ -418,7 +409,6 @@ view-trace:
 ## changelog: [release]* Generates the CHANGELOG for the release.
 changelog:
 	git cliff -o CHANGELOG.md
-	@ # pre-commit run --all-files markdownlint
 
 .PHONY: tag
 ## tag: [release]* Tags (and GPG-signs) the release.
