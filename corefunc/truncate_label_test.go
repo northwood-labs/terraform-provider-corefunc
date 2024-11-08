@@ -76,7 +76,7 @@ func TestTruncateLabel(t *testing.T) {
 			diff := cmp.Diff(tc.Expected, actual)
 
 			if diff != "" {
-				t.Fatalf(diff)
+				t.Fatal(diff)
 			}
 		})
 	}
