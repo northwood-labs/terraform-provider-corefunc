@@ -36,14 +36,14 @@ The goal of this provider is not to call any APIs, but to provide pre-built func
 * We intend for the Go libraries to work with all non-EOL versions of Go (i.e., current, current-1).
 * Built using the [Terraform Plugin Framework][TPF], which speaks [Terraform Protocol v6][tfproto6].
 
-| Testing type | Details           | Description                                                                    |
-|--------------|-------------------|--------------------------------------------------------------------------------|
-| integration  | Terraform 1.0–1.8 | Executes the provider with this release, pulling from `registry.terraform.io`. |
-| integration  | OpenTofu 1.6–1.7  | Executes the provider with this release, pulling from `registry.opentofu.org`. |
-| unit         | Go 1.21–1.22      | Tests using these versions.                                                    |
-| mutation     | Go 1.21–1.22      | Tests using these versions.                                                    |
-| fuzz         | Go 1.21–1.22      | Tests using these versions.                                                    |
-| terratest    | Go 1.21–1.22      | Tests using these versions.                                                    |
+| Testing type | Details            | Description                                                                    |
+|--------------|--------------------|--------------------------------------------------------------------------------|
+| integration  | Terraform 1.0–1.10 | Executes the provider with this release, pulling from `registry.terraform.io`. |
+| integration  | OpenTofu 1.6–1.9   | Executes the provider with this release, pulling from `registry.opentofu.org`. |
+| unit         | Go 1.22–1.23       | Tests using these versions.                                                    |
+| mutation     | Go 1.22–1.23       | Tests using these versions.                                                    |
+| fuzz         | Go 1.22–1.23       | Tests using these versions.                                                    |
+| terratest    | Go 1.22–1.23       | Tests using these versions.                                                    |
 
 ## Usage Examples
 
