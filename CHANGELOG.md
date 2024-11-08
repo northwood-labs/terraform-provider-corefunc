@@ -178,6 +178,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`54b6a79`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/54b6a79c75ec3761e020f8bd0e652a47ec17a53d): Updated the versions of Terraform/OpenTofu to test against. ([@skyzyx](https://github.com/skyzyx))
 * [`d4f457b`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/d4f457b2124644a56b83476e054a8de735e79d8b): Remove git-cliff artifacts. ([@skyzyx](https://github.com/skyzyx))
 * [`8685550`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/8685550272c3e1a84e98e932d7dcb438dc1bb6db): Minor updates to linter settings. ([@skyzyx](https://github.com/skyzyx))
+* [`268f4db`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/268f4dbb56400a75a906cab589c9d21c04bf145a): Resolve workflow issues where git-cliff ends up in the repo. ([@skyzyx](https://github.com/skyzyx))
 
 ## 1.4.0 — 2024-03-20
 
