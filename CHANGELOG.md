@@ -163,6 +163,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`f529a51`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/f529a512bb345a67e52033367102c76006f0f830): Switch auto-merging to use squash commits. ([@skyzyx](https://github.com/skyzyx))
 * [`9b7d2bd`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/9b7d2bdfde32bbe57a40ee613e40ad44359a2196): Add api.securityscorecards.dev to allowlist. ([@skyzyx](https://github.com/skyzyx))
 * [`006e51b`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/006e51bf9c3ba126a5db0c5e1193f02bba8fbd2d): Fix outbound to releases.hashicorp.com. ([@skyzyx](https://github.com/skyzyx))
+* [`189d0e2`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/189d0e25ac956d3764cf44d20a8b440f3a1aec48): Add OpenTofu 1.9 pre and Terraform 1.10 pre. ([@skyzyx](https://github.com/skyzyx))
 
 ### :tractor: Refactor
 
