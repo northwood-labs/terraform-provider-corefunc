@@ -170,6 +170,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`3a6bc87`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/3a6bc8756768bb5fdd687746f9756b628d04a8f9): Add automation to auto-merge Dependabot PRs. ([@skyzyx](https://github.com/skyzyx))
 * [`f529a51`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/f529a512bb345a67e52033367102c76006f0f830): Switch auto-merging to use squash commits. ([@skyzyx](https://github.com/skyzyx))
 * [`9b7d2bd`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/9b7d2bdfde32bbe57a40ee613e40ad44359a2196): Add api.securityscorecards.dev to allowlist. ([@skyzyx](https://github.com/skyzyx))
+* [`006e51b`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/006e51bf9c3ba126a5db0c5e1193f02bba8fbd2d): Fix outbound to releases.hashicorp.com. ([@skyzyx](https://github.com/skyzyx))
 
 ### :tractor: Refactor
 
