@@ -5,6 +5,7 @@ go 1.23
 replace github.com/imdario/mergo => github.com/imdario/mergo v0.3.16
 
 require (
+	github.com/apparentlymart/go-cidr v1.1.0
 	github.com/chanced/caps v1.0.2
 	github.com/google/go-cmp v0.6.0
 	github.com/gtramontina/ooze v0.2.0
@@ -25,7 +26,6 @@ require (
 require (
 	github.com/ProtonMail/go-crypto v1.1.2 // indirect
 	github.com/agext/levenshtein v1.2.3 // indirect
-	github.com/apparentlymart/go-cidr v1.1.0 // indirect
 	github.com/apparentlymart/go-textseg/v15 v15.0.0 // indirect
 	github.com/aymanbagabas/go-osc52/v2 v2.0.1 // indirect
 	github.com/bits-and-blooms/bitset v1.15.0 // indirect

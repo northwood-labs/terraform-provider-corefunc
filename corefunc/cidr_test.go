@@ -35,7 +35,7 @@ func ExampleCIDRContains() {
 }
 
 func TestCIDRContains(t *testing.T) { // lint:allow_complexity
-	for name, tc := range testfixtures.CIDRContainsTestTable {
+	for name, tc := range testfixtures.NetCidrContainsTestTable {
 		t.Run(name, func(t *testing.T) {
 			output, err := CIDRContains(tc.ContainerCidr, tc.ContainedIPOrCidr)
 

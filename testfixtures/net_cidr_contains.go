@@ -15,10 +15,10 @@
 
 package testfixtures // lint:no_dupe
 
-// CIDRContainsTestTable is used by both the standard Go tests and also the
+// NetCidrContainsTestTable is used by both the standard Go tests and also the
 // Terraform acceptance tests.
 // <https://github.com/golang/go/wiki/TableDrivenTests>
-var CIDRContainsTestTable = map[string]struct { // lint:no_dupe
+var NetCidrContainsTestTable = map[string]struct { // lint:no_dupe
 	ContainerCidr     string
 	ContainedIPOrCidr string
 	Expected          bool
