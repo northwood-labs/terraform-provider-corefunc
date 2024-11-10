@@ -5,4 +5,5 @@ data "corefunc_str_leftpad" "leftpad" {
   pad_char  = "{{ . | printf "%c" }}"
 {{- end }}
 }
+
 #=> {{ .Expected }}

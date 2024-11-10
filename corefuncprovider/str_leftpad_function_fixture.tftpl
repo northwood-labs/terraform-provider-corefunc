@@ -6,4 +6,5 @@ output "leftpad" {
     value = provider::corefunc::str_leftpad("{{ $root.Input }}", {{ $root.PadWidth }})
 {{- end }}
 }
+
 #=> {{ .Expected }}
