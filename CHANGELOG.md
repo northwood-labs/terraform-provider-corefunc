@@ -178,6 +178,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`a91d530`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/a91d530d2f58049f2e3fdcd7335924109221d484): Implemented the `URLDecode()` function. ([@skyzyx](https://github.com/skyzyx))
 * [`7a00fc0`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/7a00fc0e5f5b33cab2f160087388a1b52b2f4b85): Implemented `CIDRContains()` function. ([@skyzyx](https://github.com/skyzyx))
 * [`81ab1e2`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/81ab1e27be173c9eec437a831c2e60945eea000e): Plugin Framework wrappers for `CIDRContains()`. ([@skyzyx](https://github.com/skyzyx))
+* [`3a05e6b`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/3a05e6b7668a6a427032ed8d22b484ec4fb919c0): Added library versions of Base64Gunzip, CidrContains, and URLDecode. ([#381](https://github.com/northwood-labs/terraform-provider-corefunc/issues/381)) ([@skyzyx](https://github.com/skyzyx))
 
 ### <!-- 1 -->:bug: Bug Fixes
 
