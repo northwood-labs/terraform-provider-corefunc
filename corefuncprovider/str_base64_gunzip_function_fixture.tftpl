@@ -1,0 +1,5 @@
+output "str" {
+  value = provider::corefunc::str_base64_gunzip("{{ .Input }}")
+}
+
+#=> {{ .Expected }}

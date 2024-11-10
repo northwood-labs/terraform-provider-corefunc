@@ -1,0 +1,5 @@
+data "corefunc_str_base64_gunzip" "str" {
+  gzipped_base64 = "{{ .Input }}"
+}
+
+#=> {{ .Expected }}
