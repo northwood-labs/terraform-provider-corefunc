@@ -205,6 +205,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`f18a595`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/f18a595b8d2ab92e972aa1863b3ac7934bf00518): Deprecate the label truncation functionality (again). ([@skyzyx](https://github.com/skyzyx))
 * [`edbf6d9`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/edbf6d9a3df6a75055f3dd81b80f4d22c482c785): Smooth out some rough edges in the dev flow. ([@skyzyx](https://github.com/skyzyx))
 * [`6b7d25f`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/6b7d25fe0a1613bff0dd038ea06e8f6501db11f4): Slight improvements to the generation templates. ([@skyzyx](https://github.com/skyzyx))
+* [`c3be1c0`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/c3be1c0b9f32722392f9f0264de391642ad99ed8): Added some missing license headers. ([@skyzyx](https://github.com/skyzyx))
 
 ## 1.4.0 — 2024-03-20
 
