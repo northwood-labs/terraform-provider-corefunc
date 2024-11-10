@@ -16,6 +16,9 @@
 package corefunc
 
 import (
+	"fmt"
+	neturl "net/url"
+
 	"github.com/nlnwa/whatwg-url/canonicalizer"
 	"github.com/nlnwa/whatwg-url/url"
 
@@ -56,4 +59,20 @@ func URLParse(rawURL string, canon ...types.URLCanonicalizer) (*url.Url, error) 
 
 	// Default
 	return url.Parse(rawURL) // lint:allow_unwrapped_errors
+}
+
+/*
+URLDecode decodes a URL-encoded string.
+
+----
+
+  - s (string): An encoded URL.
+*/
+func URLDecode(s string) (string, error) {
+	q, err := neturl.QueryUnescape(s)
+	if err != nil {
+		return "", fmt.Errorf("failed to decode URL '%s': %w", q, err)
+	}
+
+	return q, nil
 }

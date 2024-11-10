@@ -28,6 +28,20 @@ pre-commit:
     #     git diff-index --check "$(git hash-object -t tree /dev/null)"
     #   stage_fixed: true
 
+    gofmt:
+      tags: "always,go,formatting"
+      glob: "**/*.go"
+      run: >-
+        gofmt -w -s -r 'interface{} -> any' -r 'a[b:len(a)] -> a[b:]' {staged_files}
+      stage_fixed: true
+
+    gofumpt:
+      tags: "always,go,formatting"
+      glob: "**/*.go"
+      run: >-
+        gofumpt -w -e {staged_files}
+      stage_fixed: true
+
     markdownlint:
       tags: "always,docs,formatting"
       glob: "**/*.md"

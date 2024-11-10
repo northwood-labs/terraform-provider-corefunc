@@ -55,7 +55,7 @@ var (
 	// Both must be installed first.
 	binaries = []string{
 		"terraform", // 1.8.0+
-		"tofu", // 1.7.0+
+		"tofu",      // 1.7.0+
 	}
 )
 
