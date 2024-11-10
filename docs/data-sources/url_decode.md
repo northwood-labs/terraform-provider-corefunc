@@ -3,7 +3,9 @@ page_title: "corefunc_url_decode Data Source - corefunc"
 subcategory: ""
 description: |-
   URLDecode decodes a URL-encoded string.
-  -> Ported from OpenTofu.
+  -> This functionality is built into OpenTofu 1.8, but is missing in Terraform 1.9.
+  This also provides a 1:1 implementation that can be used with Terratest or other
+  Go code.
   Maps to the corefunc.URLDecode() https://pkg.go.dev/github.com/northwood-labs/terraform-provider-corefunc/corefunc#URLDecode Go method, which can be used in Terratest https://terratest.gruntwork.io.
 ---
 
@@ -11,7 +13,9 @@ description: |-
 
 URLDecode decodes a URL-encoded string.
 
--> Ported from OpenTofu.
+-> This functionality is built into OpenTofu 1.8, but is missing in Terraform 1.9.
+This also provides a 1:1 implementation that can be used with Terratest or other
+Go code.
 
 Maps to the [`corefunc.URLDecode()`](https://pkg.go.dev/github.com/northwood-labs/terraform-provider-corefunc/corefunc#URLDecode) Go method, which can be used in [Terratest](https://terratest.gruntwork.io).
 
@@ -30,10 +34,10 @@ data "corefunc_url_decode" "url" {
 
 ### Required
 
-- `encoded_url` (String) An encoded URL.
+* `encoded_url` (String) An encoded URL.
 
 ### Read-Only
 
-- `value` (String) The decoded URL.
+* `value` (String) The decoded URL.
 
 <!-- Preview the provider docs with the Terraform registry provider docs preview tool: https://registry.terraform.io/tools/doc-preview -->
