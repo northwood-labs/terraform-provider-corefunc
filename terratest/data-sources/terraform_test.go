@@ -21,11 +21,13 @@ import (
 	"runtime"
 	"testing"
 
+	"github.com/charmbracelet/lipgloss"
 	"github.com/gruntwork-io/terratest/modules/terraform"
 	"github.com/hairyhenderson/go-which"
 	"github.com/pkg/errors"
 	"github.com/stretchr/testify/assert"
 
+	clihelpers "github.com/northwood-labs/cli-helpers"
 	"github.com/northwood-labs/terraform-provider-corefunc/corefunc"
 	"github.com/northwood-labs/terraform-provider-corefunc/corefunc/types"
 )
@@ -40,8 +42,6 @@ var (
 	err error
 
 	inputStr     = "This is [an] {example}$${id32}."
-	prefix       = "NW-ZZZ-CLOUD-TEST-APP-CLOUD-PROD-CRIT"
-	label        = "K8S Pods Not Running Deployment Check"
 	strToReplace = "This is a string for testing replacements. New Relic. Set-up."
 
 	exampleCom       = "example.com"
@@ -122,6 +122,19 @@ func TestTerraform(t *testing.T) {
 				},
 			),
 		)
+
+		// Ported OpenTofu functions
+		isContained := false
+
+		isContained, err = corefunc.CIDRContains("192.168.2.0/20", "192.168.2.1")
+		if err != nil {
+			t.Fatal(err)
+		}
+
+		assert.Equal(t, terraform.Output(t, terraformOptions, "net_cidr_contains_ds"), fmt.Sprintf("%t", isContained))
+
+		// str_base64_gunzip
+		// url_decode
 
 		// runtime
 		assert.Equal(t, terraform.Output(t, terraformOptions, "runtime_cpuarch_ds"), runtime.GOARCH)
@@ -219,14 +232,21 @@ func setAndPrint(binary string) error {
 		}
 	}
 
-	fmt.Println("")
-	fmt.Println("================================================================================")
-	fmt.Printf("Binary %s is installed\n", which.Which(binary))
-	fmt.Println("TF_ACC_TERRAFORM_PATH=" + os.Getenv("TF_ACC_TERRAFORM_PATH"))
-	fmt.Println("TF_ACC_PROVIDER_NAMESPACE=" + os.Getenv("TF_ACC_PROVIDER_NAMESPACE"))
-	fmt.Println("TF_ACC_PROVIDER_HOST=" + os.Getenv("TF_ACC_PROVIDER_HOST"))
-	fmt.Println("================================================================================")
-	fmt.Println("")
+	yellow := lipgloss.NewStyle().Foreground(lipgloss.Color("11"))
+	green := lipgloss.NewStyle().Foreground(lipgloss.Color("10"))
+	magenta := lipgloss.NewStyle().Foreground(lipgloss.Color("13"))
+	underline := lipgloss.NewStyle().Underline(true).Bold(true)
+
+	fmt.Println(
+		clihelpers.LongHelpText(`
+		` + underline.Render("Testing Data Sources") + `
+
+		Binary ` + yellow.Render(which.Which(binary)) + ` is installed
+		TF_ACC_TERRAFORM_PATH=` + yellow.Render(os.Getenv("TF_ACC_TERRAFORM_PATH")) + `
+		TF_ACC_PROVIDER_NAMESPACE=` + green.Render(os.Getenv("TF_ACC_PROVIDER_NAMESPACE")) + `
+		TF_ACC_PROVIDER_HOST=` + magenta.Render(os.Getenv("TF_ACC_PROVIDER_HOST")) + `
+		`),
+	)
 
 	return nil
 }
