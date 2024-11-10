@@ -184,6 +184,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`81ab1e2`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/81ab1e27be173c9eec437a831c2e60945eea000e): Plugin Framework wrappers for `CIDRContains()`. ([@skyzyx](https://github.com/skyzyx))
 * [`3a05e6b`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/3a05e6b7668a6a427032ed8d22b484ec4fb919c0): Added library versions of Base64Gunzip, CidrContains, and URLDecode. ([#381](https://github.com/northwood-labs/terraform-provider-corefunc/issues/381)) ([@skyzyx](https://github.com/skyzyx))
 * [`6a6a920`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/6a6a920265386b3a79b3ab30b99b9290c3ae0edb): Wrapped the new functions in Data Sources and Functions. ([@skyzyx](https://github.com/skyzyx))
+* [`b87bcbf`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/b87bcbfb4aa4cdad420598a17c4a980f7c0b4e37): Finished wrapping all functions in Data Sources and Functions. ([@skyzyx](https://github.com/skyzyx))
 
 ### <!-- 1 -->:bug: Bug Fixes
 
