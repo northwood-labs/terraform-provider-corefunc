@@ -174,6 +174,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`006e51b`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/006e51bf9c3ba126a5db0c5e1193f02bba8fbd2d): Fix outbound to releases.hashicorp.com. ([@skyzyx](https://github.com/skyzyx))
 * [`189d0e2`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/189d0e25ac956d3764cf44d20a8b440f3a1aec48): Add OpenTofu 1.9 pre and Terraform 1.10 pre. ([@skyzyx](https://github.com/skyzyx))
 * [`b349147`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/b3491470016aaf196440b73d4422a8f006459413): Fix a few more test fixtures. ([@skyzyx](https://github.com/skyzyx))
+* [`2aadd99`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/2aadd99409ced42e5f28252d45195357bf701362): Removed Terraform 1.10 and OpenTofu 1.9 from the test matrix. ([@skyzyx](https://github.com/skyzyx))
 
 ### :tractor: Refactor
 
