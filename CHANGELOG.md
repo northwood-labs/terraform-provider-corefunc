@@ -18,6 +18,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`80ba7cf`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/80ba7cf543a3300b3387a7a3a73f0763ae628560): OpenTofu is supporting functions in 1.7. ([@skyzyx](https://github.com/skyzyx))
 * [`e6054e2`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/e6054e252789797b1441ffcf90741d55ea81836f): OpenTofu is supporting functions in 1.7. ([@skyzyx](https://github.com/skyzyx))
 * [`a8d2f4f`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/a8d2f4f3be18fd982ef900718d5d5c4688cd580b): Updated the `README.md`. ([@skyzyx](https://github.com/skyzyx))
+* [`a117977`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/a117977dc4d6cedd65b03ec26a54f16a7be218e5): Updated the examples to add a space between the code and the response. ([@skyzyx](https://github.com/skyzyx))
+* [`03cd708`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/03cd70896765552877bcced9f51bc95b0077cb07): Updated the examples to add a space between the code and the response. ([@skyzyx](https://github.com/skyzyx))
 
 ### :dependabot: Building and Dependencies
 
@@ -181,6 +183,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`7a00fc0`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/7a00fc0e5f5b33cab2f160087388a1b52b2f4b85): Implemented `CIDRContains()` function. ([@skyzyx](https://github.com/skyzyx))
 * [`81ab1e2`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/81ab1e27be173c9eec437a831c2e60945eea000e): Plugin Framework wrappers for `CIDRContains()`. ([@skyzyx](https://github.com/skyzyx))
 * [`3a05e6b`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/3a05e6b7668a6a427032ed8d22b484ec4fb919c0): Added library versions of Base64Gunzip, CidrContains, and URLDecode. ([#381](https://github.com/northwood-labs/terraform-provider-corefunc/issues/381)) ([@skyzyx](https://github.com/skyzyx))
+* [`6a6a920`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/6a6a920265386b3a79b3ab30b99b9290c3ae0edb): Wrapped the new functions in Data Sources and Functions. ([@skyzyx](https://github.com/skyzyx))
 
 ### <!-- 1 -->:bug: Bug Fixes
 
@@ -193,6 +196,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`444efd1`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/444efd1cf06d97b047fa3b3ec1fde35d0486e06f): Deprecate the label truncation functionality. ([@skyzyx](https://github.com/skyzyx))
 * [`f18a595`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/f18a595b8d2ab92e972aa1863b3ac7934bf00518): Deprecate the label truncation functionality (again). ([@skyzyx](https://github.com/skyzyx))
 * [`edbf6d9`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/edbf6d9a3df6a75055f3dd81b80f4d22c482c785): Smooth out some rough edges in the dev flow. ([@skyzyx](https://github.com/skyzyx))
+* [`6b7d25f`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/6b7d25fe0a1613bff0dd038ea06e8f6501db11f4): Slight improvements to the generation templates. ([@skyzyx](https://github.com/skyzyx))
 
 ## 1.4.0 — 2024-03-20
 
