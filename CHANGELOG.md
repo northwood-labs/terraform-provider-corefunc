@@ -24,6 +24,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`a8d2f4f`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/a8d2f4f3be18fd982ef900718d5d5c4688cd580b): Updated the `README.md`. ([@skyzyx](https://github.com/skyzyx))
 * [`a117977`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/a117977dc4d6cedd65b03ec26a54f16a7be218e5): Updated the examples to add a space between the code and the response. ([@skyzyx](https://github.com/skyzyx))
 * [`03cd708`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/03cd70896765552877bcced9f51bc95b0077cb07): Updated the examples to add a space between the code and the response. ([@skyzyx](https://github.com/skyzyx))
+* [`a810653`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/a810653fc7c0e6968f966e0f677a95607810d645): Updated the `README.md`. ([@skyzyx](https://github.com/skyzyx))
 
 ### :dependabot: Building and Dependencies
 
