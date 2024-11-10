@@ -360,9 +360,9 @@ tag:
 	@ echo " "
 
 	@ $(HEADER) "These are the contents of the CHANGELOG for this release. Are these correct?"
-	@ $(WHITE) "---------------------------------------------------------------------"
+	@ echo "---------------------------------------------------------------------"
 	@ chag contents
-	@ $(WHITE) "---------------------------------------------------------------------"
+	@ echo "---------------------------------------------------------------------"
 	@ echo "Are these release notes correct? If not, cancel and update CHANGELOG.md."
 	@ read -p "Press any key to continue, or press Control+C to cancel. " x;
 
