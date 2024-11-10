@@ -182,6 +182,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`8685550`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/8685550272c3e1a84e98e932d7dcb438dc1bb6db): Minor updates to linter settings. ([@skyzyx](https://github.com/skyzyx))
 * [`268f4db`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/268f4dbb56400a75a906cab589c9d21c04bf145a): Resolve workflow issues where git-cliff ends up in the repo. ([@skyzyx](https://github.com/skyzyx))
 * [`ceb144f`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/ceb144f3fcdaee9caee4c8a52af74a995cb03578): Certain outbound API calls in workflows are blocked. ([@skyzyx](https://github.com/skyzyx))
+* [`444efd1`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/444efd1cf06d97b047fa3b3ec1fde35d0486e06f): Deprecate the label truncation functionality. ([@skyzyx](https://github.com/skyzyx))
 
 ## 1.4.0 — 2024-03-20
 
@@ -752,4 +753,4 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`eb9f7ae`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/eb9f7aecfdaa7bda9087b9b58229d3943571a863): Update the GoReleaser configuration. ([@skyzyx](https://github.com/skyzyx))
 * [`a01b12e`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/a01b12e6870b821f561624bca79407e4c87c73cf): Trying to get the build to work. ([@skyzyx](https://github.com/skyzyx))
 
-<p>Generated on 2024-11-09.</p>
+<p>Generated on 2024-11-10.</p>
