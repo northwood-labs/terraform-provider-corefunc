@@ -183,6 +183,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`268f4db`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/268f4dbb56400a75a906cab589c9d21c04bf145a): Resolve workflow issues where git-cliff ends up in the repo. ([@skyzyx](https://github.com/skyzyx))
 * [`ceb144f`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/ceb144f3fcdaee9caee4c8a52af74a995cb03578): Certain outbound API calls in workflows are blocked. ([@skyzyx](https://github.com/skyzyx))
 * [`444efd1`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/444efd1cf06d97b047fa3b3ec1fde35d0486e06f): Deprecate the label truncation functionality. ([@skyzyx](https://github.com/skyzyx))
+* [`f18a595`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/f18a595b8d2ab92e972aa1863b3ac7934bf00518): Deprecate the label truncation functionality (again). ([@skyzyx](https://github.com/skyzyx))
+* [`edbf6d9`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/edbf6d9a3df6a75055f3dd81b80f4d22c482c785): Smooth out some rough edges in the dev flow. ([@skyzyx](https://github.com/skyzyx))
 
 ## 1.4.0 — 2024-03-20
 
