@@ -43,6 +43,7 @@ install-tools-go:
 	$(GO) install golang.org/x/tools/cmd/godoc@latest
 	$(GO) install golang.org/x/vuln/cmd/govulncheck@latest
 	$(GO) install gotest.tools/gotestsum@latest
+	$(GO) install mvdan.cc/gofumpt@latest
 
 .PHONY: install-tools-mac
 ## install-tools-mac: [tools]* Install/upgrade the required tools for macOS, including Go packages.
