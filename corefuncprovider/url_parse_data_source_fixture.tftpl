@@ -4,6 +4,7 @@ data "corefunc_url_parse" "url" {
     canonicalizer = "{{ printf "%v" . }}"
 {{- end }}
 }
+
 #=> {{ .Href }}
 #=> {{ .Protocol }}
 #=> {{ .Scheme }}

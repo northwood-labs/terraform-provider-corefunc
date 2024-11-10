@@ -1,5 +1,6 @@
 output "cidr" {
   value = provider::corefunc::net_cidr_contains("{{ .ContainerCidr }}", "{{ .ContainedIPOrCidr }}")
 }
+
 #=> {{ .Expected }}
 {{ if eq .ExpectedErr true }}#=> ExpectedErr: {{ .ExpectedErr }}{{ end }}

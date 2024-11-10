@@ -1,4 +1,5 @@
 output "@TODO" {
-    value = provider::corefunc::{{ .SnakeStrip }}("{{"{{"}} .Input {{"}}"}}")
+  value = provider::corefunc::{{ .SnakeStrip }}("{{"{{"}} .Input {{"}}"}}")
 }
+
 #=> {{"{{"}} .Expected {{"}}"}}
