@@ -103,6 +103,18 @@ func ExampleURLParse_googleSafeBrowsing() {
 	// .80
 }
 
+func ExampleURLDecode() {
+	output, err := URLDecode("hello%20%E4%B8%96%E7%95%8C")
+	if err != nil {
+		panic(err)
+	}
+
+	fmt.Println(output)
+
+	// Output:
+	// hello 世界
+}
+
 func TestURLParse(t *testing.T) { // lint:allow_complexity
 	for name, tc := range testfixtures.URLParseTestTable {
 		t.Run(name, func(t *testing.T) {
@@ -172,6 +184,23 @@ func TestURLParse(t *testing.T) { // lint:allow_complexity
 
 			if got := u.Fragment(); got != tc.Fragment {
 				t.Errorf("Fragment() = %v, want %v", got, tc.Fragment)
+			}
+		})
+	}
+}
+
+func TestURLDecode(t *testing.T) { // lint:allow_complexity
+	for name, tc := range testfixtures.URLDecodeTestTable {
+		t.Run(name, func(t *testing.T) {
+			output, err := URLDecode(tc.Input)
+
+			// We expect an error.
+			if err != nil && !tc.ExpectedErr {
+				t.Errorf("Unexpected error: %v", err)
+			}
+
+			if output != tc.Expected {
+				t.Errorf("Expected %s, got %s", tc.Expected, output)
 			}
 		})
 	}
