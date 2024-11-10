@@ -153,6 +153,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`68b82e9`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/68b82e916e88db7af9d0b85f89574edbec7aab33): **deps**: Bump `trufflesecurity/trufflehog` from 3.83.3 to 3.83.4 ([#378](https://github.com/northwood-labs/terraform-provider-corefunc/issues/378)) ([@dependabot](https://github.com/dependabot))
 * [`9ddd2ab`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/9ddd2ab1bc3bd71747e29cc0875c9e8f0511588c): **deps**: Bump `trufflesecurity/trufflehog` from 3.83.4 to 3.83.5 ([#379](https://github.com/northwood-labs/terraform-provider-corefunc/issues/379)) ([@dependabot](https://github.com/dependabot))
 * [`244218f`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/244218f988273e6c737483c025318bbd30c01f01): **deps**: Bump `goreleaser/goreleaser-action` from 6.0.0 to 6.1.0 ([#380](https://github.com/northwood-labs/terraform-provider-corefunc/issues/380)) ([@dependabot](https://github.com/dependabot))
+* [`59a5fb4`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/59a5fb4dcbad4afaca9c75b7f6252c5cf79d0c24): Updated all Go dependencies. ([@skyzyx](https://github.com/skyzyx))
 
 ### :soap: Linting
 
