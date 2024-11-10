@@ -29,6 +29,9 @@ Uses a "balancing" algorithm between the prefix and the label, so that each
 section is truncated as a factor of how much space it takes up in the merged
 string.
 
+DEPRECATED: This function is deprecated and will be removed in the 2.0.0
+release. It's a bit too specialized to be useful in a general-purpose library.
+
 ----
 
   - maxLength (int64): The maximum allowed length of the combined label.
