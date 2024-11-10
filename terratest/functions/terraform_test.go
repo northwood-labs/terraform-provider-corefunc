@@ -55,7 +55,7 @@ var (
 	// Both must be installed first.
 	binaries = []string{
 		"terraform", // 1.8.0+
-		// "tofu", // 1.8.0+
+		"tofu",      // 1.7.0+
 	}
 )
 
@@ -108,10 +108,6 @@ func TestTerraform(t *testing.T) {
 		assert.Equal(t, terraform.Output(t, terraformOptions, "int_leftpad_fn"), corefunc.IntLeftPad(123, 5))
 		assert.Equal(t, terraform.Output(t, terraformOptions, "str_leftpad_fn"), corefunc.StrLeftPad("abc", 5, '.'))
 		assert.Equal(t, terraform.Output(t, terraformOptions, "env_ensure_fn"), os.Getenv("GOROOT"))
-		assert.Equal(t,
-			terraform.Output(t, terraformOptions, "str_truncate_fn"),
-			corefunc.TruncateLabel(64, prefix, label),
-		)
 		assert.Equal(t,
 			terraform.Output(t, terraformOptions, "str_iterative_replace_fn"),
 			corefunc.StrIterativeReplace(

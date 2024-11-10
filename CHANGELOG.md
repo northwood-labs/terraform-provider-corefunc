@@ -149,6 +149,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`68b82e9`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/68b82e916e88db7af9d0b85f89574edbec7aab33): **deps**: Bump `trufflesecurity/trufflehog` from 3.83.3 to 3.83.4 ([#378](https://github.com/northwood-labs/terraform-provider-corefunc/issues/378)) ([@dependabot](https://github.com/dependabot))
 * [`9ddd2ab`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/9ddd2ab1bc3bd71747e29cc0875c9e8f0511588c): **deps**: Bump `trufflesecurity/trufflehog` from 3.83.4 to 3.83.5 ([#379](https://github.com/northwood-labs/terraform-provider-corefunc/issues/379)) ([@dependabot](https://github.com/dependabot))
 * [`244218f`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/244218f988273e6c737483c025318bbd30c01f01): **deps**: Bump `goreleaser/goreleaser-action` from 6.0.0 to 6.1.0 ([#380](https://github.com/northwood-labs/terraform-provider-corefunc/issues/380)) ([@dependabot](https://github.com/dependabot))
+* [`59a5fb4`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/59a5fb4dcbad4afaca9c75b7f6252c5cf79d0c24): Updated all Go dependencies. ([@skyzyx](https://github.com/skyzyx))
 
 ### :soap: Linting
 
@@ -162,6 +163,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`3a6bc87`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/3a6bc8756768bb5fdd687746f9756b628d04a8f9): Add automation to auto-merge Dependabot PRs. ([@skyzyx](https://github.com/skyzyx))
 * [`f529a51`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/f529a512bb345a67e52033367102c76006f0f830): Switch auto-merging to use squash commits. ([@skyzyx](https://github.com/skyzyx))
 * [`9b7d2bd`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/9b7d2bdfde32bbe57a40ee613e40ad44359a2196): Add api.securityscorecards.dev to allowlist. ([@skyzyx](https://github.com/skyzyx))
+* [`006e51b`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/006e51bf9c3ba126a5db0c5e1193f02bba8fbd2d): Fix outbound to releases.hashicorp.com. ([@skyzyx](https://github.com/skyzyx))
+* [`189d0e2`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/189d0e25ac956d3764cf44d20a8b440f3a1aec48): Add OpenTofu 1.9 pre and Terraform 1.10 pre. ([@skyzyx](https://github.com/skyzyx))
+* [`b349147`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/b3491470016aaf196440b73d4422a8f006459413): Fix a few more test fixtures. ([@skyzyx](https://github.com/skyzyx))
 
 ### :tractor: Refactor
 
@@ -171,6 +175,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 ### <!-- 0 -->:rocket: Features
 
 * [`7b53158`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/7b53158fb532000cf34eb763b9fdc7f6973581e1): Improvements to the Makefile. ([@skyzyx](https://github.com/skyzyx))
+* [`a91d530`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/a91d530d2f58049f2e3fdcd7335924109221d484): Implemented the `URLDecode()` function. ([@skyzyx](https://github.com/skyzyx))
+* [`7a00fc0`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/7a00fc0e5f5b33cab2f160087388a1b52b2f4b85): Implemented `CIDRContains()` function. ([@skyzyx](https://github.com/skyzyx))
 
 ### <!-- 1 -->:bug: Bug Fixes
 
@@ -180,6 +186,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`8685550`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/8685550272c3e1a84e98e932d7dcb438dc1bb6db): Minor updates to linter settings. ([@skyzyx](https://github.com/skyzyx))
 * [`268f4db`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/268f4dbb56400a75a906cab589c9d21c04bf145a): Resolve workflow issues where git-cliff ends up in the repo. ([@skyzyx](https://github.com/skyzyx))
 * [`ceb144f`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/ceb144f3fcdaee9caee4c8a52af74a995cb03578): Certain outbound API calls in workflows are blocked. ([@skyzyx](https://github.com/skyzyx))
+* [`444efd1`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/444efd1cf06d97b047fa3b3ec1fde35d0486e06f): Deprecate the label truncation functionality. ([@skyzyx](https://github.com/skyzyx))
+* [`f18a595`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/f18a595b8d2ab92e972aa1863b3ac7934bf00518): Deprecate the label truncation functionality (again). ([@skyzyx](https://github.com/skyzyx))
+* [`edbf6d9`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/edbf6d9a3df6a75055f3dd81b80f4d22c482c785): Smooth out some rough edges in the dev flow. ([@skyzyx](https://github.com/skyzyx))
 
 ## 1.4.0 — 2024-03-20
 
@@ -750,4 +759,4 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`eb9f7ae`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/eb9f7aecfdaa7bda9087b9b58229d3943571a863): Update the GoReleaser configuration. ([@skyzyx](https://github.com/skyzyx))
 * [`a01b12e`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/a01b12e6870b821f561624bca79407e4c87c73cf): Trying to get the build to work. ([@skyzyx](https://github.com/skyzyx))
 
-<p>Generated on 2024-11-08.</p>
+<p>Generated on 2024-11-10.</p>

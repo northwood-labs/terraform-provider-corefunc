@@ -76,6 +76,9 @@ func (f *strTruncateLabelFunction) Definition(
         section is truncated as a factor of how much space it takes up in the merged
         string.
 
+        **DEPRECATED:** This function is deprecated and will be removed in the 2.0.0
+        release. It's a bit too specialized to be useful in a general-purpose library.
+
         -> The motivation for this is in working with monitoring systems such
         as New Relic and Datadog where there are hundreds of applications in a
         monitoring “prod” account, and also hundreds of applications in a monitoring
