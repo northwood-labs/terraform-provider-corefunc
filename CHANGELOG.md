@@ -4,6 +4,14 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com), adheres to [Semantic Versioning](https://semver.org), and uses [Conventional Commit](https://www.conventionalcommits.org) syntax.
 
+## Unreleased
+
+[Compare: v1.5.0 → `HEAD`](https://github.com/northwood-labs/terraform-provider-corefunc/compare/v1.5.0..HEAD)
+
+### <!-- 1 -->:bug: Bug Fixes
+
+* [`f52cb57`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/f52cb575b47123b43e82c4b575ffb0e2f348da21): Updated the GoReleaser config. ([@skyzyx](https://github.com/skyzyx))
+
 ## 1.5.0 — 2024-11-10
 
 [Compare: v1.4.0 → v1.5.0](https://github.com/northwood-labs/terraform-provider-corefunc/compare/v1.4.0...v1.5.0)
