@@ -2,5 +2,6 @@ data "corefunc_net_cidr_contains" "cidr" {
   containing_cidr      = "{{ .ContainerCidr }}"
   contained_ip_or_cidr = "{{ .ContainedIPOrCidr }}"
 }
+
 #=> {{ .Expected }}
 {{ if eq .ExpectedErr true }}#=> ExpectedErr: {{ .ExpectedErr }}{{ end }}

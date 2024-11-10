@@ -6,4 +6,5 @@ output "env_var" {
     value = provider::corefunc::env_ensure("{{ $root.EnvVarName }}")
 {{- end }}
 }
+
 #=> {{ .ExpectedErr }}
