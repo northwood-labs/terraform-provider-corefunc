@@ -175,6 +175,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 ### <!-- 0 -->:rocket: Features
 
 * [`7b53158`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/7b53158fb532000cf34eb763b9fdc7f6973581e1): Improvements to the Makefile. ([@skyzyx](https://github.com/skyzyx))
+* [`a91d530`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/a91d530d2f58049f2e3fdcd7335924109221d484): Implemented the `URLDecode()` function. ([@skyzyx](https://github.com/skyzyx))
 
 ### <!-- 1 -->:bug: Bug Fixes
 
