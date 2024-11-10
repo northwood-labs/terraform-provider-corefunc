@@ -7,6 +7,7 @@ replace github.com/imdario/mergo => github.com/imdario/mergo v0.3.16
 replace github.com/imdario/mergo => github.com/imdario/mergo v0.3.16
 
 require (
+	github.com/apparentlymart/go-cidr v1.1.0
 	github.com/chanced/caps v1.0.2
 	github.com/google/go-cmp v0.6.0
 	github.com/gtramontina/ooze v0.2.0
