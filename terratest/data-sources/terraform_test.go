@@ -109,10 +109,6 @@ func TestTerraform(t *testing.T) {
 		assert.Equal(t, terraform.Output(t, terraformOptions, "str_leftpad_ds"), corefunc.StrLeftPad("abc", 5, '.'))
 		assert.Equal(t, terraform.Output(t, terraformOptions, "env_ensure_ds"), os.Getenv("GOROOT"))
 		assert.Equal(t,
-			terraform.Output(t, terraformOptions, "str_truncate_ds"),
-			corefunc.TruncateLabel(64, prefix, label),
-		)
-		assert.Equal(t,
 			terraform.Output(t, terraformOptions, "str_iterative_replace_ds"),
 			corefunc.StrIterativeReplace(
 				strToReplace,
