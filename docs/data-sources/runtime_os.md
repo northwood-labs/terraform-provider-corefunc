@@ -20,6 +20,7 @@ Go property, which can be used in [Terratest](https://terratest.gruntwork.io).
 
 ```terraform
 data "corefunc_runtime_os" "os" {}
+
 #=> linux
 ```
 
