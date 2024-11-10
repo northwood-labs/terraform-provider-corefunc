@@ -1,4 +1,5 @@
 ---
+version: 2
 project_name: terraform-provider-corefunc
 dist: ./dist
 
@@ -9,7 +10,7 @@ report_sizes: true
 builds:
   - env:
       - CGO_ENABLED=0
-    mod_timestamp: '{{ .CommitTimestamp }}'
+    mod_timestamp: "{{ .CommitTimestamp }}"
     flags:
       - -trimpath
     ldflags:
@@ -22,13 +23,13 @@ builds:
       - openbsd
       - windows
     goarch:
-      - '386'
+      - "386"
       - amd64
       - arm
       - arm64
     ignore:
       - goos: darwin
-        goarch: '386'
+        goarch: "386"
       - goos: darwin
         goarch: arm
       - goos: openbsd
@@ -39,16 +40,16 @@ builds:
         goarch: arm
       - goos: netbsd
         goarch: arm64
-    binary: '{{ .ProjectName }}_v{{ .Version }}'
+    binary: "{{ .ProjectName }}_v{{ .Version }}"
 
 # https://goreleaser.com/customization/archive/
 archives:
   - format: zip
-    name_template: '{{ .ProjectName }}_{{ .Version }}_{{ .Os }}_{{ .Arch }}'
+    name_template: "{{ .ProjectName }}_{{ .Version }}_{{ .Os }}_{{ .Arch }}"
 
 # https://goreleaser.com/customization/checksum/
 checksum:
-  name_template: '{{ .ProjectName }}_{{ .Version }}_SHA256SUMS'
+  name_template: "{{ .ProjectName }}_{{ .Version }}_SHA256SUMS"
   algorithm: sha256
 
 # https://goreleaser.com/customization/sign/
@@ -57,7 +58,7 @@ signs:
     args:
       - --batch
       - --local-user
-      - '{{ .Env.GPG_FINGERPRINT }}' # set this environment variable for your signing key
+      - "{{ .Env.GPG_FINGERPRINT }}" # set this environment variable for your signing key
       - --output
       - ${signature}
       - --detach-sign
