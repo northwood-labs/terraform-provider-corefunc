@@ -16,6 +16,7 @@ Maps to the [`corefunc.Homedir()`](https://pkg.go.dev/github.com/northwood-labs/
 
 ```terraform
 data "corefunc_homedir_get" "home" {}
+
 #=> /Users/me
 ```
 

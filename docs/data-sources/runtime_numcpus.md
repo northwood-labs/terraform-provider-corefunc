@@ -23,6 +23,7 @@ Go method, which can be used in [Terratest](https://terratest.gruntwork.io).
 
 ```terraform
 data "corefunc_runtime_numcpus" "count" {}
+
 #=> 12
 ```
 

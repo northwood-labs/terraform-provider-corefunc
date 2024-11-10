@@ -125,16 +125,20 @@ func TestTerraform(t *testing.T) {
 
 		// Ported OpenTofu functions
 		isContained := false
+		decodedURL := ""
 
 		isContained, err = corefunc.CIDRContains("192.168.2.0/20", "192.168.2.1")
 		if err != nil {
 			t.Fatal(err)
 		}
 
-		assert.Equal(t, terraform.Output(t, terraformOptions, "net_cidr_contains_ds"), fmt.Sprintf("%t", isContained))
+		decodedURL, err = corefunc.URLDecode("mailto%3Aemail%3Fsubject%3Dthis%2Bis%2Bmy%2Bsubject")
+		if err != nil {
+			t.Fatal(err)
+		}
 
-		// str_base64_gunzip
-		// url_decode
+		assert.Equal(t, terraform.Output(t, terraformOptions, "net_cidr_contains_ds"), fmt.Sprintf("%t", isContained))
+		assert.Equal(t, terraform.Output(t, terraformOptions, "url_decode_ds"), decodedURL)
 
 		// runtime
 		assert.Equal(t, terraform.Output(t, terraformOptions, "runtime_cpuarch_ds"), runtime.GOARCH)
