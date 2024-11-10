@@ -26,7 +26,9 @@ import (
 CIDRContains checks to see if an IP address or CIDR block is contained within
 another CIDR block.
 
-Ported from OpenTofu. This function licensed as MPL-2.0.
+This functionality is built into OpenTofu 1.8, but is missing in Terraform 1.9.
+This also provides a 1:1 implementation that can be used with Terratest or other
+Go code. This function licensed as MPL-2.0.
 
 ----
 

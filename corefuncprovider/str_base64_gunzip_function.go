@@ -28,77 +28,79 @@ import (
 )
 
 // Ensure the implementation satisfies the expected interfaces.
-var _ function.Function = &urlDecodeFunction{}
+var _ function.Function = &strBase64GunzipFunction{}
 
 type (
-	// urlDecodeFunction is the function implementation.
-	urlDecodeFunction struct{}
+	// strBase64GunzipFunction is the function implementation.
+	strBase64GunzipFunction struct{}
 )
 
-// URLDecodeFunction is a method that exposes its paired Go function as a
+// StrBase64GunzipFunction is a method that exposes its paired Go function as a
 // Terraform Function.
 // https://developer.hashicorp.com/terraform/plugin/framework/functions/implementation
-func URLDecodeFunction() function.Function { // lint:allow_return_interface
-	return &urlDecodeFunction{}
+func StrBase64GunzipFunction() function.Function { // lint:allow_return_interface
+	return &strBase64GunzipFunction{}
 }
 
-func (f *urlDecodeFunction) Metadata(
+func (f *strBase64GunzipFunction) Metadata(
 	ctx context.Context,
 	req function.MetadataRequest,
 	resp *function.MetadataResponse,
 ) {
-	tflog.Debug(ctx, "Starting URLDecode Function Metadata method.")
+	tflog.Debug(ctx, "Starting StrBase64Gunzip Function Metadata method.")
 
-	resp.Name = "url_decode"
+	resp.Name = "str_base64_gunzip"
 
 	tflog.Debug(ctx, fmt.Sprintf("resp.Name = %s", resp.Name))
 
-	tflog.Debug(ctx, "Ending URLDecode Function Metadata method.")
+	tflog.Debug(ctx, "Ending StrBase64Gunzip Function Metadata method.")
 }
 
 // Definition defines the parameters and return type for the function.
-func (f *urlDecodeFunction) Definition(
+func (f *strBase64GunzipFunction) Definition(
 	ctx context.Context,
 	req function.DefinitionRequest,
 	resp *function.DefinitionResponse,
 ) {
-	tflog.Debug(ctx, "Starting URLDecode Function Definition method.")
+	tflog.Debug(ctx, "Starting StrBase64Gunzip Function Definition method.")
 
 	resp.Definition = function.Definition{
-		Summary: "URLDecode decodes a URL-encoded string.",
+		Summary: "Base64Gunzip is a function that decodes a Base64-encoded string, then decompresses the result with gzip.",
 		MarkdownDescription: strings.TrimSpace(dedent.Dedent(`
-		URLDecode decodes a URL-encoded string.
+		Base64Gunzip is a function that decodes a Base64-encoded string, then
+		decompresses the result with gzip. Supports both padded and non-padded Base64
+		strings.
 
 		-> This functionality is built into OpenTofu 1.8, but is missing in Terraform 1.9.
 		This also provides a 1:1 implementation that can be used with Terratest or other
 		Go code.
 
-		Maps to the ` + linkPackage("URLDecode") + ` Go method, which can be used in ` + Terratest + `.
+		Maps to the ` + linkPackage("Base64Gunzip") + ` Go method, which can be used in ` + Terratest + `.
 		`)),
 		Parameters: []function.Parameter{
 			function.StringParameter{
-				Name:                "encoded_url",
-				MarkdownDescription: "An encoded URL.",
+				Name:                "gzipped_base64",
+				MarkdownDescription: "A string of gzipped then Base64-encoded data.",
 			},
 		},
 		Return: function.StringReturn{},
 	}
 
-	tflog.Debug(ctx, "Ending URLDecode Function Definition method.")
+	tflog.Debug(ctx, "Ending StrBase64Gunzip Function Definition method.")
 }
 
-func (f *urlDecodeFunction) Run(ctx context.Context, req function.RunRequest, resp *function.RunResponse) {
-	tflog.Debug(ctx, "Starting URLDecode Function Run method.")
+func (f *strBase64GunzipFunction) Run(ctx context.Context, req function.RunRequest, resp *function.RunResponse) {
+	tflog.Debug(ctx, "Starting StrBase64Gunzip Function Run method.")
 
-	var encodedURL string
-	err := req.Arguments.Get(ctx, &encodedURL)
+	var gzippedBase64 string
+	err := req.Arguments.Get(ctx, &gzippedBase64)
 
 	resp.Error = function.ConcatFuncErrors(err)
 	if resp.Error != nil {
 		return
 	}
 
-	value, e := corefunc.URLDecode(encodedURL)
+	value, e := corefunc.Base64Gunzip(gzippedBase64)
 	if e != nil {
 		resp.Error = function.ConcatFuncErrors(
 			function.NewFuncError(e.Error()),
@@ -109,5 +111,5 @@ func (f *urlDecodeFunction) Run(ctx context.Context, req function.RunRequest, re
 
 	resp.Error = function.ConcatFuncErrors(resp.Result.Set(ctx, value))
 
-	tflog.Debug(ctx, "Ending URLDecode Function Run method.")
+	tflog.Debug(ctx, "Ending StrBase64Gunzip Function Run method.")
 }

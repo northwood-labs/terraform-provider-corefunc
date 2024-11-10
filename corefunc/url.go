@@ -64,6 +64,10 @@ func URLParse(rawURL string, canon ...types.URLCanonicalizer) (*url.Url, error) 
 /*
 URLDecode decodes a URL-encoded string.
 
+This functionality is built into OpenTofu 1.8, but is missing in Terraform 1.9.
+This also provides a 1:1 implementation that can be used with Terratest or other
+Go code.
+
 ----
 
   - s (string): An encoded URL.
