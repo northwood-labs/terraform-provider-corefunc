@@ -26,6 +26,7 @@ import (
 	"github.com/hashicorp/terraform-plugin-framework/types"
 	"github.com/hashicorp/terraform-plugin-log/tflog"
 	"github.com/lithammer/dedent"
+
 	"github.com/northwood-labs/terraform-provider-corefunc/corefunc"
 )
 
@@ -70,7 +71,7 @@ func (d *netCidrContainsDataSource) Metadata(
 }
 
 // Schema defines the schema for the data source.
-func (d *netCidrContainsDataSource) Schema(
+func (d *netCidrContainsDataSource) Schema( // lint:no_dupe
 	ctx context.Context,
 	_ datasource.SchemaRequest,
 	resp *datasource.SchemaResponse,
