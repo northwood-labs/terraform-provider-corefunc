@@ -33,6 +33,7 @@ Maps to the [`corefunc.URLParse()`](https://pkg.go.dev/github.com/northwood-labs
 data "corefunc_url_parse" "simple" {
   url = "https://example.com"
 }
+
 #=> .normalized        = "https://example.com/"
 #=> .normalized_nofrag = "https://example.com/"
 #=> .protocol          = "https:"
@@ -48,6 +49,7 @@ data "corefunc_url_parse" "simple" {
 data "corefunc_url_parse" "complex" {
   url = "HTTP://u:p@example.com:80/foo?q=1#bar"
 }
+
 #=> .normalized        = "http://u:p@example.com/foo?q=1#bar"
 #=> .normalized_nofrag = "http://u:p@example.com/foo?q=1"
 #=> .protocol          = "http:"
@@ -74,6 +76,7 @@ data "corefunc_url_parse" "gsb" {
   url           = "HTTP://u:p@example.com:80/foo?q=1#bar"
   canonicalizer = "google_safe_browsing"
 }
+
 #=> .normalized        = "http://u:p@example.com/foo?q=1"
 #=> .normalized_nofrag = "http://u:p@example.com/foo?q=1"
 #=> .protocol          = "http:"
