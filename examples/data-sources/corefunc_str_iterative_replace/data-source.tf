@@ -27,4 +27,5 @@ data "corefunc_str_iterative_replace" "replacements" {
     },
   ]
 }
+
 #=> this_is_a_string_for_testing_replacements_datadog_setup
