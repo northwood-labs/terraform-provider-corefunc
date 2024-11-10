@@ -10,7 +10,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 
 ### <!-- 1 -->:bug: Bug Fixes
 
-* [`f52cb57`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/f52cb575b47123b43e82c4b575ffb0e2f348da21): Updated the GoReleaser config. ([@skyzyx](https://github.com/skyzyx))
+* [`c33bc06`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/c33bc0610b63dc5753816b16d4766aa4bd4cc2e3): Updated the GoReleaser config. ([@skyzyx](https://github.com/skyzyx))
 
 ## 1.5.0 — 2024-11-10
 
@@ -215,6 +215,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`6b7d25f`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/6b7d25fe0a1613bff0dd038ea06e8f6501db11f4): Slight improvements to the generation templates. ([@skyzyx](https://github.com/skyzyx))
 * [`c3be1c0`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/c3be1c0b9f32722392f9f0264de391642ad99ed8): Added some missing license headers. ([@skyzyx](https://github.com/skyzyx))
 * [`cd58370`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/cd583700c034a8e918c2ddac63151d22391c66bd): Small adjustments to the Makefile. ([@skyzyx](https://github.com/skyzyx))
+* [`f52cb57`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/f52cb575b47123b43e82c4b575ffb0e2f348da21): Updated the GoReleaser config. ([@skyzyx](https://github.com/skyzyx))
 
 ## 1.4.0 — 2024-03-20
 
