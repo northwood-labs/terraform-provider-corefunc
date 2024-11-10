@@ -124,6 +124,7 @@ terraform-provider-corefunc version
 │ github.com/hashicorp/go-uuid                               │ v1.0.3                             │
 │ github.com/hashicorp/terraform-plugin-framework            │ v1.13.0                            │
 │ github.com/hashicorp/terraform-plugin-framework-validators │ v0.15.0                            │
+
 [...snip...]
 ```
 
