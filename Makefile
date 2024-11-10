@@ -236,7 +236,7 @@ list-tests:
 ## bats: [test] Tests the output of the provider using tfschema and BATS.
 bats: build
 	@ $(HEADER) "=====> Running BATS/tfschema tests..."
-	cd ./bats && terraform init && bats *
+	cd ./bats && terraform init && bats *.bats.sh
 
 .PHONY: acc
 ## acc: [test] Runs Terraform provider acceptance tests. Set NAME= (without 'TestAcc') to run a specific test by name.
