@@ -60,6 +60,7 @@
     "^Cargo\\.lock$",
     "^composer\\.lock$",
     "^package-lock\\.json$",
+    "^poetry\\.lock$",
     "^yarn\\.lock$",
     "cliff\\.toml$",
     "go\\.mod$",
