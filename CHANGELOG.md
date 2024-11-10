@@ -22,6 +22,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`80ba7cf`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/80ba7cf543a3300b3387a7a3a73f0763ae628560): OpenTofu is supporting functions in 1.7. ([@skyzyx](https://github.com/skyzyx))
 * [`e6054e2`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/e6054e252789797b1441ffcf90741d55ea81836f): OpenTofu is supporting functions in 1.7. ([@skyzyx](https://github.com/skyzyx))
 * [`a8d2f4f`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/a8d2f4f3be18fd982ef900718d5d5c4688cd580b): Updated the `README.md`. ([@skyzyx](https://github.com/skyzyx))
+* [`a117977`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/a117977dc4d6cedd65b03ec26a54f16a7be218e5): Updated the examples to add a space between the code and the response. ([@skyzyx](https://github.com/skyzyx))
+* [`03cd708`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/03cd70896765552877bcced9f51bc95b0077cb07): Updated the examples to add a space between the code and the response. ([@skyzyx](https://github.com/skyzyx))
 
 ### :dependabot: Building and Dependencies
 
