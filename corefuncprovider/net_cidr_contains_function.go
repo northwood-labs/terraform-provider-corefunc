@@ -23,6 +23,7 @@ import (
 	"github.com/hashicorp/terraform-plugin-framework/function"
 	"github.com/hashicorp/terraform-plugin-log/tflog"
 	"github.com/lithammer/dedent"
+
 	"github.com/northwood-labs/terraform-provider-corefunc/corefunc"
 )
 
@@ -56,7 +57,7 @@ func (f *netCidrContainsFunction) Metadata(
 }
 
 // Definition defines the parameters and return type for the function.
-func (f *netCidrContainsFunction) Definition( // lint:nodupe
+func (f *netCidrContainsFunction) Definition( // lint:no_dupe
 	ctx context.Context,
 	req function.DefinitionRequest,
 	resp *function.DefinitionResponse,

@@ -57,7 +57,7 @@ func (f *intLeftpadFunction) Metadata(
 }
 
 // Definition defines the parameters and return type for the function.
-func (f *intLeftpadFunction) Definition(
+func (f *intLeftpadFunction) Definition( // lint:no_dupe
 	ctx context.Context,
 	req function.DefinitionRequest,
 	resp *function.DefinitionResponse,
