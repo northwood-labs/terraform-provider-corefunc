@@ -1,6 +1,7 @@
 # Terraform/OpenTofu Provider: Core Functions
 
-[![Terraform Docs](https://img.shields.io/badge/Terraform-Docs-7B42BC?style=for-the-badge)](https://registry.terraform.io/providers/northwood-labs/corefunc/)
+[![Terraform Docs](https://img.shields.io/badge/Terraform-Docs-7B42BC?style=for-the-badge)](https://registry.terraform.io/providers/northwood-labs/corefunc/latest/docs)
+[![OpenTofu Docs](https://img.shields.io/badge/OpenTofu-Docs-FEDA15?style=for-the-badge)](https://search.opentofu.org/provider/northwood-labs/corefunc/latest)
 [![Library.tf](https://img.shields.io/badge/Library.tf-Docs-B3DBF1?style=for-the-badge)](https://library.tf/providers/northwood-labs/corefunc/latest)
 [![Go Docs](https://img.shields.io/badge/Go-Docs-blue?style=for-the-badge)](https://pkg.go.dev/github.com/northwood-labs/terraform-provider-corefunc)
 [![GitHub](https://img.shields.io/github/license/northwood-labs/terraform-provider-corefunc?style=for-the-badge)](https://opensource.org/licenses/Apache-2.0)
@@ -36,14 +37,14 @@ The goal of this provider is not to call any APIs, but to provide pre-built func
 * We intend for the Go libraries to work with all non-EOL versions of Go (i.e., current, current-1).
 * Built using the [Terraform Plugin Framework][TPF], which speaks [Terraform Protocol v6][tfproto6].
 
-| Testing type | Details            | Description                                                                    |
-|--------------|--------------------|--------------------------------------------------------------------------------|
-| integration  | Terraform 1.0–1.10 | Executes the provider with this release, pulling from `registry.terraform.io`. |
-| integration  | OpenTofu 1.6–1.9   | Executes the provider with this release, pulling from `registry.opentofu.org`. |
-| unit         | Go 1.22–1.23       | Tests using these versions.                                                    |
-| mutation     | Go 1.22–1.23       | Tests using these versions.                                                    |
-| fuzz         | Go 1.22–1.23       | Tests using these versions.                                                    |
-| terratest    | Go 1.22–1.23       | Tests using these versions.                                                    |
+| Testing type | Details           | Description                                                                    |
+|--------------|-------------------|--------------------------------------------------------------------------------|
+| integration  | Terraform 1.0–1.9 | Executes the provider with this release, pulling from `registry.terraform.io`. |
+| integration  | OpenTofu 1.6–1.8  | Executes the provider with this release, pulling from `registry.opentofu.org`. |
+| unit         | Go 1.22–1.23      | Tests using these versions.                                                    |
+| mutation     | Go 1.22–1.23      | Tests using these versions.                                                    |
+| fuzz         | Go 1.22–1.23      | Tests using these versions.                                                    |
+| terratest    | Go 1.22–1.23      | Tests using these versions.                                                    |
 
 ## Usage Examples
 
@@ -51,9 +52,11 @@ See the `docs/` directory for user-facing documentation.
 
 ## Documentation
 
-### Terraform Registry
+### Registries
 
-If you are using this as a Terraform provider, see the documentation at [registry.terraform.io](https://registry.terraform.io/providers/northwood-labs/corefunc/).
+* [registry.terraform.io](https://registry.terraform.io/providers/northwood-labs/corefunc/latest/docs)
+* [search.opentofu.org](https://search.opentofu.org/provider/northwood-labs/corefunc/latest)
+* [library.tf](https://library.tf/providers/northwood-labs/corefunc/latest)
 
 ### Go Package
 
@@ -91,26 +94,36 @@ terraform-provider-corefunc version
 ```
 
 ```plain
-BASIC
-Version:    dev
-Go version: go1.22.1
-Git commit: 822858fc0c80b34eebf2a5ddd1b48684414d71b3
-Build date: 2024-03-11T03:09:24Z
-OS/Arch:    darwin/arm64
-System:     macOS on Apple Silicon
-CPU Cores:  10
-
-DEPENDENCIES
-github.com/bits-and-blooms/bitset                          v1.13.0
-github.com/chanced/caps                                    v1.0.2
-github.com/fatih/color                                     v1.16.0
-github.com/golang/protobuf                                 v1.5.4
-github.com/gookit/color                                    v1.5.4
-github.com/hashicorp/go-hclog                              v1.6.2
-github.com/hashicorp/go-plugin                             v1.6.0
-github.com/hashicorp/go-uuid                               v1.0.3
-github.com/hashicorp/terraform-plugin-framework            v1.6.1
-github.com/hashicorp/terraform-plugin-framework-validators v0.12.0
+╭────────────┬──────────────────────────────────────────╮
+│ BUILD INFO │ VALUE                                    │
+├────────────┼──────────────────────────────────────────┤
+│ Version    │ dev                                      │
+│ Go version │ go1.23.3                                 │
+│ Git commit │ 614a849a77a40ab367b7661d3fd83f32656cfe60 │
+│ Dirty repo │ true                                     │
+│ Build date │ 2024-11-10T22:32:40Z                     │
+│ OS/Arch    │ darwin/arm64                             │
+│ System     │ macOS on Apple Silicon                   │
+│ CPU cores  │ 10                                       │
+╰────────────┴──────────────────────────────────────────╯
+╭────────────────────────────────────────────────────────────┬────────────────────────────────────╮
+│ DEPENDENCY                                                 │ VERSION                            │
+├────────────────────────────────────────────────────────────┼────────────────────────────────────┤
+│ github.com/apparentlymart/go-cidr                          │ v1.1.0                             │
+│ github.com/aymanbagabas/go-osc52/v2                        │ v2.0.1                             │
+│ github.com/bits-and-blooms/bitset                          │ v1.15.0                            │
+│ github.com/chanced/caps                                    │ v1.0.2                             │
+│ github.com/charmbracelet/bubbles                           │ v0.18.0                            │
+│ github.com/charmbracelet/bubbletea                         │ v0.26.2                            │
+│ github.com/charmbracelet/lipgloss                          │ v1.0.0                             │
+│ github.com/charmbracelet/x/ansi                            │ v0.4.2                             │
+│ github.com/fatih/color                                     │ v1.18.0                            │
+│ github.com/golang/protobuf                                 │ v1.5.4                             │
+│ github.com/hashicorp/go-hclog                              │ v1.6.3                             │
+│ github.com/hashicorp/go-plugin                             │ v1.6.2                             │
+│ github.com/hashicorp/go-uuid                               │ v1.0.3                             │
+│ github.com/hashicorp/terraform-plugin-framework            │ v1.13.0                            │
+│ github.com/hashicorp/terraform-plugin-framework-validators │ v0.15.0                            │
 [...snip...]
 ```
 
