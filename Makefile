@@ -137,6 +137,7 @@ docs: docs-provider docs-cli
 ## docs-provider: [docs] Generate Terraform Registry documentation.
 docs-provider: clean-ds
 	@ $(HEADER) "=====> Generating Terraform provider documentation..."
+	$(GO) get -u github.com/hashicorp/terraform-plugin-docs/cmd/tfplugindocs
 	$(GO) generate -v ./...
 
 	@ $(HEADER) "=====> Remove tfplugindocs comments..."

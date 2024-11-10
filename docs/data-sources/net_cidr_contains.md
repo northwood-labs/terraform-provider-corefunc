@@ -4,7 +4,9 @@ subcategory: ""
 description: |-
   CIDRContains checks to see if an IP address or CIDR block is contained
   within another CIDR block.
-  -> Ported from OpenTofu.
+  -> This functionality is built into OpenTofu 1.8, but is missing in Terraform 1.9.
+  This also provides a 1:1 implementation that can be used with Terratest or other
+  Go code.
   Maps to the corefunc.CIDRContains() https://pkg.go.dev/github.com/northwood-labs/terraform-provider-corefunc/corefunc#CIDRContains Go method, which can be used in Terratest https://terratest.gruntwork.io.
 ---
 
@@ -13,7 +15,9 @@ description: |-
 CIDRContains checks to see if an IP address or CIDR block is contained
 within another CIDR block.
 
--> Ported from OpenTofu.
+-> This functionality is built into OpenTofu 1.8, but is missing in Terraform 1.9.
+This also provides a 1:1 implementation that can be used with Terratest or other
+Go code.
 
 Maps to the [`corefunc.CIDRContains()`](https://pkg.go.dev/github.com/northwood-labs/terraform-provider-corefunc/corefunc#CIDRContains) Go method, which can be used in [Terratest](https://terratest.gruntwork.io).
 
@@ -33,11 +37,11 @@ data "corefunc_net_cidr_contains" "cidr" {
 
 ### Required
 
-- `contained_ip_or_cidr` (String) An IP address or CIDR range to check as a contained range.
-- `containing_cidr` (String) A CIDR range to check as a containing range.
+* `contained_ip_or_cidr` (String) An IP address or CIDR range to check as a contained range.
+* `containing_cidr` (String) A CIDR range to check as a containing range.
 
 ### Read-Only
 
-- `value` (Boolean) Whether or not the IP address or CIDR range is contained within the container CIDR range.
+* `value` (Boolean) Whether or not the IP address or CIDR range is contained within the container CIDR range.
 
 <!-- Preview the provider docs with the Terraform registry provider docs preview tool: https://registry.terraform.io/tools/doc-preview -->
