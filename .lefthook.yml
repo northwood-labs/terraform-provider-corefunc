@@ -52,13 +52,13 @@ pre-commit:
     trivy-vuln:
       tags: "always,secrets"
       run: >-
-        trivy fs --config trivy-vuln.yaml --ignorefile .trivyignore.yaml .
+        trivy fs --config trivy-vuln.yaml --ignorefile .trivyignore .
       stage_fixed: false
 
     trivy-license:
       tags: "always,secrets"
       run: >-
-        trivy fs --config trivy-license.yaml --ignorefile .trivyignore.yaml .
+        trivy fs --config trivy-license.yaml --ignorefile .trivyignore .
       stage_fixed: false
 
     trufflehog:
@@ -84,11 +84,11 @@ pre-commit:
 
     # File MUST always end with a trailing linebreak.
     "end_of_file.py":
-      runner: python3.10
+      runner: poetry run
 
     # Remove trailing whitespace from lines.
     "remove_trailing_whitespace.py":
-      runner: python3.10
+      runner: poetry run
 
 commit-msg:
   commands:
