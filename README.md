@@ -93,41 +93,6 @@ The provider has one primary sub-command: `version`. It includes long-form versi
 terraform-provider-corefunc version
 ```
 
-```plain
-╭────────────┬──────────────────────────────────────────╮
-│ BUILD INFO │ VALUE                                    │
-├────────────┼──────────────────────────────────────────┤
-│ Version    │ dev                                      │
-│ Go version │ go1.23.3                                 │
-│ Git commit │ 614a849a77a40ab367b7661d3fd83f32656cfe60 │
-│ Dirty repo │ true                                     │
-│ Build date │ 2024-11-10T22:32:40Z                     │
-│ OS/Arch    │ darwin/arm64                             │
-│ System     │ macOS on Apple Silicon                   │
-│ CPU cores  │ 10                                       │
-╰────────────┴──────────────────────────────────────────╯
-╭────────────────────────────────────────────────────────────┬────────────────────────────────────╮
-│ DEPENDENCY                                                 │ VERSION                            │
-├────────────────────────────────────────────────────────────┼────────────────────────────────────┤
-│ github.com/apparentlymart/go-cidr                          │ v1.1.0                             │
-│ github.com/aymanbagabas/go-osc52/v2                        │ v2.0.1                             │
-│ github.com/bits-and-blooms/bitset                          │ v1.15.0                            │
-│ github.com/chanced/caps                                    │ v1.0.2                             │
-│ github.com/charmbracelet/bubbles                           │ v0.18.0                            │
-│ github.com/charmbracelet/bubbletea                         │ v0.26.2                            │
-│ github.com/charmbracelet/lipgloss                          │ v1.0.0                             │
-│ github.com/charmbracelet/x/ansi                            │ v0.4.2                             │
-│ github.com/fatih/color                                     │ v1.18.0                            │
-│ github.com/golang/protobuf                                 │ v1.5.4                             │
-│ github.com/hashicorp/go-hclog                              │ v1.6.3                             │
-│ github.com/hashicorp/go-plugin                             │ v1.6.2                             │
-│ github.com/hashicorp/go-uuid                               │ v1.0.3                             │
-│ github.com/hashicorp/terraform-plugin-framework            │ v1.13.0                            │
-│ github.com/hashicorp/terraform-plugin-framework-validators │ v0.15.0                            │
-
-[...snip...]
-```
-
 [alerts]: https://registry.terraform.io/providers/PagerDuty/pagerduty/latest
 [archive]: https://registry.terraform.io/providers/hashicorp/archive/latest/docs
 [code repositories]: https://registry.terraform.io/providers/integrations/github/latest/docs
