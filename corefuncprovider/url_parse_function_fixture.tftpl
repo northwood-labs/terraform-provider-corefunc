@@ -6,6 +6,7 @@ output "url" {
     value = provider::corefunc::url_parse("{{ $root.InputURL }}")
 {{- end }}
 }
+
 #=> {{ .Href }}
 #=> {{ .Protocol }}
 #=> {{ .Scheme }}

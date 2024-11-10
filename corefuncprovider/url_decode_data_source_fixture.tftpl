@@ -1,0 +1,5 @@
+data "corefunc_url_decode" "url" {
+  encoded_url = "{{ .Input }}"
+}
+
+#=> {{ .Expected }}
