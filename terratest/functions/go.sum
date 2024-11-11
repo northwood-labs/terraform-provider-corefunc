@@ -230,7 +230,6 @@ github.com/bits-and-blooms/bitset v1.15.0/go.mod h1:7hO7Gc7Pp1vODcmWvKMRA9BNmbv6
 github.com/census-instrumentation/opencensus-proto v0.2.1/go.mod h1:f6KPmirojxKA12rnyqOA5BBL4O983OfeGPqjHWSTneU=
 github.com/census-instrumentation/opencensus-proto v0.4.1 h1:iKLQ0xPNFxR/2hzXZMrBo8f1j86j5WHzznCCQxV/b8g=
 github.com/census-instrumentation/opencensus-proto v0.4.1/go.mod h1:4T9NM4+4Vw91VeyqjLS6ao50K5bOcLKN6Q42XnYaRYw=
-github.com/cespare/xxhash v1.1.0 h1:a6HrQnmkObjyL+Gs60czilIUGqrzKutQD6XZog3p+ko=
 github.com/cespare/xxhash v1.1.0/go.mod h1:XrSqR1VqqWfGrhpAt58auRo0WTKS1nRRg3ghfAqPWnc=
 github.com/cespare/xxhash/v2 v2.1.1/go.mod h1:VGX0DQ3Q6kWi7AoAeZDth3/j3BFtOZR5XLFGgcrjCOs=
 github.com/cespare/xxhash/v2 v2.3.0 h1:UL815xU9SqsFlibzuggzjXhog7bL6oX9BbNZnL2UFvs=
@@ -489,8 +488,8 @@ github.com/northwood-labs/archstring v0.0.0-20240514202917-e9357b4b91c8 h1:H7u8m
 github.com/northwood-labs/archstring v0.0.0-20240514202917-e9357b4b91c8/go.mod h1:Qhra/q/Lf44v49IQFck2KopjfPq4jUGu4CI0w59BQtI=
 github.com/northwood-labs/cli-helpers v0.0.0-20240730151203-eb4931503c44 h1:6jJ+XDE1pKDwIYcMROaQewrD7Gps9zW3u+Ytc6FXgYQ=
 github.com/northwood-labs/cli-helpers v0.0.0-20240730151203-eb4931503c44/go.mod h1:n2i1DY3qebKBdaAsM7GwpaquD0n41ucNwe56I/DnQsM=
-github.com/northwood-labs/terraform-provider-corefunc v1.4.1-0.20241110071832-35391f7735d3 h1:V9a8v8SoGvaxSJYr1Mr32M0eNMjD3Xfwgl4Ki/NVb/c=
-github.com/northwood-labs/terraform-provider-corefunc v1.4.1-0.20241110071832-35391f7735d3/go.mod h1:YG/6xQ2z4u4Un47AaNV824IQTsCCywjk570cvE6U8eI=
+github.com/northwood-labs/terraform-provider-corefunc v1.5.0 h1:yADuDey2AAyLmsZFfcovKoTVqP8X1jIYbMYwQH0oLPI=
+github.com/northwood-labs/terraform-provider-corefunc v1.5.0/go.mod h1:/jB4tI/znYqYCkApUE1L9bKXwF/2Q9OOQnN+UXOfp3E=
 github.com/pkg/errors v0.8.1/go.mod h1:bwawxfHBFNV+L2hUp1rHADufV3IMtnDRdf1r5NINEl0=
 github.com/pkg/errors v0.9.1 h1:FEBLx1zS214owpjy7qsBeixbURkuhQAwrK5UwLGTwt4=
 github.com/pkg/errors v0.9.1/go.mod h1:bwawxfHBFNV+L2hUp1rHADufV3IMtnDRdf1r5NINEl0=
