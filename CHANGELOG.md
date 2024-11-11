@@ -4,6 +4,14 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com), adheres to [Semantic Versioning](https://semver.org), and uses [Conventional Commit](https://www.conventionalcommits.org) syntax.
 
+## Unreleased
+
+[Compare: v1.5.1 → `HEAD`](https://github.com/northwood-labs/terraform-provider-corefunc/compare/v1.5.1..HEAD)
+
+### :test_tube: Testing
+
+* [`1590ddd`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/1590dddd621e5fa0a177944b2a582aef9ba04979): Add OpenTofu 1.9.0-alpha2 to the test matrix. ([@skyzyx](https://github.com/skyzyx))
+
 ## 1.5.1 — 2024-11-11
 
 [Compare: v1.5.0 → v1.5.1](https://github.com/northwood-labs/terraform-provider-corefunc/compare/v1.5.0...v1.5.1)
