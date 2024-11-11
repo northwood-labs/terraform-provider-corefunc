@@ -8,9 +8,16 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 
 [Compare: v1.5.0 → `HEAD`](https://github.com/northwood-labs/terraform-provider-corefunc/compare/v1.5.0..HEAD)
 
-### <!-- 1 -->:bug: Bug Fixes
+### :books: Documentation
 
-* [`c33bc06`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/c33bc0610b63dc5753816b16d4766aa4bd4cc2e3): Updated the GoReleaser config. ([@skyzyx](https://github.com/skyzyx))
+* [`73be866`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/73be866d1dac864f1b9e610fbc0176c6c7d51036): Improved the documentation for the new functionality added in v1.5.0. ([@skyzyx](https://github.com/skyzyx))
+
+### :dependabot: Building and Dependencies
+
+* [`c1eca59`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/c1eca59ae42af957b1e389ab78ffce1b7b503d7f): **deps**: Bump `github.com/northwood-labs/terraform-provider-corefunc` ([#382](https://github.com/northwood-labs/terraform-provider-corefunc/issues/382)) ([@dependabot](https://github.com/dependabot))
+* [`e17d0da`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/e17d0da131c98dfe296588ea909cae2393a0316b): **deps**: Bump `trufflesecurity/trufflehog` from 3.83.5 to 3.83.6 ([#383](https://github.com/northwood-labs/terraform-provider-corefunc/issues/383)) ([@dependabot](https://github.com/dependabot))
+* [`a83ffe5`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/a83ffe5e0d7dd5282d05a66230d02f61ad6845b5): **deps**: Bump `github/codeql-action` from 3.27.0 to 3.27.1 ([#384](https://github.com/northwood-labs/terraform-provider-corefunc/issues/384)) ([@dependabot](https://github.com/dependabot))
+* [`6ee2d09`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/6ee2d0970be0b1694f2966d4bb2bf0831ec0cc35): **deps**: Bump `github.com/northwood-labs/terraform-provider-corefunc` ([#385](https://github.com/northwood-labs/terraform-provider-corefunc/issues/385)) ([@dependabot](https://github.com/dependabot))
 
 ## 1.5.0 — 2024-11-10
 
@@ -216,6 +223,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`c3be1c0`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/c3be1c0b9f32722392f9f0264de391642ad99ed8): Added some missing license headers. ([@skyzyx](https://github.com/skyzyx))
 * [`cd58370`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/cd583700c034a8e918c2ddac63151d22391c66bd): Small adjustments to the Makefile. ([@skyzyx](https://github.com/skyzyx))
 * [`f52cb57`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/f52cb575b47123b43e82c4b575ffb0e2f348da21): Updated the GoReleaser config. ([@skyzyx](https://github.com/skyzyx))
+* [`c33bc06`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/c33bc0610b63dc5753816b16d4766aa4bd4cc2e3): Updated the GoReleaser config. ([@skyzyx](https://github.com/skyzyx))
 
 ## 1.4.0 — 2024-03-20
 
@@ -786,4 +794,4 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`eb9f7ae`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/eb9f7aecfdaa7bda9087b9b58229d3943571a863): Update the GoReleaser configuration. ([@skyzyx](https://github.com/skyzyx))
 * [`a01b12e`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/a01b12e6870b821f561624bca79407e4c87c73cf): Trying to get the build to work. ([@skyzyx](https://github.com/skyzyx))
 
-<p>Generated on 2024-11-10.</p>
+<p>Generated on 2024-11-11.</p>
