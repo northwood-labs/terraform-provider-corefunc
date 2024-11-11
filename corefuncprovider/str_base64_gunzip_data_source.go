@@ -83,6 +83,12 @@ func (d *strBase64GunzipDataSource) Schema(
 		decompresses the result with gzip. Supports both padded and non-padded Base64
 		strings.
 
+		Uses the "standard" Base64 alphabet as defined in
+		[RFC 4648 §4](https://datatracker.ietf.org/doc/html/rfc4648#section-4).
+
+		~> There is a data limit of 10 MiB (10485760 bytes) for the decompressed data. This
+		is to avoid "decompression bomb" vulnerabilities.
+
 		-> This functionality is built into OpenTofu 1.8, but is missing in Terraform 1.9.
 		This also provides a 1:1 implementation that can be used with Terratest or other
 		Go code.

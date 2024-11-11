@@ -2,8 +2,10 @@
 page_title: "net_cidr_contains function - corefunc"
 subcategory: ""
 description: |-
-  CIDRContains checks to see if an IP address or CIDR block is contained
-  within another CIDR block.
+  CIDRContains determines whether or not a given IP address, or an address prefix
+  given in CIDR notation, is within a given IP network address prefix.
+  Both arguments must belong to the same address family, either IPv4 or IPv6. A
+  family mismatch will result in an error.
   -> This functionality is built into OpenTofu 1.8, but is missing in Terraform 1.9.
   This also provides a 1:1 implementation that can be used with Terratest or other
   Go code.
@@ -12,8 +14,11 @@ description: |-
 
 # net_cidr_contains (function)
 
-CIDRContains checks to see if an IP address or CIDR block is contained
-within another CIDR block.
+CIDRContains determines whether or not a given IP address, or an address prefix
+given in CIDR notation, is within a given IP network address prefix.
+
+Both arguments must belong to the same address family, either IPv4 or IPv6. A
+family mismatch will result in an error.
 
 -> This functionality is built into OpenTofu 1.8, but is missing in Terraform 1.9.
 This also provides a 1:1 implementation that can be used with Terratest or other
