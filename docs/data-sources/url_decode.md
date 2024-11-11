@@ -3,6 +3,9 @@ page_title: "corefunc_url_decode Data Source - corefunc"
 subcategory: ""
 description: |-
   URLDecode decodes a URL-encoded string.
+  It can decode a wide range of characters, including those beyond the ASCII set.
+  Non-ASCII characters are first interpreted as UTF-8 bytes, then percent-decoded
+  byte-by-byte, ensuring correct decoding of multibyte characters.
   -> This functionality is built into OpenTofu 1.8, but is missing in Terraform 1.9.
   This also provides a 1:1 implementation that can be used with Terratest or other
   Go code.
@@ -12,6 +15,10 @@ description: |-
 # corefunc_url_decode (Data Source)
 
 URLDecode decodes a URL-encoded string.
+
+It can decode a wide range of characters, including those beyond the ASCII set.
+Non-ASCII characters are first interpreted as UTF-8 bytes, then percent-decoded
+byte-by-byte, ensuring correct decoding of multibyte characters.
 
 -> This functionality is built into OpenTofu 1.8, but is missing in Terraform 1.9.
 This also provides a 1:1 implementation that can be used with Terratest or other
