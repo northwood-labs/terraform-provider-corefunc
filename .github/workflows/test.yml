@@ -155,7 +155,7 @@ jobs:
           - "1.6"
           - "1.7"
           - "1.8"
-          - "1.9.0-alpha2"
+          - "1.9.0-alpha"
 
     steps:
       - name: Harden Runner
