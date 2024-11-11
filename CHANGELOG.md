@@ -12,6 +12,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 
 * [`106427d`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/106427d5a1958e1001894d53596178b8be29bec3): Updated the `docs/index.md` for registries. ([@skyzyx](https://github.com/skyzyx))
 
+### :books: Documentation
+
+* [`106427d`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/106427d5a1958e1001894d53596178b8be29bec3): Updated the `docs/index.md` for registries. ([@skyzyx](https://github.com/skyzyx))
+
 ### :test_tube: Testing
 
 * [`1590ddd`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/1590dddd621e5fa0a177944b2a582aef9ba04979): Add OpenTofu 1.9.0-alpha2 to the test matrix. ([@skyzyx](https://github.com/skyzyx))
