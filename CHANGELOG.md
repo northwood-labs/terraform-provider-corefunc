@@ -11,6 +11,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 ### :test_tube: Testing
 
 * [`1590ddd`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/1590dddd621e5fa0a177944b2a582aef9ba04979): Add OpenTofu 1.9.0-alpha2 to the test matrix. ([@skyzyx](https://github.com/skyzyx))
+* [`a705758`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/a7057585ea081324ee53cba2a9deb9aa686ee910): Add OpenTofu 1.9.0-alpha2 to the test matrix. ([@skyzyx](https://github.com/skyzyx))
 
 ## 1.5.1 — 2024-11-11
 
