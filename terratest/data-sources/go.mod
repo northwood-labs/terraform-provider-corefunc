@@ -9,7 +9,7 @@ require (
 	github.com/gruntwork-io/terratest v0.47.2
 	github.com/hairyhenderson/go-which v0.2.0
 	github.com/northwood-labs/cli-helpers v0.0.0-20240730151203-eb4931503c44
-	github.com/northwood-labs/terraform-provider-corefunc v1.4.1-0.20241110071832-35391f7735d3
+	github.com/northwood-labs/terraform-provider-corefunc v1.5.0
 	github.com/pkg/errors v0.9.1
 	github.com/stretchr/testify v1.9.0
 )
