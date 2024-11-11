@@ -13,6 +13,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`1590ddd`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/1590dddd621e5fa0a177944b2a582aef9ba04979): Add OpenTofu 1.9.0-alpha2 to the test matrix. ([@skyzyx](https://github.com/skyzyx))
 * [`a705758`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/a7057585ea081324ee53cba2a9deb9aa686ee910): Add OpenTofu 1.9.0-alpha2 to the test matrix. ([@skyzyx](https://github.com/skyzyx))
 * [`6715123`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/671512374d7875e42b30c86681c1850b20b8b869): Add Terraform 1.10-beta and 1.11-alpha to the test matrix. ([@skyzyx](https://github.com/skyzyx))
+* [`8fb5f6d`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/8fb5f6dc925f96e2e82ede7dd28a5fdbce5a9dc3): Remove Terraform 1.10-beta and 1.11-alpha from the test matrix. ([@skyzyx](https://github.com/skyzyx))
 
 ## 1.5.1 — 2024-11-11
 
