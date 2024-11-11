@@ -102,7 +102,8 @@ jobs:
           - "1.7"
           - "1.8"
           - "1.9"
-          # - "1.10"
+          - "1.10.0-beta"
+          - "1.11.0-alpha"
 
     steps:
       - name: Harden Runner
