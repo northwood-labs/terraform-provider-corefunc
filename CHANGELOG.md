@@ -28,6 +28,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 ### <!-- 0 -->:rocket: Features
 
 * [`b3d1b1a`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/b3d1b1a0c70befc41e1281ffbb6b798f6b6cdf95): Added support for JSON and TOML conversions to the Go lib. ([@skyzyx](https://github.com/skyzyx))
+* [`3ddd389`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/3ddd38971ee63d75f8ae497df6ce26af081a3ba1): Add support for counting bytes in strings. ([@skyzyx](https://github.com/skyzyx))
 
 ## 1.5.1 — 2024-11-11
 
