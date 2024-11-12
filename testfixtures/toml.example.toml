@@ -1,0 +1,89 @@
+context = 'test-infra'
+
+[apps]
+[apps.argo]
+chart = 'argo/argo'
+enabled = true
+namespace = 'production'
+priority = -3
+protected = true
+test = false
+valuesFile = ''
+version = '0.8.5'
+wait = true
+
+[apps.argo.hooks]
+deleteOnSuccess = true
+preInstall = 'job.yaml'
+successCondition = 'Complete'
+successTimeout = '90s'
+
+[apps.argo.set]
+'images.tag' = '$$TAG'
+
+[apps.artifactory]
+chart = 'jfrog/artifactory'
+enabled = true
+helmFlags = ['--devel']
+maxHistory = 4
+namespace = 'production'
+noHooks = false
+priority = -2
+test = false
+timeout = 300
+valuesFile = ''
+version = '8.3.2'
+
+[certificates]
+
+[helmRepos]
+argo = 'https://argoproj.github.io/argo-helm'
+jfrog = 'https://charts.jfrog.io'
+
+[metadata]
+description = 'example Desired State File for demo purposes.'
+key = '${VALUE}'
+maintainer = 'k8s-admin (me@example.com)'
+org = 'example.com/${ORG_PATH}/'
+
+[namespaces]
+[namespaces.production]
+protected = true
+
+[[namespaces.production.limits]]
+type = 'Container'
+
+[namespaces.production.limits.default]
+cpu = '300m'
+memory = '200Mi'
+
+[namespaces.production.limits.defaultRequest]
+cpu = '200m'
+memory = '100Mi'
+
+[[namespaces.production.limits]]
+type = 'Pod'
+
+[namespaces.production.limits.max]
+memory = '300Mi'
+
+[namespaces.staging]
+protected = false
+
+[namespaces.staging.labels]
+env = 'staging'
+
+[namespaces.staging.quotas]
+'limits.cpu' = '10'
+'limits.memory' = '30Gi'
+pods = '25'
+'requests.cpu' = '10'
+'requests.memory' = '30Gi'
+
+[[namespaces.staging.quotas.customQuotas]]
+name = 'requests.nvidia.com/gpu'
+value = '2'
+
+[settings]
+globalMaxHistory = 5
+kubeContext = 'minikube'
