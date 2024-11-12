@@ -68,7 +68,8 @@
     "min\\.css$",
     "min\\.js$",
     "package-lock\\.json$",
-    "standard\\.mk$"
+    "standard\\.mk$",
+    "testfixtures/.*$"
   ],
   "IgnoreDefaults": true,
   "NoColor": false,

@@ -4,11 +4,11 @@
 ##
 
 # goplicate-start:config
-Debug           = false
-IgnoreDefaults  = true
-NoColor         = false
+Debug = false
+IgnoreDefaults = true
+NoColor = false
 SpacesAfterTabs = false
-Verbose         = false
+Verbose = false
 # goplicate-end:config
 
 Exclude = [
@@ -82,4 +82,6 @@ Exclude = [
   "package-lock\\.json$",
   "standard\\.mk$",
   # goplicate-end:excludes
+
+  "testfixtures/.*$",
 ]
