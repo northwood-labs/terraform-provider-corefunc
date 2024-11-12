@@ -16,12 +16,21 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 
 * [`106427d`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/106427d5a1958e1001894d53596178b8be29bec3): Updated the `docs/index.md` for registries. ([@skyzyx](https://github.com/skyzyx))
 
+### :dependabot: Building and Dependencies
+
+* [`4172264`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/417226478224852bb3d4a6c40b96f42deb0ecaca): **deps**: Bump `github.com/northwood-labs/terraform-provider-corefunc` ([#386](https://github.com/northwood-labs/terraform-provider-corefunc/issues/386)) ([@dependabot](https://github.com/dependabot))
+* [`64cf4ef`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/64cf4ef866482ab054be93398747f567dc74f4e1): **deps**: Bump `github.com/northwood-labs/terraform-provider-corefunc` ([#387](https://github.com/northwood-labs/terraform-provider-corefunc/issues/387)) ([@dependabot](https://github.com/dependabot))
+
 ### :test_tube: Testing
 
 * [`1590ddd`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/1590dddd621e5fa0a177944b2a582aef9ba04979): Add OpenTofu 1.9.0-alpha2 to the test matrix. ([@skyzyx](https://github.com/skyzyx))
 * [`a705758`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/a7057585ea081324ee53cba2a9deb9aa686ee910): Add OpenTofu 1.9.0-alpha2 to the test matrix. ([@skyzyx](https://github.com/skyzyx))
 * [`6715123`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/671512374d7875e42b30c86681c1850b20b8b869): Add Terraform 1.10-beta and 1.11-alpha to the test matrix. ([@skyzyx](https://github.com/skyzyx))
 * [`8fb5f6d`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/8fb5f6dc925f96e2e82ede7dd28a5fdbce5a9dc3): Remove Terraform 1.10-beta and 1.11-alpha from the test matrix. ([@skyzyx](https://github.com/skyzyx))
+
+### <!-- 0 -->:rocket: Features
+
+* [`b3d1b1a`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/b3d1b1a0c70befc41e1281ffbb6b798f6b6cdf95): Added support for JSON and TOML conversions to the Go lib. ([@skyzyx](https://github.com/skyzyx))
 
 ## 1.5.1 — 2024-11-11
 
