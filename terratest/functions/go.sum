@@ -488,8 +488,8 @@ github.com/northwood-labs/archstring v0.0.0-20240514202917-e9357b4b91c8 h1:H7u8m
 github.com/northwood-labs/archstring v0.0.0-20240514202917-e9357b4b91c8/go.mod h1:Qhra/q/Lf44v49IQFck2KopjfPq4jUGu4CI0w59BQtI=
 github.com/northwood-labs/cli-helpers v0.0.0-20240730151203-eb4931503c44 h1:6jJ+XDE1pKDwIYcMROaQewrD7Gps9zW3u+Ytc6FXgYQ=
 github.com/northwood-labs/cli-helpers v0.0.0-20240730151203-eb4931503c44/go.mod h1:n2i1DY3qebKBdaAsM7GwpaquD0n41ucNwe56I/DnQsM=
-github.com/northwood-labs/terraform-provider-corefunc v1.5.0 h1:yADuDey2AAyLmsZFfcovKoTVqP8X1jIYbMYwQH0oLPI=
-github.com/northwood-labs/terraform-provider-corefunc v1.5.0/go.mod h1:/jB4tI/znYqYCkApUE1L9bKXwF/2Q9OOQnN+UXOfp3E=
+github.com/northwood-labs/terraform-provider-corefunc v1.5.1 h1:lY/J/8zsqFPVtL/RJmdBJPTyzz8kSjx96nUB0fZ5hBg=
+github.com/northwood-labs/terraform-provider-corefunc v1.5.1/go.mod h1:LBKGZErFqabRakCCBuMonWIemYOO6T46gNzGY8/gBos=
 github.com/pkg/errors v0.8.1/go.mod h1:bwawxfHBFNV+L2hUp1rHADufV3IMtnDRdf1r5NINEl0=
 github.com/pkg/errors v0.9.1 h1:FEBLx1zS214owpjy7qsBeixbURkuhQAwrK5UwLGTwt4=
 github.com/pkg/errors v0.9.1/go.mod h1:bwawxfHBFNV+L2hUp1rHADufV3IMtnDRdf1r5NINEl0=
