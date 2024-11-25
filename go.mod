@@ -22,7 +22,7 @@ require (
 	github.com/northwood-labs/cli-helpers v0.0.0-20240730151203-eb4931503c44
 	github.com/pelletier/go-toml/v2 v2.2.3
 	github.com/spf13/cobra v1.8.1
-	github.com/stretchr/testify v1.9.0
+	github.com/stretchr/testify v1.10.0
 )
 
 require (
