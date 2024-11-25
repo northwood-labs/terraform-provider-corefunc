@@ -11,7 +11,7 @@ require (
 	github.com/northwood-labs/cli-helpers v0.0.0-20240730151203-eb4931503c44
 	github.com/northwood-labs/terraform-provider-corefunc v1.5.1
 	github.com/pkg/errors v0.9.1
-	github.com/stretchr/testify v1.9.0
+	github.com/stretchr/testify v1.10.0
 )
 
 require (
