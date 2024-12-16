@@ -31,6 +31,10 @@ Since earlier versions of Terraform/OpenTofu didn't have the concept of user-def
 
 The goal of this provider is not to call any APIs, but to provide pre-built functions in the form of _Data Sources_ or _Provider Functions_.
 
+## Vote for features!
+
+[View the list of issues](https://github.com/northwood-labs/terraform-provider-corefunc/issues?q=is%3Aissue+is%3Aopen+sort%3Areactions-%2B1-desc), and give a thumbs-up to the ones you'd like to see. This is how I prioritize the work.
+
 ## Compatibility testing
 
 * We have automated testing that runs on every commit and every pull request.
