@@ -6,7 +6,7 @@ toolchain go1.23.3
 
 require (
 	github.com/charmbracelet/lipgloss v1.0.0
-	github.com/gruntwork-io/terratest v0.48.0
+	github.com/gruntwork-io/terratest v0.48.1
 	github.com/hairyhenderson/go-which v0.2.0
 	github.com/northwood-labs/cli-helpers v0.0.0-20241111201136-8e7d54066157
 	github.com/northwood-labs/terraform-provider-corefunc v1.5.1
