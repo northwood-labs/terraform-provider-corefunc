@@ -65,6 +65,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`1dd879b`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/1dd879b84c102616b44ccfcf65daf5506f6df778): **deps**: Bump `github/codeql-action` from 3.28.2 to 3.28.3 ([#440](https://github.com/northwood-labs/terraform-provider-corefunc/issues/440)) ([@dependabot](https://github.com/dependabot))
 * [`955ef61`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/955ef61ab01d6db8820bd173a047be833876a4f8): **deps**: Bump `actions/upload-artifact` from 4.5.0 to 4.6.0 ([#430](https://github.com/northwood-labs/terraform-provider-corefunc/issues/430)) ([@dependabot](https://github.com/dependabot))
 * [`58e5170`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/58e51706f1310803caf4576764da5f3a7ec2451e): **deps**: Bump `trufflesecurity/trufflehog` from 3.88.1 to 3.88.2 ([#429](https://github.com/northwood-labs/terraform-provider-corefunc/issues/429)) ([@dependabot](https://github.com/dependabot))
+* [`bc6bd8e`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/bc6bd8ea44f73fc7a2a83368cd3b73752a3ca7bc): **deps**: Bump `golang.org/x/net` ([#435](https://github.com/northwood-labs/terraform-provider-corefunc/issues/435)) ([@dependabot](https://github.com/dependabot))
 
 ### :test_tube: Testing
 
