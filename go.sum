@@ -180,8 +180,8 @@ github.com/muesli/cancelreader v0.2.2 h1:3I4Kt4BQjOR54NavqnDogx/MIoWBFa0StPA8ELU
 github.com/muesli/cancelreader v0.2.2/go.mod h1:3XuTXfFS2VjM+HTLZY9Ak0l6eUKfijIfMUZ4EgX0QYo=
 github.com/muesli/termenv v0.15.2 h1:GohcuySI0QmI3wN8Ok9PtKGkgkFIk7y6Vpb5PvrY+Wo=
 github.com/muesli/termenv v0.15.2/go.mod h1:Epx+iuz8sNs7mNKhxzH4fWXGNpZwUaJKRS1noLXviQ8=
-github.com/nlnwa/whatwg-url v0.6.1 h1:Zlefa3aglQFHF/jku45VxbEJwPicDnOz64Ra3F7npqQ=
-github.com/nlnwa/whatwg-url v0.6.1/go.mod h1:x0FPXJzzOEieQtsBT/AKvbiBbQ46YlL6Xa7m02M1ECk=
+github.com/nlnwa/whatwg-url v0.6.2 h1:jU61lU2ig4LANydbEJmA2nPrtCGiKdtgT0rmMd2VZ/Q=
+github.com/nlnwa/whatwg-url v0.6.2/go.mod h1:x0FPXJzzOEieQtsBT/AKvbiBbQ46YlL6Xa7m02M1ECk=
 github.com/northwood-labs/archstring v0.0.0-20240514202917-e9357b4b91c8 h1:H7u8m9rx04tIT7K7TNi6svLENyBlBxlvj2707rbxLvA=
 github.com/northwood-labs/archstring v0.0.0-20240514202917-e9357b4b91c8/go.mod h1:Qhra/q/Lf44v49IQFck2KopjfPq4jUGu4CI0w59BQtI=
 github.com/northwood-labs/cli-helpers v0.0.0-20241111201136-8e7d54066157 h1:rW4iRZ7M1U4p8RghfSmXcRL6BLklqXhHW/odMFkEJDM=
