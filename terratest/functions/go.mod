@@ -7,7 +7,7 @@ toolchain go1.23.3
 require (
 	github.com/charmbracelet/lipgloss v1.1.0
 	github.com/gruntwork-io/terratest v0.48.2
-	github.com/hairyhenderson/go-which v0.2.0
+	github.com/hairyhenderson/go-which v0.2.2
 	github.com/northwood-labs/cli-helpers v0.0.0-20241111201136-8e7d54066157
 	github.com/northwood-labs/terraform-provider-corefunc v1.5.1
 	github.com/pkg/errors v0.9.1
@@ -58,7 +58,6 @@ require (
 	github.com/northwood-labs/archstring v0.0.0-20240514202917-e9357b4b91c8 // indirect
 	github.com/pmezard/go-difflib v1.0.0 // indirect
 	github.com/rivo/uniseg v0.4.7 // indirect
-	github.com/spf13/afero v1.11.0 // indirect
 	github.com/spf13/cobra v1.8.1 // indirect
 	github.com/spf13/pflag v1.0.5 // indirect
 	github.com/tmccombs/hcl2json v0.6.4 // indirect
