@@ -156,6 +156,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`8fb5f6d`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/8fb5f6dc925f96e2e82ede7dd28a5fdbce5a9dc3): Remove Terraform 1.10-beta and 1.11-alpha from the test matrix. ([@skyzyx](https://github.com/skyzyx))
 * [`be38c26`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/be38c265e2c7094c4c9a94110df961f8a41f09a8): Update the name of the automation bot. ([@skyzyx](https://github.com/skyzyx))
 * [`fd4e77f`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/fd4e77ffb9765228983879adad75e01f19ac34be): Added more endpoints for security check. ([@skyzyx](https://github.com/skyzyx))
+* [`844d11e`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/844d11ebd6498e449e959ea7215a580251a13bae): Added more endpoints for security check. ([@skyzyx](https://github.com/skyzyx))
 
 ### <!-- 0 -->:rocket: Features
 
