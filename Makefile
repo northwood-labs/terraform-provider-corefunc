@@ -5,54 +5,33 @@ include ./standard.mk
 
 # go install golang.org/dl/go{VERSION}@latest
 # go{VERSION} download
-GO=$(shell which go)
 GO_VER=1.23.0
 GOBIN=$(shell ./find-go-bin.sh)
 BINARY_NAME=terraform-provider-corefunc
 
 #-------------------------------------------------------------------------------
-# Global stuff.
-
-HOMEBREW_PACKAGES=bash bats-core coreutils editorconfig-checker findutils git git-cliff git-lfs go grep jq librsvg nodejs poetry pre-commit python@3.11 shellcheck tfschema trivy trufflesecurity/trufflehog/trufflehog
-NEXT_VERSION ?= $(shell git cliff --bump --unreleased --context | jq -r .[0].version)
-
-#-------------------------------------------------------------------------------
 # Installation
 
+.PHONY: install-tools
+## install-tools: [tools]* Install/upgrade the required dependencies.
+install-tools: install-tools-mac install-tools-go
+
 .PHONY: install-tools-go
-## install-tools-go: [tools]* Install/upgrade the required Go packages.
+## install-tools-go: [tools] Install/upgrade the required Go packages.
 install-tools-go:
-	@ $(HEADER) "=====> Installing Go packages..."
-	$(GO) install github.com/antham/gommit@latest
-	$(GO) install github.com/charmbracelet/gum@latest
-	$(GO) install github.com/evilmartians/lefthook@latest
-	$(GO) install github.com/google/osv-scanner/cmd/osv-scanner@v1
-	$(GO) install github.com/goph/licensei/cmd/licensei@latest
-	$(GO) install github.com/hashicorp/terraform-plugin-docs/cmd/tfplugindocs@latest
-	$(GO) install github.com/mdempsky/unconvert@latest
-	$(GO) install github.com/nikolaydubina/go-binsize-treemap@latest
-	$(GO) install github.com/nikolaydubina/go-cover-treemap@latest
-	$(GO) install github.com/nikolaydubina/smrcptr@latest
-	$(GO) install github.com/orlangure/gocovsh@latest
-	$(GO) install github.com/pelletier/go-toml/v2/cmd/tomljson@latest
-	$(GO) install github.com/quasilyte/go-consistent@latest
-	$(GO) install github.com/rhysd/actionlint/cmd/actionlint@latest
-	$(GO) install github.com/securego/gosec/v2/cmd/gosec@latest
-	$(GO) install github.com/trufflesecurity/driftwood@latest
-	$(GO) install golang.org/x/perf/cmd/benchstat@latest
-	$(GO) install golang.org/x/tools/cmd/godoc@latest
-	$(GO) install golang.org/x/vuln/cmd/govulncheck@latest
-	$(GO) install gotest.tools/gotestsum@latest
-	$(GO) install mvdan.cc/gofumpt@latest
+	@ $(HEADER) "=====> Installing Go tools..."
+	$(GO) get -modfile=go.tools.mod tool
 
 .PHONY: install-tools-mac
-## install-tools-mac: [tools]* Install/upgrade the required tools for macOS, including Go packages.
-install-tools-mac: install-tools-go
+## install-tools-mac: [tools] Install/upgrade the required tools for macOS.
+install-tools-mac:
 	@ $(HEADER) "=====> Installing required packages for macOS (Homebrew)..."
-	brew update && brew install $(HOMEBREW_PACKAGES) && brew upgrade $(HOMEBREW_PACKAGES)
+	brew bundle install --upgrade
+
+	@ $(HEADER) "=====> Installing Chag (may require password)..."
 	curl -sSLf https://raw.githubusercontent.com/mtdowling/chag/master/install.sh | sudo bash
 
-	@ $(BORDER) "To update to the latest versions, run:" "  brew update && brew upgrade"
+	@ $(BORDER) "To update to the latest versions, run:" "  make install-tools-mac"
 
 .PHONY: install-hooks
 ## install-hooks: [tools]* Install/upgrade the Git hooks used for ensuring consistency.
@@ -78,6 +57,7 @@ tidy:
 godeps:
 	@ $(HEADER) "=====> Upgrade the minor versions of Go dependencies..."
 	find . -type f -name "go.mod" | xargs -I% dirname "%" | xargs -I@ bash -c 'cd "@" && $(GO) mod tidy -go=$(GO_VER) && $(GO) get -u -t -v ./...'
+	$(GO) get github.com/nlnwa/whatwg-url@v0.5.0
 
 	@ echo ""
 	@ $(YELLOW) "Run 'make tidy' to clean up the go.mod file."
@@ -137,7 +117,6 @@ docs: docs-provider docs-cli
 ## docs-provider: [docs] Generate Terraform Registry documentation.
 docs-provider: clean-ds
 	@ $(HEADER) "=====> Generating Terraform provider documentation..."
-	$(GO) get -u github.com/hashicorp/terraform-plugin-docs/cmd/tfplugindocs
 	$(GO) generate -v ./...
 
 	@ $(HEADER) "=====> Remove tfplugindocs comments..."
@@ -146,7 +125,7 @@ docs-provider: clean-ds
 
 	@ echo " "
 	# If this fails, there's a bigger issue.
-	lefthook run pre-commit --commands markdownlint
+	$(GOTOOLS) lefthook run pre-commit --commands markdownlint
 
 .PHONY: docs-cli
 ## docs-cli: [docs] Preview the Go library documentation on the CLI.
@@ -159,7 +138,7 @@ docs-cli:
 docs-serve:
 	@ $(HEADER) "=====> Displaying Go HTTP documentation..."
 	open http://localhost:6060/pkg/github.com/northwood-labs/terraform-provider-corefunc/corefunc/
-	godoc -index -links
+	$(GOTOOLS) godoc -index -links
 
 .PHONY: binsize
 ## binsize: [docs] Analyze the size of the binary by Go package.
@@ -246,20 +225,20 @@ bats: build clean
 acc:
 	@ $(HEADER) "=====> Running acceptance tests..."
 ifeq ($(DEBUG), true)
-	PROVIDER_DEBUG=1 TF_ACC=1 go test -run=TestAcc$(NAME) -count=1 -parallel=$(shell nproc) -timeout 30m -coverpkg=./corefuncprovider/... -coverprofile=__coverage.out -v ./corefuncprovider/...
+	PROVIDER_DEBUG=1 TF_ACC=1 $(GO) test -run=TestAcc$(NAME) -count=1 -parallel=$(shell nproc) -timeout 30m -coverpkg=./corefuncprovider/... -coverprofile=__coverage.out -v ./corefuncprovider/...
 else ifeq ($(TOFU), true)
-	TF_ACC_PROVIDER_NAMESPACE=northwood-labs TF_ACC_PROVIDER_HOST=registry.opentofu.org TF_ACC_TERRAFORM_PATH=$(shell which tofu) TF_ACC=1 gotestsum --format testname -- -run=TestAcc$(NAME) -count=1 -parallel=$(shell nproc) -timeout 30m -coverpkg=./corefuncprovider/... -coverprofile=__coverage.out -v ./corefuncprovider/...
+	TF_ACC_PROVIDER_NAMESPACE=northwood-labs TF_ACC_PROVIDER_HOST=registry.opentofu.org TF_ACC_TERRAFORM_PATH=$(shell which tofu) TF_ACC=1 $(GOTOOLS) gotestsum --format testname -- -run=TestAcc$(NAME) -count=1 -parallel=$(shell nproc) -timeout 30m -coverpkg=./corefuncprovider/... -coverprofile=__coverage.out -v ./corefuncprovider/...
 else
-	TF_ACC=1 gotestsum --format testname -- -run=TestAcc$(NAME) -count=1 -parallel=$(shell nproc) -timeout 30m -coverpkg=./corefuncprovider/... -coverprofile=__coverage.out -v ./corefuncprovider/...
+	TF_ACC=1 $(GOTOOLS) gotestsum --format testname -- -run=TestAcc$(NAME) -count=1 -parallel=$(shell nproc) -timeout 30m -coverpkg=./corefuncprovider/... -coverprofile=__coverage.out -v ./corefuncprovider/...
 endif
-	@ go-cover-treemap -coverprofile __coverage.out > acc-coverage.svg
+	@ $(GOTOOLS) go-cover-treemap -coverprofile __coverage.out > acc-coverage.svg
 	@ rsvg-convert --width=2000 --format=png --output="acc-coverage.png" "acc-coverage.svg"
 
 .PHONY: unit
 ## unit: [test] Runs unit tests. Set NAME= (without 'Test') to run a specific test by name.
 unit:
 	@ $(HEADER) "=====> Running unit tests..."
-	gotestsum --format testname -- -run=Test$(NAME) -count=1 -parallel=$(shell nproc) -timeout 30s -coverpkg=./corefunc/... -coverprofile=__coverage.out -v ./corefunc/...
+	$(GOTOOLS) gotestsum --format testname -- -run=Test$(NAME) -count=1 -parallel=$(shell nproc) -timeout 30s -coverpkg=./corefunc/... -coverprofile=__coverage.out -v ./corefunc/...
 	@ go-cover-treemap -coverprofile __coverage.out > unit-coverage.svg
 	@ rsvg-convert --width=2000 --format=png --output="unit-coverage.png" "unit-coverage.svg"
 
@@ -280,7 +259,7 @@ terratest:
 ## examples: [test] Runs tests for examples. Set NAME= (without 'Example') to run a specific test by name.
 examples:
 	@ $(HEADER) "=====> Running tests for examples..."
-	gotestsum --format testname -- -run=Example$(NAME) -count=1 -parallel=$(shell nproc) -timeout 30s -coverpkg=./corefunc/... -coverprofile=__coverage.out -v ./corefunc/...
+	$(GOTOOLS) gotestsum --format testname -- -run=Example$(NAME) -count=1 -parallel=$(shell nproc) -timeout 30s -coverpkg=./corefunc/... -coverprofile=__coverage.out -v ./corefunc/...
 
 .PHONY: fuzz
 ## fuzz: [test]* Runs the fuzzer for 1 minute per test.
@@ -304,13 +283,13 @@ bench:
 ## pgo: [test] Runs the benchmarks with enough data for use with Profile-Guided Optimization.
 pgo:
 	@ $(HEADER) "=====> Running benchmark for PGO data..."
-	TF_ACC=1 go test -run=^TestAcc -count=6 -timeout 60m -cpuprofile=default.pgo -parallel=$(shell nproc) ./corefuncprovider/...
+	TF_ACC=1 $(GO) test -run=^TestAcc -count=6 -timeout 60m -cpuprofile=default.pgo -parallel=$(shell nproc) ./corefuncprovider/...
 
 .PHONY: view-cov-cli
 ## view-cov-cli: [test] After running test or unittest, this will view the coverage report on the CLI.
 view-cov-cli:
 	@ $(HEADER) "=====> Viewing code coverage on the CLI..."
-	gocovsh --profile=__coverage.out
+	$(GOTOOLS) gocovsh --profile=__coverage.out
 
 .PHONY: view-cov-html
 ## view-cov-html: [test] After running test or unittest, this will launch a browser to view the coverage report.
