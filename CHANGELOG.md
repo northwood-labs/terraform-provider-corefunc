@@ -162,6 +162,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 
 * [`b3d1b1a`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/b3d1b1a0c70befc41e1281ffbb6b798f6b6cdf95): Added support for JSON and TOML conversions to the Go lib. ([@skyzyx](https://github.com/skyzyx))
 * [`3ddd389`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/3ddd38971ee63d75f8ae497df6ce26af081a3ba1): Add support for counting bytes in strings. ([@skyzyx](https://github.com/skyzyx))
+* [`76d9632`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/76d963276b5c63a6e6948f4f45a2c3942e144d6c): Adopt go tool in 1.24. ([@skyzyx](https://github.com/skyzyx))
+
+### <!-- ZZZ -->:gear: Miscellaneous Tasks
+
+* [`9bd54da`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/9bd54da2f1e7f2b0cc692fadb8e78b14a3bc0e61): Update the copyright year to 2025. ([@skyzyx](https://github.com/skyzyx))
 
 ## 1.5.1 — 2024-11-11
 
