@@ -146,6 +146,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`8257306`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/8257306cd93f8f8c8119e6638c0b050677959ac1): Upgraded all of the Go dependencies. ([@skyzyx](https://github.com/skyzyx))
 * [`255e11b`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/255e11b3f22ea8feb6800055f5a2b70c01804077): **deps**: Bump `step-security/harden-runner` from 2.11.0 to 2.12.0 ([#519](https://github.com/northwood-labs/terraform-provider-corefunc/issues/519)) ([@dependabot](https://github.com/dependabot))
 * [`2135209`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/2135209fb47fbfd82a7e81d033a42f0bcb3d765e): **deps**: Bump `goreleaser/goreleaser-action` from 6.2.1 to 6.3.0 ([#505](https://github.com/northwood-labs/terraform-provider-corefunc/issues/505)) ([@dependabot](https://github.com/dependabot))
+* [`080d4eb`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/080d4eb18d3bde7a1c9ac82b7189cc9c7cfb63f2): **deps**: Bump `golangci/golangci-lint-action` from 6.5.2 to 8.0.0 ([#523](https://github.com/northwood-labs/terraform-provider-corefunc/issues/523)) ([@dependabot](https://github.com/dependabot))
 
 ### :test_tube: Testing
 
