@@ -11,7 +11,9 @@
 
 # Shell
 SHELL:=bash
-GUMCHECK := $(shell command -v gum 2> /dev/null)
+GO:=$(shell which go)
+GOTOOLS:=$(GO) tool -modfile=go.tools.mod
+GUMCHECK:=$(shell command -v $(GOTOOLS) gum 2> /dev/null)
 
 # Color stuff
 HASH := \#
@@ -23,15 +25,14 @@ BORDER:=echo
 HEADER:=echo
 
 ifdef GUMCHECK
-	YELLOW:=gum style --foreground='$(FOREGROUND)' --bold
-	WHITE:=gum style --bold
-	ERROR:=gum style --foreground='$(HASH)FFFFFF' --background='$(HASH)CC0000' --bold --padding='0 1'
-	BORDER:=gum style --foreground='$(HASH)FFFFFF' --border='rounded' --border-foreground='240' --padding='0 1' --margin='1 0'
-	HEADER:=gum style --foreground='$(FOREGROUND)' --border='rounded' --border-foreground='12' --bold --width='78' --padding='0 1' --margin='1 0 0 0'
+	YELLOW:=$(GOTOOLS) gum style --foreground='$(FOREGROUND)' --bold
+	WHITE:=$(GOTOOLS) gum style --bold
+	ERROR:=$(GOTOOLS) gum style --foreground='$(HASH)FFFFFF' --background='$(HASH)CC0000' --bold --padding='0 1'
+	BORDER:=$(GOTOOLS) gum style --foreground='$(HASH)FFFFFF' --border='rounded' --border-foreground='240' --padding='0 1' --margin='1 0'
+	HEADER:=$(GOTOOLS) gum style --foreground='$(FOREGROUND)' --border='rounded' --border-foreground='12' --bold --width='78' --padding='0 1' --margin='1 0 0 0'
 endif
 
 # Tooling
-GO=$(shell which go)
 NEXT_VERSION ?= $(shell git cliff --bump --unreleased --context | jq -r .[0].version)
 
 #-------------------------------------------------------------------------------
@@ -45,7 +46,7 @@ help:
 ifndef GUMCHECK
 	@ echo "==================================================================="
 	@ echo "IMPORTANT:"
-	@ echo "  Run 'make install-tools-mac' to install developer tools."
+	@ echo "  Run 'make install-tools' to install developer tools."
 	@ echo "==================================================================="
 	@ echo ""
 endif
