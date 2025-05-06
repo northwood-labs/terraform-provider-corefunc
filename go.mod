@@ -9,7 +9,10 @@ replace (
 	github.com/imdario/mergo => github.com/imdario/mergo v0.3.16
 )
 
-replace github.com/imdario/mergo => github.com/imdario/mergo v0.3.16
+replace (
+	github.com/Sirupsen/logrus => github.com/sirupsen/logrus v1.9.4-0.20241118143825-d1e633264448
+	github.com/imdario/mergo => github.com/imdario/mergo v0.3.16
+)
 
 require (
 	github.com/apparentlymart/go-cidr v1.1.0
