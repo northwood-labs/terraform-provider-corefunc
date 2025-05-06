@@ -6,7 +6,7 @@ include ./standard.mk
 # go install golang.org/dl/go{VERSION}@latest
 # go{VERSION} download
 GO=$(shell which go)
-GO_VER=1.23
+GO_VER=1.23.0
 GOBIN=$(shell ./find-go-bin.sh)
 BINARY_NAME=terraform-provider-corefunc
 
