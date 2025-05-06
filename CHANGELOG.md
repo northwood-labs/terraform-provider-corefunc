@@ -139,6 +139,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`ac97be5`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/ac97be5e6d53a5271107e1d4b4d10811a7a99163): **deps**: Bump `github/codeql-action` from 3.28.16 to 3.28.17 ([#524](https://github.com/northwood-labs/terraform-provider-corefunc/issues/524)) ([@dependabot](https://github.com/dependabot))
 * [`c45cf75`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/c45cf75e068bba7b5637e2ae67b1f377b5b3ae47): **deps**: Bump `trufflesecurity/trufflehog` from 3.88.27 to 3.88.28 ([#525](https://github.com/northwood-labs/terraform-provider-corefunc/issues/525)) ([@dependabot](https://github.com/dependabot))
 * [`8257306`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/8257306cd93f8f8c8119e6638c0b050677959ac1): Upgraded all of the Go dependencies. ([@skyzyx](https://github.com/skyzyx))
+* [`255e11b`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/255e11b3f22ea8feb6800055f5a2b70c01804077): **deps**: Bump `step-security/harden-runner` from 2.11.0 to 2.12.0 ([#519](https://github.com/northwood-labs/terraform-provider-corefunc/issues/519)) ([@dependabot](https://github.com/dependabot))
+* [`2135209`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/2135209fb47fbfd82a7e81d033a42f0bcb3d765e): **deps**: Bump `goreleaser/goreleaser-action` from 6.2.1 to 6.3.0 ([#505](https://github.com/northwood-labs/terraform-provider-corefunc/issues/505)) ([@dependabot](https://github.com/dependabot))
 
 ### :test_tube: Testing
 
@@ -147,6 +149,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`6715123`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/671512374d7875e42b30c86681c1850b20b8b869): Add Terraform 1.10-beta and 1.11-alpha to the test matrix. ([@skyzyx](https://github.com/skyzyx))
 * [`8fb5f6d`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/8fb5f6dc925f96e2e82ede7dd28a5fdbce5a9dc3): Remove Terraform 1.10-beta and 1.11-alpha from the test matrix. ([@skyzyx](https://github.com/skyzyx))
 * [`be38c26`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/be38c265e2c7094c4c9a94110df961f8a41f09a8): Update the name of the automation bot. ([@skyzyx](https://github.com/skyzyx))
+* [`fd4e77f`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/fd4e77ffb9765228983879adad75e01f19ac34be): Added more endpoints for security check. ([@skyzyx](https://github.com/skyzyx))
 
 ### <!-- 0 -->:rocket: Features
 
