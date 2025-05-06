@@ -33,6 +33,7 @@ jobs:
             api.securityscorecards.dev:443
             checkpoint-api.hashicorp.com:443
             fulcio.sigstore.dev:443
+            get.opentofu.org:443
             ghcr.io:443
             github.com:443
             gitlab.com:443
