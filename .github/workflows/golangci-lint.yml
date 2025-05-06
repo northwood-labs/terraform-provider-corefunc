@@ -31,12 +31,35 @@ jobs:
           disable-sudo: true
           egress-policy: block
           allowed-endpoints: >
+            api.cloudflare.com:443
+            api.deps.dev:443
             api.github.com:443
+            api.gumroad.com:443
+            api.osv.dev:443
+            api.scorecard.dev:443
+            api.securityscorecards.dev:443
+            checkpoint-api.hashicorp.com:443
+            fulcio.sigstore.dev:443
+            get.opentofu.org:443
+            ghcr.io:443
             github.com:443
+            gitlab.com:443
+            golang.org:443
+            goreleaser.com:443
             objects.githubusercontent.com:443
+            oss-fuzz-build-logs.storage.googleapis.com:443
+            osv-vulnerabilities.storage.googleapis.com:443
+            pkg-containers.githubusercontent.com:443
             proxy.golang.org:443
+            registry.npmjs.org:443
+            rekor.sigstore.dev:443
+            releases.hashicorp.com:443
             storage.googleapis.com:443
             sum.golang.org:443
+            tuf-repo-cdn.sigstore.dev:443
+            uploads.github.com:443
+            vuln.go.dev:443
+            www.bestpractices.dev:443
 
       - name: Checkout Source
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
