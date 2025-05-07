@@ -23,7 +23,7 @@ require (
 	github.com/lithammer/dedent v1.1.0
 	github.com/mattn/go-runewidth v0.0.16
 	github.com/mitchellh/go-homedir v1.1.0
-	github.com/nlnwa/whatwg-url v0.5.0
+	github.com/nlnwa/whatwg-url v0.6.2
 	github.com/northwood-labs/cli-helpers v0.0.0-20250409233632-b1f9923abea7
 	github.com/pelletier/go-toml/v2 v2.2.4
 	github.com/spf13/cobra v1.9.1
