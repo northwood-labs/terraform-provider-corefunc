@@ -240,7 +240,9 @@ var (
 			Query:         "q=1",
 			Hash:          "",
 			Fragment:      "",
-			DecodedPort:   8080, // lint:allow_raw_number
+			DecodedPort:   80, // lint:allow_raw_number
+			// DecodedPort used to return 8080, but was fixed in v0.5.1 to match the Safe Browsing spec.
+			// https://developers.google.com/safe-browsing/v4/urls-hashing#suffixprefix-expressions
 		},
 		"GOOGLE SAFE: HTTPs://example.com": {
 			Canonicalizer: "google_safe_browsing",
