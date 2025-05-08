@@ -1,4 +1,4 @@
-# Terraform/OpenTofu Provider: Core Functions
+# Core Functions
 
 [![Terraform Docs](https://img.shields.io/badge/Terraform-Docs-7B42BC?style=for-the-badge)](https://registry.terraform.io/providers/northwood-labs/corefunc/latest/docs)
 [![OpenTofu Docs](https://img.shields.io/badge/OpenTofu-Docs-FEDA15?style=for-the-badge)](https://search.opentofu.org/provider/northwood-labs/corefunc/latest)
@@ -16,24 +16,15 @@
 
 ## Overview
 
-Utilities that should have been Terraform/OpenTofu _core functions_.
+Core functions with identical implementations for [Terraform], [OpenTofu], [Terratest], and other software in the so-called _Terra/Fu_ ecosystem.
 
-While some of these _can_ be implemented in HCL, some of them begin to push up against the limits of Terraform and the HCL2 configuration language. We also perform testing using the [Terratest](https://terratest.gruntwork.io) framework on a regular basis. Exposing these functions as both a Go library as well as a Terraform/OpenTofu provider enables us to use the same functionality in both our Terraform/OpenTofu applies as well as while using a testing framework.
+While some of these _can_ be implemented in HCL, some of them begin to push up against the limits of Terraform and the HCL2 configuration language. Exposing these functions as both a Go library as well as a Terraform/OpenTofu provider enables us to use the same functionality in both our Terraform/OpenTofu applies as well as while using a testing framework.
 
-> [!NOTE]
-> While it’s common knowledge that Terraform is great at standing up and managing Cloud infrastructure, it’s also good at running _anything with an API_. People regularly manage [code repositories], [DNS records], [feature flags], [identity and access management], [content delivery], [passwords], [monitoring], [alerts], [zero trust network access], [cryptographic signatures], and can even [order a pizza].
->
-> This provider is more analogous to HashiCorp’s _utility_ providers such as [local], [external], and [archive].
-
-Since earlier versions of Terraform/OpenTofu didn't have the concept of user-defined functions, the next step to open up the possibilities was to write a custom Provider which has the functions built-in, using existing support for inputs and outputs.
-
-**This does not add new syntax or constructs.** Instead it uses the _existing_ concepts around Providers, Resources, Data Sources, Variables, Outputs, and Functions to expose new custom-built functionality.
-
-The goal of this provider is not to call any APIs, but to provide pre-built functions in the form of _Data Sources_ or _Provider Functions_.
+The goal of this provider is not to call any network APIs, but to provide pre-built functions in the form of _Data Sources_ or _Provider Functions_.
 
 ## Vote for features!
 
-[View the list of issues](https://github.com/northwood-labs/terraform-provider-corefunc/issues?q=is%3Aissue+is%3Aopen+sort%3Areactions-%2B1-desc), and give a thumbs-up to the ones you'd like to see. This is how I prioritize the work.
+[View the list of issues](https://github.com/northwood-labs/terraform-provider-corefunc/issues?q=is%3Aissue+is%3Aopen+sort%3Areactions-%2B1-desc), and give a thumbs-up to the ones you'd like to see. This is how we prioritize the work.
 
 ## Compatibility testing
 
@@ -41,14 +32,14 @@ The goal of this provider is not to call any APIs, but to provide pre-built func
 * We intend for the Go libraries to work with all non-EOL versions of Go (i.e., current, current-1).
 * Built using the [Terraform Plugin Framework][TPF], which speaks [Terraform Protocol v6][tfproto6].
 
-| Testing type | Details           | Description                                                                    |
-|--------------|-------------------|--------------------------------------------------------------------------------|
-| integration  | Terraform 1.0–1.9 | Executes the provider with this release, pulling from `registry.terraform.io`. |
-| integration  | OpenTofu 1.6–1.8  | Executes the provider with this release, pulling from `registry.opentofu.org`. |
-| unit         | Go 1.22–1.23      | Tests using these versions.                                                    |
-| mutation     | Go 1.22–1.23      | Tests using these versions.                                                    |
-| fuzz         | Go 1.22–1.23      | Tests using these versions.                                                    |
-| terratest    | Go 1.22–1.23      | Tests using these versions.                                                    |
+| Testing type | Details            | Description                                                                    |
+|--------------|--------------------|--------------------------------------------------------------------------------|
+| integration  | Terraform 1.0–1.11 | Executes the provider with this release, pulling from `registry.terraform.io`. |
+| integration  | OpenTofu 1.6–1.9   | Executes the provider with this release, pulling from `registry.opentofu.org`. |
+| unit         | Go 1.23–1.24       | Tests using these versions.                                                    |
+| mutation     | Go 1.23–1.24       | Tests using these versions.                                                    |
+| fuzz         | Go 1.23–1.24       | Tests using these versions.                                                    |
+| terratest    | Go 1.23–1.24       | Tests using these versions.                                                    |
 
 ## Usage Examples
 
@@ -108,8 +99,11 @@ terraform-provider-corefunc version
 [identity and access management]: https://registry.terraform.io/providers/okta/okta/latest/docs
 [local]: https://registry.terraform.io/providers/hashicorp/local/latest/docs
 [monitoring]: https://registry.terraform.io/providers/DataDog/datadog/latest
+[OpenTofu]: https://opentofu.org
 [order a pizza]: https://registry.terraform.io/providers/MNThomson/dominos/latest/docs
 [passwords]: https://registry.terraform.io/providers/1Password/onepassword/latest/docs
+[Terraform]: https://terraform.io
+[Terratest]: https://terratest.gruntwork.io
 [tfproto6]: https://developer.hashicorp.com/terraform/plugin/terraform-plugin-protocol#protocol-version-6
 [TPF]: https://github.com/hashicorp/terraform-plugin-framework
 [zero trust network access]: https://registry.terraform.io/providers/zscaler/zpa/latest/docs
