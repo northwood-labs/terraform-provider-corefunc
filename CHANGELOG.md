@@ -17,6 +17,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 
 * [`106427d`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/106427d5a1958e1001894d53596178b8be29bec3): Updated the `docs/index.md` for registries. ([@skyzyx](https://github.com/skyzyx))
 * [`765357b`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/765357bf63c62127696f1684cac6f40207c6f8d4): Update `README.md` ([@skyzyx](https://github.com/skyzyx))
+* [`2b54080`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/2b54080f19f4b739c08c465fc4e9f29d92fabdad): Updated the `README.md`. ([@skyzyx](https://github.com/skyzyx))
 
 ### :dependabot: Building and Dependencies
 
