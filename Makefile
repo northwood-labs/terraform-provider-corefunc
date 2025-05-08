@@ -57,7 +57,6 @@ tidy:
 godeps:
 	@ $(HEADER) "=====> Upgrade the minor versions of Go dependencies..."
 	find . -type f -name "go.mod" | xargs -I% dirname "%" | xargs -I@ bash -c 'cd "@" && $(GO) mod tidy -go=$(GO_VER) && $(GO) get -u -t -v ./...'
-	$(GO) get github.com/nlnwa/whatwg-url@v0.5.0
 
 	@ echo ""
 	@ $(YELLOW) "Run 'make tidy' to clean up the go.mod file."
