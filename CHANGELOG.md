@@ -142,6 +142,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`255e11b`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/255e11b3f22ea8feb6800055f5a2b70c01804077): **deps**: Bump `step-security/harden-runner` from 2.11.0 to 2.12.0 ([#519](https://github.com/northwood-labs/terraform-provider-corefunc/issues/519)) ([@dependabot](https://github.com/dependabot))
 * [`2135209`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/2135209fb47fbfd82a7e81d033a42f0bcb3d765e): **deps**: Bump `goreleaser/goreleaser-action` from 6.2.1 to 6.3.0 ([#505](https://github.com/northwood-labs/terraform-provider-corefunc/issues/505)) ([@dependabot](https://github.com/dependabot))
 * [`080d4eb`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/080d4eb18d3bde7a1c9ac82b7189cc9c7cfb63f2): **deps**: Bump `golangci/golangci-lint-action` from 6.5.2 to 8.0.0 ([#523](https://github.com/northwood-labs/terraform-provider-corefunc/issues/523)) ([@dependabot](https://github.com/dependabot))
+* [`6abd16e`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/6abd16ef312315dd8dd163db1423d3fff1b3274a): **deps**: Bump `github.com/nlnwa/whatwg-url` from 0.5.0 to 0.6.2 ([#526](https://github.com/northwood-labs/terraform-provider-corefunc/issues/526)) ([@dependabot](https://github.com/dependabot))
 
 ### :test_tube: Testing
 
@@ -158,6 +159,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`b3d1b1a`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/b3d1b1a0c70befc41e1281ffbb6b798f6b6cdf95): Added support for JSON and TOML conversions to the Go lib. ([@skyzyx](https://github.com/skyzyx))
 * [`3ddd389`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/3ddd38971ee63d75f8ae497df6ce26af081a3ba1): Add support for counting bytes in strings. ([@skyzyx](https://github.com/skyzyx))
 * [`76d9632`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/76d963276b5c63a6e6948f4f45a2c3942e144d6c): Adopt go tool in 1.24. ([@skyzyx](https://github.com/skyzyx))
+
+### <!-- 1 -->:bug: Bug Fixes
+
+* [`ea296fb`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/ea296fbf7a23b81abed7bc68009d3d098b4b0a76): Updated the URLParse tests to match Google Safe Browsing rules. ([@skyzyx](https://github.com/skyzyx))
 
 ### <!-- ZZZ -->:gear: Miscellaneous Tasks
 
@@ -950,4 +955,4 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`eb9f7ae`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/eb9f7aecfdaa7bda9087b9b58229d3943571a863): Update the GoReleaser configuration. ([@skyzyx](https://github.com/skyzyx))
 * [`a01b12e`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/a01b12e6870b821f561624bca79407e4c87c73cf): Trying to get the build to work. ([@skyzyx](https://github.com/skyzyx))
 
-<p>Generated on 2025-05-06.</p>
+<p>Generated on 2025-05-08.</p>
