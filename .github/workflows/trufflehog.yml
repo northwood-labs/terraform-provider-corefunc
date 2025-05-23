@@ -67,7 +67,7 @@ jobs:
           fetch-depth: 0
 
       - name: Check secrets with TruffleHog OSS
-        uses: trufflesecurity/trufflehog@a6a4aedd6b110021ddcd7c988132c3b96fb2a868 # v3.88.32
+        uses: trufflesecurity/trufflehog@3bba2773e004e7332328badd8d7296057049d44d # v3.88.33
         with:
           path: ./
           head: HEAD
