@@ -25,6 +25,7 @@ require (
 	github.com/mitchellh/go-homedir v1.1.0
 	github.com/nlnwa/whatwg-url v0.6.2
 	github.com/northwood-labs/cli-helpers v0.0.0-20250409233632-b1f9923abea7
+	github.com/northwood-labs/debug v0.0.0-20240514204655-f938e2fa11e9
 	github.com/pelletier/go-toml/v2 v2.2.4
 	github.com/spf13/cobra v1.9.1
 	github.com/stretchr/testify v1.10.0
@@ -45,6 +46,7 @@ require (
 	github.com/charmbracelet/x/term v0.2.1 // indirect
 	github.com/cloudflare/circl v1.6.1 // indirect
 	github.com/davecgh/go-spew v1.1.2-0.20180830191138-d8f796af33cc // indirect
+	github.com/dcarbone/terraform-plugin-framework-utils/v3 v3.8.0 // indirect
 	github.com/erikgeiser/coninput v0.0.0-20211004153227-1c3628e74d0f // indirect
 	github.com/fatih/color v1.18.0 // indirect
 	github.com/golang/protobuf v1.5.4 // indirect

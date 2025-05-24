@@ -16,8 +16,13 @@
 package corefuncprovider
 
 import (
+	"context"
 	"runtime"
 	"strings"
+
+	"github.com/hashicorp/terraform-plugin-framework/attr"
+	"github.com/hashicorp/terraform-plugin-framework/diag"
+	"github.com/hashicorp/terraform-plugin-framework/types"
 )
 
 const (
@@ -48,9 +53,32 @@ func traceFuncName() string { // lint:allow_unused
 }
 
 func linkPackage(functionName string) string {
-	return "[`corefunc." +
-		functionName +
-		"()`](https://pkg.go.dev/github.com/northwood-labs/terraform-provider-corefunc/corefunc#" +
-		functionName +
-		")"
+	return "[`corefunc." + functionName + "()`]" +
+		"(https://pkg.go.dev/github.com/northwood-labs/terraform-provider-corefunc/" +
+		"corefunc#" + functionName + ")"
+}
+
+func code(s string) string {
+	return "`" + s + "`"
+}
+
+func convertTFMapToGoMap(ctx context.Context, m types.Map) (map[string]attr.Value, diag.Diagnostics) {
+    goObject := make(map[string]attr.Value)
+
+	// Read from the Terraform data into the map
+    if diags := m. ElementsAs(ctx, &goObject, false); diags != nil {
+        return nil, diags
+    }
+
+	return goObject, nil
+}
+
+func convertGoMapToTFMap(ctx context.Context, gm map[string]any) (types.Map, diag.Diagnostics) {
+	mappedValue, diags := types.MapValueFrom(ctx, types.StringType, gm)
+
+	if diags != nil {
+        return types.MapNull(nil), diags
+    }
+
+	return mappedValue, nil
 }

@@ -1,0 +1,11 @@
+data "corefunc_map_key_if" "tags" {
+  condition = {{ .Condition }}
+  map       = tomap({
+    application = "example"
+    environment = "production"
+  })
+  key       = "test"
+  value     = {{ .Value }}
+}
+
+#=> {{ .Expected }}

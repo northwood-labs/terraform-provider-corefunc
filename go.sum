@@ -48,6 +48,8 @@ github.com/davecgh/go-spew v1.1.0/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSs
 github.com/davecgh/go-spew v1.1.1/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/davecgh/go-spew v1.1.2-0.20180830191138-d8f796af33cc h1:U9qPSI2PIWSS1VwoXQT9A3Wy9MM3WgvqSxFWenqJduM=
 github.com/davecgh/go-spew v1.1.2-0.20180830191138-d8f796af33cc/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
+github.com/dcarbone/terraform-plugin-framework-utils/v3 v3.8.0 h1:bFnZbyrgJkTddRFuh3MfJ0jYflIE1R+UvwzjCw4bQEg=
+github.com/dcarbone/terraform-plugin-framework-utils/v3 v3.8.0/go.mod h1:LCHk92HQWf/vxnpA8BmiDMiigAJOWgqyzBD52HIqVGE=
 github.com/emirpasic/gods v1.18.1 h1:FXtiHYKDGKCW2KzwZKx0iC0PQmdlorYgdFG9jPXJ1Bc=
 github.com/emirpasic/gods v1.18.1/go.mod h1:8tpGGwCnJ5H4r6BWwaV6OrWmMoPhUl5jm/FMNAnJvWQ=
 github.com/erikgeiser/coninput v0.0.0-20211004153227-1c3628e74d0f h1:Y/CXytFA4m6baUTXGLOoWe4PQhGxaX0KpnayAqC48p4=
@@ -192,6 +194,8 @@ github.com/northwood-labs/archstring v0.0.0-20240514202917-e9357b4b91c8 h1:H7u8m
 github.com/northwood-labs/archstring v0.0.0-20240514202917-e9357b4b91c8/go.mod h1:Qhra/q/Lf44v49IQFck2KopjfPq4jUGu4CI0w59BQtI=
 github.com/northwood-labs/cli-helpers v0.0.0-20250409233632-b1f9923abea7 h1:CTo59UiUCvNmCO3B+dNsJsSx9G945ilrK0SPGtSeBjs=
 github.com/northwood-labs/cli-helpers v0.0.0-20250409233632-b1f9923abea7/go.mod h1:9nU9jyAcMdFXuIpr34TWJjxRJcApUcWqo25WiPmWIGg=
+github.com/northwood-labs/debug v0.0.0-20240514204655-f938e2fa11e9 h1:Uuy/Obqj8z6MCER8y0geETA0894Ulo0hqM71u9WtcuQ=
+github.com/northwood-labs/debug v0.0.0-20240514204655-f938e2fa11e9/go.mod h1:fu3Hu+ET7MkBAws624vkPDnehxuY/L8AJuR3nlKw64k=
 github.com/oklog/run v1.1.0 h1:GEenZ1cK0+q0+wsJew9qUg/DyD8k3JzYsZAi5gYi2mA=
 github.com/oklog/run v1.1.0/go.mod h1:sVPdnTZT1zYwAJeCMu2Th4T21pA3FPOQRfWjQlk7DVU=
 github.com/pelletier/go-toml/v2 v2.2.4 h1:mye9XuhQ6gvn5h28+VilKrrPoQVanw5PMw/TB0t5Ec4=
