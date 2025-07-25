@@ -198,6 +198,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`be38c26`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/be38c265e2c7094c4c9a94110df961f8a41f09a8): Update the name of the automation bot. ([@skyzyx](https://github.com/skyzyx))
 * [`fd4e77f`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/fd4e77ffb9765228983879adad75e01f19ac34be): Added more endpoints for security check. ([@skyzyx](https://github.com/skyzyx))
 * [`844d11e`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/844d11ebd6498e449e959ea7215a580251a13bae): Added more endpoints for security check. ([@skyzyx](https://github.com/skyzyx))
+* [`2ea7054`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/2ea7054e8c5321e0182101dd9b81de4894130bc0): Update `osv-scanner.yml` ([@skyzyx](https://github.com/skyzyx))
+* [`8420be7`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/8420be75c3c4511f9243cff81f8c200da3653b6d): Update `test.yml` ([@skyzyx](https://github.com/skyzyx))
+* [`d01afab`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/d01afab83ea87b5c21d7b3f9a32eaffe5e0039b0): Update `update-on-push.yml` ([@skyzyx](https://github.com/skyzyx))
 
 ### <!-- 0 -->:rocket: Features
 
@@ -1004,4 +1007,4 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`eb9f7ae`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/eb9f7aecfdaa7bda9087b9b58229d3943571a863): Update the GoReleaser configuration. ([@skyzyx](https://github.com/skyzyx))
 * [`a01b12e`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/a01b12e6870b821f561624bca79407e4c87c73cf): Trying to get the build to work. ([@skyzyx](https://github.com/skyzyx))
 
-<p>Generated on 2025-05-08.</p>
+<p>Generated on 2025-07-25.</p>
