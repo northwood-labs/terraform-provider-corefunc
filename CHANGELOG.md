@@ -219,6 +219,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 
 * [`ea296fb`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/ea296fbf7a23b81abed7bc68009d3d098b4b0a76): Updated the URLParse tests to match Google Safe Browsing rules. ([@skyzyx](https://github.com/skyzyx))
 * [`54ab110`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/54ab110278346b48b968229bcc7584e15f7069f3): Stop rolling back to github.com/nlnwa/whatwg-url@v0.5.0 on tidy. ([@skyzyx](https://github.com/skyzyx))
+* [`7f174e0`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/7f174e01fb45486f78258024ac2da5c59dd98cfc): Remove git-cliff from history. ([@skyzyx](https://github.com/skyzyx))
 
 ### <!-- ZZZ -->:gear: Miscellaneous Tasks
 
