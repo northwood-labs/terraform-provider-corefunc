@@ -1,8 +1,8 @@
 
-<svg
-	xmlns="http://www.w3.org/2000/svg"
-	xmlns:xlink="http://www.w3.org/1999/xlink"
-	viewBox="0 0 1028.000000 640.000000"
+<svg 
+	xmlns="http://www.w3.org/2000/svg" 
+	xmlns:xlink="http://www.w3.org/1999/xlink" 
+	viewBox="0 0 1028.000000 640.000000" 
 	style="background: white none repeat scroll 0% 0%;"
 >
 
@@ -13,9 +13,9 @@
 	data-notex="1"
 	text-anchor="start"
 	transform="translate(28.000000,35.600000) scale(1.000000)"
-	style="font-family: Open Sans, verdana, arial, sans-serif !important; font-size: 12px; fill: rgb(0, 0, 0); fill-opacity: 1.00; white-space: pre;"
+	style="font-family: Open Sans, verdana, arial, sans-serif !important; font-size: 12px; fill: rgb(0, 0, 0); fill-opacity: 1.00; white-space: pre;" 
 	data-math="N">github.com/northwood-labs/terraform-provider-corefunc/corefunc</text>
-
+		
 </g>
 
 
@@ -28,7 +28,7 @@
 	transform="translate(381.467626,57.200000) scale(1.000000)"
 	style="font-family: Open Sans, verdana, arial, sans-serif !important; font-size: 12px; fill: rgb(0, 0, 0); fill-opacity: 1.00; white-space: pre;"
 	data-math="N">base64gunzip.go</text>
-
+		
 </g>
 
 
@@ -41,7 +41,7 @@
 	transform="translate(846.791367,261.341176) scale(1.000000)"
 	style="font-family: Open Sans, verdana, arial, sans-serif !important; font-size: 12px; fill: rgb(255, 255, 255); fill-opacity: 1.00; white-space: pre;"
 	data-math="N">caps.go</text>
-
+		
 </g>
 
 
@@ -54,7 +54,7 @@
 	transform="translate(381.467626,398.307692) scale(1.000000)"
 	style="font-family: Open Sans, verdana, arial, sans-serif !important; font-size: 12px; fill: rgb(255, 255, 255); fill-opacity: 1.00; white-space: pre;"
 	data-math="N">cidr.go</text>
-
+		
 </g>
 
 
@@ -67,7 +67,7 @@
 	transform="translate(656.431655,454.141176) scale(1.000000)"
 	style="font-family: Open Sans, verdana, arial, sans-serif !important; font-size: 12px; fill: rgb(0, 0, 0); fill-opacity: 1.00; white-space: pre;"
 	data-math="N">env_ensure.go</text>
-
+		
 </g>
 
 
@@ -80,7 +80,7 @@
 	transform="translate(836.215827,57.200000) scale(1.000000)"
 	style="font-family: Open Sans, verdana, arial, sans-serif !important; font-size: 12px; fill: rgb(255, 255, 255); fill-opacity: 1.00; white-space: pre;"
 	data-math="N">file.go</text>
-
+		
 </g>
 
 
@@ -93,7 +93,7 @@
 	transform="translate(926.107914,454.141176) scale(0.686376)"
 	style="font-family: Open Sans, verdana, arial, sans-serif !important; font-size: 12px; fill: rgb(0, 0, 0); fill-opacity: 1.00; white-space: pre;"
 	data-math="N">homedir.go</text>
-
+		
 </g>
 
 
@@ -106,7 +106,7 @@
 	transform="translate(926.107914,590.235294) scale(0.686376)"
 	style="font-family: Open Sans, verdana, arial, sans-serif !important; font-size: 12px; fill: rgb(255, 255, 255); fill-opacity: 1.00; white-space: pre;"
 	data-math="N">int_pad.go</text>
-
+		
 </g>
 
 
@@ -132,7 +132,7 @@
 	transform="translate(813.742806,454.141176) scale(0.383529)"
 	style="font-family: Open Sans, verdana, arial, sans-serif !important; font-size: 12px; fill: rgb(255, 255, 255); fill-opacity: 1.00; white-space: pre;"
 	data-math="N">str_iterative_replace.go</text>
-
+		
 </g>
 
 
@@ -145,7 +145,7 @@
 	transform="translate(656.431655,57.200000) scale(1.000000)"
 	style="font-family: Open Sans, verdana, arial, sans-serif !important; font-size: 12px; fill: rgb(0, 0, 0); fill-opacity: 1.00; white-space: pre;"
 	data-math="N">str_pad.go</text>
-
+		
 </g>
 
 
@@ -156,9 +156,9 @@
 	data-notex="1"
 	text-anchor="start"
 	transform="translate(36.000000,57.200000) scale(1.000000)"
-	style="font-family: Open Sans, verdana, arial, sans-serif !important; font-size: 12px; fill: rgb(0, 0, 0); fill-opacity: 1.00; white-space: pre;"
+	style="font-family: Open Sans, verdana, arial, sans-serif !important; font-size: 12px; fill: rgb(0, 0, 0); fill-opacity: 1.00; white-space: pre;" 
 	data-math="N">toml.go</text>
-
+		
 </g>
 
 
@@ -184,7 +184,7 @@
 	transform="translate(656.431655,261.341176) scale(1.000000)"
 	style="font-family: Open Sans, verdana, arial, sans-serif !important; font-size: 12px; fill: rgb(0, 0, 0); fill-opacity: 1.00; white-space: pre;"
 	data-math="N">url.go</text>
-
+		
 </g>
 
 </svg>
