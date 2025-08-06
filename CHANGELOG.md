@@ -611,6 +611,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`f12cb98`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/f12cb98207e871da9b625a070b354e559a7fa284): Update `osv-scanner.yml` ([@skyzyx](https://github.com/skyzyx))
 * [`4190ffb`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/4190ffb8cb897eac42f467278ccd59786614521a): Update `test.yml` ([@skyzyx](https://github.com/skyzyx))
 * [`25fd5b0`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/25fd5b07f1b0575dc91e1705db0bca4120db6cf1): Update `update-on-push.yml` ([@skyzyx](https://github.com/skyzyx))
+* [`f585214`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/f5852144822e409ddef3317022e440c34081791b): Re-ran test suite, which generated code coverage graphs. ([@skyzyx](https://github.com/skyzyx))
 
 ### :tractor: Refactor
 
