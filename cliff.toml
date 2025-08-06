@@ -6,12 +6,12 @@
 # See documentation for more information on available options.
 
 [remote.github]
-owner = "northwood-labs"
-repo  = "terraform-provider-corefunc"
-# token = ""
+  owner = "northwood-labs"
+  repo = "terraform-provider-corefunc"
+  # token = ""
 
 [changelog]
-header = """
+  header = """
 # CHANGELOG
 
 All notable changes to this project will be documented in this file.
@@ -19,9 +19,9 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com), adheres to [Semantic Versioning](https://semver.org), and uses [Conventional Commit](https://www.conventionalcommits.org) syntax.
 """
 
-# template for the changelog body
-# https://keats.github.io/tera/docs/#introduction
-body = """
+  # template for the changelog body
+  # https://keats.github.io/tera/docs/#introduction
+  body = """
 {% if version %}
   ## {{ version | trim_start_matches(pat="v") }} — {{ timestamp | date(format="%Y-%m-%d") }}
   {% if previous.version %}
@@ -40,7 +40,7 @@ body = """
     * {% if commit.breaking %}**[BC BREAK]** {% endif %}\
     [`{{ commit.id | truncate(length=7, end="") }}`]({{ self::remote_url() }}/commit/{{ commit.id }}): {% if commit.scope %}\
     **{{ commit.scope }}**: {% endif %}{{ commit_message | split(pat="\n") | first | upper_first | trim_end }} \
-    ({% if commit.github.username %}[@{{ commit.github.username | replace(from="[bot]", to="") }}](https://github.com/{{ commit.github.username | replace(from="[bot]", to="") }}){%- endif -%})\
+    ({% if commit.remote.username %}[@{{ commit.remote.username | replace(from="[bot]", to="") }}](https://github.com/{{ commit.remote.username | replace(from="[bot]", to="") }}){%- endif -%})\
   {%- endfor %}
 {% endfor %}
 {%- macro remote_url() -%}
@@ -48,89 +48,89 @@ body = """
 {%- endmacro -%}
 """
 
-# remove the leading and trailing whitespace from the template
-trim = true
+  # remove the leading and trailing whitespace from the template
+  trim = true
 
-# changelog footer
-footer = """
+  # changelog footer
+  footer = """
 
 <p>Generated on {{ now() | date(format="%Y-%m-%d") }}.</p>
 """
 
-postprocessors = [
-  { pattern = "linrinf", replace = "linting" },
-  { pattern = "storage.googleapis.com:433", replace = "`storage.googleapis.com:443`" },
-  { pattern = "([^ ]+)\\(\\)", replace = "`$0`" },
-  { pattern = "AUTHORS|CONTRIBUTORS|CONTRIBUTING|README", replace = "$0.md" },
-  { pattern = "([^ ]+)\\.md", replace = "`$0`" },
-  { pattern = "([^ ]+)\\.ya?ml", replace = "`$0`" },
-  { pattern = "\\.md\\.md", replace = ".md" },
-  { pattern = "go\\.(mod|sum)", replace = "`$0`" },
-  { pattern = "(?i)pkg\\.go\\.dev", replace = "`$0`" },
-  { pattern = "corefunc_([^(\\.|\\s)]+)", replace = "`$0`" },
-  { pattern = "Bump ([^ ]+)", replace = "Bump `$1`" },
-  { pattern = "\\(#([0-9]+)\\)", replace = "([#${1}](@REPO/issues/${1}))" },
-  { pattern = '@REPO', replace = "https://github.com/northwood-labs/terraform-provider-corefunc" },
-] # postprocessors
+  postprocessors = [
+    { pattern = "linrinf", replace = "linting" },
+    { pattern = "storage.googleapis.com:433", replace = "`storage.googleapis.com:443`" },
+    { pattern = "([^ ]+)\\(\\)", replace = "`$0`" },
+    { pattern = "AUTHORS|CONTRIBUTORS|CONTRIBUTING|README", replace = "$0.md" },
+    { pattern = "([^ ]+)\\.md", replace = "`$0`" },
+    { pattern = "([^ ]+)\\.ya?ml", replace = "`$0`" },
+    { pattern = "\\.md\\.md", replace = ".md" },
+    { pattern = "go\\.(mod|sum)", replace = "`$0`" },
+    { pattern = "(?i)pkg\\.go\\.dev", replace = "`$0`" },
+    { pattern = "corefunc_([^(\\.|\\s)]+)", replace = "`$0`" },
+    { pattern = "Bump ([^ ]+)", replace = "Bump `$1`" },
+    { pattern = "\\(#([0-9]+)\\)", replace = "([#${1}](@REPO/issues/${1}))" },
+    { pattern = '@REPO', replace = "https://github.com/northwood-labs/terraform-provider-corefunc" },
+  ] # postprocessors
 
 [git]
 
-# parse the commits based on https://www.conventionalcommits.org
-conventional_commits = true
+  # parse the commits based on https://www.conventionalcommits.org
+  conventional_commits = true
 
-# filter out the commits that are not conventional
-filter_unconventional = true
+  # filter out the commits that are not conventional
+  filter_unconventional = true
 
-# process each line of a commit as an individual commit
-split_commits = false
+  # process each line of a commit as an individual commit
+  split_commits = false
 
-# regex for preprocessing the commit messages
-commit_preprocessors = [
-  # { pattern = '\((\w+\s)?#([0-9]+)\)', replace = "([#${2}](<REPO>/issues/${2}))"}, # replace issue numbers
-]
+  # regex for preprocessing the commit messages
+  commit_preprocessors = [
+    # { pattern = '\((\w+\s)?#([0-9]+)\)', replace = "([#${2}](<REPO>/issues/${2}))"}, # replace issue numbers
+  ]
 
-# regex for parsing and grouping commits
-commit_parsers = [
-  { message = "^feat", group = "<!-- 0 -->:rocket: Features" },
-  { message = "^fix", group = "<!-- 1 -->:bug: Bug Fixes" },
-  { message = "^perf", group = "<!-- 2 -->:racecar: Performance" },
-  { message = "^docs", group = ":books: Documentation" },
-  { message = "^refactor", group = ":tractor: Refactor" },
-  { message = "^style", group = ":art: Styling" },
-  { message = "^build|deps", group = ":dependabot: Building and Dependencies" },
-  { message = "^test", group = ":test_tube: Testing" },
-  { message = "^lint", group = ":soap: Linting" },
-  { message = "^chore\\(release\\): prepare for", skip = true },
-  { message = "^chore\\(deps\\)", skip = true },
-  { message = "^chore\\(pr\\)", skip = true },
-  { message = "^chore\\(pull\\)", skip = true },
-  { message = "^relprep", skip = true },
-  { message = "^chore|ci", group = "<!-- ZZZ -->:gear: Miscellaneous Tasks" },
-  { body = ".*security", group = ":closed_lock_with_key: Security" },
-  { message = "^revert", group = "<!-- ZYY -->:x: Revert" },
-  { message = "^automation", skip = true },
-]
+  # regex for parsing and grouping commits
+  commit_parsers = [
+    { message = "^feat", group = "<!-- 0 -->:rocket: Features" },
+    { message = "^fix", group = "<!-- 1 -->:bug: Bug Fixes" },
+    { message = "^perf", group = "<!-- 2 -->:racecar: Performance" },
+    { message = "^docs", group = ":books: Documentation" },
+    { message = "^refactor", group = ":tractor: Refactor" },
+    { message = "^style", group = ":art: Styling" },
+    { message = "^build|deps", group = ":dependabot: Building and Dependencies" },
+    { message = "^test", group = ":test_tube: Testing" },
+    { message = "^lint", group = ":soap: Linting" },
+    { message = "^chore\\(release\\): prepare for", skip = true },
+    { message = "^chore\\(deps\\)", skip = true },
+    { message = "^chore\\(pr\\)", skip = true },
+    { message = "^chore\\(pull\\)", skip = true },
+    { message = "^relprep", skip = true },
+    { message = "^chore|ci", group = "<!-- ZZZ -->:gear: Miscellaneous Tasks" },
+    { body = ".*security", group = ":closed_lock_with_key: Security" },
+    { message = "^revert", group = "<!-- ZYY -->:x: Revert" },
+    { message = "^automation", skip = true },
+  ]
 
-# protect breaking changes from being skipped due to matching a skipping commit_parser
-protect_breaking_commits = false
+  # protect breaking changes from being skipped due to matching a skipping commit_parser
+  protect_breaking_commits = false
 
-# filter out the commits that are not matched by commit parsers
-filter_commits = false
+  # filter out the commits that are not matched by commit parsers
+  filter_commits = false
 
-# regex for matching git tags
-tag_pattern = "v[0-9].*"
+  # regex for matching git tags
+  tag_pattern = "v[0-9].*"
 
-# regex for skipping tags
-skip_tags = "beta|alpha"
+  # regex for skipping tags
+  skip_tags = "beta|alpha"
 
-# regex for ignoring tags
-ignore_tags = "rc"
+  # regex for ignoring tags
+  ignore_tags = "rc"
 
-# sort the tags topologically
-topo_order = true
+  # sort the tags topologically
+  topo_order = true
 
-# sort the commits inside sections by oldest/newest order
-sort_commits = "oldest"
+  # sort the commits inside sections by oldest/newest order
+  sort_commits = "oldest"
 
-# limit the number of commits included in the changelog.
-# limit_commits = 42
+  # limit the number of commits included in the changelog.
+  # limit_commits = 42
