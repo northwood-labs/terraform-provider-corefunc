@@ -189,6 +189,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`761884d`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/761884d666af5155de1f84aa8d768260b5b1e6e8): **deps**: Bump `opentofu/setup-opentofu` from 1.0.5 to 1.0.6 ([#572](https://github.com/northwood-labs/terraform-provider-corefunc/issues/572)) ([@dependabot](https://github.com/dependabot))
 * [`8e5d31c`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/8e5d31c5f7e0e4d68a2120526b50d784526fe612): **deps**: Bump `trufflesecurity/trufflehog` from 3.90.2 to 3.90.3 ([#573](https://github.com/northwood-labs/terraform-provider-corefunc/issues/573)) ([@dependabot](https://github.com/dependabot))
 * [`3758684`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/3758684df80724cfd8fe69cee8126bde14d9eb77): Updated the Go dependencies. ([@skyzyx](https://github.com/skyzyx))
+* [`19bad57`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/19bad575fc86f343abc79ea25ec23e3433b6a0df): Bumped-up the version of Go. ([@skyzyx](https://github.com/skyzyx))
 
 ### :test_tube: Testing
 
