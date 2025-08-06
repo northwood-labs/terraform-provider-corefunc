@@ -41,3 +41,5 @@ tests/terraform.*
 tests/terratest-*
 tfplan
 # goplicate-end:terraform
+
+bin/git-cliff
