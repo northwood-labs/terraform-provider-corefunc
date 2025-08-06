@@ -258,6 +258,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`56a4142`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/56a4142336b18c3e7c48f69c39f4b186bd401e24): Updated the `docs/index.md` for registries. ([@skyzyx](https://github.com/skyzyx))
 * [`41e4ad9`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/41e4ad94ca73aa9ecbb0ef165715de01d1cab846): Update `README.md` ([@skyzyx](https://github.com/skyzyx))
 * [`04b97fc`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/04b97fccf19160b4d274bf4b578f2f4f0020fc2c): Updated the `README.md`. ([@skyzyx](https://github.com/skyzyx))
+* [`30db63e`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/30db63e9b7e7b3afade107e440bb793a13bf7fb4): Updated the cliff.toml with updated syntax. ([@skyzyx](https://github.com/skyzyx))
 
 ### :dependabot: Building and Dependencies
 
@@ -1075,8 +1076,6 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`14759b8`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/14759b8792c77530a0538d2fdb3ed2cacddd8d73): Bump `the` version number to 1.0.3. No changes from 1.0.0. ([@skyzyx](https://github.com/skyzyx))
 
 ## 1.0.0 — 2023-11-21
-
-[Compare: v1.5.1 → v1.0.0](https://github.com/northwood-labs/terraform-provider-corefunc/compare/v1.5.1...v1.0.0)
 
 ### :art: Styling
 
