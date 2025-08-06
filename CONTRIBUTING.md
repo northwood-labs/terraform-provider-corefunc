@@ -30,7 +30,7 @@ The majority of development is done on macOS, so we have some helpers set-up to 
 
     * [Go] 1.22+ (primary language)
     * [Node.js] 20+ (linting tools)
-    * [Python] 3.11+ (linting tools)
+    * [Python] 3.13+ (linting tools)
     * [Git LFS] (storage of binary data)
     * [`jq`][jq] (shell scripting tools)
     * [`pre-commit`][pre-commit] (linting tools)
