@@ -27,5 +27,5 @@ chardet = ">=3.0.2,<5.0.0"
 
 [metadata]
 lock-version = "2.0"
-python-versions = "^3.11"
+python-versions = "^3.13"
 content-hash = "72b4a484c227aee61f09ac9a6e1ccb311f73e9abddb52e23bc646988e0bbb67a"

@@ -1,8 +1,6 @@
 module github.com/northwood-labs/terraform-provider-corefunc
 
-go 1.24.0
-
-toolchain go1.24.2
+go 1.24.5
 
 replace (
 	github.com/Sirupsen/logrus => github.com/sirupsen/logrus v1.9.4-0.20241118143825-d1e633264448
@@ -36,16 +34,16 @@ require (
 	github.com/google/go-cmp v0.7.0
 	github.com/gtramontina/ooze v0.2.0
 	github.com/hashicorp/go-version v1.7.0
-	github.com/hashicorp/terraform-plugin-framework v1.14.1
-	github.com/hashicorp/terraform-plugin-framework-validators v0.17.0
-	github.com/hashicorp/terraform-plugin-go v0.26.0
+	github.com/hashicorp/terraform-plugin-framework v1.15.1
+	github.com/hashicorp/terraform-plugin-framework-validators v0.18.0
+	github.com/hashicorp/terraform-plugin-go v0.28.0
 	github.com/hashicorp/terraform-plugin-log v0.9.0
-	github.com/hashicorp/terraform-plugin-testing v1.12.0
+	github.com/hashicorp/terraform-plugin-testing v1.13.2
 	github.com/lithammer/dedent v1.1.0
 	github.com/mattn/go-runewidth v0.0.16
 	github.com/mitchellh/go-homedir v1.1.0
 	github.com/nlnwa/whatwg-url v0.6.2
-	github.com/northwood-labs/cli-helpers v0.0.0-20250409233632-b1f9923abea7
+	github.com/northwood-labs/cli-helpers v0.0.0-20250725055104-1efee9ec2a7c
 	github.com/pelletier/go-toml/v2 v2.2.4
 	github.com/spf13/cobra v1.9.1
 	github.com/stretchr/testify v1.10.0
@@ -65,7 +63,7 @@ require (
 	github.com/Masterminds/semver/v3 v3.3.1 // indirect
 	github.com/Masterminds/sprig/v3 v3.3.0 // indirect
 	github.com/Microsoft/go-winio v0.6.2 // indirect
-	github.com/ProtonMail/go-crypto v1.1.6 // indirect
+	github.com/ProtonMail/go-crypto v1.3.0 // indirect
 	github.com/Sirupsen/logrus v0.0.0-00010101000000-000000000000 // indirect
 	github.com/aclements/go-moremath v0.0.0-20210112150236-f10218a38794 // indirect
 	github.com/agext/levenshtein v1.2.3 // indirect
@@ -82,18 +80,18 @@ require (
 	github.com/aymerick/douceur v0.2.0 // indirect
 	github.com/bgentry/speakeasy v0.2.0 // indirect
 	github.com/bitfield/gotestdox v0.2.2 // indirect
-	github.com/bits-and-blooms/bitset v1.22.0 // indirect
+	github.com/bits-and-blooms/bitset v1.24.0 // indirect
 	github.com/bmatcuk/doublestar/v4 v4.8.1 // indirect
 	github.com/briandowns/spinner v1.23.2 // indirect
 	github.com/catppuccin/go v0.2.0 // indirect
 	github.com/charmbracelet/bubbles v0.21.0 // indirect
-	github.com/charmbracelet/bubbletea v1.3.5 // indirect
-	github.com/charmbracelet/colorprofile v0.2.3-0.20250311203215-f60798e515dc // indirect
+	github.com/charmbracelet/bubbletea v1.3.6 // indirect
+	github.com/charmbracelet/colorprofile v0.3.1 // indirect
 	github.com/charmbracelet/glamour v0.10.0 // indirect
 	github.com/charmbracelet/gum v0.16.2 // indirect
 	github.com/charmbracelet/lipgloss v1.1.1-0.20250404203927-76690c660834 // indirect
 	github.com/charmbracelet/log v0.4.2 // indirect
-	github.com/charmbracelet/x/ansi v0.9.3 // indirect
+	github.com/charmbracelet/x/ansi v0.10.1 // indirect
 	github.com/charmbracelet/x/cellbuf v0.0.13 // indirect
 	github.com/charmbracelet/x/conpty v0.1.0 // indirect
 	github.com/charmbracelet/x/editor v0.1.0 // indirect
@@ -148,18 +146,18 @@ require (
 	github.com/hashicorp/go-cty v1.5.0 // indirect
 	github.com/hashicorp/go-hclog v1.6.3 // indirect
 	github.com/hashicorp/go-multierror v1.1.1 // indirect
-	github.com/hashicorp/go-plugin v1.6.2 // indirect
-	github.com/hashicorp/go-retryablehttp v0.7.7 // indirect
+	github.com/hashicorp/go-plugin v1.6.3 // indirect
+	github.com/hashicorp/go-retryablehttp v0.7.8 // indirect
 	github.com/hashicorp/go-uuid v1.0.3 // indirect
 	github.com/hashicorp/hc-install v0.9.2 // indirect
 	github.com/hashicorp/hcl v1.0.0 // indirect
-	github.com/hashicorp/hcl/v2 v2.23.0 // indirect
+	github.com/hashicorp/hcl/v2 v2.24.0 // indirect
 	github.com/hashicorp/logutils v1.0.0 // indirect
 	github.com/hashicorp/terraform-exec v0.23.0 // indirect
 	github.com/hashicorp/terraform-json v0.25.0 // indirect
 	github.com/hashicorp/terraform-plugin-docs v0.22.0 // indirect
-	github.com/hashicorp/terraform-plugin-sdk/v2 v2.36.1 // indirect
-	github.com/hashicorp/terraform-registry-address v0.2.4 // indirect
+	github.com/hashicorp/terraform-plugin-sdk/v2 v2.37.0 // indirect
+	github.com/hashicorp/terraform-registry-address v0.3.0 // indirect
 	github.com/hashicorp/terraform-svchost v0.1.1 // indirect
 	github.com/hashicorp/yamux v0.1.2 // indirect
 	github.com/hexops/gotextdiff v1.0.3 // indirect
@@ -206,7 +204,7 @@ require (
 	github.com/nikolaydubina/smrcptr v1.4.2 // indirect
 	github.com/nikolaydubina/treemap v1.2.5 // indirect
 	github.com/northwood-labs/archstring v0.0.0-20240514202917-e9357b4b91c8 // indirect
-	github.com/oklog/run v1.1.0 // indirect
+	github.com/oklog/run v1.2.0 // indirect
 	github.com/olekukonko/tablewriter v0.0.5 // indirect
 	github.com/opencontainers/go-digest v1.0.0 // indirect
 	github.com/opencontainers/image-spec v1.1.0-rc3 // indirect
@@ -233,7 +231,7 @@ require (
 	github.com/spf13/afero v1.14.0 // indirect
 	github.com/spf13/cast v1.7.0 // indirect
 	github.com/spf13/jwalterweatherman v1.1.0 // indirect
-	github.com/spf13/pflag v1.0.6 // indirect
+	github.com/spf13/pflag v1.0.7 // indirect
 	github.com/spf13/viper v1.16.0 // indirect
 	github.com/src-d/gcfg v1.4.0 // indirect
 	github.com/subosito/gotenv v1.4.2 // indirect
@@ -269,14 +267,15 @@ require (
 	golang.org/x/term v0.33.0 // indirect
 	golang.org/x/text v0.27.0 // indirect
 	golang.org/x/tools v0.35.0 // indirect
+	golang.org/x/tools/go/packages/packagestest v0.1.1-deprecated // indirect
 	golang.org/x/tools/go/vcs v0.1.0-deprecated // indirect
 	golang.org/x/vuln v1.1.4 // indirect
 	gonum.org/v1/gonum v0.11.0 // indirect
 	google.golang.org/appengine v1.6.8 // indirect
-	google.golang.org/genproto/googleapis/api v0.0.0-20241015192408-796eee8c2d53 // indirect
-	google.golang.org/genproto/googleapis/rpc v0.0.0-20241104194629-dd2ea8efbc28 // indirect
-	google.golang.org/grpc v1.69.4 // indirect
-	google.golang.org/protobuf v1.36.3 // indirect
+	google.golang.org/genproto/googleapis/api v0.0.0-20250528174236-200df99c418a // indirect
+	google.golang.org/genproto/googleapis/rpc v0.0.0-20250804133106-a7a43d27e69b // indirect
+	google.golang.org/grpc v1.74.2 // indirect
+	google.golang.org/protobuf v1.36.6 // indirect
 	gopkg.in/ini.v1 v1.67.0 // indirect
 	gopkg.in/neurosnap/sentences.v1 v1.0.7 // indirect
 	gopkg.in/src-d/go-billy.v4 v4.3.2 // indirect
