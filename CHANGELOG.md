@@ -579,6 +579,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`e608673`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/e608673ef732d3ac95b597cbaade76a5030bdc59): **deps**: Bump `trufflesecurity/trufflehog` from 3.90.2 to 3.90.3 ([#573](https://github.com/northwood-labs/terraform-provider-corefunc/issues/573)) ([@dependabot](https://github.com/dependabot))
 * [`19e3210`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/19e321022aa2ef379ff258466d10f61a060cdc7a): Updated the Go dependencies. ([@skyzyx](https://github.com/skyzyx))
 * [`44730d1`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/44730d1c64eaec20c7d6b6f0a89d9cc082557497): Bumped-up the version of Go. ([@skyzyx](https://github.com/skyzyx))
+* [`81b31ff`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/81b31ff0c5ad947c7f82d161a5880df79f31525c): More version updates. ([@skyzyx](https://github.com/skyzyx))
 
 ### :soap: Linting
 
