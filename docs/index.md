@@ -57,12 +57,12 @@ Built using the [Terraform Plugin Framework][TPF], which speaks [Terraform Proto
 
 | Testing type | Details           | Description                                                                    |
 |--------------|-------------------|--------------------------------------------------------------------------------|
-| integration  | Terraform 1.0–1.9 | Executes the provider with this release, pulling from `registry.terraform.io`. |
-| integration  | OpenTofu 1.6–1.8  | Executes the provider with this release, pulling from `registry.opentofu.org`. |
-| unit         | Go 1.22–1.23      | Tests using these versions.                                                    |
-| mutation     | Go 1.22–1.23      | Tests using these versions.                                                    |
-| fuzz         | Go 1.22–1.23      | Tests using these versions.                                                    |
-| terratest    | Go 1.22–1.23      | Tests using these versions.                                                    |
+| integration  | Terraform 1.0–1.8 | Executes the provider with this release, pulling from `registry.terraform.io`. |
+| integration  | OpenTofu 1.6–1.7  | Executes the provider with this release, pulling from `registry.opentofu.org`. |
+| unit         | Go 1.21–1.22      | Tests using these versions.                                                    |
+| mutation     | Go 1.21–1.22      | Tests using these versions.                                                    |
+| fuzz         | Go 1.21–1.22      | Tests using these versions.                                                    |
+| terratest    | Go 1.21–1.22      | Tests using these versions.                                                    |
 
 ## Setting-up the provider
 
@@ -91,30 +91,10 @@ provider "corefunc" {
 
 For users of Terraform 1.8/OpenTofu 1.7 (and newer), all of the the _Data Source_ and _Provider Function_ implementations are available. Their implementations (inputs, outputs) are consistent with each other, and will always return the same outputs from the same imputs. _Provider Functions_ require version 1.4.0 (or later) of this provider.
 
-#### `versions.tf`
-
 ```terraform
 terraform {
   required_version = "~> 1.8" # Terraform
-
-  required_providers {
-    corefunc = {
-      source  = "northwood-labs/corefunc"
-      version = "~> 1.4"
-    }
-  }
-}
-
-provider "corefunc" {
-  # There are no configuration options
-}
-```
-
-#### `versions.tofu`
-
-```terraform
-terraform {
-  required_version = "~> 1.7"
+  # required_version = "~> 1.7" # OpenTofu
 
   required_providers {
     corefunc = {
