@@ -1,0 +1,7 @@
+data "corefunc_toml_to_json" "toml_to_json" {
+  toml = <<-EOT
+  {{ .Input }}
+  EOT
+}
+
+#=> {{ .Expected }}

@@ -15,7 +15,10 @@
 
 package testfixtures // lint:no_dupe
 
-import _ "embed"
+import (
+	_ "embed"
+	"strings"
+)
 
 var (
 	//go:embed toml.example.json
@@ -44,13 +47,13 @@ var (
 			ExpectedErr: false,
 		},
 		"toml.example.toml": {
-			Input:       tomlContent,
-			Expected:    jsonContent,
+			Input:       strings.TrimSpace(tomlContent),
+			Expected:    strings.TrimSpace(jsonContent),
 			ExpectedErr: false,
 		},
 		"toml.example2.toml": {
-			Input:       toml2Content,
-			Expected:    json2Content,
+			Input:       strings.TrimSpace(toml2Content),
+			Expected:    strings.TrimSpace(json2Content),
 			ExpectedErr: false,
 		},
 	}

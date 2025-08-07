@@ -1,67 +1,67 @@
 context = 'test-infra'
 
 [apps]
-  [apps.argo]
-    chart = 'argo/argo'
-    enabled = true
-    namespace = 'production'
-    protected = true
+[apps.argo]
+chart = 'argo/argo'
+enabled = true
+namespace = 'production'
+protected = true
 
-  [apps.artifactory]
-    chart = 'jfrog/artifactory'
-    enabled = true
-    helmFlags = [ '--devel' ]
-    maxHistory = 4
-    namespace = 'production'
-    noHooks = false
-    priority = -2
-    test = false
-    timeout = 300
-    valuesFile = ''
-    version = '8.3.2'
+[apps.artifactory]
+chart = 'jfrog/artifactory'
+enabled = true
+helmFlags = ['--devel']
+maxHistory = 4
+namespace = 'production'
+noHooks = false
+priority = -2
+test = false
+timeout = 300
+valuesFile = ''
+version = '8.3.2'
 
 [helmRepos]
-  argo = 'https://argoproj.github.io/argo-helm'
-  jfrog = 'https://charts.jfrog.io'
+argo = 'https://argoproj.github.io/argo-helm'
+jfrog = 'https://charts.jfrog.io'
 
 [namespaces]
-  [namespaces.production]
-    protected = true
+[namespaces.production]
+protected = true
 
-    [[namespaces.production.limits]]
-      type = 'Container'
+[[namespaces.production.limits]]
+type = 'Container'
 
-      [namespaces.production.limits.default]
-        cpu = '300m'
-        memory = '200Mi'
+[namespaces.production.limits.default]
+cpu = '300m'
+memory = '200Mi'
 
-      [namespaces.production.limits.defaultRequest]
-        cpu = '200m'
-        memory = '100Mi'
+[namespaces.production.limits.defaultRequest]
+cpu = '200m'
+memory = '100Mi'
 
-    [[namespaces.production.limits]]
-      type = 'Pod'
+[[namespaces.production.limits]]
+type = 'Pod'
 
-      [namespaces.production.limits.max]
-        memory = '300Mi'
+[namespaces.production.limits.max]
+memory = '300Mi'
 
-  [namespaces.staging]
-    protected = false
+[namespaces.staging]
+protected = false
 
-    [namespaces.staging.labels]
-      env = 'staging'
+[namespaces.staging.labels]
+env = 'staging'
 
-    [namespaces.staging.quotas]
-      'limits.cpu' = '10'
-      'limits.memory' = '30Gi'
-      pods = '25'
-      'requests.cpu' = '10'
-      'requests.memory' = '30Gi'
+[namespaces.staging.quotas]
+'limits.cpu' = '10'
+'limits.memory' = '30Gi'
+pods = '25'
+'requests.cpu' = '10'
+'requests.memory' = '30Gi'
 
-      [[namespaces.staging.quotas.customQuotas]]
-        name = 'requests.nvidia.com/gpu'
-        value = '2'
+[[namespaces.staging.quotas.customQuotas]]
+name = 'requests.nvidia.com/gpu'
+value = '2'
 
 [settings]
-  globalMaxHistory = 5
-  kubeContext = 'minikube'
+globalMaxHistory = 5
+kubeContext = 'minikube'

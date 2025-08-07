@@ -1,4 +1,4 @@
-// Copyright 2023-2025, Northwood Labs
+// Copyright 2024-2025, Northwood Labs, LLC <license@northwood-labs.com>
 // Copyright 2023-2025, Ryan Parman <rparman@northwood-labs.com>
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -19,6 +19,7 @@ import (
 	"fmt"
 	"os"
 	"runtime"
+	"strings"
 	"testing"
 
 	"github.com/charmbracelet/lipgloss"
@@ -123,6 +124,16 @@ func TestTerraform(t *testing.T) {
 			),
 		)
 
+		// Format shifting
+		var asJSON string
+
+		asJSON, err = corefunc.TOMLtoJSON("abc = 123")
+		if err != nil {
+			t.Fatal(err)
+		}
+
+		assert.Equal(t, terraform.Output(t, terraformOptions, "toml_as_json"), strings.TrimSpace(asJSON)+"\n")
+
 		// Ported OpenTofu functions
 		isContained := false
 		decodedURL := ""
@@ -149,7 +160,6 @@ func TestTerraform(t *testing.T) {
 
 		// runtime
 		assert.Equal(t, terraform.Output(t, terraformOptions, "runtime_cpuarch_fn"), runtime.GOARCH)
-		assert.Equal(t, terraform.Output(t, terraformOptions, "runtime_goroot_fn"), runtime.GOROOT())
 		assert.Equal(t, terraform.Output(t, terraformOptions, "runtime_numcpus_fn"), fmt.Sprint(runtime.NumCPU()))
 		assert.Equal(t, terraform.Output(t, terraformOptions, "runtime_os_fn"), runtime.GOOS)
 

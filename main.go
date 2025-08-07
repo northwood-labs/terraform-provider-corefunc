@@ -1,4 +1,4 @@
-// Copyright 2023-2025, Northwood Labs
+// Copyright 2024-2025, Northwood Labs, LLC <license@northwood-labs.com>
 // Copyright 2023-2025, Ryan Parman <rparman@northwood-labs.com>
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -23,7 +23,7 @@ import (
 )
 
 // Provider documentation generation.
-//go:generate go run github.com/hashicorp/terraform-plugin-docs/cmd/tfplugindocs generate --provider-name corefunc --rendered-provider-name "Core Functions" # lint:ignore_length
+//go:generate go tool -modfile=go.tools.mod tfplugindocs generate --provider-name corefunc --rendered-provider-name "Core Functions" # lint:ignore_length
 
 func main() {
 	cmd.Execute()
