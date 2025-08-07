@@ -467,6 +467,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 ### <!-- ZZZ -->:gear: Miscellaneous Tasks
 
 * [`c946d14`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/c946d14a4f4d5bf4378223057ea241d635105d44): Update the copyright year to 2025. ([@skyzyx](https://github.com/skyzyx))
+* [`701f7b5`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/701f7b5a07c472f262d4bd0b88f593acfad59129): Updated the copyright text. ([@skyzyx](https://github.com/skyzyx))
 
 ## 1.5.1 — 2024-11-11
 
@@ -1254,4 +1255,4 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`eb9f7ae`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/eb9f7aecfdaa7bda9087b9b58229d3943571a863): Update the GoReleaser configuration. ([@skyzyx](https://github.com/skyzyx))
 * [`a01b12e`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/a01b12e6870b821f561624bca79407e4c87c73cf): Trying to get the build to work. ([@skyzyx](https://github.com/skyzyx))
 
-<p>Generated on 2025-08-06.</p>
+<p>Generated on 2025-08-07.</p>
