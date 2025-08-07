@@ -457,6 +457,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`e54b3f0`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/e54b3f09b3c31c2bd7e5b5c758486a52a784a772): Added support for JSON and TOML conversions to the Go lib. ([@skyzyx](https://github.com/skyzyx))
 * [`71cdc08`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/71cdc084d4f987ffb59a357631c5b9ecf56ad70f): Add support for counting bytes in strings. ([@skyzyx](https://github.com/skyzyx))
 * [`ca36cfa`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/ca36cfa785b87613ebf80f2176a6439bfc57f522): Adopt go tool in 1.24. ([@skyzyx](https://github.com/skyzyx))
+* [`71ceeb4`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/71ceeb4d9d836067694a69cd3e576d8aa9cec983): Added toml_to_json data source and function. ([@skyzyx](https://github.com/skyzyx))
 
 ### <!-- 1 -->:bug: Bug Fixes
 
