@@ -1,4 +1,4 @@
-// Copyright 2023-2025, Northwood Labs
+// Copyright 2024-2025, Northwood Labs, LLC <license@northwood-labs.com>
 // Copyright 2023-2025, Ryan Parman <rparman@northwood-labs.com>
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -25,7 +25,6 @@ import (
 
 	"github.com/northwood-labs/terraform-provider-corefunc/testfixtures"
 
-	"github.com/hashicorp/go-version"
 	"github.com/hashicorp/terraform-plugin-testing/helper/resource"
 	"github.com/hashicorp/terraform-plugin-testing/tfversion"
 )
@@ -58,9 +57,7 @@ func TestAccStrSnakeFunction(t *testing.T) {
 
 		resource.UnitTest(t, resource.TestCase{
 			TerraformVersionChecks: []tfversion.TerraformVersionCheck{
-				tfversion.SkipBelow(
-					version.Must(version.NewVersion("1.7.999")),
-				),
+				tfversion.SkipBelow(tfversion.Version1_8_0),
 			},
 			ProtoV6ProviderFactories: testAccProtoV6ProviderFactories,
 			Steps: []resource.TestStep{
