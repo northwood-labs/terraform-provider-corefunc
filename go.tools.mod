@@ -19,7 +19,9 @@ tool (
 	github.com/nikolaydubina/go-cover-treemap
 	github.com/nikolaydubina/smrcptr
 	github.com/orlangure/gocovsh
+	github.com/pelletier/go-toml/v2/cmd/jsontoml
 	github.com/pelletier/go-toml/v2/cmd/tomljson
+	github.com/pelletier/go-toml/v2/cmd/tomll
 	github.com/trufflesecurity/driftwood
 	golang.org/x/perf/cmd/benchstat
 	golang.org/x/tools/cmd/godoc
