@@ -47,7 +47,7 @@ functionality.
 
 The goal of this provider is not to call any APIs, but to provide
 pre-built functions in the form of _Data Sources_ or _Provider
-Functions_ (Terraform 1.8; OpenTofu 1.7).
+Functions_ (1.8).
 
 ~> While it’s common knowledge that Terraform is great at standing up and managing Cloud infrastructure, it’s also good at running _anything with an API_. People regularly manage [code repositories], [DNS records], [feature flags], [identity and access management], [content delivery], [passwords], [monitoring], [alerts], [zero trust network access], [cryptographic signatures], and can even [order a pizza]. This provider is more analogous to HashiCorp’s _utility_ providers such as [local], [external], and [archive].
 

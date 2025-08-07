@@ -1,28 +1,28 @@
 context = 'test-infra'
 
 [apps]
-  [apps.argo]
-    chart = 'argo/argo'
-    enabled = true
-    namespace = 'production'
-    protected = true
+[apps.argo]
+chart = 'argo/argo'
+enabled = true
+namespace = 'production'
+protected = true
 
-  [apps.artifactory]
-    chart = 'jfrog/artifactory'
-    enabled = true
-    helmFlags = [ '--devel' ]
-    maxHistory = 4
-    namespace = 'production'
-    noHooks = false
-    priority = -2
-    test = false
-    timeout = 300
-    valuesFile = ''
-    version = '8.3.2'
+[apps.artifactory]
+chart = 'jfrog/artifactory'
+enabled = true
+helmFlags = ['--devel']
+maxHistory = 4
+namespace = 'production'
+noHooks = false
+priority = -2
+test = false
+timeout = 300
+valuesFile = ''
+version = '8.3.2'
 
 [helmRepos]
-  argo = 'https://argoproj.github.io/argo-helm'
-  jfrog = 'https://charts.jfrog.io'
+argo = 'https://argoproj.github.io/argo-helm'
+jfrog = 'https://charts.jfrog.io'
 
 [namespaces]
 [namespaces.production]

@@ -134,7 +134,11 @@ func TestTOMLtoJSON(t *testing.T) { // lint:allow_complexity
 			}
 
 			if strings.TrimSpace(output) != strings.TrimSpace(tc.Expected) {
-				t.Errorf("Expected ----\n%s\n---- got ----\n%s\n----", tc.Expected, output)
+				t.Errorf(
+					"Expected ----\n%s\n---- got ----\n%s\n----",
+					strings.TrimSpace(tc.Expected),
+					strings.TrimSpace(output),
+				)
 			}
 		})
 	}
@@ -151,7 +155,11 @@ func TestJSONtoTOML(t *testing.T) { // lint:allow_complexity
 			}
 
 			if strings.TrimSpace(output) != strings.TrimSpace(tc.Expected) {
-				t.Errorf("Expected ----\n%s\n---- got ----\n%s\n----", tc.Expected, output)
+				t.Errorf(
+					"Expected ----\n%s\n---- got ----\n%s\n----",
+					strings.TrimSpace(tc.Expected),
+					strings.TrimSpace(output),
+				)
 			}
 		})
 	}

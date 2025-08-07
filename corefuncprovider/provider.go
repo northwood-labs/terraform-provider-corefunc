@@ -1,4 +1,4 @@
-// Copyright 2023-2025, Northwood Labs
+// Copyright 2024-2025, Northwood Labs, LLC <license@northwood-labs.com>
 // Copyright 2023-2025, Ryan Parman <rparman@northwood-labs.com>
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -122,6 +122,7 @@ func (p *coreFuncProvider) DataSources(ctx context.Context) []func() datasource.
 		StrLeftpadDataSource,
 		StrPascalDataSource,
 		StrSnakeDataSource,
+		TomlToJSONDataSource,
 		TruncateLabelDataSource,
 		URLDecodeDataSource,
 		URLParseDataSource,
@@ -149,6 +150,7 @@ func (p *coreFuncProvider) Functions(ctx context.Context) []func() function.Func
 		StrPascalFunction,
 		StrSnakeFunction,
 		StrTruncateLabelFunction,
+		TomlToJSONFunction,
 		URLDecodeFunction,
 		URLParseFunction,
 	}

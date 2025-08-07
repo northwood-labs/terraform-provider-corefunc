@@ -1,0 +1,22 @@
+---
+page_title: "{{ .Name }} {{ .Type }} - {{ .ProviderName }}"
+subcategory: ""
+description: |-
+{{ .Description | plainmarkdown | trimspace | prefixlines "  " }}
+---
+
+# {{ .Name }} ({{ .Type }})
+
+{{ .Description | trimspace }}
+
+## Example Usage
+
+The `corefunc_toml_to_json` implementation converts between TOML and JSON, but not native types. In order to interchange with native Terraform/OpenTofu types, you will also need to leverage the built-in `jsonencode()` and `jsondecode()` functions.
+
+~> Maps (like TOML, YAML, and JSON documents) do not maintain order by default. As such, there is no guarantee of order when converting between types.
+
+{{ tffile "examples/data-sources/corefunc_toml_to_json/data-source.tf" }}
+
+{{ .SchemaMarkdown | trimspace }}
+
+<!-- Preview the provider docs with the Terraform registry provider docs preview tool: https://registry.terraform.io/tools/doc-preview -->
