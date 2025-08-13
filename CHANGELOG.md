@@ -444,6 +444,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 
 * [`c4ddf39`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/c4ddf399ca887e0f48afd86d8440f6c39e431c6c): Upgraded golangci-lint to v2 config. Fixed linting results. ([@skyzyx](https://github.com/skyzyx))
 * [`b15a3d9`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/b15a3d93327a68ed8a4337de7170e193e271839a): Resolve issues with the golangci-lint config. ([@skyzyx](https://github.com/skyzyx))
+* [`907d9ee`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/907d9eee2b95c80e9567b4212d4c3da9c9a9ba4b): Resolve issues with the golangci-lint config. ([@skyzyx](https://github.com/skyzyx))
 
 ### :test_tube: Testing
 
