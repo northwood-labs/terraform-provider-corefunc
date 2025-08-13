@@ -69,7 +69,7 @@ jobs:
       - name: Install Go
         uses: actions/setup-go@d35c59abb061a4a6fb18e82ac0862c26744d6ab5 # v5.5.0
         with:
-          go-version: ">= 1.22.1"
+          go-version: ">= 1.24"
           cache: true
 
       - name: Run mutation tests
@@ -125,7 +125,7 @@ jobs:
       - name: Install Go
         uses: actions/setup-go@d35c59abb061a4a6fb18e82ac0862c26744d6ab5 # v5.5.0
         with:
-          go-version: ">= 1.22.1"
+          go-version: ">= 1.24"
           cache: true
 
       - name: Run unit tests
@@ -152,6 +152,7 @@ jobs:
           - "1.9"
           - "1.10"
           - "1.11"
+          - "1.12"
 
     steps:
       - name: Harden Runner
@@ -199,7 +200,7 @@ jobs:
       - name: Install Go
         uses: actions/setup-go@d35c59abb061a4a6fb18e82ac0862c26744d6ab5 # v5.5.0
         with:
-          go-version: ">= 1.22.1"
+          go-version: ">= 1.24"
           cache: true
 
       - name: Install Terraform ${{ matrix.terraform_version }}
@@ -226,6 +227,7 @@ jobs:
           - "1.7"
           - "1.8"
           - "1.9"
+          - "1.10"
 
     steps:
       - name: Harden Runner
@@ -273,7 +275,7 @@ jobs:
       - name: Install Go
         uses: actions/setup-go@d35c59abb061a4a6fb18e82ac0862c26744d6ab5 # v5.5.0
         with:
-          go-version: ">= 1.22.1"
+          go-version: ">= 1.24"
           cache: true
 
       - name: Install OpenTofu ${{ matrix.opentofu_version }}
