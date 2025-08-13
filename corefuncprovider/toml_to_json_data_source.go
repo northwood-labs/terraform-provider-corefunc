@@ -26,6 +26,7 @@ import (
 	"github.com/hashicorp/terraform-plugin-framework/types"
 	"github.com/hashicorp/terraform-plugin-log/tflog"
 	"github.com/lithammer/dedent"
+
 	"github.com/northwood-labs/terraform-provider-corefunc/corefunc"
 )
 
@@ -62,8 +63,8 @@ func (d *tomlToJSONDataSource) Metadata(
 
 	resp.TypeName = req.ProviderTypeName + "_toml_to_json"
 
-	tflog.Debug(ctx, fmt.Sprintf("req.ProviderTypeName = %s", req.ProviderTypeName))
-	tflog.Debug(ctx, fmt.Sprintf("resp.TypeName = %s", resp.TypeName))
+	tflog.Debug(ctx, "req.ProviderTypeName = "+req.ProviderTypeName)
+	tflog.Debug(ctx, "resp.TypeName = "+resp.TypeName)
 
 	tflog.Debug(ctx, "Ending TomlToJSON DataSource Metadata method.")
 }
@@ -140,6 +141,7 @@ func (d *tomlToJSONDataSource) Read( // lint:no_dupe
 	tflog.Debug(ctx, "Starting TomlToJSON DataSource Read method.")
 
 	var state tomlToJSONDataSourceModel
+
 	diags := resp.State.Get(ctx, &state)
 	resp.Diagnostics.Append(diags...)
 

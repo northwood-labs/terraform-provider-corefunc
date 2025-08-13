@@ -176,7 +176,7 @@ func BenchmarkStrCamel(b *testing.B) {
 		b.Run(name, func(b *testing.B) {
 			b.ResetTimer()
 
-			for i := 0; i < b.N; i++ {
+			for range b.N {
 				_ = StrCamel(tc.Input) // lint:allow_unhandled
 			}
 		})
@@ -205,7 +205,7 @@ func BenchmarkStrConstant(b *testing.B) {
 		b.Run(name, func(b *testing.B) {
 			b.ResetTimer()
 
-			for i := 0; i < b.N; i++ {
+			for range b.N {
 				_ = StrConstant(tc.Input) // lint:allow_unhandled
 			}
 		})
@@ -234,7 +234,7 @@ func BenchmarkStrKebab(b *testing.B) {
 		b.Run(name, func(b *testing.B) {
 			b.ResetTimer()
 
-			for i := 0; i < b.N; i++ {
+			for range b.N {
 				_ = StrKebab(tc.Input) // lint:allow_unhandled
 			}
 		})
@@ -263,7 +263,7 @@ func BenchmarkStrPascal(b *testing.B) {
 		b.Run(name, func(b *testing.B) {
 			b.ResetTimer()
 
-			for i := 0; i < b.N; i++ {
+			for range b.N {
 				_ = StrPascal(tc.Input, tc.AcronymCaps) // lint:allow_unhandled
 			}
 		})
@@ -292,7 +292,7 @@ func BenchmarkStrSnake(b *testing.B) {
 		b.Run(name, func(b *testing.B) {
 			b.ResetTimer()
 
-			for i := 0; i < b.N; i++ {
+			for range b.N {
 				_ = StrSnake(tc.Input) // lint:allow_unhandled
 			}
 		})
@@ -321,7 +321,7 @@ func FuzzStrCamel(f *testing.F) {
 	}
 
 	f.Fuzz(
-		func(t *testing.T, in string) {
+		func(_ *testing.T, in string) {
 			_ = StrCamel(in) // lint:allow_unhandled
 		},
 	)
@@ -334,7 +334,7 @@ func FuzzStrConstant(f *testing.F) {
 	}
 
 	f.Fuzz(
-		func(t *testing.T, in string) {
+		func(_ *testing.T, in string) {
 			_ = StrConstant(in) // lint:allow_unhandled
 		},
 	)
@@ -347,7 +347,7 @@ func FuzzStrKebab(f *testing.F) {
 	}
 
 	f.Fuzz(
-		func(t *testing.T, in string) {
+		func(_ *testing.T, in string) {
 			_ = StrKebab(in) // lint:allow_unhandled
 		},
 	)
@@ -360,7 +360,7 @@ func FuzzStrPascal(f *testing.F) {
 	}
 
 	f.Fuzz(
-		func(t *testing.T, in string) {
+		func(_ *testing.T, in string) {
 			_ = StrPascal(in, true) // lint:allow_unhandled
 		},
 	)
@@ -373,7 +373,7 @@ func FuzzStrSnake(f *testing.F) {
 	}
 
 	f.Fuzz(
-		func(t *testing.T, in string) {
+		func(_ *testing.T, in string) {
 			_ = StrSnake(in) // lint:allow_unhandled
 		},
 	)

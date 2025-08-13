@@ -17,7 +17,6 @@ package corefuncprovider // lint:no_dupe
 
 import (
 	"context"
-	"fmt"
 	"strings"
 
 	"github.com/hashicorp/terraform-plugin-framework/datasource"
@@ -63,8 +62,8 @@ func (d *strKebabDataSource) Metadata(
 
 	resp.TypeName = req.ProviderTypeName + "_str_kebab"
 
-	tflog.Debug(ctx, fmt.Sprintf("req.ProviderTypeName = %s", req.ProviderTypeName))
-	tflog.Debug(ctx, fmt.Sprintf("resp.TypeName = %s", resp.TypeName))
+	tflog.Debug(ctx, "req.ProviderTypeName = "+req.ProviderTypeName)
+	tflog.Debug(ctx, "resp.TypeName = "+resp.TypeName)
 
 	tflog.Debug(ctx, "Ending StrKebab DataSource Metadata method.")
 }
@@ -141,6 +140,7 @@ func (d *strKebabDataSource) Read( // lint:no_dupe
 	tflog.Debug(ctx, "Starting StrKebab DataSource Read method.")
 
 	var state strKebabDataSourceModel
+
 	diags := resp.State.Get(ctx, &state)
 	resp.Diagnostics.Append(diags...)
 

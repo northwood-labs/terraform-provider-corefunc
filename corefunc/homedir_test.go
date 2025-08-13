@@ -43,7 +43,7 @@ func BenchmarkHomedir(b *testing.B) {
 		b.Run(name, func(b *testing.B) {
 			b.ResetTimer()
 
-			for i := 0; i < b.N; i++ {
+			for range b.N {
 				_, _ = Homedir() // lint:allow_unhandled
 			}
 		})

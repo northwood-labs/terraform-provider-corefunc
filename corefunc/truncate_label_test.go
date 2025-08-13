@@ -88,7 +88,7 @@ func BenchmarkTruncateLabel(b *testing.B) {
 	for name, tc := range testfixtures.TruncateLabelTestTable {
 		b.ResetTimer()
 		b.Run(name, func(b *testing.B) {
-			for i := 0; i < b.N; i++ {
+			for range b.N {
 				TruncateLabel(tc.MaxLength, tc.Prefix, tc.Label)
 			}
 		})

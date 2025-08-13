@@ -17,7 +17,6 @@ package corefuncprovider // lint:no_dupe
 
 import (
 	"context"
-	"fmt"
 	"os"
 	"regexp"
 	"strings"
@@ -46,14 +45,14 @@ func EnvEnsureFunction() function.Function { // lint:allow_return_interface
 
 func (f *envEnsureFunction) Metadata(
 	ctx context.Context,
-	req function.MetadataRequest,
+	_ function.MetadataRequest,
 	resp *function.MetadataResponse,
 ) {
 	tflog.Debug(ctx, "Starting EnvEnsure Function Metadata method.")
 
 	resp.Name = "env_ensure"
 
-	tflog.Debug(ctx, fmt.Sprintf("resp.Name = %s", resp.Name))
+	tflog.Debug(ctx, "resp.Name = "+resp.Name)
 
 	tflog.Debug(ctx, "Ending EnvEnsure Function Metadata method.")
 }
@@ -61,7 +60,7 @@ func (f *envEnsureFunction) Metadata(
 // Definition defines the parameters and return type for the function.
 func (f *envEnsureFunction) Definition(
 	ctx context.Context,
-	req function.DefinitionRequest,
+	_ function.DefinitionRequest,
 	resp *function.DefinitionResponse,
 ) {
 	tflog.Debug(ctx, "Starting EnvEnsure Function Definition method.")
@@ -142,6 +141,7 @@ func (f *envEnsureFunction) Run(ctx context.Context, req function.RunRequest, re
 	}
 
 	value := os.Getenv(name)
+
 	resp.Error = function.ConcatFuncErrors(resp.Result.Set(ctx, value))
 
 	tflog.Debug(ctx, "Ending EnvEnsure Function Run method.")

@@ -17,7 +17,6 @@ package corefuncprovider // lint:no_dupe
 
 import (
 	"context"
-	"fmt"
 	"strings"
 
 	"github.com/hashicorp/terraform-plugin-framework/datasource"
@@ -64,8 +63,8 @@ func (d *intLeftpadDataSource) Metadata(
 
 	resp.TypeName = req.ProviderTypeName + "_int_leftpad"
 
-	tflog.Debug(ctx, fmt.Sprintf("req.ProviderTypeName = %s", req.ProviderTypeName))
-	tflog.Debug(ctx, fmt.Sprintf("resp.TypeName = %s", resp.TypeName))
+	tflog.Debug(ctx, "req.ProviderTypeName = "+req.ProviderTypeName)
+	tflog.Debug(ctx, "resp.TypeName = "+resp.TypeName)
 
 	tflog.Debug(ctx, "Ending IntLeftpad DataSource Metadata method.")
 }
@@ -148,6 +147,7 @@ func (d *intLeftpadDataSource) Read( // lint:no_dupe
 	tflog.Debug(ctx, "Starting IntLeftpad DataSource Read method.")
 
 	var state intLeftpadDataSourceModel
+
 	diags := resp.State.Get(ctx, &state)
 	resp.Diagnostics.Append(diags...)
 

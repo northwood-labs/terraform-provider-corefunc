@@ -51,17 +51,22 @@ func TOMLtoJSON(tomlStr string) (string, error) {
 		if errors.As(err, &derr) {
 			row, col := derr.Position()
 
-			return "", fmt.Errorf("error occurred at row %d column %d: %s", row, col, derr.String())
+			return "", fmt.Errorf( // lint:allow_errorf
+				"error occurred at row %d column %d: %s",
+				row,
+				col,
+				derr.String(),
+			)
 		}
 
-		return "", fmt.Errorf("failed to decode TOML: %w", err)
+		return "", fmt.Errorf("failed to decode TOML: %w", err) // lint:allow_errorf
 	}
 
 	jsonEncoder := json.NewEncoder(&w)
 
 	err = jsonEncoder.Encode(v)
 	if err != nil {
-		return "", fmt.Errorf("failed to encode to JSON: %w", err)
+		return "", fmt.Errorf("failed to encode to JSON: %w", err) // lint:allow_errorf
 	}
 
 	return w.String(), nil

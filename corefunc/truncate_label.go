@@ -80,11 +80,13 @@ func TruncateLabel(maxLength int64, prefix, label string) string {
 		// Rebalance the character subtractions when one side reaches 0.
 		if removeFromPrefixLength < 0 {
 			removeFromLabelLength += removeFromPrefixLength
+
 			removeFromPrefixLength = 0
 		}
 
 		if removeFromLabelLength < 0 {
 			removeFromPrefixLength += removeFromLabelLength
+
 			removeFromLabelLength = 0
 		}
 

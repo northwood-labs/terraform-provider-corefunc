@@ -57,7 +57,7 @@ func BenchmarkIntLeftPad(b *testing.B) {
 		b.Run(name, func(b *testing.B) {
 			b.ResetTimer()
 
-			for i := 0; i < b.N; i++ {
+			for range b.N {
 				_ = IntLeftPad(tc.Input, tc.PadWidth) // lint:allow_unhandled
 			}
 		})
@@ -86,7 +86,7 @@ func FuzzIntLeftPad(f *testing.F) {
 	}
 
 	f.Fuzz(
-		func(t *testing.T, in int64) {
+		func(_ *testing.T, in int64) {
 			_ = IntLeftPad(in, int(in)) // lint:allow_unhandled
 		},
 	)

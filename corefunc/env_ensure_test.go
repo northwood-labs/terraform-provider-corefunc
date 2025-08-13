@@ -86,7 +86,8 @@ func ExampleEnvEnsure_pattern() {
 func TestEnvEnsure(t *testing.T) {
 	for name, tc := range testfixtures.EnvEnsureTestTable {
 		t.Run(name, func(t *testing.T) {
-			_ = os.Setenv(tc.EnvVarName, tc.SetValue) // lint:allow_unhandled
+			t.Setenv(tc.EnvVarName, tc.SetValue) // lint:allow_unhandled
+
 			err := EnvEnsure(tc.EnvVarName, tc.Pattern)
 
 			if tc.ExpectedErr != nil {
@@ -101,12 +102,12 @@ func BenchmarkEnvEnsure(b *testing.B) {
 	b.ReportAllocs()
 
 	for name, tc := range testfixtures.EnvEnsureTestTable {
-		_ = os.Setenv(tc.EnvVarName, tc.SetValue) // lint:allow_unhandled
+		b.Setenv(tc.EnvVarName, tc.SetValue) // lint:allow_unhandled
 
 		b.Run(name, func(b *testing.B) {
 			b.ResetTimer()
 
-			for i := 0; i < b.N; i++ {
+			for range b.N {
 				_ = EnvEnsure(tc.EnvVarName) // lint:allow_unhandled
 			}
 		})
@@ -117,7 +118,7 @@ func BenchmarkEnvEnsureParallel(b *testing.B) {
 	b.ReportAllocs()
 
 	for name, tc := range testfixtures.EnvEnsureTestTable {
-		_ = os.Setenv(tc.EnvVarName, tc.SetValue) // lint:allow_unhandled
+		b.Setenv(tc.EnvVarName, tc.SetValue) // lint:allow_unhandled
 
 		b.Run(name, func(b *testing.B) {
 			b.ResetTimer()
@@ -136,7 +137,7 @@ func FuzzEnvEnsure(f *testing.F) {
 	}
 
 	f.Fuzz(
-		func(t *testing.T, envVarName string) {
+		func(_ *testing.T, envVarName string) {
 			_ = EnvEnsure(envVarName) // lint:allow_unhandled
 		},
 	)

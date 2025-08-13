@@ -20,6 +20,7 @@ import (
 	"fmt"
 	"log"
 	"os"
+	"strconv"
 	"strings"
 	"testing"
 	"text/template"
@@ -65,7 +66,7 @@ func TestAccRuntimeNumcpusFunction(t *testing.T) {
 				{
 					Config: providerConfig + buf.String(),
 					Check: resource.ComposeTestCheckFunc(
-						resource.TestCheckOutput("numcpus", fmt.Sprintf("%d", tc.Expected)),
+						resource.TestCheckOutput("numcpus", strconv.Itoa(tc.Expected)),
 					),
 				},
 			},

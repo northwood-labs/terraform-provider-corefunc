@@ -13,6 +13,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+// Package main implements a code generator for new data sources and functions.
 package main
 
 import (
@@ -224,7 +225,9 @@ func createVarMap(nameOpt *string) map[string]string {
 	snakeStrip := strings.Replace(snake, "corefunc_", "", 1)
 	camel := caps.ToLowerCamel(original)
 	camelStrip := strings.Replace(camel, "corefunc", "", 1)
+
 	camelStrip = caps.ToLowerCamel(camelStrip)
+
 	pascal := caps.ToCamel(original)
 	pascalStrip := strings.Replace(pascal, "Corefunc", "", 1)
 

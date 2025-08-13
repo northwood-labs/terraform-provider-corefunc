@@ -17,7 +17,6 @@ package corefuncprovider // lint:no_dupe
 
 import (
 	"context"
-	"fmt"
 	"strings"
 
 	"github.com/hashicorp/terraform-plugin-framework/function"
@@ -46,14 +45,14 @@ func StrIterativeReplaceFunction() function.Function { // lint:allow_return_inte
 
 func (f *strIterativeReplaceFunction) Metadata(
 	ctx context.Context,
-	req function.MetadataRequest,
+	_ function.MetadataRequest,
 	resp *function.MetadataResponse,
 ) {
 	tflog.Debug(ctx, "Starting StrIterativeReplace Function Metadata method.")
 
 	resp.Name = "str_iterative_replace"
 
-	tflog.Debug(ctx, fmt.Sprintf("resp.Name = %s", resp.Name))
+	tflog.Debug(ctx, "resp.Name = "+resp.Name)
 
 	tflog.Debug(ctx, "Ending StrIterativeReplace Function Metadata method.")
 }
@@ -61,7 +60,7 @@ func (f *strIterativeReplaceFunction) Metadata(
 // Definition defines the parameters and return type for the function.
 func (f *strIterativeReplaceFunction) Definition(
 	ctx context.Context,
-	req function.DefinitionRequest,
+	_ function.DefinitionRequest,
 	resp *function.DefinitionResponse,
 ) {
 	tflog.Debug(ctx, "Starting StrIterativeReplace Function Definition method.")
@@ -119,6 +118,7 @@ func (f *strIterativeReplaceFunction) Run(ctx context.Context, req function.RunR
 
 	for i := range replacements {
 		r := replacements[i]
+
 		repls[i] = cftypes.Replacement{
 			Old: r["old"],
 			New: r["new"],
