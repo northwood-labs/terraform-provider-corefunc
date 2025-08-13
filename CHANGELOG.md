@@ -437,6 +437,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`19e3210`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/19e321022aa2ef379ff258466d10f61a060cdc7a): Updated the Go dependencies. ([@skyzyx](https://github.com/skyzyx))
 * [`44730d1`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/44730d1c64eaec20c7d6b6f0a89d9cc082557497): Bumped-up the version of Go. ([@skyzyx](https://github.com/skyzyx))
 * [`81b31ff`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/81b31ff0c5ad947c7f82d161a5880df79f31525c): More version updates. ([@skyzyx](https://github.com/skyzyx))
+* [`6c6fb51`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/6c6fb51bbfe3d94db6ac7e7188e156884ba68e29): **deps**: Bump `github/codeql-action` from 3.29.7 to 3.29.8 ([#574](https://github.com/northwood-labs/terraform-provider-corefunc/issues/574)) ([@dependabot](https://github.com/dependabot))
 
 ### :test_tube: Testing
 
@@ -451,6 +452,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`4190ffb`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/4190ffb8cb897eac42f467278ccd59786614521a): Update `test.yml` ([@skyzyx](https://github.com/skyzyx))
 * [`25fd5b0`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/25fd5b07f1b0575dc91e1705db0bca4120db6cf1): Update `update-on-push.yml` ([@skyzyx](https://github.com/skyzyx))
 * [`f585214`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/f5852144822e409ddef3317022e440c34081791b): Re-ran test suite, which generated code coverage graphs. ([@skyzyx](https://github.com/skyzyx))
+* [`caf0b5c`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/caf0b5cc60d3604d3903fe4c495d4d2e6e630e9b): Added release-assets.githubusercontent.com to `govulncheck.yml`. ([@skyzyx](https://github.com/skyzyx))
 
 ### <!-- 0 -->:rocket: Features
 
@@ -1256,4 +1258,4 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`eb9f7ae`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/eb9f7aecfdaa7bda9087b9b58229d3943571a863): Update the GoReleaser configuration. ([@skyzyx](https://github.com/skyzyx))
 * [`a01b12e`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/a01b12e6870b821f561624bca79407e4c87c73cf): Trying to get the build to work. ([@skyzyx](https://github.com/skyzyx))
 
-<p>Generated on 2025-08-07.</p>
+<p>Generated on 2025-08-13.</p>
