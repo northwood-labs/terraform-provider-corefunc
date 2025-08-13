@@ -458,6 +458,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`25fd5b0`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/25fd5b07f1b0575dc91e1705db0bca4120db6cf1): Update `update-on-push.yml` ([@skyzyx](https://github.com/skyzyx))
 * [`f585214`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/f5852144822e409ddef3317022e440c34081791b): Re-ran test suite, which generated code coverage graphs. ([@skyzyx](https://github.com/skyzyx))
 * [`caf0b5c`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/caf0b5cc60d3604d3903fe4c495d4d2e6e630e9b): Added release-assets.githubusercontent.com to `govulncheck.yml`. ([@skyzyx](https://github.com/skyzyx))
+* [`ebaa5ea`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/ebaa5ea0acadee05c255084c3809d9eb94f270ac): Ensure all test cases still work. ([@skyzyx](https://github.com/skyzyx))
 
 ### <!-- 0 -->:rocket: Features
 
