@@ -5,7 +5,7 @@ include ./standard.mk
 
 # go install golang.org/dl/go{VERSION}@latest
 # go{VERSION} download
-GO_VER=1.24.5
+GO_VER=1.24.6
 GOBIN=$(shell ./find-go-bin.sh)
 BINARY_NAME=terraform-provider-corefunc
 
@@ -247,7 +247,7 @@ unit:
 ## mutate: [test] Runs mutation tests.
 mutate:
 	@ $(HEADER) "=====> Running mutation tests..."
-	cd ./corefunc && $(GO) test -tags=mutation -count=1 -parallel=$(shell nproc) -timeout 30s -ooze.v=true | ggrep -v "^[[:lower:]]" | ggrep -v "^)"
+	cd ./corefunc && $(GO) test -tags=mutation -count=1 -parallel=$(shell nproc) -timeout 30s
 
 .PHONY: terratest
 ## terratest: [test] Runs Terratest tests.

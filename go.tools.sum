@@ -176,8 +176,6 @@ github.com/emirpasic/gods v1.18.1 h1:FXtiHYKDGKCW2KzwZKx0iC0PQmdlorYgdFG9jPXJ1Bc
 github.com/emirpasic/gods v1.18.1/go.mod h1:8tpGGwCnJ5H4r6BWwaV6OrWmMoPhUl5jm/FMNAnJvWQ=
 github.com/erikgeiser/coninput v0.0.0-20211004153227-1c3628e74d0f h1:Y/CXytFA4m6baUTXGLOoWe4PQhGxaX0KpnayAqC48p4=
 github.com/erikgeiser/coninput v0.0.0-20211004153227-1c3628e74d0f/go.mod h1:vw97MGsxSvLiUE2X8qFplwetxpGLQrlU1Q9AUEIzCaM=
-github.com/evilmartians/lefthook v1.12.2 h1:pKncsv6tUjPyAZa/Hec90SNxxgybB++Xc4o+soV29hg=
-github.com/evilmartians/lefthook v1.12.2/go.mod h1:yQCQNPGxi0sn9+kH6O1T1VF45shbnvmt7F9xKCfTZok=
 github.com/evilmartians/lefthook v1.12.3 h1:ZoEUxjeF9PQfxiWbR8/aJ+L4uqknNukpGZwB7mVWlT4=
 github.com/evilmartians/lefthook v1.12.3/go.mod h1:ptL2ttzZ+D4G1isRIammBCeh5gmczMFMuMvPSwEXDDw=
 github.com/fatih/color v1.13.0/go.mod h1:kLAiJbzzSOZDVNGyDpeOxJ47H46qBXwg5ILebYFFOfk=
