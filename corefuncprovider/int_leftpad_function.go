@@ -17,7 +17,6 @@ package corefuncprovider // lint:no_dupe
 
 import (
 	"context"
-	"fmt"
 	"strings"
 
 	"github.com/hashicorp/terraform-plugin-framework/function"
@@ -44,14 +43,14 @@ func IntLeftpadFunction() function.Function { // lint:allow_return_interface
 
 func (f *intLeftpadFunction) Metadata(
 	ctx context.Context,
-	req function.MetadataRequest,
+	_ function.MetadataRequest,
 	resp *function.MetadataResponse,
 ) {
 	tflog.Debug(ctx, "Starting IntLeftpad Function Metadata method.")
 
 	resp.Name = "int_leftpad"
 
-	tflog.Debug(ctx, fmt.Sprintf("resp.Name = %s", resp.Name))
+	tflog.Debug(ctx, "resp.Name = "+resp.Name)
 
 	tflog.Debug(ctx, "Ending IntLeftpad Function Metadata method.")
 }
@@ -59,7 +58,7 @@ func (f *intLeftpadFunction) Metadata(
 // Definition defines the parameters and return type for the function.
 func (f *intLeftpadFunction) Definition( // lint:no_dupe
 	ctx context.Context,
-	req function.DefinitionRequest,
+	_ function.DefinitionRequest,
 	resp *function.DefinitionResponse,
 ) {
 	tflog.Debug(ctx, "Starting IntLeftpad Function Definition method.")
@@ -105,6 +104,7 @@ func (f *intLeftpadFunction) Run(ctx context.Context, req function.RunRequest, r
 	}
 
 	value := corefunc.IntLeftPad(num, int(padWidth))
+
 	resp.Error = function.ConcatFuncErrors(resp.Result.Set(ctx, value))
 
 	tflog.Debug(ctx, "Ending IntLeftpad Function Run method.")

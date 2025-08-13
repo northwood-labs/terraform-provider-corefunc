@@ -17,7 +17,6 @@ package corefuncprovider // lint:no_dupe
 
 import (
 	"context"
-	"fmt"
 	"strings"
 
 	"github.com/hashicorp/terraform-plugin-framework/function"
@@ -44,14 +43,14 @@ func StrTruncateLabelFunction() function.Function { // lint:allow_return_interfa
 
 func (f *strTruncateLabelFunction) Metadata(
 	ctx context.Context,
-	req function.MetadataRequest,
+	_ function.MetadataRequest,
 	resp *function.MetadataResponse,
 ) {
 	tflog.Debug(ctx, "Starting StrTruncateLabel Function Metadata method.")
 
 	resp.Name = "str_truncate_label"
 
-	tflog.Debug(ctx, fmt.Sprintf("resp.Name = %s", resp.Name))
+	tflog.Debug(ctx, "resp.Name = "+resp.Name)
 
 	tflog.Debug(ctx, "Ending StrTruncateLabel Function Metadata method.")
 }
@@ -59,7 +58,7 @@ func (f *strTruncateLabelFunction) Metadata(
 // Definition defines the parameters and return type for the function.
 func (f *strTruncateLabelFunction) Definition(
 	ctx context.Context,
-	req function.DefinitionRequest,
+	_ function.DefinitionRequest,
 	resp *function.DefinitionResponse,
 ) {
 	tflog.Debug(ctx, "Starting StrTruncateLabel Function Definition method.")
@@ -132,6 +131,7 @@ func (f *strTruncateLabelFunction) Run(ctx context.Context, req function.RunRequ
 	}
 
 	value := corefunc.TruncateLabel(maxLength, prefix, label)
+
 	resp.Error = function.ConcatFuncErrors(resp.Result.Set(ctx, value))
 
 	tflog.Debug(ctx, "Ending StrTruncateLabel Function Run method.")

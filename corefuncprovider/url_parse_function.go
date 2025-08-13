@@ -17,7 +17,6 @@ package corefuncprovider // lint:no_dupe
 
 import (
 	"context"
-	"fmt"
 	"strings"
 
 	"github.com/hashicorp/terraform-plugin-framework/attr"
@@ -65,14 +64,14 @@ func URLParseFunction() function.Function { // lint:allow_return_interface
 
 func (f *urlParseFunction) Metadata(
 	ctx context.Context,
-	req function.MetadataRequest,
+	_ function.MetadataRequest,
 	resp *function.MetadataResponse,
 ) {
 	tflog.Debug(ctx, "Starting URLParse Function Metadata method.")
 
 	resp.Name = "url_parse"
 
-	tflog.Debug(ctx, fmt.Sprintf("resp.Name = %s", resp.Name))
+	tflog.Debug(ctx, "resp.Name = "+resp.Name)
 
 	tflog.Debug(ctx, "Ending URLParse Function Metadata method.")
 }
@@ -80,7 +79,7 @@ func (f *urlParseFunction) Metadata(
 // Definition defines the parameters and return type for the function.
 func (f *urlParseFunction) Definition(
 	ctx context.Context,
-	req function.DefinitionRequest,
+	_ function.DefinitionRequest,
 	resp *function.DefinitionResponse,
 ) {
 	tflog.Debug(ctx, "Starting URLParse Function Definition method.")

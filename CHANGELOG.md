@@ -192,6 +192,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`19e3210`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/19e321022aa2ef379ff258466d10f61a060cdc7a): Updated the Go dependencies. ([@skyzyx](https://github.com/skyzyx))
 * [`44730d1`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/44730d1c64eaec20c7d6b6f0a89d9cc082557497): Bumped-up the version of Go. ([@skyzyx](https://github.com/skyzyx))
 * [`81b31ff`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/81b31ff0c5ad947c7f82d161a5880df79f31525c): More version updates. ([@skyzyx](https://github.com/skyzyx))
+* [`6c6fb51`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/6c6fb51bbfe3d94db6ac7e7188e156884ba68e29): **deps**: Bump `github/codeql-action` from 3.29.7 to 3.29.8 ([#574](https://github.com/northwood-labs/terraform-provider-corefunc/issues/574)) ([@dependabot](https://github.com/dependabot))
+* [`11f821d`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/11f821d5fbaf4100b561ac844b9f724fb175f483): **deps**: Bump `github/codeql-action` from 3.29.8 to 3.29.9 ([#576](https://github.com/northwood-labs/terraform-provider-corefunc/issues/576)) ([@dependabot](https://github.com/dependabot))
+
+### :soap: Linting
+
+* [`c4ddf39`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/c4ddf399ca887e0f48afd86d8440f6c39e431c6c): Upgraded golangci-lint to v2 config. Fixed linting results. ([@skyzyx](https://github.com/skyzyx))
 
 ### :test_tube: Testing
 
@@ -206,6 +212,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`4190ffb`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/4190ffb8cb897eac42f467278ccd59786614521a): Update `test.yml` ([@skyzyx](https://github.com/skyzyx))
 * [`25fd5b0`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/25fd5b07f1b0575dc91e1705db0bca4120db6cf1): Update `update-on-push.yml` ([@skyzyx](https://github.com/skyzyx))
 * [`f585214`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/f5852144822e409ddef3317022e440c34081791b): Re-ran test suite, which generated code coverage graphs. ([@skyzyx](https://github.com/skyzyx))
+* [`caf0b5c`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/caf0b5cc60d3604d3903fe4c495d4d2e6e630e9b): Added release-assets.githubusercontent.com to `govulncheck.yml`. ([@skyzyx](https://github.com/skyzyx))
+* [`ebaa5ea`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/ebaa5ea0acadee05c255084c3809d9eb94f270ac): Ensure all test cases still work. ([@skyzyx](https://github.com/skyzyx))
 
 ### <!-- 0 -->:rocket: Features
 
@@ -219,6 +227,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`50f482d`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/50f482d81c6d7486764fb00b86cd3ad83cb3d7f6): Updated the URLParse tests to match Google Safe Browsing rules. ([@skyzyx](https://github.com/skyzyx))
 * [`4ef6356`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/4ef635649dd91875c084828d6de87a5f350cade0): Stop rolling back to github.com/nlnwa/whatwg-url@v0.5.0 on tidy. ([@skyzyx](https://github.com/skyzyx))
 * [`9b4e53f`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/9b4e53f147fcbfea8d4122a199898b18aec5b521): Remove git-cliff from history. ([@skyzyx](https://github.com/skyzyx))
+* **[BC BREAK]** [`aa7622f`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/aa7622f033f7aeaf7260dd8b720f0f4395ba036c): GOROOT has been deprecated in Go 1.25. Removing related code. ([@skyzyx](https://github.com/skyzyx))
 
 ### <!-- ZZZ -->:gear: Miscellaneous Tasks
 
@@ -1012,4 +1021,4 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`eb9f7ae`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/eb9f7aecfdaa7bda9087b9b58229d3943571a863): Update the GoReleaser configuration. ([@skyzyx](https://github.com/skyzyx))
 * [`a01b12e`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/a01b12e6870b821f561624bca79407e4c87c73cf): Trying to get the build to work. ([@skyzyx](https://github.com/skyzyx))
 
-<p>Generated on 2025-08-07.</p>
+<p>Generated on 2025-08-13.</p>

@@ -17,7 +17,6 @@ package corefuncprovider // lint:no_dupe
 
 import (
 	"context"
-	"fmt"
 	"runtime"
 	"strings"
 
@@ -43,14 +42,14 @@ func RuntimeOsFunction() function.Function { // lint:allow_return_interface
 
 func (f *runtimeOsFunction) Metadata(
 	ctx context.Context,
-	req function.MetadataRequest,
+	_ function.MetadataRequest,
 	resp *function.MetadataResponse,
 ) {
 	tflog.Debug(ctx, "Starting RuntimeOs Function Metadata method.")
 
 	resp.Name = "runtime_os"
 
-	tflog.Debug(ctx, fmt.Sprintf("resp.Name = %s", resp.Name))
+	tflog.Debug(ctx, "resp.Name = "+resp.Name)
 
 	tflog.Debug(ctx, "Ending RuntimeOs Function Metadata method.")
 }
@@ -58,7 +57,7 @@ func (f *runtimeOsFunction) Metadata(
 // Definition defines the parameters and return type for the function.
 func (f *runtimeOsFunction) Definition(
 	ctx context.Context,
-	req function.DefinitionRequest,
+	_ function.DefinitionRequest,
 	resp *function.DefinitionResponse,
 ) {
 	tflog.Debug(ctx, "Starting RuntimeOs Function Definition method.")
@@ -78,7 +77,7 @@ func (f *runtimeOsFunction) Definition(
 	tflog.Debug(ctx, "Ending RuntimeOs Function Definition method.")
 }
 
-func (f *runtimeOsFunction) Run(ctx context.Context, req function.RunRequest, resp *function.RunResponse) {
+func (f *runtimeOsFunction) Run(ctx context.Context, _ function.RunRequest, resp *function.RunResponse) {
 	tflog.Debug(ctx, "Starting RuntimeOs Function Run method.")
 
 	resp.Error = function.ConcatFuncErrors(resp.Result.Set(ctx, runtime.GOOS))

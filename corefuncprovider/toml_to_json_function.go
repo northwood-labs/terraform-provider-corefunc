@@ -17,12 +17,12 @@ package corefuncprovider // lint:no_dupe
 
 import (
 	"context"
-	"fmt"
 	"strings"
 
 	"github.com/hashicorp/terraform-plugin-framework/function"
 	"github.com/hashicorp/terraform-plugin-log/tflog"
 	"github.com/lithammer/dedent"
+
 	"github.com/northwood-labs/terraform-provider-corefunc/corefunc"
 )
 
@@ -43,14 +43,14 @@ func TomlToJSONFunction() function.Function { // lint:allow_return_interface
 
 func (f *tomlToJSONFunction) Metadata(
 	ctx context.Context,
-	req function.MetadataRequest,
+	_ function.MetadataRequest,
 	resp *function.MetadataResponse,
 ) {
 	tflog.Debug(ctx, "Starting TomlToJSON Function Metadata method.")
 
 	resp.Name = "toml_to_json"
 
-	tflog.Debug(ctx, fmt.Sprintf("resp.Name = %s", resp.Name))
+	tflog.Debug(ctx, "resp.Name = "+resp.Name)
 
 	tflog.Debug(ctx, "Ending TomlToJSON Function Metadata method.")
 }
@@ -58,7 +58,7 @@ func (f *tomlToJSONFunction) Metadata(
 // Definition defines the parameters and return type for the function.
 func (f *tomlToJSONFunction) Definition(
 	ctx context.Context,
-	req function.DefinitionRequest,
+	_ function.DefinitionRequest,
 	resp *function.DefinitionResponse,
 ) {
 	tflog.Debug(ctx, "Starting TomlToJSON Function Definition method.")

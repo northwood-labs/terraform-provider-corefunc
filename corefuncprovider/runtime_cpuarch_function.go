@@ -17,7 +17,6 @@ package corefuncprovider // lint:no_dupe
 
 import (
 	"context"
-	"fmt"
 	"runtime"
 	"strings"
 
@@ -43,14 +42,14 @@ func RuntimeCpuarchFunction() function.Function { // lint:allow_return_interface
 
 func (f *runtimeCpuarchFunction) Metadata(
 	ctx context.Context,
-	req function.MetadataRequest,
+	_ function.MetadataRequest,
 	resp *function.MetadataResponse,
 ) {
 	tflog.Debug(ctx, "Starting RuntimeCpuarch Function Metadata method.")
 
 	resp.Name = "runtime_cpuarch"
 
-	tflog.Debug(ctx, fmt.Sprintf("resp.Name = %s", resp.Name))
+	tflog.Debug(ctx, "resp.Name = "+resp.Name)
 
 	tflog.Debug(ctx, "Ending RuntimeCpuarch Function Metadata method.")
 }
@@ -58,7 +57,7 @@ func (f *runtimeCpuarchFunction) Metadata(
 // Definition defines the parameters and return type for the function.
 func (f *runtimeCpuarchFunction) Definition(
 	ctx context.Context,
-	req function.DefinitionRequest,
+	_ function.DefinitionRequest,
 	resp *function.DefinitionResponse,
 ) {
 	tflog.Debug(ctx, "Starting RuntimeCpuarch Function Definition method.")
@@ -82,7 +81,7 @@ func (f *runtimeCpuarchFunction) Definition(
 	tflog.Debug(ctx, "Ending RuntimeCpuarch Function Definition method.")
 }
 
-func (f *runtimeCpuarchFunction) Run(ctx context.Context, req function.RunRequest, resp *function.RunResponse) {
+func (f *runtimeCpuarchFunction) Run(ctx context.Context, _ function.RunRequest, resp *function.RunResponse) {
 	tflog.Debug(ctx, "Starting RuntimeCpuarch Function Run method.")
 
 	resp.Error = function.ConcatFuncErrors(resp.Result.Set(ctx, runtime.GOARCH))

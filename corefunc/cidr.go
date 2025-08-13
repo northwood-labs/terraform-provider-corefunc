@@ -63,7 +63,7 @@ func CIDRContains(containingCidr, containedIPOrCidr string) (bool, error) {
 		_, contained, err := net.ParseCIDR(containedIPOrCidr)
 		// If that also fails, we'll return an error.
 		if err != nil {
-			return false, fmt.Errorf(
+			return false, fmt.Errorf( // lint:allow_errorf
 				"invalid IP address or containing CIDR: %s",
 				containedIPOrCidr,
 			)
@@ -81,7 +81,7 @@ func CIDRContains(containingCidr, containedIPOrCidr string) (bool, error) {
 	// an error instead so that the caller can distinguish between a
 	// "legitimate" false result and an erroneous check.
 	if (startIP.To4() == nil) != (containing.IP.To4() == nil) {
-		return false, fmt.Errorf(
+		return false, fmt.Errorf( // lint:allow_errorf
 			"address family mismatch: %s vs. %s",
 			containingCidr,
 			containedIPOrCidr,

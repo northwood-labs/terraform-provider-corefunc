@@ -46,12 +46,12 @@ var EnvEnsureTestTable = map[string]struct {
 		SetValue:   "dev",
 		Pattern:    regexp.MustCompile(`(non)?prod$`),
 		PatternStr: `(non)?prod$`,
-		ExpectedErr: errors.New(
+		ExpectedErr: errors.New( // lint:allow_errorf
 			"environment variable AWS_VAULT does not match pattern (non)?prod$",
-		), // lint:allow_errorf
+		),
 		ExpectedErrRE: regexp.MustCompile(
 			`environment variable AWS_VAULT does not match pattern \(non\)\?prod\$`,
-		), // lint:allow_errorf
+		),
 	},
 	"AWS_PAGER": {
 		EnvVarName:    "AWS_PAGER",

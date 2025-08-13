@@ -17,7 +17,6 @@ package corefuncprovider // lint:no_dupe
 
 import (
 	"context"
-	"fmt"
 	"strings"
 
 	"github.com/hashicorp/terraform-plugin-framework/function"
@@ -44,14 +43,14 @@ func StrKebabFunction() function.Function { // lint:allow_return_interface
 
 func (f *strKebabFunction) Metadata(
 	ctx context.Context,
-	req function.MetadataRequest,
+	_ function.MetadataRequest,
 	resp *function.MetadataResponse,
 ) {
 	tflog.Debug(ctx, "Starting StrKebab Function Metadata method.")
 
 	resp.Name = "str_kebab"
 
-	tflog.Debug(ctx, fmt.Sprintf("resp.Name = %s", resp.Name))
+	tflog.Debug(ctx, "resp.Name = "+resp.Name)
 
 	tflog.Debug(ctx, "Ending StrKebab Function Metadata method.")
 }
@@ -59,7 +58,7 @@ func (f *strKebabFunction) Metadata(
 // Definition defines the parameters and return type for the function.
 func (f *strKebabFunction) Definition(
 	ctx context.Context,
-	req function.DefinitionRequest,
+	_ function.DefinitionRequest,
 	resp *function.DefinitionResponse,
 ) {
 	tflog.Debug(ctx, "Starting StrKebab Function Definition method.")
@@ -87,6 +86,7 @@ func (f *strKebabFunction) Run(ctx context.Context, req function.RunRequest, res
 	tflog.Debug(ctx, "Starting StrKebab Function Run method.")
 
 	var str string
+
 	err := req.Arguments.Get(ctx, &str)
 
 	resp.Error = function.ConcatFuncErrors(err)
@@ -95,6 +95,7 @@ func (f *strKebabFunction) Run(ctx context.Context, req function.RunRequest, res
 	}
 
 	value := corefunc.StrKebab(str)
+
 	resp.Error = function.ConcatFuncErrors(resp.Result.Set(ctx, value))
 
 	tflog.Debug(ctx, "Ending StrKebab Function Run method.")

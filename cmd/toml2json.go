@@ -32,7 +32,7 @@ var toml2jsonCmd = &cobra.Command{
 	Long: clihelpers.LongHelpText(`
 	Converts TOML to JSON.
 	`),
-	Run: func(cmd *cobra.Command, args []string) {
+	Run: func(_ *cobra.Command, args []string) {
 		if len(args) != 1 {
 			fmt.Println("Re-run with --help to see options.")
 			os.Exit(1)

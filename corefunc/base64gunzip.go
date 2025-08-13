@@ -61,6 +61,7 @@ func Base64Gunzip(input string) (string, error) {
 	}
 
 	decodedBytes = decodedBytes[:n]
+
 	decodedBytesBuf := bytes.NewReader(decodedBytes)
 
 	unzippedReader, err := gzip.NewReader(decodedBytesBuf)

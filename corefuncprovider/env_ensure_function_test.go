@@ -32,8 +32,6 @@ import (
 )
 
 func TestAccEnvEnsureFunction(t *testing.T) {
-	t.Parallel()
-
 	funcName := traceFuncName()
 
 	for name, tc := range testfixtures.EnvEnsureTestTable { // lint:no_dupe
@@ -45,10 +43,7 @@ func TestAccEnvEnsureFunction(t *testing.T) {
 			strings.TrimSpace(name),
 		)
 
-		err = os.Setenv(tc.EnvVarName, tc.SetValue)
-		if err != nil {
-			t.Error(err)
-		}
+		t.Setenv(tc.EnvVarName, tc.SetValue)
 
 		buf := &bytes.Buffer{}
 		tmpl := template.Must(
