@@ -32,8 +32,6 @@ import (
 )
 
 func TestAccEnvEnsureFunction(t *testing.T) {
-	t.Parallel()
-
 	funcName := traceFuncName()
 
 	for name, tc := range testfixtures.EnvEnsureTestTable { // lint:no_dupe
