@@ -17,7 +17,6 @@ package corefuncprovider // lint:no_dupe
 
 import (
 	"context"
-	"fmt"
 	"strings"
 
 	"github.com/hashicorp/terraform-plugin-framework/function"
@@ -44,14 +43,14 @@ func HomedirGetFunction() function.Function { // lint:allow_return_interface
 
 func (f *homedirGetFunction) Metadata(
 	ctx context.Context,
-	req function.MetadataRequest,
+	_ function.MetadataRequest,
 	resp *function.MetadataResponse,
 ) {
 	tflog.Debug(ctx, "Starting HomedirGet Function Metadata method.")
 
 	resp.Name = "homedir_get"
 
-	tflog.Debug(ctx, fmt.Sprintf("resp.Name = %s", resp.Name))
+	tflog.Debug(ctx, "resp.Name = "+resp.Name)
 
 	tflog.Debug(ctx, "Ending HomedirGet Function Metadata method.")
 }
@@ -59,7 +58,7 @@ func (f *homedirGetFunction) Metadata(
 // Definition defines the parameters and return type for the function.
 func (f *homedirGetFunction) Definition(
 	ctx context.Context,
-	req function.DefinitionRequest,
+	_ function.DefinitionRequest,
 	resp *function.DefinitionResponse,
 ) {
 	tflog.Debug(ctx, "Starting HomedirGet Function Definition method.")
@@ -77,7 +76,7 @@ func (f *homedirGetFunction) Definition(
 	tflog.Debug(ctx, "Ending HomedirGet Function Definition method.")
 }
 
-func (f *homedirGetFunction) Run(ctx context.Context, req function.RunRequest, resp *function.RunResponse) {
+func (f *homedirGetFunction) Run(ctx context.Context, _ function.RunRequest, resp *function.RunResponse) {
 	tflog.Debug(ctx, "Starting HomedirGet Function Run method.")
 
 	value, err := corefunc.Homedir()

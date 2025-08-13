@@ -17,7 +17,6 @@ package corefuncprovider // lint:no_dupe
 
 import (
 	"context"
-	"fmt"
 	"strings"
 
 	"github.com/hashicorp/terraform-plugin-framework/function"
@@ -44,14 +43,14 @@ func StrConstantFunction() function.Function { // lint:allow_return_interface
 
 func (f *strConstantFunction) Metadata(
 	ctx context.Context,
-	req function.MetadataRequest,
+	_ function.MetadataRequest,
 	resp *function.MetadataResponse,
 ) {
 	tflog.Debug(ctx, "Starting StrConstant Function Metadata method.")
 
 	resp.Name = "str_constant"
 
-	tflog.Debug(ctx, fmt.Sprintf("resp.Name = %s", resp.Name))
+	tflog.Debug(ctx, "resp.Name = "+resp.Name)
 
 	tflog.Debug(ctx, "Ending StrConstant Function Metadata method.")
 }
@@ -59,7 +58,7 @@ func (f *strConstantFunction) Metadata(
 // Definition defines the parameters and return type for the function.
 func (f *strConstantFunction) Definition(
 	ctx context.Context,
-	req function.DefinitionRequest,
+	_ function.DefinitionRequest,
 	resp *function.DefinitionResponse,
 ) {
 	tflog.Debug(ctx, "Starting StrConstant Function Definition method.")
@@ -88,6 +87,7 @@ func (f *strConstantFunction) Run(ctx context.Context, req function.RunRequest, 
 	tflog.Debug(ctx, "Starting StrConstant Function Run method.")
 
 	var str string
+
 	err := req.Arguments.Get(ctx, &str)
 
 	resp.Error = function.ConcatFuncErrors(err)
@@ -96,6 +96,7 @@ func (f *strConstantFunction) Run(ctx context.Context, req function.RunRequest, 
 	}
 
 	value := corefunc.StrConstant(str)
+
 	resp.Error = function.ConcatFuncErrors(resp.Result.Set(ctx, value))
 
 	tflog.Debug(ctx, "Ending StrConstant Function Run method.")

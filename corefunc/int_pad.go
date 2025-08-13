@@ -15,7 +15,10 @@
 
 package corefunc
 
-import "fmt"
+import (
+	"fmt"
+	"strconv"
+)
 
 /*
 IntLeftPad pads an integer on the left side with zeroes until it reaches the
@@ -30,5 +33,5 @@ desired width. Result is a string.
     is anything other than base10, it will be converted to base10.
 */
 func IntLeftPad(num int64, padWidth int) string {
-	return fmt.Sprintf("%0"+fmt.Sprint(padWidth)+"d", num)
+	return fmt.Sprintf("%0"+strconv.Itoa(padWidth)+"d", num)
 }

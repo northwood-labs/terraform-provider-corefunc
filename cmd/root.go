@@ -59,7 +59,7 @@ var (
 		The goal of this provider is not to call any APIs, but to provide pre-built
 		functions in the form of Data Sources.
 		`),
-		Run: func(cmd *cobra.Command, args []string) {
+		Run: func(_ *cobra.Command, _ []string) {
 			err := providerserver.Serve(context.Background(), corefuncprovider.New, providerserver.ServeOpts{
 				Address: "registry.terraform.io/northwood-labs/corefunc",
 				Debug:   debugMode,

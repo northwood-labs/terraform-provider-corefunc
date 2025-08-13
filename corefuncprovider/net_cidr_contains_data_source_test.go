@@ -21,6 +21,7 @@ import (
 	"log"
 	"os"
 	"regexp"
+	"strconv"
 	"strings"
 	"testing"
 	"text/template"
@@ -66,7 +67,7 @@ func TestAccNetCidrContainsDataSource(t *testing.T) {
 							resource.TestCheckResourceAttr(
 								"data.corefunc_net_cidr_contains.cidr",
 								"value",
-								fmt.Sprintf("%v", tc.Expected),
+								strconv.FormatBool(tc.Expected),
 							),
 						),
 						ExpectError: regexp.MustCompile(".*"),
@@ -83,7 +84,7 @@ func TestAccNetCidrContainsDataSource(t *testing.T) {
 							resource.TestCheckResourceAttr(
 								"data.corefunc_net_cidr_contains.cidr",
 								"value",
-								fmt.Sprintf("%v", tc.Expected),
+								strconv.FormatBool(tc.Expected),
 							),
 						),
 					},

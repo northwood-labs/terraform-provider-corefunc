@@ -38,6 +38,7 @@ func StrIterativeReplace(str string, replacements []types.Replacement) string {
 
 	for i := range replacements {
 		replacement := replacements[i]
+
 		s = strings.ReplaceAll(s, replacement.Old, replacement.New)
 	}
 

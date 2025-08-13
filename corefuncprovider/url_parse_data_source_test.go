@@ -19,6 +19,7 @@ import (
 	"bytes"
 	"fmt"
 	"os"
+	"strconv"
 	"strings"
 	"testing"
 	"text/template"
@@ -72,7 +73,7 @@ func TestAccURLParseDataSource(t *testing.T) {
 						resource.TestCheckResourceAttr(resourceAddr, "query", tc.Query),
 						resource.TestCheckResourceAttr(resourceAddr, "hash", tc.Hash),
 						resource.TestCheckResourceAttr(resourceAddr, "fragment", tc.Fragment),
-						resource.TestCheckResourceAttr(resourceAddr, "decoded_port", fmt.Sprint(tc.DecodedPort)),
+						resource.TestCheckResourceAttr(resourceAddr, "decoded_port", strconv.Itoa(tc.DecodedPort)),
 					),
 				},
 			},

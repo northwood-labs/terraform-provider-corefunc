@@ -17,7 +17,6 @@ package corefuncprovider // lint:no_dupe
 
 import (
 	"context"
-	"fmt"
 	"runtime"
 	"strings"
 
@@ -61,8 +60,8 @@ func (d *runtimeCpuarchDataSource) Metadata(
 
 	resp.TypeName = req.ProviderTypeName + "_runtime_cpuarch"
 
-	tflog.Debug(ctx, fmt.Sprintf("req.ProviderTypeName = %s", req.ProviderTypeName))
-	tflog.Debug(ctx, fmt.Sprintf("resp.TypeName = %s", resp.TypeName))
+	tflog.Debug(ctx, "req.ProviderTypeName = "+req.ProviderTypeName)
+	tflog.Debug(ctx, "resp.TypeName = "+resp.TypeName)
 
 	tflog.Debug(ctx, "Ending RuntimeCpuarch DataSource Metadata method.")
 }
@@ -141,6 +140,7 @@ func (d *runtimeCpuarchDataSource) Read( // lint:no_dupe
 	tflog.Debug(ctx, "Starting RuntimeCpuarch DataSource Read method.")
 
 	var state runtimeCpuarchDataSourceModel
+
 	diags := resp.State.Get(ctx, &state)
 	resp.Diagnostics.Append(diags...)
 

@@ -54,6 +54,8 @@ func URLParse(rawURL string, canon ...types.URLCanonicalizer) (*url.Url, error) 
 			return url.Parse(rawURL) // lint:allow_unwrapped_errors
 		case types.GoogleSafeBrowsing:
 			return canonicalizer.GoogleSafeBrowsing.Parse(rawURL) // lint:allow_unwrapped_errors
+		default:
+			return nil, fmt.Errorf("unknown URL canonicalizer: %v", canon[0]) // lint:allow_errorf
 		}
 	}
 

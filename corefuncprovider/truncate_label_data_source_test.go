@@ -73,7 +73,7 @@ func TestAccTruncateLabelDataSource(t *testing.T) {
 
 		// Minimum value for the provider is 1.
 		if tc.MaxLength == 0 {
-			tc.MaxLength += 1
+			tc.MaxLength++
 		}
 
 		err := tmpl.Execute(buf, tc)

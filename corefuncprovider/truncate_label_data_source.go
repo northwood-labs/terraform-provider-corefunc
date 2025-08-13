@@ -17,7 +17,6 @@ package corefuncprovider
 
 import (
 	"context"
-	"fmt"
 	"strings"
 
 	"github.com/northwood-labs/terraform-provider-corefunc/corefunc"
@@ -73,8 +72,8 @@ func (d *truncateLabelDataSource) Metadata(
 
 	resp.TypeName = req.ProviderTypeName + "_str_truncate_label"
 
-	tflog.Debug(ctx, fmt.Sprintf("req.ProviderTypeName = %s", req.ProviderTypeName))
-	tflog.Debug(ctx, fmt.Sprintf("resp.TypeName = %s", resp.TypeName))
+	tflog.Debug(ctx, "req.ProviderTypeName = "+req.ProviderTypeName)
+	tflog.Debug(ctx, "resp.TypeName = "+resp.TypeName)
 
 	tflog.Debug(ctx, "Ending TruncateLabel DataSource Metadata method.")
 }
@@ -186,6 +185,7 @@ func (d *truncateLabelDataSource) Read(
 	tflog.Debug(ctx, "Starting TruncateLabel DataSource Read method.")
 
 	var state truncateLabelDataSourceModel
+
 	diags := resp.State.Get(ctx, &state)
 	resp.Diagnostics.Append(diags...)
 

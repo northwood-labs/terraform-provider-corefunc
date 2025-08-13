@@ -15,4 +15,4 @@
 
 // Package types provides a set of structs that simplify the usage of the
 // corefunc package.
-package types
+package types // lint:allow_package_name

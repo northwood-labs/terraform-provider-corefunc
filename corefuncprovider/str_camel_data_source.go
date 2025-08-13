@@ -17,7 +17,6 @@ package corefuncprovider // lint:no_dupe
 
 import (
 	"context"
-	"fmt"
 	"strings"
 
 	"github.com/hashicorp/terraform-plugin-framework/datasource"
@@ -64,8 +63,8 @@ func (d *strCamelDataSource) Metadata(
 
 	resp.TypeName = req.ProviderTypeName + "_str_camel"
 
-	tflog.Debug(ctx, fmt.Sprintf("req.ProviderTypeName = %s", req.ProviderTypeName))
-	tflog.Debug(ctx, fmt.Sprintf("resp.TypeName = %s", resp.TypeName))
+	tflog.Debug(ctx, "req.ProviderTypeName = "+req.ProviderTypeName)
+	tflog.Debug(ctx, "resp.TypeName = "+resp.TypeName)
 
 	tflog.Debug(ctx, "Ending StrCamel DataSource Metadata method.")
 }
@@ -154,6 +153,7 @@ func (d *strCamelDataSource) Read( // lint:no_dupe
 	tflog.Debug(ctx, "Starting StrCamel DataSource Read method.")
 
 	var state strCamelDataSourceModel
+
 	diags := resp.State.Get(ctx, &state)
 	resp.Diagnostics.Append(diags...)
 

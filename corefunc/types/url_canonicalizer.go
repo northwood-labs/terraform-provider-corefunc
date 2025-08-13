@@ -13,10 +13,13 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package types
+package types // lint:allow_package_name
 
 const (
-	Standard           URLCanonicalizer = iota
+	// Standard URLCanonicalizer is the default canonicalization method.
+	Standard URLCanonicalizer = iota
+
+	// GoogleSafeBrowsing URLCanonicalizer uses the Google Safe Browsing.
 	GoogleSafeBrowsing URLCanonicalizer = iota
 )
 
