@@ -19,6 +19,7 @@ import (
 	"bytes"
 	"fmt"
 	"os"
+	"strconv"
 	"strings"
 	"testing"
 	"text/template"
@@ -61,7 +62,7 @@ func TestAccRuntimeNumcpusDataSource(t *testing.T) {
 						resource.TestCheckResourceAttr(
 							"data.corefunc_runtime_numcpus.count",
 							"value",
-							fmt.Sprint(tc.Expected),
+							strconv.Itoa(tc.Expected),
 						),
 					),
 				},

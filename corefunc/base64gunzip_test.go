@@ -66,7 +66,7 @@ func BenchmarkBase64Gunzip(b *testing.B) {
 		b.Run(name, func(b *testing.B) {
 			b.ResetTimer()
 
-			for i := 0; i < b.N; i++ {
+			for range b.N {
 				_, _ = Base64Gunzip(tc.Input) // lint:allow_unhandled
 			}
 		})
@@ -94,7 +94,7 @@ func FuzzBase64Gunzip(f *testing.F) {
 	}
 
 	f.Fuzz(
-		func(t *testing.T, input string) {
+		func(_ *testing.T, input string) {
 			_, _ = Base64Gunzip(input) // lint:allow_unhandled
 		},
 	)

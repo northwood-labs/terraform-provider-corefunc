@@ -17,7 +17,6 @@ package corefuncprovider // lint:no_dupe
 
 import (
 	"context"
-	"fmt"
 	"strings"
 
 	"github.com/hashicorp/terraform-plugin-framework/function"
@@ -44,14 +43,14 @@ func NetCidrContainsFunction() function.Function { // lint:allow_return_interfac
 
 func (f *netCidrContainsFunction) Metadata(
 	ctx context.Context,
-	req function.MetadataRequest,
+	_ function.MetadataRequest,
 	resp *function.MetadataResponse,
 ) {
 	tflog.Debug(ctx, "Starting NetCidrContains Function Metadata method.")
 
 	resp.Name = "net_cidr_contains"
 
-	tflog.Debug(ctx, fmt.Sprintf("resp.Name = %s", resp.Name))
+	tflog.Debug(ctx, "resp.Name = "+resp.Name)
 
 	tflog.Debug(ctx, "Ending NetCidrContains Function Metadata method.")
 }
@@ -59,7 +58,7 @@ func (f *netCidrContainsFunction) Metadata(
 // Definition defines the parameters and return type for the function.
 func (f *netCidrContainsFunction) Definition( // lint:no_dupe
 	ctx context.Context,
-	req function.DefinitionRequest,
+	_ function.DefinitionRequest,
 	resp *function.DefinitionResponse,
 ) {
 	tflog.Debug(ctx, "Starting NetCidrContains Function Definition method.")

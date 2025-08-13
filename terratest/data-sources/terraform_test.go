@@ -19,6 +19,7 @@ import (
 	"fmt"
 	"os"
 	"runtime"
+	"strconv"
 	"strings"
 	"testing"
 
@@ -135,9 +136,13 @@ func TestTerraform(t *testing.T) {
 		assert.Equal(t, terraform.Output(t, terraformOptions, "toml_as_json"), strings.TrimSpace(asJSON))
 
 		// Ported OpenTofu functions
-		isContained := false
-		decodedURL := ""
-		unzipped := ""
+		var (
+			isContained bool
+			decodedURL  string
+			homedir     string
+			homedirPath string
+			unzipped    string
+		)
 
 		isContained, err = corefunc.CIDRContains("192.168.2.0/20", "192.168.2.1")
 		if err != nil {
@@ -154,18 +159,18 @@ func TestTerraform(t *testing.T) {
 			t.Fatal(err)
 		}
 
-		assert.Equal(t, terraform.Output(t, terraformOptions, "net_cidr_contains_ds"), fmt.Sprintf("%t", isContained))
+		assert.Equal(t, terraform.Output(t, terraformOptions, "net_cidr_contains_ds"), strconv.FormatBool(isContained))
 		assert.Equal(t, terraform.Output(t, terraformOptions, "str_base64_gunzip_ds"), unzipped)
 		assert.Equal(t, terraform.Output(t, terraformOptions, "url_decode_ds"), decodedURL)
 
 		// runtime
 		assert.Equal(t, terraform.Output(t, terraformOptions, "runtime_cpuarch_ds"), runtime.GOARCH)
-		assert.Equal(t, terraform.Output(t, terraformOptions, "runtime_numcpus_ds"), fmt.Sprint(runtime.NumCPU()))
+		assert.Equal(t, terraform.Output(t, terraformOptions, "runtime_numcpus_ds"), strconv.Itoa(runtime.NumCPU()))
 		assert.Equal(t, terraform.Output(t, terraformOptions, "runtime_os_ds"), runtime.GOOS)
 
 		// url_parse
 		urlParse := terraform.OutputMap(t, terraformOptions, "url_parse_ds")
-		assert.Equal(t, urlParse["decoded_port"], fmt.Sprint(80))
+		assert.Equal(t, urlParse["decoded_port"], strconv.Itoa(80))
 		assert.Equal(t, urlParse["fragment"], "bar")
 		assert.Equal(t, urlParse["hash"], "#bar")
 		assert.Equal(t, urlParse["host"], exampleCom)
@@ -184,7 +189,7 @@ func TestTerraform(t *testing.T) {
 
 		// url_parse_gsb
 		urlParseGSB := terraform.OutputMap(t, terraformOptions, "url_parse_gsb_ds")
-		assert.Equal(t, urlParseGSB["decoded_port"], fmt.Sprint(80))
+		assert.Equal(t, urlParseGSB["decoded_port"], strconv.Itoa(80))
 		assert.Equal(t, urlParseGSB["fragment"], "")
 		assert.Equal(t, urlParseGSB["hash"], "")
 		assert.Equal(t, urlParseGSB["host"], exampleCom)
@@ -200,9 +205,6 @@ func TestTerraform(t *testing.T) {
 		assert.Equal(t, urlParseGSB["search"], "?q=1")
 		assert.Equal(t, urlParseGSB["url"], "HTTP://u:p@example.com:80/foo?q=1#bar")
 		assert.Equal(t, urlParseGSB["username"], "u")
-
-		homedir := ""
-		homedirPath := ""
 
 		homedir, err = corefunc.Homedir()
 		if err != nil {

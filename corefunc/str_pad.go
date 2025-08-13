@@ -37,6 +37,7 @@ func StrLeftPad(str string, padWidth int, padChar ...byte) string {
 	}
 
 	var pStr byte
+
 	pStr = 0x20
 
 	if padWidth < 0 {

@@ -64,8 +64,19 @@ name = 'Tom Preston-Werner'
 		panic(err)
 	}
 
-	fmt.Println(v.(map[string]any)["title"])
-	fmt.Println(v.(map[string]any)["servers"].(map[string]any)["alpha"].(map[string]any)["role"])
+	if m, ok := v.(map[string]any); ok {
+		if title, exists := m["title"]; exists {
+			fmt.Println(title)
+		}
+
+		if servers, ok := m["servers"].(map[string]any); ok {
+			if alpha, ok := servers["alpha"].(map[string]any); ok {
+				if role, exists := alpha["role"]; exists {
+					fmt.Println(role)
+				}
+			}
+		}
+	}
 
 	// Output:
 	// TOML Example
@@ -115,8 +126,19 @@ func ExampleJSONtoTOML() {
 		panic(err)
 	}
 
-	fmt.Println(v.(map[string]any)["title"])
-	fmt.Println(v.(map[string]any)["servers"].(map[string]any)["alpha"].(map[string]any)["role"])
+	if m, ok := v.(map[string]any); ok {
+		if title, exists := m["title"]; exists {
+			fmt.Println(title)
+		}
+
+		if servers, ok := m["servers"].(map[string]any); ok {
+			if alpha, ok := servers["alpha"].(map[string]any); ok {
+				if role, exists := alpha["role"]; exists {
+					fmt.Println(role)
+				}
+			}
+		}
+	}
 
 	// Output:
 	// TOML Example

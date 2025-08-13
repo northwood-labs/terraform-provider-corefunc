@@ -17,7 +17,6 @@ package corefuncprovider // lint:no_dupe
 
 import (
 	"context"
-	"fmt"
 	"strings"
 
 	"github.com/hashicorp/terraform-plugin-framework/function"
@@ -44,14 +43,14 @@ func HomedirExpandFunction() function.Function { // lint:allow_return_interface
 
 func (f *homedirExpandFunction) Metadata(
 	ctx context.Context,
-	req function.MetadataRequest,
+	_ function.MetadataRequest,
 	resp *function.MetadataResponse,
 ) {
 	tflog.Debug(ctx, "Starting HomedirExpand Function Metadata method.")
 
 	resp.Name = "homedir_expand"
 
-	tflog.Debug(ctx, fmt.Sprintf("resp.Name = %s", resp.Name))
+	tflog.Debug(ctx, "resp.Name = "+resp.Name)
 
 	tflog.Debug(ctx, "Ending HomedirExpand Function Metadata method.")
 }
@@ -59,7 +58,7 @@ func (f *homedirExpandFunction) Metadata(
 // Definition defines the parameters and return type for the function.
 func (f *homedirExpandFunction) Definition(
 	ctx context.Context,
-	req function.DefinitionRequest,
+	_ function.DefinitionRequest,
 	resp *function.DefinitionResponse,
 ) {
 	tflog.Debug(ctx, "Starting HomedirExpand Function Definition method.")

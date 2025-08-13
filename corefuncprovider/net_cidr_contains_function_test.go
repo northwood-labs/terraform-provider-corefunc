@@ -21,6 +21,7 @@ import (
 	"log"
 	"os"
 	"regexp"
+	"strconv"
 	"strings"
 	"testing"
 	"text/template"
@@ -70,7 +71,7 @@ func TestAccNetCidrContainsFunction(t *testing.T) {
 					{
 						Config: providerConfig + buf.String(),
 						Check: resource.ComposeTestCheckFunc(
-							resource.TestCheckOutput("cidr", fmt.Sprintf("%v", tc.Expected)),
+							resource.TestCheckOutput("cidr", strconv.FormatBool(tc.Expected)),
 						),
 						ExpectError: regexp.MustCompile(".*"),
 					},
@@ -88,7 +89,7 @@ func TestAccNetCidrContainsFunction(t *testing.T) {
 					{
 						Config: providerConfig + buf.String(),
 						Check: resource.ComposeTestCheckFunc(
-							resource.TestCheckOutput("cidr", fmt.Sprintf("%v", tc.Expected)),
+							resource.TestCheckOutput("cidr", strconv.FormatBool(tc.Expected)),
 						),
 					},
 				},

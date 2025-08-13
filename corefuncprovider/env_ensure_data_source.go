@@ -17,7 +17,6 @@ package corefuncprovider
 
 import (
 	"context"
-	"fmt"
 	"os"
 	"regexp"
 	"strings"
@@ -66,8 +65,8 @@ func (d *envEnsureDataSource) Metadata(
 
 	resp.TypeName = req.ProviderTypeName + "_env_ensure"
 
-	tflog.Debug(ctx, fmt.Sprintf("req.ProviderTypeName = %s", req.ProviderTypeName))
-	tflog.Debug(ctx, fmt.Sprintf("resp.TypeName = %s", resp.TypeName))
+	tflog.Debug(ctx, "req.ProviderTypeName = "+req.ProviderTypeName)
+	tflog.Debug(ctx, "resp.TypeName = "+resp.TypeName)
 
 	tflog.Debug(ctx, "Ending EnvEnsure DataSource Metadata method.")
 }
@@ -156,6 +155,7 @@ func (d *envEnsureDataSource) Read(
 	tflog.Debug(ctx, "Starting EnvEnsure DataSource Read method.")
 
 	var state envEnsureDataSourceModel
+
 	diags := resp.State.Get(ctx, &state)
 	resp.Diagnostics.Append(diags...)
 

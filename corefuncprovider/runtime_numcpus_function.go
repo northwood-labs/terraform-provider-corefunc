@@ -17,7 +17,6 @@ package corefuncprovider // lint:no_dupe
 
 import (
 	"context"
-	"fmt"
 	"runtime"
 	"strings"
 
@@ -43,14 +42,14 @@ func RuntimeNumcpusFunction() function.Function { // lint:allow_return_interface
 
 func (f *runtimeNumcpusFunction) Metadata(
 	ctx context.Context,
-	req function.MetadataRequest,
+	_ function.MetadataRequest,
 	resp *function.MetadataResponse,
 ) {
 	tflog.Debug(ctx, "Starting RuntimeNumcpus Function Metadata method.")
 
 	resp.Name = "runtime_numcpus"
 
-	tflog.Debug(ctx, fmt.Sprintf("resp.Name = %s", resp.Name))
+	tflog.Debug(ctx, "resp.Name = "+resp.Name)
 
 	tflog.Debug(ctx, "Ending RuntimeNumcpus Function Metadata method.")
 }
@@ -58,7 +57,7 @@ func (f *runtimeNumcpusFunction) Metadata(
 // Definition defines the parameters and return type for the function.
 func (f *runtimeNumcpusFunction) Definition(
 	ctx context.Context,
-	req function.DefinitionRequest,
+	_ function.DefinitionRequest,
 	resp *function.DefinitionResponse,
 ) {
 	tflog.Debug(ctx, "Starting RuntimeNumcpus Function Definition method.")
@@ -80,7 +79,7 @@ func (f *runtimeNumcpusFunction) Definition(
 	tflog.Debug(ctx, "Ending RuntimeNumcpus Function Definition method.")
 }
 
-func (f *runtimeNumcpusFunction) Run(ctx context.Context, req function.RunRequest, resp *function.RunResponse) {
+func (f *runtimeNumcpusFunction) Run(ctx context.Context, _ function.RunRequest, resp *function.RunResponse) {
 	tflog.Debug(ctx, "Starting RuntimeNumcpus Function Run method.")
 
 	resp.Error = function.ConcatFuncErrors(resp.Result.Set(ctx, runtime.NumCPU()))

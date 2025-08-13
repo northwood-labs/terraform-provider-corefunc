@@ -111,7 +111,6 @@ func (p *coreFuncProvider) DataSources(ctx context.Context) []func() datasource.
 		IntLeftpadDataSource,
 		NetCidrContainsDataSource,
 		RuntimeCpuarchDataSource,
-		RuntimeGorootDataSource,
 		RuntimeNumcpusDataSource,
 		RuntimeOsDataSource,
 		StrBase64GunzipDataSource,
@@ -131,6 +130,8 @@ func (p *coreFuncProvider) DataSources(ctx context.Context) []func() datasource.
 
 // Functions defines the functions implemented in the provider.
 func (p *coreFuncProvider) Functions(ctx context.Context) []func() function.Function {
+	tflog.Debug(ctx, "Running Provider Functions method.")
+
 	return []func() function.Function{
 		EnvEnsureFunction,
 		HomedirExpandFunction,
@@ -138,7 +139,6 @@ func (p *coreFuncProvider) Functions(ctx context.Context) []func() function.Func
 		IntLeftpadFunction,
 		NetCidrContainsFunction,
 		RuntimeCpuarchFunction,
-		RuntimeGorootFunction,
 		RuntimeNumcpusFunction,
 		RuntimeOsFunction,
 		StrBase64GunzipFunction,

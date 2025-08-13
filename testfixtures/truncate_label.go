@@ -16,8 +16,11 @@
 package testfixtures
 
 const (
+	// TruncatePrefix is a sample prefix used in the TruncateLabelTestTable.
 	TruncatePrefix = "NW-TEST-FIRST"
-	TruncateLabel  = "Name of my monitor"
+
+	// TruncateLabel is a sample label used in the TruncateLabelTestTable.
+	TruncateLabel = "Name of my monitor"
 )
 
 // TruncateLabelTestTable is used by both the standard Go tests and also the

@@ -17,6 +17,7 @@ package corefunc
 
 import (
 	"fmt"
+	"strconv"
 	"strings"
 	"testing"
 
@@ -84,7 +85,7 @@ func ExampleURLParse_googleSafeBrowsing() {
 	fmt.Println("." + parsedURL.Query())
 	fmt.Println("." + parsedURL.Hash())
 	fmt.Println("." + parsedURL.Fragment())
-	fmt.Println("." + fmt.Sprint(parsedURL.DecodedPort()))
+	fmt.Println("." + strconv.Itoa(parsedURL.DecodedPort()))
 
 	// Output:
 	// .http://u:p@example.com/foo?q=1

@@ -17,7 +17,6 @@ package corefuncprovider // lint:no_dupe
 
 import (
 	"context"
-	"fmt"
 	"strings"
 
 	"github.com/hashicorp/terraform-plugin-framework/function"
@@ -44,14 +43,14 @@ func StrBase64GunzipFunction() function.Function { // lint:allow_return_interfac
 
 func (f *strBase64GunzipFunction) Metadata(
 	ctx context.Context,
-	req function.MetadataRequest,
+	_ function.MetadataRequest,
 	resp *function.MetadataResponse,
 ) {
 	tflog.Debug(ctx, "Starting StrBase64Gunzip Function Metadata method.")
 
 	resp.Name = "str_base64_gunzip"
 
-	tflog.Debug(ctx, fmt.Sprintf("resp.Name = %s", resp.Name))
+	tflog.Debug(ctx, "resp.Name = "+resp.Name)
 
 	tflog.Debug(ctx, "Ending StrBase64Gunzip Function Metadata method.")
 }
@@ -59,7 +58,7 @@ func (f *strBase64GunzipFunction) Metadata(
 // Definition defines the parameters and return type for the function.
 func (f *strBase64GunzipFunction) Definition(
 	ctx context.Context,
-	req function.DefinitionRequest,
+	_ function.DefinitionRequest,
 	resp *function.DefinitionResponse,
 ) {
 	tflog.Debug(ctx, "Starting StrBase64Gunzip Function Definition method.")
@@ -99,6 +98,7 @@ func (f *strBase64GunzipFunction) Run(ctx context.Context, req function.RunReque
 	tflog.Debug(ctx, "Starting StrBase64Gunzip Function Run method.")
 
 	var gzippedBase64 string
+
 	err := req.Arguments.Get(ctx, &gzippedBase64)
 
 	resp.Error = function.ConcatFuncErrors(err)

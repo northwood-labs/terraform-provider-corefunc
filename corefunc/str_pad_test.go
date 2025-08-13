@@ -37,9 +37,10 @@ func ExampleStrLeftPad() {
 func TestStrLeftPad(t *testing.T) {
 	for name, tc := range testfixtures.StrLeftPadTestTable {
 		t.Run(name, func(t *testing.T) {
-			output := ""
-
-			var emptyByte byte
+			var (
+				emptyByte byte
+				output    string
+			)
 
 			if tc.PadChar == emptyByte {
 				output = StrLeftPad(tc.Input, tc.PadWidth)
@@ -61,7 +62,7 @@ func BenchmarkStrLeftPad(b *testing.B) {
 		b.Run(name, func(b *testing.B) {
 			b.ResetTimer()
 
-			for i := 0; i < b.N; i++ {
+			for range b.N {
 				_ = StrLeftPad(tc.Input, tc.PadWidth, tc.PadChar) // lint:allow_unhandled
 			}
 		})
@@ -90,7 +91,7 @@ func FuzzStrLeftPad(f *testing.F) {
 	}
 
 	f.Fuzz(
-		func(t *testing.T, in string) {
+		func(_ *testing.T, in string) {
 			_ = StrLeftPad(in, len(in)) // lint:allow_unhandled
 		},
 	)

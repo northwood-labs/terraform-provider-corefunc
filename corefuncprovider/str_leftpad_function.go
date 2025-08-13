@@ -17,7 +17,6 @@ package corefuncprovider // lint:no_dupe
 
 import (
 	"context"
-	"fmt"
 	"strings"
 
 	"github.com/hashicorp/terraform-plugin-framework/function"
@@ -44,14 +43,14 @@ func StrLeftpadFunction() function.Function { // lint:allow_return_interface
 
 func (f *strLeftpadFunction) Metadata(
 	ctx context.Context,
-	req function.MetadataRequest,
+	_ function.MetadataRequest,
 	resp *function.MetadataResponse,
 ) {
 	tflog.Debug(ctx, "Starting StrLeftpad Function Metadata method.")
 
 	resp.Name = "str_leftpad"
 
-	tflog.Debug(ctx, fmt.Sprintf("resp.Name = %s", resp.Name))
+	tflog.Debug(ctx, "resp.Name = "+resp.Name)
 
 	tflog.Debug(ctx, "Ending StrLeftpad Function Metadata method.")
 }
@@ -59,7 +58,7 @@ func (f *strLeftpadFunction) Metadata(
 // Definition defines the parameters and return type for the function.
 func (f *strLeftpadFunction) Definition(
 	ctx context.Context,
-	req function.DefinitionRequest,
+	_ function.DefinitionRequest,
 	resp *function.DefinitionResponse,
 ) {
 	tflog.Debug(ctx, "Starting StrLeftpad Function Definition method.")
@@ -109,6 +108,7 @@ func (f *strLeftpadFunction) Run(ctx context.Context, req function.RunRequest, r
 
 	if len(padChar) > 0 && padChar[0] != "" {
 		b := []byte(padChar[0])
+
 		value = corefunc.StrLeftPad(str, int(padWidth), b[0])
 	} else {
 		value = corefunc.StrLeftPad(str, int(padWidth))
