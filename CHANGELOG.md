@@ -465,6 +465,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`b583d01`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/b583d0157b3a8a5bc03a8af8a1e52a017b3ac3aa): Upgrade Go to 1.24. ([@skyzyx](https://github.com/skyzyx))
 * [`5821394`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/5821394b68f4b24e9cbd2bcce9264d5de07d00a2): OSV scanner config. ([@skyzyx](https://github.com/skyzyx))
 * [`d96d90f`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/d96d90fd45f2c65c5ca6609cefdff0b4ca1969ef): OSV scanner config. ([@skyzyx](https://github.com/skyzyx))
+* [`e172d17`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/e172d17d51bb0d600fa476773b6e113d18d7174d): OSV scanner config. ([@skyzyx](https://github.com/skyzyx))
 
 ### <!-- 0 -->:rocket: Features
 
