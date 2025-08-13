@@ -438,6 +438,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`44730d1`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/44730d1c64eaec20c7d6b6f0a89d9cc082557497): Bumped-up the version of Go. ([@skyzyx](https://github.com/skyzyx))
 * [`81b31ff`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/81b31ff0c5ad947c7f82d161a5880df79f31525c): More version updates. ([@skyzyx](https://github.com/skyzyx))
 * [`6c6fb51`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/6c6fb51bbfe3d94db6ac7e7188e156884ba68e29): **deps**: Bump `github/codeql-action` from 3.29.7 to 3.29.8 ([#574](https://github.com/northwood-labs/terraform-provider-corefunc/issues/574)) ([@dependabot](https://github.com/dependabot))
+* [`11f821d`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/11f821d5fbaf4100b561ac844b9f724fb175f483): **deps**: Bump `github/codeql-action` from 3.29.8 to 3.29.9 ([#576](https://github.com/northwood-labs/terraform-provider-corefunc/issues/576)) ([@dependabot](https://github.com/dependabot))
+
+### :soap: Linting
+
+* [`c4ddf39`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/c4ddf399ca887e0f48afd86d8440f6c39e431c6c): Upgraded golangci-lint to v2 config. Fixed linting results. ([@skyzyx](https://github.com/skyzyx))
 
 ### :test_tube: Testing
 
@@ -466,6 +471,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`50f482d`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/50f482d81c6d7486764fb00b86cd3ad83cb3d7f6): Updated the URLParse tests to match Google Safe Browsing rules. ([@skyzyx](https://github.com/skyzyx))
 * [`4ef6356`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/4ef635649dd91875c084828d6de87a5f350cade0): Stop rolling back to github.com/nlnwa/whatwg-url@v0.5.0 on tidy. ([@skyzyx](https://github.com/skyzyx))
 * [`9b4e53f`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/9b4e53f147fcbfea8d4122a199898b18aec5b521): Remove git-cliff from history. ([@skyzyx](https://github.com/skyzyx))
+* **[BC BREAK]** [`aa7622f`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/aa7622f033f7aeaf7260dd8b720f0f4395ba036c): GOROOT has been deprecated in Go 1.25. Removing related code. ([@skyzyx](https://github.com/skyzyx))
 
 ### <!-- ZZZ -->:gear: Miscellaneous Tasks
 
