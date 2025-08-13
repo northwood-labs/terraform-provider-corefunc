@@ -17,7 +17,13 @@ concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
-permissions: read-all
+permissions:
+  # Required to upload SARIF file to CodeQL. See: https://github.com/github/codeql-action/issues/2117
+  actions: read
+  # Require writing security events to upload SARIF file to security tab
+  security-events: write
+  # Only need to read contents
+  contents: read
 
 jobs:
   osv_scanner_job:
@@ -64,9 +70,11 @@ jobs:
       - name: Checkout Source
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
 
-      - name: Check dependencies for security vulnerabilities
-        uses: g-rath/check-with-osv-detector@0e8c0f954d8618a3a4671eca1918b30b2d085af3 # main
+      - name: "Run scanner on existing code"
+        uses: google/osv-scanner-action/osv-scanner-action@a0e5dd4ee828f4e99760a98cac452a29afe27cb8 # v2.2.1
+        continue-on-error: true
         with:
-          flags:
-            -r
-          paths: .
+          scan-args: |-
+            --format=json
+            --output=results.json
+            --recursive .
