@@ -11,7 +11,7 @@
 
 # Shell
 SHELL:=bash
-GO:=$(shell which go)
+GO:=GOEXPERIMENT=greenteagc,jsonv2 $(shell which go)
 GOTOOLS:=$(GO) tool -modfile=go.tools.mod
 GUMCHECK:=$(shell command -v $(GOTOOLS) gum 2> /dev/null)
 
