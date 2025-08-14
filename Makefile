@@ -212,6 +212,14 @@ list-tests:
 	@ $(HEADER) "=====> BATS tests..."
 	@ echo "make bats"
 
+	@ $(HEADER) "=====> Quick benchmarks..."
+	@ echo "make quickbench"
+	@ cat ./corefunc/*_test.go | ggrep "func Benchmark" | gsed 's/func\s//g' | gsed -r 's/\(.*//g' | gsed -r 's/Benchmark/make quickbench NAME=/g'
+
+	@ $(HEADER) "=====> Full benchmarks..."
+	@ echo "make bench"
+	@ cat ./corefunc/*_test.go | ggrep "func Benchmark" | gsed 's/func\s//g' | gsed -r 's/\(.*//g' | gsed -r 's/Benchmark/make bench NAME=/g'
+
 .PHONY: bats
 ## bats: [test] Tests the output of the provider using tfschema and BATS.
 bats: build clean
