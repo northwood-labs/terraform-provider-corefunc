@@ -21,8 +21,7 @@
     [[ ${lines[13]} == "corefunc_str_leftpad" ]]
     [[ ${lines[14]} == "corefunc_str_pascal" ]]
     [[ ${lines[15]} == "corefunc_str_snake" ]]
-    [[ ${lines[16]} == "corefunc_str_truncate_label" ]]
-    [[ ${lines[17]} == "corefunc_toml_to_json" ]]
-    [[ ${lines[18]} == "corefunc_url_decode" ]]
-    [[ ${lines[19]} == "corefunc_url_parse" ]]
+    [[ ${lines[16]} == "corefunc_toml_to_json" ]]
+    [[ ${lines[17]} == "corefunc_url_decode" ]]
+    [[ ${lines[18]} == "corefunc_url_parse" ]]
 }

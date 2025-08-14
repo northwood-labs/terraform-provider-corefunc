@@ -122,7 +122,6 @@ func (p *coreFuncProvider) DataSources(ctx context.Context) []func() datasource.
 		StrPascalDataSource,
 		StrSnakeDataSource,
 		TomlToJSONDataSource,
-		TruncateLabelDataSource,
 		URLDecodeDataSource,
 		URLParseDataSource,
 	}
@@ -149,7 +148,6 @@ func (p *coreFuncProvider) Functions(ctx context.Context) []func() function.Func
 		StrLeftpadFunction,
 		StrPascalFunction,
 		StrSnakeFunction,
-		StrTruncateLabelFunction,
 		TomlToJSONFunction,
 		URLDecodeFunction,
 		URLParseFunction,
