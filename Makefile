@@ -14,7 +14,13 @@ BINARY_NAME=terraform-provider-corefunc
 
 .PHONY: install-tools
 ## install-tools: [tools]* Install/upgrade the required dependencies.
-install-tools: install-tools-mac install-tools-go
+install-tools: install-tools-mac install-tools-go install-tools-py
+
+.PHONY: install-tools-py
+## install-tools-py: [tools] Install/upgrade the required Go packages.
+install-tools-py:
+	@ $(HEADER) "=====> Installing Python tools..."
+	poetry lock && poetry install
 
 .PHONY: install-tools-go
 ## install-tools-go: [tools] Install/upgrade the required Go packages.
