@@ -34,12 +34,12 @@ The goal of this provider is not to call any network APIs, but to provide pre-bu
 
 | Testing type | Details            | Description                                                                    |
 |--------------|--------------------|--------------------------------------------------------------------------------|
-| integration  | Terraform 1.0–1.11 | Executes the provider with this release, pulling from `registry.terraform.io`. |
-| integration  | OpenTofu 1.6–1.9   | Executes the provider with this release, pulling from `registry.opentofu.org`. |
-| unit         | Go 1.23–1.24       | Tests using these versions.                                                    |
-| mutation     | Go 1.23–1.24       | Tests using these versions.                                                    |
-| fuzz         | Go 1.23–1.24       | Tests using these versions.                                                    |
-| terratest    | Go 1.23–1.24       | Tests using these versions.                                                    |
+| integration  | Terraform 1.0–1.12 | Executes the provider with this release, pulling from `registry.terraform.io`. |
+| integration  | OpenTofu 1.6–1.10  | Executes the provider with this release, pulling from `registry.opentofu.org`. |
+| unit         | Go 1.24–1.25       | Tests using these versions.                                                    |
+| mutation     | Go 1.24–1.25       | Tests using these versions.                                                    |
+| fuzz         | Go 1.24–1.25       | Tests using these versions.                                                    |
+| terratest    | Go 1.24–1.25       | Tests using these versions.                                                    |
 
 ## Usage Examples
 
@@ -55,7 +55,7 @@ See the `docs/` directory for user-facing documentation.
 
 ### Go Package
 
-If you are using this as a Go library, see the documentation at [pkg.go.dev](https://pkg.go.dev/github.com/northwood-labs/terraform-provider-corefunc).
+If you are using this as a Go library, see the documentation at [pkg.go.dev](https://pkg.go.dev/github.com/northwood-labs/terraform-provider-corefunc/corefunc).
 
 ## More Information
 
@@ -82,26 +82,7 @@ However, by passing the `--help` flag, you can see the other options available, 
 terraform-provider-corefunc --help
 ```
 
-The provider has one primary sub-command: `version`. It includes long-form version information, including the build commit hash, build date, Go version, and external dependencies.
-
-```bash
-terraform-provider-corefunc version
-```
-
-[alerts]: https://registry.terraform.io/providers/PagerDuty/pagerduty/latest
-[archive]: https://registry.terraform.io/providers/hashicorp/archive/latest/docs
-[code repositories]: https://registry.terraform.io/providers/integrations/github/latest/docs
-[content delivery]: https://registry.terraform.io/providers/fastly/fastly/latest/docs
-[cryptographic signatures]: https://registry.terraform.io/providers/chainguard-dev/cosign/latest/docs
-[DNS records]: https://registry.terraform.io/providers/infobloxopen/infoblox/latest/docs
-[external]: https://registry.terraform.io/providers/hashicorp/external/latest/docs
-[feature flags]: https://registry.terraform.io/providers/launchdarkly/launchdarkly/latest/docs
-[identity and access management]: https://registry.terraform.io/providers/okta/okta/latest/docs
-[local]: https://registry.terraform.io/providers/hashicorp/local/latest/docs
-[monitoring]: https://registry.terraform.io/providers/DataDog/datadog/latest
 [OpenTofu]: https://opentofu.org
-[order a pizza]: https://registry.terraform.io/providers/MNThomson/dominos/latest/docs
-[passwords]: https://registry.terraform.io/providers/1Password/onepassword/latest/docs
 [Terraform]: https://terraform.io
 [Terratest]: https://terratest.gruntwork.io
 [tfproto6]: https://developer.hashicorp.com/terraform/plugin/terraform-plugin-protocol#protocol-version-6
