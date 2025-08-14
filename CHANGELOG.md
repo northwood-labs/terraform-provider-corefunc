@@ -238,6 +238,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`4ef6356`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/4ef635649dd91875c084828d6de87a5f350cade0): Stop rolling back to github.com/nlnwa/whatwg-url@v0.5.0 on tidy. ([@skyzyx](https://github.com/skyzyx))
 * [`9b4e53f`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/9b4e53f147fcbfea8d4122a199898b18aec5b521): Remove git-cliff from history. ([@skyzyx](https://github.com/skyzyx))
 * **[BC BREAK]** [`aa7622f`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/aa7622f033f7aeaf7260dd8b720f0f4395ba036c): GOROOT has been deprecated in Go 1.25. Removing related code. ([@skyzyx](https://github.com/skyzyx))
+* **[BC BREAK]** [`b28a8e6`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/b28a8e621f15912b407a1e3cfd3c7f080d01a14f): Remove the already-deprecated truncate_label functionality. ([@skyzyx](https://github.com/skyzyx))
 
 ### <!-- ZZZ -->:gear: Miscellaneous Tasks
 
