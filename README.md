@@ -106,4 +106,3 @@ terraform-provider-corefunc version
 [Terratest]: https://terratest.gruntwork.io
 [tfproto6]: https://developer.hashicorp.com/terraform/plugin/terraform-plugin-protocol#protocol-version-6
 [TPF]: https://github.com/hashicorp/terraform-plugin-framework
-[zero trust network access]: https://registry.terraform.io/providers/zscaler/zpa/latest/docs
