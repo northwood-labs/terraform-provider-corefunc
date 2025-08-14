@@ -196,6 +196,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`6c6fb51`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/6c6fb51bbfe3d94db6ac7e7188e156884ba68e29): **deps**: Bump `github/codeql-action` from 3.29.7 to 3.29.8 ([#574](https://github.com/northwood-labs/terraform-provider-corefunc/issues/574)) ([@dependabot](https://github.com/dependabot))
 * [`11f821d`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/11f821d5fbaf4100b561ac844b9f724fb175f483): **deps**: Bump `github/codeql-action` from 3.29.8 to 3.29.9 ([#576](https://github.com/northwood-labs/terraform-provider-corefunc/issues/576)) ([@dependabot](https://github.com/dependabot))
 * [`c6d7bb1`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/c6d7bb11acc28bb92485b3745491ffc574892316): **deps**: Bump `actions/checkout` from 4.2.2 to 5.0.0 ([#575](https://github.com/northwood-labs/terraform-provider-corefunc/issues/575)) ([@dependabot](https://github.com/dependabot))
+* [`3285a96`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/3285a9661e24d13d980dc1c5858b713edf86c618): Move around some dev dependencies. ([@skyzyx](https://github.com/skyzyx))
 
 ### :soap: Linting
 
