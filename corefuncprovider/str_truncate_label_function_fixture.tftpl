@@ -1,9 +1,0 @@
-output "label" {
-    value = provider::corefunc::str_truncate_label(
-      {{ .MaxLength }},
-      "{{ .Prefix }}",
-      "{{ .Label }}",
-    )
-}
-
-#=> {{ .Expected }}
