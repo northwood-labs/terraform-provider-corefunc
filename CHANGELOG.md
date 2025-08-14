@@ -14,6 +14,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`41e4ad9`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/41e4ad94ca73aa9ecbb0ef165715de01d1cab846): Update `README.md` ([@skyzyx](https://github.com/skyzyx))
 * [`04b97fc`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/04b97fccf19160b4d274bf4b578f2f4f0020fc2c): Updated the `README.md`. ([@skyzyx](https://github.com/skyzyx))
 * [`30db63e`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/30db63e9b7e7b3afade107e440bb793a13bf7fb4): Updated the cliff.toml with updated syntax. ([@skyzyx](https://github.com/skyzyx))
+* [`d369b8c`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/d369b8c2307729dbd82512e1c29a6d0caf5c4236): Updated the `README.md` for Go 1.25. ([@skyzyx](https://github.com/skyzyx))
 
 ### :dependabot: Building and Dependencies
 
@@ -1029,4 +1030,4 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`eb9f7ae`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/eb9f7aecfdaa7bda9087b9b58229d3943571a863): Update the GoReleaser configuration. ([@skyzyx](https://github.com/skyzyx))
 * [`a01b12e`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/a01b12e6870b821f561624bca79407e4c87c73cf): Trying to get the build to work. ([@skyzyx](https://github.com/skyzyx))
 
-<p>Generated on 2025-08-13.</p>
+<p>Generated on 2025-08-14.</p>
