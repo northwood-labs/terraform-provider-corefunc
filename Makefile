@@ -138,8 +138,7 @@ docs-cli:
 ## docs-serve: [docs] Preview the Go library documentation as displayed on pkg.go.dev.
 docs-serve:
 	@ $(HEADER) "=====> Displaying Go HTTP documentation..."
-	open http://localhost:6060/pkg/github.com/northwood-labs/terraform-provider-corefunc/corefunc/
-	$(GOTOOLS) godoc -index -links
+	$(GO) doc -http
 
 .PHONY: binsize
 ## binsize: [docs] Analyze the size of the binary by Go package.
