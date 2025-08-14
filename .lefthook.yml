@@ -19,7 +19,7 @@ pre-commit:
   commands:
     ec-check:
       tags: "always,formatting"
-      run: tomljson ecrc.toml > .ecrc && editorconfig-checker .
+      run: tomljson ecrc.toml > .editorconfig-checker.json && editorconfig-checker .
       stage_fixed: true
 
     # git-check:
