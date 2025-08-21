@@ -10,7 +10,11 @@ replace (
 tool (
 	github.com/antham/gommit
 	github.com/charmbracelet/gum
+	github.com/davidrjenni/reftools/cmd/fillstruct
+	github.com/davidrjenni/reftools/cmd/fillswitch
+	github.com/davidrjenni/reftools/cmd/fixplurals
 	github.com/evilmartians/lefthook
+	github.com/fatih/gomodifytags
 	github.com/google/osv-scanner/v2/cmd/osv-scanner
 	github.com/goph/licensei/cmd/licensei
 	github.com/hashicorp/terraform-plugin-docs/cmd/tfplugindocs
@@ -22,9 +26,13 @@ tool (
 	github.com/pelletier/go-toml/v2/cmd/jsontoml
 	github.com/pelletier/go-toml/v2/cmd/tomljson
 	github.com/pelletier/go-toml/v2/cmd/tomll
+	github.com/psampaz/gothanks
 	github.com/quasilyte/go-consistent
+	github.com/segmentio/golines
 	github.com/trufflesecurity/driftwood
 	golang.org/x/perf/cmd/benchstat
+	golang.org/x/tools/cmd/godoc
+	golang.org/x/tools/go/analysis/passes/fieldalignment
 	golang.org/x/vuln/cmd/govulncheck
 	gotest.tools/gotestsum
 	mvdan.cc/gofumpt
@@ -76,6 +84,8 @@ require (
 	github.com/alecthomas/chroma/v2 v2.19.0 // indirect
 	github.com/alecthomas/kong v1.11.0 // indirect
 	github.com/alecthomas/mango-kong v0.1.0 // indirect
+	github.com/alecthomas/template v0.0.0-20190718012654-fb15b899a751 // indirect
+	github.com/alecthomas/units v0.0.0-20231202071711-9a357b53e9c9 // indirect
 	github.com/alessio/shellescape v1.4.1 // indirect
 	github.com/anchore/go-struct-converter v0.0.0-20250211213226-cce56d595160 // indirect
 	github.com/antham/gommit v2.2.0+incompatible // indirect
@@ -122,7 +132,9 @@ require (
 	github.com/cpuguy83/go-md2man/v2 v2.0.7 // indirect
 	github.com/creack/pty v1.1.24 // indirect
 	github.com/cyphar/filepath-securejoin v0.4.1 // indirect
+	github.com/dave/dst v0.27.3 // indirect
 	github.com/davecgh/go-spew v1.1.2-0.20180830191138-d8f796af33cc // indirect
+	github.com/davidrjenni/reftools v0.0.0-20240211192525-f5f96ef18854 // indirect
 	github.com/deitch/magic v0.0.0-20240306090643-c67ab88f10cb // indirect
 	github.com/dgryski/go-minhash v0.0.0-20190315135803-ad340ca03076 // indirect
 	github.com/distribution/reference v0.6.0 // indirect
@@ -142,7 +154,10 @@ require (
 	github.com/erikgeiser/coninput v0.0.0-20211004153227-1c3628e74d0f // indirect
 	github.com/erikvarga/go-rpmdb v0.0.0-20250523120114-a15a62cd4593 // indirect
 	github.com/evilmartians/lefthook v1.12.3 // indirect
+	github.com/fatih/camelcase v1.0.0 // indirect
 	github.com/fatih/color v1.18.0 // indirect
+	github.com/fatih/gomodifytags v1.17.0 // indirect
+	github.com/fatih/structtag v1.2.0 // indirect
 	github.com/felixge/httpsnoop v1.0.4 // indirect
 	github.com/fsnotify/fsnotify v1.9.0 // indirect
 	github.com/gabriel-vasile/mimetype v1.4.10-rc1 // indirect
@@ -169,6 +184,7 @@ require (
 	github.com/google/go-cmp v0.7.0 // indirect
 	github.com/google/go-containerregistry v0.20.6 // indirect
 	github.com/google/go-github/v48 v48.2.0 // indirect
+	github.com/google/go-github/v50 v50.0.0 // indirect
 	github.com/google/go-querystring v1.1.0 // indirect
 	github.com/google/osv-scalibr v0.3.2-0.20250731235936-b4e2f64ac4bd // indirect
 	github.com/google/osv-scanner/v2 v2.2.1 // indirect
@@ -226,6 +242,7 @@ require (
 	github.com/mattn/go-localereader v0.0.1 // indirect
 	github.com/mattn/go-tty v0.0.7 // indirect
 	github.com/mdempsky/unconvert v0.0.0-20250216222326-4a038b3d31f5 // indirect
+	github.com/mgutz/ansi v0.0.0-20200706080929-d51e80ef957d // indirect
 	github.com/microcosm-cc/bluemonday v1.0.27 // indirect
 	github.com/micromdm/plist v0.2.1 // indirect
 	github.com/mitchellh/colorstring v0.0.0-20190213212951-d06e56a500db // indirect
@@ -272,6 +289,7 @@ require (
 	github.com/planetscale/vtprotobuf v0.6.1-0.20240319094008-0393e58bdf10 // indirect
 	github.com/pmezard/go-difflib v1.0.1-0.20181226105442-5d4384ee4fb2 // indirect
 	github.com/posener/complete v1.2.3 // indirect
+	github.com/psampaz/gothanks v0.5.0 // indirect
 	github.com/quasilyte/go-consistent v0.6.2 // indirect
 	github.com/remyoudompheng/bigfft v0.0.0-20230129092748-24d4a6f8daec // indirect
 	github.com/rivo/uniseg v0.4.7 // indirect
@@ -281,10 +299,12 @@ require (
 	github.com/sahilm/fuzzy v0.1.1 // indirect
 	github.com/schollz/progressbar/v3 v3.18.0 // indirect
 	github.com/secDre4mer/pkcs7 v0.0.0-20240322103146-665324a4461d // indirect
+	github.com/segmentio/golines v0.12.2 // indirect
 	github.com/sergi/go-diff v1.4.0 // indirect
 	github.com/shirou/gopsutil v3.21.11+incompatible // indirect
 	github.com/shogo82148/go-shuffle v1.0.1 // indirect
 	github.com/shopspring/decimal v1.4.0 // indirect
+	github.com/sirkon/goproxy v1.4.8 // indirect
 	github.com/sirupsen/logrus v1.9.3 // indirect
 	github.com/skeema/knownhosts v1.3.1 // indirect
 	github.com/spdx/gordf v0.0.0-20250128162952-000978ccd6fb // indirect
@@ -312,6 +332,7 @@ require (
 	github.com/vmihailenco/msgpack/v5 v5.4.1 // indirect
 	github.com/vmihailenco/tagparser/v2 v2.0.0 // indirect
 	github.com/waigani/diffparser v0.0.0-20190828052634-7391f219313d // indirect
+	github.com/x-cray/logrus-prefixed-formatter v0.5.2 // indirect
 	github.com/xanzy/ssh-agent v0.3.3 // indirect
 	github.com/xeipuuv/gojsonpointer v0.0.0-20190905194746-02993c407bfb // indirect
 	github.com/xeipuuv/gojsonreference v0.0.0-20180127040603-bd5ef7bd5415 // indirect
@@ -339,7 +360,7 @@ require (
 	golang.org/x/mod v0.27.0 // indirect
 	golang.org/x/net v0.43.0 // indirect
 	golang.org/x/oauth2 v0.30.0 // indirect
-	golang.org/x/perf v0.0.0-20250813145418-2f7363a06fe1 // indirect
+	golang.org/x/perf v0.0.0-20250807204132-c4b8702907f0 // indirect
 	golang.org/x/sync v0.16.0 // indirect
 	golang.org/x/sys v0.35.0 // indirect
 	golang.org/x/telemetry v0.0.0-20250807160809-1a19826ec488 // indirect
@@ -356,6 +377,7 @@ require (
 	google.golang.org/genproto/googleapis/rpc v0.0.0-20250804133106-a7a43d27e69b // indirect
 	google.golang.org/grpc v1.74.2 // indirect
 	google.golang.org/protobuf v1.36.7 // indirect
+	gopkg.in/alecthomas/kingpin.v2 v2.2.6 // indirect
 	gopkg.in/ini.v1 v1.67.0 // indirect
 	gopkg.in/neurosnap/sentences.v1 v1.0.7 // indirect
 	gopkg.in/src-d/go-billy.v4 v4.3.2 // indirect
