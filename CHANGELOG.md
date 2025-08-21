@@ -260,6 +260,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`04b97fc`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/04b97fccf19160b4d274bf4b578f2f4f0020fc2c): Updated the `README.md`. ([@skyzyx](https://github.com/skyzyx))
 * [`30db63e`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/30db63e9b7e7b3afade107e440bb793a13bf7fb4): Updated the cliff.toml with updated syntax. ([@skyzyx](https://github.com/skyzyx))
 * [`d369b8c`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/d369b8c2307729dbd82512e1c29a6d0caf5c4236): Updated the `README.md` for Go 1.25. ([@skyzyx](https://github.com/skyzyx))
+* [`dc05284`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/dc052848690d531c97219d8252b1594852201e55): Removed vestigial example from the LICENSE file. ([@skyzyx](https://github.com/skyzyx))
 
 ### :dependabot: Building and Dependencies
 
@@ -450,6 +451,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`9ae8069`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/9ae806971a0196d1eb327d1f14f6e82b0cebcc61): **deps**: Bump `github/codeql-action` from 3.29.9 to 3.29.10 ([#583](https://github.com/northwood-labs/terraform-provider-corefunc/issues/583)) ([@dependabot](https://github.com/dependabot))
 * [`f083a6b`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/f083a6b7ee6cca5f82f9799636a61b0928c6616c): **deps**: Bump `actions/dependency-review-action` from 4.7.1 to 4.7.2 ([#584](https://github.com/northwood-labs/terraform-provider-corefunc/issues/584)) ([@dependabot](https://github.com/dependabot))
 * [`e0de823`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/e0de8230e61e03a580e0c1033d3cf04085739881): **deps**: Bump `google/osv-scanner-action` ([#585](https://github.com/northwood-labs/terraform-provider-corefunc/issues/585)) ([@dependabot](https://github.com/dependabot))
+* [`f1609cd`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/f1609cdcf8c75fe5f8adfdf0b537cbc7db7b9dbd): Add a few more Go tools to integrate into my workflow. ([@skyzyx](https://github.com/skyzyx))
+* [`3b9259d`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/3b9259dc830945fc1019303261adfe2824b9c87e): Add a few more Go tools to integrate into my workflow. ([@skyzyx](https://github.com/skyzyx))
+* [`44c00a6`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/44c00a6146935afcae5e094a77d693a10fcaaf79): Added Dependabot as a local tool. ([@skyzyx](https://github.com/skyzyx))
 
 ### :soap: Linting
 
@@ -495,11 +499,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * **[BC BREAK]** [`aa7622f`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/aa7622f033f7aeaf7260dd8b720f0f4395ba036c): GOROOT has been deprecated in Go 1.25. Removing related code. ([@skyzyx](https://github.com/skyzyx))
 * **[BC BREAK]** [`b28a8e6`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/b28a8e621f15912b407a1e3cfd3c7f080d01a14f): Remove the already-deprecated truncate_label functionality. ([@skyzyx](https://github.com/skyzyx))
 * **[BC BREAK]** [`67b1515`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/67b1515f0398f51a27da6ed833443975a30c20a2): Remove truncate_label from tests. ([@skyzyx](https://github.com/skyzyx))
+* [`6785078`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/6785078035f21e4f506dd5d1385bff183af8d25f): Re-added .githooks dir. Not sure how that got deleted. ([@skyzyx](https://github.com/skyzyx))
 
 ### <!-- ZZZ -->:gear: Miscellaneous Tasks
 
 * [`c946d14`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/c946d14a4f4d5bf4378223057ea241d635105d44): Update the copyright year to 2025. ([@skyzyx](https://github.com/skyzyx))
 * [`701f7b5`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/701f7b5a07c472f262d4bd0b88f593acfad59129): Updated the copyright text. ([@skyzyx](https://github.com/skyzyx))
+* [`97e16a1`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/97e16a1042dc9160b32e5445141bb96243f31774): Add additional instructions to Dependabot definition. ([@skyzyx](https://github.com/skyzyx))
 
 ## 1.5.1 — 2024-11-11
 
