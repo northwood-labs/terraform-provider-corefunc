@@ -3,6 +3,9 @@
 # package ecosystems to update and where the package manifests are located.
 # Please see the documentation for all configuration options:
 # https://docs.github.com/github/administering-a-repository/configuration-options-for-dependency-updates
+#
+# When initializing a new repo (and even then, on a periodic basis), run this
+# repo through https://app.stepsecurity.io.
 
 version: 2
 updates:
