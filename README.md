@@ -34,7 +34,7 @@ The goal of this provider is not to call any network APIs, but to provide pre-bu
 
 | Testing type | Details            | Description                                                                    |
 |--------------|--------------------|--------------------------------------------------------------------------------|
-| integration  | Terraform 1.0–1.12 | Executes the provider with this release, pulling from `registry.terraform.io`. |
+| integration  | Terraform 1.0–1.14 | Executes the provider with this release, pulling from `registry.terraform.io`. |
 | integration  | OpenTofu 1.6–1.10  | Executes the provider with this release, pulling from `registry.opentofu.org`. |
 | unit         | Go 1.24–1.25       | Tests using these versions.                                                    |
 | mutation     | Go 1.24–1.25       | Tests using these versions.                                                    |
@@ -97,6 +97,37 @@ terraform-provider-corefunc json2toml file.json > file.toml
 ```bash
 terraform-provider-corefunc toml2json file.toml > file.json
 ```
+
+## Ensuring quality
+
+Northwood Labs takes testing seriously, and quality is a high priority for us. This software undergoes the following types of testing before every release.
+
+### On every commit
+
+* Unit testing of the Go library to ensure that the code behaves (and doesn't behave) as expected.
+* Unit testing of the Go library’s documentation examples to ensure that the examples actually work.
+* [Mutation testing](https://github.com/gtramontina/ooze) of the Go library to ensure that our tests are good at testing the code (as opposed to chasing code coverage).
+* Acceptance testing of the provider (through both Terraform and OpenTofu) which uses [table-driven testing](https://go.dev/wiki/TableDrivenTests) to ensure that the inputs and expected outputs are correct.
+* [Terratest](https://terratest.gruntwork.io) tests the provider using the same tools as one might use to test their own Terraform/OpenTofu modules.
+* A _very_ strict set of linting rules using [golangci-lint](https://golangci-lint.run).
+
+### On every release
+
+* [Fuzzing](https://go.dev/doc/tutorial/fuzz) of the Go library which throws garbage at the code to ensure edge-cases don't slip through.
+* We use the [Bash Automated Testing System](https://bats-core.readthedocs.io) together with [tfschema](https://github.com/minamijoyo/tfschema) to ensure that nothing weird or unexpected occurs with the [Terraform Plugin Protocol](https://developer.hashicorp.com/terraform/plugin/terraform-plugin-protocol) v6 between releases.
+
+### On a regular cadence
+
+Supply-chain testing and validation. Some of these are on every commit, while a couple run before every release.
+
+* [Dependabot](https://github.com/dependabot) with auto-merging (by [GitHub](https://github.com)).
+* [Dependency Review](https://github.com/marketplace/actions/dependency-review) (by [GitHub](https://github.com)).
+* [Go Dependency Submission](https://github.com/marketplace/actions/go-dependency-submission) (by [GitHub](https://github.com)).
+* [govulncheck](https://github.com/marketplace/actions/golang-govulncheck-action) (by [the Go team](https://go.dev)).
+* [Harden-Runner](https://github.com/marketplace/actions/harden-runner) (by [StepSecurity](https://stepsecurity.io)).
+* [OSSF Scorecard](https://github.com/marketplace/actions/ossf-scorecard-action) (by [OpenSSF](https://openssf.org)).
+* [OSV Scanner](https://google.github.io/osv-scanner/github-action/) (by [Google](https://osv.dev)).
+* [Trufflehog OSS](https://github.com/marketplace/actions/trufflehog-oss) (by [Truffle Security](https://trufflesecurity.com)).
 
 [OpenTofu]: https://opentofu.org
 [Terraform]: https://terraform.io
