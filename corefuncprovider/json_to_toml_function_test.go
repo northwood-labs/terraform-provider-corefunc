@@ -69,7 +69,7 @@ func TestAccJSONToTomlFunction(t *testing.T) {
 					ConfigStateChecks: []statecheck.StateCheck{
 						statecheck.ExpectKnownOutputValue(
 							"as_toml",
-							knownvalue.StringExact(strings.TrimSpace(tc.Expected)+"\n"),
+							knownvalue.StringExact(strings.TrimSpace(tc.Expected)),
 						),
 					},
 				},
