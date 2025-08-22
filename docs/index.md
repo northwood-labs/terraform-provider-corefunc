@@ -16,11 +16,11 @@ description: |-
   existing support for inputs and outputs.
   This does not add new syntax or constructs. Instead it uses the
   existing concepts around Providers, Resources, Data Sources,
-  Variables, Outputs, and Functions (1.8) to expose new custom-built
+  Variables, Outputs, and Functions to expose new custom-built
   functionality.
   The goal of this provider is not to call any APIs, but to provide
   pre-built functions in the form of Data Sources or Provider
-  Functions (1.8).
+  Functions.
 ---
 
 # Core Functions Provider
@@ -42,12 +42,12 @@ existing support for inputs and outputs.
 
 **This does not add new syntax or constructs.** Instead it uses the
 _existing_ concepts around Providers, Resources, Data Sources,
-Variables, Outputs, and Functions (1.8) to expose new custom-built
+Variables, Outputs, and Functions to expose new custom-built
 functionality.
 
 The goal of this provider is not to call any APIs, but to provide
 pre-built functions in the form of _Data Sources_ or _Provider
-Functions_ (1.8).
+Functions_.
 
 ~> While it’s common knowledge that Terraform is great at standing up and managing Cloud infrastructure, it’s also good at running _anything with an API_. People regularly manage [code repositories], [DNS records], [feature flags], [identity and access management], [content delivery], [passwords], [monitoring], [alerts], [zero trust network access], [cryptographic signatures], and can even [order a pizza]. This provider is more analogous to HashiCorp’s _utility_ providers such as [local], [external], and [archive].
 
@@ -55,14 +55,14 @@ Functions_ (1.8).
 
 Built using the [Terraform Plugin Framework][TPF], which speaks [Terraform Protocol v6][tfproto6].
 
-| Testing type | Details           | Description                                                                    |
-|--------------|-------------------|--------------------------------------------------------------------------------|
-| integration  | Terraform 1.0–1.8 | Executes the provider with this release, pulling from `registry.terraform.io`. |
-| integration  | OpenTofu 1.6–1.7  | Executes the provider with this release, pulling from `registry.opentofu.org`. |
-| unit         | Go 1.21–1.22      | Tests using these versions.                                                    |
-| mutation     | Go 1.21–1.22      | Tests using these versions.                                                    |
-| fuzz         | Go 1.21–1.22      | Tests using these versions.                                                    |
-| terratest    | Go 1.21–1.22      | Tests using these versions.                                                    |
+| Testing type | Details            | Description                                                                    |
+|--------------|--------------------|--------------------------------------------------------------------------------|
+| integration  | Terraform 1.0–1.12 | Executes the provider with this release, pulling from `registry.terraform.io`. |
+| integration  | OpenTofu 1.6–1.10  | Executes the provider with this release, pulling from `registry.opentofu.org`. |
+| unit         | Go 1.24–1.25       | Tests using these versions.                                                    |
+| mutation     | Go 1.24–1.25       | Tests using these versions.                                                    |
+| fuzz         | Go 1.24–1.25       | Tests using these versions.                                                    |
+| terratest    | Go 1.24–1.25       | Tests using these versions.                                                    |
 
 ## Setting-up the provider
 
@@ -130,7 +130,24 @@ terraform providers lock \
     -platform=linux_arm \
     -platform=linux_arm64 \
     -platform=windows_amd64 \
+    -platform=windows_arm64 \
     ;
+```
+
+## Extras
+
+We've also bundled some CLI commands that you might find as useful as we have.
+
+### JSON → TOML
+
+```bash
+terraform-provider-corefunc json2toml file.json > file.toml
+```
+
+### TOML → JSON
+
+```bash
+terraform-provider-corefunc toml2json file.toml > file.json
 ```
 
 [alerts]: https://registry.terraform.io/providers/PagerDuty/pagerduty/latest
