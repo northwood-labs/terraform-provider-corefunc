@@ -61,7 +61,7 @@ var (
 	}
 )
 
-func TestTerraform(t *testing.T) {
+func TestTerraform(t *testing.T) { // lint:allow_complexity
 	// https://golang.org/pkg/testing/#T.Parallel
 	t.Parallel()
 
@@ -126,8 +126,10 @@ func TestTerraform(t *testing.T) {
 		)
 
 		// Format shifting
-		var asJSON string
-		var asTOML string
+		var (
+			asJSON string
+			asTOML string
+		)
 
 		asJSON, err = corefunc.TOMLtoJSON("abc = 123")
 		if err != nil {
