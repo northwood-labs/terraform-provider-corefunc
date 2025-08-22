@@ -55,14 +55,14 @@ Functions_.
 
 Built using the [Terraform Plugin Framework][TPF], which speaks [Terraform Protocol v6][tfproto6].
 
-| Testing type | Details            | Description                                                                    |
-|--------------|--------------------|--------------------------------------------------------------------------------|
-| integration  | Terraform 1.0–1.12 | Executes the provider with this release, pulling from `registry.terraform.io`. |
-| integration  | OpenTofu 1.6–1.10  | Executes the provider with this release, pulling from `registry.opentofu.org`. |
-| unit         | Go 1.24–1.25       | Tests using these versions.                                                    |
-| mutation     | Go 1.24–1.25       | Tests using these versions.                                                    |
-| fuzz         | Go 1.24–1.25       | Tests using these versions.                                                    |
-| terratest    | Go 1.24–1.25       | Tests using these versions.                                                    |
+| Testing type | Details           | Description                                                                    |
+|--------------|-------------------|--------------------------------------------------------------------------------|
+| integration  | Terraform 1.0–1.8 | Executes the provider with this release, pulling from `registry.terraform.io`. |
+| integration  | OpenTofu 1.6–1.7  | Executes the provider with this release, pulling from `registry.opentofu.org`. |
+| unit         | Go 1.21–1.22      | Tests using these versions.                                                    |
+| mutation     | Go 1.21–1.22      | Tests using these versions.                                                    |
+| fuzz         | Go 1.21–1.22      | Tests using these versions.                                                    |
+| terratest    | Go 1.21–1.22      | Tests using these versions.                                                    |
 
 ## Setting-up the provider
 
@@ -130,24 +130,7 @@ terraform providers lock \
     -platform=linux_arm \
     -platform=linux_arm64 \
     -platform=windows_amd64 \
-    -platform=windows_arm64 \
     ;
-```
-
-## Extras
-
-We've also bundled some CLI commands that you might find as useful as we have.
-
-### JSON → TOML
-
-```bash
-terraform-provider-corefunc json2toml file.json > file.toml
-```
-
-### TOML → JSON
-
-```bash
-terraform-provider-corefunc toml2json file.toml > file.json
 ```
 
 [alerts]: https://registry.terraform.io/providers/PagerDuty/pagerduty/latest
