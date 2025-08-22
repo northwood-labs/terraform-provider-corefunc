@@ -74,7 +74,8 @@ jobs:
 
       - name: Run mutation tests
         run: |
-          cd ./corefunc && go test -tags=mutation -count=1 -parallel=$(nproc) -timeout 30s -ooze.v=true \
+          cd ./corefunc && GOEXPERIMENT=greenteagc,jsonv2 go test \
+            -tags=mutation -count=1 -parallel=$(nproc) -timeout 30s -ooze.v=true \
             | grep -v "^[[:lower:]]" | grep -v "^)"
 
   unit:
@@ -130,7 +131,7 @@ jobs:
 
       - name: Run unit tests
         run: |
-          go test -count=1 -parallel=$(nproc) -timeout 30s -v ./corefunc/...
+          GOEXPERIMENT=greenteagc,jsonv2 go test -count=1 -parallel=$(nproc) -timeout 30s -v ./corefunc/...
 
   acc_terraform:
     runs-on: ubuntu-latest
@@ -215,7 +216,8 @@ jobs:
         env:
           TF_ACC: 1
         run: |
-          go test -run=TestAcc -count=1 -parallel=$(nproc) -timeout 30m -v ./corefuncprovider/...
+          GOEXPERIMENT=greenteagc,jsonv2 go test \
+            -run=TestAcc -count=1 -parallel=$(nproc) -timeout 30m -v ./corefuncprovider/...
 
   acc_opentofu:
     runs-on: ubuntu-latest
@@ -293,4 +295,5 @@ jobs:
           TF_ACC_PROVIDER_HOST: registry.opentofu.org
         run: |
           TF_ACC_TERRAFORM_PATH=$(which tofu) \
-          go test -run=TestAcc -count=1 -parallel=$(nproc) -timeout 30m -v ./corefuncprovider/...
+          GOEXPERIMENT=greenteagc,jsonv2 go test \
+            -run=TestAcc -count=1 -parallel=$(nproc) -timeout 30m -v ./corefuncprovider/...
