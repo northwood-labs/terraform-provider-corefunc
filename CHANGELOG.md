@@ -209,6 +209,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`f1609cd`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/f1609cdcf8c75fe5f8adfdf0b537cbc7db7b9dbd): Add a few more Go tools to integrate into my workflow. ([@skyzyx](https://github.com/skyzyx))
 * [`3b9259d`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/3b9259dc830945fc1019303261adfe2824b9c87e): Add a few more Go tools to integrate into my workflow. ([@skyzyx](https://github.com/skyzyx))
 * [`44c00a6`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/44c00a6146935afcae5e094a77d693a10fcaaf79): Added Dependabot as a local tool. ([@skyzyx](https://github.com/skyzyx))
+* [`b51288c`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/b51288c4e691f905125cab7886b7b299d3456930): **deps**: Bump `github/codeql-action` from 3.29.10 to 3.29.11 ([#586](https://github.com/northwood-labs/terraform-provider-corefunc/issues/586)) ([@dependabot](https://github.com/dependabot))
+* [`cc45006`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/cc450063a4509b156b5aab8c47ec7a60142e2591): Updated the Go dependencies. ([@skyzyx](https://github.com/skyzyx))
 
 ### :soap: Linting
 
@@ -236,6 +238,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`5821394`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/5821394b68f4b24e9cbd2bcce9264d5de07d00a2): OSV scanner config. ([@skyzyx](https://github.com/skyzyx))
 * [`d96d90f`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/d96d90fd45f2c65c5ca6609cefdff0b4ca1969ef): OSV scanner config. ([@skyzyx](https://github.com/skyzyx))
 * [`e172d17`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/e172d17d51bb0d600fa476773b6e113d18d7174d): OSV scanner config. ([@skyzyx](https://github.com/skyzyx))
+* [`a70f862`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/a70f8627c5d950abf036ecd12a64aac45d28ddee): Added Terraform 1.13 and 1.14 to the test matrix. ([@skyzyx](https://github.com/skyzyx))
+* [`f9a79d9`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/f9a79d9a99af7dece2f7e231b9f7ede23daf6193): Updated Go baseline to version 1.25. ([@skyzyx](https://github.com/skyzyx))
 
 ### <!-- 0 -->:rocket: Features
 
@@ -1049,4 +1053,4 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`eb9f7ae`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/eb9f7aecfdaa7bda9087b9b58229d3943571a863): Update the GoReleaser configuration. ([@skyzyx](https://github.com/skyzyx))
 * [`a01b12e`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/a01b12e6870b821f561624bca79407e4c87c73cf): Trying to get the build to work. ([@skyzyx](https://github.com/skyzyx))
 
-<p>Generated on 2025-08-21.</p>
+<p>Generated on 2025-08-22.</p>
