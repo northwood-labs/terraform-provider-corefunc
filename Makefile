@@ -210,6 +210,9 @@ list-tests:
 	@ echo "make examples"
 	@ cat ./corefunc/*_test.go | ggrep "func Example" | gsed 's/func\s//g' | gsed -r 's/\(.*//g' | gsed -r 's/Example/make examples NAME=/g'
 
+	@ $(HEADER) "=====> Mutation tests..."
+	@ echo "make mutation"
+
 	@ $(HEADER) "=====> Fuzzing tests..."
 	@ echo "make fuzz"
 
@@ -253,7 +256,7 @@ endif
 unit:
 	@ $(HEADER) "=====> Running unit tests..."
 	$(GOTOOLS) gotestsum --format testname -- -run=Test$(NAME) -count=1 -parallel=$(shell nproc) -timeout 30s -coverpkg=./corefunc/... -coverprofile=__coverage.out -v ./corefunc/...
-	@ go-cover-treemap -coverprofile __coverage.out > unit-coverage.svg
+	@ $(GOTOOLS) go-cover-treemap -coverprofile __coverage.out > unit-coverage.svg
 	@ rsvg-convert --width=2000 --format=png --output="unit-coverage.png" "unit-coverage.svg"
 
 .PHONY: mutate
@@ -279,7 +282,13 @@ examples:
 ## fuzz: [test]* Runs the fuzzer for 1 minute per test.
 fuzz:
 	@ $(HEADER) "=====> Running the fuzzer (https://go.dev/doc/tutorial/fuzz)..."
-	$(GO) test -list=Fuzz ./corefunc/... | grep ^Fuzz | xargs -I% $(GO) test -run='^$$' -fuzz=% -fuzztime 1m -v ./corefunc
+	$(GO) test -list=Fuzz ./corefunc/... | grep ^Fuzz | xargs -I% bash -c '$(GO) test -run="^$$" -fuzz=% -fuzztime 1m -v ./corefunc'
+
+.PHONY: hellafuzz
+## hellafuzz: [test] Runs the fuzzer for 10 minutes per test.
+hellafuzz:
+	@ $(HEADER) "=====> Running the fuzzer (https://go.dev/doc/tutorial/fuzz)..."
+	$(GO) test -list=Fuzz ./corefunc/... | grep ^Fuzz | xargs -I% bash -c '$(GO) test -run="^$$" -fuzz=% -fuzztime 10m -v ./corefunc'
 
 .PHONY: quickbench
 ## quickbench: [test]* Runs the benchmarks with minimal data for a quick check.

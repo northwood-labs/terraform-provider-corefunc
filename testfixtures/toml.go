@@ -76,10 +76,10 @@ var (
 			Expected:    strings.TrimSpace(tomlContent),
 			ExpectedErr: false,
 		},
-		// "toml.example2.json": {
-		// 	Input:       strings.TrimSpace(json2Content),
-		// 	Expected:    strings.TrimSpace(toml2Content),
-		// 	ExpectedErr: false,
-		// },
+		"toml.example2.json": {
+			Input:       strings.TrimSpace(json2Content),
+			Expected:    strings.TrimSpace(toml2Content),
+			ExpectedErr: false,
+		},
 	}
 )
