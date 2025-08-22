@@ -71,7 +71,7 @@ func TestAccTomlToJSONFunction(t *testing.T) {
 					ConfigStateChecks: []statecheck.StateCheck{
 						statecheck.ExpectKnownOutputValue(
 							"as_json",
-							knownvalue.StringExact(strings.TrimSpace(tc.Expected)+"\n"),
+							knownvalue.StringExact(strings.TrimSpace(tc.Expected)),
 						),
 					},
 				},

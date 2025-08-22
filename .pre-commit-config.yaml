@@ -49,28 +49,28 @@ repos:
       - id: unconvert
         name: "Go: unconvert (current GOOS/GOARCH)"
         description: Analyzes Go packages to identify unnecessary type conversions.
-        entry: bash -c 'go tool unconvert -fastmath -tests -v ./...'
+        entry: bash -c 'go tool -modfile=go.tools.mod unconvert -fastmath -tests -v ./...'
         language: system
         stages: [pre-commit, pre-push]
 
       - id: smrcptr
         name: "Go: Same Receiver Pointer"
         description: Don't mix receiver types. Choose either pointers or struct types for all available methods.
-        entry: bash -c 'go tool smrcptr --constructor=true ./...'
+        entry: bash -c 'go tool -modfile=go.tools.mod smrcptr --constructor=true ./...'
         language: system
         stages: [pre-commit, pre-push]
 
       - id: govulncheck
         name: "Go: Vulnerability check"
         description: Check for Go security vulnerabilities. (https://go.dev/blog/vuln)
-        entry: bash -c 'go tool govulncheck -test ./...'
+        entry: bash -c 'go tool -modfile=go.tools.mod govulncheck -test ./...'
         language: system
         stages: [pre-commit, pre-push]
 
       - id: osvscanner
         name: OSV Scanner
         description: Check for security vulnerabilities. (https://osv.dev)
-        entry: bash -c 'go tool osv-scanner -r .'
+        entry: bash -c 'go tool -modfile=go.tools.mod osv-scanner -r .'
         language: system
         stages: [pre-commit, pre-push]
   # goplicate-end:golang
@@ -89,6 +89,8 @@ repos:
       - id: go-consistent
         name: "Go: Consistent Patterns"
         description: Analyzes Go packages to identify unnecessary type conversions.
-        entry: bash -c 'go tool go-consistent ./corefunc/...; go tool go-consistent ./corefuncprovider/...'
+        entry: |-
+          bash -c 'go tool -modfile=go.tools.mod go-consistent ./corefunc/...; \
+            go tool -modfile=go.tools.mod go-consistent ./corefuncprovider/...'
         language: system
         stages: [pre-commit, pre-push]

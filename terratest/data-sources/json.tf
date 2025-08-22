@@ -6,5 +6,5 @@ EOT
 
 output "json_as_toml" {
   description = "A JSON value converted to TOML format."
-  value       = data.corefunc_json_to_toml.json_to_toml.json
+  value       = data.corefunc_json_to_toml.json_to_toml.toml
 }

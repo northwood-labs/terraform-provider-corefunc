@@ -1,4 +1,4 @@
 {
-  "sarif-viewer.connectToGithubCodeScanning": "on",
+  "sarif-viewer.connectToGithubCodeScanning": "off",
   "makefile.configureOnOpen": false
 }
