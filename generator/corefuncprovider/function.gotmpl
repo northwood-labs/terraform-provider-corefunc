@@ -43,7 +43,7 @@ func {{ .PascalStrip }}Function() function.Function { // lint:allow_return_inter
 
 func (f *{{ .CamelStrip }}Function) Metadata(
 	ctx context.Context,
-	req function.MetadataRequest,
+	_ function.MetadataRequest,
 	resp *function.MetadataResponse,
 ) {
 	tflog.Debug(ctx, "Starting {{ .PascalStrip }} Function Metadata method.")
@@ -58,7 +58,7 @@ func (f *{{ .CamelStrip }}Function) Metadata(
 // Definition defines the parameters and return type for the function.
 func (f *{{ .CamelStrip }}Function) Definition(
 	ctx context.Context,
-	req function.DefinitionRequest,
+	_ function.DefinitionRequest,
 	resp *function.DefinitionResponse,
 ) {
 	tflog.Debug(ctx, "Starting {{ .PascalStrip }} Function Definition method.")
