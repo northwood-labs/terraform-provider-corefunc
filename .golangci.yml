@@ -2425,10 +2425,12 @@ output:
   # Either they are sorted alphabetically.
   #
   # Default: ["linter", "file"]
-  sort-order:
-    - linter
-    - severity
-    - file # filepath, line, and column.
+  # sort-order:
+  #   - linter
+  #   - severity
+  #   - file # filepath, line, and column.
+
+  sort-results: true
 
   # Show statistics per linter.
   # Default: true

@@ -202,7 +202,7 @@
 
 
 <g>
-	<rect x="421.683206" y="272.960000" width="132.267176" height="107.680000" style="fill: rgb(253, 174, 97);opacity:1;fill-opacity:1.00;stroke:rgb(128,128,128);stroke-width:1px;stroke-opacity:1.00;" />
+	<rect x="421.683206" y="272.960000" width="132.267176" height="107.680000" style="fill: rgb(166, 217, 106);opacity:1;fill-opacity:1.00;stroke:rgb(128,128,128);stroke-width:1px;stroke-opacity:1.00;" />
 
 <text
 	data-notex="1"
@@ -215,20 +215,20 @@
 
 
 <g>
-	<rect x="877.246261" y="541.405427" width="67.699533" height="70.594573" style="fill: rgb(149, 210, 104);opacity:1;fill-opacity:1.00;stroke:rgb(128,128,128);stroke-width:1px;stroke-opacity:1.00;" />
+	<rect x="877.246261" y="541.405427" width="67.699533" height="70.594573" style="fill: rgb(0, 104, 55);opacity:1;fill-opacity:1.00;stroke:rgb(128,128,128);stroke-width:1px;stroke-opacity:1.00;" />
 
 <text
 	data-notex="1"
 	text-anchor="start"
 	transform="translate(885.246261,557.005427) scale(0.199458)"
-	style="font-family: Open Sans, verdana, arial, sans-serif !important; font-size: 12px; fill: rgb(0, 0, 0); fill-opacity: 1.00; white-space: pre;"
+	style="font-family: Open Sans, verdana, arial, sans-serif !important; font-size: 12px; fill: rgb(255, 255, 255); fill-opacity: 1.00; white-space: pre;"
 	data-math="N">runtime_cpuarch_function.go</text>
 
 </g>
 
 
 <g>
-	<rect x="421.683206" y="504.320000" width="132.267176" height="107.680000" style="fill: rgb(253, 174, 97);opacity:1;fill-opacity:1.00;stroke:rgb(128,128,128);stroke-width:1px;stroke-opacity:1.00;" />
+	<rect x="421.683206" y="504.320000" width="132.267176" height="107.680000" style="fill: rgb(166, 217, 106);opacity:1;fill-opacity:1.00;stroke:rgb(128,128,128);stroke-width:1px;stroke-opacity:1.00;" />
 
 <text
 	data-notex="1"
@@ -553,7 +553,7 @@
 
 
 <g>
-	<rect x="561.950382" y="185.896855" width="101.643482" height="125.190738" style="fill: rgb(253, 172, 95);opacity:1;fill-opacity:1.00;stroke:rgb(128,128,128);stroke-width:1px;stroke-opacity:1.00;" />
+	<rect x="561.950382" y="185.896855" width="101.643482" height="125.190738" style="fill: rgb(93, 184, 96);opacity:1;fill-opacity:1.00;stroke:rgb(128,128,128);stroke-width:1px;stroke-opacity:1.00;" />
 
 <text
 	data-notex="1"

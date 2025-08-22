@@ -66,11 +66,11 @@ var (
 		Expected    string
 		ExpectedErr bool
 	}{
-		// `{"abc":123}`: {
-		// 	Input:       `{"abc": 123}`,
-		// 	Expected:    `abc = 123`,
-		// 	ExpectedErr: false,
-		// },
+		`{"abc":123}`: {
+			Input:       `{"abc": 123}`,
+			Expected:    `abc = 123`,
+			ExpectedErr: false,
+		},
 		"toml.example.json": {
 			Input:       strings.TrimSpace(jsonContent),
 			Expected:    strings.TrimSpace(tomlContent),
