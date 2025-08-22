@@ -240,6 +240,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`e172d17`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/e172d17d51bb0d600fa476773b6e113d18d7174d): OSV scanner config. ([@skyzyx](https://github.com/skyzyx))
 * [`a70f862`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/a70f8627c5d950abf036ecd12a64aac45d28ddee): Added Terraform 1.13 and 1.14 to the test matrix. ([@skyzyx](https://github.com/skyzyx))
 * [`f9a79d9`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/f9a79d9a99af7dece2f7e231b9f7ede23daf6193): Updated Go baseline to version 1.25. ([@skyzyx](https://github.com/skyzyx))
+* [`b725ab0`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/b725ab013caadc35760f3ac241b8ba6b84386ccc): Apply GOEXPERIMENT=greenteagc,jsonv2 to tests and release builds. ([@skyzyx](https://github.com/skyzyx))
 
 ### <!-- 0 -->:rocket: Features
 
