@@ -10,6 +10,7 @@ report_sizes: true
 builds:
   - env:
       - CGO_ENABLED=0
+      - GOEXPERIMENT=greenteagc,jsonv2
     mod_timestamp: "{{ .CommitTimestamp }}"
     flags:
       - -trimpath
