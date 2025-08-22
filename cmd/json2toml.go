@@ -18,6 +18,7 @@ package cmd // lint:no_dupe
 import (
 	"fmt"
 	"os"
+	"strings"
 
 	"github.com/spf13/cobra"
 
@@ -32,8 +33,10 @@ var json2tomlCmd = &cobra.Command{
 	Long: clihelpers.LongHelpText(`
 	Converts JSON to TOML.
 	`),
+	Args: cobra.ExactArgs(1),
 	Run: func(_ *cobra.Command, args []string) {
 		if len(args) != 1 {
+			fmt.Println("The first argument must be a file path to the JSON file to convert.")
 			fmt.Println("Re-run with --help to see options.")
 			os.Exit(1)
 		}
@@ -50,7 +53,7 @@ var json2tomlCmd = &cobra.Command{
 			os.Exit(1)
 		}
 
-		fmt.Println(output)
+		fmt.Println(strings.TrimSpace(output))
 	},
 }
 

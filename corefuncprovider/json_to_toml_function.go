@@ -17,82 +17,82 @@ package corefuncprovider // lint:no_dupe
 
 import (
 	"context"
+	"fmt"
 	"strings"
 
 	"github.com/hashicorp/terraform-plugin-framework/function"
 	"github.com/hashicorp/terraform-plugin-log/tflog"
 	"github.com/lithammer/dedent"
-
 	"github.com/northwood-labs/terraform-provider-corefunc/corefunc"
 )
 
 // Ensure the implementation satisfies the expected interfaces.
-var _ function.Function = &tomlToJSONFunction{}
+var _ function.Function = &jsonToTomlFunction{}
 
 type (
-	// tomlToJSONFunction is the function implementation.
-	tomlToJSONFunction struct{}
+	// jsonToTomlFunction is the function implementation.
+	jsonToTomlFunction struct{}
 )
 
-// TomlToJSONFunction is a method that exposes its paired Go function as a
+// JSONToTomlFunction is a method that exposes its paired Go function as a
 // Terraform Function.
 // https://developer.hashicorp.com/terraform/plugin/framework/functions/implementation
-func TomlToJSONFunction() function.Function { // lint:allow_return_interface
-	return &tomlToJSONFunction{}
+func JSONToTomlFunction() function.Function { // lint:allow_return_interface
+	return &jsonToTomlFunction{}
 }
 
-func (f *tomlToJSONFunction) Metadata(
+func (f *jsonToTomlFunction) Metadata(
 	ctx context.Context,
-	_ function.MetadataRequest,
+	req function.MetadataRequest,
 	resp *function.MetadataResponse,
 ) {
-	tflog.Debug(ctx, "Starting TomlToJSON Function Metadata method.")
+	tflog.Debug(ctx, "Starting JSONToToml Function Metadata method.")
 
-	resp.Name = "toml_to_json"
+	resp.Name = "json_to_toml"
 
-	tflog.Debug(ctx, "resp.Name = "+resp.Name)
+	tflog.Debug(ctx, fmt.Sprintf("resp.Name = %s", resp.Name))
 
-	tflog.Debug(ctx, "Ending TomlToJSON Function Metadata method.")
+	tflog.Debug(ctx, "Ending JSONToToml Function Metadata method.")
 }
 
 // Definition defines the parameters and return type for the function.
-func (f *tomlToJSONFunction) Definition(
+func (f *jsonToTomlFunction) Definition(
 	ctx context.Context,
-	_ function.DefinitionRequest,
+	req function.DefinitionRequest,
 	resp *function.DefinitionResponse,
 ) {
-	tflog.Debug(ctx, "Starting TomlToJSON Function Definition method.")
+	tflog.Debug(ctx, "Starting JSONToToml Function Definition method.")
 
 	resp.Definition = function.Definition{
-		Summary: "Converts a TOML string into an equivalent JSON string.",
+		Summary: "Converts a JSON string into an equivalent TOML string.",
 		MarkdownDescription: strings.TrimSpace(dedent.Dedent(`
-		Converts a TOML string into an equivalent JSON string.
+		Converts a JSON string into an equivalent TOML string.
 
-		Maps to the ` + linkPackage("TOMLtoJSON") + ` Go method, which can be used in ` + Terratest + `.
+		Maps to the ` + linkPackage("JSONtoTOML") + ` Go method, which can be used in ` + Terratest + `.
 		`)),
 		Parameters: []function.Parameter{
 			function.StringParameter{
 				Name:                "toml",
-				MarkdownDescription: "The TOML string to convert to JSON.",
+				MarkdownDescription: "The JSON string to convert to TOML.",
 			},
 		},
 		Return: function.StringReturn{},
 	}
 
-	tflog.Debug(ctx, "Ending TomlToJSON Function Definition method.")
+	tflog.Debug(ctx, "Ending JSONToToml Function Definition method.")
 }
 
-func (f *tomlToJSONFunction) Run(ctx context.Context, req function.RunRequest, resp *function.RunResponse) {
-	tflog.Debug(ctx, "Starting TomlToJSON Function Run method.")
+func (f *jsonToTomlFunction) Run(ctx context.Context, req function.RunRequest, resp *function.RunResponse) {
+	tflog.Debug(ctx, "Starting JSONToToml Function Run method.")
 
-	var asTOML string
+	var asJSON string
 
-	resp.Error = req.Arguments.Get(ctx, &asTOML)
+	resp.Error = req.Arguments.Get(ctx, &asJSON)
 	if resp.Error != nil {
 		return
 	}
 
-	jsonVal, err := corefunc.TOMLtoJSON(asTOML)
+	tomlVal, err := corefunc.JSONtoTOML(asJSON)
 	if err != nil {
 		resp.Error = function.ConcatFuncErrors(
 			function.NewFuncError(err.Error()),
@@ -101,7 +101,7 @@ func (f *tomlToJSONFunction) Run(ctx context.Context, req function.RunRequest, r
 		return
 	}
 
-	resp.Error = function.ConcatFuncErrors(resp.Result.Set(ctx, strings.TrimSpace(jsonVal)))
+	resp.Error = function.ConcatFuncErrors(resp.Result.Set(ctx, strings.TrimSpace(tomlVal)))
 
-	tflog.Debug(ctx, "Ending TomlToJSON Function Run method.")
+	tflog.Debug(ctx, "Ending JSONToToml Function Run method.")
 }
