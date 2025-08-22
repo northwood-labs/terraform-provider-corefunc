@@ -127,13 +127,20 @@ func TestTerraform(t *testing.T) {
 
 		// Format shifting
 		var asJSON string
+		var asTOML string
 
 		asJSON, err = corefunc.TOMLtoJSON("abc = 123")
 		if err != nil {
 			t.Fatal(err)
 		}
 
-		assert.Equal(t, terraform.Output(t, terraformOptions, "toml_as_json"), strings.TrimSpace(asJSON)+"\n")
+		asTOML, err = corefunc.JSONtoTOML(`{"abc": 123}`)
+		if err != nil {
+			t.Fatal(err)
+		}
+
+		assert.Equal(t, terraform.Output(t, terraformOptions, "toml_as_json"), strings.TrimSpace(asJSON))
+		assert.Equal(t, terraform.Output(t, terraformOptions, "json_as_toml"), strings.TrimSpace(asTOML))
 
 		// Ported OpenTofu functions
 		var (
