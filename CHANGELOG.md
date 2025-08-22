@@ -16,6 +16,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`30db63e`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/30db63e9b7e7b3afade107e440bb793a13bf7fb4): Updated the cliff.toml with updated syntax. ([@skyzyx](https://github.com/skyzyx))
 * [`d369b8c`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/d369b8c2307729dbd82512e1c29a6d0caf5c4236): Updated the `README.md` for Go 1.25. ([@skyzyx](https://github.com/skyzyx))
 * [`dc05284`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/dc052848690d531c97219d8252b1594852201e55): Removed vestigial example from the LICENSE file. ([@skyzyx](https://github.com/skyzyx))
+* [`478ef3e`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/478ef3ebdc9cb2d650428075f5794e8551c439ec): Generated the new documentation pages for json_to_toml. ([@skyzyx](https://github.com/skyzyx))
 
 ### :dependabot: Building and Dependencies
 
@@ -241,6 +242,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`a70f862`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/a70f8627c5d950abf036ecd12a64aac45d28ddee): Added Terraform 1.13 and 1.14 to the test matrix. ([@skyzyx](https://github.com/skyzyx))
 * [`f9a79d9`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/f9a79d9a99af7dece2f7e231b9f7ede23daf6193): Updated Go baseline to version 1.25. ([@skyzyx](https://github.com/skyzyx))
 * [`b725ab0`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/b725ab013caadc35760f3ac241b8ba6b84386ccc): Apply GOEXPERIMENT=greenteagc,jsonv2 to tests and release builds. ([@skyzyx](https://github.com/skyzyx))
+* [`d809993`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/d80999381d7bbe27ece944df31259ade0d00b398): Working tests for json_to_toml. ([@skyzyx](https://github.com/skyzyx))
+* [`cb10159`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/cb101597ac5ea04f4a52fff095266c55cc76ec37): Small fixes with running the test suite. ([@skyzyx](https://github.com/skyzyx))
 
 ### <!-- 0 -->:rocket: Features
 
@@ -250,6 +253,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`71ceeb4`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/71ceeb4d9d836067694a69cd3e576d8aa9cec983): Added toml_to_json data source and function. ([@skyzyx](https://github.com/skyzyx))
 * [`aceceb9`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/aceceb9de40ac6b2f069ee02924819bf2b12652c): Adopting Go 1.25 features. ([@skyzyx](https://github.com/skyzyx))
 * [`df3b59b`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/df3b59b6269d40618f70d43fa1f2ba606a13066a): Adopting Go 1.25 features. ([@skyzyx](https://github.com/skyzyx))
+* [`4a1daa4`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/4a1daa4059176344f71731379105cd43c7e0be5d): Implementing json_to_toml in the provider. ([@skyzyx](https://github.com/skyzyx))
 
 ### <!-- 1 -->:bug: Bug Fixes
 
@@ -260,6 +264,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * **[BC BREAK]** [`b28a8e6`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/b28a8e621f15912b407a1e3cfd3c7f080d01a14f): Remove the already-deprecated truncate_label functionality. ([@skyzyx](https://github.com/skyzyx))
 * **[BC BREAK]** [`67b1515`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/67b1515f0398f51a27da6ed833443975a30c20a2): Remove truncate_label from tests. ([@skyzyx](https://github.com/skyzyx))
 * [`6785078`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/6785078035f21e4f506dd5d1385bff183af8d25f): Re-added .githooks dir. Not sure how that got deleted. ([@skyzyx](https://github.com/skyzyx))
+* [`4b38b52`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/4b38b52b3032568138932d15f0691587d30cc2fc): Address linting issues. ([@skyzyx](https://github.com/skyzyx))
 
 ### <!-- ZZZ -->:gear: Miscellaneous Tasks
 
