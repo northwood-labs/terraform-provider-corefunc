@@ -79,12 +79,12 @@ func (p *coreFuncProvider) Schema(ctx context.Context, _ provider.SchemaRequest,
 
         **This does not add new syntax or constructs.** Instead it uses the
         _existing_ concepts around Providers, Resources, Data Sources,
-        Variables, Outputs, and Functions (1.8) to expose new custom-built
+        Variables, Outputs, and Functions to expose new custom-built
         functionality.
 
         The goal of this provider is not to call any APIs, but to provide
         pre-built functions in the form of _Data Sources_ or _Provider
-        Functions_ (1.8).
+        Functions_.
         `)),
 	}
 
@@ -109,6 +109,7 @@ func (p *coreFuncProvider) DataSources(ctx context.Context) []func() datasource.
 		HomedirExpandDataSource,
 		HomedirGetDataSource,
 		IntLeftpadDataSource,
+		JSONToTomlDataSource,
 		NetCidrContainsDataSource,
 		RuntimeCpuarchDataSource,
 		RuntimeNumcpusDataSource,
@@ -136,6 +137,7 @@ func (p *coreFuncProvider) Functions(ctx context.Context) []func() function.Func
 		HomedirExpandFunction,
 		HomedirGetFunction,
 		IntLeftpadFunction,
+		JSONToTomlFunction,
 		NetCidrContainsFunction,
 		RuntimeCpuarchFunction,
 		RuntimeNumcpusFunction,

@@ -82,6 +82,22 @@ However, by passing the `--help` flag, you can see the other options available, 
 terraform-provider-corefunc --help
 ```
 
+## Extras
+
+We've also bundled some CLI commands that you might find as useful as we have.
+
+### JSON → TOML
+
+```bash
+terraform-provider-corefunc json2toml file.json > file.toml
+```
+
+### TOML → JSON
+
+```bash
+terraform-provider-corefunc toml2json file.toml > file.json
+```
+
 [OpenTofu]: https://opentofu.org
 [Terraform]: https://terraform.io
 [Terratest]: https://terratest.gruntwork.io

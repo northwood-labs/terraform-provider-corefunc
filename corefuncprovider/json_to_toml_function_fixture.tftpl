@@ -1,0 +1,11 @@
+locals {
+  json = <<EOT
+{{ .Input }}
+EOT
+}
+
+output "as_toml" {
+  value = provider::corefunc::json_to_toml(local.json)
+}
+
+#=> {{ .Expected }}
