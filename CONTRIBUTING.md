@@ -23,12 +23,12 @@ The majority of development is done on macOS, so we have some helpers set-up to 
 1. For Mac users, you can install all of the Homebrew and Go packages together.
 
     ```bash
-    make install-tools-mac
+    make install-tools
     ```
 
     Obviously, this won't work on Linux, so ensure that the following packages are installed from your system's package manager.
 
-    * [Go] 1.22+ (primary language)
+    * [Go] 1.25+ (primary language)
     * [Node.js] 20+ (linting tools)
     * [Python] 3.13+ (linting tools)
     * [Git LFS] (storage of binary data)
@@ -53,7 +53,7 @@ The majority of development is done on macOS, so we have some helpers set-up to 
 
 In order to contribute a code change, you should fork the repository, make your changes, and then submit a pull request.
 
-You should follow the best practices in [Effective Go](https://go.dev/doc/effective_go) and [Go Code Review Comments](https://go.dev/wiki/CodeReviewComments). If not, you should learn by running `make lint` and/or code review feedback and aim to improve over time.
+You should follow the best practices in [Effective Go](https://go.dev/doc/effective_go), [Go Code Review Comments](https://go.dev/wiki/CodeReviewComments), and the [project's Go instructions](.github/instructions/go.instructions.md). If not, you should learn by running `make lint` and/or code review feedback and aim to improve over time.
 
 Crucially, all code changes should be preceded by an issue that you've been assigned to. If an issue for the change you'd like to introduce already exists, please communicate in the issue that you'd like to take ownership of it. If an issue doesn't yet exist, please create one expressing your interest in working on it and discuss it first, prior to working on the code. Code changes without a related issue will generally be rejected.
 
