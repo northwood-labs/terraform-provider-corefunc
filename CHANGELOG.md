@@ -20,6 +20,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 
 * [`1a0cfa6`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/1a0cfa61fa0356a9a6f67e21bef8f79d5190cb8c): Add builds for OpenBSD and NetBSD, arm32 and arm64. ([@skyzyx](https://github.com/skyzyx))
 * [`5a5eae6`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/5a5eae6be21a58cc9f4e9551387e79f379ea7e38): Add initial LLM prompt files (experiment). ([@skyzyx](https://github.com/skyzyx))
+* [`929cbfb`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/929cbfbf41047cc643362450cab226d1dd79cb31): Added MCP servers, prompts, and more. ([@skyzyx](https://github.com/skyzyx))
 
 ### <!-- 1 -->:bug: Bug Fixes
 
