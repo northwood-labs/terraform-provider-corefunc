@@ -8,6 +8,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 
 [Compare: v2.0.0 → `HEAD`](https://github.com/northwood-labs/terraform-provider-corefunc/compare/v2.0.0..HEAD)
 
+### :books: Documentation
+
+* [`4356147`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/4356147c780166633cc1337fbea05b92a9143448): Added a Markdown printout of the commands. ([@skyzyx](https://github.com/skyzyx))
+
 ### :dependabot: Building and Dependencies
 
 * [`2a72f36`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/2a72f368d387d19c94d607becca70a83796ce111): Added charmbracelet/fang to make the CLI a little prettier. ([@skyzyx](https://github.com/skyzyx))
