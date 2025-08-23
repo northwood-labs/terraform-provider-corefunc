@@ -20,6 +20,7 @@ import (
 	"log"
 	"os"
 
+	"github.com/charmbracelet/fang"
 	"github.com/spf13/cobra"
 
 	"github.com/hashicorp/terraform-plugin-framework/providerserver"
@@ -84,8 +85,7 @@ func init() { // lint:allow_init
 
 // Execute configures the Cobra CLI app framework and executes the root command.
 func Execute() {
-	err := rootCmd.Execute()
-	if err != nil {
+	if err := fang.Execute(context.Background(), rootCmd); err != nil {
 		os.Exit(1)
 	}
 }
