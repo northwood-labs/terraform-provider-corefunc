@@ -4,9 +4,9 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com), adheres to [Semantic Versioning](https://semver.org), and uses [Conventional Commit](https://www.conventionalcommits.org) syntax.
 
-## v2.0.0 - 2025-08-22
+## 2.0.0 — 2025-08-23
 
-[Compare: v1.5.1 → `HEAD`](https://github.com/northwood-labs/terraform-provider-corefunc/compare/v1.5.1..HEAD)
+[Compare: v1.5.1 → v2.0.0](https://github.com/northwood-labs/terraform-provider-corefunc/compare/v1.5.1...v2.0.0)
 
 ### :books: Documentation
 
@@ -1059,4 +1059,4 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`eb9f7ae`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/eb9f7aecfdaa7bda9087b9b58229d3943571a863): Update the GoReleaser configuration. ([@skyzyx](https://github.com/skyzyx))
 * [`a01b12e`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/a01b12e6870b821f561624bca79407e4c87c73cf): Trying to get the build to work. ([@skyzyx](https://github.com/skyzyx))
 
-<p>Generated on 2025-08-22.</p>
+<p>Generated on 2025-08-23.</p>
