@@ -8,9 +8,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 
 [Compare: v2.0.0 → `HEAD`](https://github.com/northwood-labs/terraform-provider-corefunc/compare/v2.0.0..HEAD)
 
+### :dependabot: Building and Dependencies
+
+* [`2a72f36`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/2a72f368d387d19c94d607becca70a83796ce111): Added charmbracelet/fang to make the CLI a little prettier. ([@skyzyx](https://github.com/skyzyx))
+
 ### <!-- 0 -->:rocket: Features
 
 * [`1a0cfa6`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/1a0cfa61fa0356a9a6f67e21bef8f79d5190cb8c): Add builds for OpenBSD and NetBSD, arm32 and arm64. ([@skyzyx](https://github.com/skyzyx))
+* [`5a5eae6`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/5a5eae6be21a58cc9f4e9551387e79f379ea7e38): Add initial LLM prompt files (experiment). ([@skyzyx](https://github.com/skyzyx))
 
 ### <!-- 1 -->:bug: Bug Fixes
 
