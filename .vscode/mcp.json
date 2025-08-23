@@ -1,0 +1,10 @@
+{
+  "servers": {
+    "terraform": {
+      "command": "go tool -modfile=${workspaceFolder}/go.tools.mod terraform-mcp-server",
+      "args": [
+        "stdio"
+      ]
+    }
+  }
+}
