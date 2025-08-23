@@ -89,3 +89,9 @@ func Execute() {
 		os.Exit(1)
 	}
 }
+
+// Root exposes the root command for tools like doc generators.
+// https://cobra.dev/docs/how-to-guides/clis-for-llms/
+func Root() *cobra.Command {
+	return rootCmd
+}
