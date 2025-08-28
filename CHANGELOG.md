@@ -1756,6 +1756,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`a3f7c9c`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/a3f7c9cb57586f74ef401a2e05e453f5aa4ec12e): **deps**: Bump `github.com/hashicorp/terraform-plugin-go` ([#375](https://github.com/northwood-labs/terraform-provider-corefunc/issues/375)) ([@dependabot](https://github.com/dependabot))
 * [`50bcfaa`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/50bcfaa8309c43482e17fbca1463c4f434a84b3d): **deps**: Bump `github/codeql-action` from 3.28.11 to 3.28.13 ([#500](https://github.com/northwood-labs/terraform-provider-corefunc/issues/500)) ([@dependabot](https://github.com/dependabot))
 * [`56035a8`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/56035a84f546f50a526915dab349b56583d761e1): **deps**: Bump `github.com/hashicorp/terraform-plugin-go` ([#539](https://github.com/northwood-labs/terraform-provider-corefunc/issues/539)) ([@dependabot](https://github.com/dependabot))
+* [`c707bed`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/c707bed98a7f858555c59c73f6c13d4a455f585b): **deps**: Bump `github.com/hashicorp/terraform-plugin-go` ([#172](https://github.com/northwood-labs/terraform-provider-corefunc/issues/172)) ([@dependabot](https://github.com/dependabot))
+* [`2523601`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/252360183d43ca9e4f4cd26017e163ab46018a0d): **deps**: Bump `github.com/hashicorp/go-getter` from 1.7.4 to 1.7.5 in /terratest/functions in the go_modules group ([#282](https://github.com/northwood-labs/terraform-provider-corefunc/issues/282)) ([@dependabot](https://github.com/dependabot))
+* [`6153854`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/61538548119a2a026e50c7791a366732a9130abf): **deps**: Bump `github.com/hashicorp/terraform-plugin-go` ([#334](https://github.com/northwood-labs/terraform-provider-corefunc/issues/334)) ([@dependabot](https://github.com/dependabot))
+* [`c8e9c98`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/c8e9c98c1867a9e4231292557c9a4563a4d2c017): **deps**: Bump `github.com/hashicorp/terraform-plugin-go` ([#375](https://github.com/northwood-labs/terraform-provider-corefunc/issues/375)) ([@dependabot](https://github.com/dependabot))
+* [`effec24`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/effec24e77d4a5701f4429a94c54cf5a0f4b6121): **deps**: Bump `github/codeql-action` from 3.28.11 to 3.28.13 ([#500](https://github.com/northwood-labs/terraform-provider-corefunc/issues/500)) ([@dependabot](https://github.com/dependabot))
+* [`a813c5d`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/a813c5d910e19e7deb6bd1b8745e3c94e43f07c1): **deps**: Bump `github.com/hashicorp/terraform-plugin-go` ([#539](https://github.com/northwood-labs/terraform-provider-corefunc/issues/539)) ([@dependabot](https://github.com/dependabot))
 
 ### :soap: Linting
 
@@ -2028,6 +2034,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`9f0654b`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/9f0654bba460267c330d3b8bdf5124bc64cbd45e): Clean-up Go sum checksums. ([@skyzyx](https://github.com/skyzyx))
 * [`3ca82a2`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/3ca82a2ac5acc11e3aace67ecd7c937f2b098678): Remove git-cliff artifacts. ([@skyzyx](https://github.com/skyzyx))
 * [`91e196f`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/91e196f436f5500cc6f4fae904743dfd6c0f3d6e): Remove git-cliff from history. ([@skyzyx](https://github.com/skyzyx))
+* [`fc2d98f`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/fc2d98f80759e7d81bca9dadc85c4d7a5f7dc6dd): Remove git-cliff from history. ([@skyzyx](https://github.com/skyzyx))
 
 ### <!-- ZZZ -->:gear: Miscellaneous Tasks
 
