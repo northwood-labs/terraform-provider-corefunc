@@ -4,6 +4,15 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com), adheres to [Semantic Versioning](https://semver.org), and uses [Conventional Commit](https://www.conventionalcommits.org) syntax.
 
+## Unreleased
+
+[Compare: v2.1.0 → `HEAD`](https://github.com/northwood-labs/terraform-provider-corefunc/compare/v2.1.0..HEAD)
+
+### <!-- ZZZ -->:gear: Miscellaneous Tasks
+
+* [`04c09af`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/04c09affea6b7c902d6b7fbf5b53c6390adb29d6): Added release-assets.githubusercontent.com as an allowed host. ([@skyzyx](https://github.com/skyzyx))
+* [`24cb761`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/24cb76177b1e946a245c0984dbf2d0c655aaf875): Added a solaris/amd64 build since Terraform and OpenTofu have one. ([@skyzyx](https://github.com/skyzyx))
+
 ## 2.1.0 — 2025-08-29
 
 [Compare: v2.0.0 → v2.1.0](https://github.com/northwood-labs/terraform-provider-corefunc/compare/v2.0.0...v2.1.0)
