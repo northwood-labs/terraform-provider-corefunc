@@ -116,11 +116,6 @@ func (d *urlParseDataSource) Schema(
 					"Allowed values: `standard`, `google_safe_browsing`. The default value is `standard`.",
 				Optional: true,
 			},
-			"canonicalizer": schema.StringAttribute{
-				MarkdownDescription: "The method by which the URL should be canonicalized. " +
-					"Allowed values: `standard`, `google_safe_browsing`. The default value is `standard`.",
-				Optional: true,
-			},
 			"normalized": schema.StringAttribute{
 				MarkdownDescription: "The normalized form of the URL.",
 				Computed:            true,
