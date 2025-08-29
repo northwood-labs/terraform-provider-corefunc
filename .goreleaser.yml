@@ -16,12 +16,22 @@ builds:
       - -trimpath
     ldflags:
       - -s -w -X github.com/northwood-labs/terraform-provider-corefunc/v2/cmd.Version={{.Version}}
+
+    ##
+    # Terraform build matrix
+    #   https://github.com/hashicorp/terraform/blob/main/.github/workflows/build.yml
+    #
+    # OpenTofu build matrix
+    #   https://github.com/opentofu/opentofu/blob/main/.github/workflows/build.yml
+    ##
+
     goos:
       - darwin
       - freebsd
       - linux
       - netbsd
       - openbsd
+      - solaris
       - windows
     goarch:
       - "386"
@@ -32,6 +42,16 @@ builds:
       - goos: darwin
         goarch: "386"
       - goos: darwin
+        goarch: arm
+
+      - goos: solaris
+        goarch: "386"
+      - goos: solaris
+        goarch: arm
+      - goos: solaris
+        goarch: arm64
+
+      - goos: windows
         goarch: arm
     binary: "{{ .ProjectName }}_v{{ .Version }}"
 
