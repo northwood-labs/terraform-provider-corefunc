@@ -3,14 +3,14 @@ page_title: "corefunc_str_snake Data Source - corefunc"
 subcategory: ""
 description: |-
   Converts a string to snake_case, removing any non-alphanumeric characters.
-  Maps to the corefunc.StrSnake() https://pkg.go.dev/github.com/northwood-labs/terraform-provider-corefunc/corefunc#StrSnake Go method, which can be used in Terratest https://terratest.gruntwork.io.
+  Maps to the corefunc.StrSnake() https://pkg.go.dev/github.com/northwood-labs/terraform-provider-corefunc/v2/corefunc#StrSnake Go method, which can be used in Terratest https://terratest.gruntwork.io.
 ---
 
 # corefunc_str_snake (Data Source)
 
 Converts a string to `snake_case`, removing any non-alphanumeric characters.
 
-Maps to the [`corefunc.StrSnake()`](https://pkg.go.dev/github.com/northwood-labs/terraform-provider-corefunc/corefunc#StrSnake) Go method, which can be used in [Terratest](https://terratest.gruntwork.io).
+Maps to the [`corefunc.StrSnake()`](https://pkg.go.dev/github.com/northwood-labs/terraform-provider-corefunc/v2/corefunc#StrSnake) Go method, which can be used in [Terratest](https://terratest.gruntwork.io).
 
 ## Example Usage
 

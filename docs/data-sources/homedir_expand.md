@@ -3,14 +3,14 @@ page_title: "corefunc_homedir_expand Data Source - corefunc"
 subcategory: ""
 description: |-
   Replaces the ~ character in a path with the current user's home directory.
-  Maps to the corefunc.HomedirExpand() https://pkg.go.dev/github.com/northwood-labs/terraform-provider-corefunc/corefunc#HomedirExpand Go method, which can be used in Terratest https://terratest.gruntwork.io.
+  Maps to the corefunc.HomedirExpand() https://pkg.go.dev/github.com/northwood-labs/terraform-provider-corefunc/v2/corefunc#HomedirExpand Go method, which can be used in Terratest https://terratest.gruntwork.io.
 ---
 
 # corefunc_homedir_expand (Data Source)
 
 Replaces the ~ character in a path with the current user's home directory.
 
-Maps to the [`corefunc.HomedirExpand()`](https://pkg.go.dev/github.com/northwood-labs/terraform-provider-corefunc/corefunc#HomedirExpand) Go method, which can be used in [Terratest](https://terratest.gruntwork.io).
+Maps to the [`corefunc.HomedirExpand()`](https://pkg.go.dev/github.com/northwood-labs/terraform-provider-corefunc/v2/corefunc#HomedirExpand) Go method, which can be used in [Terratest](https://terratest.gruntwork.io).
 
 ## Example Usage
 

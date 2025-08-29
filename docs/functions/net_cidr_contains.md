@@ -9,7 +9,7 @@ description: |-
   -> This functionality is built into OpenTofu 1.8, but is missing in Terraform 1.9.
   This also provides a 1:1 implementation that can be used with Terratest or other
   Go code.
-  Maps to the corefunc.CIDRContains() https://pkg.go.dev/github.com/northwood-labs/terraform-provider-corefunc/corefunc#CIDRContains Go method, which can be used in Terratest https://terratest.gruntwork.io.
+  Maps to the corefunc.CIDRContains() https://pkg.go.dev/github.com/northwood-labs/terraform-provider-corefunc/v2/corefunc#CIDRContains Go method, which can be used in Terratest https://terratest.gruntwork.io.
 ---
 
 # net_cidr_contains (function)
@@ -24,7 +24,7 @@ family mismatch will result in an error.
 This also provides a 1:1 implementation that can be used with Terratest or other
 Go code.
 
-Maps to the [`corefunc.CIDRContains()`](https://pkg.go.dev/github.com/northwood-labs/terraform-provider-corefunc/corefunc#CIDRContains) Go method, which can be used in [Terratest](https://terratest.gruntwork.io).
+Maps to the [`corefunc.CIDRContains()`](https://pkg.go.dev/github.com/northwood-labs/terraform-provider-corefunc/v2/corefunc#CIDRContains) Go method, which can be used in [Terratest](https://terratest.gruntwork.io).
 
 ## Signature
 

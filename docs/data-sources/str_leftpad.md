@@ -3,14 +3,14 @@ page_title: "corefunc_str_leftpad Data Source - corefunc"
 subcategory: ""
 description: |-
   Pads a string with additional characters on the left.
-  Maps to the corefunc.StrLeftPad() https://pkg.go.dev/github.com/northwood-labs/terraform-provider-corefunc/corefunc#StrLeftPad Go method, which can be used in Terratest https://terratest.gruntwork.io.
+  Maps to the corefunc.StrLeftPad() https://pkg.go.dev/github.com/northwood-labs/terraform-provider-corefunc/v2/corefunc#StrLeftPad Go method, which can be used in Terratest https://terratest.gruntwork.io.
 ---
 
 # corefunc_str_leftpad (Data Source)
 
 Pads a string with additional characters on the left.
 
-Maps to the [`corefunc.StrLeftPad()`](https://pkg.go.dev/github.com/northwood-labs/terraform-provider-corefunc/corefunc#StrLeftPad) Go method, which can be used in [Terratest](https://terratest.gruntwork.io).
+Maps to the [`corefunc.StrLeftPad()`](https://pkg.go.dev/github.com/northwood-labs/terraform-provider-corefunc/v2/corefunc#StrLeftPad) Go method, which can be used in [Terratest](https://terratest.gruntwork.io).
 
 ## Example Usage
 

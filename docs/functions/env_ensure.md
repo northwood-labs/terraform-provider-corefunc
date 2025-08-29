@@ -9,7 +9,7 @@ description: |-
   requires are properly set before performing work, leading to late-stage errors.
   This will force an error to occur early in the execution if the environment
   variable is not set, or if its value doesn't match the expected patttern.
-  Maps to the corefunc.EnvEnsure() https://pkg.go.dev/github.com/northwood-labs/terraform-provider-corefunc/corefunc#EnvEnsure Go method, which can be used in
+  Maps to the corefunc.EnvEnsure() https://pkg.go.dev/github.com/northwood-labs/terraform-provider-corefunc/v2/corefunc#EnvEnsure Go method, which can be used in
   Terratest https://terratest.gruntwork.io.
 ---
 
@@ -24,7 +24,7 @@ requires are properly set before performing work, leading to late-stage errors.
 This will force an error to occur early in the execution if the environment
 variable is not set, or if its value doesn't match the expected patttern.
 
-Maps to the [`corefunc.EnvEnsure()`](https://pkg.go.dev/github.com/northwood-labs/terraform-provider-corefunc/corefunc#EnvEnsure) Go method, which can be used in
+Maps to the [`corefunc.EnvEnsure()`](https://pkg.go.dev/github.com/northwood-labs/terraform-provider-corefunc/v2/corefunc#EnvEnsure) Go method, which can be used in
 [Terratest](https://terratest.gruntwork.io).
 
 ## Signature

@@ -442,7 +442,7 @@ It will show you something like this:
 ```plain
 goos: darwin
 goarch: arm64
-pkg: github.com/northwood-labs/terraform-provider-corefunc/corefunc
+pkg: github.com/northwood-labs/terraform-provider-corefunc/v2/corefunc
                                         │    Current    │                 Previous                 │
                                         │    sec/op     │     sec/op      vs base                  │
 TruncateLabel/balanced0-10                2.100n ±  1%   103.600n ±  3%   +4833.33% (p=0.002 n=6)

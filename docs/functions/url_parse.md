@@ -9,7 +9,7 @@ description: |-
   and passes all relevant tests from
   web-platform-tests https://github.com/web-platform-tests/wpt/tree/master/url. Its API is similar to Chapter 6
   in WHATWG URL Standard https://url.spec.whatwg.org/#api.
-  Maps to the corefunc.URLParse() https://pkg.go.dev/github.com/northwood-labs/terraform-provider-corefunc/corefunc#URLParse Go method, which can be used in Terratest https://terratest.gruntwork.io.
+  Maps to the corefunc.URLParse() https://pkg.go.dev/github.com/northwood-labs/terraform-provider-corefunc/v2/corefunc#URLParse Go method, which can be used in Terratest https://terratest.gruntwork.io.
 ---
 
 # url_parse (function)
@@ -23,7 +23,7 @@ and passes all relevant tests from
 [web-platform-tests](https://github.com/web-platform-tests/wpt/tree/master/url). Its API is similar to Chapter 6
 in [WHATWG URL Standard](https://url.spec.whatwg.org/#api).
 
-Maps to the [`corefunc.URLParse()`](https://pkg.go.dev/github.com/northwood-labs/terraform-provider-corefunc/corefunc#URLParse) Go method, which can be used in [Terratest](https://terratest.gruntwork.io).
+Maps to the [`corefunc.URLParse()`](https://pkg.go.dev/github.com/northwood-labs/terraform-provider-corefunc/v2/corefunc#URLParse) Go method, which can be used in [Terratest](https://terratest.gruntwork.io).
 
 ## Signature
 

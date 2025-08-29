@@ -3,14 +3,14 @@ page_title: "toml_to_json function - corefunc"
 subcategory: ""
 description: |-
   Converts a TOML string into an equivalent JSON string.
-  Maps to the corefunc.TOMLtoJSON() https://pkg.go.dev/github.com/northwood-labs/terraform-provider-corefunc/corefunc#TOMLtoJSON Go method, which can be used in Terratest https://terratest.gruntwork.io.
+  Maps to the corefunc.TOMLtoJSON() https://pkg.go.dev/github.com/northwood-labs/terraform-provider-corefunc/v2/corefunc#TOMLtoJSON Go method, which can be used in Terratest https://terratest.gruntwork.io.
 ---
 
 # toml_to_json (function)
 
 Converts a TOML string into an equivalent JSON string.
 
-Maps to the [`corefunc.TOMLtoJSON()`](https://pkg.go.dev/github.com/northwood-labs/terraform-provider-corefunc/corefunc#TOMLtoJSON) Go method, which can be used in [Terratest](https://terratest.gruntwork.io).
+Maps to the [`corefunc.TOMLtoJSON()`](https://pkg.go.dev/github.com/northwood-labs/terraform-provider-corefunc/v2/corefunc#TOMLtoJSON) Go method, which can be used in [Terratest](https://terratest.gruntwork.io).
 
 ## Signature
 

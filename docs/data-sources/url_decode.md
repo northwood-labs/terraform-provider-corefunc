@@ -9,7 +9,7 @@ description: |-
   -> This functionality is built into OpenTofu 1.8, but is missing in Terraform 1.9.
   This also provides a 1:1 implementation that can be used with Terratest or other
   Go code.
-  Maps to the corefunc.URLDecode() https://pkg.go.dev/github.com/northwood-labs/terraform-provider-corefunc/corefunc#URLDecode Go method, which can be used in Terratest https://terratest.gruntwork.io.
+  Maps to the corefunc.URLDecode() https://pkg.go.dev/github.com/northwood-labs/terraform-provider-corefunc/v2/corefunc#URLDecode Go method, which can be used in Terratest https://terratest.gruntwork.io.
 ---
 
 # corefunc_url_decode (Data Source)
@@ -24,7 +24,7 @@ byte-by-byte, ensuring correct decoding of multibyte characters.
 This also provides a 1:1 implementation that can be used with Terratest or other
 Go code.
 
-Maps to the [`corefunc.URLDecode()`](https://pkg.go.dev/github.com/northwood-labs/terraform-provider-corefunc/corefunc#URLDecode) Go method, which can be used in [Terratest](https://terratest.gruntwork.io).
+Maps to the [`corefunc.URLDecode()`](https://pkg.go.dev/github.com/northwood-labs/terraform-provider-corefunc/v2/corefunc#URLDecode) Go method, which can be used in [Terratest](https://terratest.gruntwork.io).
 
 ## Example Usage
 

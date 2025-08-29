@@ -4,7 +4,7 @@ subcategory: ""
 description: |-
   Converts a string to CONSTANT_CASE, removing any non-alphanumeric characters.
   Also known as SCREAMING_SNAKE_CASE.
-  Maps to the corefunc.StrConstant() https://pkg.go.dev/github.com/northwood-labs/terraform-provider-corefunc/corefunc#StrConstant Go method, which can be used in Terratest https://terratest.gruntwork.io.
+  Maps to the corefunc.StrConstant() https://pkg.go.dev/github.com/northwood-labs/terraform-provider-corefunc/v2/corefunc#StrConstant Go method, which can be used in Terratest https://terratest.gruntwork.io.
 ---
 
 # corefunc_str_constant (Data Source)
@@ -12,7 +12,7 @@ description: |-
 Converts a string to `CONSTANT_CASE`, removing any non-alphanumeric characters.
 Also known as `SCREAMING_SNAKE_CASE`.
 
-Maps to the [`corefunc.StrConstant()`](https://pkg.go.dev/github.com/northwood-labs/terraform-provider-corefunc/corefunc#StrConstant) Go method, which can be used in [Terratest](https://terratest.gruntwork.io).
+Maps to the [`corefunc.StrConstant()`](https://pkg.go.dev/github.com/northwood-labs/terraform-provider-corefunc/v2/corefunc#StrConstant) Go method, which can be used in [Terratest](https://terratest.gruntwork.io).
 
 ## Example Usage
 

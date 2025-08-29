@@ -55,14 +55,14 @@ Functions_.
 
 Built using the [Terraform Plugin Framework][TPF], which speaks [Terraform Protocol v6][tfproto6].
 
-| Testing type | Details            | Description                                                                    |
-|--------------|--------------------|--------------------------------------------------------------------------------|
+| Testing type | Details           | Description                                                                    |
+|--------------|-------------------|--------------------------------------------------------------------------------|
 | integration  | Terraform 1.0–1.13 | Executes the provider with this release, pulling from `registry.terraform.io`. |
 | integration  | OpenTofu 1.6–1.10  | Executes the provider with this release, pulling from `registry.opentofu.org`. |
-| unit         | Go 1.24–1.25       | Tests using these versions.                                                    |
-| mutation     | Go 1.24–1.25       | Tests using these versions.                                                    |
-| fuzz         | Go 1.24–1.25       | Tests using these versions.                                                    |
-| terratest    | Go 1.24–1.25       | Tests using these versions.                                                    |
+| unit         | Go 1.24–1.25      | Tests using these versions.                                                    |
+| mutation     | Go 1.24–1.25      | Tests using these versions.                                                    |
+| fuzz         | Go 1.24–1.25      | Tests using these versions.                                                    |
+| terratest    | Go 1.24–1.25      | Tests using these versions.                                                    |
 
 ## Setting-up the provider
 
@@ -77,7 +77,7 @@ terraform {
   required_providers {
     corefunc = {
       source  = "northwood-labs/corefunc"
-      version = "~> 1.0"
+      version = "~> 2.0"
     }
   }
 }
@@ -99,7 +99,7 @@ terraform {
   required_providers {
     corefunc = {
       source  = "northwood-labs/corefunc"
-      version = "~> 1.4"
+      version = "~> 2.0"
     }
   }
 }
