@@ -15,7 +15,7 @@
 
 package testfixtures // lint:no_dupe
 
-import "github.com/northwood-labs/terraform-provider-corefunc/corefunc/types"
+import "github.com/northwood-labs/terraform-provider-corefunc/v2/corefunc/types"
 
 // StrIterativeReplaceTestTable is used by both the standard Go tests and also
 // the Terraform acceptance tests.

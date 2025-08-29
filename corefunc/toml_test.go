@@ -23,7 +23,7 @@ import (
 
 	"github.com/pelletier/go-toml/v2"
 
-	"github.com/northwood-labs/terraform-provider-corefunc/testfixtures"
+	"github.com/northwood-labs/terraform-provider-corefunc/v2/testfixtures"
 )
 
 func ExampleTOMLtoJSON() {

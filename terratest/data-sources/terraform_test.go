@@ -30,8 +30,8 @@ import (
 	"github.com/stretchr/testify/assert"
 
 	clihelpers "github.com/northwood-labs/cli-helpers"
-	"github.com/northwood-labs/terraform-provider-corefunc/corefunc"
-	"github.com/northwood-labs/terraform-provider-corefunc/corefunc/types"
+	"github.com/northwood-labs/terraform-provider-corefunc/v2/corefunc"
+	"github.com/northwood-labs/terraform-provider-corefunc/v2/corefunc/types"
 )
 
 const (

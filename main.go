@@ -19,7 +19,7 @@ See "corefunc" package for the Go library code.
 package main
 
 import (
-	"github.com/northwood-labs/terraform-provider-corefunc/cmd"
+	"github.com/northwood-labs/terraform-provider-corefunc/v2/cmd"
 )
 
 // Provider documentation generation.

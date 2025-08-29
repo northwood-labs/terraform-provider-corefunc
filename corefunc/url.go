@@ -22,7 +22,7 @@ import (
 	"github.com/nlnwa/whatwg-url/canonicalizer"
 	"github.com/nlnwa/whatwg-url/url"
 
-	"github.com/northwood-labs/terraform-provider-corefunc/corefunc/types"
+	"github.com/northwood-labs/terraform-provider-corefunc/v2/corefunc/types"
 )
 
 /*

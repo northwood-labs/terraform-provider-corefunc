@@ -14,7 +14,7 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"github.com/northwood-labs/terraform-provider-corefunc/cmd"
+	"github.com/northwood-labs/terraform-provider-corefunc/v2/cmd"
 )
 
 const markdownExtension = ".md"

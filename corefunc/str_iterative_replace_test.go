@@ -19,8 +19,8 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/northwood-labs/terraform-provider-corefunc/corefunc/types"
-	"github.com/northwood-labs/terraform-provider-corefunc/testfixtures"
+	"github.com/northwood-labs/terraform-provider-corefunc/v2/corefunc/types"
+	"github.com/northwood-labs/terraform-provider-corefunc/v2/testfixtures"
 )
 
 func ExampleStrIterativeReplace() {

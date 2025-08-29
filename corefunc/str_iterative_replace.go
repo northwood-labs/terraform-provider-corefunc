@@ -18,7 +18,7 @@ package corefunc
 import (
 	"strings"
 
-	"github.com/northwood-labs/terraform-provider-corefunc/corefunc/types"
+	"github.com/northwood-labs/terraform-provider-corefunc/v2/corefunc/types"
 )
 
 /*

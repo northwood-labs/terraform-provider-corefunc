@@ -26,7 +26,7 @@ import (
 	"github.com/hashicorp/terraform-plugin-framework/providerserver"
 
 	clihelpers "github.com/northwood-labs/cli-helpers"
-	"github.com/northwood-labs/terraform-provider-corefunc/corefuncprovider"
+	"github.com/northwood-labs/terraform-provider-corefunc/v2/corefuncprovider"
 )
 
 var (

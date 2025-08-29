@@ -26,8 +26,8 @@ import (
 	"github.com/hashicorp/terraform-plugin-log/tflog"
 	"github.com/lithammer/dedent"
 
-	"github.com/northwood-labs/terraform-provider-corefunc/corefunc"
-	cfTypes "github.com/northwood-labs/terraform-provider-corefunc/corefunc/types"
+	"github.com/northwood-labs/terraform-provider-corefunc/v2/corefunc"
+	cfTypes "github.com/northwood-labs/terraform-provider-corefunc/v2/corefunc/types"
 )
 
 // Ensure the implementation satisfies the expected interfaces.

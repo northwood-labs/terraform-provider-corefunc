@@ -26,7 +26,7 @@ import (
 
 	"github.com/hashicorp/terraform-plugin-testing/helper/resource"
 
-	"github.com/northwood-labs/terraform-provider-corefunc/testfixtures"
+	"github.com/northwood-labs/terraform-provider-corefunc/v2/testfixtures"
 )
 
 const resourceAddr = "data.corefunc_url_parse.url"

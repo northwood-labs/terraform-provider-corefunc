@@ -18,7 +18,7 @@ package corefunc
 import (
 	"testing"
 
-	"github.com/northwood-labs/terraform-provider-corefunc/testfixtures"
+	"github.com/northwood-labs/terraform-provider-corefunc/v2/testfixtures"
 )
 
 func TestHomedir(t *testing.T) {

@@ -1,4 +1,4 @@
-module terratest
+module github.com/northwood-labs/terraform-provider-corefunc/v2/terratest
 
 go 1.25
 

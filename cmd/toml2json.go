@@ -23,7 +23,7 @@ import (
 	"github.com/spf13/cobra"
 
 	clihelpers "github.com/northwood-labs/cli-helpers"
-	"github.com/northwood-labs/terraform-provider-corefunc/corefunc"
+	"github.com/northwood-labs/terraform-provider-corefunc/v2/corefunc"
 )
 
 // toml2jsonCmd represents the toml2json command

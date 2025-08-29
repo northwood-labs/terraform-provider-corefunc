@@ -36,12 +36,12 @@ func traceFuncName() string { // lint:allow_unused
 
 	out := strings.TrimPrefix(
 		frame.Function,
-		"github.com/northwood-labs/terraform-provider-corefunc/corefunc.",
+		"github.com/northwood-labs/terraform-provider-corefunc/v2/corefunc.",
 	)
 
 	out = strings.TrimPrefix(
 		out,
-		"github.com/northwood-labs/terraform-provider-corefunc/corefuncprovider.",
+		"github.com/northwood-labs/terraform-provider-corefunc/v2/corefuncprovider.",
 	)
 
 	return out + "\n"
@@ -50,7 +50,7 @@ func traceFuncName() string { // lint:allow_unused
 func linkPackage(functionName string) string {
 	return "[`corefunc." +
 		functionName +
-		"()`](https://pkg.go.dev/github.com/northwood-labs/terraform-provider-corefunc/corefunc#" +
+		"()`](https://pkg.go.dev/github.com/northwood-labs/terraform-provider-corefunc/v2/corefunc#" +
 		functionName +
 		")"
 }

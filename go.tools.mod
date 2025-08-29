@@ -1,4 +1,4 @@
-module github.com/northwood-labs/terraform-provider-corefunc
+module github.com/northwood-labs/terraform-provider-corefunc/v2
 
 go 1.25
 
