@@ -12,6 +12,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 
 * [`7960e8c`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/7960e8c54288b3dcd9355b7b7481e5e2df2d73ef): Added a Markdown printout of the commands. ([@skyzyx](https://github.com/skyzyx))
 * [`2d126d7`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/2d126d73137aecae099d0a26460296d9caac181c): Force re-generate the CHANGELOG after rewriting history. ([@skyzyx](https://github.com/skyzyx))
+* [`ff9bbe0`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/ff9bbe090183270dfe646fda9f2b0596f1b51d4d): Updated all references to leverage v2/2.0. ([@skyzyx](https://github.com/skyzyx))
 
 ### :dependabot: Building and Dependencies
 
@@ -36,6 +37,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`beada01`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/beada0173b55d67f73426272e8a8eb5de829aa8d): Add builds for OpenBSD and NetBSD, arm32 and arm64. ([@skyzyx](https://github.com/skyzyx))
 * [`e35d480`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/e35d480134592f914e3062d7a8f7208468656545): Add initial LLM prompt files (experiment). ([@skyzyx](https://github.com/skyzyx))
 * [`4cb92d2`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/4cb92d2acb65803936582a58fafa2265782209e7): Added MCP servers, prompts, and more. ([@skyzyx](https://github.com/skyzyx))
+* [`0f7785d`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/0f7785d432bce5922320b27e6c684ffe1f647d58): Update `go.mod` for v2. ([@skyzyx](https://github.com/skyzyx))
 
 ### <!-- 1 -->:bug: Bug Fixes
 
