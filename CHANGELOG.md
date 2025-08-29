@@ -11,6 +11,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 ### :books: Documentation
 
 * [`7960e8c`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/7960e8c54288b3dcd9355b7b7481e5e2df2d73ef): Added a Markdown printout of the commands. ([@skyzyx](https://github.com/skyzyx))
+* [`2d126d7`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/2d126d73137aecae099d0a26460296d9caac181c): Force re-generate the CHANGELOG after rewriting history. ([@skyzyx](https://github.com/skyzyx))
 
 ### :dependabot: Building and Dependencies
 
@@ -357,6 +358,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`22603e3`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/22603e3451d46d6cb9f6042f1bcc020470ff17ab): **deps**: Bump `github.com/northwood-labs/terraform-provider-corefunc` ([#385](https://github.com/northwood-labs/terraform-provider-corefunc/issues/385)) ([@dependabot](https://github.com/dependabot))
 
 ## 1.5.0 — 2024-11-10
+
+[Compare: v1.4.0 → v1.5.0](https://github.com/northwood-labs/terraform-provider-corefunc/compare/v1.4.0...v1.5.0)
 
 ### :art: Styling
 
