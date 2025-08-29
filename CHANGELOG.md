@@ -27,6 +27,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`aa08263`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/aa08263f6d754e01fcbae431ef15ba1bbee57f1f): **deps**: Bump `github.com/ulikunitz/xz` ([@dependabot](https://github.com/dependabot))
 * [`d237c60`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/d237c60a3cc5043d74b503c2fc42bca9a7367244): **deps**: Bump `github.com/ulikunitz/xz` ([#598](https://github.com/northwood-labs/terraform-provider-corefunc/issues/598)) ([@dependabot](https://github.com/dependabot))
 
+### :test_tube: Testing
+
+* [`be13251`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/be13251320de44e5cb68e6b6e7115db02dfa8264): Re-run the complete test suite after Git history rewrite. ([@skyzyx](https://github.com/skyzyx))
+
 ### <!-- 0 -->:rocket: Features
 
 * [`beada01`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/beada0173b55d67f73426272e8a8eb5de829aa8d): Add builds for OpenBSD and NetBSD, arm32 and arm64. ([@skyzyx](https://github.com/skyzyx))
