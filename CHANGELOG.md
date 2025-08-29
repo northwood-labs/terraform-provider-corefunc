@@ -4,9 +4,9 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com), adheres to [Semantic Versioning](https://semver.org), and uses [Conventional Commit](https://www.conventionalcommits.org) syntax.
 
-## v2.1.0 - 2025-08-29
+## 2.1.0 — 2025-08-29
 
-[Compare: v2.0.0 → `HEAD`](https://github.com/northwood-labs/terraform-provider-corefunc/compare/v2.0.0..HEAD)
+[Compare: v2.0.0 → v2.1.0](https://github.com/northwood-labs/terraform-provider-corefunc/compare/v2.0.0...v2.1.0)
 
 ### :books: Documentation
 
