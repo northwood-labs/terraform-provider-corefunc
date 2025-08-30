@@ -8,6 +8,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 
 [Compare: v2.1.0 → `HEAD`](https://github.com/northwood-labs/terraform-provider-corefunc/compare/v2.1.0..HEAD)
 
+### :test_tube: Testing
+
+* [`cca5965`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/cca5965e434bc28c3e6eb8b78a0d4965860c0ea8): Fixed Terratest tests after the move to v2. ([@skyzyx](https://github.com/skyzyx))
+
 ### <!-- ZZZ -->:gear: Miscellaneous Tasks
 
 * [`04c09af`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/04c09affea6b7c902d6b7fbf5b53c6390adb29d6): Added release-assets.githubusercontent.com as an allowed host. ([@skyzyx](https://github.com/skyzyx))
@@ -1086,4 +1090,4 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`6bc72f6`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/6bc72f6d3927147c41665e0ccab69657a4dcd721): Trying to get the build to work. ([@skyzyx](https://github.com/skyzyx))
 * [`8c39e22`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/8c39e221bba5ab7364c52660d794fb75cbd35ff1): Harden GitHub Actions ([#129](https://github.com/northwood-labs/terraform-provider-corefunc/issues/129)) ([@step-security-bot](https://github.com/step-security-bot))
 
-<p>Generated on 2025-08-29.</p>
+<p>Generated on 2025-08-30.</p>
