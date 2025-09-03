@@ -1,4 +1,4 @@
 github.com/chanced/caps v1.0.2 h1:RELvNN4lZajqSXJGzPaU7z8B4LK2+o2Oc/upeWdgMOA=
 github.com/chanced/caps v1.0.2/go.mod h1:SJhRzeYLKJ3OmzyQXhdZ7Etj7lqqWoPtQ1zcSJRtQjs=
-github.com/spf13/pflag v1.0.9 h1:9exaQaMOCwffKiiiYk6/BndUBv+iRViNW+4lEMi0PvY=
-github.com/spf13/pflag v1.0.9/go.mod h1:McXfInJRrz4CZXVZOBLb0bTZqETkiAhM9Iw0y3An2Bg=
+github.com/spf13/pflag v1.0.10 h1:4EBh2KAYBwaONj6b2Ye1GiHfwjqyROoF4RwYO+vPwFk=
+github.com/spf13/pflag v1.0.10/go.mod h1:McXfInJRrz4CZXVZOBLb0bTZqETkiAhM9Iw0y3An2Bg=
