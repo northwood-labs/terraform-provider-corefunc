@@ -25,6 +25,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`103d8aa`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/103d8aa9b13c8248c471f8376d46ce30c8d2dafc): Updated all of the Go dependencies. ([@skyzyx](https://github.com/skyzyx))
 * [`76b5a4b`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/76b5a4b8db298c8010fa73a44391185e0cc8a6aa): **deps**: Bump `step-security/harden-runner` from 2.13.0 to 2.13.1 ([@dependabot](https://github.com/dependabot))
 * [`7608811`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/7608811b6e9e3bd8c6b0b4c40cf2aa6c1fc432a6): **deps**: Bump `actions/setup-node` from 4.4.0 to 5.0.0 ([@dependabot](https://github.com/dependabot))
+* [`c23b193`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/c23b193172f9761f4d0ddb64f0d1fac3711d5ae2): **deps**: Bump `actions/setup-go` from 5.5.0 to 6.0.0 ([@dependabot](https://github.com/dependabot))
 
 ### :test_tube: Testing
 
