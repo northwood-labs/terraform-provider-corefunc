@@ -29,7 +29,6 @@
   // LLMs
   "chat.agent.enabled": true,
   "chat.extensionTools.enabled": true,
-  "chat.mcp.enabled": true,
   "chat.promptFilesLocations": {
     "prompts": true
   },
@@ -229,7 +228,13 @@
   "[shellscript]": {
     "editor.defaultFormatter": "foxundermoon.shell-format"
   },
-  "chat.mcp.discovery.enabled": true,
+  "chat.mcp.discovery.enabled": {
+    "claude-desktop": true,
+    "windsurf": true,
+    "cursor-global": true,
+    "cursor-workspace": true
+  },
   "github.copilot.chat.codeGeneration.useInstructionFiles": true,
   "chat.mcp.autostart": "newAndOutdated",
+  "chat.mcp.access": "all",
 }
