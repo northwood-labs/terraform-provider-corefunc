@@ -10,7 +10,7 @@ replace (
 require (
 	github.com/apparentlymart/go-cidr v1.1.0
 	github.com/chanced/caps v1.0.2
-	github.com/charmbracelet/fang v0.4.1
+	github.com/charmbracelet/fang v0.4.2
 	github.com/gtramontina/ooze v0.2.0
 	github.com/hashicorp/go-version v1.7.0
 	github.com/hashicorp/terraform-plugin-framework v1.16.0
