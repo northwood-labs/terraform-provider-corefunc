@@ -34,6 +34,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 
 * [`cca5965`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/cca5965e434bc28c3e6eb8b78a0d4965860c0ea8): Fixed Terratest tests after the move to v2. ([@skyzyx](https://github.com/skyzyx))
 
+### <!-- 1 -->:bug: Bug Fixes
+
+* [`0ee527f`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/0ee527fd2244748e743faa5fac85e490d262063e): How did git-cliff end up in the repo again? ([@skyzyx](https://github.com/skyzyx))
+
 ### <!-- ZZZ -->:gear: Miscellaneous Tasks
 
 * [`04c09af`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/04c09affea6b7c902d6b7fbf5b53c6390adb29d6): Added release-assets.githubusercontent.com as an allowed host. ([@skyzyx](https://github.com/skyzyx))
