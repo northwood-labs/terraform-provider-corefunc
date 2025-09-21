@@ -46,7 +46,7 @@ func EnvEnsure(name string, pattern ...*regexp.Regexp) error {
 	if len(pattern) > 0 && pattern[0] != nil {
 		if !pattern[0].MatchString(os.Getenv(name)) {
 			return errors.New( // lint:allow_errorf
-				"environment variable " + name + " does not match pattern " + pattern[0].String(),
+				"the value of environment variable " + name + " does not match pattern " + pattern[0].String(),
 			)
 		}
 

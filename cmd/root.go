@@ -32,33 +32,38 @@ import (
 var (
 	debugMode bool
 
+	fPattern string
+
 	// rootCmd represents the base command when called without any subcommands.
 	rootCmd = &cobra.Command{
 		Use:   "terraform-provider-corefunc",
 		Short: "Utilities that should have been Terraform core functions.",
 		Long: clihelpers.LongHelpText(`
-		terraform-provider-corefunc
+		# Core Functions
 
 		Utilities that should have been Terraform core functions.
 
-		While some of these *can* be implemented in HCL, some of them begin to push up
-		against the limits of Terraform and the HCL2 configuration language. We also
-		perform testing using the Terratest <https://terratest.gruntwork.io> framework
-		on a regular basis. Exposing these functions as both a Go library as well as a
-		Terraform provider enables us to use the same functionality in both our
-		Terraform applies as well as while using a testing framework.
+		These CLI commands are implemented in the same way as the Data Sources
+		and Functions are, and are meant to help you understand how the provider
+		will perform given the same inputs.
 
-		Since Terraform doesn't have the concept of user-defined functions, the next
-		step to open up the possibilities is to write a custom Terraform Provider which
-		has the functions built-in, using Terraform's existing support for inputs and
-		outputs.
+		## Repository
 
-		**This does not add new syntax or constructs to Terraform.** Instead it uses the
-		existing concepts around Providers, Resources, Data Sources, Variables, and
-		Outputs to expose new custom-built functionality.
+		* https://github.com/northwood-labs/terraform-provider-corefunc
 
-		The goal of this provider is not to call any APIs, but to provide pre-built
-		functions in the form of Data Sources.
+		## Provider documentation
+
+		* https://registry.terraform.io/providers/northwood-labs/corefunc/latest/docs
+		* https://search.opentofu.org/provider/northwood-labs/corefunc/latest
+		* https://library.tf/providers/northwood-labs/corefunc/latest
+
+		## Go library documentation
+
+		* https://pkg.go.dev/github.com/northwood-labs/terraform-provider-corefunc/v2/corefunc
+
+		## Markdown documentation for LLMs
+
+		* https://github.com/northwood-labs/terraform-provider-corefunc/tree/main/docs
 		`),
 		Run: func(_ *cobra.Command, _ []string) {
 			err := providerserver.Serve(context.Background(), corefuncprovider.New, providerserver.ServeOpts{

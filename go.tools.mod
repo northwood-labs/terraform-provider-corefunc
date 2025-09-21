@@ -42,7 +42,7 @@ tool (
 require (
 	github.com/apparentlymart/go-cidr v1.1.0
 	github.com/chanced/caps v1.0.2
-	github.com/charmbracelet/fang v0.4.1
+	github.com/charmbracelet/fang v0.4.2
 	github.com/gtramontina/ooze v0.2.0
 	github.com/hashicorp/go-version v1.7.0
 	github.com/hashicorp/terraform-plugin-framework v1.16.0
@@ -115,9 +115,9 @@ require (
 	github.com/charmbracelet/x/conpty v0.1.0 // indirect
 	github.com/charmbracelet/x/editor v0.1.0 // indirect
 	github.com/charmbracelet/x/errors v0.0.0-20240508181413-e8d8b6e2de86 // indirect
-	github.com/charmbracelet/x/exp/charmtone v0.0.0-20250916153604-9a2e892ed98e // indirect
-	github.com/charmbracelet/x/exp/color v0.0.0-20250916153604-9a2e892ed98e // indirect
-	github.com/charmbracelet/x/exp/slice v0.0.0-20250916153604-9a2e892ed98e // indirect
+	github.com/charmbracelet/x/exp/charmtone v0.0.0-20250919153222-1038f7e6fef4 // indirect
+	github.com/charmbracelet/x/exp/color v0.0.0-20250919153222-1038f7e6fef4 // indirect
+	github.com/charmbracelet/x/exp/slice v0.0.0-20250919153222-1038f7e6fef4 // indirect
 	github.com/charmbracelet/x/term v0.2.1 // indirect
 	github.com/charmbracelet/x/termios v0.1.1 // indirect
 	github.com/charmbracelet/x/xpty v0.1.2 // indirect

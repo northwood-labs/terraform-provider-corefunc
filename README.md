@@ -57,6 +57,10 @@ See the `docs/` directory for user-facing documentation.
 
 If you are using this as a Go library, see the documentation at [pkg.go.dev](https://pkg.go.dev/github.com/northwood-labs/terraform-provider-corefunc/corefunc).
 
+```bash
+go get -u github.com/northwood-labs/terraform-provider-corefunc/v2/corefunc
+```
+
 ## More Information
 
 After the provider is installed, you can run `terraform-provider-corefunc` on the CLI.
