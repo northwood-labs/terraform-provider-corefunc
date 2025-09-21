@@ -26,6 +26,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`76b5a4b`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/76b5a4b8db298c8010fa73a44391185e0cc8a6aa): **deps**: Bump `step-security/harden-runner` from 2.13.0 to 2.13.1 ([@dependabot](https://github.com/dependabot))
 * [`7608811`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/7608811b6e9e3bd8c6b0b4c40cf2aa6c1fc432a6): **deps**: Bump `actions/setup-node` from 4.4.0 to 5.0.0 ([@dependabot](https://github.com/dependabot))
 * [`c23b193`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/c23b193172f9761f4d0ddb64f0d1fac3711d5ae2): **deps**: Bump `actions/setup-go` from 5.5.0 to 6.0.0 ([@dependabot](https://github.com/dependabot))
+* [`a84197a`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/a84197a8c2fb9dd447b1b7e151ba11324db0ce67): **deps**: Bump `trufflesecurity/trufflehog` from 3.90.6 to 3.90.8 ([#614](https://github.com/northwood-labs/terraform-provider-corefunc/issues/614)) ([@dependabot](https://github.com/dependabot))
+* [`9fdb3ab`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/9fdb3ab00646bc6d4f417777f0dc2cf5d915bf41): **deps**: Bump `github.com/charmbracelet/fang` from 0.4.1 to 0.4.2 ([#615](https://github.com/northwood-labs/terraform-provider-corefunc/issues/615)) ([@dependabot](https://github.com/dependabot))
+* [`58465c5`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/58465c5e9c8c950070132926899e96eedcc4680c): Updated the Go dependencies. ([@skyzyx](https://github.com/skyzyx))
 
 ### :test_tube: Testing
 
@@ -1109,4 +1112,4 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`6bc72f6`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/6bc72f6d3927147c41665e0ccab69657a4dcd721): Trying to get the build to work. ([@skyzyx](https://github.com/skyzyx))
 * [`8c39e22`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/8c39e221bba5ab7364c52660d794fb75cbd35ff1): Harden GitHub Actions ([#129](https://github.com/northwood-labs/terraform-provider-corefunc/issues/129)) ([@step-security-bot](https://github.com/step-security-bot))
 
-<p>Generated on 2025-09-18.</p>
+<p>Generated on 2025-09-21.</p>
