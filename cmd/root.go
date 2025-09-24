@@ -49,21 +49,21 @@ var (
 
 		## Repository
 
-		* https://github.com/northwood-labs/terraform-provider-corefunc
+		* https://bit.ly/corefunc-github
 
 		## Provider documentation
 
-		* https://registry.terraform.io/providers/northwood-labs/corefunc/latest/docs
-		* https://search.opentofu.org/provider/northwood-labs/corefunc/latest
-		* https://library.tf/providers/northwood-labs/corefunc/latest
+		* https://bit.ly/corefunc-terraform
+		* https://bit.ly/corefunc-opentofu
+		* https://bit.ly/corefunc-library-tf
 
 		## Go library documentation
 
-		* https://pkg.go.dev/github.com/northwood-labs/terraform-provider-corefunc/v2/corefunc
+		* https://bit.ly/corefunc-godocs
 
 		## Markdown documentation for LLMs
 
-		* https://github.com/northwood-labs/terraform-provider-corefunc/tree/main/docs
+		* https://bit.ly/corefunc-docs-llm
 		`),
 		Run: func(_ *cobra.Command, _ []string) {
 			err := providerserver.Serve(context.Background(), corefuncprovider.New, providerserver.ServeOpts{
@@ -84,7 +84,7 @@ func init() { // lint:allow_init
 		"debug",
 		"d",
 		false,
-		"Run with support for Go debuggers like delve. https://flwd.dk/3k055Lh",
+		"Run with support for Go debuggers like delve. https://bit.ly/terraform-debugger",
 	)
 }
 

@@ -31,8 +31,8 @@ var envEnsureCmd = &cobra.Command{
 	Use:   "env-ensure",
 	Short: "Ensures that an environment variable is set.",
 	Long: clihelpers.LongHelpText(`
-	Ensures that an environment variable is set, optionally validating its value against a provided pattern.
-	`),
+	Ensures that an environment variable is set, optionally validating its value
+	against a provided pattern.`),
 	Args: cobra.ExactArgs(1),
 	Run: func(_ *cobra.Command, args []string) {
 		if len(args) != 1 {
