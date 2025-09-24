@@ -36,6 +36,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`d15c85d`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/d15c85d96bf6c07a8c04d27c6c1a1c6ba2e7b299): **deps**: Bump `orhun/git-cliff-action` from 4.5.1 to 4.6.0 ([#616](https://github.com/northwood-labs/terraform-provider-corefunc/issues/616)) ([@dependabot](https://github.com/dependabot))
 * [`ae4a07c`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/ae4a07c138cf9faeec5c9a95018ac4013c649367): **deps**: Bump `github.com/gruntwork-io/terratest` ([#617](https://github.com/northwood-labs/terraform-provider-corefunc/issues/617)) ([@dependabot](https://github.com/dependabot))
 * [`5cca260`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/5cca26009b7c85b5d09d8d8ec58ba0ce972bb23d): **deps**: Bump `github.com/gruntwork-io/terratest` ([#618](https://github.com/northwood-labs/terraform-provider-corefunc/issues/618)) ([@dependabot](https://github.com/dependabot))
+* [`956ec3b`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/956ec3b73d12e83df3a4f1d6c5d580b7630668d1): Updated the Go dependencies. ([@skyzyx](https://github.com/skyzyx))
 
 ### :test_tube: Testing
 
