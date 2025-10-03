@@ -71,7 +71,7 @@ jobs:
         uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
 
       - name: "Run scanner on existing code"
-        uses: google/osv-scanner-action/osv-scanner-action@c0e8a1142dcb3ae443d26c8f6a2b774db9f6c6ea # v2.2.1
+        uses: google/osv-scanner-action/osv-scanner-action@e92b5d07338d4f0ba0981dffed17c48976ca4730 # v2.2.1
         continue-on-error: true
         with:
           scan-args: |-
