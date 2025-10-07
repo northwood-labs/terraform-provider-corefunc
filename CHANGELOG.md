@@ -37,10 +37,22 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`ae4a07c`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/ae4a07c138cf9faeec5c9a95018ac4013c649367): **deps**: Bump `github.com/gruntwork-io/terratest` ([#617](https://github.com/northwood-labs/terraform-provider-corefunc/issues/617)) ([@dependabot](https://github.com/dependabot))
 * [`5cca260`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/5cca26009b7c85b5d09d8d8ec58ba0ce972bb23d): **deps**: Bump `github.com/gruntwork-io/terratest` ([#618](https://github.com/northwood-labs/terraform-provider-corefunc/issues/618)) ([@dependabot](https://github.com/dependabot))
 * [`956ec3b`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/956ec3b73d12e83df3a4f1d6c5d580b7630668d1): Updated the Go dependencies. ([@skyzyx](https://github.com/skyzyx))
+* [`521d25a`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/521d25a648a8e2961d7122544abcf18a2bf362c0): **deps**: Bump `github/codeql-action` from 3.30.3 to 3.30.4 ([#620](https://github.com/northwood-labs/terraform-provider-corefunc/issues/620)) ([@dependabot](https://github.com/dependabot))
+* [`da40229`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/da40229d3a32b20290fe4f72fef7d6e5537bebf3): **deps**: Bump `github/codeql-action` from 3.30.4 to 3.30.5 ([#621](https://github.com/northwood-labs/terraform-provider-corefunc/issues/621)) ([@dependabot](https://github.com/dependabot))
+* [`888764a`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/888764a33e48f2177afba20175e75d7d4a750e2c): **deps**: Bump `actions/dependency-review-action` from 4.7.3 to 4.8.0 ([#622](https://github.com/northwood-labs/terraform-provider-corefunc/issues/622)) ([@dependabot](https://github.com/dependabot))
+* [`fbc4d4d`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/fbc4d4d7bdfd0a7776a29e6e2949c1bad942bf50): **deps**: Bump `github.com/hashicorp/terraform-plugin-framework` ([#623](https://github.com/northwood-labs/terraform-provider-corefunc/issues/623)) ([@dependabot](https://github.com/dependabot))
+* [`4265afc`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/4265afc41787ae18a7c8ed4842eeb722cae58c1d): **deps**: Bump `github.com/mattn/go-runewidth` from 0.0.16 to 0.0.19 ([#624](https://github.com/northwood-labs/terraform-provider-corefunc/issues/624)) ([@dependabot](https://github.com/dependabot))
+* [`8724155`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/8724155076b6f442692bd849d9c3bdc3ecf7391a): **deps**: Bump `github.com/charmbracelet/fang` from 0.4.2 to 0.4.3 ([#625](https://github.com/northwood-labs/terraform-provider-corefunc/issues/625)) ([@dependabot](https://github.com/dependabot))
+* [`9e71788`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/9e717885f340eb7abb38adaea931fc61c09aa38e): **deps**: Bump `ossf/scorecard-action` from 2.4.2 to 2.4.3 ([#626](https://github.com/northwood-labs/terraform-provider-corefunc/issues/626)) ([@dependabot](https://github.com/dependabot))
+* [`9f9f141`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/9f9f141db1e5fb3d87b523b656ca7c9d2fa42651): **deps**: Bump `github/codeql-action` from 3.30.5 to 3.30.6 ([#628](https://github.com/northwood-labs/terraform-provider-corefunc/issues/628)) ([@dependabot](https://github.com/dependabot))
 
 ### :test_tube: Testing
 
 * [`cca5965`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/cca5965e434bc28c3e6eb8b78a0d4965860c0ea8): Fixed Terratest tests after the move to v2. ([@skyzyx](https://github.com/skyzyx))
+
+### <!-- 0 -->:rocket: Features
+
+* [`10eec22`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/10eec221df3d9719bb3965401c118fd7207a84df): Exploring local LLM tooling. ([@skyzyx](https://github.com/skyzyx))
 
 ### <!-- 1 -->:bug: Bug Fixes
 
@@ -1124,4 +1136,4 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`6bc72f6`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/6bc72f6d3927147c41665e0ccab69657a4dcd721): Trying to get the build to work. ([@skyzyx](https://github.com/skyzyx))
 * [`8c39e22`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/8c39e221bba5ab7364c52660d794fb75cbd35ff1): Harden GitHub Actions ([#129](https://github.com/northwood-labs/terraform-provider-corefunc/issues/129)) ([@step-security-bot](https://github.com/step-security-bot))
 
-<p>Generated on 2025-09-24.</p>
+<p>Generated on 2025-10-07.</p>
