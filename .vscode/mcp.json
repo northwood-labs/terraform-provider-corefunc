@@ -1,10 +1,13 @@
 {
   "servers": {
-    "terraform": {
-      "command": "go tool -modfile=${workspaceFolder}/go.tools.mod terraform-mcp-server",
+    "MCP_DOCKER": {
+      "command": "docker",
       "args": [
-        "stdio"
-      ]
+        "mcp",
+        "gateway",
+        "run"
+      ],
+      "type": "stdio"
     }
   }
 }

@@ -126,7 +126,10 @@
   },
   "markdown-preview-github-styles.colorTheme": "system",
   "github.copilot.enable": {
-    "*": false,
+    "*": true,
+    "plaintext": false,
+    "markdown": false,
+    "scminput": false,
     "apex": true,
     "erb": true,
     "go": true,
