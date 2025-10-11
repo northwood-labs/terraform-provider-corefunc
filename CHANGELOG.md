@@ -46,6 +46,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`9e71788`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/9e717885f340eb7abb38adaea931fc61c09aa38e): **deps**: Bump `ossf/scorecard-action` from 2.4.2 to 2.4.3 ([#626](https://github.com/northwood-labs/terraform-provider-corefunc/issues/626)) ([@dependabot](https://github.com/dependabot))
 * [`9f9f141`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/9f9f141db1e5fb3d87b523b656ca7c9d2fa42651): **deps**: Bump `github/codeql-action` from 3.30.5 to 3.30.6 ([#628](https://github.com/northwood-labs/terraform-provider-corefunc/issues/628)) ([@dependabot](https://github.com/dependabot))
 * [`511eb11`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/511eb11aee58e928da910e9f0f7b43fd95c4b7fc): **deps**: Bump `google/osv-scanner-action` ([@dependabot](https://github.com/dependabot))
+* [`beb85cc`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/beb85cc827411ed1cae6e97698cab3e2e92ce42a): **deps**: Bump `github/codeql-action` from 3.30.6 to 4.30.7 ([@dependabot](https://github.com/dependabot))
 
 ### :test_tube: Testing
 
