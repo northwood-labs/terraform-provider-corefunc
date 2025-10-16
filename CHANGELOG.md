@@ -47,6 +47,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`9f9f141`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/9f9f141db1e5fb3d87b523b656ca7c9d2fa42651): **deps**: Bump `github/codeql-action` from 3.30.5 to 3.30.6 ([#628](https://github.com/northwood-labs/terraform-provider-corefunc/issues/628)) ([@dependabot](https://github.com/dependabot))
 * [`511eb11`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/511eb11aee58e928da910e9f0f7b43fd95c4b7fc): **deps**: Bump `google/osv-scanner-action` ([@dependabot](https://github.com/dependabot))
 * [`beb85cc`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/beb85cc827411ed1cae6e97698cab3e2e92ce42a): **deps**: Bump `github/codeql-action` from 3.30.6 to 4.30.7 ([@dependabot](https://github.com/dependabot))
+* [`acc327f`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/acc327f4238326fdf3f9a87c2beac794520cdcfc): **deps**: Bump `actions/dependency-review-action` from 4.8.0 to 4.8.1 ([#630](https://github.com/northwood-labs/terraform-provider-corefunc/issues/630)) ([@dependabot](https://github.com/dependabot))
+* [`176000d`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/176000d119df706f248485a6942fce3a3a238555): **deps**: Bump `github/codeql-action` from 4.30.7 to 4.30.8 ([#631](https://github.com/northwood-labs/terraform-provider-corefunc/issues/631)) ([@dependabot](https://github.com/dependabot))
+* [`d58d8dd`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/d58d8dd42877b5ac891b68fa4d25a76a6e6b42be): **deps**: Bump `trufflesecurity/trufflehog` from 3.90.8 to 3.90.11 ([#633](https://github.com/northwood-labs/terraform-provider-corefunc/issues/633)) ([@dependabot](https://github.com/dependabot))
+* [`7c3e932`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/7c3e9322f71209c31746577fe7724f9388c6d1f6): **deps**: Bump `actions/setup-node` from 5.0.0 to 6.0.0 ([@dependabot](https://github.com/dependabot))
 
 ### :test_tube: Testing
 
@@ -1138,4 +1142,4 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`6bc72f6`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/6bc72f6d3927147c41665e0ccab69657a4dcd721): Trying to get the build to work. ([@skyzyx](https://github.com/skyzyx))
 * [`8c39e22`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/8c39e221bba5ab7364c52660d794fb75cbd35ff1): Harden GitHub Actions ([#129](https://github.com/northwood-labs/terraform-provider-corefunc/issues/129)) ([@step-security-bot](https://github.com/step-security-bot))
 
-<p>Generated on 2025-10-11.</p>
+<p>Generated on 2025-10-16.</p>
