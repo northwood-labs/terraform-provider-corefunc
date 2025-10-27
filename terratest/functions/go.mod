@@ -4,7 +4,7 @@ go 1.25
 
 require (
 	github.com/charmbracelet/lipgloss v1.1.1-0.20250404203927-76690c660834
-	github.com/gruntwork-io/terratest v0.51.0
+	github.com/gruntwork-io/terratest v0.52.0
 	github.com/hairyhenderson/go-which v0.2.2
 	github.com/northwood-labs/cli-helpers v0.0.0-20250902191730-736c08104235
 	github.com/northwood-labs/terraform-provider-corefunc/v2 v2.1.0
