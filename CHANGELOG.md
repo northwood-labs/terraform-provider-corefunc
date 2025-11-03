@@ -51,6 +51,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`176000d`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/176000d119df706f248485a6942fce3a3a238555): **deps**: Bump `github/codeql-action` from 4.30.7 to 4.30.8 ([#631](https://github.com/northwood-labs/terraform-provider-corefunc/issues/631)) ([@dependabot](https://github.com/dependabot))
 * [`d58d8dd`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/d58d8dd42877b5ac891b68fa4d25a76a6e6b42be): **deps**: Bump `trufflesecurity/trufflehog` from 3.90.8 to 3.90.11 ([#633](https://github.com/northwood-labs/terraform-provider-corefunc/issues/633)) ([@dependabot](https://github.com/dependabot))
 * [`7c3e932`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/7c3e9322f71209c31746577fe7724f9388c6d1f6): **deps**: Bump `actions/setup-node` from 5.0.0 to 6.0.0 ([@dependabot](https://github.com/dependabot))
+* [`d8c3e11`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/d8c3e11355d9ca82d7d51ae1a335e32f27ad49e1): **deps**: Bump `github/codeql-action` from 4.30.8 to 4.30.9 ([#634](https://github.com/northwood-labs/terraform-provider-corefunc/issues/634)) ([@dependabot](https://github.com/dependabot))
+* [`2797cf6`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/2797cf6a85bd83b1e1190a2a42885b139a37bd20): **deps**: Bump `github/codeql-action` from 4.30.9 to 4.31.0 ([#635](https://github.com/northwood-labs/terraform-provider-corefunc/issues/635)) ([@dependabot](https://github.com/dependabot))
+* [`0b4b4ff`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/0b4b4ff1f915de00eb83619e7c14528fe047d8ab): **deps**: Bump `github.com/gruntwork-io/terratest` ([#637](https://github.com/northwood-labs/terraform-provider-corefunc/issues/637)) ([@dependabot](https://github.com/dependabot))
+* [`6b3144b`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/6b3144b5a3a72a08d75f14ef298922f795376b9b): **deps**: Bump `github.com/gruntwork-io/terratest` ([#638](https://github.com/northwood-labs/terraform-provider-corefunc/issues/638)) ([@dependabot](https://github.com/dependabot))
+* [`e65d924`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/e65d924d53a9d3d5fb43ac58db3cd32b3e74776b): **deps**: Bump `trufflesecurity/trufflehog` from 3.90.11 to 3.90.12 ([#639](https://github.com/northwood-labs/terraform-provider-corefunc/issues/639)) ([@dependabot](https://github.com/dependabot))
+* [`7325e76`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/7325e76a5488579ef7845dac84b29b3b78159a0b): **deps**: Bump `google/osv-scanner-action` from 2.2.3 to 2.2.4 ([#640](https://github.com/northwood-labs/terraform-provider-corefunc/issues/640)) ([@dependabot](https://github.com/dependabot))
+* [`3f7d209`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/3f7d20910781a515fdc66a7d6a15752315025679): **deps**: Bump `github/codeql-action` from 4.31.0 to 4.31.2 ([#641](https://github.com/northwood-labs/terraform-provider-corefunc/issues/641)) ([@dependabot](https://github.com/dependabot))
+* [`ace9ec7`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/ace9ec71cc4fc8abc8c9ed95691fc82969e9b46e): **deps**: Bump `actions/upload-artifact` from 4.6.2 to 5.0.0 ([@dependabot](https://github.com/dependabot))
 
 ### :test_tube: Testing
 
@@ -1142,4 +1150,4 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`6bc72f6`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/6bc72f6d3927147c41665e0ccab69657a4dcd721): Trying to get the build to work. ([@skyzyx](https://github.com/skyzyx))
 * [`8c39e22`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/8c39e221bba5ab7364c52660d794fb75cbd35ff1): Harden GitHub Actions ([#129](https://github.com/northwood-labs/terraform-provider-corefunc/issues/129)) ([@step-security-bot](https://github.com/step-security-bot))
 
-<p>Generated on 2025-10-16.</p>
+<p>Generated on 2025-11-03.</p>
