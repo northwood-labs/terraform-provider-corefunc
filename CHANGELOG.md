@@ -75,6 +75,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`ed80dfe`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/ed80dfe125c6cb160d8fac4e929ef68336b8452c): **deps**: Bump `github.com/gruntwork-io/terratest` ([#663](https://github.com/northwood-labs/terraform-provider-corefunc/issues/663)) ([@dependabot](https://github.com/dependabot))
 * [`3d5311a`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/3d5311a9ca502010679990364ee5331efe704714): **deps**: Bump `github/codeql-action` from 4.31.4 to 4.31.5 ([#664](https://github.com/northwood-labs/terraform-provider-corefunc/issues/664)) ([@dependabot](https://github.com/dependabot))
 * [`23f3888`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/23f38883cd8f2e4fced14311307d741f66ff2996): Updated the Go dependencies. ([@skyzyx](https://github.com/skyzyx))
+* [`d209e82`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/d209e8218f5dab915f3ec3376b76be6391d6cb30): **deps**: Bump `golangci/golangci-lint-action` from 8.0.0 to 9.1.0 ([@dependabot](https://github.com/dependabot))
 
 ### :test_tube: Testing
 
