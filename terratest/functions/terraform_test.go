@@ -23,21 +23,13 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/charmbracelet/lipgloss"
 	"github.com/gruntwork-io/terratest/modules/terraform"
 	"github.com/hairyhenderson/go-which"
-	"github.com/pkg/errors"
 	"github.com/stretchr/testify/assert"
 
 	clihelpers "github.com/northwood-labs/cli-helpers"
 	"github.com/northwood-labs/terraform-provider-corefunc/v2/corefunc"
 	"github.com/northwood-labs/terraform-provider-corefunc/v2/corefunc/types"
-)
-
-const (
-	errTerraformPath     = "failed to set TF_ACC_TERRAFORM_PATH"
-	errProviderNamespace = "failed to set TF_ACC_PROVIDER_NAMESPACE"
-	errProviderHost      = "failed to set TF_ACC_PROVIDER_HOST"
 )
 
 var (
@@ -50,10 +42,6 @@ var (
 	exampleQuery     = "http://u:p@example.com/foo?q=1"
 	exampleQueryFrag = "http://u:p@example.com/foo?q=1#bar"
 
-	origPath      = os.Getenv("TF_ACC_TERRAFORM_PATH")
-	origNamespace = os.Getenv("TF_ACC_PROVIDER_NAMESPACE")
-	origHostname  = os.Getenv("TF_ACC_PROVIDER_HOST")
-
 	// Both must be installed first.
 	binaries = []string{
 		"terraform", // 1.8.0+
@@ -62,9 +50,6 @@ var (
 )
 
 func TestTerraform(t *testing.T) { // lint:allow_complexity
-	// https://golang.org/pkg/testing/#T.Parallel
-	t.Parallel()
-
 	for i := range binaries {
 		binary := binaries[i]
 
@@ -72,10 +57,7 @@ func TestTerraform(t *testing.T) { // lint:allow_complexity
 			t.Fatalf("Binary %s must be installed first", binary)
 		}
 
-		err = setAndPrint(binary)
-		if err != nil {
-			t.Fatal(err)
-		}
+		setAndPrint(t, binary)
 
 		// https://pkg.go.dev/github.com/gruntwork-io/terratest/modules/terraform#Options
 		terraformOptions := &terraform.Options{
@@ -227,76 +209,42 @@ func TestTerraform(t *testing.T) { // lint:allow_complexity
 
 		assert.Equal(t, terraform.Output(t, terraformOptions, "homedir_expand_fn"), homedirPath)
 
-		// At the end of the test, run `terraform destroy` to clean up any resources that were created
-		err = restoreEnv()
-		if err != nil {
-			t.Fatal(err)
-		}
-
 		terraform.Destroy(t, terraformOptions)
 	}
 }
 
-func setAndPrint(binary string) error {
-	// Set the necessary values.
-	err = os.Setenv("TF_ACC_TERRAFORM_PATH", which.Which(binary))
-	if err != nil {
-		return errors.Wrap(err, errTerraformPath)
-	}
+func setAndPrint(t *testing.T, binary string) {
+	t.Helper()
 
-	err = os.Setenv("TF_ACC_PROVIDER_NAMESPACE", "northwood-labs")
-	if err != nil {
-		return errors.Wrap(err, errProviderNamespace)
-	}
+	var (
+		tfAccTerraformPath     = which.Which(binary)
+		tfAccProviderNamespace = "northwood-labs"
+		tfAccProviderHost      string
+	)
+
+	// Set the necessary values.
+	t.Setenv("TF_ACC_TERRAFORM_PATH", which.Which(binary))
+	t.Setenv("TF_ACC_PROVIDER_NAMESPACE", "northwood-labs")
 
 	switch binary {
 	case "terraform":
-		err = os.Setenv("TF_ACC_PROVIDER_HOST", "registry.terraform.io")
-		if err != nil {
-			return errors.Wrap(err, errProviderHost)
-		}
-	case "tofu":
-		err = os.Setenv("TF_ACC_PROVIDER_HOST", "registry.opentofu.org")
-		if err != nil {
-			return errors.Wrap(err, errProviderHost)
-		}
-	}
+		t.Setenv("TF_ACC_PROVIDER_HOST", "registry.terraform.io")
 
-	yellow := lipgloss.NewStyle().Foreground(lipgloss.Color("11"))
-	green := lipgloss.NewStyle().Foreground(lipgloss.Color("10"))
-	magenta := lipgloss.NewStyle().Foreground(lipgloss.Color("13"))
-	underline := lipgloss.NewStyle().Underline(true).Bold(true)
+		tfAccProviderHost = "registry.terraform.io"
+	case "tofu":
+		t.Setenv("TF_ACC_PROVIDER_HOST", "registry.opentofu.org")
+
+		tfAccProviderHost = "registry.opentofu.org"
+	}
 
 	fmt.Println(
 		clihelpers.LongHelpText(`
-		` + underline.Render("Testing Provider Functions") + `
+		Testing Provider Functions
 
-		Binary ` + yellow.Render(which.Which(binary)) + ` is installed
-		TF_ACC_TERRAFORM_PATH=` + yellow.Render(os.Getenv("TF_ACC_TERRAFORM_PATH")) + `
-		TF_ACC_PROVIDER_NAMESPACE=` + green.Render(os.Getenv("TF_ACC_PROVIDER_NAMESPACE")) + `
-		TF_ACC_PROVIDER_HOST=` + magenta.Render(os.Getenv("TF_ACC_PROVIDER_HOST")) + `
+		Binary ` + which.Which(binary) + ` is installed
+		TF_ACC_TERRAFORM_PATH=` + tfAccTerraformPath + `
+		TF_ACC_PROVIDER_NAMESPACE=` + tfAccProviderNamespace + `
+		TF_ACC_PROVIDER_HOST=` + tfAccProviderHost + `
 		`),
 	)
-
-	return nil
-}
-
-func restoreEnv() error {
-	// Restore the original values.
-	err = os.Setenv("TF_ACC_TERRAFORM_PATH", origPath)
-	if err != nil {
-		return errors.Wrap(err, errTerraformPath)
-	}
-
-	err = os.Setenv("TF_ACC_PROVIDER_NAMESPACE", origNamespace)
-	if err != nil {
-		return errors.Wrap(err, errProviderNamespace)
-	}
-
-	err = os.Setenv("TF_ACC_PROVIDER_HOST", origHostname)
-	if err != nil {
-		return errors.Wrap(err, errProviderHost)
-	}
-
-	return nil
 }
