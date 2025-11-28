@@ -34,8 +34,8 @@ The goal of this provider is not to call any network APIs, but to provide pre-bu
 
 | Testing type | Details            | Description                                                                    |
 |--------------|--------------------|--------------------------------------------------------------------------------|
-| integration  | Terraform 1.0–1.13 | Executes the provider with this release, pulling from `registry.terraform.io`. |
-| integration  | OpenTofu 1.6–1.10  | Executes the provider with this release, pulling from `registry.opentofu.org`. |
+| integration  | Terraform 1.0–1.14 | Executes the provider with this release, pulling from `registry.terraform.io`. |
+| integration  | OpenTofu 1.6–1.11  | Executes the provider with this release, pulling from `registry.opentofu.org`. |
 | unit         | Go 1.24–1.25       | Tests using these versions.                                                    |
 | mutation     | Go 1.24–1.25       | Tests using these versions.                                                    |
 | fuzz         | Go 1.24–1.25       | Tests using these versions.                                                    |
