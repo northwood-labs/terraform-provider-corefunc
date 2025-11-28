@@ -43,3 +43,6 @@ tfplan
 # goplicate-end:terraform
 
 bin/git-cliff
+
+# Snyk Security Extension - AI Rules (auto-generated)
+.github/instructions/snyk_rules.instructions.md
