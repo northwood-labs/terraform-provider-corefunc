@@ -47,16 +47,16 @@ var EnvEnsureTestTable = map[string]struct {
 		Pattern:    regexp.MustCompile(`(non)?prod$`),
 		PatternStr: `(non)?prod$`,
 		ExpectedErr: errors.New( // lint:allow_errorf
-			"environment variable AWS_VAULT does not match pattern (non)?prod$",
+			"the value of environment variable AWS_VAULT does not match pattern (non)?prod$",
 		),
 		ExpectedErrRE: regexp.MustCompile(
-			`environment variable AWS_VAULT does not match pattern \(non\)\?prod\$`,
+			`the value of environment variable AWS_VAULT does not match pattern\s+\(non\)\?prod\$`,
 		),
 	},
 	"AWS_PAGER": {
 		EnvVarName:    "AWS_PAGER",
-		ExpectedErr:   errors.New("environment variable AWS_PAGER is not defined"), // lint:allow_errorf
-		ExpectedErrRE: regexp.MustCompile(`environment variable AWS_PAGER is not defined`),
+		ExpectedErr:   errors.New("the value of environment variable AWS_PAGER is not defined"), // lint:allow_errorf
+		ExpectedErrRE: regexp.MustCompile(`the value of environment variable AWS_PAGER is not defined`),
 	},
 	"BREW_PREFIX": {
 		EnvVarName: "BREW_PREFIX",

@@ -204,7 +204,7 @@ list-tests:
 	@ cat ./corefunc/*_test.go | ggrep "func Example" | gsed 's/func\s//g' | gsed -r 's/\(.*//g' | gsed -r 's/Example/make examples NAME=/g'
 
 	@ $(HEADER) "=====> Mutation tests..."
-	@ echo "make mutation"
+	@ echo "make mutate"
 
 	@ $(HEADER) "=====> Fuzzing tests..."
 	@ echo "make fuzz"

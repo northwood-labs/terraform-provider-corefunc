@@ -53,8 +53,8 @@ func ExampleEnvEnsure() {
 	// <nil>
 	// <nil>
 	// <nil>
-	// environment variable MY_ENV_VAR_EMPTY is not defined
-	// environment variable MY_ENV_VAR_NOT_SET is not defined
+	// the value of environment variable MY_ENV_VAR_EMPTY is not defined
+	// the value of environment variable MY_ENV_VAR_NOT_SET is not defined
 }
 
 func ExampleEnvEnsure_pattern() {
@@ -80,7 +80,7 @@ func ExampleEnvEnsure_pattern() {
 	// Output:
 	// <nil>
 	// <nil>
-	// environment variable AWS_VAULT does not match pattern (non)?prod$
+	// the value of environment variable AWS_VAULT does not match pattern (non)?prod$
 }
 
 func TestEnvEnsure(t *testing.T) {

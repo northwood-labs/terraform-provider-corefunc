@@ -40,7 +40,7 @@ variable is not set, or if its value doesn't match the expected patttern.
 */
 func EnvEnsure(name string, pattern ...*regexp.Regexp) error {
 	if os.Getenv(name) == "" {
-		return errors.New("environment variable " + name + " is not defined") // lint:allow_errorf
+		return errors.New("the value of environment variable " + name + " is not defined") // lint:allow_errorf
 	}
 
 	if len(pattern) > 0 && pattern[0] != nil {
