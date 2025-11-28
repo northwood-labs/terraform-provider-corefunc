@@ -79,6 +79,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 ### :test_tube: Testing
 
 * [`cca5965`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/cca5965e434bc28c3e6eb8b78a0d4965860c0ea8): Fixed Terratest tests after the move to v2. ([@skyzyx](https://github.com/skyzyx))
+* [`bf3ec91`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/bf3ec9109c6bae3f9d3410586f401bfe6421c41f): Added Terraform 1.14 and OpenTofu 1.11 to the test suite. ([@skyzyx](https://github.com/skyzyx))
 
 ### <!-- 0 -->:rocket: Features
 
@@ -87,6 +88,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 ### <!-- 1 -->:bug: Bug Fixes
 
 * [`0ee527f`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/0ee527fd2244748e743faa5fac85e490d262063e): How did git-cliff end up in the repo again? ([@skyzyx](https://github.com/skyzyx))
+* [`b8243b6`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/b8243b65da076cfc99f8087a01beba72969dbb8f): Fix and streamline a couple of broken tests. ([@skyzyx](https://github.com/skyzyx))
 
 ### <!-- ZZZ -->:gear: Miscellaneous Tasks
 
