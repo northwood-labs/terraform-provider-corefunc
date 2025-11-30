@@ -1,0 +1,16 @@
+{{ if contains .Input "\n" -}}
+locals {
+  input = <<EOT
+{{ .Input }}EOT
+}
+
+{{ end -}}
+output "hash_argon2id" {
+{{- if contains .Input "\n" }}
+  value = provider::corefunc::hash_argon2id(local.input, "somesaltvalue")
+{{- else }}
+  value = provider::corefunc::hash_argon2id("{{ .Input }}", "somesaltvalue")
+{{- end }}
+}
+
+#=> {{ .Expected }}

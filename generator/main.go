@@ -212,12 +212,16 @@ func writeFileFromTemplate(varMap map[string]string, templatePath, writePath str
 }
 
 func newTemplate(filename string) *template.Template {
-	tmpl, err := template.ParseFiles(filename)
-	if err != nil {
-		panic(err)
-	}
-
-	return tmpl
+	return template.Must(
+		template.New(filepath.Base(filename)).
+			Funcs(template.FuncMap{
+				"contains": strings.Contains,
+				"strip": func(s, cut string) string {
+					return strings.ReplaceAll(s, cut, "")
+				},
+			}).
+			ParseFiles(filename),
+	)
 }
 
 func createVarMap(nameOpt *string) map[string]string {
