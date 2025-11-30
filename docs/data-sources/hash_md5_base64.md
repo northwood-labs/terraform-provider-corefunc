@@ -2,13 +2,13 @@
 page_title: "corefunc_hash_md5_base64 Data Source - corefunc"
 subcategory: ""
 description: |-
-  Generates the MD5 hash of a string.
+  Generates the MD5 hash of a string. Returns a Base64 value instead of a hexadecimal string.
   Maps to the corefunc.HashMD5() https://pkg.go.dev/github.com/northwood-labs/terraform-provider-corefunc/v2/corefunc#HashMD5 Go method, which can be used in Terratest https://terratest.gruntwork.io.
 ---
 
 # corefunc_hash_md5_base64 (Data Source)
 
-Generates the MD5 hash of a string.
+Generates the MD5 hash of a string. Returns a Base64 value instead of a hexadecimal string.
 
 Maps to the [`corefunc.HashMD5()`](https://pkg.go.dev/github.com/northwood-labs/terraform-provider-corefunc/v2/corefunc#HashMD5) Go method, which can be used in [Terratest](https://terratest.gruntwork.io).
 

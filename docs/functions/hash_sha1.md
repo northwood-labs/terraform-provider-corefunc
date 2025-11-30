@@ -2,13 +2,13 @@
 page_title: "hash_sha1 function - corefunc"
 subcategory: ""
 description: |-
-  Generates the SHA-1 hash of a string. Returns a Base64 value instead of a hexadecimal string.
+  Generates the SHA-1 hash of a string.
   Maps to the corefunc.HashSHA1() https://pkg.go.dev/github.com/northwood-labs/terraform-provider-corefunc/v2/corefunc#HashSHA1 Go method, which can be used in Terratest https://terratest.gruntwork.io.
 ---
 
 # hash_sha1 (function)
 
-Generates the SHA-1 hash of a string. Returns a Base64 value instead of a hexadecimal string.
+Generates the SHA-1 hash of a string.
 
 Maps to the [`corefunc.HashSHA1()`](https://pkg.go.dev/github.com/northwood-labs/terraform-provider-corefunc/v2/corefunc#HashSHA1) Go method, which can be used in [Terratest](https://terratest.gruntwork.io).
 
@@ -31,8 +31,6 @@ output "sha1" {
 
 ## Arguments
 
-
 1. `input` (String) The string to generate an SHA-1 hash for.
-
 
 <!-- Preview the provider docs with the Terraform registry provider docs preview tool: https://registry.terraform.io/tools/doc-preview -->
