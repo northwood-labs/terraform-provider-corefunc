@@ -28,11 +28,11 @@ data "corefunc_hash_argon2id" "hash_argon2id" {
 
 ### Required
 
-- `input` (String) The string to generate the Argon2id hash for.
-- `salt` (String) A random value to provide additional entropy in the calculation.
+* `input` (String) The string to generate the Argon2id hash for.
+* `salt` (String) A random value to provide additional entropy in the calculation.
 
 ### Read-Only
 
-- `value` (String) The result of the hashing function.
+* `value` (String) The result of the hashing function.
 
 <!-- Preview the provider docs with the Terraform registry provider docs preview tool: https://registry.terraform.io/tools/doc-preview -->

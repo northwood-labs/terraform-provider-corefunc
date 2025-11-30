@@ -31,8 +31,6 @@ output "hash_sha3x512_base64" {
 
 ## Arguments
 
-
 1. `input` (String) The string to generate an SHA-3/512-bit hash for.
-
 
 <!-- Preview the provider docs with the Terraform registry provider docs preview tool: https://registry.terraform.io/tools/doc-preview -->

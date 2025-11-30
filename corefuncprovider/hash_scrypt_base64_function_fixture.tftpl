@@ -1,0 +1,16 @@
+{{ if contains .Input "\n" -}}
+locals {
+  input = <<EOT
+{{ .Input }}EOT
+}
+
+{{ end -}}
+output "hash_scrypt_base64" {
+{{- if contains .Input "\n" }}
+  value = provider::corefunc::hash_scrypt_base64(local.input, "somesaltvalue")
+{{- else }}
+  value = provider::corefunc::hash_scrypt_base64("{{ .Input }}", "somesaltvalue")
+{{- end }}
+}
+
+#=> {{ .Expected }}
