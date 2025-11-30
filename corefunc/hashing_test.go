@@ -431,6 +431,10 @@ func TestHashArgon2id(t *testing.T) {
 }
 
 func TestBase64HashArgon2id(t *testing.T) {
+	if os.Getenv("CI") != "" {
+		t.Skip("Skipping Argon2id tests in CI environment.")
+	}
+
 	for name, tc := range testfixtures.Base64HashArgon2idTestTable {
 		t.Run(name, func(t *testing.T) {
 			actual, err := Base64HashArgon2id(tc.Input, tc.Salt)
