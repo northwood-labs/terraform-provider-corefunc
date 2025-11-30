@@ -21,6 +21,7 @@ import (
 	"fmt"
 	"os"
 	"path/filepath"
+	"regexp"
 	"strings"
 	"text/template"
 
@@ -222,6 +223,9 @@ func newTemplate(filename string) *template.Template {
 func createVarMap(nameOpt *string) map[string]string {
 	original := *nameOpt
 	snake := caps.ToSnake(original)
+
+	snake = regexp.MustCompile(`_(\d)`).ReplaceAllString(snake, "$1")
+
 	snakeStrip := strings.Replace(snake, "corefunc_", "", 1)
 	camel := caps.ToLowerCamel(original)
 	camelStrip := strings.Replace(camel, "corefunc", "", 1)

@@ -2,6 +2,8 @@ module github.com/northwood-labs/terraform-provider-corefunc/v2/terratest
 
 go 1.25.4
 
+replace github.com/northwood-labs/terraform-provider-corefunc/v2 v2.1.0 => ../../
+
 require (
 	github.com/gruntwork-io/terratest v0.54.0
 	github.com/hairyhenderson/go-which v0.2.2
@@ -47,7 +49,6 @@ require (
 	github.com/inconshreveable/mousetrap v1.1.0 // indirect
 	github.com/jinzhu/copier v0.4.0 // indirect
 	github.com/klauspost/compress v1.18.1 // indirect
-	github.com/kr/text v0.2.0 // indirect
 	github.com/lithammer/dedent v1.1.0 // indirect
 	github.com/lucasb-eyer/go-colorful v1.3.0 // indirect
 	github.com/mattn/go-isatty v0.0.20 // indirect
@@ -67,7 +68,6 @@ require (
 	github.com/pelletier/go-toml/v2 v2.2.4 // indirect
 	github.com/pmezard/go-difflib v1.0.1-0.20181226105442-5d4384ee4fb2 // indirect
 	github.com/rivo/uniseg v0.4.7 // indirect
-	github.com/rogpeppe/go-internal v1.14.1 // indirect
 	github.com/spf13/cobra v1.10.1 // indirect
 	github.com/spf13/pflag v1.0.10 // indirect
 	github.com/tmccombs/hcl2json v0.6.8 // indirect

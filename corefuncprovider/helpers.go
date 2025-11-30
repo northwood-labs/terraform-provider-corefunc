@@ -16,6 +16,7 @@
 package corefuncprovider
 
 import (
+	"html/template"
 	"runtime"
 	"strings"
 )
@@ -27,6 +28,16 @@ const (
 	// TPF displays a Markdown link to the Terraform Plugin Framework.
 	TPF = "[Terraform Plugin Framework](https://developer.hashicorp.com/terraform/plugin/framework)"
 )
+
+// FuncMap returns a template.FuncMap with helper functions for templates.
+func FuncMap() template.FuncMap {
+	return template.FuncMap{
+		"contains": strings.Contains,
+		// "contains": func(input, find string) bool {
+		// 	return strings.Contains(input, find)
+		// },
+	}
+}
 
 func traceFuncName() string { // lint:allow_unused
 	pc := make([]uintptr, 15)   // lint:allow_raw_number

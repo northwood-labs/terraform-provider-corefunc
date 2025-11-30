@@ -106,6 +106,7 @@ func (p *coreFuncProvider) DataSources(ctx context.Context) []func() datasource.
 
 	return []func() datasource.DataSource{
 		EnvEnsureDataSource,
+		HashMd5DataSource,
 		HomedirExpandDataSource,
 		HomedirGetDataSource,
 		IntLeftpadDataSource,
@@ -134,6 +135,7 @@ func (p *coreFuncProvider) Functions(ctx context.Context) []func() function.Func
 
 	return []func() function.Function{
 		EnvEnsureFunction,
+		HashMd5Function,
 		HomedirExpandFunction,
 		HomedirGetFunction,
 		IntLeftpadFunction,

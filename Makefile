@@ -56,8 +56,8 @@ install-hooks:
 ## tidy: [build] Updates go.mod and downloads dependencies.
 tidy:
 	@ $(HEADER) "=====> Tidy and download the Go dependencies..."
-	$(GO) mod tidy -go=$(GO_VER) -v
-	$(GO) mod tidy -go=$(GO_VER) -v -modfile=go.tools.mod
+	find . -type f -name "go.mod" | xargs -I% dirname "%" | xargs -I@ bash -c 'cd "@" && $(GO) mod tidy -go=$(GO_VER)'
+	find . -type f -name "go.tools.mod" | xargs -I% dirname "%" | xargs -I@ bash -c 'cd "@" && $(GO) mod tidy -go=$(GO_VER) -modfile=go.tools.mod'
 
 .PHONY: godeps
 ## godeps: [build] Updates go.mod and downloads dependencies.
