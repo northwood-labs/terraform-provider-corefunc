@@ -32,61 +32,61 @@ import (
 
 // Ensure the implementation satisfies the expected interfaces.
 var (
-	_ datasource.DataSource              = &{{ .CamelStrip }}DataSource{}
-	_ datasource.DataSourceWithConfigure = &{{ .CamelStrip }}DataSource{}
+	_ datasource.DataSource              = &hashArgon2idDataSource{}
+	_ datasource.DataSourceWithConfigure = &hashArgon2idDataSource{}
 )
 
-// {{ .CamelStrip }}DataSource is the data source implementation.
+// hashArgon2idDataSource is the data source implementation.
 type (
-	{{ .CamelStrip }}DataSource struct{}
+	hashArgon2idDataSource struct{}
 
-	// {{ .CamelStrip }}DataSourceModel maps the data source schema data.
-	{{ .CamelStrip }}DataSourceModel struct {
+	// hashArgon2idDataSourceModel maps the data source schema data.
+	hashArgon2idDataSourceModel struct {
 		Input types.String `tfsdk:"input"`
 		Salt  types.String `tfsdk:"salt"`
 		Value types.String `tfsdk:"value"`
 	}
 )
 
-// {{ .PascalStrip }}DataSource is a method that exposes its paired Go function as a
+// HashArgon2idDataSource is a method that exposes its paired Go function as a
 // Terraform Data Source.
-func {{ .PascalStrip }}DataSource() datasource.DataSource { // lint:allow_return_interface
-	return &{{ .CamelStrip }}DataSource{}
+func HashArgon2idDataSource() datasource.DataSource { // lint:allow_return_interface
+	return &hashArgon2idDataSource{}
 }
 
 // Metadata returns the data source type name.
-func (d *{{ .CamelStrip }}DataSource) Metadata(
+func (d *hashArgon2idDataSource) Metadata(
 	ctx context.Context,
 	req datasource.MetadataRequest,
 	resp *datasource.MetadataResponse,
 ) {
-	tflog.Debug(ctx, "Starting {{ .PascalStrip }} DataSource Metadata method.")
+	tflog.Debug(ctx, "Starting HashArgon2id DataSource Metadata method.")
 
-	resp.TypeName = req.ProviderTypeName + "_{{ .SnakeStrip }}"
+	resp.TypeName = req.ProviderTypeName + "_hash_argon2id"
 
 	tflog.Debug(ctx, fmt.Sprintf("req.ProviderTypeName = %s", req.ProviderTypeName))
 	tflog.Debug(ctx, fmt.Sprintf("resp.TypeName = %s", resp.TypeName))
 
-	tflog.Debug(ctx, "Ending {{ .PascalStrip }} DataSource Metadata method.")
+	tflog.Debug(ctx, "Ending HashArgon2id DataSource Metadata method.")
 }
 
 // Schema defines the schema for the data source.
-func (d *{{ .CamelStrip }}DataSource) Schema(
+func (d *hashArgon2idDataSource) Schema(
 	ctx context.Context,
 	_ datasource.SchemaRequest,
 	resp *datasource.SchemaResponse,
 ) {
-	tflog.Debug(ctx, "Starting {{ .PascalStrip }} DataSource Schema method.")
+	tflog.Debug(ctx, "Starting HashArgon2id DataSource Schema method.")
 
 	resp.Schema = schema.Schema{
 		MarkdownDescription: strings.TrimSpace(dedent.Dedent(`
-        Generates the {{ strip .PascalStrip "Hash" }} hash of a string with its associated salt value.
+		Generates the Argon2id hash of a string with its associated salt value.
 
-		Maps to the ` + linkPackage("{{ .PascalStrip }}") + ` Go method, which can be used in ` + Terratest + `.
+		Maps to the ` + linkPackage("HashArgon2id") + ` Go method, which can be used in ` + Terratest + `.
 		`)),
 		Attributes: map[string]schema.Attribute{
 			"input": schema.StringAttribute{
-				MarkdownDescription: "The string to generate the {{ strip .PascalStrip "Hash" }} hash for.",
+				MarkdownDescription: "The string to generate the Argon2id hash for.",
 				Required:            true,
 			},
 			"salt": schema.StringAttribute{
@@ -100,32 +100,32 @@ func (d *{{ .CamelStrip }}DataSource) Schema(
 		},
 	}
 
-	tflog.Debug(ctx, "Ending {{ .PascalStrip }} DataSource Schema method.")
+	tflog.Debug(ctx, "Ending HashArgon2id DataSource Schema method.")
 }
 
 // Configure adds the provider configured client to the data source.
-func (d *{{ .CamelStrip }}DataSource) Configure(
+func (d *hashArgon2idDataSource) Configure(
 	ctx context.Context,
 	req datasource.ConfigureRequest,
 	_ *datasource.ConfigureResponse,
 ) {
-	tflog.Debug(ctx, "Starting {{ .PascalStrip }} DataSource Configure method.")
+	tflog.Debug(ctx, "Starting HashArgon2id DataSource Configure method.")
 
 	if req.ProviderData == nil {
 		return
 	}
 
-	tflog.Debug(ctx, "Ending {{ .PascalStrip }} DataSource Configure method.")
+	tflog.Debug(ctx, "Ending HashArgon2id DataSource Configure method.")
 }
 
-func (d *{{ .CamelStrip }}DataSource) Create(
+func (d *hashArgon2idDataSource) Create(
 	ctx context.Context,
 	req resource.CreateRequest, // lint:allow_large_memory
 	resp *resource.CreateResponse,
 ) {
-	tflog.Debug(ctx, "Starting {{ .PascalStrip }} DataSource Create method.")
+	tflog.Debug(ctx, "Starting HashArgon2id DataSource Create method.")
 
-	var plan {{ .CamelStrip }}DataSourceModel
+	var plan hashArgon2idDataSourceModel
 
 	diags := req.Plan.Get(ctx, &plan)
 	resp.Diagnostics.Append(diags...)
@@ -134,29 +134,28 @@ func (d *{{ .CamelStrip }}DataSource) Create(
 		return
 	}
 
-	tflog.Debug(ctx, "Ending {{ .PascalStrip }} DataSource Create method.")
+	tflog.Debug(ctx, "Ending HashArgon2id DataSource Create method.")
 }
 
 // Read refreshes the Terraform state with the latest data.
-func (d *{{ .CamelStrip }}DataSource) Read( // lint:no_dupe
+func (d *hashArgon2idDataSource) Read( // lint:no_dupe
 	ctx context.Context,
 	_ datasource.ReadRequest, // lint:allow_large_memory
 	resp *datasource.ReadResponse,
 ) {
-	tflog.Debug(ctx, "Starting {{ .PascalStrip }} DataSource Read method.")
+	tflog.Debug(ctx, "Starting HashArgon2id DataSource Read method.")
 
-	var state {{ .CamelStrip }}DataSourceModel
+	var state hashArgon2idDataSourceModel
 	diags := resp.State.Get(ctx, &state)
 	resp.Diagnostics.Append(diags...)
 
-	// @TODO
-    value, err := corefunc.{{ .PascalStrip }}(
-        state.Input.ValueString(),
-        []byte(state.Salt.ValueString()),
-    )
+	value, err := corefunc.HashArgon2id(
+		state.Input.ValueString(),
+		[]byte(state.Salt.ValueString()),
+	)
 	if err != nil {
 		resp.Diagnostics.AddError(
-			"Problem with calculating the ALGORITHM hash.",
+			"Problem with calculating the Argon2id hash.",
 			err.Error(),
 		)
 
@@ -172,5 +171,5 @@ func (d *{{ .CamelStrip }}DataSource) Read( // lint:no_dupe
 		return
 	}
 
-	tflog.Debug(ctx, "Ending {{ .PascalStrip }} DataSource Read method.")
+	tflog.Debug(ctx, "Ending HashArgon2id DataSource Read method.")
 }

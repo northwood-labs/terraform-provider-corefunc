@@ -28,53 +28,53 @@ import (
 )
 
 // Ensure the implementation satisfies the expected interfaces.
-var _ function.Function = &{{ .CamelStrip }}Function{}
+var _ function.Function = &hashArgon2idFunction{}
 
 type (
-	// {{ .CamelStrip }}Function is the function implementation.
-	{{ .CamelStrip }}Function struct{}
+	// hashArgon2idFunction is the function implementation.
+	hashArgon2idFunction struct{}
 )
 
-// {{ .PascalStrip }}Function is a method that exposes its paired Go function as a
+// HashArgon2idFunction is a method that exposes its paired Go function as a
 // Terraform Function.
 // https://developer.hashicorp.com/terraform/plugin/framework/functions/implementation
-func {{ .PascalStrip }}Function() function.Function { // lint:allow_return_interface
-	return &{{ .CamelStrip }}Function{}
+func HashArgon2idFunction() function.Function { // lint:allow_return_interface
+	return &hashArgon2idFunction{}
 }
 
-func (f *{{ .CamelStrip }}Function) Metadata(
+func (f *hashArgon2idFunction) Metadata(
 	ctx context.Context,
 	_ function.MetadataRequest,
 	resp *function.MetadataResponse,
 ) {
-	tflog.Debug(ctx, "Starting {{ .PascalStrip }} Function Metadata method.")
+	tflog.Debug(ctx, "Starting HashArgon2id Function Metadata method.")
 
-	resp.Name = "{{ .SnakeStrip }}"
+	resp.Name = "hash_argon2id"
 
 	tflog.Debug(ctx, fmt.Sprintf("resp.Name = %s", resp.Name))
 
-	tflog.Debug(ctx, "Ending {{ .PascalStrip }} Function Metadata method.")
+	tflog.Debug(ctx, "Ending HashArgon2id Function Metadata method.")
 }
 
 // Definition defines the parameters and return type for the function.
-func (f *{{ .CamelStrip }}Function) Definition(
+func (f *hashArgon2idFunction) Definition(
 	ctx context.Context,
 	_ function.DefinitionRequest,
 	resp *function.DefinitionResponse,
 ) {
-	tflog.Debug(ctx, "Starting {{ .PascalStrip }} Function Definition method.")
+	tflog.Debug(ctx, "Starting HashArgon2id Function Definition method.")
 
 	resp.Definition = function.Definition{
-		Summary: "Generates the {{ strip .PascalStrip "Hash" }} hash of a string.",
+		Summary: "Generates the Argon2id hash of a string.",
 		MarkdownDescription: strings.TrimSpace(dedent.Dedent(`
-		Generates the {{ strip .PascalStrip "Hash" }} hash of a string with its associated salt value.{{ if contains .PascalStrip "Base64" }} Returns a Base64 value instead of a hexadecimal string.{{ end }}
+		Generates the Argon2id hash of a string with its associated salt value.
 
-		Maps to the ` + linkPackage("{{ .PascalStrip }}") + ` Go method, which can be used in ` + Terratest + `.
+		Maps to the ` + linkPackage("HashArgon2id") + ` Go method, which can be used in ` + Terratest + `.
 		`)),
 		Parameters: []function.Parameter{
 			function.StringParameter{
 				Name:                "input",
-				MarkdownDescription: "The string to generate the {{ strip .PascalStrip "Hash" }} hash for.",
+				MarkdownDescription: "The string to generate the Argon2id hash for.",
 			},
 			function.StringParameter{
 				Name:                "salt",
@@ -84,11 +84,11 @@ func (f *{{ .CamelStrip }}Function) Definition(
 		Return: function.StringReturn{},
 	}
 
-	tflog.Debug(ctx, "Ending {{ .PascalStrip }} Function Definition method.")
+	tflog.Debug(ctx, "Ending HashArgon2id Function Definition method.")
 }
 
-func (f *{{ .CamelStrip }}Function) Run(ctx context.Context, req function.RunRequest, resp *function.RunResponse) {
-	tflog.Debug(ctx, "Starting {{ .PascalStrip }} Function Run method.")
+func (f *hashArgon2idFunction) Run(ctx context.Context, req function.RunRequest, resp *function.RunResponse) {
+	tflog.Debug(ctx, "Starting HashArgon2id Function Run method.")
 
 	var input string
 	var salt string
@@ -100,7 +100,7 @@ func (f *{{ .CamelStrip }}Function) Run(ctx context.Context, req function.RunReq
 	}
 
 	// @TODO
-	value, e := corefunc.{{ .PascalStrip }}(input, []byte(salt))
+	value, e := corefunc.HashArgon2id(input, []byte(salt))
 	if e != nil {
 		resp.Error = function.ConcatFuncErrors(
 			function.NewFuncError(e.Error()),
@@ -111,5 +111,5 @@ func (f *{{ .CamelStrip }}Function) Run(ctx context.Context, req function.RunReq
 
 	resp.Error = function.ConcatFuncErrors(resp.Result.Set(ctx, value))
 
-	tflog.Debug(ctx, "Ending {{ .PascalStrip }} Function Run method.")
+	tflog.Debug(ctx, "Ending HashArgon2id Function Run method.")
 }

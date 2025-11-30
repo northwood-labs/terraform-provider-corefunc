@@ -1,4 +1,3 @@
-
 {{"{{"}} if contains .Input "\n" -{{"}}"}}
 locals {
   input = <<EOT
@@ -8,9 +7,9 @@ locals {
 {{"{{"}} end -{{"}}"}}
 output "{{ .SnakeStrip }}" {
 {{"{{"}}- if contains .Input "\n" {{"}}"}}
-  value = provider::corefunc::{{ .SnakeStrip }}(local.input)
+  value = provider::corefunc::{{ .SnakeStrip }}(local.input, "somesaltvalue")
 {{"{{"}}- else {{"}}"}}
-  value = provider::corefunc::{{ .SnakeStrip }}("{{"{{"}} .Input {{"}}"}}")
+  value = provider::corefunc::{{ .SnakeStrip }}("{{"{{"}} .Input {{"}}"}}", "somesaltvalue")
 {{"{{"}}- end {{"}}"}}
 }
 
