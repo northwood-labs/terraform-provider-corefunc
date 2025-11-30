@@ -256,7 +256,7 @@ func Base64HashSHA3x512(input string) string {
 }
 
 /*
-HashBcrypt returns the bcrypt hash of the input string as a byte slice.
+HashBcrypt returns the bcrypt hash of the input string as a string.
 
 ----
 
