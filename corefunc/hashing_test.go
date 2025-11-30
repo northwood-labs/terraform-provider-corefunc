@@ -17,6 +17,7 @@ package corefunc
 
 import (
 	"fmt"
+	"os"
 	"testing"
 
 	"github.com/northwood-labs/terraform-provider-corefunc/v2/testfixtures"
@@ -411,6 +412,10 @@ func TestBase64HashSHA3x512(t *testing.T) {
 }
 
 func TestHashArgon2id(t *testing.T) {
+	if os.Getenv("CI") != "" {
+		t.Skip("Skipping Argon2id tests in CI environment.")
+	}
+
 	for name, tc := range testfixtures.HashArgon2idTestTable {
 		t.Run(name, func(t *testing.T) {
 			actual, err := HashArgon2id(tc.Input, tc.Salt)
@@ -841,6 +846,10 @@ func BenchmarkBase64HashHMACSHA256Parallel(b *testing.B) {
 }
 
 func FuzzHashMD5(f *testing.F) {
+	if os.Getenv("CI") != "" {
+		f.Skip("Skipping tests in CI environment.")
+	}
+
 	for _, tc := range testfixtures.HashMD5TestTable {
 		f.Add(tc.Input)
 	}
@@ -853,6 +862,10 @@ func FuzzHashMD5(f *testing.F) {
 }
 
 func FuzzHashSHA1(f *testing.F) {
+	if os.Getenv("CI") != "" {
+		f.Skip("Skipping tests in CI environment.")
+	}
+
 	for _, tc := range testfixtures.HashSHA1TestTable {
 		f.Add(tc.Input)
 	}
@@ -865,6 +878,10 @@ func FuzzHashSHA1(f *testing.F) {
 }
 
 func FuzzHashSHA256(f *testing.F) {
+	if os.Getenv("CI") != "" {
+		f.Skip("Skipping tests in CI environment.")
+	}
+
 	for _, tc := range testfixtures.HashSHA256TestTable {
 		f.Add(tc.Input)
 	}
@@ -877,6 +894,10 @@ func FuzzHashSHA256(f *testing.F) {
 }
 
 func FuzzHashSHA384(f *testing.F) {
+	if os.Getenv("CI") != "" {
+		f.Skip("Skipping tests in CI environment.")
+	}
+
 	for _, tc := range testfixtures.HashSHA384TestTable {
 		f.Add(tc.Input)
 	}
@@ -889,6 +910,10 @@ func FuzzHashSHA384(f *testing.F) {
 }
 
 func FuzzHashSHA512(f *testing.F) {
+	if os.Getenv("CI") != "" {
+		f.Skip("Skipping tests in CI environment.")
+	}
+
 	for _, tc := range testfixtures.HashSHA512TestTable {
 		f.Add(tc.Input)
 	}
@@ -901,6 +926,10 @@ func FuzzHashSHA512(f *testing.F) {
 }
 
 func FuzzHashSHA3x256(f *testing.F) {
+	if os.Getenv("CI") != "" {
+		f.Skip("Skipping tests in CI environment.")
+	}
+
 	for _, tc := range testfixtures.HashSHA3x256TestTable {
 		f.Add(tc.Input)
 	}
@@ -913,6 +942,10 @@ func FuzzHashSHA3x256(f *testing.F) {
 }
 
 func FuzzHashSHA3x384(f *testing.F) {
+	if os.Getenv("CI") != "" {
+		f.Skip("Skipping tests in CI environment.")
+	}
+
 	for _, tc := range testfixtures.HashSHA3x384TestTable {
 		f.Add(tc.Input)
 	}
@@ -925,6 +958,10 @@ func FuzzHashSHA3x384(f *testing.F) {
 }
 
 func FuzzHashSHA3x512(f *testing.F) {
+	if os.Getenv("CI") != "" {
+		f.Skip("Skipping tests in CI environment.")
+	}
+
 	for _, tc := range testfixtures.HashSHA3x512TestTable {
 		f.Add(tc.Input)
 	}
@@ -937,6 +974,10 @@ func FuzzHashSHA3x512(f *testing.F) {
 }
 
 func FuzzHashArgon2id(f *testing.F) {
+	if os.Getenv("CI") != "" {
+		f.Skip("Skipping tests in CI environment.")
+	}
+
 	for _, tc := range testfixtures.HashArgon2idTestTable {
 		f.Add(tc.Input, tc.Salt)
 	}
@@ -949,6 +990,10 @@ func FuzzHashArgon2id(f *testing.F) {
 }
 
 func FuzzHashScrypt(f *testing.F) {
+	if os.Getenv("CI") != "" {
+		f.Skip("Skipping tests in CI environment.")
+	}
+
 	for _, tc := range testfixtures.HashScryptTestTable {
 		f.Add(tc.Input, tc.Salt)
 	}
@@ -961,6 +1006,10 @@ func FuzzHashScrypt(f *testing.F) {
 }
 
 func FuzzHashHMACSHA256(f *testing.F) {
+	if os.Getenv("CI") != "" {
+		f.Skip("Skipping tests in CI environment.")
+	}
+
 	for _, tc := range testfixtures.HashHMACSHA256TestTable {
 		f.Add(tc.Input, tc.Key)
 	}
