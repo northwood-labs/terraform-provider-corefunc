@@ -217,21 +217,6 @@ func ExampleHashArgon2id() {
 	// 9a240748d8f9d737285078c35c79922a57ca19542e99d0bfd37f36bf0e98f3d1
 }
 
-func ExampleBase64HashArgon2id() {
-	salt := []byte("somesalt")
-
-	output, err := Base64HashArgon2id("password", salt)
-	if err != nil {
-		fmt.Println("Error:", err)
-		return
-	}
-
-	fmt.Println(output)
-
-	// Output:
-	// miQHSNj51zcoUHjDXHmSKlfKGVQumdC/0382vw6Y89E=
-}
-
 func ExampleHashHMACSHA256() {
 	output := HashHMACSHA256("message", "secretkey")
 	fmt.Println(output)
