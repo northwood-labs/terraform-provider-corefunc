@@ -78,7 +78,7 @@ func (d *hashMd5Base64DataSource) Schema(
 
 	resp.Schema = schema.Schema{
 		MarkdownDescription: strings.TrimSpace(dedent.Dedent(`
-		Generates the MD5 hash of a string.
+		Generates the MD5 hash of a string. Returns a Base64 value instead of a hexadecimal string.
 
 		Maps to the ` + linkPackage("HashMD5") + ` Go method, which can be used in ` + Terratest + `.
 		`)),

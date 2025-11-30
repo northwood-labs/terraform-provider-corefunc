@@ -66,7 +66,7 @@ func (f *hashSha1Function) Definition(
 	resp.Definition = function.Definition{
 		Summary: "Generates the SHA-1 hash of a string.",
 		MarkdownDescription: strings.TrimSpace(dedent.Dedent(`
-		Generates the SHA-1 hash of a string. Returns a Base64 value instead of a hexadecimal string.
+		Generates the SHA-1 hash of a string.
 
 		Maps to the ` + linkPackage("HashSHA1") + ` Go method, which can be used in ` + Terratest + `.
 		`)),

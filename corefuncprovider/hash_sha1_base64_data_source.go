@@ -78,7 +78,7 @@ func (d *hashSha1Base64DataSource) Schema(
 
 	resp.Schema = schema.Schema{
 		MarkdownDescription: strings.TrimSpace(dedent.Dedent(`
-		Generates the SHA-1 hash of a string.
+		Generates the SHA-1 hash of a string. Returns a Base64 value instead of a hexadecimal string.
 
 		Maps to the ` + linkPackage("Base64HashSHA1") + ` Go method, which can be used in ` + Terratest + `.
 		`)),
