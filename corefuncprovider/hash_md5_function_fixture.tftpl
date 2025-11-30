@@ -1,0 +1,16 @@
+{{ if contains .Input "\n" -}}
+locals {
+  input = <<EOT
+{{ .Input }}EOT
+}
+
+{{ end -}}
+output "md5" {
+{{- if contains .Input "\n" }}
+  value = provider::corefunc::hash_md5(local.input)
+{{- else }}
+  value = provider::corefunc::hash_md5("{{ .Input }}")
+{{- end }}
+}
+
+#=> {{ .Expected }}

@@ -26,17 +26,16 @@ import (
 
 	"github.com/northwood-labs/terraform-provider-corefunc/v2/testfixtures"
 
-	"github.com/hashicorp/go-version"
 	"github.com/hashicorp/terraform-plugin-testing/helper/resource"
 	"github.com/hashicorp/terraform-plugin-testing/tfversion"
 )
 
-func TestAcc{{ .PascalStrip }}Function(t *testing.T) {
-    t.Parallel()
+func TestAccHashMd5Function(t *testing.T) {
+	t.Parallel()
 
 	funcName := traceFuncName()
 
-	for name, tc := range testfixtures.{{ .PascalStrip }}TestTable { // lint:no_dupe
+	for name, tc := range testfixtures.HashMD5TestTable { // lint:no_dupe
 		fmt.Printf(
 			"=== RUN   %s/%s\n",
 			strings.TrimSpace(funcName),
@@ -45,9 +44,9 @@ func TestAcc{{ .PascalStrip }}Function(t *testing.T) {
 
 		buf := &bytes.Buffer{}
 		tmpl := template.Must(
-			template.New("{{ .SnakeStrip }}_function_fixture.tftpl").
+			template.New("hash_md5_function_fixture.tftpl").
 				Funcs(FuncMap()).
-				ParseFiles("{{ .SnakeStrip }}_function_fixture.tftpl"),
+				ParseFiles("hash_md5_function_fixture.tftpl"),
 		)
 
 		err := tmpl.Execute(buf, tc)
@@ -68,7 +67,7 @@ func TestAcc{{ .PascalStrip }}Function(t *testing.T) {
 				{
 					Config: providerConfig + buf.String(),
 					Check: resource.ComposeTestCheckFunc(
-						resource.TestCheckOutput("@TODO", tc.Expected),
+						resource.TestCheckOutput("md5", tc.Expected),
 					),
 					// ExpectError: tc.expectedError,
 				},

@@ -43,7 +43,9 @@ func TestAcc{{ .PascalStrip }}DataSource(t *testing.T) {
 
 		buf := &bytes.Buffer{}
 		tmpl := template.Must(
-			template.ParseFiles("{{ .SnakeStrip }}_data_source_fixture.tftpl"),
+			template.New("{{ .SnakeStrip }}_data_source_fixture.tftpl").
+				Funcs(FuncMap()).
+				ParseFiles("{{ .SnakeStrip }}_data_source_fixture.tftpl"),
 		)
 
 		err := tmpl.Execute(buf, tc)

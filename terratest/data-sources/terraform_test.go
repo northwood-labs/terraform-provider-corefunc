@@ -211,6 +211,9 @@ func TestTerraform(t *testing.T) { // lint:allow_complexity
 
 		assert.Equal(t, terraform.Output(t, terraformOptions, "homedir_expand_ds"), homedirPath)
 
+		// Hashing
+		assert.Equal(t, terraform.Output(t, terraformOptions, "hash_md5_ds"), corefunc.HashMD5("hello world"))
+
 		terraform.Destroy(t, terraformOptions)
 	}
 }
