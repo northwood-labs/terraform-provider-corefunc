@@ -20,6 +20,10 @@ import "github.com/mitchellh/go-homedir"
 /*
 Homedir returns the home directory for the executing user without requiring CGO
 for macOS.
+
+----
+
+  - Returns (string): The home directory path.
 */
 func Homedir() (string, error) {
 	return homedir.Dir() // lint:allow_unwrapped_errors
@@ -28,6 +32,12 @@ func Homedir() (string, error) {
 /*
 HomedirExpand expands the path to include the home directory if the path is prefixed
 with `~`. If it isn't prefixed with `~`, the path is returned as-is.
+
+----
+
+  - path (string): The path to expand.
+
+  - Returns (string): The expanded path.
 */
 func HomedirExpand(path string) (string, error) {
 	return homedir.Expand(path) // lint:allow_unwrapped_errors
