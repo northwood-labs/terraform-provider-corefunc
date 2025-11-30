@@ -11,6 +11,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 ### :books: Documentation
 
 * [`dbbc54f`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/dbbc54fa88805f3b6203fe068bbaf01b79fabcaf): Replaced public URLs with short links. ([@skyzyx](https://github.com/skyzyx))
+* [`61a9a85`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/61a9a855fe05eec63fbff28fe5c3e620d152c168): Corrected a function description. ([@skyzyx](https://github.com/skyzyx))
 
 ### :dependabot: Building and Dependencies
 
@@ -77,20 +78,27 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`23f3888`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/23f38883cd8f2e4fced14311307d741f66ff2996): Updated the Go dependencies. ([@skyzyx](https://github.com/skyzyx))
 * [`d209e82`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/d209e8218f5dab915f3ec3376b76be6391d6cb30): **deps**: Bump `golangci/golangci-lint-action` from 8.0.0 to 9.1.0 ([@dependabot](https://github.com/dependabot))
 * [`c6d82aa`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/c6d82aa3aedbefca0a8f1eee1ac892671755cdf9): **deps**: Bump `actions/checkout` from 5.0.1 to 6.0.0 ([@dependabot](https://github.com/dependabot))
+* [`6ab1b43`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/6ab1b43fc83315d28073ec877e7c16f21ecaf221): Update Go dependencies. ([@skyzyx](https://github.com/skyzyx))
 
 ### :test_tube: Testing
 
 * [`cca5965`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/cca5965e434bc28c3e6eb8b78a0d4965860c0ea8): Fixed Terratest tests after the move to v2. ([@skyzyx](https://github.com/skyzyx))
 * [`bf3ec91`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/bf3ec9109c6bae3f9d3410586f401bfe6421c41f): Added Terraform 1.14 and OpenTofu 1.11 to the test suite. ([@skyzyx](https://github.com/skyzyx))
+* [`146012e`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/146012e7b2dfc4730710f209508126fa076e5e61): Resolve some issues with tests. ([@skyzyx](https://github.com/skyzyx))
+* [`28d819f`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/28d819f91c8524c55994c8dd9cdd072960a4c1dc): Skip certain tests in CI. ([@skyzyx](https://github.com/skyzyx))
+* [`e400e27`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/e400e27482061192f3efb173274022645453e385): Skip certain tests in CI. ([@skyzyx](https://github.com/skyzyx))
 
 ### <!-- 0 -->:rocket: Features
 
 * [`10eec22`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/10eec221df3d9719bb3965401c118fd7207a84df): Exploring local LLM tooling. ([@skyzyx](https://github.com/skyzyx))
+* [`2983689`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/29836896838fe5a271bfa40eef52e895bc16a095): Added several hashing functions to the Go library. ([@skyzyx](https://github.com/skyzyx))
 
 ### <!-- 1 -->:bug: Bug Fixes
 
 * [`0ee527f`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/0ee527fd2244748e743faa5fac85e490d262063e): How did git-cliff end up in the repo again? ([@skyzyx](https://github.com/skyzyx))
 * [`b8243b6`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/b8243b65da076cfc99f8087a01beba72969dbb8f): Fix and streamline a couple of broken tests. ([@skyzyx](https://github.com/skyzyx))
+* [`d976ba5`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/d976ba588b52d42bc4e9cde720ee0ac5e533f5ec): Update `.golangci.yml`. ([@skyzyx](https://github.com/skyzyx))
+* [`1130616`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/1130616f36412667765ff0592b3838c8c899c9f1): Adjust some linter rules. ([@skyzyx](https://github.com/skyzyx))
 
 ### <!-- ZZZ -->:gear: Miscellaneous Tasks
 
@@ -1170,4 +1178,4 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`6bc72f6`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/6bc72f6d3927147c41665e0ccab69657a4dcd721): Trying to get the build to work. ([@skyzyx](https://github.com/skyzyx))
 * [`8c39e22`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/8c39e221bba5ab7364c52660d794fb75cbd35ff1): Harden GitHub Actions ([#129](https://github.com/northwood-labs/terraform-provider-corefunc/issues/129)) ([@step-security-bot](https://github.com/step-security-bot))
 
-<p>Generated on 2025-11-28.</p>
+<p>Generated on 2025-11-30.</p>
