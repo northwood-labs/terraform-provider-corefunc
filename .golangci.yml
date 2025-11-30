@@ -2146,7 +2146,7 @@ linters:
           - gosec
 
       - source: lint:not_crypto
-        text: (G404)
+        text: (G401|G404)
         linters:
           - gosec
 
