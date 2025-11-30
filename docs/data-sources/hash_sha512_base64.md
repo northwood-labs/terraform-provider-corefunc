@@ -27,10 +27,10 @@ data "corefunc_hash_sha512_base64" "sha512_base64" {
 
 ### Required
 
-- `input` (String) The string to generate a SHA-2/512-bit hash for.
+* `input` (String) The string to generate a SHA-2/512-bit hash for.
 
 ### Read-Only
 
-- `value` (String) The result of the hashing function.
+* `value` (String) The result of the hashing function.
 
 <!-- Preview the provider docs with the Terraform registry provider docs preview tool: https://registry.terraform.io/tools/doc-preview -->
