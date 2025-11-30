@@ -97,6 +97,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`bbc69ea`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/bbc69ea579b9475168ed9ff5b75db3b365c9d3f0): Added MD5 hashing with Base64 output. ([@skyzyx](https://github.com/skyzyx))
 * [`eaa9566`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/eaa95668b49f0ffedef38ba34c95cbe7f66f3a42): Added SHA1 hashing with Base64 output. ([@skyzyx](https://github.com/skyzyx))
 * [`bebb00b`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/bebb00b3f9afc48c7dad63a6922d221bc99e1137): Added SHA256/384/512 hashing with Base64 output. ([@skyzyx](https://github.com/skyzyx))
+* [`a69cb55`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/a69cb550e70103f80c1784aa8b8763359c950442): Added SHA-3 256/384/512 hashing with Base64 output. ([@skyzyx](https://github.com/skyzyx))
 
 ### <!-- 1 -->:bug: Bug Fixes
 
