@@ -17,8 +17,8 @@ package corefunc
 
 import (
 	"crypto/hmac"
-	"crypto/md5"  // lint:not_crypto
-	"crypto/sha1" // lint:not_crypto
+	"crypto/md5"  // lint:allow_insecure_imports
+	"crypto/sha1" // lint:allow_insecure_imports
 	"crypto/sha256"
 	"crypto/sha3"
 	"crypto/sha512"
