@@ -80,7 +80,7 @@ func (d *{{ .CamelStrip }}DataSource) Schema(
 
 	resp.Schema = schema.Schema{
 		MarkdownDescription: strings.TrimSpace(dedent.Dedent(`
-        Generates the {{ strip .PascalStrip "Hash" }} hash of a string with its associated salt value.
+        Generates the {{ strip .PascalStrip "Hash" }} hash of a string with its associated salt value.{{ if contains .PascalStrip "Base64" }} Returns a Base64 value instead of a hexadecimal string.{{ end }}
 
 		Maps to the ` + linkPackage("{{ .PascalStrip }}") + ` Go method, which can be used in ` + Terratest + `.
 		`)),

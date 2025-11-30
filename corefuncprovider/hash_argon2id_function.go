@@ -17,7 +17,6 @@ package corefuncprovider // lint:no_dupe
 
 import (
 	"context"
-	"fmt"
 	"strings"
 
 	"github.com/hashicorp/terraform-plugin-framework/function"
@@ -51,7 +50,7 @@ func (f *hashArgon2idFunction) Metadata(
 
 	resp.Name = "hash_argon2id"
 
-	tflog.Debug(ctx, fmt.Sprintf("resp.Name = %s", resp.Name))
+	tflog.Debug(ctx, "resp.Name = "+resp.Name)
 
 	tflog.Debug(ctx, "Ending HashArgon2id Function Metadata method.")
 }
@@ -90,8 +89,11 @@ func (f *hashArgon2idFunction) Definition(
 func (f *hashArgon2idFunction) Run(ctx context.Context, req function.RunRequest, resp *function.RunResponse) {
 	tflog.Debug(ctx, "Starting HashArgon2id Function Run method.")
 
-	var input string
-	var salt string
+	var (
+		input string
+		salt  string
+	)
+
 	err := req.Arguments.Get(ctx, &input, &salt)
 
 	resp.Error = function.ConcatFuncErrors(err)
@@ -99,7 +101,6 @@ func (f *hashArgon2idFunction) Run(ctx context.Context, req function.RunRequest,
 		return
 	}
 
-	// @TODO
 	value, e := corefunc.HashArgon2id(input, []byte(salt))
 	if e != nil {
 		resp.Error = function.ConcatFuncErrors(

@@ -31,9 +31,7 @@ output "hash_argon2id" {
 
 ## Arguments
 
-
 1. `input` (String) The string to generate the Argon2id hash for.
 1. `salt` (String) A random value to provide additional entropy in the calculation.
-
 
 <!-- Preview the provider docs with the Terraform registry provider docs preview tool: https://registry.terraform.io/tools/doc-preview -->
