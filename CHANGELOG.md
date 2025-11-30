@@ -95,6 +95,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`2983689`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/29836896838fe5a271bfa40eef52e895bc16a095): Added several hashing functions to the Go library. ([@skyzyx](https://github.com/skyzyx))
 * [`6f4202f`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/6f4202f08e6c4395c37dcd15169ee75095c6b9c6): Added MD5 hashing. ([@skyzyx](https://github.com/skyzyx))
 * [`bbc69ea`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/bbc69ea579b9475168ed9ff5b75db3b365c9d3f0): Added MD5 hashing with Base64 output. ([@skyzyx](https://github.com/skyzyx))
+* [`eaa9566`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/eaa95668b49f0ffedef38ba34c95cbe7f66f3a42): Added SHA1 hashing with Base64 output. ([@skyzyx](https://github.com/skyzyx))
 
 ### <!-- 1 -->:bug: Bug Fixes
 
