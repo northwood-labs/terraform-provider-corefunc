@@ -106,8 +106,10 @@ func (p *coreFuncProvider) DataSources(ctx context.Context) []func() datasource.
 
 	return []func() datasource.DataSource{
 		EnvEnsureDataSource,
-		HashMd5DataSource,
 		HashMd5Base64DataSource,
+		HashMd5DataSource,
+		HashSha1Base64DataSource,
+		HashSha1DataSource,
 		HomedirExpandDataSource,
 		HomedirGetDataSource,
 		IntLeftpadDataSource,
@@ -136,8 +138,10 @@ func (p *coreFuncProvider) Functions(ctx context.Context) []func() function.Func
 
 	return []func() function.Function{
 		EnvEnsureFunction,
-		HashMd5Function,
 		HashMd5Base64Function,
+		HashMd5Function,
+		HashSha1Base64Function,
+		HashSha1Function,
 		HomedirExpandFunction,
 		HomedirGetFunction,
 		IntLeftpadFunction,
@@ -149,8 +153,8 @@ func (p *coreFuncProvider) Functions(ctx context.Context) []func() function.Func
 		StrBase64GunzipFunction,
 		StrCamelFunction,
 		StrConstantFunction,
-		StrKebabFunction,
 		StrIterativeReplaceFunction,
+		StrKebabFunction,
 		StrLeftpadFunction,
 		StrPascalFunction,
 		StrSnakeFunction,

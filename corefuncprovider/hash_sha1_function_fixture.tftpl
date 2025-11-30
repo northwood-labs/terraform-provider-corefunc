@@ -1,0 +1,16 @@
+{{ if contains .Input "\n" -}}
+locals {
+  input = <<EOT
+{{ .Input }}EOT
+}
+
+{{ end -}}
+output "sha1" {
+{{- if contains .Input "\n" }}
+  value = provider::corefunc::hash_sha1(local.input)
+{{- else }}
+  value = provider::corefunc::hash_sha1("{{ .Input }}")
+{{- end }}
+}
+
+#=> {{ .Expected }}

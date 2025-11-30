@@ -26,15 +26,15 @@ import (
 
 	"github.com/northwood-labs/terraform-provider-corefunc/v2/testfixtures"
 
-		"github.com/hashicorp/terraform-plugin-testing/helper/resource"
+	"github.com/hashicorp/terraform-plugin-testing/helper/resource"
 )
 
-func TestAcc{{ .PascalStrip }}DataSource(t *testing.T) {
-    t.Parallel()
+func TestAccHashSha1DataSource(t *testing.T) {
+	t.Parallel()
 
 	funcName := traceFuncName()
 
-	for name, tc := range testfixtures.{{ .PascalStrip }}TestTable { // lint:no_dupe
+	for name, tc := range testfixtures.HashSHA1TestTable { // lint:no_dupe
 		fmt.Printf(
 			"=== RUN   %s/%s\n",
 			strings.TrimSpace(funcName),
@@ -43,9 +43,9 @@ func TestAcc{{ .PascalStrip }}DataSource(t *testing.T) {
 
 		buf := &bytes.Buffer{}
 		tmpl := template.Must(
-			template.New("{{ .SnakeStrip }}_data_source_fixture.tftpl").
+			template.New("hash_sha1_data_source_fixture.tftpl").
 				Funcs(FuncMap()).
-				ParseFiles("{{ .SnakeStrip }}_data_source_fixture.tftpl"),
+				ParseFiles("hash_sha1_data_source_fixture.tftpl"),
 		)
 
 		err := tmpl.Execute(buf, tc)
@@ -63,7 +63,7 @@ func TestAcc{{ .PascalStrip }}DataSource(t *testing.T) {
 				{
 					Config: providerConfig + buf.String(),
 					Check: resource.ComposeAggregateTestCheckFunc(
-						resource.TestCheckResourceAttr("data.corefunc_{{ .SnakeStrip }}.{{ .SnakeStrip }}", "value", tc.Expected),
+						resource.TestCheckResourceAttr("data.corefunc_hash_sha1.sha1", "value", tc.Expected),
 					),
 				},
 			},

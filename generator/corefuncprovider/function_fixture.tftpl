@@ -1,5 +1,17 @@
-output "@TODO" {
+
+{{"{{"}} if contains .Input "\n" -{{"}}"}}
+locals {
+  input = <<EOT
+{{"{{"}} .Input {{"}}"}}EOT
+}
+
+{{"{{"}} end -{{"}}"}}
+output "{{ .SnakeStrip }}" {
+{{"{{"}}- if contains .Input "\n" {{"}}"}}
+  value = provider::corefunc::{{ .SnakeStrip }}(local.input)
+{{"{{"}}- else {{"}}"}}
   value = provider::corefunc::{{ .SnakeStrip }}("{{"{{"}} .Input {{"}}"}}")
+{{"{{"}}- end {{"}}"}}
 }
 
 #=> {{"{{"}} .Expected {{"}}"}}
