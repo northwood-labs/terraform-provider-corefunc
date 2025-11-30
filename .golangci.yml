@@ -2150,6 +2150,11 @@ linters:
         linters:
           - gosec
 
+      - source: lint:allow_insecure_imports
+        text: (G501|G505)
+        linters:
+          - gosec
+
       - source: lint:allow_human_errors
         text: (error-strings)
         linters:
