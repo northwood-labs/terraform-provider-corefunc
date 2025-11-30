@@ -211,6 +211,11 @@ func TestTerraform(t *testing.T) { // lint:allow_complexity
 
 		// Hashing
 		assert.Equal(t, terraform.Output(t, terraformOptions, "hash_md5_fn"), corefunc.HashMD5("hello world"))
+		assert.Equal(
+			t,
+			terraform.Output(t, terraformOptions, "hash_md5_base64_fn"),
+			corefunc.Base64HashMD5("hello world"),
+		)
 
 		terraform.Destroy(t, terraformOptions)
 	}
