@@ -1,5 +1,5 @@
-output "@TODO" {
-    value = provider::corefunc::{{ .SnakeStrip }}("@TODO")
+output "{{ .SnakeStrip }}" {
+  value = provider::corefunc::{{ .SnakeStrip }}("hello world")
 }
 
 #=> @TODO

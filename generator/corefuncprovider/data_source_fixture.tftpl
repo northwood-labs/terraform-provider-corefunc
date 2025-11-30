@@ -1,5 +1,16 @@
-data "{{ .Snake }}" "@TODO" {
-  string = "{{"{{"}} .Input {{"}}"}}"
+{{"{{"}} if contains .Input "\n" -{{"}}"}}
+locals {
+  input = <<EOT
+{{"{{"}} .Input {{"}}"}}EOT
+}
+
+{{"{{"}} end -{{"}}"}}
+data "{{ .Snake }}" "{{ .SnakeStrip }}" {
+{{"{{"}}- if contains .Input "\n" {{"}}"}}
+  input = local.input
+{{"{{"}}- else {{"}}"}}
+  input = "{{"{{"}} .Input {{"}}"}}"
+{{"{{"}}- end {{"}}"}}
 }
 
 #=> {{"{{"}} .Expected {{"}}"}}

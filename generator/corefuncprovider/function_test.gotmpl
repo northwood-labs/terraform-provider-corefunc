@@ -68,7 +68,7 @@ func TestAcc{{ .PascalStrip }}Function(t *testing.T) {
 				{
 					Config: providerConfig + buf.String(),
 					Check: resource.ComposeTestCheckFunc(
-						resource.TestCheckOutput("@TODO", tc.Expected),
+						resource.TestCheckOutput("{{ .SnakeStrip }}", tc.Expected),
 					),
 					// ExpectError: tc.expectedError,
 				},

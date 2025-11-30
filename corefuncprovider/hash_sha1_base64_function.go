@@ -17,75 +17,76 @@ package corefuncprovider // lint:no_dupe
 
 import (
 	"context"
-	"fmt"
 	"strings"
 
 	"github.com/hashicorp/terraform-plugin-framework/function"
 	"github.com/hashicorp/terraform-plugin-log/tflog"
 	"github.com/lithammer/dedent"
+
 	"github.com/northwood-labs/terraform-provider-corefunc/v2/corefunc"
 )
 
 // Ensure the implementation satisfies the expected interfaces.
-var _ function.Function = &{{ .CamelStrip }}Function{}
+var _ function.Function = &hashSha1Base64Function{}
 
 type (
-	// {{ .CamelStrip }}Function is the function implementation.
-	{{ .CamelStrip }}Function struct{}
+	// hashSha1Base64Function is the function implementation.
+	hashSha1Base64Function struct{}
 )
 
-// {{ .PascalStrip }}Function is a method that exposes its paired Go function as a
+// HashSha1Base64Function is a method that exposes its paired Go function as a
 // Terraform Function.
 // https://developer.hashicorp.com/terraform/plugin/framework/functions/implementation
-func {{ .PascalStrip }}Function() function.Function { // lint:allow_return_interface
-	return &{{ .CamelStrip }}Function{}
+func HashSha1Base64Function() function.Function { // lint:allow_return_interface
+	return &hashSha1Base64Function{}
 }
 
-func (f *{{ .CamelStrip }}Function) Metadata(
+func (f *hashSha1Base64Function) Metadata(
 	ctx context.Context,
 	_ function.MetadataRequest,
 	resp *function.MetadataResponse,
 ) {
-	tflog.Debug(ctx, "Starting {{ .PascalStrip }} Function Metadata method.")
+	tflog.Debug(ctx, "Starting HashSha1Base64 Function Metadata method.")
 
-	resp.Name = "{{ .SnakeStrip }}"
+	resp.Name = "hash_sha1_base64"
 
-	tflog.Debug(ctx, fmt.Sprintf("resp.Name = %s", resp.Name))
+	tflog.Debug(ctx, "resp.Name = "+resp.Name)
 
-	tflog.Debug(ctx, "Ending {{ .PascalStrip }} Function Metadata method.")
+	tflog.Debug(ctx, "Ending HashSha1Base64 Function Metadata method.")
 }
 
 // Definition defines the parameters and return type for the function.
-func (f *{{ .CamelStrip }}Function) Definition(
+func (f *hashSha1Base64Function) Definition(
 	ctx context.Context,
 	_ function.DefinitionRequest,
 	resp *function.DefinitionResponse,
 ) {
-	tflog.Debug(ctx, "Starting {{ .PascalStrip }} Function Definition method.")
+	tflog.Debug(ctx, "Starting HashSha1Base64 Function Definition method.")
 
 	resp.Definition = function.Definition{
-		Summary: "Generates the @TODO hash of a string.",
+		Summary: "Generates the SHA-1 hash of a string.",
 		MarkdownDescription: strings.TrimSpace(dedent.Dedent(`
-		Generates the @TODO hash of a string. Returns a Base64 value instead of a hexadecimal string.
+		Generates the SHA-1 hash of a string. Returns a Base64 value instead of a hexadecimal string.
 
-		Maps to the ` + linkPackage("@TODO") + ` Go method, which can be used in ` + Terratest + `.
+		Maps to the ` + linkPackage("Base64HashSHA1") + ` Go method, which can be used in ` + Terratest + `.
 		`)),
 		Parameters: []function.Parameter{
 			function.StringParameter{
 				Name:                "input",
-				MarkdownDescription: "The string to generate an @TODO hash for.",
+				MarkdownDescription: "The string to generate an SHA-1 hash for.",
 			},
 		},
 		Return: function.StringReturn{},
 	}
 
-	tflog.Debug(ctx, "Ending {{ .PascalStrip }} Function Definition method.")
+	tflog.Debug(ctx, "Ending HashSha1Base64 Function Definition method.")
 }
 
-func (f *{{ .CamelStrip }}Function) Run(ctx context.Context, req function.RunRequest, resp *function.RunResponse) {
-	tflog.Debug(ctx, "Starting {{ .PascalStrip }} Function Run method.")
+func (f *hashSha1Base64Function) Run(ctx context.Context, req function.RunRequest, resp *function.RunResponse) {
+	tflog.Debug(ctx, "Starting HashSha1Base64 Function Run method.")
 
 	var input string
+
 	err := req.Arguments.Get(ctx, &input)
 
 	resp.Error = function.ConcatFuncErrors(err)
@@ -93,10 +94,9 @@ func (f *{{ .CamelStrip }}Function) Run(ctx context.Context, req function.RunReq
 		return
 	}
 
-	// @TODO
-	value := corefunc.{{ .PascalStrip }}(input)
+	value := corefunc.Base64HashSHA1(input)
 
 	resp.Error = function.ConcatFuncErrors(resp.Result.Set(ctx, value))
 
-	tflog.Debug(ctx, "Ending {{ .PascalStrip }} Function Run method.")
+	tflog.Debug(ctx, "Ending HashSha1Base64 Function Run method.")
 }

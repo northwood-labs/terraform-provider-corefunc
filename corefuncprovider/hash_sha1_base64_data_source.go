@@ -17,7 +17,6 @@ package corefuncprovider // lint:no_dupe
 
 import (
 	"context"
-	"fmt"
 	"strings"
 
 	"github.com/hashicorp/terraform-plugin-framework/datasource"
@@ -26,64 +25,66 @@ import (
 	"github.com/hashicorp/terraform-plugin-framework/types"
 	"github.com/hashicorp/terraform-plugin-log/tflog"
 	"github.com/lithammer/dedent"
+
+	"github.com/northwood-labs/terraform-provider-corefunc/v2/corefunc"
 )
 
 // Ensure the implementation satisfies the expected interfaces.
 var (
-	_ datasource.DataSource              = &{{ .CamelStrip }}DataSource{}
-	_ datasource.DataSourceWithConfigure = &{{ .CamelStrip }}DataSource{}
+	_ datasource.DataSource              = &hashSha1Base64DataSource{}
+	_ datasource.DataSourceWithConfigure = &hashSha1Base64DataSource{}
 )
 
-// {{ .CamelStrip }}DataSource is the data source implementation.
+// hashSha1Base64DataSource is the data source implementation.
 type (
-	{{ .CamelStrip }}DataSource struct{}
+	hashSha1Base64DataSource struct{}
 
-	// {{ .CamelStrip }}DataSourceModel maps the data source schema data.
-	{{ .CamelStrip }}DataSourceModel struct {
+	// hashSha1Base64DataSourceModel maps the data source schema data.
+	hashSha1Base64DataSourceModel struct {
 		Input types.String `tfsdk:"input"`
 		Value types.String `tfsdk:"value"`
 	}
 )
 
-// {{ .PascalStrip }}DataSource is a method that exposes its paired Go function as a
+// HashSha1Base64DataSource is a method that exposes its paired Go function as a
 // Terraform Data Source.
-func {{ .PascalStrip }}DataSource() datasource.DataSource { // lint:allow_return_interface
-	return &{{ .CamelStrip }}DataSource{}
+func HashSha1Base64DataSource() datasource.DataSource { // lint:allow_return_interface
+	return &hashSha1Base64DataSource{}
 }
 
 // Metadata returns the data source type name.
-func (d *{{ .CamelStrip }}DataSource) Metadata(
+func (d *hashSha1Base64DataSource) Metadata(
 	ctx context.Context,
 	req datasource.MetadataRequest,
 	resp *datasource.MetadataResponse,
 ) {
-	tflog.Debug(ctx, "Starting {{ .PascalStrip }} DataSource Metadata method.")
+	tflog.Debug(ctx, "Starting HashSha1Base64 DataSource Metadata method.")
 
-	resp.TypeName = req.ProviderTypeName + "_{{ .SnakeStrip }}"
+	resp.TypeName = req.ProviderTypeName + "_hash_sha1_base64"
 
-	tflog.Debug(ctx, fmt.Sprintf("req.ProviderTypeName = %s", req.ProviderTypeName))
-	tflog.Debug(ctx, fmt.Sprintf("resp.TypeName = %s", resp.TypeName))
+	tflog.Debug(ctx, "req.ProviderTypeName = "+req.ProviderTypeName)
+	tflog.Debug(ctx, "resp.TypeName = "+resp.TypeName)
 
-	tflog.Debug(ctx, "Ending {{ .PascalStrip }} DataSource Metadata method.")
+	tflog.Debug(ctx, "Ending HashSha1Base64 DataSource Metadata method.")
 }
 
 // Schema defines the schema for the data source.
-func (d *{{ .CamelStrip }}DataSource) Schema(
+func (d *hashSha1Base64DataSource) Schema(
 	ctx context.Context,
 	_ datasource.SchemaRequest,
 	resp *datasource.SchemaResponse,
 ) {
-	tflog.Debug(ctx, "Starting {{ .PascalStrip }} DataSource Schema method.")
+	tflog.Debug(ctx, "Starting HashSha1Base64 DataSource Schema method.")
 
 	resp.Schema = schema.Schema{
 		MarkdownDescription: strings.TrimSpace(dedent.Dedent(`
-		Generates the @TODO hash of a string.
+		Generates the SHA-1 hash of a string.
 
-		Maps to the ` + linkPackage("@TODO") + ` Go method, which can be used in ` + Terratest + `.
+		Maps to the ` + linkPackage("Base64HashSHA1") + ` Go method, which can be used in ` + Terratest + `.
 		`)),
 		Attributes: map[string]schema.Attribute{
 			"input": schema.StringAttribute{
-				MarkdownDescription: "The string to generate an @TODO hash for.",
+				MarkdownDescription: "The string to generate an SHA-1 hash for.",
 				Required:            true,
 			},
 			"value": schema.StringAttribute{
@@ -93,32 +94,32 @@ func (d *{{ .CamelStrip }}DataSource) Schema(
 		},
 	}
 
-	tflog.Debug(ctx, "Ending {{ .PascalStrip }} DataSource Schema method.")
+	tflog.Debug(ctx, "Ending HashSha1Base64 DataSource Schema method.")
 }
 
 // Configure adds the provider configured client to the data source.
-func (d *{{ .CamelStrip }}DataSource) Configure(
+func (d *hashSha1Base64DataSource) Configure(
 	ctx context.Context,
 	req datasource.ConfigureRequest,
 	_ *datasource.ConfigureResponse,
 ) {
-	tflog.Debug(ctx, "Starting {{ .PascalStrip }} DataSource Configure method.")
+	tflog.Debug(ctx, "Starting HashSha1Base64 DataSource Configure method.")
 
 	if req.ProviderData == nil {
 		return
 	}
 
-	tflog.Debug(ctx, "Ending {{ .PascalStrip }} DataSource Configure method.")
+	tflog.Debug(ctx, "Ending HashSha1Base64 DataSource Configure method.")
 }
 
-func (d *{{ .CamelStrip }}DataSource) Create(
+func (d *hashSha1Base64DataSource) Create(
 	ctx context.Context,
 	req resource.CreateRequest, // lint:allow_large_memory
 	resp *resource.CreateResponse,
 ) {
-	tflog.Debug(ctx, "Starting {{ .PascalStrip }} DataSource Create method.")
+	tflog.Debug(ctx, "Starting HashSha1Base64 DataSource Create method.")
 
-	var plan {{ .CamelStrip }}DataSourceModel
+	var plan hashSha1Base64DataSourceModel
 
 	diags := req.Plan.Get(ctx, &plan)
 	resp.Diagnostics.Append(diags...)
@@ -127,24 +128,24 @@ func (d *{{ .CamelStrip }}DataSource) Create(
 		return
 	}
 
-	tflog.Debug(ctx, "Ending {{ .PascalStrip }} DataSource Create method.")
+	tflog.Debug(ctx, "Ending HashSha1Base64 DataSource Create method.")
 }
 
 // Read refreshes the Terraform state with the latest data.
-func (d *{{ .CamelStrip }}DataSource) Read( // lint:no_dupe
+func (d *hashSha1Base64DataSource) Read( // lint:no_dupe
 	ctx context.Context,
 	_ datasource.ReadRequest, // lint:allow_large_memory
 	resp *datasource.ReadResponse,
 ) {
-	tflog.Debug(ctx, "Starting {{ .PascalStrip }} DataSource Read method.")
+	tflog.Debug(ctx, "Starting HashSha1Base64 DataSource Read method.")
 
-	var state {{ .CamelStrip }}DataSourceModel
+	var state hashSha1Base64DataSourceModel
+
 	diags := resp.State.Get(ctx, &state)
 	resp.Diagnostics.Append(diags...)
 
-	// @TODO
 	state.Value = types.StringValue(
-		corefunc.{{ .PascalStrip }}(
+		corefunc.Base64HashSHA1(
 			state.Input.ValueString(),
 		),
 	)
@@ -156,5 +157,5 @@ func (d *{{ .CamelStrip }}DataSource) Read( // lint:no_dupe
 		return
 	}
 
-	tflog.Debug(ctx, "Ending {{ .PascalStrip }} DataSource Read method.")
+	tflog.Debug(ctx, "Ending HashSha1Base64 DataSource Read method.")
 }
