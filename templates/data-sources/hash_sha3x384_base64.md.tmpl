@@ -1,0 +1,18 @@
+---
+page_title: "{{ .Name }} {{ .Type }} - {{ .ProviderName }}"
+subcategory: ""
+description: |-
+{{ .Description | plainmarkdown | trimspace | prefixlines "  " }}
+---
+
+# {{ .Name }} ({{ .Type }})
+
+{{ .Description | trimspace }}
+
+## Example Usage
+
+{{ tffile "examples/data-sources/corefunc_hash_sha3x384_base64/data-source.tf" }}
+
+{{ .SchemaMarkdown | trimspace }}
+
+<!-- Preview the provider docs with the Terraform registry provider docs preview tool: https://registry.terraform.io/tools/doc-preview -->

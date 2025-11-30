@@ -31,8 +31,6 @@ output "sha512" {
 
 ## Arguments
 
-
 1. `input` (String) The string to generate a SHA-2/512-bit hash for.
-
 
 <!-- Preview the provider docs with the Terraform registry provider docs preview tool: https://registry.terraform.io/tools/doc-preview -->
