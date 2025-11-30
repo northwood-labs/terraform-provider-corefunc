@@ -1,14 +1,12 @@
 module github.com/northwood-labs/terraform-provider-corefunc/v2/terratest
 
-go 1.25
+go 1.25.4
 
 require (
-	github.com/charmbracelet/lipgloss v1.1.1-0.20250404203927-76690c660834
 	github.com/gruntwork-io/terratest v0.54.0
 	github.com/hairyhenderson/go-which v0.2.2
 	github.com/northwood-labs/cli-helpers v0.0.0-20250902191730-736c08104235
 	github.com/northwood-labs/terraform-provider-corefunc/v2 v2.1.0
-	github.com/pkg/errors v0.9.1
 	github.com/stretchr/testify v1.11.1
 )
 
@@ -26,11 +24,12 @@ require (
 	github.com/charmbracelet/bubbletea v1.3.10 // indirect
 	github.com/charmbracelet/colorprofile v0.3.3 // indirect
 	github.com/charmbracelet/glamour v0.10.0 // indirect
+	github.com/charmbracelet/lipgloss v1.1.1-0.20250404203927-76690c660834 // indirect
 	github.com/charmbracelet/x/ansi v0.11.2 // indirect
 	github.com/charmbracelet/x/cellbuf v0.0.14 // indirect
 	github.com/charmbracelet/x/exp/slice v0.0.0-20251126160633-0b68cdcd21da // indirect
 	github.com/charmbracelet/x/term v0.2.2 // indirect
-	github.com/clipperhouse/displaywidth v0.6.0 // indirect
+	github.com/clipperhouse/displaywidth v0.6.1 // indirect
 	github.com/clipperhouse/stringish v0.1.1 // indirect
 	github.com/clipperhouse/uax29/v2 v2.3.0 // indirect
 	github.com/davecgh/go-spew v1.1.2-0.20180830191138-d8f796af33cc // indirect
