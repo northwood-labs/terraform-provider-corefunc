@@ -2196,9 +2196,9 @@ linters:
           - stylecheck
 
       - source: lint:allow_complexity
-        text: (cognitive complexity)
         linters:
           - gocognit
+          - maintidx
 
       - source: lint:no_const
         text: (make it a constant)
