@@ -12,6 +12,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 
 * [`dbbc54f`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/dbbc54fa88805f3b6203fe068bbaf01b79fabcaf): Replaced public URLs with short links. ([@skyzyx](https://github.com/skyzyx))
 * [`61a9a85`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/61a9a855fe05eec63fbff28fe5c3e620d152c168): Corrected a function description. ([@skyzyx](https://github.com/skyzyx))
+* [`6ec570d`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/6ec570d83fd38aae2dc47518ed0d192b00d121ce): Generated updated documentation for the provider. ([@skyzyx](https://github.com/skyzyx))
 
 ### :dependabot: Building and Dependencies
 
@@ -109,6 +110,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`b8243b6`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/b8243b65da076cfc99f8087a01beba72969dbb8f): Fix and streamline a couple of broken tests. ([@skyzyx](https://github.com/skyzyx))
 * [`d976ba5`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/d976ba588b52d42bc4e9cde720ee0ac5e533f5ec): Update `.golangci.yml`. ([@skyzyx](https://github.com/skyzyx))
 * [`1130616`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/1130616f36412667765ff0592b3838c8c899c9f1): Adjust some linter rules. ([@skyzyx](https://github.com/skyzyx))
+* [`f067e4d`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/f067e4df018e80aff1bf140e32c244f1cf710295): Remove the docgen implementation for now. ([@skyzyx](https://github.com/skyzyx))
 
 ### <!-- ZZZ -->:gear: Miscellaneous Tasks
 
