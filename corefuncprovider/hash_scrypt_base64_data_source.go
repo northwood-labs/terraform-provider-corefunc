@@ -79,7 +79,17 @@ func (d *hashScryptBase64DataSource) Schema(
 
 	resp.Schema = schema.Schema{
 		MarkdownDescription: strings.TrimSpace(dedent.Dedent(`
-        Generates the Scrypt hash of a string with its associated salt value.
+		Generates the Scrypt hash of a string with its associated salt value. Returns a Base64 value
+		instead of a hexadecimal string.
+
+		For the algorithm’s configuration, we’ve chosen parameters that balance security and performance.
+
+		` + "```text" + `
+		N = 32768 (CPU/memory cost parameter)
+		r = 8     (block size parameter)
+		p = 1     (parallelization parameter)
+		Key Length = 32 bytes
+		` + "```" + `
 
 		Maps to the ` + linkPackage("HashScryptBase64") + ` Go method, which can be used in ` + Terratest + `.
 		`)),

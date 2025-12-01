@@ -3,12 +3,28 @@ page_title: "hash_scrypt function - corefunc"
 subcategory: ""
 description: |-
   Generates the Scrypt hash of a string with its associated salt value.
+  For the algorithm’s configuration, we’ve chosen parameters that balance security and performance.
+
+  N = 32768 (CPU/memory cost parameter)
+  r = 8     (block size parameter)
+  p = 1     (parallelization parameter)
+  Key Length = 32 bytes
+
   Maps to the corefunc.HashScrypt() https://pkg.go.dev/github.com/northwood-labs/terraform-provider-corefunc/v2/corefunc#HashScrypt Go method, which can be used in Terratest https://terratest.gruntwork.io.
 ---
 
 # hash_scrypt (function)
 
 Generates the Scrypt hash of a string with its associated salt value.
+
+For the algorithm’s configuration, we’ve chosen parameters that balance security and performance.
+
+```text
+N = 32768 (CPU/memory cost parameter)
+r = 8     (block size parameter)
+p = 1     (parallelization parameter)
+Key Length = 32 bytes
+```
 
 Maps to the [`corefunc.HashScrypt()`](https://pkg.go.dev/github.com/northwood-labs/terraform-provider-corefunc/v2/corefunc#HashScrypt) Go method, which can be used in [Terratest](https://terratest.gruntwork.io).
 
@@ -31,9 +47,7 @@ output "hash_scrypt" {
 
 ## Arguments
 
-
 1. `input` (String) The string to generate the Scrypt hash for.
 1. `salt` (String) A random value to provide additional entropy in the calculation.
-
 
 <!-- Preview the provider docs with the Terraform registry provider docs preview tool: https://registry.terraform.io/tools/doc-preview -->

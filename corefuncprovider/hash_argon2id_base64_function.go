@@ -69,6 +69,15 @@ func (f *hashArgon2idBase64Function) Definition(
 		Generates the Argon2id hash of a string with its associated salt value. Returns a Base64
 		value instead of a hexadecimal string.
 
+		For the algorithm’s configuration, we’ve chosen parameters that balance security and performance.
+
+		` + "```text" + `
+		Time    = 1
+		Memory  = 64 MB
+		Threads = All
+		Key Length = 32 bytes
+		` + "```" + `
+
 		Maps to the ` + linkPackage("HashArgon2idBase64") + ` Go method, which can be used in ` + Terratest + `.
 		`)),
 		Parameters: []function.Parameter{

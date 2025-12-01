@@ -4,15 +4,31 @@ subcategory: ""
 description: |-
   Generates the Argon2id hash of a string with its associated salt value. Returns a Base64
   value instead of a hexadecimal string.
-  	Maps to the [`corefunc.Base64HashArgon2id()`](https://pkg.go.dev/github.com/northwood-labs/terraform-provider-corefunc/v2/corefunc#Base64HashArgon2id) Go method, which can be used in [Terratest](https://terratest.gruntwork.io).
+  For the algorithm’s configuration, we’ve chosen parameters that balance security and performance.
+
+  Time    = 1
+  Memory  = 64 MB
+  Threads = All
+  Key Length = 32 bytes
+
+  Maps to the corefunc.Base64HashArgon2id() https://pkg.go.dev/github.com/northwood-labs/terraform-provider-corefunc/v2/corefunc#Base64HashArgon2id Go method, which can be used in Terratest https://terratest.gruntwork.io.
 ---
 
 # corefunc_hash_argon2id_base64 (Data Source)
 
 Generates the Argon2id hash of a string with its associated salt value. Returns a Base64
-		value instead of a hexadecimal string.
+value instead of a hexadecimal string.
 
-		Maps to the [`corefunc.Base64HashArgon2id()`](https://pkg.go.dev/github.com/northwood-labs/terraform-provider-corefunc/v2/corefunc#Base64HashArgon2id) Go method, which can be used in [Terratest](https://terratest.gruntwork.io).
+For the algorithm’s configuration, we’ve chosen parameters that balance security and performance.
+
+```text
+Time    = 1
+Memory  = 64 MB
+Threads = All
+Key Length = 32 bytes
+```
+
+Maps to the [`corefunc.Base64HashArgon2id()`](https://pkg.go.dev/github.com/northwood-labs/terraform-provider-corefunc/v2/corefunc#Base64HashArgon2id) Go method, which can be used in [Terratest](https://terratest.gruntwork.io).
 
 ## Example Usage
 
@@ -30,11 +46,11 @@ data "corefunc_hash_argon2id_base64" "hash_argon2id_base64" {
 
 ### Required
 
-- `input` (String) The string to generate the Argon2id hash for.
-- `salt` (String) A random value to provide additional entropy in the calculation.
+* `input` (String) The string to generate the Argon2id hash for.
+* `salt` (String) A random value to provide additional entropy in the calculation.
 
 ### Read-Only
 
-- `value` (String) The result of the hashing function.
+* `value` (String) The result of the hashing function.
 
 <!-- Preview the provider docs with the Terraform registry provider docs preview tool: https://registry.terraform.io/tools/doc-preview -->

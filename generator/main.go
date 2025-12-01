@@ -46,6 +46,12 @@ func main() {
 		"Only generate function stubs.",
 	)
 
+	dryRunOpt := flag.Bool(
+		"dry-run",
+		false,
+		"Only print the naming table.",
+	)
+
 	flag.Parse()
 
 	varMap := createVarMap(nameOpt)
@@ -55,6 +61,10 @@ func main() {
 	err = preview.Execute(os.Stdout, varMap)
 	if err != nil {
 		panic(err)
+	}
+
+	if dryRunOpt != nil && *dryRunOpt {
+		return
 	}
 
 	fmt.Println("")

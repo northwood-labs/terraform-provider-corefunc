@@ -7,9 +7,9 @@ locals {
 {{"{{"}} end -{{"}}"}}
 output "{{ .SnakeStrip }}" {
 {{"{{"}}- if contains .Input "\n" {{"}}"}}
-  value = provider::corefunc::{{ .SnakeStrip }}(local.input, "somesaltvalue")
+  value = provider::corefunc::{{ .SnakeStrip }}(local.input, {{"{{"}} .Cost {{"}}"}})
 {{"{{"}}- else {{"}}"}}
-  value = provider::corefunc::{{ .SnakeStrip }}("{{"{{"}} .Input {{"}}"}}", "somesaltvalue")
+  value = provider::corefunc::{{ .SnakeStrip }}("{{"{{"}} .Input {{"}}"}}", {{"{{"}} .Cost {{"}}"}})
 {{"{{"}}- end {{"}}"}}
 }
 

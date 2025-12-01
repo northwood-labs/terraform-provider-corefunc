@@ -43,7 +43,7 @@ type (
 	// {{ .CamelStrip }}DataSourceModel maps the data source schema data.
 	{{ .CamelStrip }}DataSourceModel struct {
 		Input types.String `tfsdk:"input"`
-		Salt  types.String `tfsdk:"salt"`
+		Key   types.String `tfsdk:"key"`
 		Value types.String `tfsdk:"value"`
 	}
 )
@@ -80,7 +80,7 @@ func (d *{{ .CamelStrip }}DataSource) Schema(
 
 	resp.Schema = schema.Schema{
 		MarkdownDescription: strings.TrimSpace(dedent.Dedent(`
-        Generates the {{ strip .PascalStrip "Hash" }} hash of a string with its associated salt value.{{ if contains .PascalStrip "Base64" }} Returns a Base64 value instead of a hexadecimal string.{{ end }}
+		Generates the {{ strip .PascalStrip "Hash" }} hash of a string with its associated key value.{{ if contains .PascalStrip "Base64" }} Returns a Base64 value instead of a hexadecimal string.{{ end }}
 
 		Maps to the ` + linkPackage("{{ .PascalStrip }}") + ` Go method, which can be used in ` + Terratest + `.
 		`)),
@@ -89,9 +89,9 @@ func (d *{{ .CamelStrip }}DataSource) Schema(
 				MarkdownDescription: "The string to generate the {{ strip .PascalStrip "Hash" }} hash for.",
 				Required:            true,
 			},
-			"salt": schema.StringAttribute{
-				MarkdownDescription: "A random value to provide additional entropy in the calculation.",
-				Required:            true,
+			"cost": schema.IntegerAttribute{
+				MarkdownDescription: "How much effort to spend generating a value. Common values are 10–14. The default value is 10.",
+				Required:            false,
 			},
 			"value": schema.StringAttribute{
 				MarkdownDescription: "The result of the hashing function.",
@@ -150,13 +150,13 @@ func (d *{{ .CamelStrip }}DataSource) Read( // lint:no_dupe
 	resp.Diagnostics.Append(diags...)
 
 	// @TODO
-    value, err := corefunc.{{ .PascalStrip }}(
-        state.Input.ValueString(),
-        []byte(state.Salt.ValueString()),
-    )
+	value, err := corefunc.{{ .PascalStrip }}(
+		state.Input.ValueString(),
+		state.Cost.ValueInt(),
+	)
 	if err != nil {
 		resp.Diagnostics.AddError(
-			"Problem with calculating the ALGORITHM hash.",
+			"Problem with calculating the Bcrypt hash.",
 			err.Error(),
 		)
 
