@@ -100,6 +100,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`a69cb55`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/a69cb550e70103f80c1784aa8b8763359c950442): Added SHA-3 256/384/512 hashing with Base64 output. ([@skyzyx](https://github.com/skyzyx))
 * [`17f1088`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/17f1088b7b4af51901653a046f035c75b99b4f10): Added Argon2 hashing. ([@skyzyx](https://github.com/skyzyx))
 * [`40c5bc9`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/40c5bc91509fca17e9cbccdffb24e7c44e65696b): Added Argon2 and Scrypt hashing with Base64 output. ([@skyzyx](https://github.com/skyzyx))
+* [`b3a9309`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/b3a9309e281947e2e671f59708dde375679b98ac): Added Bcrypt and HMAC SHA-256. ([@skyzyx](https://github.com/skyzyx))
 
 ### <!-- 1 -->:bug: Bug Fixes
 
@@ -1186,4 +1187,4 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`6bc72f6`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/6bc72f6d3927147c41665e0ccab69657a4dcd721): Trying to get the build to work. ([@skyzyx](https://github.com/skyzyx))
 * [`8c39e22`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/8c39e221bba5ab7364c52660d794fb75cbd35ff1): Harden GitHub Actions ([#129](https://github.com/northwood-labs/terraform-provider-corefunc/issues/129)) ([@step-security-bot](https://github.com/step-security-bot))
 
-<p>Generated on 2025-11-30.</p>
+<p>Generated on 2025-12-01.</p>
