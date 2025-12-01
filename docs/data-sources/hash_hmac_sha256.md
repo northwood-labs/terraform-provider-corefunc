@@ -2,15 +2,15 @@
 page_title: "corefunc_hash_hmac_sha256 Data Source - corefunc"
 subcategory: ""
 description: |-
-  Generates the HmacSha256 hash of a string with its associated key value.
-  	Maps to the [`corefunc.HashHmacSha256()`](https://pkg.go.dev/github.com/northwood-labs/terraform-provider-corefunc/v2/corefunc#HashHmacSha256) Go method, which can be used in [Terratest](https://terratest.gruntwork.io).
+  Generates the SHA-2/256-bit HMAC hash of a string with its associated key value.
+  Maps to the corefunc.HashHMACSHA256() https://pkg.go.dev/github.com/northwood-labs/terraform-provider-corefunc/v2/corefunc#HashHMACSHA256 Go method, which can be used in Terratest https://terratest.gruntwork.io.
 ---
 
 # corefunc_hash_hmac_sha256 (Data Source)
 
-Generates the HmacSha256 hash of a string with its associated key value.
+Generates the SHA-2/256-bit HMAC hash of a string with its associated key value.
 
-		Maps to the [`corefunc.HashHmacSha256()`](https://pkg.go.dev/github.com/northwood-labs/terraform-provider-corefunc/v2/corefunc#HashHmacSha256) Go method, which can be used in [Terratest](https://terratest.gruntwork.io).
+Maps to the [`corefunc.HashHMACSHA256()`](https://pkg.go.dev/github.com/northwood-labs/terraform-provider-corefunc/v2/corefunc#HashHMACSHA256) Go method, which can be used in [Terratest](https://terratest.gruntwork.io).
 
 ## Example Usage
 
@@ -28,7 +28,7 @@ data "corefunc_hash_hmac_sha256" "hash_hmac_sha256" {
 
 ### Required
 
-* `input` (String) The string to generate the HmacSha256 hash for.
+* `input` (String) The string to generate the SHA-2/256-bit HMAC hash for.
 * `key` (String) A secret value to provide additional entropy in the calculation.
 
 ### Read-Only

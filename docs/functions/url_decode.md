@@ -6,9 +6,11 @@ description: |-
   It can decode a wide range of characters, including those beyond the ASCII set.
   Non-ASCII characters are first interpreted as UTF-8 bytes, then percent-decoded
   byte-by-byte, ensuring correct decoding of multibyte characters.
-  -> This functionality is built into OpenTofu 1.8, but is missing in Terraform 1.9.
-  This also provides a 1:1 implementation that can be used with Terratest or other
-  Go code.
+  ~> This functionality is built into OpenTofu 1.8, but has not been implemented
+  in Terraform (as of version 1.15).
+  -> This port from OpenTofu provides a 1:1 implementation that can be used with
+  Terratest or other Go code, as well as with OpenTofu and Terraform going all
+  the way back to v1.0.
   Maps to the corefunc.URLDecode() https://pkg.go.dev/github.com/northwood-labs/terraform-provider-corefunc/v2/corefunc#URLDecode Go method, which can be used in Terratest https://terratest.gruntwork.io.
 ---
 
@@ -20,9 +22,12 @@ It can decode a wide range of characters, including those beyond the ASCII set.
 Non-ASCII characters are first interpreted as UTF-8 bytes, then percent-decoded
 byte-by-byte, ensuring correct decoding of multibyte characters.
 
--> This functionality is built into OpenTofu 1.8, but is missing in Terraform 1.9.
-This also provides a 1:1 implementation that can be used with Terratest or other
-Go code.
+~> This functionality is built into OpenTofu 1.8, but has not been implemented
+in Terraform (as of version 1.15).
+
+-> This port from OpenTofu provides a 1:1 implementation that can be used with
+Terratest or other Go code, as well as with OpenTofu and Terraform going all
+the way back to v1.0.
 
 Maps to the [`corefunc.URLDecode()`](https://pkg.go.dev/github.com/northwood-labs/terraform-provider-corefunc/v2/corefunc#URLDecode) Go method, which can be used in [Terratest](https://terratest.gruntwork.io).
 

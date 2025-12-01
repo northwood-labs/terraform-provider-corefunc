@@ -79,7 +79,7 @@ func (d *hashHmacBase64sha256DataSource) Schema(
 
 	resp.Schema = schema.Schema{
 		MarkdownDescription: strings.TrimSpace(dedent.Dedent(`
-        Generates the SHA-2/256-bit HMAC hash of a string with its associated key value. Returns a
+		Generates the SHA-2/256-bit HMAC hash of a string with its associated key value. Returns a
 		Base64 value instead of a hexadecimal string.
 
 		Maps to the ` + linkPackage("Base64HashHMACSHA256") + ` Go method, which can be used in ` + Terratest + `.

@@ -79,13 +79,13 @@ func (d *hashHmacSha256DataSource) Schema(
 
 	resp.Schema = schema.Schema{
 		MarkdownDescription: strings.TrimSpace(dedent.Dedent(`
-        Generates the HmacSha256 hash of a string with its associated key value.
+		Generates the SHA-2/256-bit HMAC hash of a string with its associated key value.
 
-		Maps to the ` + linkPackage("HashHmacSha256") + ` Go method, which can be used in ` + Terratest + `.
+		Maps to the ` + linkPackage("HashHMACSHA256") + ` Go method, which can be used in ` + Terratest + `.
 		`)),
 		Attributes: map[string]schema.Attribute{
 			"input": schema.StringAttribute{
-				MarkdownDescription: "The string to generate the HmacSha256 hash for.",
+				MarkdownDescription: "The string to generate the SHA-2/256-bit HMAC hash for.",
 				Required:            true,
 			},
 			"key": schema.StringAttribute{
