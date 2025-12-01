@@ -4,15 +4,15 @@ subcategory: ""
 description: |-
   Generates the SHA-2/256-bit HMAC hash of a string with its associated key value. Returns a
   Base64 value instead of a hexadecimal string.
-  	Maps to the [`corefunc.Base64HashHMACSHA256()`](https://pkg.go.dev/github.com/northwood-labs/terraform-provider-corefunc/v2/corefunc#Base64HashHMACSHA256) Go method, which can be used in [Terratest](https://terratest.gruntwork.io).
+  Maps to the corefunc.Base64HashHMACSHA256() https://pkg.go.dev/github.com/northwood-labs/terraform-provider-corefunc/v2/corefunc#Base64HashHMACSHA256 Go method, which can be used in Terratest https://terratest.gruntwork.io.
 ---
 
 # corefunc_hash_hmac_base64sha256 (Data Source)
 
 Generates the SHA-2/256-bit HMAC hash of a string with its associated key value. Returns a
-  Base64 value instead of a hexadecimal string.
+Base64 value instead of a hexadecimal string.
 
-		Maps to the [`corefunc.Base64HashHMACSHA256()`](https://pkg.go.dev/github.com/northwood-labs/terraform-provider-corefunc/v2/corefunc#Base64HashHMACSHA256) Go method, which can be used in [Terratest](https://terratest.gruntwork.io).
+Maps to the [`corefunc.Base64HashHMACSHA256()`](https://pkg.go.dev/github.com/northwood-labs/terraform-provider-corefunc/v2/corefunc#Base64HashHMACSHA256) Go method, which can be used in [Terratest](https://terratest.gruntwork.io).
 
 ## Example Usage
 

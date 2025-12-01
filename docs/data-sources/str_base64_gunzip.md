@@ -9,9 +9,11 @@ description: |-
   RFC 4648 §4 https://datatracker.ietf.org/doc/html/rfc4648#section-4.
   ~> There is a data limit of 10 MiB (10485760 bytes) for the decompressed data. This
   is to avoid "decompression bomb" vulnerabilities.
-  -> This functionality is built into OpenTofu 1.8, but is missing in Terraform 1.9.
-  This also provides a 1:1 implementation that can be used with Terratest or other
-  Go code.
+  ~> This functionality is built into OpenTofu 1.8, but has not been implemented
+  in Terraform (as of version 1.15).
+  -> This port from OpenTofu provides a 1:1 implementation that can be used with
+  Terratest or other Go code, as well as with OpenTofu and Terraform going all
+  the way back to v1.0.
   Maps to the corefunc.Base64Gunzip() https://pkg.go.dev/github.com/northwood-labs/terraform-provider-corefunc/v2/corefunc#Base64Gunzip Go method, which can be used in Terratest https://terratest.gruntwork.io.
 ---
 
@@ -27,9 +29,12 @@ Uses the "standard" Base64 alphabet as defined in
 ~> There is a data limit of 10 MiB (10485760 bytes) for the decompressed data. This
 is to avoid "decompression bomb" vulnerabilities.
 
--> This functionality is built into OpenTofu 1.8, but is missing in Terraform 1.9.
-This also provides a 1:1 implementation that can be used with Terratest or other
-Go code.
+~> This functionality is built into OpenTofu 1.8, but has not been implemented
+in Terraform (as of version 1.15).
+
+-> This port from OpenTofu provides a 1:1 implementation that can be used with
+Terratest or other Go code, as well as with OpenTofu and Terraform going all
+the way back to v1.0.
 
 Maps to the [`corefunc.Base64Gunzip()`](https://pkg.go.dev/github.com/northwood-labs/terraform-provider-corefunc/v2/corefunc#Base64Gunzip) Go method, which can be used in [Terratest](https://terratest.gruntwork.io).
 
