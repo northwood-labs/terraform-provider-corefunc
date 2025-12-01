@@ -1,23 +1,19 @@
-# goplicate-start:always
 _*.out
 _/
 _cache_/*
 .dccache
 .lefthook-local/
 .private.env
+.test-data
 *.cache.json
 *.zip
 dist/
-# goplicate-end:always
 
-# goplicate-start:go
 *.pgo
 *.pprof
 *.test
 callgrind.*
-# goplicate-end:go
 
-# goplicate-start:terraform
 .infracost
 .terraform
 .terraform.lock.hcl
@@ -40,7 +36,6 @@ tests/**/terratest-*
 tests/terraform.*
 tests/terratest-*
 tfplan
-# goplicate-end:terraform
 
 bin/git-cliff
 
