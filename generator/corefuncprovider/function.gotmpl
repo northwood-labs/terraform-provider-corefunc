@@ -76,9 +76,9 @@ func (f *{{ .CamelStrip }}Function) Definition(
 				Name:                "input",
 				MarkdownDescription: "The string to generate the {{ strip .PascalStrip "Hash" }} hash for.",
 			},
-			function.StringParameter{
-				Name:                "salt",
-				MarkdownDescription: "A random value to provide additional entropy in the calculation.",
+			function.IntegerParameter{
+				Name:                "cost",
+				MarkdownDescription: "How much effort to spend generating a value. Common values are 10–14. The default value is 10.",
 			},
 		},
 		Return: function.StringReturn{},
@@ -91,8 +91,8 @@ func (f *{{ .CamelStrip }}Function) Run(ctx context.Context, req function.RunReq
 	tflog.Debug(ctx, "Starting {{ .PascalStrip }} Function Run method.")
 
 	var input string
-	var salt string
-	err := req.Arguments.Get(ctx, &input, &salt)
+	var cost int
+	err := req.Arguments.Get(ctx, &input, &cost)
 
 	resp.Error = function.ConcatFuncErrors(err)
 	if resp.Error != nil {
@@ -100,7 +100,7 @@ func (f *{{ .CamelStrip }}Function) Run(ctx context.Context, req function.RunReq
 	}
 
 	// @TODO
-	value, e := corefunc.{{ .PascalStrip }}(input, []byte(salt))
+	value, e := corefunc.{{ .PascalStrip }}(input, cost)
 	if e != nil {
 		resp.Error = function.ConcatFuncErrors(
 			function.NewFuncError(e.Error()),

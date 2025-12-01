@@ -3,12 +3,28 @@ page_title: "hash_argon2id function - corefunc"
 subcategory: ""
 description: |-
   Generates the Argon2id hash of a string with its associated salt value.
+  For the algorithm’s configuration, we’ve chosen parameters that balance security and performance.
+
+  Time    = 1
+  Memory  = 64 MB
+  Threads = All
+  Key Length = 32 bytes
+
   Maps to the corefunc.HashArgon2id() https://pkg.go.dev/github.com/northwood-labs/terraform-provider-corefunc/v2/corefunc#HashArgon2id Go method, which can be used in Terratest https://terratest.gruntwork.io.
 ---
 
 # hash_argon2id (function)
 
 Generates the Argon2id hash of a string with its associated salt value.
+
+For the algorithm’s configuration, we’ve chosen parameters that balance security and performance.
+
+```text
+Time    = 1
+Memory  = 64 MB
+Threads = All
+Key Length = 32 bytes
+```
 
 Maps to the [`corefunc.HashArgon2id()`](https://pkg.go.dev/github.com/northwood-labs/terraform-provider-corefunc/v2/corefunc#HashArgon2id) Go method, which can be used in [Terratest](https://terratest.gruntwork.io).
 

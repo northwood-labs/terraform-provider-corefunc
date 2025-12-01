@@ -79,8 +79,17 @@ func (d *hashArgon2idBase64DataSource) Schema(
 
 	resp.Schema = schema.Schema{
 		MarkdownDescription: strings.TrimSpace(dedent.Dedent(`
-        Generates the Argon2id hash of a string with its associated salt value. Returns a Base64
+		Generates the Argon2id hash of a string with its associated salt value. Returns a Base64
 		value instead of a hexadecimal string.
+
+		For the algorithm’s configuration, we’ve chosen parameters that balance security and performance.
+
+		` + "```text" + `
+		Time    = 1
+		Memory  = 64 MB
+		Threads = All
+		Key Length = 32 bytes
+		` + "```" + `
 
 		Maps to the ` + linkPackage("Base64HashArgon2id") + ` Go method, which can be used in ` + Terratest + `.
 		`)),

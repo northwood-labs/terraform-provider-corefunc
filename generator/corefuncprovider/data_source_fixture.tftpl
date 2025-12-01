@@ -11,7 +11,7 @@ data "{{ .Snake }}" "{{ .SnakeStrip }}" {
 {{"{{"}}- else {{"}}"}}
   input = "{{"{{"}} .Input {{"}}"}}"
 {{"{{"}}- end {{"}}"}}
-  salt  = "somesaltvalue"
+  cost  = {{"{{"}} .Cost {{"}}"}}
 }
 
 #=> {{"{{"}} .Expected {{"}}"}}

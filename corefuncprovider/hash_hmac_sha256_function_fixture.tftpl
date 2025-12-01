@@ -1,0 +1,16 @@
+{{ if contains .Input "\n" -}}
+locals {
+  input = <<EOT
+{{ .Input }}EOT
+}
+
+{{ end -}}
+output "hash_hmac_sha256" {
+{{- if contains .Input "\n" }}
+  value = provider::corefunc::hash_hmac_sha256(local.input, "secretkey")
+{{- else }}
+  value = provider::corefunc::hash_hmac_sha256("{{ .Input }}", "secretkey")
+{{- end }}
+}
+
+#=> {{ .Expected }}

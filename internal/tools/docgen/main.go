@@ -204,6 +204,7 @@ func GenMarkdownTreeCustom(cm *cobra.Command, dir string, filePrepender, linkHan
 
 func main() {
 	out := flag.String("out", "./docs/cli", "output directory")
+
 	flag.Parse()
 
 	if err := os.MkdirAll(*out, 0o755); err != nil {
