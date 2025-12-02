@@ -80,6 +80,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`d209e82`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/d209e8218f5dab915f3ec3376b76be6391d6cb30): **deps**: Bump `golangci/golangci-lint-action` from 8.0.0 to 9.1.0 ([@dependabot](https://github.com/dependabot))
 * [`c6d82aa`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/c6d82aa3aedbefca0a8f1eee1ac892671755cdf9): **deps**: Bump `actions/checkout` from 5.0.1 to 6.0.0 ([@dependabot](https://github.com/dependabot))
 * [`6ab1b43`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/6ab1b43fc83315d28073ec877e7c16f21ecaf221): Update Go dependencies. ([@skyzyx](https://github.com/skyzyx))
+* [`c6ca2db`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/c6ca2db4590fcfea78dfb757c882edcb6764fc87): **deps**: Bump `github/codeql-action` from 4.31.5 to 4.31.6 ([#666](https://github.com/northwood-labs/terraform-provider-corefunc/issues/666)) ([@dependabot](https://github.com/dependabot))
 
 ### :test_tube: Testing
 
@@ -103,6 +104,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`17f1088`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/17f1088b7b4af51901653a046f035c75b99b4f10): Added Argon2 hashing. ([@skyzyx](https://github.com/skyzyx))
 * [`40c5bc9`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/40c5bc91509fca17e9cbccdffb24e7c44e65696b): Added Argon2 and Scrypt hashing with Base64 output. ([@skyzyx](https://github.com/skyzyx))
 * [`b3a9309`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/b3a9309e281947e2e671f59708dde375679b98ac): Added Bcrypt and HMAC SHA-256. ([@skyzyx](https://github.com/skyzyx))
+* [`9104af9`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/9104af952808f7e1b0bba6140c47da4f4eeeac56): Added str_startswith. ([@skyzyx](https://github.com/skyzyx))
 
 ### <!-- 1 -->:bug: Bug Fixes
 
@@ -1190,4 +1192,4 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`6bc72f6`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/6bc72f6d3927147c41665e0ccab69657a4dcd721): Trying to get the build to work. ([@skyzyx](https://github.com/skyzyx))
 * [`8c39e22`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/8c39e221bba5ab7364c52660d794fb75cbd35ff1): Harden GitHub Actions ([#129](https://github.com/northwood-labs/terraform-provider-corefunc/issues/129)) ([@step-security-bot](https://github.com/step-security-bot))
 
-<p>Generated on 2025-12-01.</p>
+<p>Generated on 2025-12-02.</p>
