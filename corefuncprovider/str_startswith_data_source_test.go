@@ -20,21 +20,22 @@ import (
 	"fmt"
 	"log"
 	"os"
+	"strconv"
 	"strings"
 	"testing"
 	"text/template"
 
 	"github.com/northwood-labs/terraform-provider-corefunc/v2/testfixtures"
 
-    "github.com/hashicorp/terraform-plugin-testing/helper/resource"
+	"github.com/hashicorp/terraform-plugin-testing/helper/resource"
 )
 
-func TestAcc{{ .PascalStrip }}DataSource(t *testing.T) {
-    t.Parallel()
+func TestAccStrStartswithDataSource(t *testing.T) {
+	t.Parallel()
 
 	funcName := traceFuncName()
 
-	for name, tc := range testfixtures.{{ .PascalStrip }}TestTable { // lint:no_dupe
+	for name, tc := range testfixtures.StrStartsWithTestTable { // lint:no_dupe
 		fmt.Printf(
 			"=== RUN   %s/%s\n",
 			strings.TrimSpace(funcName),
@@ -43,9 +44,9 @@ func TestAcc{{ .PascalStrip }}DataSource(t *testing.T) {
 
 		buf := &bytes.Buffer{}
 		tmpl := template.Must(
-			template.New("{{ .SnakeStrip }}_data_source_fixture.tftpl").
+			template.New("str_startswith_data_source_fixture.tftpl").
 				Funcs(FuncMap()).
-				ParseFiles("{{ .SnakeStrip }}_data_source_fixture.tftpl"),
+				ParseFiles("str_startswith_data_source_fixture.tftpl"),
 		)
 
 		err := tmpl.Execute(buf, tc)
@@ -63,7 +64,11 @@ func TestAcc{{ .PascalStrip }}DataSource(t *testing.T) {
 				{
 					Config: providerConfig + buf.String(),
 					Check: resource.ComposeAggregateTestCheckFunc(
-						resource.TestCheckResourceAttr("data.corefunc_{{ .SnakeStrip }}.{{ .SnakeStrip }}", "value", strconv.FormatBool(tc.Expected)),
+						resource.TestCheckResourceAttr(
+							"data.corefunc_str_startswith.str_startswith",
+							"value",
+							strconv.FormatBool(tc.Expected),
+						),
 					),
 				},
 			},

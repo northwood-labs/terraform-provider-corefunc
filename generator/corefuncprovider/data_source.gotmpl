@@ -42,9 +42,9 @@ type (
 
 	// {{ .CamelStrip }}DataSourceModel maps the data source schema data.
 	{{ .CamelStrip }}DataSourceModel struct {
-		Input types.String `tfsdk:"input"`
-		Key   types.String `tfsdk:"key"`
-		Value types.String `tfsdk:"value"`
+		Input  types.String `tfsdk:"input"`
+		Prefix types.String `tfsdk:"key"` // @TODO
+		Value  types.Bool `tfsdk:"value"`
 	}
 )
 
@@ -80,21 +80,21 @@ func (d *{{ .CamelStrip }}DataSource) Schema(
 
 	resp.Schema = schema.Schema{
 		MarkdownDescription: strings.TrimSpace(dedent.Dedent(`
-		Generates the {{ strip .PascalStrip "Hash" }} hash of a string with its associated key value.{{ if contains .PascalStrip "Base64" }} Returns a Base64 value instead of a hexadecimal string.{{ end }}
+		@TODO
 
 		Maps to the ` + linkPackage("{{ .PascalStrip }}") + ` Go method, which can be used in ` + Terratest + `.
 		`)),
 		Attributes: map[string]schema.Attribute{
 			"input": schema.StringAttribute{
-				MarkdownDescription: "The string to generate the {{ strip .PascalStrip "Hash" }} hash for.",
+				MarkdownDescription: "",
 				Required:            true,
 			},
-			"cost": schema.IntegerAttribute{
-				MarkdownDescription: "How much effort to spend generating a value. Common values are 10–14. The default value is 10.",
-				Required:            false,
+			"prefix": schema.StringAttribute{
+				MarkdownDescription: "",
+				Required:            true,
 			},
-			"value": schema.StringAttribute{
-				MarkdownDescription: "The result of the hashing function.",
+			"value": schema.BoolAttribute{
+				MarkdownDescription: "",
 				Computed:            true,
 			},
 		},
@@ -150,20 +150,12 @@ func (d *{{ .CamelStrip }}DataSource) Read( // lint:no_dupe
 	resp.Diagnostics.Append(diags...)
 
 	// @TODO
-	value, err := corefunc.{{ .PascalStrip }}(
+	value := corefunc.{{ .PascalStrip }}(
 		state.Input.ValueString(),
-		state.Cost.ValueInt(),
+		state.Prefix.ValueString(),
 	)
-	if err != nil {
-		resp.Diagnostics.AddError(
-			"Problem with calculating the Bcrypt hash.",
-			err.Error(),
-		)
 
-		return
-	}
-
-	state.Value = types.StringValue(value)
+	state.Value = types.BoolValue(value)
 
 	diags = resp.State.Set(ctx, &state)
 	resp.Diagnostics.Append(diags...)

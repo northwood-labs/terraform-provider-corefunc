@@ -1,0 +1,6 @@
+data "corefunc_str_startswith" "str_startswith" {
+  input  = "{{ .Input }}"
+  prefix = "{{ .Prefix }}"
+}
+
+#=> {{ .Expected }}

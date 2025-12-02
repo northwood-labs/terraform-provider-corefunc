@@ -26,15 +26,18 @@ import (
 
 	"github.com/northwood-labs/terraform-provider-corefunc/v2/testfixtures"
 
-    "github.com/hashicorp/terraform-plugin-testing/helper/resource"
+	"github.com/hashicorp/terraform-plugin-testing/helper/resource"
+	"github.com/hashicorp/terraform-plugin-testing/knownvalue"
+	"github.com/hashicorp/terraform-plugin-testing/statecheck"
+	"github.com/hashicorp/terraform-plugin-testing/tfversion"
 )
 
-func TestAcc{{ .PascalStrip }}DataSource(t *testing.T) {
-    t.Parallel()
+func TestAccStrStartswithFunction(t *testing.T) {
+	t.Parallel()
 
 	funcName := traceFuncName()
 
-	for name, tc := range testfixtures.{{ .PascalStrip }}TestTable { // lint:no_dupe
+	for name, tc := range testfixtures.StrStartsWithTestTable { // lint:no_dupe
 		fmt.Printf(
 			"=== RUN   %s/%s\n",
 			strings.TrimSpace(funcName),
@@ -43,9 +46,9 @@ func TestAcc{{ .PascalStrip }}DataSource(t *testing.T) {
 
 		buf := &bytes.Buffer{}
 		tmpl := template.Must(
-			template.New("{{ .SnakeStrip }}_data_source_fixture.tftpl").
+			template.New("str_startswith_function_fixture.tftpl").
 				Funcs(FuncMap()).
-				ParseFiles("{{ .SnakeStrip }}_data_source_fixture.tftpl"),
+				ParseFiles("str_startswith_function_fixture.tftpl"),
 		)
 
 		err := tmpl.Execute(buf, tc)
@@ -57,14 +60,18 @@ func TestAcc{{ .PascalStrip }}DataSource(t *testing.T) {
 			fmt.Fprintln(os.Stderr, buf.String())
 		}
 
-		resource.Test(t, resource.TestCase{
+		resource.UnitTest(t, resource.TestCase{
+			TerraformVersionChecks: []tfversion.TerraformVersionCheck{
+				tfversion.SkipBelow(tfversion.Version1_8_0),
+			},
 			ProtoV6ProviderFactories: testAccProtoV6ProviderFactories,
 			Steps: []resource.TestStep{
 				{
 					Config: providerConfig + buf.String(),
-					Check: resource.ComposeAggregateTestCheckFunc(
-						resource.TestCheckResourceAttr("data.corefunc_{{ .SnakeStrip }}.{{ .SnakeStrip }}", "value", strconv.FormatBool(tc.Expected)),
-					),
+					ConfigStateChecks: []statecheck.StateCheck{
+						statecheck.ExpectKnownOutputValue("str_startswith", knownvalue.Bool(tc.Expected)),
+					},
+					// ExpectError: tc.expectedError,
 				},
 			},
 		})

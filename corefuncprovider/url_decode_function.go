@@ -72,7 +72,7 @@ func (f *urlDecodeFunction) Definition(
 		Non-ASCII characters are first interpreted as UTF-8 bytes, then percent-decoded
 		byte-by-byte, ensuring correct decoding of multibyte characters.
 
-		~> This functionality is built into OpenTofu 1.8, but has not been implemented
+		~> This functionality is built into OpenTofu 1.7, but has not been implemented
 		in Terraform (as of version 1.15).
 
 		-> This port from OpenTofu provides a 1:1 implementation that can be used with

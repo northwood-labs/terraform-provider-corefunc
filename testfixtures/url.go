@@ -267,6 +267,9 @@ var (
 	// URLDecodeTestTable is used by both the standard Go tests and also the
 	// Terraform acceptance tests.
 	// <https://github.com/golang/go/wiki/TableDrivenTests>
+	//
+	// Ported from OpenTofu, forked from Terraform. This function is licensed as
+	// MPL-2.0.
 	URLDecodeTestTable = map[string]struct { // lint:no_dupe
 		Input       string
 		Expected    string

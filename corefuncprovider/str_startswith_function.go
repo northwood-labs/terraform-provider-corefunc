@@ -17,7 +17,6 @@ package corefuncprovider // lint:no_dupe
 
 import (
 	"context"
-	"fmt"
 	"strings"
 
 	"github.com/hashicorp/terraform-plugin-framework/function"
@@ -28,70 +27,80 @@ import (
 )
 
 // Ensure the implementation satisfies the expected interfaces.
-var _ function.Function = &{{ .CamelStrip }}Function{}
+var _ function.Function = &strStartswithFunction{}
 
 type (
-	// {{ .CamelStrip }}Function is the function implementation.
-	{{ .CamelStrip }}Function struct{}
+	// strStartswithFunction is the function implementation.
+	strStartswithFunction struct{}
 )
 
-// {{ .PascalStrip }}Function is a method that exposes its paired Go function as a
+// StrStartswithFunction is a method that exposes its paired Go function as a
 // Terraform Function.
 // https://developer.hashicorp.com/terraform/plugin/framework/functions/implementation
-func {{ .PascalStrip }}Function() function.Function { // lint:allow_return_interface
-	return &{{ .CamelStrip }}Function{}
+func StrStartswithFunction() function.Function { // lint:allow_return_interface
+	return &strStartswithFunction{}
 }
 
-func (f *{{ .CamelStrip }}Function) Metadata(
+func (f *strStartswithFunction) Metadata(
 	ctx context.Context,
 	_ function.MetadataRequest,
 	resp *function.MetadataResponse,
 ) {
-	tflog.Debug(ctx, "Starting {{ .PascalStrip }} Function Metadata method.")
+	tflog.Debug(ctx, "Starting StrStartswith Function Metadata method.")
 
-	resp.Name = "{{ .SnakeStrip }}"
+	resp.Name = "str_startswith"
 
-	tflog.Debug(ctx, fmt.Sprintf("resp.Name = %s", resp.Name))
+	tflog.Debug(ctx, "resp.Name = "+resp.Name)
 
-	tflog.Debug(ctx, "Ending {{ .PascalStrip }} Function Metadata method.")
+	tflog.Debug(ctx, "Ending StrStartswith Function Metadata method.")
 }
 
 // Definition defines the parameters and return type for the function.
-func (f *{{ .CamelStrip }}Function) Definition(
+func (f *strStartswithFunction) Definition(
 	ctx context.Context,
 	_ function.DefinitionRequest,
 	resp *function.DefinitionResponse,
 ) {
-	tflog.Debug(ctx, "Starting {{ .PascalStrip }} Function Definition method.")
+	tflog.Debug(ctx, "Starting StrStartswith Function Definition method.")
 
 	resp.Definition = function.Definition{
-		Summary: "@TODO",
+		Summary: "Takes a string to check and a prefix string, and returns true if the string begins" +
+			" with that exact prefix.",
 		MarkdownDescription: strings.TrimSpace(dedent.Dedent(`
-		@TODO
+		Takes a string to check and a prefix string, and returns true if the
+		string begins with that exact prefix.
 
-		Maps to the ` + linkPackage("{{ .PascalStrip }}") + ` Go method, which can be used in ` + Terratest + `.
+		-> This is identical to the built-in ` + "`startswith`" + ` function
+		which was added in Terraform 1.3. This provides a 1:1 implementation
+		that can be used with Terratest or other Go code, as well as with
+		OpenTofu and Terraform going all the way back to v1.0.
+
+		Maps to the ` + linkPackage("StrStartswith") + ` Go method, which can be used in ` + Terratest + `.
 		`)),
 		Parameters: []function.Parameter{
 			function.StringParameter{
 				Name:                "input",
-				MarkdownDescription: "@TODO",
+				MarkdownDescription: "The string to check.",
 			},
 			function.StringParameter{
 				Name:                "prefix",
-				MarkdownDescription: "@TODO",
+				MarkdownDescription: "The prefix to check for.",
 			},
 		},
 		Return: function.BoolReturn{},
 	}
 
-	tflog.Debug(ctx, "Ending {{ .PascalStrip }} Function Definition method.")
+	tflog.Debug(ctx, "Ending StrStartswith Function Definition method.")
 }
 
-func (f *{{ .CamelStrip }}Function) Run(ctx context.Context, req function.RunRequest, resp *function.RunResponse) {
-	tflog.Debug(ctx, "Starting {{ .PascalStrip }} Function Run method.")
+func (f *strStartswithFunction) Run(ctx context.Context, req function.RunRequest, resp *function.RunResponse) {
+	tflog.Debug(ctx, "Starting StrStartswith Function Run method.")
 
-	var input string
-	var prefix string
+	var (
+		input  string
+		prefix string
+	)
+
 	err := req.Arguments.Get(ctx, &input, &prefix)
 
 	resp.Error = function.ConcatFuncErrors(err)
@@ -99,10 +108,9 @@ func (f *{{ .CamelStrip }}Function) Run(ctx context.Context, req function.RunReq
 		return
 	}
 
-	// @TODO
-	value := corefunc.{{ .PascalStrip }}(input, prefix)
+	value := corefunc.StrStartsWith(input, prefix)
 
 	resp.Error = function.ConcatFuncErrors(resp.Result.Set(ctx, value))
 
-	tflog.Debug(ctx, "Ending {{ .PascalStrip }} Function Run method.")
+	tflog.Debug(ctx, "Ending StrStartswith Function Run method.")
 }
