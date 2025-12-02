@@ -105,6 +105,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`40c5bc9`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/40c5bc91509fca17e9cbccdffb24e7c44e65696b): Added Argon2 and Scrypt hashing with Base64 output. ([@skyzyx](https://github.com/skyzyx))
 * [`b3a9309`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/b3a9309e281947e2e671f59708dde375679b98ac): Added Bcrypt and HMAC SHA-256. ([@skyzyx](https://github.com/skyzyx))
 * [`9104af9`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/9104af952808f7e1b0bba6140c47da4f4eeeac56): Added str_startswith. ([@skyzyx](https://github.com/skyzyx))
+* [`fbf6f14`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/fbf6f14672763864b0754385d0e8f9bbde8528ec): Added str_endswith. ([@skyzyx](https://github.com/skyzyx))
 
 ### <!-- 1 -->:bug: Bug Fixes
 
