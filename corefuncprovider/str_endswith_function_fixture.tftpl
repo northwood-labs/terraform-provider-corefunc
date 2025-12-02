@@ -1,0 +1,5 @@
+output "str_endswith" {
+  value = provider::corefunc::str_endswith("{{ .Input }}", "{{ .Suffix }}")
+}
+
+#=> {{ .Expected }}

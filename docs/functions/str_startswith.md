@@ -8,7 +8,7 @@ description: |-
   which was added in Terraform 1.3. This provides a 1:1 implementation
   that can be used with Terratest or other Go code, as well as with
   OpenTofu and Terraform going all the way back to v1.0.
-  Maps to the corefunc.StrStartswith() https://pkg.go.dev/github.com/northwood-labs/terraform-provider-corefunc/v2/corefunc#StrStartswith Go method, which can be used in Terratest https://terratest.gruntwork.io.
+  Maps to the corefunc.StrStartsWith() https://pkg.go.dev/github.com/northwood-labs/terraform-provider-corefunc/v2/corefunc#StrStartsWith Go method, which can be used in Terratest https://terratest.gruntwork.io.
 ---
 
 # str_startswith (function)
@@ -21,7 +21,7 @@ which was added in Terraform 1.3. This provides a 1:1 implementation
 that can be used with Terratest or other Go code, as well as with
 OpenTofu and Terraform going all the way back to v1.0.
 
-Maps to the [`corefunc.StrStartswith()`](https://pkg.go.dev/github.com/northwood-labs/terraform-provider-corefunc/v2/corefunc#StrStartswith) Go method, which can be used in [Terratest](https://terratest.gruntwork.io).
+Maps to the [`corefunc.StrStartsWith()`](https://pkg.go.dev/github.com/northwood-labs/terraform-provider-corefunc/v2/corefunc#StrStartsWith) Go method, which can be used in [Terratest](https://terratest.gruntwork.io).
 
 ## Signature
 
