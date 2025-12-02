@@ -31,106 +31,106 @@ import (
 
 // Ensure the implementation satisfies the expected interfaces.
 var (
-	_ datasource.DataSource              = &urlDecodeDataSource{}
-	_ datasource.DataSourceWithConfigure = &urlDecodeDataSource{}
+	_ datasource.DataSource              = &strStartswithDataSource{}
+	_ datasource.DataSourceWithConfigure = &strStartswithDataSource{}
 )
 
-// urlDecodeDataSource is the data source implementation.
+// strStartswithDataSource is the data source implementation.
 type (
-	urlDecodeDataSource struct{}
+	strStartswithDataSource struct{}
 
-	// urlDecodeDataSourceModel maps the data source schema data.
-	urlDecodeDataSourceModel struct {
-		EncodedURL types.String `tfsdk:"encoded_url"`
-		Value      types.String `tfsdk:"value"`
+	// strStartswithDataSourceModel maps the data source schema data.
+	strStartswithDataSourceModel struct {
+		Input  types.String `tfsdk:"input"`
+		Prefix types.String `tfsdk:"prefix"`
+		Value  types.Bool   `tfsdk:"value"`
 	}
 )
 
-// URLDecodeDataSource is a method that exposes its paired Go function as a
+// StrStartswithDataSource is a method that exposes its paired Go function as a
 // Terraform Data Source.
-func URLDecodeDataSource() datasource.DataSource { // lint:allow_return_interface
-	return &urlDecodeDataSource{}
+func StrStartswithDataSource() datasource.DataSource { // lint:allow_return_interface
+	return &strStartswithDataSource{}
 }
 
 // Metadata returns the data source type name.
-func (d *urlDecodeDataSource) Metadata(
+func (d *strStartswithDataSource) Metadata(
 	ctx context.Context,
 	req datasource.MetadataRequest,
 	resp *datasource.MetadataResponse,
 ) {
-	tflog.Debug(ctx, "Starting URLDecode DataSource Metadata method.")
+	tflog.Debug(ctx, "Starting StrStartswith DataSource Metadata method.")
 
-	resp.TypeName = req.ProviderTypeName + "_url_decode"
+	resp.TypeName = req.ProviderTypeName + "_str_startswith"
 
 	tflog.Debug(ctx, "req.ProviderTypeName = "+req.ProviderTypeName)
 	tflog.Debug(ctx, "resp.TypeName = "+resp.TypeName)
 
-	tflog.Debug(ctx, "Ending URLDecode DataSource Metadata method.")
+	tflog.Debug(ctx, "Ending StrStartswith DataSource Metadata method.")
 }
 
 // Schema defines the schema for the data source.
-func (d *urlDecodeDataSource) Schema(
+func (d *strStartswithDataSource) Schema(
 	ctx context.Context,
 	_ datasource.SchemaRequest,
 	resp *datasource.SchemaResponse,
 ) {
-	tflog.Debug(ctx, "Starting URLDecode DataSource Schema method.")
+	tflog.Debug(ctx, "Starting StrStartswith DataSource Schema method.")
 
 	resp.Schema = schema.Schema{
 		MarkdownDescription: strings.TrimSpace(dedent.Dedent(`
-		URLDecode decodes a URL-encoded string.
+		Takes a string to check and a prefix string, and returns true if the
+		string begins with that exact prefix.
 
-		It can decode a wide range of characters, including those beyond the ASCII set.
-		Non-ASCII characters are first interpreted as UTF-8 bytes, then percent-decoded
-		byte-by-byte, ensuring correct decoding of multibyte characters.
+		-> This is identical to the built-in ` + "`startswith`" + ` function
+		which was added in Terraform 1.3. This provides a 1:1 implementation
+		that can be used with Terratest or other Go code, as well as with
+		OpenTofu and Terraform going all the way back to v1.0.
 
-		~> This functionality is built into OpenTofu 1.7, but has not been implemented
-		in Terraform (as of version 1.15).
-
-		-> This port from OpenTofu provides a 1:1 implementation that can be used with
-		Terratest or other Go code, as well as with OpenTofu and Terraform going all
-		the way back to v1.0.
-
-		Maps to the ` + linkPackage("URLDecode") + ` Go method, which can be used in ` + Terratest + `.
+		Maps to the ` + linkPackage("StrStartswith") + ` Go method, which can be used in ` + Terratest + `.
 		`)),
 		Attributes: map[string]schema.Attribute{
-			"encoded_url": schema.StringAttribute{
-				MarkdownDescription: "An encoded URL.",
+			"input": schema.StringAttribute{
+				MarkdownDescription: "The string to check.",
 				Required:            true,
 			},
-			"value": schema.StringAttribute{
-				MarkdownDescription: "The decoded URL.",
+			"prefix": schema.StringAttribute{
+				MarkdownDescription: "The prefix to look for.",
+				Required:            true,
+			},
+			"value": schema.BoolAttribute{
+				MarkdownDescription: "The resulting boolean value as a string.",
 				Computed:            true,
 			},
 		},
 	}
 
-	tflog.Debug(ctx, "Ending URLDecode DataSource Schema method.")
+	tflog.Debug(ctx, "Ending StrStartswith DataSource Schema method.")
 }
 
 // Configure adds the provider configured client to the data source.
-func (d *urlDecodeDataSource) Configure(
+func (d *strStartswithDataSource) Configure(
 	ctx context.Context,
 	req datasource.ConfigureRequest,
 	_ *datasource.ConfigureResponse,
 ) {
-	tflog.Debug(ctx, "Starting URLDecode DataSource Configure method.")
+	tflog.Debug(ctx, "Starting StrStartswith DataSource Configure method.")
 
 	if req.ProviderData == nil {
 		return
 	}
 
-	tflog.Debug(ctx, "Ending URLDecode DataSource Configure method.")
+	tflog.Debug(ctx, "Ending StrStartswith DataSource Configure method.")
 }
 
-func (d *urlDecodeDataSource) Create(
+func (d *strStartswithDataSource) Create(
 	ctx context.Context,
 	req resource.CreateRequest, // lint:allow_large_memory
 	resp *resource.CreateResponse,
 ) {
-	tflog.Debug(ctx, "Starting URLDecode DataSource Create method.")
+	tflog.Debug(ctx, "Starting StrStartswith DataSource Create method.")
 
-	var plan urlDecodeDataSourceModel
+	var plan strStartswithDataSourceModel
 
 	diags := req.Plan.Get(ctx, &plan)
 	resp.Diagnostics.Append(diags...)
@@ -139,35 +139,28 @@ func (d *urlDecodeDataSource) Create(
 		return
 	}
 
-	tflog.Debug(ctx, "Ending URLDecode DataSource Create method.")
+	tflog.Debug(ctx, "Ending StrStartswith DataSource Create method.")
 }
 
 // Read refreshes the Terraform state with the latest data.
-func (d *urlDecodeDataSource) Read( // lint:no_dupe
+func (d *strStartswithDataSource) Read( // lint:no_dupe
 	ctx context.Context,
 	_ datasource.ReadRequest, // lint:allow_large_memory
 	resp *datasource.ReadResponse,
 ) {
-	tflog.Debug(ctx, "Starting URLDecode DataSource Read method.")
+	tflog.Debug(ctx, "Starting StrStartswith DataSource Read method.")
 
-	var state urlDecodeDataSourceModel
+	var state strStartswithDataSourceModel
 
 	diags := resp.State.Get(ctx, &state)
 	resp.Diagnostics.Append(diags...)
 
-	url, err := corefunc.URLDecode(
-		state.EncodedURL.ValueString(),
+	value := corefunc.StrStartsWith(
+		state.Input.ValueString(),
+		state.Prefix.ValueString(),
 	)
-	if err != nil {
-		resp.Diagnostics.AddError(
-			"Failed to decode the URL",
-			err.Error(),
-		)
 
-		return
-	}
-
-	state.Value = types.StringValue(url)
+	state.Value = types.BoolValue(value)
 
 	diags = resp.State.Set(ctx, &state)
 	resp.Diagnostics.Append(diags...)
@@ -176,5 +169,5 @@ func (d *urlDecodeDataSource) Read( // lint:no_dupe
 		return
 	}
 
-	tflog.Debug(ctx, "Ending URLDecode DataSource Read method.")
+	tflog.Debug(ctx, "Ending StrStartswith DataSource Read method.")
 }

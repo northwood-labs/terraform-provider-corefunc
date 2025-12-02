@@ -67,9 +67,9 @@ func TestAcc{{ .PascalStrip }}Function(t *testing.T) {
 			Steps: []resource.TestStep{
 				{
 					Config: providerConfig + buf.String(),
-					Check: resource.ComposeTestCheckFunc(
-						resource.TestCheckOutput("{{ .SnakeStrip }}", tc.Expected),
-					),
+					ConfigStateChecks: []statecheck.StateCheck{
+						statecheck.ExpectKnownOutputValue("{{ .SnakeStrip }}", knownvalue.Bool(tc.Expected)),
+					},
 					// ExpectError: tc.expectedError,
 				},
 			},

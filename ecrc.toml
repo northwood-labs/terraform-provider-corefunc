@@ -87,5 +87,8 @@ Exclude = [
   "standard\\.mk$",
   # goplicate-end:excludes
 
+  "sha3x512",
+  "sha512",
+  "TerraformOptions.json$",
   "testfixtures/.*$",
 ]

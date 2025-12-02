@@ -73,6 +73,9 @@
     "min\\.js$",
     "package-lock\\.json$",
     "standard\\.mk$",
+    "sha3x512",
+    "sha512",
+    "TerraformOptions.json$",
     "testfixtures/.*$"
   ],
   "IgnoreDefaults": true,
