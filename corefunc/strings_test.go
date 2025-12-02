@@ -46,11 +46,11 @@ func ExampleStrEndsWith() {
 	// false
 }
 
-func ExampleStrStringContains() {
-	output := StrStringContains("abcde", "bcd")
+func ExampleStrContains() {
+	output := StrContains("abcde", "bcd")
 	fmt.Println(output)
 
-	output = StrStringContains("abcde", "xyz")
+	output = StrContains("abcde", "xyz")
 	fmt.Println(output)
 
 	// Output:
@@ -82,10 +82,10 @@ func TestStrEndsWith(t *testing.T) { // lint:allow_complexity
 	}
 }
 
-func TestStrStringContains(t *testing.T) { // lint:allow_complexity
+func TestStrContains(t *testing.T) { // lint:allow_complexity
 	for name, tc := range testfixtures.StrContainsTestTable {
 		t.Run(name, func(t *testing.T) {
-			output := StrStringContains(tc.Input, tc.Substr)
+			output := StrContains(tc.Input, tc.Substr)
 
 			if output != tc.Expected {
 				t.Errorf("Expected %v, got %v", tc.Expected, output)

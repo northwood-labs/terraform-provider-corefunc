@@ -50,7 +50,7 @@ func StrEndsWith(str, suffix string) bool {
 }
 
 /*
-StrStringContains checks if a string contains a given substring. It is functionally
+StrContains checks if a string contains a given substring. It is functionally
 identical to strings.Contains() from the standard library.
 
 ----
@@ -61,6 +61,6 @@ identical to strings.Contains() from the standard library.
 
   - Returns: (bool) True if `str` contains `substr`, otherwise false.
 */
-func StrStringContains(str, substr string) bool {
+func StrContains(str, substr string) bool {
 	return strings.Contains(str, substr)
 }
