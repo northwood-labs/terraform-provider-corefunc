@@ -112,6 +112,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`9104af9`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/9104af952808f7e1b0bba6140c47da4f4eeeac56): Added str_startswith. ([@skyzyx](https://github.com/skyzyx))
 * [`fbf6f14`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/fbf6f14672763864b0754385d0e8f9bbde8528ec): Added str_endswith. ([@skyzyx](https://github.com/skyzyx))
 * [`a19106b`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/a19106b41163c41b5b25b9639b3cceb198c0d10f): Added str_contains. ([@skyzyx](https://github.com/skyzyx))
+* [`e53f1cd`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/e53f1cd24715249f695d85f047bba0a4b29a7776): Implemented time_parse. ([@skyzyx](https://github.com/skyzyx))
 
 ### <!-- 1 -->:bug: Bug Fixes
 
