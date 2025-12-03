@@ -87,6 +87,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`d92123a`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/d92123a929b8d169c8e0aa6bc0da72f84ac1fd68): **deps**: Bump `github.com/hashicorp/terraform-plugin-framework` ([#669](https://github.com/northwood-labs/terraform-provider-corefunc/issues/669)) ([@dependabot](https://github.com/dependabot))
 * [`e0137f1`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/e0137f164e5e5dc3ad1dc0ad31946709f8bcbc78): **deps**: Bump `step-security/harden-runner` from 2.13.2 to 2.13.3 ([@dependabot](https://github.com/dependabot))
 * [`9b3f703`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/9b3f70317741c7ceee90615d1a9eb7cb46f23f2a): **deps**: Bump `actions/checkout` from 6.0.0 to 6.0.1 ([@dependabot](https://github.com/dependabot))
+* [`ba400a3`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/ba400a353b7646d6ee07c432e9b0774d3817801f): Updated the Go dependencies. ([@skyzyx](https://github.com/skyzyx))
 
 ### :test_tube: Testing
 
