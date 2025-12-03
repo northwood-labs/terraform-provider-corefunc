@@ -4,6 +4,14 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com), adheres to [Semantic Versioning](https://semver.org), and uses [Conventional Commit](https://www.conventionalcommits.org) syntax.
 
+## Unreleased
+
+[Compare: v2.2.0 → `HEAD`](https://github.com/northwood-labs/terraform-provider-corefunc/compare/v2.2.0..HEAD)
+
+### <!-- 1 -->:bug: Bug Fixes
+
+* [`ba14956`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/ba14956fdb8d201d4784bb111b754161203b9777): Fixed some documentation TODOs in the provider. ([@skyzyx](https://github.com/skyzyx))
+
 ## 2.2.0 — 2025-12-03
 
 [Compare: v2.1.0 → v2.2.0](https://github.com/northwood-labs/terraform-provider-corefunc/compare/v2.1.0...v2.2.0)
