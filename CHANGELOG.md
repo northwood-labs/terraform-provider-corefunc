@@ -99,6 +99,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`fee76f4`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/fee76f4369c36e1ecff5aebf19b9d292566969f1): Terratest for MD5 hashing with Base64 output. ([@skyzyx](https://github.com/skyzyx))
 * [`4c7159f`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/4c7159f4e1c7f83eaaa15df73deade9f1b99b909): Add Terratest tests. Some refactoring. ([@skyzyx](https://github.com/skyzyx))
 * [`f423c19`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/f423c19ce87eb1b8d751a672beadcf9ed94ea951): Skip some tests when running in CI. ([@skyzyx](https://github.com/skyzyx))
+* [`db0edc2`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/db0edc2b315dd6139f5437c237a398d6200ac4f7): Added the remaining Terratest tests. ([@skyzyx](https://github.com/skyzyx))
 
 ### <!-- 0 -->:rocket: Features
 
