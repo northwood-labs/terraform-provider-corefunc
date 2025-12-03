@@ -13,6 +13,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`dbbc54f`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/dbbc54fa88805f3b6203fe068bbaf01b79fabcaf): Replaced public URLs with short links. ([@skyzyx](https://github.com/skyzyx))
 * [`61a9a85`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/61a9a855fe05eec63fbff28fe5c3e620d152c168): Corrected a function description. ([@skyzyx](https://github.com/skyzyx))
 * [`6ec570d`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/6ec570d83fd38aae2dc47518ed0d192b00d121ce): Generated updated documentation for the provider. ([@skyzyx](https://github.com/skyzyx))
+* [`b84ece5`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/b84ece55e8db4837f8745b093532516f2af9095a): Updated the `README.md`. ([@skyzyx](https://github.com/skyzyx))
 
 ### :dependabot: Building and Dependencies
 
