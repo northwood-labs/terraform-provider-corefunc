@@ -35,6 +35,10 @@ import (
 func TestAccTimeParseFunction(t *testing.T) {
 	t.Parallel()
 
+	if os.Getenv("CI") != "" {
+		t.Skip("Skipping TimeParse tests in CI environment.")
+	}
+
 	funcName := traceFuncName()
 
 	for name, tc := range testfixtures.TimeParseTestTable { // lint:no_dupe

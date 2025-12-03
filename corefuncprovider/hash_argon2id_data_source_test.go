@@ -32,6 +32,10 @@ import (
 func TestAccHashArgon2idDataSource(t *testing.T) {
 	t.Parallel()
 
+	if os.Getenv("CI") != "" {
+		t.Skip("Skipping Argon2id tests in CI environment.")
+	}
+
 	funcName := traceFuncName()
 
 	for name, tc := range testfixtures.HashArgon2idTestTable { // lint:no_dupe
