@@ -8,6 +8,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 
 [Compare: v2.2.0 → `HEAD`](https://github.com/northwood-labs/terraform-provider-corefunc/compare/v2.2.0..HEAD)
 
+### :dependabot: Building and Dependencies
+
+* [`c25fdb2`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/c25fdb26dd3cd2ea51db2f05136693d18015f6c9): Updated the Go dependencies. ([@skyzyx](https://github.com/skyzyx))
+
 ### <!-- 1 -->:bug: Bug Fixes
 
 * [`ba14956`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/ba14956fdb8d201d4784bb111b754161203b9777): Fixed some documentation TODOs in the provider. ([@skyzyx](https://github.com/skyzyx))
