@@ -53,3 +53,42 @@ func TestStrByteLength(t *testing.T) { // lint:allow_complexity
 		})
 	}
 }
+
+func BenchmarkStrByteLength(b *testing.B) {
+	b.ReportAllocs()
+
+	for name, tc := range testfixtures.StrByteLengthTestTable {
+		b.Run(name, func(b *testing.B) {
+			b.ResetTimer()
+
+			for range b.N {
+				_ = StrByteLength(tc.Input) // lint:allow_unhandled
+			}
+		})
+	}
+}
+
+func BenchmarkStrByteLengthParallel(b *testing.B) {
+	b.ReportAllocs()
+
+	for name, tc := range testfixtures.StrByteLengthTestTable {
+		b.Run(name, func(b *testing.B) {
+			b.ResetTimer()
+			b.RunParallel(func(pb *testing.PB) {
+				for pb.Next() {
+					_ = StrByteLength(tc.Input) // lint:allow_unhandled
+				}
+			})
+		})
+	}
+}
+
+func FuzzStrByteLength(f *testing.F) {
+	for _, tc := range testfixtures.StrByteLengthTestTable {
+		f.Add(tc.Input)
+	}
+
+	f.Fuzz(func(_ *testing.T, input string) {
+		_ = StrByteLength(input) // lint:allow_unhandled
+	})
+}

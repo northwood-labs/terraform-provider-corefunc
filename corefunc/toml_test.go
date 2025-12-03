@@ -186,3 +186,61 @@ func TestJSONtoTOML(t *testing.T) { // lint:allow_complexity
 		})
 	}
 }
+
+func BenchmarkTOMLtoJSON(b *testing.B) {
+	b.ReportAllocs()
+
+	for name, tc := range testfixtures.TOMLtoJSONTestTable {
+		b.Run(name, func(b *testing.B) {
+			b.ResetTimer()
+
+			for range b.N {
+				_, _ = TOMLtoJSON(tc.Input) // lint:allow_unhandled
+			}
+		})
+	}
+}
+
+func BenchmarkJSONtoTOML(b *testing.B) {
+	b.ReportAllocs()
+
+	for name, tc := range testfixtures.JSONtoTOMLTestTable {
+		b.Run(name, func(b *testing.B) {
+			b.ResetTimer()
+
+			for range b.N {
+				_, _ = JSONtoTOML(tc.Input) // lint:allow_unhandled
+			}
+		})
+	}
+}
+
+func BenchmarkTOMLtoJSONParallel(b *testing.B) {
+	b.ReportAllocs()
+
+	for name, tc := range testfixtures.TOMLtoJSONTestTable {
+		b.Run(name, func(b *testing.B) {
+			b.ResetTimer()
+			b.RunParallel(func(pb *testing.PB) {
+				for pb.Next() {
+					_, _ = TOMLtoJSON(tc.Input) // lint:allow_unhandled
+				}
+			})
+		})
+	}
+}
+
+func BenchmarkJSONtoTOMLParallel(b *testing.B) {
+	b.ReportAllocs()
+
+	for name, tc := range testfixtures.JSONtoTOMLTestTable {
+		b.Run(name, func(b *testing.B) {
+			b.ResetTimer()
+			b.RunParallel(func(pb *testing.PB) {
+				for pb.Next() {
+					_, _ = JSONtoTOML(tc.Input) // lint:allow_unhandled
+				}
+			})
+		})
+	}
+}

@@ -50,3 +50,25 @@ func TestCIDRContains(t *testing.T) { // lint:allow_complexity
 		})
 	}
 }
+
+func BenchmarkCIDRContains(b *testing.B) {
+	for name, tc := range testfixtures.NetCidrContainsTestTable {
+		b.Run(name, func(b *testing.B) {
+			for range b.N {
+				_, _ = CIDRContains(tc.ContainerCidr, tc.ContainedIPOrCidr) // lint:allow_unhandled
+			}
+		})
+	}
+}
+
+func BenchmarkCIDRContainsParallel(b *testing.B) {
+	for name, tc := range testfixtures.NetCidrContainsTestTable {
+		b.Run(name, func(b *testing.B) {
+			b.RunParallel(func(pb *testing.PB) {
+				for pb.Next() {
+					_, _ = CIDRContains(tc.ContainerCidr, tc.ContainedIPOrCidr) // lint:allow_unhandled
+				}
+			})
+		})
+	}
+}

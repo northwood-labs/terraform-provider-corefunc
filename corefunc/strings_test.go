@@ -93,3 +93,126 @@ func TestStrContains(t *testing.T) { // lint:allow_complexity
 		})
 	}
 }
+
+func BenchmarkStrStartsWith(b *testing.B) {
+	b.ReportAllocs()
+
+	for name, tc := range testfixtures.StrStartsWithTestTable {
+		b.Run(name, func(b *testing.B) {
+			b.ResetTimer()
+
+			for range b.N {
+				_ = StrStartsWith(tc.Input, tc.Prefix) // lint:allow_unhandled
+			}
+		})
+	}
+}
+
+func BenchmarkStrEndsWith(b *testing.B) {
+	b.ReportAllocs()
+
+	for name, tc := range testfixtures.StrEndsWithTestTable {
+		b.Run(name, func(b *testing.B) {
+			b.ResetTimer()
+
+			for range b.N {
+				_ = StrEndsWith(tc.Input, tc.Suffix) // lint:allow_unhandled
+			}
+		})
+	}
+}
+
+func BenchmarkStrContains(b *testing.B) {
+	b.ReportAllocs()
+
+	for name, tc := range testfixtures.StrContainsTestTable {
+		b.Run(name, func(b *testing.B) {
+			b.ResetTimer()
+
+			for range b.N {
+				_ = StrContains(tc.Input, tc.Substr) // lint:allow_unhandled
+			}
+		})
+	}
+}
+
+func BenchmarkStrStartsWithParallel(b *testing.B) {
+	b.ReportAllocs()
+
+	for name, tc := range testfixtures.StrStartsWithTestTable {
+		b.Run(name, func(b *testing.B) {
+			b.ResetTimer()
+			b.RunParallel(func(pb *testing.PB) {
+				for pb.Next() {
+					_ = StrStartsWith(tc.Input, tc.Prefix) // lint:allow_unhandled
+				}
+			})
+		})
+	}
+}
+
+func BenchmarkStrEndsWithParallel(b *testing.B) {
+	b.ReportAllocs()
+
+	for name, tc := range testfixtures.StrEndsWithTestTable {
+		b.Run(name, func(b *testing.B) {
+			b.ResetTimer()
+			b.RunParallel(func(pb *testing.PB) {
+				for pb.Next() {
+					_ = StrEndsWith(tc.Input, tc.Suffix) // lint:allow_unhandled
+				}
+			})
+		})
+	}
+}
+
+func BenchmarkStrContainsParallel(b *testing.B) {
+	b.ReportAllocs()
+
+	for name, tc := range testfixtures.StrContainsTestTable {
+		b.Run(name, func(b *testing.B) {
+			b.ResetTimer()
+			b.RunParallel(func(pb *testing.PB) {
+				for pb.Next() {
+					_ = StrContains(tc.Input, tc.Substr) // lint:allow_unhandled
+				}
+			})
+		})
+	}
+}
+
+func FuzzStrStartsWith(f *testing.F) {
+	for _, tc := range testfixtures.StrStartsWithTestTable {
+		f.Add(tc.Input, tc.Prefix)
+	}
+
+	f.Fuzz(
+		func(_ *testing.T, in, prefix string) {
+			_ = StrStartsWith(in, prefix) // lint:allow_unhandled
+		},
+	)
+}
+
+func FuzzStrEndsWith(f *testing.F) {
+	for _, tc := range testfixtures.StrEndsWithTestTable {
+		f.Add(tc.Input, tc.Suffix)
+	}
+
+	f.Fuzz(
+		func(_ *testing.T, in, suffix string) {
+			_ = StrEndsWith(in, suffix) // lint:allow_unhandled
+		},
+	)
+}
+
+func FuzzStrContains(f *testing.F) {
+	for _, tc := range testfixtures.StrContainsTestTable {
+		f.Add(tc.Input, tc.Substr)
+	}
+
+	f.Fuzz(
+		func(_ *testing.T, in, substr string) {
+			_ = StrContains(in, substr) // lint:allow_unhandled
+		},
+	)
+}
