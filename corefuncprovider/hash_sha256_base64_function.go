@@ -64,16 +64,16 @@ func (f *hashSha256Base64Function) Definition(
 	tflog.Debug(ctx, "Starting HashSha256Base64 Function Definition method.")
 
 	resp.Definition = function.Definition{
-		Summary: "Generates the @TODO hash of a string.",
+		Summary: "Generates the SHA-2/512-bit hash of a string.",
 		MarkdownDescription: strings.TrimSpace(dedent.Dedent(`
-		Generates the @TODO hash of a string. Returns a Base64 value instead of a hexadecimal string.
+		Generates the SHA-2/512-bit hash of a string. Returns a Base64 value instead of a hexadecimal string.
 
-		Maps to the ` + linkPackage("@TODO") + ` Go method, which can be used in ` + Terratest + `.
+		Maps to the ` + linkPackage("Base64HashSHA256") + ` Go method, which can be used in ` + Terratest + `.
 		`)),
 		Parameters: []function.Parameter{
 			function.StringParameter{
 				Name:                "input",
-				MarkdownDescription: "The string to generate an @TODO hash for.",
+				MarkdownDescription: "The string to generate the SHA-2/512-bit hash for.",
 			},
 		},
 		Return: function.StringReturn{},

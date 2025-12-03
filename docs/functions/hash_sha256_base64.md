@@ -2,15 +2,15 @@
 page_title: "hash_sha256_base64 function - corefunc"
 subcategory: ""
 description: |-
-  Generates the @TODO hash of a string. Returns a Base64 value instead of a hexadecimal string.
-  Maps to the corefunc.@TODO() https://pkg.go.dev/github.com/northwood-labs/terraform-provider-corefunc/v2/corefunc#@TODO Go method, which can be used in Terratest https://terratest.gruntwork.io.
+  Generates the SHA-2/512-bit hash of a string. Returns a Base64 value instead of a hexadecimal string.
+  Maps to the corefunc.Base64HashSHA256() https://pkg.go.dev/github.com/northwood-labs/terraform-provider-corefunc/v2/corefunc#Base64HashSHA256 Go method, which can be used in Terratest https://terratest.gruntwork.io.
 ---
 
 # hash_sha256_base64 (function)
 
-Generates the @TODO hash of a string. Returns a Base64 value instead of a hexadecimal string.
+Generates the SHA-2/512-bit hash of a string. Returns a Base64 value instead of a hexadecimal string.
 
-Maps to the [`corefunc.@TODO()`](https://pkg.go.dev/github.com/northwood-labs/terraform-provider-corefunc/v2/corefunc#@TODO) Go method, which can be used in [Terratest](https://terratest.gruntwork.io).
+Maps to the [`corefunc.Base64HashSHA256()`](https://pkg.go.dev/github.com/northwood-labs/terraform-provider-corefunc/v2/corefunc#Base64HashSHA256) Go method, which can be used in [Terratest](https://terratest.gruntwork.io).
 
 ## Signature
 
@@ -31,6 +31,6 @@ output "sha256_base64" {
 
 ## Arguments
 
-1. `input` (String) The string to generate an @TODO hash for.
+1. `input` (String) The string to generate the SHA-2/512-bit hash for.
 
 <!-- Preview the provider docs with the Terraform registry provider docs preview tool: https://registry.terraform.io/tools/doc-preview -->

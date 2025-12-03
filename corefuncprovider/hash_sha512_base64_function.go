@@ -64,7 +64,7 @@ func (f *hashSha512Base64Function) Definition(
 	tflog.Debug(ctx, "Starting HashSha512Base64 Function Definition method.")
 
 	resp.Definition = function.Definition{
-		Summary: "Generates the @TODO hash of a string.",
+		Summary: "Generates the SHA-2/512-bit hash of a string.",
 		MarkdownDescription: strings.TrimSpace(dedent.Dedent(`
 		Generates the SHA-2/512-bit hash of a string. Returns a Base64 value instead of a hexadecimal string.
 
