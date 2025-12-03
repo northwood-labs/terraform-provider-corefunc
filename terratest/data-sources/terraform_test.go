@@ -125,6 +125,27 @@ func TestDataSources(t *testing.T) { // lint:allow_complexity
 				terraform.Output(t, terraformOptions, "str_contains_ds"),
 				strconv.FormatBool(corefunc.StrContains("Hello world!", "ello")),
 			)
+
+			assert.Equal(
+				t,
+				terraform.Output(t, terraformOptions, "str_byte_length1_ds"),
+				strconv.FormatInt(int64(corefunc.StrByteLength("abcde")), 10),
+			)
+			assert.Equal(
+				t,
+				terraform.Output(t, terraformOptions, "str_byte_length2_ds"),
+				strconv.FormatInt(int64(corefunc.StrByteLength("♫")), 10),
+			)
+			assert.Equal(
+				t,
+				terraform.Output(t, terraformOptions, "str_byte_length3_ds"),
+				strconv.FormatInt(int64(corefunc.StrByteLength("界")), 10),
+			)
+			assert.Equal(
+				t,
+				terraform.Output(t, terraformOptions, "str_byte_length4_ds"),
+				strconv.FormatInt(int64(corefunc.StrByteLength("スター☆")), 10),
+			)
 		})
 
 		// Format shifting
@@ -294,6 +315,27 @@ func TestDataSources(t *testing.T) { // lint:allow_complexity
 				terraform.Output(t, terraformOptions, "time_parse3_ds"),
 				strconv.FormatFloat(float64(timestamp), 'e', 9, 64),
 			)
+
+			result, err := corefunc.TimeCompare("2006-01-02T15:04:05Z", "Mon, 02 Jan 2006 15:04:05 GMT")
+			if err != nil {
+				t.Fatal(err)
+			}
+
+			assert.Equal(t, terraform.Output(t, terraformOptions, "time_compare1_ds"), strconv.Itoa(result))
+
+			result, err = corefunc.TimeCompare("Monday, 02-Jan-2006 15:04:05 MST", "2007-01-02T15:04:05Z")
+			if err != nil {
+				t.Fatal(err)
+			}
+
+			assert.Equal(t, terraform.Output(t, terraformOptions, "time_compare2_ds"), strconv.Itoa(result))
+
+			result, err = corefunc.TimeCompare("2007-01-02T15:04:05Z", "Monday, 02-Jan-2006 15:04:05 MST")
+			if err != nil {
+				t.Fatal(err)
+			}
+
+			assert.Equal(t, terraform.Output(t, terraformOptions, "time_compare3_ds"), strconv.Itoa(result))
 		})
 
 		// Hashing
