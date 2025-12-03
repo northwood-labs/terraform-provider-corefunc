@@ -4,9 +4,9 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com), adheres to [Semantic Versioning](https://semver.org), and uses [Conventional Commit](https://www.conventionalcommits.org) syntax.
 
-## Unreleased
+## 2.2.1 — 2025-12-03
 
-[Compare: v2.2.0 → `HEAD`](https://github.com/northwood-labs/terraform-provider-corefunc/compare/v2.2.0..HEAD)
+[Compare: v2.2.0 → v2.2.1](https://github.com/northwood-labs/terraform-provider-corefunc/compare/v2.2.0...v2.2.1)
 
 ### :dependabot: Building and Dependencies
 
