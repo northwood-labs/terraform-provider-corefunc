@@ -100,6 +100,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`4c7159f`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/4c7159f4e1c7f83eaaa15df73deade9f1b99b909): Add Terratest tests. Some refactoring. ([@skyzyx](https://github.com/skyzyx))
 * [`f423c19`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/f423c19ce87eb1b8d751a672beadcf9ed94ea951): Skip some tests when running in CI. ([@skyzyx](https://github.com/skyzyx))
 * [`db0edc2`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/db0edc2b315dd6139f5437c237a398d6200ac4f7): Added the remaining Terratest tests. ([@skyzyx](https://github.com/skyzyx))
+* [`1605cb4`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/1605cb496ef94c487222cb5ceb5eec23f16e6664): Add more benchmarking and fuzzing tests for the core library. ([@skyzyx](https://github.com/skyzyx))
 
 ### <!-- 0 -->:rocket: Features
 
