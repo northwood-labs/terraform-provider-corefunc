@@ -1,0 +1,6 @@
+data "corefunc_time_compare" "time_compare" {
+  timestamp_a = "{{ .InputA }}"
+  timestamp_b = "{{ .InputB }}"
+}
+
+#=> {{ .Expected }}

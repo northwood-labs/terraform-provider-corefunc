@@ -75,7 +75,7 @@ While some of the functions in this provider are new, others have been backporte
 | `endswith`    | 1.3       | 2.2      |
 | `startswith`  | 1.3       | 2.2      |
 | `strcontains` | 1.5       | 2.2      |
-| `timecmp`     | 1.3       | -        |
+| `timecmp`     | 1.3       | 2.2      |
 
 ### Implemented after the OpenTofu fork
 

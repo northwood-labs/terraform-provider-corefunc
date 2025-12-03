@@ -1,0 +1,5 @@
+output "time_compare" {
+  value = provider::corefunc::time_compare("{{ .InputA }}", "{{ .InputB }}")
+}
+
+#=> {{ .Expected }}

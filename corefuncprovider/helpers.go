@@ -65,3 +65,7 @@ func linkPackage(functionName string) string {
 		functionName +
 		")"
 }
+
+func code(s string) string {
+	return "`" + s + "`"
+}
