@@ -43,11 +43,11 @@ require (
 	github.com/charmbracelet/colorprofile v0.3.3 // indirect
 	github.com/charmbracelet/glamour v0.10.0 // indirect
 	github.com/charmbracelet/lipgloss v1.1.1-0.20250404203927-76690c660834 // indirect
-	github.com/charmbracelet/ultraviolet v0.0.0-20251124142205-05635edc50ab // indirect
+	github.com/charmbracelet/ultraviolet v0.0.0-20251202162030-ecc8c1ae4b2b // indirect
 	github.com/charmbracelet/x/ansi v0.11.2 // indirect
 	github.com/charmbracelet/x/cellbuf v0.0.14 // indirect
-	github.com/charmbracelet/x/exp/charmtone v0.0.0-20251126160633-0b68cdcd21da // indirect
-	github.com/charmbracelet/x/exp/slice v0.0.0-20251126160633-0b68cdcd21da // indirect
+	github.com/charmbracelet/x/exp/charmtone v0.0.0-20251201173703-9f73bfd934ff // indirect
+	github.com/charmbracelet/x/exp/slice v0.0.0-20251201173703-9f73bfd934ff // indirect
 	github.com/charmbracelet/x/term v0.2.2 // indirect
 	github.com/charmbracelet/x/termios v0.1.1 // indirect
 	github.com/charmbracelet/x/windows v0.2.2 // indirect
@@ -124,7 +124,7 @@ require (
 	golang.org/x/text v0.31.0 // indirect
 	golang.org/x/tools v0.39.0 // indirect
 	google.golang.org/appengine v1.6.8 // indirect
-	google.golang.org/genproto/googleapis/rpc v0.0.0-20251124214823-79d6a2a48846 // indirect
+	google.golang.org/genproto/googleapis/rpc v0.0.0-20251202230838-ff82c1b0f217 // indirect
 	google.golang.org/grpc v1.77.0 // indirect
 	google.golang.org/protobuf v1.36.10 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect

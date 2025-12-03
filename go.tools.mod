@@ -45,7 +45,7 @@ require (
 	github.com/charmbracelet/fang v0.4.4
 	github.com/gtramontina/ooze v0.2.0
 	github.com/hashicorp/go-version v1.8.0
-	github.com/hashicorp/terraform-plugin-framework v1.16.1
+	github.com/hashicorp/terraform-plugin-framework v1.17.0
 	github.com/hashicorp/terraform-plugin-go v0.29.0
 	github.com/hashicorp/terraform-plugin-log v0.10.0
 	github.com/hashicorp/terraform-plugin-testing v1.13.3
@@ -117,15 +117,15 @@ require (
 	github.com/charmbracelet/gum v0.17.0 // indirect
 	github.com/charmbracelet/lipgloss v1.1.1-0.20250404203927-76690c660834 // indirect
 	github.com/charmbracelet/log v0.4.2 // indirect
-	github.com/charmbracelet/ultraviolet v0.0.0-20251124142205-05635edc50ab // indirect
+	github.com/charmbracelet/ultraviolet v0.0.0-20251202162030-ecc8c1ae4b2b // indirect
 	github.com/charmbracelet/x/ansi v0.11.2 // indirect
 	github.com/charmbracelet/x/cellbuf v0.0.14 // indirect
 	github.com/charmbracelet/x/conpty v0.1.0 // indirect
 	github.com/charmbracelet/x/editor v0.1.0 // indirect
 	github.com/charmbracelet/x/errors v0.0.0-20240508181413-e8d8b6e2de86 // indirect
-	github.com/charmbracelet/x/exp/charmtone v0.0.0-20251126160633-0b68cdcd21da // indirect
+	github.com/charmbracelet/x/exp/charmtone v0.0.0-20251201173703-9f73bfd934ff // indirect
 	github.com/charmbracelet/x/exp/ordered v0.1.0 // indirect
-	github.com/charmbracelet/x/exp/slice v0.0.0-20251126160633-0b68cdcd21da // indirect
+	github.com/charmbracelet/x/exp/slice v0.0.0-20251201173703-9f73bfd934ff // indirect
 	github.com/charmbracelet/x/term v0.2.2 // indirect
 	github.com/charmbracelet/x/termios v0.1.1 // indirect
 	github.com/charmbracelet/x/windows v0.2.2 // indirect
@@ -425,7 +425,7 @@ require (
 	google.golang.org/appengine v1.6.8 // indirect
 	google.golang.org/genproto v0.0.0-20250707201910-8d1bb00bc6a7 // indirect
 	google.golang.org/genproto/googleapis/api v0.0.0-20251111163417-95abcf5c77ba // indirect
-	google.golang.org/genproto/googleapis/rpc v0.0.0-20251124214823-79d6a2a48846 // indirect
+	google.golang.org/genproto/googleapis/rpc v0.0.0-20251202230838-ff82c1b0f217 // indirect
 	google.golang.org/grpc v1.77.0 // indirect
 	google.golang.org/protobuf v1.36.10 // indirect
 	gopkg.in/ini.v1 v1.67.0 // indirect
