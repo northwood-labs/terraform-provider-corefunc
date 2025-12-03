@@ -48,7 +48,7 @@ require (
 	github.com/hashicorp/terraform-plugin-framework v1.17.0
 	github.com/hashicorp/terraform-plugin-go v0.29.0
 	github.com/hashicorp/terraform-plugin-log v0.10.0
-	github.com/hashicorp/terraform-plugin-testing v1.13.3
+	github.com/hashicorp/terraform-plugin-testing v1.14.0
 	github.com/lithammer/dedent v1.1.0
 	github.com/mattn/go-runewidth v0.0.19
 	github.com/mitchellh/go-homedir v1.1.0
