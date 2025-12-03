@@ -4,16 +4,16 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com), adheres to [Semantic Versioning](https://semver.org), and uses [Conventional Commit](https://www.conventionalcommits.org) syntax.
 
-## v2.2.0 - 2025-12-03
+## 2.2.0 — 2025-12-03
 
-[Compare: v2.1.0 → `HEAD`](https://github.com/northwood-labs/terraform-provider-corefunc/compare/v2.1.0..HEAD)
+[Compare: v2.1.0 → v2.2.0](https://github.com/northwood-labs/terraform-provider-corefunc/compare/v2.1.0...v2.2.0)
 
 ### :books: Documentation
 
 * [`dbbc54f`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/dbbc54fa88805f3b6203fe068bbaf01b79fabcaf): Replaced public URLs with short links. ([@skyzyx](https://github.com/skyzyx))
-* [`61a9a85`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/61a9a855fe05eec63fbff28fe5c3e620d152c168): Corrected a function description. ([@skyzyx](https://github.com/skyzyx))
-* [`6ec570d`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/6ec570d83fd38aae2dc47518ed0d192b00d121ce): Generated updated documentation for the provider. ([@skyzyx](https://github.com/skyzyx))
-* [`b84ece5`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/b84ece55e8db4837f8745b093532516f2af9095a): Updated the `README.md`. ([@skyzyx](https://github.com/skyzyx))
+* [`34414a8`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/34414a8fef955afc400ebc3c754fb4842d150c55): Corrected a function description. ([@skyzyx](https://github.com/skyzyx))
+* [`5210bee`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/5210bee931d68ac78ea9a50d568898ae99c6394e): Generated updated documentation for the provider. ([@skyzyx](https://github.com/skyzyx))
+* [`702b735`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/702b735af85038aa1b774a6df806fe43dc7123b8): Updated the `README.md`. ([@skyzyx](https://github.com/skyzyx))
 
 ### :dependabot: Building and Dependencies
 
@@ -74,59 +74,59 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`84a219b`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/84a219b52269633327406db7149bf34d4cce4b1b): **deps**: Bump `google/osv-scanner-action` from 2.2.4 to 2.3.0 ([#654](https://github.com/northwood-labs/terraform-provider-corefunc/issues/654)) ([@dependabot](https://github.com/dependabot))
 * [`197f1ff`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/197f1ffa4df22a9a76d864af69b2cc5ed656e0c2): **deps**: Bump `actions/setup-go` from 6.0.0 to 6.1.0 ([#659](https://github.com/northwood-labs/terraform-provider-corefunc/issues/659)) ([@dependabot](https://github.com/dependabot))
 * [`b1af4cd`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/b1af4cd50757cd02d4986a0efcc4f52382b7a33a): **deps**: Bump `trufflesecurity/trufflehog` from 3.91.0 to 3.91.1 ([#660](https://github.com/northwood-labs/terraform-provider-corefunc/issues/660)) ([@dependabot](https://github.com/dependabot))
-* [`f6b568b`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/f6b568b552323eed1d1469668b7f6e1e66b22286): **deps**: Bump `github.com/gruntwork-io/terratest` ([#662](https://github.com/northwood-labs/terraform-provider-corefunc/issues/662)) ([@dependabot](https://github.com/dependabot))
-* [`ed80dfe`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/ed80dfe125c6cb160d8fac4e929ef68336b8452c): **deps**: Bump `github.com/gruntwork-io/terratest` ([#663](https://github.com/northwood-labs/terraform-provider-corefunc/issues/663)) ([@dependabot](https://github.com/dependabot))
-* [`3d5311a`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/3d5311a9ca502010679990364ee5331efe704714): **deps**: Bump `github/codeql-action` from 4.31.4 to 4.31.5 ([#664](https://github.com/northwood-labs/terraform-provider-corefunc/issues/664)) ([@dependabot](https://github.com/dependabot))
-* [`23f3888`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/23f38883cd8f2e4fced14311307d741f66ff2996): Updated the Go dependencies. ([@skyzyx](https://github.com/skyzyx))
-* [`d209e82`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/d209e8218f5dab915f3ec3376b76be6391d6cb30): **deps**: Bump `golangci/golangci-lint-action` from 8.0.0 to 9.1.0 ([@dependabot](https://github.com/dependabot))
-* [`c6d82aa`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/c6d82aa3aedbefca0a8f1eee1ac892671755cdf9): **deps**: Bump `actions/checkout` from 5.0.1 to 6.0.0 ([@dependabot](https://github.com/dependabot))
-* [`6ab1b43`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/6ab1b43fc83315d28073ec877e7c16f21ecaf221): Update Go dependencies. ([@skyzyx](https://github.com/skyzyx))
-* [`c6ca2db`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/c6ca2db4590fcfea78dfb757c882edcb6764fc87): **deps**: Bump `github/codeql-action` from 4.31.5 to 4.31.6 ([#666](https://github.com/northwood-labs/terraform-provider-corefunc/issues/666)) ([@dependabot](https://github.com/dependabot))
-* [`af9bc80`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/af9bc809abef37ee9a35c60eb0b269d1da9a16cb): **deps**: Bump `golangci/golangci-lint-action` from 9.1.0 to 9.2.0 ([#667](https://github.com/northwood-labs/terraform-provider-corefunc/issues/667)) ([@dependabot](https://github.com/dependabot))
-* [`5ffe76d`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/5ffe76d5e9072b6443b31619e0a91fe5d2d216f0): **deps**: Bump `trufflesecurity/trufflehog` from 3.91.1 to 3.91.2 ([#668](https://github.com/northwood-labs/terraform-provider-corefunc/issues/668)) ([@dependabot](https://github.com/dependabot))
-* [`d92123a`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/d92123a929b8d169c8e0aa6bc0da72f84ac1fd68): **deps**: Bump `github.com/hashicorp/terraform-plugin-framework` ([#669](https://github.com/northwood-labs/terraform-provider-corefunc/issues/669)) ([@dependabot](https://github.com/dependabot))
-* [`e0137f1`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/e0137f164e5e5dc3ad1dc0ad31946709f8bcbc78): **deps**: Bump `step-security/harden-runner` from 2.13.2 to 2.13.3 ([@dependabot](https://github.com/dependabot))
-* [`9b3f703`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/9b3f70317741c7ceee90615d1a9eb7cb46f23f2a): **deps**: Bump `actions/checkout` from 6.0.0 to 6.0.1 ([@dependabot](https://github.com/dependabot))
-* [`ba400a3`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/ba400a353b7646d6ee07c432e9b0774d3817801f): Updated the Go dependencies. ([@skyzyx](https://github.com/skyzyx))
+* [`51cfc06`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/51cfc0619e16393cb7632b77591eab05ccb3447b): **deps**: Bump `github.com/gruntwork-io/terratest` ([#662](https://github.com/northwood-labs/terraform-provider-corefunc/issues/662)) ([@dependabot](https://github.com/dependabot))
+* [`80da1dc`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/80da1dc42ccd2c8a2090bd3866c188b5a5a4096d): **deps**: Bump `github.com/gruntwork-io/terratest` ([#663](https://github.com/northwood-labs/terraform-provider-corefunc/issues/663)) ([@dependabot](https://github.com/dependabot))
+* [`32ad706`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/32ad706273533c18ecf9ef5d26a1fc6dcea0d5b0): **deps**: Bump `github/codeql-action` from 4.31.4 to 4.31.5 ([#664](https://github.com/northwood-labs/terraform-provider-corefunc/issues/664)) ([@dependabot](https://github.com/dependabot))
+* [`7dfe5af`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/7dfe5af5627c6e5f8d58a1524192f0a0813484c0): Updated the Go dependencies. ([@skyzyx](https://github.com/skyzyx))
+* [`e5264d0`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/e5264d0884b8f12fd4060fbaf8b7ed7bdf8d00c1): **deps**: Bump `golangci/golangci-lint-action` from 8.0.0 to 9.1.0 ([@dependabot](https://github.com/dependabot))
+* [`3706967`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/370696724a463bb0136fa4dfa64d0f0436796517): **deps**: Bump `actions/checkout` from 5.0.1 to 6.0.0 ([@dependabot](https://github.com/dependabot))
+* [`6e0475e`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/6e0475e13a2112fc66afce59be64e3d295375e67): Update Go dependencies. ([@skyzyx](https://github.com/skyzyx))
+* [`6215b80`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/6215b80afcde84784880d93448acc7e31e3db83e): **deps**: Bump `github/codeql-action` from 4.31.5 to 4.31.6 ([#666](https://github.com/northwood-labs/terraform-provider-corefunc/issues/666)) ([@dependabot](https://github.com/dependabot))
+* [`04ee0af`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/04ee0af08a74dfd953484dce100f0ac1345c82ff): **deps**: Bump `golangci/golangci-lint-action` from 9.1.0 to 9.2.0 ([#667](https://github.com/northwood-labs/terraform-provider-corefunc/issues/667)) ([@dependabot](https://github.com/dependabot))
+* [`48fc5f8`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/48fc5f8769163971dfda124e22383390099de85c): **deps**: Bump `trufflesecurity/trufflehog` from 3.91.1 to 3.91.2 ([#668](https://github.com/northwood-labs/terraform-provider-corefunc/issues/668)) ([@dependabot](https://github.com/dependabot))
+* [`8259b5c`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/8259b5ce6967947220581b0dac964822570670a1): **deps**: Bump `github.com/hashicorp/terraform-plugin-framework` ([#669](https://github.com/northwood-labs/terraform-provider-corefunc/issues/669)) ([@dependabot](https://github.com/dependabot))
+* [`e5361c1`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/e5361c1257fa75844e7408f8eae9a5f277438a48): **deps**: Bump `step-security/harden-runner` from 2.13.2 to 2.13.3 ([@dependabot](https://github.com/dependabot))
+* [`d6164dc`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/d6164dc2bb458e73a76788c211818ef9fb2efea6): **deps**: Bump `actions/checkout` from 6.0.0 to 6.0.1 ([@dependabot](https://github.com/dependabot))
+* [`3155d54`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/3155d54210fb81b35ae91925fe85511c35928f1a): Updated the Go dependencies. ([@skyzyx](https://github.com/skyzyx))
 
 ### :test_tube: Testing
 
 * [`cca5965`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/cca5965e434bc28c3e6eb8b78a0d4965860c0ea8): Fixed Terratest tests after the move to v2. ([@skyzyx](https://github.com/skyzyx))
-* [`bf3ec91`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/bf3ec9109c6bae3f9d3410586f401bfe6421c41f): Added Terraform 1.14 and OpenTofu 1.11 to the test suite. ([@skyzyx](https://github.com/skyzyx))
-* [`146012e`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/146012e7b2dfc4730710f209508126fa076e5e61): Resolve some issues with tests. ([@skyzyx](https://github.com/skyzyx))
-* [`28d819f`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/28d819f91c8524c55994c8dd9cdd072960a4c1dc): Skip certain tests in CI. ([@skyzyx](https://github.com/skyzyx))
-* [`e400e27`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/e400e27482061192f3efb173274022645453e385): Skip certain tests in CI. ([@skyzyx](https://github.com/skyzyx))
-* [`fee76f4`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/fee76f4369c36e1ecff5aebf19b9d292566969f1): Terratest for MD5 hashing with Base64 output. ([@skyzyx](https://github.com/skyzyx))
-* [`4c7159f`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/4c7159f4e1c7f83eaaa15df73deade9f1b99b909): Add Terratest tests. Some refactoring. ([@skyzyx](https://github.com/skyzyx))
-* [`f423c19`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/f423c19ce87eb1b8d751a672beadcf9ed94ea951): Skip some tests when running in CI. ([@skyzyx](https://github.com/skyzyx))
-* [`db0edc2`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/db0edc2b315dd6139f5437c237a398d6200ac4f7): Added the remaining Terratest tests. ([@skyzyx](https://github.com/skyzyx))
-* [`1605cb4`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/1605cb496ef94c487222cb5ceb5eec23f16e6664): Add more benchmarking and fuzzing tests for the core library. ([@skyzyx](https://github.com/skyzyx))
+* [`a21205e`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/a21205e759ba6bfde5c50566303c3d21240fac4a): Added Terraform 1.14 and OpenTofu 1.11 to the test suite. ([@skyzyx](https://github.com/skyzyx))
+* [`9f09a7a`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/9f09a7ab42152aac8c364e080127ca3d2730a0a6): Resolve some issues with tests. ([@skyzyx](https://github.com/skyzyx))
+* [`9e59552`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/9e5955295539d04b20d98bef6068c9fe735b10cb): Skip certain tests in CI. ([@skyzyx](https://github.com/skyzyx))
+* [`6953322`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/6953322bfb8240c1a1c1ebe8b3086ed5c559b54a): Skip certain tests in CI. ([@skyzyx](https://github.com/skyzyx))
+* [`e05adc4`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/e05adc45d673132f38cb61f9b43881e689565728): Terratest for MD5 hashing with Base64 output. ([@skyzyx](https://github.com/skyzyx))
+* [`c924594`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/c924594bcaaf290ab0a49c25823fb0383f2d8870): Add Terratest tests. Some refactoring. ([@skyzyx](https://github.com/skyzyx))
+* [`0cfe5c8`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/0cfe5c810dcd08eb22d42b99d7c387a3d49c0f52): Skip some tests when running in CI. ([@skyzyx](https://github.com/skyzyx))
+* [`3350994`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/33509940af8c91e1e3689c8a6d0954250f2d35ed): Added the remaining Terratest tests. ([@skyzyx](https://github.com/skyzyx))
+* [`bf21f0a`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/bf21f0ad86abff30dfe396394dc721edf5ad26ea): Add more benchmarking and fuzzing tests for the core library. ([@skyzyx](https://github.com/skyzyx))
 
 ### <!-- 0 -->:rocket: Features
 
 * [`10eec22`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/10eec221df3d9719bb3965401c118fd7207a84df): Exploring local LLM tooling. ([@skyzyx](https://github.com/skyzyx))
-* [`2983689`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/29836896838fe5a271bfa40eef52e895bc16a095): Added several hashing functions to the Go library. ([@skyzyx](https://github.com/skyzyx))
-* [`6f4202f`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/6f4202f08e6c4395c37dcd15169ee75095c6b9c6): Added MD5 hashing. ([@skyzyx](https://github.com/skyzyx))
-* [`bbc69ea`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/bbc69ea579b9475168ed9ff5b75db3b365c9d3f0): Added MD5 hashing with Base64 output. ([@skyzyx](https://github.com/skyzyx))
-* [`eaa9566`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/eaa95668b49f0ffedef38ba34c95cbe7f66f3a42): Added SHA1 hashing with Base64 output. ([@skyzyx](https://github.com/skyzyx))
-* [`bebb00b`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/bebb00b3f9afc48c7dad63a6922d221bc99e1137): Added SHA256/384/512 hashing with Base64 output. ([@skyzyx](https://github.com/skyzyx))
-* [`a69cb55`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/a69cb550e70103f80c1784aa8b8763359c950442): Added SHA-3 256/384/512 hashing with Base64 output. ([@skyzyx](https://github.com/skyzyx))
-* [`17f1088`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/17f1088b7b4af51901653a046f035c75b99b4f10): Added Argon2 hashing. ([@skyzyx](https://github.com/skyzyx))
-* [`40c5bc9`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/40c5bc91509fca17e9cbccdffb24e7c44e65696b): Added Argon2 and Scrypt hashing with Base64 output. ([@skyzyx](https://github.com/skyzyx))
-* [`b3a9309`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/b3a9309e281947e2e671f59708dde375679b98ac): Added Bcrypt and HMAC SHA-256. ([@skyzyx](https://github.com/skyzyx))
-* [`9104af9`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/9104af952808f7e1b0bba6140c47da4f4eeeac56): Added str_startswith. ([@skyzyx](https://github.com/skyzyx))
-* [`fbf6f14`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/fbf6f14672763864b0754385d0e8f9bbde8528ec): Added str_endswith. ([@skyzyx](https://github.com/skyzyx))
-* [`a19106b`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/a19106b41163c41b5b25b9639b3cceb198c0d10f): Added str_contains. ([@skyzyx](https://github.com/skyzyx))
-* [`e53f1cd`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/e53f1cd24715249f695d85f047bba0a4b29a7776): Implemented time_parse. ([@skyzyx](https://github.com/skyzyx))
-* [`783dd0a`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/783dd0a061e16deabba3e7c3c1743ede4e6a5dee): Added str_byte_length and time_compare. ([@skyzyx](https://github.com/skyzyx))
+* [`23dd7e7`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/23dd7e74c8dbaac3fe4538e6b7f2e20ef799642e): Added several hashing functions to the Go library. ([@skyzyx](https://github.com/skyzyx))
+* [`de3f79f`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/de3f79ff13c92efa8e876f08809ed4504721a9e8): Added MD5 hashing. ([@skyzyx](https://github.com/skyzyx))
+* [`ec739b9`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/ec739b9531a2352ee9cb3939d51b062ea8783b65): Added MD5 hashing with Base64 output. ([@skyzyx](https://github.com/skyzyx))
+* [`b60d050`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/b60d050b006bdaf284e11fc9ef2127bf8a22217e): Added SHA1 hashing with Base64 output. ([@skyzyx](https://github.com/skyzyx))
+* [`e59539a`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/e59539a4cb49d428ea5c719c76447f56cf3646d5): Added SHA256/384/512 hashing with Base64 output. ([@skyzyx](https://github.com/skyzyx))
+* [`09e6591`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/09e6591163babe1cf9095be9570c99d2502ef9e9): Added SHA-3 256/384/512 hashing with Base64 output. ([@skyzyx](https://github.com/skyzyx))
+* [`4da7d1d`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/4da7d1d9d4c569215c88cdc49473127133741d95): Added Argon2 hashing. ([@skyzyx](https://github.com/skyzyx))
+* [`f046148`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/f0461486a80ce0e51e068d1a498a4bbe4a231563): Added Argon2 and Scrypt hashing with Base64 output. ([@skyzyx](https://github.com/skyzyx))
+* [`75ef270`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/75ef27075b72f12e6f8d13365198a9ba13e23d09): Added Bcrypt and HMAC SHA-256. ([@skyzyx](https://github.com/skyzyx))
+* [`c7d505e`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/c7d505ef0b34dcd7da88402ec7cca15a6eeb45b4): Added str_startswith. ([@skyzyx](https://github.com/skyzyx))
+* [`917b2fa`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/917b2fa6a4746fbfe80c4e0ead3dd8d23538a06d): Added str_endswith. ([@skyzyx](https://github.com/skyzyx))
+* [`b5a4470`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/b5a44701fabd2222536b77f60c78e6a3a1df1d5f): Added str_contains. ([@skyzyx](https://github.com/skyzyx))
+* [`8a70e6b`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/8a70e6ba8b710b942c8acb378d8e63e234eb712e): Implemented time_parse. ([@skyzyx](https://github.com/skyzyx))
+* [`7d1015d`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/7d1015dc39c761b1e2ca646b016991efc37f085c): Added str_byte_length and time_compare. ([@skyzyx](https://github.com/skyzyx))
 
 ### <!-- 1 -->:bug: Bug Fixes
 
 * [`0ee527f`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/0ee527fd2244748e743faa5fac85e490d262063e): How did git-cliff end up in the repo again? ([@skyzyx](https://github.com/skyzyx))
-* [`b8243b6`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/b8243b65da076cfc99f8087a01beba72969dbb8f): Fix and streamline a couple of broken tests. ([@skyzyx](https://github.com/skyzyx))
-* [`d976ba5`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/d976ba588b52d42bc4e9cde720ee0ac5e533f5ec): Update `.golangci.yml`. ([@skyzyx](https://github.com/skyzyx))
-* [`1130616`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/1130616f36412667765ff0592b3838c8c899c9f1): Adjust some linter rules. ([@skyzyx](https://github.com/skyzyx))
-* [`f067e4d`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/f067e4df018e80aff1bf140e32c244f1cf710295): Remove the docgen implementation for now. ([@skyzyx](https://github.com/skyzyx))
+* [`5e06708`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/5e06708dc7527a1dc1600a1d68e0a209d5552bf4): Fix and streamline a couple of broken tests. ([@skyzyx](https://github.com/skyzyx))
+* [`4bc8f84`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/4bc8f844c4b9e39470d0976c19ecc690a7b2fe33): Update `.golangci.yml`. ([@skyzyx](https://github.com/skyzyx))
+* [`46b69e6`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/46b69e64eb1c78a5f817db3369d1b003f6bb4623): Adjust some linter rules. ([@skyzyx](https://github.com/skyzyx))
+* [`3ea98e6`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/3ea98e6e3df66b6c5cd7c4e0fff3953aa9b4abd8): Remove the docgen implementation for now. ([@skyzyx](https://github.com/skyzyx))
 
 ### <!-- ZZZ -->:gear: Miscellaneous Tasks
 
