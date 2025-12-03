@@ -1,0 +1,5 @@
+output "time_parse" {
+  value = provider::corefunc::time_parse("{{ .Input }}")
+}
+
+#=> {{ .Expected }}

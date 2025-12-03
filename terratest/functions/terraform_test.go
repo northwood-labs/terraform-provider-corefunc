@@ -109,6 +109,22 @@ func TestFunctions(t *testing.T) { // lint:allow_complexity
 					},
 				),
 			)
+
+			assert.Equal(
+				t,
+				terraform.Output(t, terraformOptions, "str_startswith_fn"),
+				strconv.FormatBool(corefunc.StrStartsWith("Hello world!", "Hello")),
+			)
+			assert.Equal(
+				t,
+				terraform.Output(t, terraformOptions, "str_endswith_fn"),
+				strconv.FormatBool(corefunc.StrEndsWith("Hello world!", "world!")),
+			)
+			assert.Equal(
+				t,
+				terraform.Output(t, terraformOptions, "str_contains_fn"),
+				strconv.FormatBool(corefunc.StrContains("Hello world!", "ello")),
+			)
 		})
 
 		// Format shifting
@@ -238,6 +254,46 @@ func TestFunctions(t *testing.T) { // lint:allow_complexity
 			}
 
 			assert.Equal(t, terraform.Output(t, terraformOptions, "homedir_expand_fn"), homedirPath)
+		})
+
+		// Time
+		test_structure.RunTestStage(t, "time", func() {
+			message("Testing time functions...")
+
+			terraformOptions := test_structure.LoadTerraformOptions(t, tmpDir)
+
+			timestamp, err := corefunc.TimeParse("2006-01-02T15:04:05Z")
+			if err != nil {
+				t.Fatal(err)
+			}
+
+			assert.Equal(
+				t,
+				terraform.Output(t, terraformOptions, "time_parse1_fn"),
+				strconv.FormatFloat(float64(timestamp), 'e', 9, 64),
+			)
+
+			timestamp, err = corefunc.TimeParse("Mon, 02 Jan 2006 15:04:05 GMT")
+			if err != nil {
+				t.Fatal(err)
+			}
+
+			assert.Equal(
+				t,
+				terraform.Output(t, terraformOptions, "time_parse2_fn"),
+				strconv.FormatFloat(float64(timestamp), 'e', 9, 64),
+			)
+
+			timestamp, err = corefunc.TimeParse("Monday, 02-Jan-2006 15:04:05 MST")
+			if err != nil {
+				t.Fatal(err)
+			}
+
+			assert.Equal(
+				t,
+				terraform.Output(t, terraformOptions, "time_parse3_fn"),
+				strconv.FormatFloat(float64(timestamp), 'e', 9, 64),
+			)
 		})
 
 		// Hashing

@@ -61,6 +61,44 @@ If you are using this as a Go library, see the documentation at [pkg.go.dev](htt
 go get -u github.com/northwood-labs/terraform-provider-corefunc/v2/corefunc
 ```
 
+## Ported Functions
+
+While some of the functions in this provider are new, others have been backported from newer versions of Terraform/OpenTofu to make them available to versions back to 1.0. In other cases, some functions exist in one tool but not the other. In these cases, we aim to provide identical implementations available to both tools.
+
+> [!WARNING]
+> Code is either a clean room implementation, or ported from the MPL-2.0 licensed OpenTofu project. **Zero** code has been ported from BUSL-1.1 licensed versions of Terraform.
+
+### Implemented between Terraform 1.1–1.5
+
+| Function      | Terraform | Corefunc |
+|---------------|-----------|----------|
+| `endswith`    | 1.3       | 2.2      |
+| `startswith`  | 1.3       | 2.2      |
+| `strcontains` | 1.5       | 2.2      |
+| `timecmp`     | 1.3       | -        |
+
+### Implemented after the OpenTofu fork
+
+| Function       | Terraform | OpenTofu | Corefunc |
+|----------------|-----------|----------|----------|
+| `base64gunzip` | -         | 1.7      | 1.5      |
+| `cidrcontains` | -         | 1.7      | 1.5      |
+| `urldecode`    | -         | 1.7      | 1.5      |
+
+### Probably won’t implement
+
+These are tied to specific features, or require deeper HCL/internal-type evaluation, and don’t necessarily make sense to backport or provide a Go equivalent for.
+
+| Function                             | Terraform | OpenTofu |
+|--------------------------------------|-----------|----------|
+| `ephemeralasnull`                    | 1.10      | 1.11     |
+| `issensitive`                        | 1.8       | 1.7      |
+| `plantimestamp`                      | 1.5       | 1.5      |
+| `provider::terraform::decode_tfvars` | 1.8       | 1.10     |
+| `provider::terraform::encode_expr`   | 1.8       | 1.10     |
+| `provider::terraform::encode_tfvars` | 1.8       | 1.10     |
+| `templatestring`                     | 1.9       | 1.7      |
+
 ## More Information
 
 After the provider is installed, you can run `terraform-provider-corefunc` on the CLI.
