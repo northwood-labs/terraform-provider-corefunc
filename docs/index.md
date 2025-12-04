@@ -143,7 +143,7 @@ terraform providers lock \
 
 ### Go Package
 
-If you are using this as a Go library, see the documentation at [pkg.go.dev](https://pkg.go.dev/github.com/northwood-labs/terraform-provider-corefunc/corefunc).
+If you are using this as a Go library, see the documentation at [pkg.go.dev](https://pkg.go.dev/github.com/northwood-labs/terraform-provider-corefunc/v2/corefunc).
 
 ## Extras
 

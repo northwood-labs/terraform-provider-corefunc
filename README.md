@@ -55,7 +55,7 @@ See the `docs/` directory for user-facing documentation.
 
 ### Go Package
 
-If you are using this as a Go library, see the documentation at [pkg.go.dev](https://pkg.go.dev/github.com/northwood-labs/terraform-provider-corefunc/corefunc).
+If you are using this as a Go library, see the documentation at [pkg.go.dev](https://pkg.go.dev/github.com/northwood-labs/terraform-provider-corefunc/v2/corefunc).
 
 ```bash
 go get -u github.com/northwood-labs/terraform-provider-corefunc/v2/corefunc
