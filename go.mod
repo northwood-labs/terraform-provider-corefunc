@@ -23,7 +23,7 @@ require (
 	github.com/nlnwa/whatwg-url v0.6.2
 	github.com/northwood-labs/cli-helpers v0.0.0-20250902191730-736c08104235
 	github.com/pelletier/go-toml/v2 v2.2.4
-	github.com/spf13/cobra v1.10.1
+	github.com/spf13/cobra v1.10.2
 	github.com/stretchr/testify v1.11.1
 	golang.org/x/crypto v0.45.0
 )
