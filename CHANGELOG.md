@@ -17,6 +17,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`9e21964`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/9e21964f2f45c33bf3dc3f490158b4c674e9ec9b): **deps**: Bump `actions/setup-node` from 6.0.0 to 6.1.0 ([#672](https://github.com/northwood-labs/terraform-provider-corefunc/issues/672)) ([@dependabot](https://github.com/dependabot))
 * [`f78c6ef`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/f78c6efaf8990db79f5e26a3d9b3383634785692): **deps**: Bump `github.com/spf13/cobra` from 1.10.1 to 1.10.2 ([#673](https://github.com/northwood-labs/terraform-provider-corefunc/issues/673)) ([@dependabot](https://github.com/dependabot))
 
+### :test_tube: Testing
+
+* [`4581829`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/45818299c81d042052ceffc7cafca64ed340936d): Allow outbound requests to release-assets.githubusercontent.com. ([@skyzyx](https://github.com/skyzyx))
+
 ## 2.2.1 — 2025-12-03
 
 [Compare: v2.2.0 → v2.2.1](https://github.com/northwood-labs/terraform-provider-corefunc/compare/v2.2.0...v2.2.1)
@@ -1231,4 +1235,4 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`6bc72f6`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/6bc72f6d3927147c41665e0ccab69657a4dcd721): Trying to get the build to work. ([@skyzyx](https://github.com/skyzyx))
 * [`8c39e22`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/8c39e221bba5ab7364c52660d794fb75cbd35ff1): Harden GitHub Actions ([#129](https://github.com/northwood-labs/terraform-provider-corefunc/issues/129)) ([@step-security-bot](https://github.com/step-security-bot))
 
-<p>Generated on 2025-12-04.</p>
+<p>Generated on 2025-12-05.</p>
