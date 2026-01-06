@@ -29,6 +29,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`56680cd`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/56680cd4793ce27bd2ba6886f0ebc2ff1edbbd5d): **deps**: Bump `trufflesecurity/trufflehog` from 3.92.3 to 3.92.4 ([#687](https://github.com/northwood-labs/terraform-provider-corefunc/issues/687)) ([@dependabot](https://github.com/dependabot))
 * [`bab24ce`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/bab24ced0a90e43ac439813097dabadca509919b): **deps**: Bump `dependabot/fetch-metadata` from 2.4.0 to 2.5.0 ([#688](https://github.com/northwood-labs/terraform-provider-corefunc/issues/688)) ([@dependabot](https://github.com/dependabot))
 * [`a8ae6d8`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/a8ae6d86d55b3c15cb6f6cef553b157c247155bb): **deps**: Bump `actions/upload-artifact` from 5.0.0 to 6.0.0 ([#683](https://github.com/northwood-labs/terraform-provider-corefunc/issues/683)) ([@dependabot](https://github.com/dependabot))
+* [`2c19fa1`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/2c19fa163693b335cfd0c4849ea64d9fa4f7892f): **deps**: Bump `step-security/harden-runner` from 2.13.3 to 2.14.0 ([#677](https://github.com/northwood-labs/terraform-provider-corefunc/issues/677)) ([@dependabot](https://github.com/dependabot))
 
 ### :test_tube: Testing
 
