@@ -1,0 +1,81 @@
+{
+  "mcpServers": {
+    "MCP_DOCKER": {
+      "disabled": false,
+      "command": "aws-mcp",
+      "args": [],
+      "env": {
+        "AWS_ACCESS_KEY_ID": "${AWS_ACCESS_KEY_ID}",
+        "AWS_SECRET_ACCESS_KEY": "${AWS_SECRET_ACCESS_KEY}",
+        "AWS_SESSION_TOKEN": "${AWS_SESSION_TOKEN}",
+        "AWS_CONTAINER_AUTHORIZATION_TOKEN": "${AWS_CONTAINER_AUTHORIZATION_TOKEN}",
+        "AWS_CONTAINER_CREDENTIALS_FULL_URI": "${AWS_CONTAINER_CREDENTIALS_FULL_URI}",
+        "AWS_API_MCP_PROFILE_NAME": "${AWS_VAULT}",
+        "AWS_PROFILE": "${AWS_VAULT}",
+        "AWS_REGION": "${AWS_REGION}"
+      },
+      "autoApprove": [
+        "convert_time",
+        "curl",
+        "cve_change_history",
+        "cves_by_cpe",
+        "docker",
+        "fetch_generic_documentation",
+        "fetch_generic_url_content",
+        "generate_diagram",
+        "get_current_time",
+        "get_cve_by_id",
+        "get_diagram_examples",
+        "get_latest_module_version",
+        "get_latest_provider_version",
+        "get_latest_provider_version",
+        "get_module_details",
+        "get_policy_details",
+        "get_provider_capabilities",
+        "get_provider_details",
+        "get_provider_details",
+        "get_temporal_context",
+        "kagi_search_fetch",
+        "kagi_summarizer",
+        "kevs_between",
+        "list_icons",
+        "match_common_libs_owner_repo_mapping",
+        "mcp-add",
+        "mcp-create-profile",
+        "mcp-find",
+        "prompt_understanding",
+        "read_documentation",
+        "recommend",
+        "search_cloudflare_documentation",
+        "search_cves",
+        "search_documentation",
+        "search_generic_code",
+        "search_generic_documentation",
+        "search_modules",
+        "search_policies",
+        "search_providers",
+        "SearchAwsProviderDocs",
+        "SearchUserProvidedModule",
+        "suggest_aws_commands"
+      ],
+      "disabledTools": [
+        "code-mode",
+        "mcp-config-set",
+        "mcp-remove",
+        "migrate_pages_to_workers_guide",
+        "ExecuteTerraformCommand",
+        "ExecuteTerragruntCommand",
+        "RunCheckovScan",
+        "SearchAwsccProviderDocs"
+      ]
+    }
+  }
+}
+/*
+cloudflare-browser-rendering
+context7
+dockerhub
+perplexity-ask
+ref
+remote-mcp
+*/

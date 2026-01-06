@@ -240,4 +240,9 @@
   "github.copilot.chat.codeGeneration.useInstructionFiles": true,
   "chat.mcp.autostart": "newAndOutdated",
   "chat.mcp.access": "all",
+  "kiroAgent.trustedCommands": [
+    "cat *",
+    "curl *",
+    "grep *",
+  ],
 }

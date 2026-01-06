@@ -1,0 +1,6 @@
+aws-api:
+  aws_profile_name: devenv-base-role
+aws-diagram:
+  output_dir: ./diagram
+kagisearch:
+  engine: cecil
