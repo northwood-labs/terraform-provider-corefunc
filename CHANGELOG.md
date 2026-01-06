@@ -30,11 +30,16 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`bab24ce`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/bab24ced0a90e43ac439813097dabadca509919b): **deps**: Bump `dependabot/fetch-metadata` from 2.4.0 to 2.5.0 ([#688](https://github.com/northwood-labs/terraform-provider-corefunc/issues/688)) ([@dependabot](https://github.com/dependabot))
 * [`a8ae6d8`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/a8ae6d86d55b3c15cb6f6cef553b157c247155bb): **deps**: Bump `actions/upload-artifact` from 5.0.0 to 6.0.0 ([#683](https://github.com/northwood-labs/terraform-provider-corefunc/issues/683)) ([@dependabot](https://github.com/dependabot))
 * [`2c19fa1`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/2c19fa163693b335cfd0c4849ea64d9fa4f7892f): **deps**: Bump `step-security/harden-runner` from 2.13.3 to 2.14.0 ([#677](https://github.com/northwood-labs/terraform-provider-corefunc/issues/677)) ([@dependabot](https://github.com/dependabot))
+* [`39cef8e`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/39cef8e39117097bada66c5063cedfbaa37007be): Updated all Go dependencies. ([@skyzyx](https://github.com/skyzyx))
 
 ### :test_tube: Testing
 
 * [`4581829`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/45818299c81d042052ceffc7cafca64ed340936d): Allow outbound requests to release-assets.githubusercontent.com. ([@skyzyx](https://github.com/skyzyx))
 * [`ffda91a`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/ffda91a97cf18f1634c08011acde278d68cb7c2f): Added OpenTofu 1.11 to the test matrix. ([@skyzyx](https://github.com/skyzyx))
+
+### <!-- 0 -->:rocket: Features
+
+* [`8ffcbf4`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/8ffcbf498128378069a2c9f8b72eb8b74b07d925): Tighten-up project-specific MCP server configuration. ([@skyzyx](https://github.com/skyzyx))
 
 ## 2.2.1 — 2025-12-03
 
