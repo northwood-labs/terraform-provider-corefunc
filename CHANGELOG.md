@@ -58,6 +58,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`308fabf`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/308fabf19ed289fa10d4d356dcc613f64dbee00e): **deps**: Bump `trufflesecurity/trufflehog` from 3.93.3 to 3.93.4 ([#718](https://github.com/northwood-labs/terraform-provider-corefunc/issues/718)) ([@dependabot](https://github.com/dependabot))
 * [`43ae006`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/43ae006f3e90cd229c788cdd0a47477c1f3feb01): **deps**: Bump `filippo.io/edwards25519` ([#717](https://github.com/northwood-labs/terraform-provider-corefunc/issues/717)) ([@dependabot](https://github.com/dependabot))
 * [`1e29e9b`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/1e29e9b51436155de9f4364127e4d0938a5a0210): **deps**: Bump `filippo.io/edwards25519` ([#716](https://github.com/northwood-labs/terraform-provider-corefunc/issues/716)) ([@dependabot](https://github.com/dependabot))
+* [`04ff32b`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/04ff32b7344d2e1f2aa2deb09a2bc3024caebe82): **deps**: Bump `github.com/go-git/go-git/v5` ([#707](https://github.com/northwood-labs/terraform-provider-corefunc/issues/707)) ([@dependabot](https://github.com/dependabot))
+* [`b0c9277`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/b0c9277705d9a6f5f3ee0e9dd7e5c7345b7d572e): **deps**: Bump `step-security/harden-runner` from 2.14.0 to 2.14.2 ([#706](https://github.com/northwood-labs/terraform-provider-corefunc/issues/706)) ([@dependabot](https://github.com/dependabot))
 
 ### :test_tube: Testing
 
