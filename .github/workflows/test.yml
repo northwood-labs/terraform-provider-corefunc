@@ -284,7 +284,7 @@ jobs:
           cache: true
 
       - name: Install OpenTofu ${{ matrix.opentofu_version }}
-        uses: opentofu/setup-opentofu@9d84900f3238fab8cd84ce47d658d25dd008be2f # v1.0.8
+        uses: opentofu/setup-opentofu@fc711fa910b93cba0f3fbecaafc9f42fd0c411cb # v2.0.0
         with:
           tofu_version: ~${{ matrix.opentofu_version }}
           tofu_wrapper: false
