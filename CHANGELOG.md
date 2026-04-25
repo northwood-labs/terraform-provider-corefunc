@@ -92,6 +92,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`05a2069`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/05a20697a19c75f3280c2e597108ff98bdcddc0e): **deps**: Bump `github.com/hashicorp/terraform-plugin-testing` ([#757](https://github.com/northwood-labs/terraform-provider-corefunc/issues/757)) ([@dependabot](https://github.com/dependabot))
 * [`ecf4f92`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/ecf4f9290596d366bfa3d4297cf8686d6944cd06): **deps**: Bump `github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs` ([#754](https://github.com/northwood-labs/terraform-provider-corefunc/issues/754)) ([@dependabot](https://github.com/dependabot))
 * [`8812b7f`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/8812b7f4e94ac475720cc01950d724ea49833df5): **deps**: Bump `github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs` ([#753](https://github.com/northwood-labs/terraform-provider-corefunc/issues/753)) ([@dependabot](https://github.com/dependabot))
+* [`8626b98`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/8626b985de37fec785e8e990aaaadf66fe006bc0): **deps**: Bump `opentofu/setup-opentofu` from 1.0.8 to 2.0.0 ([#749](https://github.com/northwood-labs/terraform-provider-corefunc/issues/749)) ([@dependabot](https://github.com/dependabot))
 
 ### :test_tube: Testing
 
