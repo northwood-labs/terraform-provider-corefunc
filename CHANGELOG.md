@@ -91,6 +91,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`5610324`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/561032407e2da0e29828569e132c58924033f66f): **deps**: Bump `golang.org/x/crypto` from 0.49.0 to 0.50.0 ([#756](https://github.com/northwood-labs/terraform-provider-corefunc/issues/756)) ([@dependabot](https://github.com/dependabot))
 * [`05a2069`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/05a20697a19c75f3280c2e597108ff98bdcddc0e): **deps**: Bump `github.com/hashicorp/terraform-plugin-testing` ([#757](https://github.com/northwood-labs/terraform-provider-corefunc/issues/757)) ([@dependabot](https://github.com/dependabot))
 * [`ecf4f92`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/ecf4f9290596d366bfa3d4297cf8686d6944cd06): **deps**: Bump `github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs` ([#754](https://github.com/northwood-labs/terraform-provider-corefunc/issues/754)) ([@dependabot](https://github.com/dependabot))
+* [`8812b7f`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/8812b7f4e94ac475720cc01950d724ea49833df5): **deps**: Bump `github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs` ([#753](https://github.com/northwood-labs/terraform-provider-corefunc/issues/753)) ([@dependabot](https://github.com/dependabot))
 
 ### :test_tube: Testing
 
