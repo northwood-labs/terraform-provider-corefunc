@@ -94,6 +94,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`8812b7f`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/8812b7f4e94ac475720cc01950d724ea49833df5): **deps**: Bump `github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs` ([#753](https://github.com/northwood-labs/terraform-provider-corefunc/issues/753)) ([@dependabot](https://github.com/dependabot))
 * [`8626b98`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/8626b985de37fec785e8e990aaaadf66fe006bc0): **deps**: Bump `opentofu/setup-opentofu` from 1.0.8 to 2.0.0 ([#749](https://github.com/northwood-labs/terraform-provider-corefunc/issues/749)) ([@dependabot](https://github.com/dependabot))
 * [`5e8b225`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/5e8b2252a5e7c1c8f1cb1d82a7ef339f2bd9673a): **deps**: Bump `github.com/charmbracelet/fang` from 0.4.4 to 1.0.0 ([#741](https://github.com/northwood-labs/terraform-provider-corefunc/issues/741)) ([@dependabot](https://github.com/dependabot))
+* [`ea3d68f`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/ea3d68f8cdf832cdde31be0a4adc990558d99194): **deps**: Bump `crazy-max/ghaction-import-gpg` from 6.3.0 to 7.0.0 ([#732](https://github.com/northwood-labs/terraform-provider-corefunc/issues/732)) ([@dependabot](https://github.com/dependabot))
+* [`4cf806e`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/4cf806e674879687e8a0709b93d4acc510709195): **deps**: Bump `actions/upload-artifact` from 6.0.0 to 7.0.0 ([#729](https://github.com/northwood-labs/terraform-provider-corefunc/issues/729)) ([@dependabot](https://github.com/dependabot))
 
 ### :test_tube: Testing
 
