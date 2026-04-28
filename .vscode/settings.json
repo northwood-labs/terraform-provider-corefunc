@@ -245,4 +245,5 @@
     "curl *",
     "grep *",
   ],
+  "snyk.advanced.autoSelectOrganization": true,
 }
