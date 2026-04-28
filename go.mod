@@ -8,7 +8,7 @@ replace (
 )
 
 require (
-	github.com/apparentlymart/go-cidr v1.1.0
+	github.com/apparentlymart/go-cidr v1.1.1
 	github.com/chanced/caps v1.0.2
 	github.com/charmbracelet/fang v1.0.0
 	github.com/gtramontina/ooze v0.2.0
