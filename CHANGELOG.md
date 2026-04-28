@@ -99,6 +99,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`894d7e8`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/894d7e84cc1d0e81d17a7feb19d12d3c565cec58): **deps**: Bump `github.com/cloudflare/circl` ([#726](https://github.com/northwood-labs/terraform-provider-corefunc/issues/726)) ([@dependabot](https://github.com/dependabot))
 * [`39c3f93`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/39c3f93e01a96e77e4a97e86899f7a5d9213958a): **deps**: Bump `hashicorp/setup-terraform` from 3.1.2 to 4.0.0 ([#724](https://github.com/northwood-labs/terraform-provider-corefunc/issues/724)) ([@dependabot](https://github.com/dependabot))
 * [`533bed6`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/533bed6a473ca415e9b7f5e3c35c3467aa360df3): **deps**: Bump `goreleaser/goreleaser-action` from 6.4.0 to 7.0.0 ([#720](https://github.com/northwood-labs/terraform-provider-corefunc/issues/720)) ([@dependabot](https://github.com/dependabot))
+* [`162e5ed`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/162e5ed2489cf77fc0d91cf23a12a202911f7c2c): **deps**: Bump `actions/setup-node` from 6.3.0 to 6.4.0 ([#758](https://github.com/northwood-labs/terraform-provider-corefunc/issues/758)) ([@dependabot](https://github.com/dependabot))
+* [`fa6db05`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/fa6db059cbeab38eaebab4c5aa401bf2920eb7c6): **deps**: Bump `actions/setup-go` from 6.3.0 to 6.4.0 ([#759](https://github.com/northwood-labs/terraform-provider-corefunc/issues/759)) ([@dependabot](https://github.com/dependabot))
+* [`d2428b7`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/d2428b7acaa4d0d3da5d4c656d77830e09467550): **deps**: Bump `google/osv-scanner-action` from 2.3.3 to 2.3.5 ([#761](https://github.com/northwood-labs/terraform-provider-corefunc/issues/761)) ([@dependabot](https://github.com/dependabot))
+* [`6b601c4`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/6b601c46cbe0943f5a91c0cbc79ce5fb7ef26a60): **deps**: Bump `trufflesecurity/trufflehog` from 3.93.8 to 3.95.2 ([#765](https://github.com/northwood-labs/terraform-provider-corefunc/issues/765)) ([@dependabot](https://github.com/dependabot))
+* [`3d544ca`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/3d544cadd42ae9f4c145ea2f85270f435d4b3f2b): **deps**: Bump `github.com/apparentlymart/go-cidr` from 1.1.0 to 1.1.1 ([#766](https://github.com/northwood-labs/terraform-provider-corefunc/issues/766)) ([@dependabot](https://github.com/dependabot))
 
 ### :test_tube: Testing
 
@@ -108,6 +113,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 ### <!-- 0 -->:rocket: Features
 
 * [`8ffcbf4`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/8ffcbf498128378069a2c9f8b72eb8b74b07d925): Tighten-up project-specific MCP server configuration. ([@skyzyx](https://github.com/skyzyx))
+
+### <!-- ZZZ -->:gear: Miscellaneous Tasks
+
+* [`27691df`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/27691df45049864d3a5125c1821b81b65be763a0): Add config-manager support and remove deprecated Kiro files. ([@skyzyx](https://github.com/skyzyx))
+* [`29ea496`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/29ea496ad3eb54b9d4638f8ebb22ac4380166da3): Update project configuration and dependencies. ([@skyzyx](https://github.com/skyzyx))
 
 ## 2.2.1 — 2025-12-03
 
@@ -1323,4 +1333,4 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`6bc72f6`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/6bc72f6d3927147c41665e0ccab69657a4dcd721): Trying to get the build to work. ([@skyzyx](https://github.com/skyzyx))
 * [`8c39e22`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/8c39e221bba5ab7364c52660d794fb75cbd35ff1): Harden GitHub Actions ([#129](https://github.com/northwood-labs/terraform-provider-corefunc/issues/129)) ([@step-security-bot](https://github.com/step-security-bot))
 
-<p>Generated on 2026-04-25.</p>
+<p>Generated on 2026-04-28.</p>
