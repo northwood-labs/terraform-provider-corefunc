@@ -104,6 +104,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`d2428b7`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/d2428b7acaa4d0d3da5d4c656d77830e09467550): **deps**: Bump `google/osv-scanner-action` from 2.3.3 to 2.3.5 ([#761](https://github.com/northwood-labs/terraform-provider-corefunc/issues/761)) ([@dependabot](https://github.com/dependabot))
 * [`6b601c4`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/6b601c46cbe0943f5a91c0cbc79ce5fb7ef26a60): **deps**: Bump `trufflesecurity/trufflehog` from 3.93.8 to 3.95.2 ([#765](https://github.com/northwood-labs/terraform-provider-corefunc/issues/765)) ([@dependabot](https://github.com/dependabot))
 * [`3d544ca`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/3d544cadd42ae9f4c145ea2f85270f435d4b3f2b): **deps**: Bump `github.com/apparentlymart/go-cidr` from 1.1.0 to 1.1.1 ([#766](https://github.com/northwood-labs/terraform-provider-corefunc/issues/766)) ([@dependabot](https://github.com/dependabot))
+* [`c8ffbad`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/c8ffbad1b6a9d791bbaf03dc2821304d8a2999b2): **deps**: Updated Go dependencies. ([@skyzyx](https://github.com/skyzyx))
 
 ### :test_tube: Testing
 
