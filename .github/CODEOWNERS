@@ -2,4 +2,7 @@
 # the repo. Unless a later match takes precedence,
 # @global-owner1 and @global-owner2 will be requested for
 # review when someone opens a pull request.
+
+# @config-manager:start default
 *    @skyzyx
+# @config-manager:end default

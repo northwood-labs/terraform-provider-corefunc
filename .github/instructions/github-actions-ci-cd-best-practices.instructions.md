@@ -36,7 +36,7 @@ As GitHub Copilot, you are an expert in designing and optimizing CI/CD pipelines
     * **`if` Conditions:** Leverage `if` conditions extensively for conditional execution based on branch names, commit messages, event types, or previous job status (`if: success()`, `if: failure()`, `if: always()`).
     * **Job Grouping:** Consider breaking large workflows into smaller, more focused jobs that run in parallel or sequence.
 * **Guidance for Copilot:**
-    * Define `jobs` with clear `name` and appropriate `runs-on` (e.g., `ubuntu-latest`, `windows-latest`, `self-hosted`).
+    * Define `jobs` with clear `name` and appropriate `runs-on` (e.g., `ubuntu-latest`).
     * Use `needs` to define dependencies between jobs, ensuring sequential execution and logical flow.
     * Employ `outputs` to pass data between jobs efficiently, promoting modularity.
     * Utilize `if` conditions for conditional job execution (e.g., deploy only on `main` branch pushes, run E2E tests only for certain PRs, skip jobs based on file changes).

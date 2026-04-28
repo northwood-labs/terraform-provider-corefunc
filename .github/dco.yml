@@ -1,7 +1,11 @@
 ---
+# @config-manager:start standard
 # https://github.com/dcoapp/app
 allowRemediationCommits:
   individual: true
+  thirdParty: true
 
 require:
   members: false
+
+# @config-manager:end standard
