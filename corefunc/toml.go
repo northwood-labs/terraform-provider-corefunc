@@ -94,7 +94,7 @@ func JSONtoTOML(jsonStr string) (string, error) {
 	tomlEncoder := toml.NewEncoder(&w)
 
 	jsonDecoder.UseNumber()
-	tomlEncoder.SetMarshalJsonNumbers(true)
+	tomlEncoder.SetMarshalJSONNumbers(true)
 
 	err := jsonDecoder.Decode(&v)
 	if err != nil {
