@@ -113,6 +113,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`a3b224a`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/a3b224a0f6ccb2da7fab83e681554e73e303b553): **deps**: Bump `orhun/git-cliff-action` from 4.7.1 to 4.8.0 ([#764](https://github.com/northwood-labs/terraform-provider-corefunc/issues/764)) ([@dependabot](https://github.com/dependabot))
 * [`d9596e3`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/d9596e33287c1ba0fc0f5f2833a64286eae9109b): **deps**: Bump `goreleaser/goreleaser-action` from 7.0.0 to 7.2.1 ([#762](https://github.com/northwood-labs/terraform-provider-corefunc/issues/762)) ([@dependabot](https://github.com/dependabot))
 * [`a6ce456`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/a6ce456d5ef6cb6756fe529ff85fe39a743243d4): **deps**: Bump `dependabot/fetch-metadata` from 2.5.0 to 3.1.0 ([#760](https://github.com/northwood-labs/terraform-provider-corefunc/issues/760)) ([@dependabot](https://github.com/dependabot))
+* [`2fc6167`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/2fc61671ba557d35efc0ac45b551095d994f3249): Update dependencies and Go versions, migrate to cli-helpers v2. ([@skyzyx](https://github.com/skyzyx))
+* [`a3b5498`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/a3b54980af41d47c8cee447a96750b9658feb846): Upgrade Go to 1.26.2 and migrate to cli-helpers v2. ([@skyzyx](https://github.com/skyzyx))
 
 ### :test_tube: Testing
 
