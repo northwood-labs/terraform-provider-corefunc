@@ -1,6 +1,6 @@
 module generator
 
-go 1.25.4
+go 1.26.2
 
 require (
 	github.com/chanced/caps v1.0.2
