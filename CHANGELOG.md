@@ -110,6 +110,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`ab4d689`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/ab4d689168c7778911081a327c70585266f27f8a): **deps**: Bump `github.com/pelletier/go-toml/v2` from 2.3.0 to 2.3.1 ([#769](https://github.com/northwood-labs/terraform-provider-corefunc/issues/769)) ([@dependabot](https://github.com/dependabot))
 * [`baf2ca8`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/baf2ca843ebc7f34fed3e8e39f1ccd9d91558026): **deps**: Bump `github/codeql-action` from 4.35.2 to 4.35.3 ([#771](https://github.com/northwood-labs/terraform-provider-corefunc/issues/771)) ([@dependabot](https://github.com/dependabot))
 * [`3646ef4`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/3646ef4629c4a6c46076c7e377aa700b2725e7a4): **deps**: Bump `step-security/harden-runner` from 2.16.0 to 2.19.1 ([#770](https://github.com/northwood-labs/terraform-provider-corefunc/issues/770)) ([@dependabot](https://github.com/dependabot))
+* [`a3b224a`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/a3b224a0f6ccb2da7fab83e681554e73e303b553): **deps**: Bump `orhun/git-cliff-action` from 4.7.1 to 4.8.0 ([#764](https://github.com/northwood-labs/terraform-provider-corefunc/issues/764)) ([@dependabot](https://github.com/dependabot))
 
 ### :test_tube: Testing
 
