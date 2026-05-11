@@ -115,6 +115,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`a6ce456`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/a6ce456d5ef6cb6756fe529ff85fe39a743243d4): **deps**: Bump `dependabot/fetch-metadata` from 2.5.0 to 3.1.0 ([#760](https://github.com/northwood-labs/terraform-provider-corefunc/issues/760)) ([@dependabot](https://github.com/dependabot))
 * [`2fc6167`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/2fc61671ba557d35efc0ac45b551095d994f3249): Update dependencies and Go versions, migrate to cli-helpers v2. ([@skyzyx](https://github.com/skyzyx))
 * [`a3b5498`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/a3b54980af41d47c8cee447a96750b9658feb846): Upgrade Go to 1.26.2 and migrate to cli-helpers v2. ([@skyzyx](https://github.com/skyzyx))
+* [`9a3d58f`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/9a3d58fe4ef6d9530d2645ef3678bc80d4be561f): **deps**: Bump `golang.org/x/crypto` from 0.50.0 to 0.51.0 ([#777](https://github.com/northwood-labs/terraform-provider-corefunc/issues/777)) ([@dependabot](https://github.com/dependabot))
+* [`f2f220e`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/f2f220eef0a8c014f1eafb20690ed2aea4518e60): **deps**: Bump `actions/dependency-review-action` from 4.9.0 to 5.0.0 ([#776](https://github.com/northwood-labs/terraform-provider-corefunc/issues/776)) ([@dependabot](https://github.com/dependabot))
 
 ### :test_tube: Testing
 
@@ -1344,4 +1346,4 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`6bc72f6`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/6bc72f6d3927147c41665e0ccab69657a4dcd721): Trying to get the build to work. ([@skyzyx](https://github.com/skyzyx))
 * [`8c39e22`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/8c39e221bba5ab7364c52660d794fb75cbd35ff1): Harden GitHub Actions ([#129](https://github.com/northwood-labs/terraform-provider-corefunc/issues/129)) ([@step-security-bot](https://github.com/step-security-bot))
 
-<p>Generated on 2026-05-04.</p>
+<p>Generated on 2026-05-11.</p>
