@@ -117,6 +117,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`a3b5498`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/a3b54980af41d47c8cee447a96750b9658feb846): Upgrade Go to 1.26.2 and migrate to cli-helpers v2. ([@skyzyx](https://github.com/skyzyx))
 * [`9a3d58f`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/9a3d58fe4ef6d9530d2645ef3678bc80d4be561f): **deps**: Bump `golang.org/x/crypto` from 0.50.0 to 0.51.0 ([#777](https://github.com/northwood-labs/terraform-provider-corefunc/issues/777)) ([@dependabot](https://github.com/dependabot))
 * [`f2f220e`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/f2f220eef0a8c014f1eafb20690ed2aea4518e60): **deps**: Bump `actions/dependency-review-action` from 4.9.0 to 5.0.0 ([#776](https://github.com/northwood-labs/terraform-provider-corefunc/issues/776)) ([@dependabot](https://github.com/dependabot))
+* [`64ee191`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/64ee191c2d1eaab448010f2ea9ffd58581fbf9f1): **deps**: Bump `github/codeql-action` from 3.35.3 to 4.35.4 ([#775](https://github.com/northwood-labs/terraform-provider-corefunc/issues/775)) ([@dependabot](https://github.com/dependabot))
 
 ### :test_tube: Testing
 
