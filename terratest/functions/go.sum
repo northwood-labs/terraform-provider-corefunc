@@ -214,8 +214,8 @@ github.com/gruntwork-io/terratest v0.56.0 h1:Z01eNpWsgEqVQbMpdS5HzUZDBIxyib7Psqz
 github.com/gruntwork-io/terratest v0.56.0/go.mod h1:gflMQk8AYbzJSwKQzgt0vmF8Js+GTBA0nbE/vQe811o=
 github.com/gtramontina/ooze v0.2.0 h1:QDW1zeq1TQgTLbIWuk76GCgNV3adkamYxY1aJNYp/Bc=
 github.com/gtramontina/ooze v0.2.0/go.mod h1:e0dltGb+Ws7SQKfoj4XkKf9C/UaIAK2YGWbLKLPwL6k=
-github.com/hairyhenderson/go-which v0.2.2 h1:yMyAHo4InxHiTAboIeOji8nZ5EXwIp116a2uo/MFkFI=
-github.com/hairyhenderson/go-which v0.2.2/go.mod h1:vBfncX6hXWQhY1Qte8qQNWuJNnsGPqFLjgmwEETyOAo=
+github.com/hairyhenderson/go-which v0.2.3 h1:it1AhsE22R9vmHwPoarntRKAxLQh3DDjrmjvhdyPKsc=
+github.com/hairyhenderson/go-which v0.2.3/go.mod h1:Y//UTU8Ka+DbmX+J84onw2hhzgqduvt97PCKQXOf/HQ=
 github.com/hashicorp/errwrap v1.0.0/go.mod h1:YH+1FKiLXxHSkmPseP+kNlulaMuP3n2brvKWEqk/Jc4=
 github.com/hashicorp/errwrap v1.1.0 h1:OxrOeh75EUXMY8TBjag2fzXGZ40LB6IKw45YeGUDY2I=
 github.com/hashicorp/errwrap v1.1.0/go.mod h1:YH+1FKiLXxHSkmPseP+kNlulaMuP3n2brvKWEqk/Jc4=
