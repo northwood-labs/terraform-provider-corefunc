@@ -127,6 +127,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`b43748f`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/b43748f6b1c9a5105410f051f04a943b764081b3): **deps**: Bump `step-security/harden-runner` from 2.19.2 to 2.19.3 ([#786](https://github.com/northwood-labs/terraform-provider-corefunc/issues/786)) ([@dependabot](https://github.com/dependabot))
 * [`408666e`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/408666ee92c0dcdd84adcf968cc4cfaa793e464b): **deps**: Bump `github/codeql-action` from 4.35.4 to 4.35.5 ([#787](https://github.com/northwood-labs/terraform-provider-corefunc/issues/787)) ([@dependabot](https://github.com/dependabot))
 * [`e615a99`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/e615a99d12560ab21fe9c2b84622916310371867): **deps**: Bump `github.com/gruntwork-io/terratest` ([#783](https://github.com/northwood-labs/terraform-provider-corefunc/issues/783)) ([@dependabot](https://github.com/dependabot))
+* [`9532703`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/953270324cf14fad9fdfeb90891e54379268e1df): **deps**: Bump `github.com/gruntwork-io/terratest` ([#780](https://github.com/northwood-labs/terraform-provider-corefunc/issues/780)) ([@dependabot](https://github.com/dependabot))
+* [`66a0bf3`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/66a0bf3614ab6c65bbdf2a8dbc41e3efcc2ca575): **deps**: Bump `trufflesecurity/trufflehog` from 3.95.2 to 3.95.3 ([#779](https://github.com/northwood-labs/terraform-provider-corefunc/issues/779)) ([@dependabot](https://github.com/dependabot))
 
 ### :test_tube: Testing
 
