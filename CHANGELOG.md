@@ -129,6 +129,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`e615a99`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/e615a99d12560ab21fe9c2b84622916310371867): **deps**: Bump `github.com/gruntwork-io/terratest` ([#783](https://github.com/northwood-labs/terraform-provider-corefunc/issues/783)) ([@dependabot](https://github.com/dependabot))
 * [`9532703`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/953270324cf14fad9fdfeb90891e54379268e1df): **deps**: Bump `github.com/gruntwork-io/terratest` ([#780](https://github.com/northwood-labs/terraform-provider-corefunc/issues/780)) ([@dependabot](https://github.com/dependabot))
 * [`66a0bf3`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/66a0bf3614ab6c65bbdf2a8dbc41e3efcc2ca575): **deps**: Bump `trufflesecurity/trufflehog` from 3.95.2 to 3.95.3 ([#779](https://github.com/northwood-labs/terraform-provider-corefunc/issues/779)) ([@dependabot](https://github.com/dependabot))
+* [`5b41486`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/5b41486fff89b8ee2708cf33d13668166f94a73e): **deps**: Bump `goreleaser/goreleaser-action` from 7.2.1 to 7.2.2 ([#788](https://github.com/northwood-labs/terraform-provider-corefunc/issues/788)) ([@dependabot](https://github.com/dependabot))
+* [`56efbd8`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/56efbd8675c63dd08c177ab157f38c86d0a1c0c4): **deps**: Bump `opentofu/setup-opentofu` from 2.0.0 to 2.0.1 ([#789](https://github.com/northwood-labs/terraform-provider-corefunc/issues/789)) ([@dependabot](https://github.com/dependabot))
 
 ### :test_tube: Testing
 
