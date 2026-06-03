@@ -134,6 +134,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`0b8f53e`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/0b8f53edda13ba81392c5cee398d6e0612b2a22a): **deps**: Bump `step-security/harden-runner` from 2.19.3 to 2.19.4 ([#790](https://github.com/northwood-labs/terraform-provider-corefunc/issues/790)) ([@dependabot](https://github.com/dependabot))
 * [`3bfe91c`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/3bfe91ca0f15ed974cffb5a596eb795b799a8b24): **deps**: Bump `golang.org/x/crypto` from 0.51.0 to 0.52.0 ([#792](https://github.com/northwood-labs/terraform-provider-corefunc/issues/792)) ([@dependabot](https://github.com/dependabot))
 * [`6eac8ff`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/6eac8ff7ed6a2056f1110490a4975a752213736c): **deps**: Bump `golangci/golangci-lint-action` from 9.2.0 to 9.2.1 ([#791](https://github.com/northwood-labs/terraform-provider-corefunc/issues/791)) ([@dependabot](https://github.com/dependabot))
+* [`cf630d5`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/cf630d50f41af4a511cbd3e319b8722dc3cd172e): **deps**: Bump `github/codeql-action` from 4.35.5 to 4.36.0 ([#793](https://github.com/northwood-labs/terraform-provider-corefunc/issues/793)) ([@dependabot](https://github.com/dependabot))
+* [`afa294d`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/afa294d3649bb47d8c39850652a7f8ecba0e919a): **deps**: Bump `github.com/mattn/go-runewidth` from 0.0.23 to 0.0.24 ([#794](https://github.com/northwood-labs/terraform-provider-corefunc/issues/794)) ([@dependabot](https://github.com/dependabot))
+* [`b9bfb68`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/b9bfb682120928baf9b8656334135c56eb26a8e0): **deps**: Bump `trufflesecurity/trufflehog` from 3.95.3 to 3.95.5 ([#795](https://github.com/northwood-labs/terraform-provider-corefunc/issues/795)) ([@dependabot](https://github.com/dependabot))
+* [`961813a`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/961813ad40cf4ad5c1df8fcd43a17849f219a23e): **deps**: Bump `github/codeql-action` from 4.36.0 to 4.36.1 ([#796](https://github.com/northwood-labs/terraform-provider-corefunc/issues/796)) ([@dependabot](https://github.com/dependabot))
+* [`f26a209`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/f26a20945666f31718cae2d2243d1506f3be6bda): **deps**: Bump `actions/checkout` from 6.0.2 to 6.0.3 ([#797](https://github.com/northwood-labs/terraform-provider-corefunc/issues/797)) ([@dependabot](https://github.com/dependabot))
 
 ### :test_tube: Testing
 
@@ -1363,4 +1368,4 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`6bc72f6`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/6bc72f6d3927147c41665e0ccab69657a4dcd721): Trying to get the build to work. ([@skyzyx](https://github.com/skyzyx))
 * [`8c39e22`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/8c39e221bba5ab7364c52660d794fb75cbd35ff1): Harden GitHub Actions ([#129](https://github.com/northwood-labs/terraform-provider-corefunc/issues/129)) ([@step-security-bot](https://github.com/step-security-bot))
 
-<p>Generated on 2026-05-22.</p>
+<p>Generated on 2026-06-03.</p>
