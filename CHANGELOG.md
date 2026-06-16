@@ -4,6 +4,14 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com), adheres to [Semantic Versioning](https://semver.org), and uses [Conventional Commit](https://www.conventionalcommits.org) syntax.
 
+## Unreleased
+
+[Compare: v2.3.0 → `HEAD`](https://github.com/northwood-labs/terraform-provider-corefunc/compare/v2.3.0..HEAD)
+
+### <!-- ZZZ -->:gear: Miscellaneous Tasks
+
+* [`c8fa92d`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/c8fa92dbce5665ce452616aba16f7f76ee67b3cd): Updated Go version requirement to 1.26.4. ([@skyzyx](https://github.com/skyzyx))
+
 ## 2.3.0 — 2026-06-16
 
 [Compare: v2.2.1 → v2.3.0](https://github.com/northwood-labs/terraform-provider-corefunc/compare/v2.2.1...v2.3.0)
