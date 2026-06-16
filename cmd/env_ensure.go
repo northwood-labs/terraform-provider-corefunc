@@ -22,8 +22,9 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"github.com/northwood-labs/terraform-provider-corefunc/v2/corefunc"
 	clihelpers "go.nwlabs.dev/cli-helpers/v2"
+
+	"github.com/northwood-labs/terraform-provider-corefunc/v2/corefunc"
 )
 
 // envEnsureCmd represents the env-ensure command

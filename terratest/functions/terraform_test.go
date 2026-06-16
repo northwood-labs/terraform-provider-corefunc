@@ -95,7 +95,8 @@ func TestFunctions(t *testing.T) { // lint:allow_complexity
 			assert.Equal(t, terraform.Output(t, terraformOptions, "int_leftpad_fn"), corefunc.IntLeftPad(123, 5))
 			assert.Equal(t, terraform.Output(t, terraformOptions, "str_leftpad_fn"), corefunc.StrLeftPad("abc", 5, '.'))
 			assert.Equal(t, terraform.Output(t, terraformOptions, "env_ensure_fn"), os.Getenv("GOROOT"))
-			assert.Equal(t,
+			assert.Equal(
+				t,
 				terraform.Output(t, terraformOptions, "str_iterative_replace_fn"),
 				corefunc.StrIterativeReplace(
 					strToReplace,
