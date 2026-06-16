@@ -85,6 +85,7 @@ Exclude = [
   "min\\.js$",
   "package-lock\\.json$",
   "standard\\.mk$",
+  "\\.venv",
   # goplicate-end:excludes
 
   "sha3x512",

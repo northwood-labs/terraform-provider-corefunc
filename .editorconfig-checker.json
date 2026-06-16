@@ -73,6 +73,7 @@
     "min\\.js$",
     "package-lock\\.json$",
     "standard\\.mk$",
+    "\\.venv",
     "sha3x512",
     "sha512",
     "TerraformOptions.json$",
