@@ -157,6 +157,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`27691df`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/27691df45049864d3a5125c1821b81b65be763a0): Add config-manager support and remove deprecated Kiro files. ([@skyzyx](https://github.com/skyzyx))
 * [`29ea496`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/29ea496ad3eb54b9d4638f8ebb22ac4380166da3): Update project configuration and dependencies. ([@skyzyx](https://github.com/skyzyx))
 * [`1d28e2a`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/1d28e2ae8643bdbf32303117d83b553c86077f8b): Release v2.3.0 with maintenance updates. ([@skyzyx](https://github.com/skyzyx))
+* [`3541ad6`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/3541ad643693208caa8d7f68ae964037f70d7661): Update documentation and version ranges. ([@skyzyx](https://github.com/skyzyx))
 
 ## 2.2.1 — 2025-12-03
 
