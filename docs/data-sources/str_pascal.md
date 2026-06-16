@@ -17,7 +17,7 @@ Converts a string to `PascalCase`, removing any non-alphanumeric characters.
 
 Maps to the [`corefunc.StrPascal()`](https://pkg.go.dev/github.com/northwood-labs/terraform-provider-corefunc/v2/corefunc#StrPascal) Go method, which can be used in [Terratest](https://terratest.gruntwork.io).
 
-## Example Usage
+## Example usage
 
 ```terraform
 data "corefunc_str_pascal" "test_initialisms_ip_html_eof_ascii_cpu" {
@@ -67,4 +67,4 @@ data "corefunc_str_pascal" "test_with_number" {
 
 * `value` (String) The value of the string.
 
-<!-- Preview the provider docs with the Terraform registry provider docs preview tool: https://registry.terraform.io/tools/doc-preview -->
+<!-- Preview the provider docs with the Terraform registry provider docs preview tool: https://registry.Terraform.io/tools/doc-preview -->

@@ -80,11 +80,10 @@ func (d *strIterativeReplaceDataSource) Schema(
 
 	resp.Schema = schema.Schema{
 		MarkdownDescription: strings.TrimSpace(dedent.Dedent(`
-        Performs a series of replacements against a string. Allows a Terraform
-        module to accept a set of replacements from a user.
+		Performs a series of replacements against a string. Allows a Terraform
+		module to accept a set of replacements from a user.
 
-        Maps to the [` + "`" + `corefunc.StrIterativeReplace()` + "`" + `](URL)
-        Go method, which can be used in ` + Terratest + `.
+		Maps to the ` + linkPackage("StrIterativeReplace") + ` Go method, which can be used in ` + Terratest + `.
         `)),
 		Attributes: map[string]schema.Attribute{
 			"string": schema.StringAttribute{

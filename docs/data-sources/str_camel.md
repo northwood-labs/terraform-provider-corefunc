@@ -17,7 +17,7 @@ Converts a string to `camelCase`, removing any non-alphanumeric characters.
 
 Maps to the [`corefunc.StrCamel()`](https://pkg.go.dev/github.com/northwood-labs/terraform-provider-corefunc/v2/corefunc#StrCamel) Go method, which can be used in [Terratest](https://terratest.gruntwork.io).
 
-## Example Usage
+## Example usage
 
 ```terraform
 data "corefunc_str_camel" "test_initialisms_ip_html_eof_ascii_cpu" {
@@ -62,4 +62,4 @@ data "corefunc_str_camel" "this_is_an_example" {
 
 * `value` (String) The value of the string.
 
-<!-- Preview the provider docs with the Terraform registry provider docs preview tool: https://registry.terraform.io/tools/doc-preview -->
+<!-- Preview the provider docs with the Terraform registry provider docs preview tool: https://registry.Terraform.io/tools/doc-preview -->

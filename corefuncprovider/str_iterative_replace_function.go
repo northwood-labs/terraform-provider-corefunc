@@ -68,11 +68,10 @@ func (f *strIterativeReplaceFunction) Definition(
 	resp.Definition = function.Definition{
 		Summary: "Performs a series of replacements against a string.",
 		MarkdownDescription: strings.TrimSpace(dedent.Dedent(`
-        Performs a series of replacements against a string. Allows a Terraform
-        module to accept a set of replacements from a user.
+		Performs a series of replacements against a string. Allows a Terraform
+		module to accept a set of replacements from a user.
 
-        Maps to the [` + "`" + `corefunc.StrIterativeReplace()` + "`" + `](URL)
-        Go method, which can be used in ` + Terratest + `.
+		Maps to the ` + linkPackage("StrIterativeReplace") + ` Go method, which can be used in ` + Terratest + `.
         `)),
 		Parameters: []function.Parameter{
 			function.StringParameter{

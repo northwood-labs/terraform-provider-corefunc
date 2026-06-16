@@ -5,14 +5,14 @@ applyTo: '**'
 
 # Self-explanatory Code Commenting Instructions
 
-## Core Principle
+## Core principle
 
 **Write code that speaks for itself. Comment only when necessary to explain WHY, not WHAT.**
 We do not need comments most of the time.
 
-## ❌ AVOID These Comment Types
+## ❌ AVOID these comment types
 
-### Obvious Comments
+### Obvious comments
 
 ```javascript
 // Bad: States the obvious
@@ -20,7 +20,7 @@ let counter = 0;  // Initialize counter to zero
 counter++;  // Increment counter by one
 ```
 
-### Redundant Comments
+### Redundant comments
 
 ```javascript
 // Bad: Comment repeats the code
@@ -29,7 +29,7 @@ function getUserName() {
 }
 ```
 
-### Outdated Comments
+### Outdated comments
 
 ```javascript
 // Bad: Comment doesn't match the code
@@ -37,9 +37,9 @@ function getUserName() {
 const tax = price * 0.08;  // Actually 8%
 ```
 
-## ✅ WRITE These Comment Types
+## ✅ WRITE these comment types
 
-### Complex Business Logic
+### Complex business logic
 
 ```javascript
 // Good: Explains WHY this specific calculation
@@ -47,7 +47,7 @@ const tax = price * 0.08;  // Actually 8%
 const tax = calculateProgressiveTax(income, [0.10, 0.20], [10000]);
 ```
 
-### Non-obvious Algorithms
+### Non-obvious algorithms
 
 ```javascript
 // Good: Explains the algorithm choice
@@ -62,7 +62,7 @@ for (let k = 0; k < vertices; k++) {
 }
 ```
 
-### Regex Patterns
+### Regex patterns
 
 ```javascript
 // Good: Explains what the regex matches
@@ -70,7 +70,7 @@ for (let k = 0; k < vertices; k++) {
 const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 ```
 
-### API Constraints or Gotchas
+### API constraints or gotchas
 
 ```javascript
 // Good: Explains external constraint
@@ -79,16 +79,16 @@ await rateLimiter.wait();
 const response = await fetch(githubApiUrl);
 ```
 
-## Decision Framework
+## Decision framework
 
 Before writing a comment, ask:
 
 1. **Is the code self-explanatory?** → No comment needed
-1. **Would a better variable/function name eliminate the need?** → Refactor instead
-1. **Does this explain WHY, not WHAT?** → Good comment
-1. **Will this help future maintainers?** → Good comment
+2. **Would a better variable/function name eliminate the need?** → Refactor instead
+3. **Does this explain WHY, not WHAT?** → Good comment
+4. **Will this help future maintainers?** → Good comment
 
-## Special Cases for Comments
+## Special cases for comments
 
 ### Public APIs
 
@@ -107,7 +107,7 @@ function calculateCompoundInterest(principal, rate, time, compoundFrequency = 1)
 }
 ```
 
-### Configuration and Constants
+### Configuration and constants
 
 ```javascript
 // Good: Explains the source or reasoning
@@ -130,9 +130,9 @@ const API_TIMEOUT = 5000;  // AWS Lambda timeout is 15s, leaving buffer
 // DEPRECATED: Use newApiFunction() instead - this will be removed in v3.0
 ```
 
-## Anti-Patterns to Avoid
+## Anti-Patterns to avoid
 
-### Dead Code Comments
+### Dead code comments
 
 ```javascript
 // Bad: Don't comment out code
@@ -140,7 +140,7 @@ const API_TIMEOUT = 5000;  // AWS Lambda timeout is 15s, leaving buffer
 const newFunction = () => { ... };
 ```
 
-### Changelog Comments
+### Changelog comments
 
 ```javascript
 // Bad: Don't maintain history in comments
@@ -151,7 +151,7 @@ function processData() {
 }
 ```
 
-### Divider Comments
+### Divider comments
 
 ```javascript
 // Bad: Don't use decorative comments
@@ -160,7 +160,7 @@ function processData() {
 //=====================================
 ```
 
-## Quality Checklist
+## Quality checklist
 
 Before committing, ensure your comments:
 

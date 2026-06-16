@@ -31,7 +31,7 @@ the way back to v1.0.
 
 Maps to the [`corefunc.CIDRContains()`](https://pkg.go.dev/github.com/northwood-labs/terraform-provider-corefunc/v2/corefunc#CIDRContains) Go method, which can be used in [Terratest](https://terratest.gruntwork.io).
 
-## Example Usage
+## Example usage
 
 ```terraform
 data "corefunc_net_cidr_contains" "cidr" {
@@ -54,4 +54,4 @@ data "corefunc_net_cidr_contains" "cidr" {
 
 * `value` (Boolean) Whether or not the IP address or CIDR range is contained within the container CIDR range.
 
-<!-- Preview the provider docs with the Terraform registry provider docs preview tool: https://registry.terraform.io/tools/doc-preview -->
+<!-- Preview the provider docs with the Terraform registry provider docs preview tool: https://registry.Terraform.io/tools/doc-preview -->

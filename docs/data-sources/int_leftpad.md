@@ -15,7 +15,7 @@ Converts an integer to a string, and then pads it with zeroes on the left.
 
 Maps to the [`corefunc.IntLeftPad()`](https://pkg.go.dev/github.com/northwood-labs/terraform-provider-corefunc/v2/corefunc#IntLeftPad) Go method, which can be used in [Terratest](https://terratest.gruntwork.io).
 
-## Example Usage
+## Example usage
 
 ```terraform
 data "corefunc_int_leftpad" "leftpad" {
@@ -38,4 +38,4 @@ data "corefunc_int_leftpad" "leftpad" {
 
 * `value` (String) The value of the string.
 
-<!-- Preview the provider docs with the Terraform registry provider docs preview tool: https://registry.terraform.io/tools/doc-preview -->
+<!-- Preview the provider docs with the Terraform registry provider docs preview tool: https://registry.Terraform.io/tools/doc-preview -->

@@ -7,7 +7,7 @@ applyTo: '**/*.go,**/go.mod,**/go.sum'
 
 Follow idiomatic Go practices and community standards when writing Go code. These instructions are based on [Effective Go](https://go.dev/doc/effective_go), [Go Code Review Comments](https://go.dev/wiki/CodeReviewComments), and [Google's Go Style Guide](https://google.github.io/styleguide/go/).
 
-## General Instructions
+## General instructions
 
 * Write simple, clear, and idiomatic Go code
 * Favor clarity and simplicity over cleverness
@@ -18,7 +18,7 @@ Follow idiomatic Go practices and community standards when writing Go code. Thes
 * Document exported types, functions, methods, and packages
 * Use Go modules for dependency management
 
-## Naming Conventions
+## Naming conventions
 
 ### Packages
 
@@ -28,7 +28,7 @@ Follow idiomatic Go practices and community standards when writing Go code. Thes
 * Avoid generic names like `util`, `common`, or `base`
 * Package names should be singular, not plural
 
-### Variables and Functions
+### Variables and functions
 
 * Use mixedCaps or MixedCaps (camelCase) rather than underscores
 * Keep names short but descriptive
@@ -50,7 +50,7 @@ Follow idiomatic Go practices and community standards when writing Go code. Thes
 * Group related constants using `const` blocks
 * Consider using typed constants for better type safety
 
-## Code Style and Formatting
+## Code style and formatting
 
 ### Formatting
 
@@ -68,7 +68,7 @@ Follow idiomatic Go practices and community standards when writing Go code. Thes
 * Use block comments (`/* */`) sparingly, mainly for package documentation
 * Document why, not what, unless the what is complex
 
-### Error Handling
+### Error handling
 
 * Check errors immediately after the function call
 * Don't ignore errors using `_` unless you have a good reason (document why)
@@ -78,9 +78,9 @@ Follow idiomatic Go practices and community standards when writing Go code. Thes
 * Name error variables `err`
 * Keep error messages lowercase and don't end with punctuation
 
-## Architecture and Project Structure
+## Architecture and project structure
 
-### Package Organization
+### Package organization
 
 * Follow standard Go project layout conventions
 * Keep `main` packages in `cmd/` directory
@@ -89,7 +89,7 @@ Follow idiomatic Go practices and community standards when writing Go code. Thes
 * Group related functionality into packages
 * Avoid circular dependencies
 
-### Dependency Management
+### Dependency management
 
 * Use Go modules (`go.mod` and `go.sum`)
 * Keep dependencies minimal
@@ -97,23 +97,23 @@ Follow idiomatic Go practices and community standards when writing Go code. Thes
 * Use `go mod tidy` to clean up unused dependencies
 * Vendor dependencies only when necessary
 
-## Type Safety and Language Features
+## Type safety and language features
 
-### Type Definitions
+### Type definitions
 
 * Define types to add meaning and type safety
 * Use struct tags for JSON, XML, database mappings
 * Prefer explicit type conversions
 * Use type assertions carefully and check the second return value
 
-### Pointers vs Values
+### Pointers vs values
 
 * Use pointers for large structs or when you need to modify the receiver
 * Use values for small structs and when immutability is desired
 * Be consistent within a type's method set
 * Consider the zero value when choosing pointer vs value receivers
 
-### Interfaces and Composition
+### Interfaces and composition
 
 * Accept interfaces, return concrete types
 * Keep interfaces small (1-3 methods is ideal)
@@ -146,9 +146,9 @@ Follow idiomatic Go practices and community standards when writing Go code. Thes
 * Prefer channels over mutexes when possible
 * Use `sync.Once` for one-time initialization
 
-## Error Handling Patterns
+## Error handling patterns
 
-### Creating Errors
+### Creating errors
 
 * Use `errors.New` for simple static errors
 * Use `fmt.Errorf` for dynamic errors
@@ -156,16 +156,16 @@ Follow idiomatic Go practices and community standards when writing Go code. Thes
 * Export error variables for sentinel errors
 * Use `errors.Is` and `errors.As` for error checking
 
-### Error Propagation
+### Error propagation
 
 * Add context when propagating errors up the stack
 * Don't log and return errors (choose one)
 * Handle errors at the appropriate level
 * Consider using structured errors for better debugging
 
-## API Design
+## API design
 
-### HTTP Handlers
+### HTTP handlers
 
 * Use `http.HandlerFunc` for simple handlers
 * Implement `http.Handler` for handlers that need state
@@ -181,9 +181,9 @@ Follow idiomatic Go practices and community standards when writing Go code. Thes
 * Consider using `json.RawMessage` for delayed parsing
 * Handle JSON errors appropriately
 
-## Performance Optimization
+## Performance optimization
 
-### Memory Management
+### Memory management
 
 * Minimize allocations in hot paths
 * Reuse objects when possible (consider `sync.Pool`)
@@ -201,14 +201,14 @@ Follow idiomatic Go practices and community standards when writing Go code. Thes
 
 ## Testing
 
-### Test Organization
+### Test organization
 
 * Keep tests in the same package (white-box testing)
 * Use `_test` package suffix for black-box testing
 * Name test files with `_test.go` suffix
 * Place test files next to the code they test
 
-### Writing Tests
+### Writing tests
 
 * Use table-driven tests for multiple test cases
 * Name tests descriptively using `Test_functionName_scenario`
@@ -216,16 +216,16 @@ Follow idiomatic Go practices and community standards when writing Go code. Thes
 * Test both success and error cases
 * Use `testify` or similar libraries sparingly
 
-### Test Helpers
+### Test helpers
 
 * Mark helper functions with `t.Helper()`
 * Create test fixtures for complex setup
 * Use `testing.TB` interface for functions used in tests and benchmarks
 * Clean up resources using `t.Cleanup()`
 
-## Security Best Practices
+## Security best practices
 
-### Input Validation
+### Input validation
 
 * Validate all external input
 * Use strong typing to prevent invalid states
@@ -243,7 +243,7 @@ Follow idiomatic Go practices and community standards when writing Go code. Thes
 
 ## Documentation
 
-### Code Documentation
+### Code documentation
 
 * Document all exported symbols
 * Start documentation with the symbol name
@@ -251,7 +251,7 @@ Follow idiomatic Go practices and community standards when writing Go code. Thes
 * Keep documentation close to code
 * Update documentation when code changes
 
-### README and Documentation Files
+### README and documentation files
 
 * Include clear setup instructions
 * Document dependencies and requirements
@@ -259,9 +259,9 @@ Follow idiomatic Go practices and community standards when writing Go code. Thes
 * Document configuration options
 * Include troubleshooting section
 
-## Tools and Development Workflow
+## Tools and development workflow
 
-### Essential Tools
+### Essential tools
 
 * `go fmt`: Format code
 * `go vet`: Find suspicious constructs
@@ -270,7 +270,7 @@ Follow idiomatic Go practices and community standards when writing Go code. Thes
 * `go mod`: Manage dependencies
 * `go generate`: Code generation
 
-### Development Practices
+### Development practices
 
 * Run tests before committing
 * Use pre-commit hooks for formatting and linting
@@ -278,7 +278,7 @@ Follow idiomatic Go practices and community standards when writing Go code. Thes
 * Write meaningful commit messages
 * Review diffs before committing
 
-## Common Pitfalls to Avoid
+## Common pitfalls to avoid
 
 * Not checking errors
 * Ignoring race conditions

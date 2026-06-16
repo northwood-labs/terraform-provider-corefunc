@@ -12,7 +12,7 @@ Replaces the ~ character in a path with the current user's home directory.
 
 Maps to the [`corefunc.HomedirExpand()`](https://pkg.go.dev/github.com/northwood-labs/terraform-provider-corefunc/v2/corefunc#HomedirExpand) Go method, which can be used in [Terratest](https://terratest.gruntwork.io).
 
-## Example Usage
+## Example usage
 
 ```terraform
 data "corefunc_homedir_expand" "home" {
@@ -34,4 +34,4 @@ data "corefunc_homedir_expand" "home" {
 
 * `value` (String) The path with the home directory expanded.
 
-<!-- Preview the provider docs with the Terraform registry provider docs preview tool: https://registry.terraform.io/tools/doc-preview -->
+<!-- Preview the provider docs with the Terraform registry provider docs preview tool: https://registry.Terraform.io/tools/doc-preview -->

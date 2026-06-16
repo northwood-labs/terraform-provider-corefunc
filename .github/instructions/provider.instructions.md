@@ -3,6 +3,8 @@ description: 'Instructions for writing Go code for a Terrform provider following
 applyTo: 'corefuncprovider/*.go,examples/**/*.tf,testfixtures/*.go'
 ---
 
+# Provider Instructions
+
 When implementing new functionality, please follow these patterns exactly to maintain consistency.
 
 You are assisting with a Terraform/OpenTofu provider named "corefunc". Generate code that strictly matches existing repository conventions.
@@ -12,12 +14,12 @@ You are assisting with a Terraform/OpenTofu provider named "corefunc". Generate 
 * Core logic: corefunc/
 * Provider wrapper: corefuncprovider/
 * For each feature X (snake_case file stem without corefunc_ prefix):
-    **Library: corefunc/X.go
-    ** Data source: corefuncprovider/X_data_source.go
-    **Provider function: corefuncprovider/X_function.go
-    ** Tests: *_data_source_test.go,*_function_test.go
-    ** Fixture templates: *_data_source_fixture.tftpl, __function_fixture.tftpl
-    ** Shared table-driven cases: testfixtures/_.go
+  **Library: corefunc/X.go
+  ** Data source: corefuncprovider/X_data_source.go
+  **Provider function: corefuncprovider/X_function.go
+  ** Tests: *_data_source_test.go,*_function_test.go
+  ** Fixture templates: *_data_source_fixture.tftpl, __function_fixture.tftpl
+  ** Shared table-driven cases: testfixtures/_.go
 * Examples: examples/data-sources/corefunc_X/, examples/functions/corefunc_X/
 * Docs generated from provider sources + templates.
 
@@ -26,11 +28,11 @@ You are assisting with a Terraform/OpenTofu provider named "corefunc". Generate 
 * Every Go file begins with the Apache 2.0 header (years range updated) exactly as in existing files.
 * Each package has a doc.go with a short package comment.
 * Each exported function/method has a godoc block with:
-    **One-sentence summary.
-    ** Blank line.
-    **Parameter section using a hyphen list, matching existing formatting.
-    ** Return value description.
-* In provider schema or function Definition markdown: wrap multi-line strings with strings.TrimSpace(dedent.Dedent(`...`)).
+  **One-sentence summary.
+  ** Blank line.
+  **Parameter section using a hyphen list, matching existing formatting.
+  ** Return value description.
+* In provider schema or function Definition Markdown: wrap multi-line strings with strings.TrimSpace(dedent.Dedent(`...`)).
 * Use backticks for identifiers and code.
 * Use linkPackage("FuncName") helper when referencing underlying Go functions (see helpers).
 * Mention Terratest usage phrase: “which can be used in Terratest” consistent with current wording.
@@ -52,27 +54,27 @@ You are assisting with a Terraform/OpenTofu provider named "corefunc". Generate 
 
 * Implement interfaces explicitly; add compile-time interface assertion lines (var _ datasource.DataSource = &xyzDataSource{}).
 * Schema layout:
-    **MarkdownDescription summarizing capability + mapping to underlying Go func with linkPackage().
-    ** Required arguments at top; Computed outputs at bottom.
-    ** Use types.StringType / types.Int64Type etc. and schema.StringAttribute / List / Map as already done.
+  **MarkdownDescription summarizing capability + mapping to underlying Go func with linkPackage().
+  ** Required arguments at top; Computed outputs at bottom.
+  ** Use types.StringType / types.Int64Type etc. and schema.StringAttribute / List / Map as already done.
 * Read():
-    **Get state into model struct.
-    ** Perform transformation via `corefunc.<Func>`.
-    ** Set state; append diagnostics; return early if diagnostics.HasError().
+  **Get state into model struct.
+  ** Perform transformation via `corefunc.<Func>`.
+  ** Set state; append diagnostics; return early if diagnostics.HasError().
 
 ## Provider functions
 
 * Provide Metadata(), Definition(), Run() with logging wrappers.
 * Definition():
-    **Summary + MarkdownDescription (dedent).
-    ** Parameters typed using function.StringParameter, ListParameter, MapParameter etc.
-    ** Return: function.StringReturn{}, or object/map mirroring existing examples (see url_parse / str_iterative_replace).
+  **Summary + MarkdownDescription (dedent).
+  ** Parameters typed using function.StringParameter, ListParameter, MapParameter etc.
+  ** Return: function.StringReturn{}, or object/map mirroring existing examples (see url_parse / str_iterative_replace).
 * Run():
-    **Extract arguments with req.Arguments.Get.
-    ** On error: set resp.Error using function.ConcatFuncErrors.
-    **Call `corefunc.<Func>`.
-    ** Set resp.Result; no panics.
-    ** Validate enum-like inputs (see canonicalizer switch in url_parse); produce function.NewArgumentFuncError on invalid values.
+  **Extract arguments with req.Arguments.Get.
+  ** On error: set resp.Error using function.ConcatFuncErrors.
+  **Call `corefunc.<Func>`.
+  ** Set resp.Result; no panics.
+  ** Validate enum-like inputs (see canonicalizer switch in url_parse); produce function.NewArgumentFuncError on invalid values.
 
 ## Error handling
 
@@ -82,12 +84,13 @@ You are assisting with a Terraform/OpenTofu provider named "corefunc". Generate 
 
 ## Testing
 
-* Table-driven tests share central maps in testfixtures/*.go (e.g. URLParseTestTable, URLDecodeTestTable).
+_Table-driven tests share central maps in testfixtures/_.go (e.g. URLParseTestTable, URLDecodeTestTable).
+
 * Test naming:
-    **Data source acceptance: `TestAcc<PascalName>DataSource`
-    ** Function acceptance: `TestAcc<PascalName>Function`
-* Use template fixture (*.tftpl) rendered with text/template inside tests.
-* For failing cases include ExpectError with regexp.MustCompile(".*") pattern (mirrors existing style).
+  **Data source acceptance: `TestAcc<PascalName>DataSource`
+  ** Function acceptance: `TestAcc<PascalName>Function`
+_Use template fixture (_.tftpl) rendered with text/template inside tests.
+_For failing cases include ExpectError with regexp.MustCompile("._") pattern (mirrors existing style).
 * Example outputs in .tftpl start with '#=>' lines listing each expected line in order.
 * Use resource.UnitTest or resource.Test depending on pattern already established.
 * Keep providerConfig prefix reuse pattern.
@@ -125,9 +128,9 @@ You are assisting with a Terraform/OpenTofu provider named "corefunc". Generate 
 ## When unsure
 
 * Mirror the closest existing analogous implementation:
-    **Simple string transform: see str_snake function run path.
-    ** Multi-field object return: see url_parse function + data source.
-    ** Iterative replacement pattern: see str_iterative_replace.
+  **Simple string transform: see str_snake function run path.
+  ** Multi-field object return: see url_parse function + data source.
+  ** Iterative replacement pattern: see str_iterative_replace.
 
 ## Output
 

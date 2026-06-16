@@ -23,7 +23,7 @@ the architecture of the emulated CPU, not the host CPU.
 Maps to the [`runtime.GOARCH`](https://pkg.go.dev/runtime#GOARCH)
 Go property, which can be used in [Terratest](https://terratest.gruntwork.io).
 
-## Example Usage
+## Example usage
 
 ```terraform
 data "corefunc_runtime_cpuarch" "arch" {}
@@ -38,4 +38,4 @@ data "corefunc_runtime_cpuarch" "arch" {}
 
 * `value` (String) Returns the CPU architecture for which the provider was compiled.
 
-<!-- Preview the provider docs with the Terraform registry provider docs preview tool: https://registry.terraform.io/tools/doc-preview -->
+<!-- Preview the provider docs with the Terraform registry provider docs preview tool: https://registry.Terraform.io/tools/doc-preview -->

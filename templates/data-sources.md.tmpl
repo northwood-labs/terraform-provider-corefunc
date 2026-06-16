@@ -9,7 +9,7 @@ description: |-
 
 {{ .Description | trimspace }}
 
-{{ if .HasExample -}}## Example Usage
+{{ if .HasExample -}}## Example usage
 
 {{ tffile (printf "examples/data-sources/%s/data-source.tf" .Name)}}{{- end }}
 

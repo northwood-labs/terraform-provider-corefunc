@@ -14,7 +14,7 @@ currently being supported with security updates.
 | < 4.0   | :x:                |
 -->
 
-## Reporting a Vulnerability
+## Reporting a vulnerability
 
 If you believe you have found a legitimate security vulnerability, please [report it](https://github.com/northwood-labs/terraform-provider-corefunc/security/advisories/new).
 

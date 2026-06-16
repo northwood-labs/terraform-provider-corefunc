@@ -5,12 +5,12 @@ description: |-
   Generates the Argon2id hash of a string with its associated salt value. Returns a Base64
   value instead of a hexadecimal string.
   For the algorithm’s configuration, we’ve chosen parameters that balance security and performance.
-  
+
   Time    = 1
   Memory  = 64 MB
   Threads = All
   Key Length = 32 bytes
-  
+
   Maps to the corefunc.Base64HashArgon2id() https://pkg.go.dev/github.com/northwood-labs/terraform-provider-corefunc/v2/corefunc#Base64HashArgon2id Go method, which can be used in Terratest https://terratest.gruntwork.io.
 ---
 
@@ -30,7 +30,7 @@ Key Length = 32 bytes
 
 Maps to the [`corefunc.Base64HashArgon2id()`](https://pkg.go.dev/github.com/northwood-labs/terraform-provider-corefunc/v2/corefunc#Base64HashArgon2id) Go method, which can be used in [Terratest](https://terratest.gruntwork.io).
 
-## Example Usage
+## Example usage
 
 ```terraform
 data "corefunc_hash_argon2id_base64" "hash_argon2id_base64" {
@@ -53,4 +53,4 @@ data "corefunc_hash_argon2id_base64" "hash_argon2id_base64" {
 
 * `value` (String) The result of the hashing function.
 
-<!-- Preview the provider docs with the Terraform registry provider docs preview tool: https://registry.terraform.io/tools/doc-preview -->
+<!-- Preview the provider docs with the Terraform registry provider docs preview tool: https://registry.Terraform.io/tools/doc-preview -->

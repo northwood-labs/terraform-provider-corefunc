@@ -20,7 +20,7 @@ After that, search the project for `@TODO` and make the appropriate changes. Exc
 
 * [ ] Generate the stub files.
 
-### Data Sources
+### Data sources
 
 * [ ] In the new `examples/data-sources/*/data-source.tf` file, ensure the example is implemented correctly.
 * [ ] In the new `examples/data-sources/*/terraform-plan.example` file, copy content or delete.
@@ -33,7 +33,7 @@ After that, search the project for `@TODO` and make the appropriate changes. Exc
 * [ ] In the new `*_data_source_test.go` file, ensure the test references the fixture correctly.
 * [ ] Run the integration tests.
 
-### Provider Functions
+### Provider functions
 
 * [ ] In the new `examples/functions/*/function.tf` file, ensure the example is implemented correctly.
 * [ ] In the new `templates/function/*.tmpl` file, update the template that will be used by the `tfplugindocs` package.
@@ -60,4 +60,4 @@ After that, search the project for `@TODO` and make the appropriate changes. Exc
 * [ ] In the `terratest/data-sources/` directory, edit the `terraform_test.go` file.
 * [ ] In the `terratest/functions/` directory, add a new `.tf` file for the functionality.
 * [ ] In the `terratest/functions/` directory, edit the `terraform_test.go` file.
-* [ ] Run the terratest tests.
+* [ ] Run the Terratest tests.

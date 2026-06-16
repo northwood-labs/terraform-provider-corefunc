@@ -12,7 +12,7 @@ Generates the SHA-3/256-bit hash of a string.
 
 Maps to the [`corefunc.HashSHA3x256()`](https://pkg.go.dev/github.com/northwood-labs/terraform-provider-corefunc/v2/corefunc#HashSHA3x256) Go method, which can be used in [Terratest](https://terratest.gruntwork.io).
 
-## Example Usage
+## Example usage
 
 ```terraform
 data "corefunc_hash_sha3x256" "hash_sha3x256" {
@@ -33,4 +33,4 @@ data "corefunc_hash_sha3x256" "hash_sha3x256" {
 
 * `value` (String) The result of the hashing function.
 
-<!-- Preview the provider docs with the Terraform registry provider docs preview tool: https://registry.terraform.io/tools/doc-preview -->
+<!-- Preview the provider docs with the Terraform registry provider docs preview tool: https://registry.Terraform.io/tools/doc-preview -->

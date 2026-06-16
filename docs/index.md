@@ -78,11 +78,11 @@ Built using the [Terraform Plugin Framework][TPF], which speaks [Terraform Proto
 | unit         | Go 1.25–1.26       | Tests using these versions.                                                    |
 | mutation     | Go 1.25–1.26       | Tests using these versions.                                                    |
 | fuzz         | Go 1.25–1.26       | Tests using these versions.                                                    |
-| terratest    | Go 1.25–1.26       | Tests using these versions.                                                    |
+| Terratest    | Go 1.25–1.26       | Tests using these versions.                                                    |
 
 ## Setting-up the provider
 
-### Data Sources
+### Data sources
 
 For users of Terraform 1.0 (and newer), all of the the _Data Source_ implementations are available. Their implementations (inputs, outputs) are consistent with the _Provider Function_ implementations, but exposed as _Data Sources_.
 
@@ -103,7 +103,7 @@ provider "corefunc" {
 }
 ```
 
-### Provider Functions
+### Provider functions
 
 For users of Terraform 1.8/OpenTofu 1.7 (and newer), all of the the _Data Source_ and _Provider Function_ implementations are available. Their implementations (inputs, outputs) are consistent with each other, and will always return the same outputs from the same imputs. _Provider Functions_ require version 1.4.0 (or later) of this provider.
 
@@ -157,7 +157,7 @@ terraform providers lock \
 * [search.opentofu.org](https://search.opentofu.org/provider/northwood-labs/corefunc/latest)
 * [library.tf](https://library.tf/providers/northwood-labs/corefunc/latest)
 
-### Go Package
+### Go package
 
 If you are using this as a Go library, see the documentation at [pkg.go.dev](https://pkg.go.dev/github.com/northwood-labs/terraform-provider-corefunc/v2/corefunc).
 
@@ -206,7 +206,7 @@ Supply-chain testing and validation. Some of these are on every commit, while a 
 * [Harden-Runner](https://github.com/marketplace/actions/harden-runner) (by [StepSecurity](https://stepsecurity.io)).
 * [OSSF Scorecard](https://github.com/marketplace/actions/ossf-scorecard-action) (by [OpenSSF](https://openssf.org)).
 * [OSV Scanner](https://google.github.io/osv-scanner/github-action/) (by [Google](https://osv.dev)).
-* [Trufflehog OSS](https://github.com/marketplace/actions/trufflehog-oss) (by [Truffle Security](https://trufflesecurity.com)).
+* [TruffleHog OSS](https://github.com/marketplace/actions/trufflehog-oss) (by [Truffle Security](https://trufflesecurity.com)).
 
 [alerts]: https://registry.terraform.io/providers/PagerDuty/pagerduty/latest
 [archive]: https://registry.terraform.io/providers/hashicorp/archive/latest/docs
@@ -226,4 +226,4 @@ Supply-chain testing and validation. Some of these are on every commit, while a 
 [TPF]: https://github.com/hashicorp/terraform-plugin-framework
 [zero trust network access]: https://registry.terraform.io/providers/zscaler/zpa/latest/docs
 
-<!-- Preview the provider docs with the Terraform registry provider docs preview tool: https://registry.terraform.io/tools/doc-preview -->
+<!-- Preview the provider docs with the Terraform registry provider docs preview tool: https://registry.Terraform.io/tools/doc-preview -->

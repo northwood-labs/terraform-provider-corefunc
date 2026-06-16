@@ -12,7 +12,7 @@ Generates the Bcrypt hash of a string with its associated key value.
 
 Maps to the [`corefunc.HashBcrypt()`](https://pkg.go.dev/github.com/northwood-labs/terraform-provider-corefunc/v2/corefunc#HashBcrypt) Go method, which can be used in [Terratest](https://terratest.gruntwork.io).
 
-## Example Usage
+## Example usage
 
 ```terraform
 data "corefunc_hash_bcrypt" "hash_bcrypt" {
@@ -38,4 +38,4 @@ data "corefunc_hash_bcrypt" "hash_bcrypt" {
 
 * `value` (String) The result of the hashing function.
 
-<!-- Preview the provider docs with the Terraform registry provider docs preview tool: https://registry.terraform.io/tools/doc-preview -->
+<!-- Preview the provider docs with the Terraform registry provider docs preview tool: https://registry.Terraform.io/tools/doc-preview -->

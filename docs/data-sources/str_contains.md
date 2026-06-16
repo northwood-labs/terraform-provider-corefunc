@@ -21,7 +21,7 @@ OpenTofu and Terraform going all the way back to v1.0.
 
 Maps to the [`corefunc.StrContains()`](https://pkg.go.dev/github.com/northwood-labs/terraform-provider-corefunc/v2/corefunc#StrContains) Go method, which can be used in [Terratest](https://terratest.gruntwork.io).
 
-## Example Usage
+## Example usage
 
 ```terraform
 data "corefunc_str_contains" "str_contains" {
@@ -44,4 +44,4 @@ data "corefunc_str_contains" "str_contains" {
 
 * `value` (Boolean) Whether or not the string contains the specified substring. A value of `true` indicates that it does. A value of `false` indicates that it does not.
 
-<!-- Preview the provider docs with the Terraform registry provider docs preview tool: https://registry.terraform.io/tools/doc-preview -->
+<!-- Preview the provider docs with the Terraform registry provider docs preview tool: https://registry.Terraform.io/tools/doc-preview -->

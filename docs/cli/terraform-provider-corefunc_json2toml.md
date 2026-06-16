@@ -1,10 +1,10 @@
 ---
-title: "terraform-provider-corefunc json2toml"
-slug: "terraform-provider-corefunc_json2toml"
-description: "CLI reference for terraform-provider-corefunc json2toml"
+title: "Terraform-provider-corefunc json2toml"
+slug: "Terraform-provider-corefunc_json2toml"
+description: "CLI reference for Terraform-provider-corefunc json2toml"
 ---
 
-## terraform-provider-corefunc json2toml
+## Terraform-provider-corefunc json2toml
 
 Converts JSON to TOML.
 
@@ -24,4 +24,4 @@ terraform-provider-corefunc json2toml [flags]
 
 ### See also
 
-* [terraform-provider-corefunc](terraform-provider-corefunc.md) - Utilities that should have been Terraform core functions.
+* [Terraform-provider-corefunc](terraform-provider-corefunc.md) - Utilities that should have been Terraform core functions.

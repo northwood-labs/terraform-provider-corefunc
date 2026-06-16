@@ -12,7 +12,7 @@ Returns the path to the home directory of the current user.
 
 Maps to the [`corefunc.Homedir()`](https://pkg.go.dev/github.com/northwood-labs/terraform-provider-corefunc/v2/corefunc#Homedir) Go method, which can be used in [Terratest](https://terratest.gruntwork.io).
 
-## Example Usage
+## Example usage
 
 ```terraform
 data "corefunc_homedir_get" "home" {}
@@ -27,4 +27,4 @@ data "corefunc_homedir_get" "home" {}
 
 * `value` (String) The value of the home directory.
 
-<!-- Preview the provider docs with the Terraform registry provider docs preview tool: https://registry.terraform.io/tools/doc-preview -->
+<!-- Preview the provider docs with the Terraform registry provider docs preview tool: https://registry.Terraform.io/tools/doc-preview -->

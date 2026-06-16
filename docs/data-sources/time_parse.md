@@ -17,7 +17,7 @@ RFC1123, RFC3339, RFC5322, and similar.
 
 Maps to the [`corefunc.TimeParse()`](https://pkg.go.dev/github.com/northwood-labs/terraform-provider-corefunc/v2/corefunc#TimeParse) Go method, which can be used in [Terratest](https://terratest.gruntwork.io).
 
-## Example Usage
+## Example usage
 
 ```terraform
 data "corefunc_time_parse" "time1" {
@@ -50,4 +50,4 @@ data "corefunc_time_parse" "time3" {
 
 * `value` (Number) The parsed timestamp as the number of seconds since Unix epoch.
 
-<!-- Preview the provider docs with the Terraform registry provider docs preview tool: https://registry.terraform.io/tools/doc-preview -->
+<!-- Preview the provider docs with the Terraform registry provider docs preview tool: https://registry.Terraform.io/tools/doc-preview -->

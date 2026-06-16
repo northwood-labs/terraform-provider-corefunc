@@ -5,7 +5,7 @@ description: |-
 {{ .Description | plainmarkdown | trimspace | prefixlines "  " }}
 ---
 
-# {{ .Name }} ({{ .Type }})
+# `{{ .Name }}` ({{ .Type }})
 
 {{ .Description | trimspace }}
 
@@ -13,7 +13,7 @@ description: |-
 
 {{ .FunctionSignatureMarkdown }}
 
-## Example Usage
+## Example usage
 
 The `corefunc_toml_to_json` implementation converts between TOML and JSON, but not native types. In order to interchange with native Terraform/OpenTofu types, you will also need to leverage the built-in `jsonencode()` and `jsondecode()` functions.
 

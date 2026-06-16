@@ -1,18 +1,18 @@
 ---
-page_title: "corefunc_toml_to_json Data Source - corefunc"
+page_title: "corefunc_TOML_to_JSON Data Source - corefunc"
 subcategory: ""
 description: |-
   Converts a TOML string into an equivalent JSON string.
   Maps to the corefunc.TOMLtoJSON() https://pkg.go.dev/github.com/northwood-labs/terraform-provider-corefunc/v2/corefunc#TOMLtoJSON Go method, which can be used in Terratest https://terratest.gruntwork.io.
 ---
 
-# corefunc_toml_to_json (Data Source)
+# corefunc_TOML_to_JSON (Data Source)
 
 Converts a TOML string into an equivalent JSON string.
 
 Maps to the [`corefunc.TOMLtoJSON()`](https://pkg.go.dev/github.com/northwood-labs/terraform-provider-corefunc/v2/corefunc#TOMLtoJSON) Go method, which can be used in [Terratest](https://terratest.gruntwork.io).
 
-## Example Usage
+## Example usage
 
 The `corefunc_toml_to_json` implementation converts between TOML and JSON, but not native types. In order to interchange with native Terraform/OpenTofu types, you will also need to leverage the built-in `jsonencode()` and `jsondecode()` functions.
 
@@ -42,4 +42,4 @@ resource "local_file" "json_file" {
 
 * `json` (String) The equivalent JSON value.
 
-<!-- Preview the provider docs with the Terraform registry provider docs preview tool: https://registry.terraform.io/tools/doc-preview -->
+<!-- Preview the provider docs with the Terraform registry provider docs preview tool: https://registry.Terraform.io/tools/doc-preview -->

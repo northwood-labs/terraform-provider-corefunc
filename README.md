@@ -4,15 +4,15 @@
 [![OpenTofu Docs](https://img.shields.io/badge/OpenTofu-Docs-FEDA15?style=for-the-badge)](https://search.opentofu.org/provider/northwood-labs/corefunc/latest)
 [![Library.tf](https://img.shields.io/badge/Library.tf-Docs-B3DBF1?style=for-the-badge)](https://library.tf/providers/northwood-labs/corefunc/latest)
 [![Go Docs](https://img.shields.io/badge/Go-Docs-blue?style=for-the-badge)](https://pkg.go.dev/github.com/northwood-labs/terraform-provider-corefunc/v2/corefunc)
-[![GitHub](https://img.shields.io/github/license/northwood-labs/terraform-provider-corefunc?style=for-the-badge)](https://opensource.org/licenses/Apache-2.0)
-[![Go Report Card](https://goreportcard.com/badge/github.com/northwood-labs/terraform-provider-corefunc?style=for-the-badge)](https://goreportcard.com/report/github.com/northwood-labs/terraform-provider-corefunc)
+[![GitHub](https://img.shields.io/github/license/northwood-labs/Terraform-provider-corefunc?style=for-the-badge)](https://opensource.org/licenses/Apache-2.0)
+[![Go Report Card](https://goreportcard.com/badge/github.com/northwood-labs/Terraform-provider-corefunc?style=for-the-badge)](https://goreportcard.com/report/github.com/northwood-labs/terraform-provider-corefunc)
 [![Open Source Insights](https://img.shields.io/badge/Open_Source-Insights-000000?style=for-the-badge)](https://deps.dev/go/github.com%2Fnorthwood-labs%2Fterraform-provider-corefunc%2Fv2)
-[![GitHub issues](https://img.shields.io/github/issues/northwood-labs/terraform-provider-corefunc?style=for-the-badge)](https://github.com/northwood-labs/terraform-provider-corefunc/issues)
-[![GitHub contributors](https://img.shields.io/github/contributors/northwood-labs/terraform-provider-corefunc?style=for-the-badge)](https://github.com/northwood-labs/terraform-provider-corefunc/graphs/contributors)
-[![GitHub commit activity (branch)](https://img.shields.io/github/commit-activity/m/northwood-labs/terraform-provider-corefunc?style=for-the-badge)](https://github.com/northwood-labs/terraform-provider-corefunc/commits/main/)
-[![GitHub all releases](https://img.shields.io/github/downloads/northwood-labs/terraform-provider-corefunc/total?style=for-the-badge)](https://github.com/northwood-labs/terraform-provider-corefunc/releases)
-[![GitHub Workflow Status (with event)](https://img.shields.io/github/actions/workflow/status/northwood-labs/terraform-provider-corefunc/test.yml?style=for-the-badge&label=Tests)](https://github.com/northwood-labs/terraform-provider-corefunc/actions/workflows/test.yml)
-[![GitHub Workflow Status (with event)](https://img.shields.io/github/actions/workflow/status/northwood-labs/terraform-provider-corefunc/release.yml?style=for-the-badge&label=Release)](https://github.com/northwood-labs/terraform-provider-corefunc/actions/workflows/release.yml)
+[![GitHub issues](https://img.shields.io/github/issues/northwood-labs/Terraform-provider-corefunc?style=for-the-badge)](https://github.com/northwood-labs/terraform-provider-corefunc/issues)
+[![GitHub contributors](https://img.shields.io/github/contributors/northwood-labs/Terraform-provider-corefunc?style=for-the-badge)](https://github.com/northwood-labs/terraform-provider-corefunc/graphs/contributors)
+[![GitHub commit activity (branch)](https://img.shields.io/github/commit-activity/m/northwood-labs/Terraform-provider-corefunc?style=for-the-badge)](https://github.com/northwood-labs/terraform-provider-corefunc/commits/main/)
+[![GitHub all releases](https://img.shields.io/github/downloads/northwood-labs/Terraform-provider-corefunc/total?style=for-the-badge)](https://github.com/northwood-labs/terraform-provider-corefunc/releases)
+[![GitHub Workflow Status (with event)](https://img.shields.io/github/actions/workflow/status/northwood-labs/Terraform-provider-corefunc/test.yml?style=for-the-badge&label=Tests)](https://github.com/northwood-labs/terraform-provider-corefunc/actions/workflows/test.yml)
+[![GitHub Workflow Status (with event)](https://img.shields.io/github/actions/workflow/status/northwood-labs/Terraform-provider-corefunc/release.yml?style=for-the-badge&label=Release)](https://github.com/northwood-labs/terraform-provider-corefunc/actions/workflows/release.yml)
 
 ## Overview
 
@@ -53,9 +53,9 @@ The goal of this provider is not to call any network APIs, but to provide pre-bu
 | unit         | Go 1.25–1.26       | Tests using these versions.                                                    |
 | mutation     | Go 1.25–1.26       | Tests using these versions.                                                    |
 | fuzz         | Go 1.25–1.26       | Tests using these versions.                                                    |
-| terratest    | Go 1.25–1.26       | Tests using these versions.                                                    |
+| Terratest    | Go 1.25–1.26       | Tests using these versions.                                                    |
 
-## Usage Examples
+## Usage examples
 
 See the `docs/` directory for user-facing documentation.
 
@@ -67,7 +67,7 @@ See the `docs/` directory for user-facing documentation.
 * [search.opentofu.org](https://search.opentofu.org/provider/northwood-labs/corefunc/latest)
 * [library.tf](https://library.tf/providers/northwood-labs/corefunc/latest)
 
-### Go Package
+### Go package
 
 If you are using this as a Go library, see the documentation at [pkg.go.dev](https://pkg.go.dev/github.com/northwood-labs/terraform-provider-corefunc/v2/corefunc).
 
@@ -75,7 +75,7 @@ If you are using this as a Go library, see the documentation at [pkg.go.dev](htt
 go get -u github.com/northwood-labs/terraform-provider-corefunc/v2/corefunc
 ```
 
-## Ported Functions
+## Ported functions
 
 While some of the functions in this provider are new, others have been backported from newer versions of Terraform/OpenTofu to make them available to versions back to 1.0. In other cases, some functions exist in one tool but not the other. In these cases, we aim to provide identical implementations available to both tools.
 
@@ -113,7 +113,7 @@ These are tied to specific features, or require deeper HCL/internal-type evaluat
 | `provider::terraform::encode_tfvars` | 1.8       | 1.10     |
 | `templatestring`                     | 1.9       | 1.7      |
 
-## More Information
+## More information
 
 After the provider is installed, you can run `terraform-provider-corefunc` on the CLI.
 
@@ -126,7 +126,7 @@ This will display the following text:
 terraform-provider-corefunc
 ```
 
-```plain
+```text
 This binary is a plugin. These are not meant to be executed directly.
 Please execute the program that consumes these plugins, which will
 load any plugins automatically
@@ -183,7 +183,7 @@ Supply-chain testing and validation. Some of these are on every commit, while a 
 * [Harden-Runner](https://github.com/marketplace/actions/harden-runner) (by [StepSecurity](https://stepsecurity.io)).
 * [OSSF Scorecard](https://github.com/marketplace/actions/ossf-scorecard-action) (by [OpenSSF](https://openssf.org)).
 * [OSV Scanner](https://google.github.io/osv-scanner/github-action/) (by [Google](https://osv.dev)).
-* [Trufflehog OSS](https://github.com/marketplace/actions/trufflehog-oss) (by [Truffle Security](https://trufflesecurity.com)).
+* [TruffleHog OSS](https://github.com/marketplace/actions/trufflehog-oss) (by [Truffle Security](https://trufflesecurity.com)).
 
 [OpenTofu]: https://opentofu.org
 [Terraform]: https://terraform.io

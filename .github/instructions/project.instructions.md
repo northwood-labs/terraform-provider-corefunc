@@ -6,7 +6,7 @@ applyTo: "**"
 
 This project is a Terraform provider which provides built-in functions and data sources that are self-contained and do not require network access. It is built in Go, using the Terraform Plugin Framework.
 
-## Folder Structure
+## Folder structure
 
 * `/cmd`: Contains the source code for the command-line interface enabled by the provider.
 * `/corefunc`: Contains the source code for underying Go functions which are later wrapped and called by the provider interfaces.
@@ -16,7 +16,7 @@ This project is a Terraform provider which provides built-in functions and data 
 * `/terratest`: Contains the Terraform files and the Go code which implements the "Terratest" testing framework for Terraform code.
 * `/testfixtures`: Contains the Go code which leverages table-driven tests to provide data for unit tests written for the Go code in `/corefunc` and the Terraform provider Go code in `/corefuncprovider`.
 
-## Libraries and Frameworks
+## Libraries and frameworks
 
 * Terraform Plugin Framework for implementing the interfaces for the Terraform provider.
 * Source code is written in Go.

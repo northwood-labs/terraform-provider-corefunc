@@ -38,7 +38,7 @@ the way back to v1.0.
 
 Maps to the [`corefunc.Base64Gunzip()`](https://pkg.go.dev/github.com/northwood-labs/terraform-provider-corefunc/v2/corefunc#Base64Gunzip) Go method, which can be used in [Terratest](https://terratest.gruntwork.io).
 
-## Example Usage
+## Example usage
 
 ```terraform
 data "corefunc_str_base64_gunzip" "str" {
@@ -59,4 +59,4 @@ data "corefunc_str_base64_gunzip" "str" {
 
 * `value` (String) The Base64-decoded, then un-gzipped data.
 
-<!-- Preview the provider docs with the Terraform registry provider docs preview tool: https://registry.terraform.io/tools/doc-preview -->
+<!-- Preview the provider docs with the Terraform registry provider docs preview tool: https://registry.Terraform.io/tools/doc-preview -->

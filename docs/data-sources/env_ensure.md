@@ -27,7 +27,7 @@ variable is not set, or if its value doesn't match the expected patttern.
 Maps to the [`corefunc.EnvEnsure()`](https://pkg.go.dev/github.com/northwood-labs/terraform-provider-corefunc/v2/corefunc#EnvEnsure) Go method, which can be used in
 [Terratest](https://terratest.gruntwork.io).
 
-## Example Usage
+## Example usage
 
 ### `AWS_DEFAULT_REGION` is defined (no error)
 
@@ -88,7 +88,7 @@ output "aws_vault_value" {
 AWS_DEFAULT_REGION="us-east-1" AWS_VAULT="dev" terraform plan
 ```
 
-```plain
+```text
 data.corefunc_env_ensure.aws_vault: Reading...
 data.corefunc_env_ensure.aws_pager: Reading...
 data.corefunc_env_ensure.aws_default_region: Reading...
@@ -133,4 +133,4 @@ You can apply this plan to save these new output values to the Terraform state, 
 
 * `value` (String) The value of the environment variable, if it exists.
 
-<!-- Preview the provider docs with the Terraform registry provider docs preview tool: https://registry.terraform.io/tools/doc-preview -->
+<!-- Preview the provider docs with the Terraform registry provider docs preview tool: https://registry.Terraform.io/tools/doc-preview -->

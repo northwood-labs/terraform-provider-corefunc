@@ -17,7 +17,7 @@ characters may be represented by multiple bytes in UTF-8 encoding.
 
 Maps to the [`corefunc.StrByteLength()`](https://pkg.go.dev/github.com/northwood-labs/terraform-provider-corefunc/v2/corefunc#StrByteLength) Go method, which can be used in [Terratest](https://terratest.gruntwork.io).
 
-## Example Usage
+## Example usage
 
 ```terraform
 data "corefunc_str_byte_length" "bytes1" {
@@ -56,4 +56,4 @@ data "corefunc_str_byte_length" "bytes4" {
 
 * `value` (Number) The number of bytes in the input string.
 
-<!-- Preview the provider docs with the Terraform registry provider docs preview tool: https://registry.terraform.io/tools/doc-preview -->
+<!-- Preview the provider docs with the Terraform registry provider docs preview tool: https://registry.Terraform.io/tools/doc-preview -->

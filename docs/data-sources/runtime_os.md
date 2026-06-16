@@ -16,7 +16,7 @@ Generally, this represents the current system.
 Maps to the [`runtime.GOOS`](https://pkg.go.dev/runtime#GOOS)
 Go property, which can be used in [Terratest](https://terratest.gruntwork.io).
 
-## Example Usage
+## Example usage
 
 ```terraform
 data "corefunc_runtime_os" "os" {}
@@ -31,4 +31,4 @@ data "corefunc_runtime_os" "os" {}
 
 * `value` (String) Returns the operating system for which the provider was compiled.
 
-<!-- Preview the provider docs with the Terraform registry provider docs preview tool: https://registry.terraform.io/tools/doc-preview -->
+<!-- Preview the provider docs with the Terraform registry provider docs preview tool: https://registry.Terraform.io/tools/doc-preview -->

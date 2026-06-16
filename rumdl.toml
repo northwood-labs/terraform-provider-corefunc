@@ -1,0 +1,607 @@
+#-------------------------------------------------------------------------------
+# HEADING RULES
+
+# @config-manager:start headings
+# https://rumdl.dev/md001/
+[MD001]
+  # heading-increment
+  enabled = true
+  front-matter-title = true # "^\\s*(name|title)\\s*[:=]"
+
+# https://rumdl.dev/md003/
+[MD003]
+  # heading-style
+  enabled = true
+  style = "atx"
+
+# https://rumdl.dev/md018/
+[MD018]
+  # no-missing-space-atx
+  enabled = true
+  magiclink = true
+  # tags = false
+
+# https://rumdl.dev/md019/
+[MD019]
+  # no-multiple-space-atx
+  enabled = true
+
+# https://rumdl.dev/md022/
+[MD022]
+  # blanks-around-headings
+  enabled = true
+  lines-above = 1
+  lines-below = 1
+  allowed-at-start = true
+
+# https://rumdl.dev/md023/
+[MD023]
+  # heading-start-left
+  enabled = true
+
+# https://rumdl.dev/md024/
+[MD024]
+  # no-duplicate-heading
+  enabled = true
+  allow-different-link-anchors = true
+  allow-different-nesting = true
+  siblings-only = true
+
+# https://rumdl.dev/md025/
+[MD025]
+  # single-h1
+  enabled = true
+  allow-document-sections = true
+  allow-with-separators = false
+  front-matter-title = "^\\s*(name|title)\\s*[:=]"
+  level = 1
+
+# https://rumdl.dev/md036/
+[MD036]
+  # no-emphasis-as-heading
+  enabled = true
+  punctuation = ".,;:!?"
+  fix = false
+
+# https://rumdl.dev/md041/
+[MD041]
+  # first-line-h1
+  enabled = true
+  # allow-preamble = true
+  fix = false
+  front-matter-title = "^\\s*(name|title)\\s*[:=]"
+
+# https://rumdl.dev/md063/
+[MD063]
+  # heading-capitalization
+  enabled = true
+  ignore-words = [  ]
+  max-level = 6
+  min-level = 2
+  preserve-cased-words = true
+  style = "sentence-case"
+  lowercase-words = [
+    "a",
+    "an",
+    "and",
+    "as",
+    "at",
+    "but",
+    "by",
+    "for",
+    "in",
+    "into",
+    "nor",
+    "of",
+    "on",
+    "onto",
+    "or",
+    "so",
+    "the",
+    "to",
+    "up",
+    "upon",
+    "via",
+    "vs",
+    "with",
+    "without",
+    "yet",
+  ]
+  # @config-manager:end headings
+
+  #-------------------------------------------------------------------------------
+  # LIST RULES
+
+# @config-manager:start lists
+# https://rumdl.dev/md004/
+[MD004]
+  # ul-style
+  enabled = true
+  # after-marker = 1
+  style = "asterisk"
+
+# https://rumdl.dev/md005/
+[MD005]
+  # list-indent
+  enabled = true
+
+# https://rumdl.dev/md007/
+[MD007]
+  # ul-indent
+  enabled = true
+  indent = 2
+  # start-indent = 4
+  start-indented = false
+  style = "fixed"
+
+# https://rumdl.dev/md029/
+[MD029]
+  # ol-prefix
+  enabled = true
+  style = "ordered"
+
+# https://rumdl.dev/md030/
+[MD030]
+  # list-marker-space
+  enabled = true
+  ol-multi = 1
+  ol-single = 1
+  ul-multi = 1
+  ul-single = 1
+
+# https://rumdl.dev/md032/
+[MD032]
+  # blanks-around-lists
+  enabled = true
+
+# https://rumdl.dev/md069/
+[MD069]
+  # no-duplicate-list-markers
+  enabled = true
+
+# https://rumdl.dev/md076/
+[MD076]
+  # list-item-spacing
+  enabled = true
+  allow-loose-continuation = true
+  style = "consistent"
+
+# https://rumdl.dev/md077/
+[MD077]
+  # list-continuation-indent
+  enabled = true
+  # @config-manager:end lists
+
+  #-------------------------------------------------------------------------------
+  # WHITESPACE RULES
+
+# @config-manager:start whitespace
+# https://rumdl.dev/md009/
+[MD009]
+  # no-trailing-spaces
+  enabled = true
+  br-spaces = 2
+  # code-blocks = false
+  list-item-empty-lines = false
+  strict = false
+
+# https://rumdl.dev/md010/
+[MD010]
+  # no-hard-tabs
+  enabled = true
+  # code-blocks = true
+  # ignore-code-languages = [  ]
+  spaces-per-tab = 2
+
+# https://rumdl.dev/md012/
+[MD012]
+  # no-multiple-blanks
+  enabled = false
+  maximum = 1
+
+# https://rumdl.dev/md013/
+[MD013]
+  # line-length
+  enabled = true
+  blockquotes = false
+  code-blocks = false
+  headings = false
+  line-length = 0
+  paragraphs = false
+  require-sentence-capital = true
+  strict = false
+  tables = false
+
+# https://rumdl.dev/md027/
+[MD027]
+  # no-multiple-space-blockquote
+  enabled = true
+  list-items = true
+
+# https://rumdl.dev/md028/
+[MD028]
+  # no-blanks-blockquote
+  enabled = true
+
+# https://rumdl.dev/md031/
+[MD031]
+  # blanks-around-fences
+  enabled = true
+  list-items = true
+
+# https://rumdl.dev/md047/
+[MD047]
+  # single-trailing-newline
+  enabled = true
+
+# https://rumdl.dev/md064/
+[MD064]
+  # no-multiple-consecutive-spaces
+  enabled = true
+  allow-sentence-double-space = false
+  # @config-manager:end whitespace
+
+  #-------------------------------------------------------------------------------
+  # FORMATTING RULES
+
+# @config-manager:start formatting
+# https://rumdl.dev/md026/
+[MD026]
+  # no-trailing-punctuation
+  enabled = true
+  punctuation = ".,;:"
+
+# https://rumdl.dev/md033/
+[MD033]
+  # no-inline-html
+  enabled = true
+  allowed-elements = [
+    "a",
+    "b",
+    "br",
+    "code",
+    "details",
+    "div",
+    "img",
+    "li",
+    "nobr",
+    "ol",
+    "p",
+    "pre",
+    "span",
+    "summary",
+    "ul",
+  ]
+  br-style = "backslash"
+  drop-attributes = [
+    #
+    "class",
+    "id",
+    "rel",
+    "style",
+    "target",
+    #
+  ]
+  fix = true
+  fix-mode = "relaxed"
+  strip-wrapper-elements = [
+    #
+    "p",
+    #
+  ]
+  table-allowed-elements = [
+    #
+    #
+  ]
+
+# https://rumdl.dev/md035/
+[MD035]
+  # hr-style
+  enabled = true
+  style = "---"
+
+# https://rumdl.dev/md037/
+[MD037]
+  # no-space-in-emphasis
+  enabled = true
+
+# https://rumdl.dev/md038/
+[MD038]
+  # no-space-in-code
+  enabled = true
+
+# https://rumdl.dev/md039/
+[MD039]
+  # no-space-in-links
+  enabled = true
+
+# https://rumdl.dev/md049/
+[MD049]
+  # emphasis-style
+  enabled = true
+  style = "underscore"
+
+# https://rumdl.dev/md050/
+[MD050]
+  # strong-style
+  enabled = true
+  style = "asterisk"
+  # @config-manager:end formatting
+
+# https://rumdl.dev/md044/
+[MD044]
+  # proper-names
+  enabled = true
+  code-blocks = false
+  html-elements = false
+  html-comments = true
+  names = [
+    # @config-manager:start proper-names
+    "Commonmark",
+    "CSS",
+    "Dependabot",
+    "GFM",
+    "GitHub-Flavored Markdown",
+    "HTML",
+    "JSON",
+    "KiroGraph",
+    "macOS",
+    "Markdown",
+    "Northwood Labs",
+    "OpenTofu",
+    "Terraform",
+    "Terragrunt",
+    "Terratest",
+    "TOML",
+    "TruffleHog",
+    "XML",
+    "YAML",
+    # @config-manager:end proper-names
+  ]
+
+  #-------------------------------------------------------------------------------
+  # CODE BLOCK RULES
+
+# @config-manager:start code-block
+# https://rumdl.dev/md014/
+[MD014]
+  # commands-show-output
+  enabled = true
+
+# https://rumdl.dev/md040/
+[MD040]
+  # fenced-code-language
+  enabled = true
+  unknown-language-action = "warn"
+  preferred-aliases = { Shell = "bash" }
+
+# https://rumdl.dev/md046/
+[MD046]
+  # code-block-style
+  enabled = true
+  style = "fenced"
+
+# https://rumdl.dev/md048/
+[MD048]
+  # code-fence-style
+  enabled = true
+  style = "backtick"
+  # @config-manager:end code-block
+
+  #-------------------------------------------------------------------------------
+  # LINK AND IMAGE RULES
+
+# @config-manager:start link-image
+# https://rumdl.dev/md011/
+[MD011]
+  # no-reversed-links
+  enabled = true
+
+# https://rumdl.dev/md034/
+[MD034]
+  # no-bare-urls
+  enabled = true
+
+# https://rumdl.dev/md042/
+[MD042]
+  # no-empty-links
+  enabled = true
+
+# https://rumdl.dev/md045/
+[MD045]
+  # no-alt-text
+  enabled = true
+
+# https://rumdl.dev/md051/
+[MD051]
+  # link-fragments
+  enabled = true
+  ignore-case = false
+  ignored-pattern = ""
+
+# https://rumdl.dev/md052/
+[MD052]
+  # reference-links-images
+  enabled = true
+  # ignored-labels = [ "x" ]
+  shortcut-syntax = false
+
+# https://rumdl.dev/md053/
+[MD053]
+  # link-image-reference-definitions
+  enabled = true
+  ignored-definitions = [ "//" ]
+
+# https://rumdl.dev/md054/
+[MD054]
+  # link-image-style
+  enabled = true
+  autolink = true
+  collapsed = true
+  full = true
+  inline = true
+  shortcut = true
+  url-inline = true
+
+# https://rumdl.dev/md057/
+[MD057]
+  # existing-relative-links
+  enabled = true
+
+# https://rumdl.dev/md059/
+[MD059]
+  # descriptive-link-text
+  enabled = true
+  prohibited-texts = [ "click here", "here", "link", "more" ]
+
+# https://rumdl.dev/md062/
+[MD062]
+  enabled = true
+
+# https://rumdl.dev/md073/
+[MD073]
+  # toc-validation
+  enabled = true
+  min-level = 2
+  max-level = 4
+  enforce-order = true
+  # @config-manager:end link-image
+
+  #-------------------------------------------------------------------------------
+  # TABLE RULES
+
+# @config-manager:start tables
+# https://rumdl.dev/md055/
+[MD055]
+  # table-pipe-style
+  enabled = true
+  style = "leading_and_trailing"
+
+# https://rumdl.dev/md056/
+[MD056]
+  # table-column-count
+  enabled = true
+
+# https://rumdl.dev/md058/
+[MD058]
+  # blanks-around-tables
+  enabled = true
+  minimum-before = 1
+  minimum-after = 1
+
+# https://rumdl.dev/md060/
+[MD060]
+  # table-format
+  enabled = true
+  style = "aligned-no-space"
+  max-width = 0
+  column-align = "auto"
+  column-align-header = "auto"
+  column-align-body = "auto"
+  loose-last-column = false
+  aligned-delimiter = true
+
+# https://rumdl.dev/md075/
+[MD075]
+  # orphaned-table-rows
+  enabled = true
+  # @config-manager:end tables
+
+  #-------------------------------------------------------------------------------
+  # FOOTNOTE RULES
+
+# @config-manager:start footnotes
+# https://rumdl.dev/md066/
+[MD066]
+  # footnote-validation
+  enabled = true
+
+# https://rumdl.dev/md067/
+[MD067]
+  # footnote-definition-order
+  enabled = true
+
+# https://rumdl.dev/md068/
+[MD068]
+  # empty-footnote-definition
+  enabled = true
+  # @config-manager:end footnotes
+
+  #-------------------------------------------------------------------------------
+  # FRONTMATTER RULES
+
+# @config-manager:start frontmatter
+# https://rumdl.dev/md071/
+[MD071]
+  # blank-line-after-frontmatter
+  enabled = true
+  # @config-manager:end frontmatter
+
+  #-------------------------------------------------------------------------------
+  # OTHER RULES
+
+# @config-manager:start other
+# https://rumdl.dev/md061/
+[MD061]
+  # forbidden-terms
+  enabled = true
+  case-sensitive = false
+  terms = [
+    #
+    #
+  ]
+  # @config-manager:end other
+
+  #-------------------------------------------------------------------------------
+  # GLOBAL CONFIG
+
+[global]
+  # @config-manager:start globals
+  cache = true
+  cache-dir = ".rumdl_cache"
+  disable = [
+    # https://rumdl.dev/md012/
+    "MD012",
+
+    # https://rumdl.dev/md020/
+    # no-missing-space-closed-atx
+    "MD020",
+
+    # https://rumdl.dev/md021/
+    # no-multiple-space-closed-atx
+    "MD021",
+
+    # https://rumdl.dev/md043/
+    # required-headings
+    "MD043",
+
+    # https://rumdl.dev/md072/
+    # frontmatter-key-sort
+    "MD072",
+
+    # https://rumdl.dev/md074/
+    # mkdocs-nav
+    "MD074",
+  ]
+  extend-enable = [
+    # https://rumdl.dev/md060/
+    # table-format
+    "MD060",
+
+    # https://rumdl.dev/md070/
+    # nested-code-fence
+    "MD070",
+
+    # https://rumdl.dev/md073/
+    # toc-validation
+    "MD073",
+  ]
+  flavor = "gfm"
+  line-length = 0
+  output-format = "text"
+  # @config-manager:end globals
+  exclude = [
+    # @config-manager:start globals-excludes
+    "node_modules",
+    # @config-manager:end globals-excludes
+  ]

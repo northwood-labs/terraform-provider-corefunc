@@ -1,10 +1,10 @@
 ---
-title: "terraform-provider-corefunc version"
-slug: "terraform-provider-corefunc_version"
-description: "CLI reference for terraform-provider-corefunc version"
+title: "Terraform-provider-corefunc version"
+slug: "Terraform-provider-corefunc_version"
+description: "CLI reference for Terraform-provider-corefunc version"
 ---
 
-## terraform-provider-corefunc version
+## Terraform-provider-corefunc version
 
 Long-form version information
 
@@ -25,4 +25,4 @@ terraform-provider-corefunc version [flags]
 
 ### See also
 
-* [terraform-provider-corefunc](terraform-provider-corefunc.md) - Utilities that should have been Terraform core functions.
+* [Terraform-provider-corefunc](terraform-provider-corefunc.md) - Utilities that should have been Terraform core functions.

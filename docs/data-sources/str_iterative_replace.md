@@ -4,8 +4,7 @@ subcategory: ""
 description: |-
   Performs a series of replacements against a string. Allows a Terraform
   module to accept a set of replacements from a user.
-  Maps to the corefunc.StrIterativeReplace() URL
-  Go method, which can be used in Terratest https://terratest.gruntwork.io.
+  Maps to the corefunc.StrIterativeReplace() https://pkg.go.dev/github.com/northwood-labs/terraform-provider-corefunc/v2/corefunc#StrIterativeReplace Go method, which can be used in Terratest https://terratest.gruntwork.io.
 ---
 
 # corefunc_str_iterative_replace (Data Source)
@@ -13,10 +12,9 @@ description: |-
 Performs a series of replacements against a string. Allows a Terraform
 module to accept a set of replacements from a user.
 
-Maps to the [`corefunc.StrIterativeReplace()`](URL)
-Go method, which can be used in [Terratest](https://terratest.gruntwork.io).
+Maps to the [`corefunc.StrIterativeReplace()`](https://pkg.go.dev/github.com/northwood-labs/terraform-provider-corefunc/v2/corefunc#StrIterativeReplace) Go method, which can be used in [Terratest](https://terratest.gruntwork.io).
 
-## Example Usage
+## Example usage
 
 ```terraform
 data "corefunc_str_iterative_replace" "replacements" {
@@ -66,11 +64,11 @@ data "corefunc_str_iterative_replace" "replacements" {
 
 <a id="nestedatt--replacements"></a>
 
-### Nested Schema for `replacements`
+### Nested schema for `replacements`
 
 Required:
 
 * `new` (String) The replacement substring.
 * `old` (String) The substring to be replaced.
 
-<!-- Preview the provider docs with the Terraform registry provider docs preview tool: https://registry.terraform.io/tools/doc-preview -->
+<!-- Preview the provider docs with the Terraform registry provider docs preview tool: https://registry.Terraform.io/tools/doc-preview -->

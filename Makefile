@@ -132,7 +132,7 @@ docs-provider: clean-ds
 
 	@ echo " "
 	# If this fails, there's a bigger issue.
-	$(GOTOOLS) lefthook run pre-commit --commands markdownlint
+	hk fix --no-fail-fast --profile slow --all --step markdown-lint
 
 .PHONY: docs-cli
 ## docs-cli: [docs] Preview the Go library documentation on the CLI.

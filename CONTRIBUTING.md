@@ -26,7 +26,7 @@ The majority of development is done on macOS, so we have some helpers set-up to 
     make install-tools
     ```
 
-    Obviously, this won't work on Linux, so ensure that the following packages are installed from your system's package manager.
+   Obviously, this won't work on Linux, so ensure that the following packages are installed from your system's package manager.
 
     * [Go] 1.25+ (primary language)
     * [Node.js] 20+ (linting tools)
@@ -35,13 +35,13 @@ The majority of development is done on macOS, so we have some helpers set-up to 
     * [`jq`][jq] (shell scripting tools)
     * [`pre-commit`][pre-commit] (linting tools)
 
-1. Running `make` in the root of the repo, by itself, will display a list of tasks and what they do. The ones highlighted in yellow are the ones that are most frequently used, or combine running multiple sub-tasks with one convenient command.
+2. Running `make` in the root of the repo, by itself, will display a list of tasks and what they do. The ones highlighted in yellow are the ones that are most frequently used, or combine running multiple sub-tasks with one convenient command.
 
     ```bash
     make
     ```
 
-1. After the core dependencies are installed, install the Git hooks. These will validate code on commit and reject anything that does not meet this project's best practices.
+3. After the core dependencies are installed, install the Git hooks. These will validate code on commit and reject anything that does not meet this project's best practices.
 
     ```bash
     make install-hooks
@@ -59,7 +59,7 @@ Crucially, all code changes should be preceded by an issue that you've been assi
 
 In order for a code change to be accepted, you'll also have to accept the (very lightweight) [Developer Certificate of Origin](https://developercertificate.org) (DCO). Acceptance is accomplished by signing-off your commits; you can do this by adding a `Signed-off-by` line to your commit message, like here:
 
-```plain
+```text
 This is my commit message
 
 Signed-off-by: Random Developer <random@developer.example.org>
@@ -109,25 +109,25 @@ You can find more details about the _Developer Certificate of Origin_ checker in
 ### Written prose
 
 * We use U.S. English spelling.
-    * :white_check_mark: color
-    * :x: colour
+  * :white_check_mark: color
+  * :x: colour
 
 * Brand-names should be spelled correctly.
-    * :white_check_mark: GitHub
-    * :x: Github
-    * :x: github
-    * :x: GH
+  * :white_check_mark: GitHub
+  * :x: Github
+  * :x: github
+  * :x: GH
 
 * Use the _Oxford comma_.
-    * :white_check_mark: This, that, and this.
-    * :x: This, that and this.
+  * :white_check_mark: This, that, and this.
+  * :x: This, that and this.
 
 * Instead of a single sentence that wraps 2–4 lines, see if you can break it up into multiple, shorter sentences.
 
 * Properly use a period (`.`) or an ellipsis (`…`).
-    * :white_check_mark: This is a sentence.
-    * :white_check_mark: This is a sentence that ends with an ellipsis…
-    * :x: The double-period (`..`) does not exist in the English language.
+  * :white_check_mark: This is a sentence.
+  * :white_check_mark: This is a sentence that ends with an ellipsis…
+  * :x: The double-period (`..`) does not exist in the English language.
 
 * Aim for _clarity_ over _cleverness_.
 
@@ -136,17 +136,17 @@ You can find more details about the _Developer Certificate of Origin_ checker in
 * Avoid long paragraphs because most people won't read them. Can you present the same idea with a picture, a table, or a list?
 
 * Section headers use sentence case, not title case.
-    * :white_check_mark: Section header for this next piece of information
-    * :x: Section Header for this Next Piece of Information
+  * :white_check_mark: Section header for this next piece of information
+  * :x: Section Header for this Next Piece of Information
 
 * The word _default_ is an adjective (descriptor) not a verb (performs an action). "Default" describes a state. It is not an action.
-    * :white_check_mark: The default value is `1`.
-    * :x: Defaults to `1`.
+  * :white_check_mark: The default value is `1`.
+  * :x: Defaults to `1`.
 
 > [!IMPORTANT]
 > If you're not sure, use the existing language as a guide.
 
-### Using Conventional Commit messages
+### Using conventional commit messages
 
 This project uses [Conventional Commits](https://www.conventionalcommits.org). If you are unfamiliar with this pattern of writing your commit messages, please read the spec. This project supports the following keywords:
 
@@ -177,13 +177,13 @@ This will build the provider for the current OS and CPU architecture, and instal
 
 1. Clone this Git repository.
 
-1. Build this Terraform provider from source.
+2. Build this Terraform provider from source.
 
     ```bash
     make build
     ```
 
-### Configure Terraform Provider development mode
+### Configure Terraform provider development mode
 
 By default, Terraform expects to download providers over the internet. Instead, we're going to point to our own that we compiled, and we need to tell Terraform how to find it.
 
@@ -193,7 +193,7 @@ By default, Terraform expects to download providers over the internet. Instead, 
     ./find-go-bin.sh
     ```
 
-1. Update your `~/.terraformrc` file with these contents, replacing `<GO_BIN_PATH>` with the result from `./find-go-bin.sh`.
+2. Update your `~/.terraformrc` file with these contents, replacing `<GO_BIN_PATH>` with the result from `./find-go-bin.sh`.
 
     ```hcl
     provider_installation {
@@ -218,7 +218,7 @@ terraform plan
 
 ### Success looks like…
 
-```plain
+```text
 data.corefunc_str_truncate_label.label: Reading...
 data.corefunc_str_truncate_label.label: Read complete after 0s
 
@@ -439,7 +439,7 @@ benchstat Current=__bench-{new}.out Previous=__bench-{old}.out
 
 It will show you something like this:
 
-```plain
+```text
 goos: darwin
 goarch: arm64
 pkg: github.com/northwood-labs/terraform-provider-corefunc/v2/corefunc
@@ -537,7 +537,7 @@ make lint
 
 ## Previewing documentation
 
-### Terraform Documentation
+### Terraform documentation
 
 Generate the Terraform Registry-facing documentation. This will run `tfplugindocs` followed by Markdownlint to ensure that the generated (and non-templatable) Provider docs match our standards for Markdown.
 
@@ -545,7 +545,7 @@ Generate the Terraform Registry-facing documentation. This will run `tfplugindoc
 make docs-provider
 ```
 
-#### Terraform Provider Documentation
+#### Terraform provider documentation
 
 These are the patterns we follow for generating Terraform documentation. _Every_ resource/data source in the provider has at least one example. With a resource-specific template, we can implement multiple examples.
 
@@ -555,7 +555,7 @@ See `examples/data-sources/corefunc_env_ensure/` as an example of a custom templ
 * [Terraform: Provider Documentation](https://developer.hashicorp.com/terraform/registry/providers/docs)
 * [Terraform: Implement documentation generation](https://developer.hashicorp.com/terraform/tutorials/providers-plugin-framework/providers-plugin-framework-documentation-generation)
 
-### Go CLI Documentation
+### Go CLI documentation
 
 You can get the package documentation on the CLI using the `go doc` command.
 
@@ -586,15 +586,15 @@ To enable debugging for this Terraform provider:
 
 1. In VS Code, open the extension pane for _Run and Debug_.
 
-1. At the top of the pane, select _Debug Terraform Provider_ from the pulldown menu, then click the _Play_ icon (sideways triangle). The bottom statusbar will change color.
+2. At the top of the pane, select _Debug Terraform Provider_ from the pulldown menu, then click the _Play_ icon (sideways triangle). The bottom statusbar will change color.
 
-1. Once in the example directory, run a Terraform plan.
+3. Once in the example directory, run a Terraform plan.
 
     ```bash
     terraform plan
     ```
 
-1. The Terraform provider will run and block (with "time elapsed" updating every 10 seconds or so). Any breakpoints you have set in your code will show up in the VS Code debugger, and you can review variable values and step through the breakpoints to understand what's happening in the code.
+4. The Terraform provider will run and block (with "time elapsed" updating every 10 seconds or so). Any breakpoints you have set in your code will show up in the VS Code debugger, and you can review variable values and step through the breakpoints to understand what's happening in the code.
 
 ## Code
 
@@ -668,11 +668,11 @@ To enable debugging for this Terraform provider:
 
 ## Automated SHA tagging of actions and Dependabot configuration
 
-[stepsecurity.io → northwood-labs/terraform-provider-corefunc](https://app.stepsecurity.io/securerepo?repo=https://github.com/northwood-labs/terraform-provider-corefunc)
+[stepsecurity.io → northwood-labs/Terraform-provider-corefunc](https://app.stepsecurity.io/securerepo?repo=https://github.com/northwood-labs/terraform-provider-corefunc)
 
 1. DO NOT select "Add CodeQL Workflow (SAST Tool)". (We already have this configured with GitHub's built-in integration.)
-1. DO NOT select "Update the pre-commit configuration" with `gitleaks`. We use TruffleHog instead.
-1. Other recommended changes are fine to accept. Open a PR from this tool.
+2. DO NOT select "Update the pre-commit configuration" with `gitleaks`. We use TruffleHog instead.
+3. Other recommended changes are fine to accept. Open a PR from this tool.
 
 ## Tagging and releasing
 

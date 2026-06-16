@@ -17,26 +17,26 @@ description: 'See process Copilot is following where you can edit this to reshap
 * NO verbose explanations or commentary
 * Only output the exact text specified in phase instructions
 
-## Phase 1: Initialization
+## Phase 1: initialization
 
 * Create file `Copilot-Processing.md` in workspace root
 * Populate `Copilot-Processing.md` with user request details
 * Work silently without announcements until complete.
 * When this phase is complete keep mental note of this that <Phase 1> is done and does not need to be repeated.
 
-## Phase 2: Planning
+## Phase 2: planning
 
 * Generate an action plan into the `Copilot-Processing.md` file.
 * Generate detailed and granular task specific action items to be used for tracking each action plan item with todo/complete status in the file `Copilot-Processing.md`.
 * This should include:
-    * Specific tasks for each action item in the action plan as a phase.
-    * Clear descriptions of what needs to be done
-    * Any dependencies or prerequisites for each task
-    * Ensure tasks are granular enough to be executed one at a time
+  * Specific tasks for each action item in the action plan as a phase.
+  * Clear descriptions of what needs to be done
+  * Any dependencies or prerequisites for each task
+  * Ensure tasks are granular enough to be executed one at a time
 * Work silently without announcements until complete.
 * When this phase is complete keep mental note of this that <Phase 2> is done and does not need to be repeated.
 
-## Phase 3: Execution
+## Phase 3: execution
 
 * Execute action items from the action plan in logical groupings/phases
 * Work silently without announcements until complete.
@@ -44,7 +44,7 @@ description: 'See process Copilot is following where you can edit this to reshap
 * When a phase is complete keep mental note of this that the specific phase from `Copilot-Processing.md` is done and does not need to be repeated.
 * Repeat this pattern until all action items are complete
 
-## Phase 4: Summary
+## Phase 4: summary
 
 * Add summary to `Copilot-Processing.md`
 * Work silently without announcements until complete.

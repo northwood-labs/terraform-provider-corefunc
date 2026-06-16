@@ -1,0 +1,256 @@
+// @config-manager:start imports
+// https://github.com/jdx/hk/blob/main/hk.pkl
+// https://github.com/jdx/hk/releases/latest
+amends "package://github.com/jdx/hk/releases/download/v1.47.0/hk@1.47.0#/Config.pkl"
+import "package://github.com/jdx/hk/releases/download/v1.47.0/hk@1.47.0#/Builtins.pkl"
+// @config-manager:end imports
+
+local linters = new Mapping<String, Group> {
+  // @config-manager:start standard
+  ["standard"] = new Group {
+    steps {
+      ["check-added-large-files"] = (Builtins.check_added_large_files) {}
+      ["check-byte-order-marker"] = (Builtins.byte_order_marker) {}
+      ["check-case-conflict"] = (Builtins.check_case_conflict) {}
+      ["check-executables-have-shebangs"] = (Builtins.check_executables_have_shebangs) {}
+      ["check-json"] = (Builtins.jq) {}
+      ["check-merge-conflict"] = (Builtins.check_merge_conflict) {}
+      ["check-symlinks"] = (Builtins.check_symlinks) {}
+      ["check-toml-fmt"] = (Builtins.taplo_format) {}
+      ["check-toml-lint"] = (Builtins.taplo) {}
+      ["check-trailing-whitespace"] = (Builtins.trailing_whitespace) {}
+      ["check-xml"] = (Builtins.xmllint) {}
+      ["check-yaml"] = (Builtins.yamlfmt) {}
+      ["detect-private-key"] = (Builtins.detect_private_key) {}
+      ["editorconfig-checker"] {
+        workspace_indicator = ".editorconfig-checker.json"
+        glob = "**/*"
+        fix = "cd {{ workspace }} && editorconfig-checker"
+      }
+      ["end-of-file-fixer"] = (Builtins.newlines) {}
+      ["lychee"] = (Builtins.lychee) {
+        profiles = List("slow")
+      }
+      ["markdown-lint"] = (Builtins.rumdl) {}
+      ["mise-fmt"] = (Builtins.mise) {}
+      ["mixed-line-ending"] = (Builtins.mixed_line_ending) {}
+      ["pinact"] = (Builtins.pinact) {}
+      ["pinact-update"] = (Builtins.pinact_update) {}
+      ["pkl-eval"] = (Builtins.pkl) {
+        glob = "**/*.pkl"
+      }
+      ["pkl-format"] = (Builtins.pkl_format) {
+        glob = "**/*.pkl"
+      }
+    }
+  }
+  ["containers"] = new Group {
+    steps {
+      ["hadolint"] = (Builtins.hadolint) {}
+    }
+  }
+  ["databases"] = new Group {
+    steps {
+      ["sqlfluff"] = (Builtins.sql_fluff) {
+        check = "uvx sqlfluff lint {{ files }}"
+        fix = "uvx sqlfluff fix {{ files }}"
+      }
+    }
+  }
+  ["frontend"] = new Group {
+    steps {
+      ["sort-package-json"] = (Builtins.sort_package_json) {
+        check = "aubx -y sort-package-json --check {{ files }}"
+        fix = "aubx -y sort-package-json {{ files }}"
+      }
+      ["svg-optimize"] {
+        glob = "**/*.svg"
+        fix = "ogvs --config tools/ogvs.config.yaml {{ files }}"
+      }
+    }
+  }
+  ["golang"] = new Group {
+    steps {
+      ["go-fieldalignment"] {
+        workspace_indicator = "go.mod"
+        glob = "**/*.go"
+        fix = "cd {{ workspace }} && fieldalignment -fix ./..."
+      }
+      ["go-fix"] {
+        workspace_indicator = "go.mod"
+        glob = "**/*.go"
+        check = "cd {{ workspace }} && go fix -diff ./..."
+        fix = "cd {{ workspace }} && go fix ./..."
+        profiles = List("slow")
+      }
+      ["go-fmt"] {
+        workspace_indicator = "go.mod"
+        glob = "**/*.go"
+        fix = "gofmt -s -w {{ files }} && gofumpt -w {{ files }}"
+      }
+      ["goimports"] {
+        workspace_indicator = "go.mod"
+        glob = "**/*.go"
+        check =
+          "cd {{ workspace }} && goimports -d -e -local github.com/northwood-labs,go.nwlabs.dev ."
+        fix =
+          "cd {{ workspace }} && goimports -w -e -local github.com/northwood-labs,go.nwlabs.dev ."
+      }
+      ["golangci-lint"] {
+        workspace_indicator = "go.mod"
+        glob = "**/*.go"
+        check = "cd {{ workspace }} && golangci-lint run --fix=false ./..."
+        fix = "cd {{ workspace }} && golangci-lint run --fix ./..."
+        depends =
+          List(
+            "go-fieldalignment",
+            "go-fix",
+            "go-fmt",
+            "go-mod-tidy",
+            "go-modernize",
+            "go-same-receiver-pointer",
+            "go-vet",
+            "golines",
+          )
+        profiles = List("slow")
+      }
+      ["golines"] {
+        workspace_indicator = "go.mod"
+        glob = "**/*.go"
+        check =
+          "golines --base-formatter=gofumpt --write-output --max-len=120 --dry-run {{ files }}"
+        fix = "golines --base-formatter=gofumpt --write-output --max-len=120 {{ files }}"
+        profiles = List("slow")
+      }
+      ["go-mod-tidy"] {
+        workspace_indicator = "go.mod"
+        glob = "**/*.go"
+        check = "cd {{ workspace }} && go mod tidy -diff"
+        fix = "cd {{ workspace }} && go mod tidy"
+      }
+      ["go-mod-tidy-tools"] {
+        workspace_indicator = "go.tools.mod"
+        glob = "**/*.go"
+        check = "cd {{ workspace }} && go mod tidy -modfile=go.tools.mod -diff"
+        fix = "cd {{ workspace }} && go mod tidy -modfile=go.tools.mod"
+      }
+      ["go-modernize"] {
+        workspace_indicator = "go.mod"
+        glob = "**/*.go"
+        check = "cd {{ workspace }} && modernize -fix -diff ./..."
+        fix = "cd {{ workspace }} && modernize -fix ./..."
+        profiles = List("slow")
+      }
+      ["go-same-receiver-pointer"] {
+        workspace_indicator = "go.mod"
+        glob = "**/*.go"
+        fix = "cd {{ workspace }} && smrcptr --constructor=true ./..."
+        profiles = List("slow")
+      }
+      ["go-vet"] {
+        workspace_indicator = "go.mod"
+        glob = "**/*.go"
+        check = "cd {{ workspace }} && go vet ./..."
+        profiles = List("slow")
+      }
+    }
+  }
+  ["python"] = new Group {
+    steps {
+      ["python-check-ast"] = (Builtins.python_check_ast) {
+        glob = List("**/*.py", "**/*.pyi")
+        profiles = List("slow")
+      }
+      ["python-debug-statements"] = (Builtins.python_debug_statements) {
+        glob = List("**/*.py", "**/*.pyi")
+      }
+      ["python-ruff"] = (Builtins.ruff) {
+        glob = List("**/*.py", "**/*.pyi")
+        check = "uv tool run ruff check --force-exclude {{ files }}"
+        fix = "uv tool run ruff check --force-exclude --fix {{ files }}"
+      }
+      ["python-format"] = (Builtins.ruff_format) {
+        glob = List("**/*.py", "**/*.pyi")
+        check = "uv tool run ruff format --quiet --force-exclude --diff {{ files }}"
+        fix = "uv tool run ruff format --quiet --force-exclude {{ files }}"
+      }
+      ["python-typechecking"] {
+        glob = List("**/*.py", "**/*.pyi")
+        check = "uv tool run zuban check {{ files }}"
+      }
+    }
+  }
+  ["shell"] = new Group {
+    steps {
+      ["shellcheck"] = (Builtins.shellcheck) {}
+      ["shfmt"] = (Builtins.shfmt) {
+        check = "shfmt -s -d -i=4 -bn -ci -sr --apply-ignore {{ files }}"
+        fix = "shfmt -s -w -i=4 -bn -ci -sr --apply-ignore {{ files }}"
+      }
+    }
+  }
+  ["security"] = new Group {
+    steps {
+      ["govulncheck"] {
+        workspace_indicator = "go.mod"
+        glob = "**/*.go"
+        check = "cd {{ workspace }} && govulncheck ./..."
+        profiles = List("slow")
+      }
+      ["osv-scanner"] {
+        fix = "osv-scanner -r ."
+        profiles = List("slow")
+      }
+      ["trivy-licenses"] {
+        check = "trivy fs --config trivy-license.yaml --ignorefile .trivyignore ."
+        profiles = List("slow")
+      }
+      ["trivy-vulns"] {
+        check = "trivy fs --config trivy-vuln.yaml --ignorefile .trivyignore ."
+        profiles = List("slow")
+      }
+      ["trufflehog"] {
+        check =
+          "trufflehog git file://. --since-commit HEAD --only-verified --fail --json 2>/dev/null | jq '.'"
+        profiles = List("slow")
+      }
+    }
+  }
+  ["tofu"] = new Group {
+    steps {
+      ["opentofu-format"] = (Builtins.tofu) {
+        glob = List("**/*.tf", "**/*.tofu", "**/*.tfvars", "**/*.tftest.hcl")
+      }
+      ["tflint"] = (Builtins.tf_lint) {}
+    }
+  }
+  // @config-manager:end standard
+}
+
+hooks {
+  // @config-manager:start hooks
+  ["pre-commit"] {
+    fix = true
+    stash = "git"
+    steps {
+      ["validate-commit-msg"] {
+        check = "gommit check message \"$(cat .git/COMMIT_EDITMSG)\""
+      }
+      ...linters
+    }
+  }
+  ["pre-push"] {
+    env {
+      ["HK_PROFILE"] = "!slow"
+    }
+    steps = linters
+  }
+  ["fix"] {
+    fix = true
+    steps = linters
+  }
+  ["check"] {
+    steps = linters
+  }
+  // @config-manager:end hooks
+}

@@ -12,7 +12,7 @@ Generates the SHA-2/256-bit HMAC hash of a string with its associated key value.
 
 Maps to the [`corefunc.HashHMACSHA256()`](https://pkg.go.dev/github.com/northwood-labs/terraform-provider-corefunc/v2/corefunc#HashHMACSHA256) Go method, which can be used in [Terratest](https://terratest.gruntwork.io).
 
-## Example Usage
+## Example usage
 
 ```terraform
 data "corefunc_hash_hmac_sha256" "hash_hmac_sha256" {
@@ -35,4 +35,4 @@ data "corefunc_hash_hmac_sha256" "hash_hmac_sha256" {
 
 * `value` (String) The result of the hashing function.
 
-<!-- Preview the provider docs with the Terraform registry provider docs preview tool: https://registry.terraform.io/tools/doc-preview -->
+<!-- Preview the provider docs with the Terraform registry provider docs preview tool: https://registry.Terraform.io/tools/doc-preview -->

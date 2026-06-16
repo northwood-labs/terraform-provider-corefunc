@@ -32,7 +32,7 @@ wider range of timestamp formats for compatibility with various systems.
 
 Maps to the [`corefunc.TimeCompare()`](https://pkg.go.dev/github.com/northwood-labs/terraform-provider-corefunc/v2/corefunc#TimeCompare) Go method, which can be used in [Terratest](https://terratest.gruntwork.io).
 
-## Example Usage
+## Example usage
 
 ```terraform
 data "corefunc_time_compare" "timecmp1" {
@@ -60,4 +60,4 @@ lifecycle {
 
 * `value` (Number) An integer indicating the comparison result. A value of `-1` indicates that `timestamp_a` is less than `timestamp_b`, `0` indicates that they are equal, and `1` indicates that `timestamp_a` is greater than `timestamp_b`.
 
-<!-- Preview the provider docs with the Terraform registry provider docs preview tool: https://registry.terraform.io/tools/doc-preview -->
+<!-- Preview the provider docs with the Terraform registry provider docs preview tool: https://registry.Terraform.io/tools/doc-preview -->

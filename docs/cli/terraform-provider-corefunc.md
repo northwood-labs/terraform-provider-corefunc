@@ -1,16 +1,16 @@
 ---
-title: "terraform-provider-corefunc"
-slug: "terraform-provider-corefunc"
-description: "CLI reference for terraform-provider-corefunc"
+title: "Terraform-provider-corefunc"
+slug: "Terraform-provider-corefunc"
+description: "CLI reference for Terraform-provider-corefunc"
 ---
 
-## terraform-provider-corefunc
+## Terraform-provider-corefunc
 
 Utilities that should have been Terraform core functions.
 
 ### Synopsis
 
-terraform-provider-corefunc
+Terraform-provider-corefunc
 
 Utilities that should have been Terraform core functions.
 
@@ -46,6 +46,6 @@ terraform-provider-corefunc [flags]
 
 ### See also
 
-* [terraform-provider-corefunc json2toml](terraform-provider-corefunc_json2toml.md) - Converts JSON to TOML.
-* [terraform-provider-corefunc toml2json](terraform-provider-corefunc_toml2json.md) - Converts TOML to JSON.
-* [terraform-provider-corefunc version](terraform-provider-corefunc_version.md) - Long-form version information
+* [Terraform-provider-corefunc json2toml](terraform-provider-corefunc_json2toml.md) - Converts JSON to TOML.
+* [Terraform-provider-corefunc toml2json](terraform-provider-corefunc_toml2json.md) - Converts TOML to JSON.
+* [Terraform-provider-corefunc version](terraform-provider-corefunc_version.md) - Long-form version information

@@ -25,7 +25,7 @@ in [WHATWG URL Standard](https://url.spec.whatwg.org/#api).
 
 Maps to the [`corefunc.URLParse()`](https://pkg.go.dev/github.com/northwood-labs/terraform-provider-corefunc/v2/corefunc#URLParse) Go method, which can be used in [Terratest](https://terratest.gruntwork.io).
 
-## Example Usage
+## Example usage
 
 ### Simple
 
@@ -66,7 +66,7 @@ data "corefunc_url_parse" "complex" {
 #=> .decoded_port      = 80
 ```
 
-### Complex (with Google Safe Browsing canonicalizer)
+### Complex (with google safe browsing canonicalizer)
 
 [Google Safe Browsing](https://developers.google.com/safe-browsing/v4/urls-hashing#canonicalization)
 is a URL canonicalizer with a different set of rules from standard WHATWG URLs.
@@ -122,4 +122,4 @@ data "corefunc_url_parse" "gsb" {
 * `search` (String) The query string of the URL, including the preceding `?`.
 * `username` (String) The username that was passed to the URL as basic authentication.
 
-<!-- Preview the provider docs with the Terraform registry provider docs preview tool: https://registry.terraform.io/tools/doc-preview -->
+<!-- Preview the provider docs with the Terraform registry provider docs preview tool: https://registry.Terraform.io/tools/doc-preview -->

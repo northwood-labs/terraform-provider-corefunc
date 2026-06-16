@@ -3,6 +3,7 @@
 
 root = true
 
+; @config-manager:start root_config
 [*]
 charset = utf-8
 end_of_line = lf
@@ -26,13 +27,13 @@ max_line_length = 20000
 indent_size = 2
 
 # Configuration formats
-[*.{hcl,json,toml,yaml,yml}]
+[*.{hcl,json,jsonc,pkl,toml,yaml,yml}]
 indent_size = 2
 
 [*.go]
 indent_style = tab
 
-[*.{md,md.tmpl}]
+[*.{md,md.tmpl,md.gotmpl}]
 indent_size = 2
 max_line_length = 20000
 
@@ -53,3 +54,4 @@ indent_size = 2
 
 [bats/*.sh]
 max_line_length = 20000
+; @config-manager:end root_config
