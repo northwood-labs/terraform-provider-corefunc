@@ -11,6 +11,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 ### :books: Documentation
 
 * [`c4fc2b2`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/c4fc2b20345e28a05ed3d9c36475ed9703fd5996): Fixed an outdated link. ([@skyzyx](https://github.com/skyzyx))
+* [`ff23089`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/ff23089aecf41a199050a00af685db84a77033ea): Add a link to the TF Registry docs. ([@skyzyx](https://github.com/skyzyx))
 
 ### :dependabot: Building and Dependencies
 
