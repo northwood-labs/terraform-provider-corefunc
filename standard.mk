@@ -14,6 +14,7 @@ SHELL:=bash
 GO:=GOEXPERIMENT=jsonv2 $(shell which go)
 GOTOOLS:=$(GO) tool -modfile=go.tools.mod
 GUMCHECK:=$(shell command -v $(GOTOOLS) gum 2> /dev/null)
+SED:=/opt/homebrew/opt/gsed/bin/gsed
 
 # Color stuff
 HASH := \#
@@ -53,7 +54,7 @@ endif
 
 	@ $(WHITE) "Usage:"
 	@ echo ""
-	@ sed -n 's/^##//p' ${MAKEFILE_LIST} | column -t -s ':' | sed -e 's/^/ /' | \
+	@ $(SED) -n 's/^##//p' ${MAKEFILE_LIST} | column -t -s ':' | $(SED) -e 's/^/ /' | \
 		while IFS= read -r line; do \
 			if [[ "$$line" == *"]*"* ]]; then \
 				$(YELLOW) "$$line"; \

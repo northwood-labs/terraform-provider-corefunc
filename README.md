@@ -22,6 +22,20 @@ While some of these _can_ be implemented in HCL, some of them begin to push up a
 
 The goal of this provider is not to call any network APIs, but to provide pre-built functions in the form of _Data Sources_ or _Provider Functions_.
 
+### Goals
+
+* Provide implementations that are identical between your Terraform code and your [Terratest] test suite.
+* Provide identical implementations in the form of Go functions, Provider Functions, and Data Sources.
+* Port Terraform-only built-in functions to OpenTofu.
+* Port OpenTofu-only built-in functions to Terraform.
+* Port modern built-in functions all the way back to Terraform 1.0.
+* Provide new functions that are broadly useful across the ecosystem.
+
+### Non-goals
+
+* Implementing support for new features where there isn't a 1:1 implementation in Go.
+* Implementing features that have deep integration/entwinement with Terraform's low-level type system.
+
 ## Vote for features!
 
 [View the list of issues](https://github.com/northwood-labs/terraform-provider-corefunc/issues?q=is%3Aissue+is%3Aopen+sort%3Areactions-%2B1-desc), and give a thumbs-up to the ones you'd like to see. This is how we prioritize the work.
@@ -34,12 +48,12 @@ The goal of this provider is not to call any network APIs, but to provide pre-bu
 
 | Testing type | Details            | Description                                                                    |
 |--------------|--------------------|--------------------------------------------------------------------------------|
-| integration  | Terraform 1.0–1.14 | Executes the provider with this release, pulling from `registry.terraform.io`. |
-| integration  | OpenTofu 1.6–1.11  | Executes the provider with this release, pulling from `registry.opentofu.org`. |
-| unit         | Go 1.24–1.25       | Tests using these versions.                                                    |
-| mutation     | Go 1.24–1.25       | Tests using these versions.                                                    |
-| fuzz         | Go 1.24–1.25       | Tests using these versions.                                                    |
-| terratest    | Go 1.24–1.25       | Tests using these versions.                                                    |
+| integration  | Terraform 1.0–1.15 | Executes the provider with this release, pulling from `registry.terraform.io`. |
+| integration  | OpenTofu 1.6–1.12  | Executes the provider with this release, pulling from `registry.opentofu.org`. |
+| unit         | Go 1.25–1.26       | Tests using these versions.                                                    |
+| mutation     | Go 1.25–1.26       | Tests using these versions.                                                    |
+| fuzz         | Go 1.25–1.26       | Tests using these versions.                                                    |
+| terratest    | Go 1.25–1.26       | Tests using these versions.                                                    |
 
 ## Usage Examples
 
