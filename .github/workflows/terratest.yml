@@ -160,16 +160,13 @@ jobs:
           tofu_version: 1.8
           tofu_wrapper: false
 
-      - name: Run Terratest (data sources)
-        # env:
-        #   GOROOT: $(go env GOROOT)
-        run: |
-          go env
+      - name: Set GOROOT as an environment variable
+        run: echo "GOROOT=$(go env GOROOT)" >> $GITHUB_ENV
 
+      - name: Run Terratest (data sources)
+        run: |
           cd ./terratest/data-sources && go test -count=1 -parallel=$(nproc)
 
-      # - name: Run Terratest (functions)
-      #   env:
-      #     GOROOT: $(go env GOROOT)
-      #   run: |
-      #     cd ./terratest/functions && go test -count=1 -parallel=$(nproc)
+      - name: Run Terratest (functions)
+        run: |
+          cd ./terratest/functions && go test -count=1 -parallel=$(nproc)
