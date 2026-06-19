@@ -186,7 +186,7 @@ lint: license pre-commit
 
 .PHONY: test
 ## test: [test]* Runs ALL tests.
-test: unit examples acc mutate terratest bats
+test: unit examples acc mutate terratest
 
 .PHONY: list-tests
 ## list-tests: [test] Lists all of the tests that are available to run.
@@ -212,9 +212,6 @@ list-tests:
 	@ $(HEADER) "=====> Terratest tests..."
 	@ echo "make terratest"
 
-	@ $(HEADER) "=====> BATS tests..."
-	@ echo "make bats"
-
 	@ $(HEADER) "=====> Quick benchmarks..."
 	@ echo "make quickbench"
 	@ cat ./corefunc/*_test.go | ggrep "func Benchmark" | $(SED) 's/func\s//g' | $(SED) -r 's/\(.*//g' | $(SED) -r 's/Benchmark/make quickbench NAME=/g'
@@ -222,13 +219,6 @@ list-tests:
 	@ $(HEADER) "=====> Full benchmarks..."
 	@ echo "make bench"
 	@ cat ./corefunc/*_test.go | ggrep "func Benchmark" | $(SED) 's/func\s//g' | $(SED) -r 's/\(.*//g' | $(SED) -r 's/Benchmark/make bench NAME=/g'
-
-.PHONY: bats
-## bats: [test] Tests the output of the provider using tfschema and BATS.
-bats: build clean
-	@ $(HEADER) "=====> Running BATS/tfschema tests..."
-	@ # cd ./bats && terraform init && bats *.bats.sh
-	cd ./bats && bats *.bats.sh
 
 .PHONY: acc
 ## acc: [test] Runs Terraform provider acceptance tests. Set NAME= (without 'TestAcc') to run a specific test by name.
