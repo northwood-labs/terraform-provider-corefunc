@@ -44,6 +44,9 @@ builds:
       - goos: darwin
         goarch: arm
 
+      - goos: netbsd
+        goarch: "arm64"
+
       - goos: solaris
         goarch: "386"
       - goos: solaris

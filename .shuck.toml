@@ -1,0 +1,78 @@
+[check]
+embedded = true
+
+[format]
+binary-next-line = true
+function-next-line = false
+indent-style = "space"
+indent-width = 4
+keep-padding = true
+never-split = false
+space-redirects = true
+switch-case-indent = true
+
+[lint]
+select = ["ALL"]
+
+[lint.contracts]
+well-known = true
+
+[lint.rule-options.c001]
+treat-indirect-expansion-targets-as-used = false
+
+[lint.rule-options.c063]
+report-unreached-nested-definitions = false
+
+[lint.rule-options.s078]
+allowed-shells = ["bash"]
+
+[lint.rule-options.s079]
+allowed-forms = ["env-lookup"]
+allowed-paths = ["/bin/bash", "/usr/bin/env bash"]
+
+[lint.rule-options.s080]
+count = "non-comment-non-blank"
+max-lines = 100
+
+[lint.rule-options.s081]
+ignore-shebang-only-files = true
+
+[lint.rule-options.s082]
+kinds = ["@TODO", "TODO", "FIXME"]
+require-owner = false
+require-message = false
+
+[lint.rule-options.s083]
+require-for = "exported"
+long-function-line-threshold = 20
+
+[lint.rule-options.s084]
+require-globals = true
+require-arguments = true
+require-outputs = true
+require-returns = true
+
+[lint.rule-options.s085]
+non-trivial-line-threshold = 1
+non-trivial-function-count = 1
+main-name = "main"
+
+[lint.rule-options.c158]
+treat-readonly-as-documented = true
+treat-export-as-intentional = true
+
+[lint.rule-options.c159]
+allow-conditional-init = true
+
+[lint.rule-options.c160]
+allowed-anchors = ["${BASH_SOURCE[0]%/*}", "$(dirname \"$0\")", "$(dirname \"${BASH_SOURCE[0]}\")"]
+
+[lint.rule-options.c161]
+ignore-after-source = false
+
+[run]
+shell = "bash"
+shell-version = "latest"
+
+[run.shells]
+bash = "latest"
