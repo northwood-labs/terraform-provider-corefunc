@@ -1,4 +1,4 @@
-// Copyright 2024-2025, Northwood Labs, LLC <license@northwood-labs.com>
+// Copyright 2024-2026, Northwood Labs, LLC <license@northwood-labs.com>
 // Copyright 2023-2025, Ryan Parman <rparman@northwood-labs.com>
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -29,9 +29,9 @@ import (
 	"github.com/hairyhenderson/go-which"
 	"github.com/stretchr/testify/assert"
 
-	clihelpers "github.com/northwood-labs/cli-helpers"
 	"github.com/northwood-labs/terraform-provider-corefunc/v2/corefunc"
 	"github.com/northwood-labs/terraform-provider-corefunc/v2/corefunc/types"
+	clihelpers "go.nwlabs.dev/cli-helpers/v2"
 )
 
 var (
@@ -77,7 +77,7 @@ func TestDataSources(t *testing.T) { // lint:allow_complexity
 			}
 
 			test_structure.SaveTerraformOptions(t, tmpDir, terraformOptions)
-			terraform.InitAndApply(t, terraformOptions)
+			terraform.InitAndApplyContext(t, t.Context(), terraformOptions)
 		})
 
 		// String formatting
@@ -87,17 +87,49 @@ func TestDataSources(t *testing.T) { // lint:allow_complexity
 			terraformOptions := test_structure.LoadTerraformOptions(t, tmpDir)
 
 			// Run `terraform output` to get the value of an output variable
-			assert.Equal(t, terraform.Output(t, terraformOptions, "str_camel_ds"), corefunc.StrCamel(inputStr))
-			assert.Equal(t, terraform.Output(t, terraformOptions, "str_constant_ds"), corefunc.StrConstant(inputStr))
-			assert.Equal(t, terraform.Output(t, terraformOptions, "str_kebab_ds"), corefunc.StrKebab(inputStr))
-			assert.Equal(t, terraform.Output(t, terraformOptions, "str_pascal_ds"), corefunc.StrPascal(inputStr, false))
-			assert.Equal(t, terraform.Output(t, terraformOptions, "str_snake_ds"), corefunc.StrSnake(inputStr))
-			assert.Equal(t, terraform.Output(t, terraformOptions, "int_leftpad_ds"), corefunc.IntLeftPad(123, 5))
-			assert.Equal(t, terraform.Output(t, terraformOptions, "str_leftpad_ds"), corefunc.StrLeftPad("abc", 5, '.'))
-			assert.Equal(t, terraform.Output(t, terraformOptions, "env_ensure_ds"), os.Getenv("GOROOT"))
 			assert.Equal(
 				t,
-				terraform.Output(t, terraformOptions, "str_iterative_replace_ds"),
+				terraform.OutputContext(t, t.Context(), terraformOptions, "str_camel_ds"),
+				corefunc.StrCamel(inputStr),
+			)
+			assert.Equal(
+				t,
+				terraform.OutputContext(t, t.Context(), terraformOptions, "str_constant_ds"),
+				corefunc.StrConstant(inputStr),
+			)
+			assert.Equal(
+				t,
+				terraform.OutputContext(t, t.Context(), terraformOptions, "str_kebab_ds"),
+				corefunc.StrKebab(inputStr),
+			)
+			assert.Equal(
+				t,
+				terraform.OutputContext(t, t.Context(), terraformOptions, "str_pascal_ds"),
+				corefunc.StrPascal(inputStr, false),
+			)
+			assert.Equal(
+				t,
+				terraform.OutputContext(t, t.Context(), terraformOptions, "str_snake_ds"),
+				corefunc.StrSnake(inputStr),
+			)
+			assert.Equal(
+				t,
+				terraform.OutputContext(t, t.Context(), terraformOptions, "int_leftpad_ds"),
+				corefunc.IntLeftPad(123, 5),
+			)
+			assert.Equal(
+				t,
+				terraform.OutputContext(t, t.Context(), terraformOptions, "str_leftpad_ds"),
+				corefunc.StrLeftPad("abc", 5, '.'),
+			)
+			assert.Equal(
+				t,
+				terraform.OutputContext(t, t.Context(), terraformOptions, "env_ensure_ds"),
+				os.Getenv("GOROOT"),
+			)
+			assert.Equal(
+				t,
+				terraform.OutputContext(t, t.Context(), terraformOptions, "str_iterative_replace_ds"),
 				corefunc.StrIterativeReplace(
 					strToReplace,
 					[]types.Replacement{
@@ -113,38 +145,38 @@ func TestDataSources(t *testing.T) { // lint:allow_complexity
 
 			assert.Equal(
 				t,
-				terraform.Output(t, terraformOptions, "str_startswith_ds"),
+				terraform.OutputContext(t, t.Context(), terraformOptions, "str_startswith_ds"),
 				strconv.FormatBool(corefunc.StrStartsWith("Hello world!", "Hello")),
 			)
 			assert.Equal(
 				t,
-				terraform.Output(t, terraformOptions, "str_endswith_ds"),
+				terraform.OutputContext(t, t.Context(), terraformOptions, "str_endswith_ds"),
 				strconv.FormatBool(corefunc.StrEndsWith("Hello world!", "world!")),
 			)
 			assert.Equal(
 				t,
-				terraform.Output(t, terraformOptions, "str_contains_ds"),
+				terraform.OutputContext(t, t.Context(), terraformOptions, "str_contains_ds"),
 				strconv.FormatBool(corefunc.StrContains("Hello world!", "ello")),
 			)
 
 			assert.Equal(
 				t,
-				terraform.Output(t, terraformOptions, "str_byte_length1_ds"),
+				terraform.OutputContext(t, t.Context(), terraformOptions, "str_byte_length1_ds"),
 				strconv.FormatInt(int64(corefunc.StrByteLength("abcde")), 10),
 			)
 			assert.Equal(
 				t,
-				terraform.Output(t, terraformOptions, "str_byte_length2_ds"),
+				terraform.OutputContext(t, t.Context(), terraformOptions, "str_byte_length2_ds"),
 				strconv.FormatInt(int64(corefunc.StrByteLength("♫")), 10),
 			)
 			assert.Equal(
 				t,
-				terraform.Output(t, terraformOptions, "str_byte_length3_ds"),
+				terraform.OutputContext(t, t.Context(), terraformOptions, "str_byte_length3_ds"),
 				strconv.FormatInt(int64(corefunc.StrByteLength("界")), 10),
 			)
 			assert.Equal(
 				t,
-				terraform.Output(t, terraformOptions, "str_byte_length4_ds"),
+				terraform.OutputContext(t, t.Context(), terraformOptions, "str_byte_length4_ds"),
 				strconv.FormatInt(int64(corefunc.StrByteLength("スター☆")), 10),
 			)
 		})
@@ -171,8 +203,16 @@ func TestDataSources(t *testing.T) { // lint:allow_complexity
 				t.Fatal(err)
 			}
 
-			assert.Equal(t, terraform.Output(t, terraformOptions, "toml_as_json"), strings.TrimSpace(asJSON))
-			assert.Equal(t, terraform.Output(t, terraformOptions, "json_as_toml"), strings.TrimSpace(asTOML))
+			assert.Equal(
+				t,
+				terraform.OutputContext(t, t.Context(), terraformOptions, "toml_as_json"),
+				strings.TrimSpace(asJSON),
+			)
+			assert.Equal(
+				t,
+				terraform.OutputContext(t, t.Context(), terraformOptions, "json_as_toml"),
+				strings.TrimSpace(asTOML),
+			)
 		})
 
 		// Ported OpenTofu functions
@@ -204,19 +244,39 @@ func TestDataSources(t *testing.T) { // lint:allow_complexity
 
 			assert.Equal(
 				t,
-				terraform.Output(t, terraformOptions, "net_cidr_contains_ds"),
+				terraform.OutputContext(t, t.Context(), terraformOptions, "net_cidr_contains_ds"),
 				strconv.FormatBool(isContained),
 			)
-			assert.Equal(t, terraform.Output(t, terraformOptions, "str_base64_gunzip_ds"), unzipped)
-			assert.Equal(t, terraform.Output(t, terraformOptions, "url_decode_ds"), decodedURL)
+			assert.Equal(
+				t,
+				terraform.OutputContext(t, t.Context(), terraformOptions, "str_base64_gunzip_ds"),
+				unzipped,
+			)
+			assert.Equal(
+				t,
+				terraform.OutputContext(t, t.Context(), terraformOptions, "url_decode_ds"),
+				decodedURL,
+			)
 
 			// runtime
-			assert.Equal(t, terraform.Output(t, terraformOptions, "runtime_cpuarch_ds"), runtime.GOARCH)
-			assert.Equal(t, terraform.Output(t, terraformOptions, "runtime_numcpus_ds"), strconv.Itoa(runtime.NumCPU()))
-			assert.Equal(t, terraform.Output(t, terraformOptions, "runtime_os_ds"), runtime.GOOS)
+			assert.Equal(
+				t,
+				terraform.OutputContext(t, t.Context(), terraformOptions, "runtime_cpuarch_ds"),
+				runtime.GOARCH,
+			)
+			assert.Equal(
+				t,
+				terraform.OutputContext(t, t.Context(), terraformOptions, "runtime_numcpus_ds"),
+				strconv.Itoa(runtime.NumCPU()),
+			)
+			assert.Equal(
+				t,
+				terraform.OutputContext(t, t.Context(), terraformOptions, "runtime_os_ds"),
+				runtime.GOOS,
+			)
 
 			// url_parse
-			urlParse := terraform.OutputMap(t, terraformOptions, "url_parse_ds")
+			urlParse := terraform.OutputMapContext(t, t.Context(), terraformOptions, "url_parse_ds")
 			assert.Equal(t, urlParse["decoded_port"], strconv.Itoa(80))
 			assert.Equal(t, urlParse["fragment"], "bar")
 			assert.Equal(t, urlParse["hash"], "#bar")
@@ -234,7 +294,7 @@ func TestDataSources(t *testing.T) { // lint:allow_complexity
 			assert.Equal(t, urlParse["username"], "u")
 
 			// url_parse_gsb
-			urlParseGSB := terraform.OutputMap(t, terraformOptions, "url_parse_gsb_ds")
+			urlParseGSB := terraform.OutputMapContext(t, t.Context(), terraformOptions, "url_parse_gsb_ds")
 			assert.Equal(t, urlParseGSB["decoded_port"], strconv.Itoa(80))
 			assert.Equal(t, urlParseGSB["fragment"], "")
 			assert.Equal(t, urlParseGSB["hash"], "")
@@ -268,14 +328,22 @@ func TestDataSources(t *testing.T) { // lint:allow_complexity
 				t.Fatal(err)
 			}
 
-			assert.Equal(t, terraform.Output(t, terraformOptions, "homedir_get_ds"), homedir)
+			assert.Equal(
+				t,
+				terraform.OutputContext(t, t.Context(), terraformOptions, "homedir_get_ds"),
+				homedir,
+			)
 
 			homedirPath, err = corefunc.HomedirExpand("~/.aws")
 			if err != nil {
 				t.Fatal(err)
 			}
 
-			assert.Equal(t, terraform.Output(t, terraformOptions, "homedir_expand_ds"), homedirPath)
+			assert.Equal(
+				t,
+				terraform.OutputContext(t, t.Context(), terraformOptions, "homedir_expand_ds"),
+				homedirPath,
+			)
 		})
 
 		// Time
@@ -291,7 +359,7 @@ func TestDataSources(t *testing.T) { // lint:allow_complexity
 
 			assert.Equal(
 				t,
-				terraform.Output(t, terraformOptions, "time_parse1_ds"),
+				terraform.OutputContext(t, t.Context(), terraformOptions, "time_parse1_ds"),
 				strconv.FormatFloat(float64(timestamp), 'e', 9, 64),
 			)
 
@@ -302,7 +370,7 @@ func TestDataSources(t *testing.T) { // lint:allow_complexity
 
 			assert.Equal(
 				t,
-				terraform.Output(t, terraformOptions, "time_parse2_ds"),
+				terraform.OutputContext(t, t.Context(), terraformOptions, "time_parse2_ds"),
 				strconv.FormatFloat(float64(timestamp), 'e', 9, 64),
 			)
 
@@ -313,7 +381,7 @@ func TestDataSources(t *testing.T) { // lint:allow_complexity
 
 			assert.Equal(
 				t,
-				terraform.Output(t, terraformOptions, "time_parse3_ds"),
+				terraform.OutputContext(t, t.Context(), terraformOptions, "time_parse3_ds"),
 				strconv.FormatFloat(float64(timestamp), 'e', 9, 64),
 			)
 
@@ -322,21 +390,33 @@ func TestDataSources(t *testing.T) { // lint:allow_complexity
 				t.Fatal(err)
 			}
 
-			assert.Equal(t, terraform.Output(t, terraformOptions, "time_compare1_ds"), strconv.Itoa(result))
+			assert.Equal(
+				t,
+				terraform.OutputContext(t, t.Context(), terraformOptions, "time_compare1_ds"),
+				strconv.Itoa(result),
+			)
 
 			result, err = corefunc.TimeCompare("Monday, 02-Jan-2006 15:04:05 MST", "2007-01-02T15:04:05Z")
 			if err != nil {
 				t.Fatal(err)
 			}
 
-			assert.Equal(t, terraform.Output(t, terraformOptions, "time_compare2_ds"), strconv.Itoa(result))
+			assert.Equal(
+				t,
+				terraform.OutputContext(t, t.Context(), terraformOptions, "time_compare2_ds"),
+				strconv.Itoa(result),
+			)
 
 			result, err = corefunc.TimeCompare("2007-01-02T15:04:05Z", "Monday, 02-Jan-2006 15:04:05 MST")
 			if err != nil {
 				t.Fatal(err)
 			}
 
-			assert.Equal(t, terraform.Output(t, terraformOptions, "time_compare3_ds"), strconv.Itoa(result))
+			assert.Equal(
+				t,
+				terraform.OutputContext(t, t.Context(), terraformOptions, "time_compare3_ds"),
+				strconv.Itoa(result),
+			)
 		})
 
 		// Hashing
@@ -345,64 +425,84 @@ func TestDataSources(t *testing.T) { // lint:allow_complexity
 
 			terraformOptions := test_structure.LoadTerraformOptions(t, tmpDir)
 
-			assert.Equal(t, terraform.Output(t, terraformOptions, "hash_md5_ds"), corefunc.HashMD5("hello world"))
 			assert.Equal(
 				t,
-				terraform.Output(t, terraformOptions, "hash_md5_base64_ds"),
+				terraform.OutputContext(t, t.Context(), terraformOptions, "hash_md5_ds"),
+				corefunc.HashMD5("hello world"),
+			)
+			assert.Equal(
+				t,
+				terraform.OutputContext(t, t.Context(), terraformOptions, "hash_md5_base64_ds"),
 				corefunc.Base64HashMD5("hello world"),
 			)
-			assert.Equal(t, terraform.Output(t, terraformOptions, "hash_sha1_ds"), corefunc.HashSHA1("hello world"))
 			assert.Equal(
 				t,
-				terraform.Output(t, terraformOptions, "hash_sha1_base64_ds"),
+				terraform.OutputContext(t, t.Context(), terraformOptions, "hash_sha1_ds"),
+				corefunc.HashSHA1("hello world"),
+			)
+			assert.Equal(
+				t,
+				terraform.OutputContext(t, t.Context(), terraformOptions, "hash_sha1_base64_ds"),
 				corefunc.Base64HashSHA1("hello world"),
 			)
-			assert.Equal(t, terraform.Output(t, terraformOptions, "hash_sha256_ds"), corefunc.HashSHA256("hello world"))
 			assert.Equal(
 				t,
-				terraform.Output(t, terraformOptions, "hash_sha256_base64_ds"),
+				terraform.OutputContext(t, t.Context(), terraformOptions, "hash_sha256_ds"),
+				corefunc.HashSHA256("hello world"),
+			)
+			assert.Equal(
+				t,
+				terraform.OutputContext(t, t.Context(), terraformOptions, "hash_sha256_base64_ds"),
 				corefunc.Base64HashSHA256("hello world"),
 			)
-			assert.Equal(t, terraform.Output(t, terraformOptions, "hash_sha384_ds"), corefunc.HashSHA384("hello world"))
 			assert.Equal(
 				t,
-				terraform.Output(t, terraformOptions, "hash_sha384_base64_ds"),
+				terraform.OutputContext(t, t.Context(), terraformOptions, "hash_sha384_ds"),
+				corefunc.HashSHA384("hello world"),
+			)
+			assert.Equal(
+				t,
+				terraform.OutputContext(t, t.Context(), terraformOptions, "hash_sha384_base64_ds"),
 				corefunc.Base64HashSHA384("hello world"),
 			)
-			assert.Equal(t, terraform.Output(t, terraformOptions, "hash_sha512_ds"), corefunc.HashSHA512("hello world"))
 			assert.Equal(
 				t,
-				terraform.Output(t, terraformOptions, "hash_sha512_base64_ds"),
+				terraform.OutputContext(t, t.Context(), terraformOptions, "hash_sha512_ds"),
+				corefunc.HashSHA512("hello world"),
+			)
+			assert.Equal(
+				t,
+				terraform.OutputContext(t, t.Context(), terraformOptions, "hash_sha512_base64_ds"),
 				corefunc.Base64HashSHA512("hello world"),
 			)
 			assert.Equal(
 				t,
-				terraform.Output(t, terraformOptions, "hash_sha3x256_ds"),
+				terraform.OutputContext(t, t.Context(), terraformOptions, "hash_sha3x256_ds"),
 				corefunc.HashSHA3x256("hello world"),
 			)
 			assert.Equal(
 				t,
-				terraform.Output(t, terraformOptions, "hash_sha3x256_base64_ds"),
+				terraform.OutputContext(t, t.Context(), terraformOptions, "hash_sha3x256_base64_ds"),
 				corefunc.Base64HashSHA3x256("hello world"),
 			)
 			assert.Equal(
 				t,
-				terraform.Output(t, terraformOptions, "hash_sha3x384_ds"),
+				terraform.OutputContext(t, t.Context(), terraformOptions, "hash_sha3x384_ds"),
 				corefunc.HashSHA3x384("hello world"),
 			)
 			assert.Equal(
 				t,
-				terraform.Output(t, terraformOptions, "hash_sha3x384_base64_ds"),
+				terraform.OutputContext(t, t.Context(), terraformOptions, "hash_sha3x384_base64_ds"),
 				corefunc.Base64HashSHA3x384("hello world"),
 			)
 			assert.Equal(
 				t,
-				terraform.Output(t, terraformOptions, "hash_sha3x512_ds"),
+				terraform.OutputContext(t, t.Context(), terraformOptions, "hash_sha3x512_ds"),
 				corefunc.HashSHA3x512("hello world"),
 			)
 			assert.Equal(
 				t,
-				terraform.Output(t, terraformOptions, "hash_sha3x512_base64_ds"),
+				terraform.OutputContext(t, t.Context(), terraformOptions, "hash_sha3x512_base64_ds"),
 				corefunc.Base64HashSHA3x512("hello world"),
 			)
 
@@ -412,14 +512,22 @@ func TestDataSources(t *testing.T) { // lint:allow_complexity
 				t.Fatal(err)
 			}
 
-			assert.Equal(t, terraform.Output(t, terraformOptions, "hash_argon2id_ds"), hash)
+			assert.Equal(
+				t,
+				terraform.OutputContext(t, t.Context(), terraformOptions, "hash_argon2id_ds"),
+				hash,
+			)
 
 			hash, err = corefunc.Base64HashArgon2id("hello world", []byte("somesaltvalue"))
 			if err != nil {
 				t.Fatal(err)
 			}
 
-			assert.Equal(t, terraform.Output(t, terraformOptions, "hash_argon2id_base64_ds"), hash)
+			assert.Equal(
+				t,
+				terraform.OutputContext(t, t.Context(), terraformOptions, "hash_argon2id_base64_ds"),
+				hash,
+			)
 
 			// Hashes with salts (Scrypt)
 			hash, err = corefunc.HashScrypt("hello world", []byte("somesaltvalue"))
@@ -427,24 +535,28 @@ func TestDataSources(t *testing.T) { // lint:allow_complexity
 				t.Fatal(err)
 			}
 
-			assert.Equal(t, terraform.Output(t, terraformOptions, "hash_scrypt_ds"), hash)
+			assert.Equal(t, terraform.OutputContext(t, t.Context(), terraformOptions, "hash_scrypt_ds"), hash)
 
 			hash, err = corefunc.Base64HashScrypt("hello world", []byte("somesaltvalue"))
 			if err != nil {
 				t.Fatal(err)
 			}
 
-			assert.Equal(t, terraform.Output(t, terraformOptions, "hash_scrypt_base64_ds"), hash)
+			assert.Equal(
+				t,
+				terraform.OutputContext(t, t.Context(), terraformOptions, "hash_scrypt_base64_ds"),
+				hash,
+			)
 
 			// Hashes with salts (HMACSHA256)
 			assert.Equal(
 				t,
-				terraform.Output(t, terraformOptions, "hash_hmac_sha256_ds"),
+				terraform.OutputContext(t, t.Context(), terraformOptions, "hash_hmac_sha256_ds"),
 				corefunc.HashHMACSHA256("hello world", "secretkey"),
 			)
 			assert.Equal(
 				t,
-				terraform.Output(t, terraformOptions, "hash_hmac_base64sha256_ds"),
+				terraform.OutputContext(t, t.Context(), terraformOptions, "hash_hmac_base64sha256_ds"),
 				corefunc.Base64HashHMACSHA256("hello world", "secretkey"),
 			)
 		})
@@ -454,7 +566,7 @@ func TestDataSources(t *testing.T) { // lint:allow_complexity
 			message("Destroying resources...")
 
 			terraformOptions := test_structure.LoadTerraformOptions(t, tmpDir)
-			terraform.Destroy(t, terraformOptions)
+			terraform.DestroyContext(t, t.Context(), terraformOptions)
 		})
 	}
 }
