@@ -167,7 +167,7 @@ jobs:
           git checkout refs/tags/${{ github.event.inputs.version }}
 
       - name: GoReleaser Action
-        uses: step-security/goreleaser-action@1472c46ac6e641f2b929f1a893354288b3a6b6b6 # v7.2.1
+        uses: step-security/goreleaser-action@aee981bee303ff102e9a607e46c6a6ace9201398 # v7.2.2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GORELEASER_KEY: ${{ secrets.GORELEASER_KEY }}
