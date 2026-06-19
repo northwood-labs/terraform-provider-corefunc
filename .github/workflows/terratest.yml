@@ -155,7 +155,7 @@ jobs:
           terraform_wrapper: false
 
       - name: Install OpenTofu
-        uses: step-security/setup-opentofu@921002030a6ea8a39816cddd9d5d77ed4c638456 # v2.0.0
+        uses: step-security/setup-opentofu@84cc3a843a234d872b49bd729cb74b65f938bf1f # v2.0.1
         with:
           tofu_version: 1.8
           tofu_wrapper: false
