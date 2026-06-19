@@ -160,6 +160,10 @@ jobs:
           tofu_version: 1.8
           tofu_wrapper: false
 
-      - name: Run Terratest
+      - name: Run Terratest (data sources)
         run: |
-          cd ./terratest && go test -count=1 -parallel=$(nproc)
+          cd ./terratest/data-sources && go test -count=1 -parallel=$(nproc)
+
+      - name: Run Terratest (functions)
+        run: |
+          cd ./terratest/functions && go test -count=1 -parallel=$(nproc)
