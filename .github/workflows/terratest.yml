@@ -161,9 +161,13 @@ jobs:
           tofu_wrapper: false
 
       - name: Run Terratest (data sources)
+        env:
+          GOROOT: "just-testing"
         run: |
           cd ./terratest/data-sources && go test -count=1 -parallel=$(nproc)
 
       - name: Run Terratest (functions)
+        env:
+          GOROOT: "just-testing"
         run: |
           cd ./terratest/functions && go test -count=1 -parallel=$(nproc)
