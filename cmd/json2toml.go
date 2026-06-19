@@ -1,4 +1,4 @@
-// Copyright 2024-2025, Northwood Labs, LLC <license@northwood-labs.com>
+// Copyright 2024-2026, Northwood Labs, LLC <license@northwood-labs.com>
 // Copyright 2023-2025, Ryan Parman <rparman@northwood-labs.com>
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -22,8 +22,8 @@ import (
 
 	"github.com/spf13/cobra"
 
-	clihelpers "github.com/northwood-labs/cli-helpers"
 	"github.com/northwood-labs/terraform-provider-corefunc/v2/corefunc"
+	clihelpers "go.nwlabs.dev/cli-helpers/v2"
 )
 
 // json2tomlCmd represents the json2toml command

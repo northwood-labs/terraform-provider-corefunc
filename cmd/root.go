@@ -1,4 +1,4 @@
-// Copyright 2024-2025, Northwood Labs, LLC <license@northwood-labs.com>
+// Copyright 2024-2026, Northwood Labs, LLC <license@northwood-labs.com>
 // Copyright 2023-2025, Ryan Parman <rparman@northwood-labs.com>
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -25,8 +25,8 @@ import (
 
 	"github.com/hashicorp/terraform-plugin-framework/providerserver"
 
-	clihelpers "github.com/northwood-labs/cli-helpers"
 	"github.com/northwood-labs/terraform-provider-corefunc/v2/corefuncprovider"
+	clihelpers "go.nwlabs.dev/cli-helpers/v2"
 )
 
 var (
