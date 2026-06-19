@@ -12,6 +12,15 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 
 * [`23c9b16`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/23c9b16a464cd51fe7c60cb0830f2dfba20a0eda): Applied uniform rules to the documentation formatting. ([@skyzyx](https://github.com/skyzyx))
 
+### :dependabot: Building and Dependencies
+
+* [`9c22fdd`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/9c22fddd163ac6adb965e497f8abdf572eb7edbe): **deps**: Bump `github.com/northwood-labs/terraform-provider-corefunc/v2` ([#800](https://github.com/northwood-labs/terraform-provider-corefunc/issues/800)) ([@dependabot](https://github.com/dependabot))
+* [`b266955`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/b266955696b342b223a08ebe8738512255f846fb): **deps**: Bump `github.com/pelletier/go-toml/v2` from 2.3.1 to 2.4.0 ([#801](https://github.com/northwood-labs/terraform-provider-corefunc/issues/801)) ([@dependabot](https://github.com/dependabot))
+* [`7ac2f21`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/7ac2f2155b00e5f01b88bebc5de63e0c6a83b94d): **deps**: Bump `step-security/goreleaser-action` from 7.2.1 to 7.2.2 ([#802](https://github.com/northwood-labs/terraform-provider-corefunc/issues/802)) ([@dependabot](https://github.com/dependabot))
+* [`1d4f2ff`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/1d4f2ff8dc648d5738587fdbfbfef7ae88d8db6d): **deps**: Bump `trufflesecurity/trufflehog` from 3.95.5 to 3.95.6 ([#803](https://github.com/northwood-labs/terraform-provider-corefunc/issues/803)) ([@dependabot](https://github.com/dependabot))
+* [`3cc6167`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/3cc6167bd06382c54bca26c50714254684fb64be): **deps**: Bump `step-security/setup-opentofu` from 2.0.0 to 2.0.1 ([#804](https://github.com/northwood-labs/terraform-provider-corefunc/issues/804)) ([@dependabot](https://github.com/dependabot))
+* [`09784a0`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/09784a0798c7ac24707426160a253dda9de75237): **deps**: Bump `actions/checkout` from 6.0.3 to 7.0.0 ([#805](https://github.com/northwood-labs/terraform-provider-corefunc/issues/805)) ([@dependabot](https://github.com/dependabot))
+
 ## 2.3.0 — 2026-06-16
 
 [Compare: v2.2.1 → v2.3.0](https://github.com/northwood-labs/terraform-provider-corefunc/compare/v2.2.1...v2.3.0)
@@ -1383,4 +1392,4 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`6bc72f6`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/6bc72f6d3927147c41665e0ccab69657a4dcd721): Trying to get the build to work. ([@skyzyx](https://github.com/skyzyx))
 * [`8c39e22`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/8c39e221bba5ab7364c52660d794fb75cbd35ff1): Harden GitHub Actions ([#129](https://github.com/northwood-labs/terraform-provider-corefunc/issues/129)) ([@step-security-bot](https://github.com/step-security-bot))
 
-<p>Generated on 2026-06-16.</p>
+<p>Generated on 2026-06-19.</p>
