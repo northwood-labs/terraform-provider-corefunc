@@ -4,7 +4,7 @@ go 1.26.4
 
 require (
 	github.com/charmbracelet/lipgloss v1.1.1-0.20250404203927-76690c660834
-	github.com/gruntwork-io/terratest v1.0.0
+	github.com/gruntwork-io/terratest v1.0.1
 	github.com/hairyhenderson/go-which v0.2.3
 	github.com/northwood-labs/terraform-provider-corefunc/v2 v2.3.0
 	github.com/stretchr/testify v1.11.1
@@ -37,6 +37,7 @@ require (
 	github.com/aws/aws-sdk-go-v2/service/dynamodb v1.59.0 // indirect
 	github.com/aws/aws-sdk-go-v2/service/ec2 v1.307.1 // indirect
 	github.com/aws/aws-sdk-go-v2/service/ecr v1.58.4 // indirect
+	github.com/aws/aws-sdk-go-v2/service/ecrpublic v1.39.6 // indirect
 	github.com/aws/aws-sdk-go-v2/service/ecs v1.85.0 // indirect
 	github.com/aws/aws-sdk-go-v2/service/iam v1.54.5 // indirect
 	github.com/aws/aws-sdk-go-v2/service/internal/accept-encoding v1.13.12 // indirect

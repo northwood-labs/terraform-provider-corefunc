@@ -54,6 +54,8 @@ github.com/aws/aws-sdk-go-v2/service/ec2 v1.307.1 h1:BzCT/JXN5E2OBQhal8KwqmqDVdV
 github.com/aws/aws-sdk-go-v2/service/ec2 v1.307.1/go.mod h1:8mrDF7OtbuL0QpwP4YCvLuoOE4/5lL7D33MXgp069/Y=
 github.com/aws/aws-sdk-go-v2/service/ecr v1.58.4 h1:fo6cmbxkKq/OtKUG0sK70fDsYjtKuSkjIQZUJwt24YM=
 github.com/aws/aws-sdk-go-v2/service/ecr v1.58.4/go.mod h1:7VJFM2lSPHz2I1rRb0a+lbphoOp7hXIgYjGhSTOLY7k=
+github.com/aws/aws-sdk-go-v2/service/ecrpublic v1.39.6 h1:pI1S5+Z8cfN/fImioNCHCWKFgm49ZeBhnjffJfRWHYA=
+github.com/aws/aws-sdk-go-v2/service/ecrpublic v1.39.6/go.mod h1:VctLEHQ91HQAWosSGqbNykn4OoxuUVGbE+1SachaXa0=
 github.com/aws/aws-sdk-go-v2/service/ecs v1.85.0 h1:1e9htzu1Yykx0SSNd8dpWJXa5g8i9Wcl1ngdjPaBHsM=
 github.com/aws/aws-sdk-go-v2/service/ecs v1.85.0/go.mod h1:0vahPCh3slyORHbSuAP8YDyJKLEUQAMX7+bzYGxEnVI=
 github.com/aws/aws-sdk-go-v2/service/iam v1.54.5 h1:a/gAOhIOi+vHYeRU224WIXlJrLXs4Z1Qbm92vfX64jc=
@@ -210,8 +212,8 @@ github.com/gorilla/websocket v1.5.4-0.20250319132907-e064f32e3674 h1:JeSE6pjso5T
 github.com/gorilla/websocket v1.5.4-0.20250319132907-e064f32e3674/go.mod h1:r4w70xmWCQKmi1ONH4KIaBptdivuRPyosB9RmPlGEwA=
 github.com/gruntwork-io/go-commons v0.17.2 h1:14dsCJ7M5Vv2X3BIPKeG9Kdy6vTMGhM8L4WZazxfTuY=
 github.com/gruntwork-io/go-commons v0.17.2/go.mod h1:zs7Q2AbUKuTarBPy19CIxJVUX/rBamfW8IwuWKniWkE=
-github.com/gruntwork-io/terratest v1.0.0 h1:Zk7VJ5Z9vBSwv8OQ/zzkG5D/tfqyVyjMK+lq2v+Kn/c=
-github.com/gruntwork-io/terratest v1.0.0/go.mod h1:g2XWbOQOvnHBFcIYCt5ryaFBWp69+5L+QMbAwor+CBo=
+github.com/gruntwork-io/terratest v1.0.1 h1:5CCp4Matgw5S42t5VW79mLN3YcaN5cEqNpTprVjuzIQ=
+github.com/gruntwork-io/terratest v1.0.1/go.mod h1:2lK9XvvGJ+GhsvA6tO7LpALWG34nu+1QecgexHKAGZ8=
 github.com/gtramontina/ooze v0.2.0 h1:QDW1zeq1TQgTLbIWuk76GCgNV3adkamYxY1aJNYp/Bc=
 github.com/gtramontina/ooze v0.2.0/go.mod h1:e0dltGb+Ws7SQKfoj4XkKf9C/UaIAK2YGWbLKLPwL6k=
 github.com/hairyhenderson/go-which v0.2.3 h1:it1AhsE22R9vmHwPoarntRKAxLQh3DDjrmjvhdyPKsc=
