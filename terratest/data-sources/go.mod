@@ -6,7 +6,7 @@ replace github.com/northwood-labs/terraform-provider-corefunc/v2 v2.2.1 => ../..
 
 require (
 	github.com/charmbracelet/lipgloss v1.1.1-0.20250404203927-76690c660834
-	github.com/gruntwork-io/terratest v1.0.0
+	github.com/gruntwork-io/terratest v1.0.1
 	github.com/hairyhenderson/go-which v0.2.3
 	github.com/northwood-labs/terraform-provider-corefunc/v2 v2.2.1
 	github.com/stretchr/testify v1.11.1
@@ -39,6 +39,7 @@ require (
 	github.com/aws/aws-sdk-go-v2/service/dynamodb v1.59.0 // indirect
 	github.com/aws/aws-sdk-go-v2/service/ec2 v1.307.1 // indirect
 	github.com/aws/aws-sdk-go-v2/service/ecr v1.58.4 // indirect
+	github.com/aws/aws-sdk-go-v2/service/ecrpublic v1.39.6 // indirect
 	github.com/aws/aws-sdk-go-v2/service/ecs v1.85.0 // indirect
 	github.com/aws/aws-sdk-go-v2/service/iam v1.54.5 // indirect
 	github.com/aws/aws-sdk-go-v2/service/internal/accept-encoding v1.13.12 // indirect
@@ -137,7 +138,7 @@ require (
 	github.com/muesli/termenv v0.16.0 // indirect
 	github.com/munnerz/goautoneg v0.0.0-20191010083416-a7dc8b61c822 // indirect
 	github.com/nlnwa/whatwg-url v0.6.2 // indirect
-	github.com/pelletier/go-toml/v2 v2.4.0 // indirect
+	github.com/pelletier/go-toml/v2 v2.4.2 // indirect
 	github.com/pmezard/go-difflib v1.0.1-0.20181226105442-5d4384ee4fb2 // indirect
 	github.com/pquerna/otp v1.5.0 // indirect
 	github.com/rivo/uniseg v0.4.7 // indirect
