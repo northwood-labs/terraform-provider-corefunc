@@ -5,7 +5,7 @@
 // you may not use this file except in compliance with the License.
 // You may obtain a copy of the License at
 //
-//     http://www.apache.org/licenses/LICENSE-2.0
+//     https://www.apache.org/licenses/LICENSE-2.0
 //
 // Unless required by applicable law or agreed to in writing, software
 // distributed under the License is distributed on an "AS IS" BASIS,
@@ -73,30 +73,30 @@ var StrCamelTestTable = map[string]struct { // lint:no_dupe
 	},
 	"test initialisms ip html eof ascii cpu (AcronymCaps)": {
 		Input: "test initialisms ip html eof ascii cpu",
-		// AcronymCaps: true,
+		// AcronymCaps: true,.
 		Expected: "testInitialismsIPHTMLEOFASCIICPU",
 	},
 	// "test initialisms ip html eof ascii cpu": {
 	// 	Input:    "test initialisms ip html eof ascii cpu",
 	// 	Expected: "testInitialismsIpHtmlEofAsciiCpu",
-	// },
+	// },.
 	"v3.2.2": {
 		Input:    "v3.2.2",
 		Expected: "v322",
 	},
 	"This is [an] {example}${id32}. (AcronymCaps)": {
 		Input: "This is [an] {example}$${id32}.",
-		// AcronymCaps: true,
+		// AcronymCaps: true,.
 		Expected: "thisIsAnExampleID32",
 	},
 	// "This is [an] {example}${id32}.": {
 	// 	Input:       "This is [an] {example}$${id32}.",
 	// 	AcronymCaps: false,
 	// 	Expected:    "thisIsAnExampleId32",
-	// },
+	// },.
 	"entity id": {
 		Input: "entity id",
-		// AcronymCaps: true,
+		// AcronymCaps: true,.
 		Expected: "entityID",
 	},
 }

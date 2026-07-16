@@ -5,7 +5,7 @@
 // you may not use this file except in compliance with the License.
 // You may obtain a copy of the License at
 //
-//     http://www.apache.org/licenses/LICENSE-2.0
+//     https://www.apache.org/licenses/LICENSE-2.0
 //
 // Unless required by applicable law or agreed to in writing, software
 // distributed under the License is distributed on an "AS IS" BASIS,
@@ -19,7 +19,7 @@ import "time"
 
 const (
 	// -------------------------------------------------------------------------
-	// Standard library time layouts
+	// Standard library time layouts.
 
 	// ANSIC comes from the standard library time package.
 	ANSIC TimeLayout = time.ANSIC
@@ -94,7 +94,7 @@ const (
 	W3C TimeLayout = time.RFC3339
 
 	// -------------------------------------------------------------------------
-	// Additional time layouts ported from PHP
+	// Additional time layouts ported from PHP.
 
 	// COOKIE was ported from PHP.
 	COOKIE TimeLayout = "Monday, 02-Jan-2006 15:04:05 MST"

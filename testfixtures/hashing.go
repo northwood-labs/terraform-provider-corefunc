@@ -5,7 +5,7 @@
 // you may not use this file except in compliance with the License.
 // You may obtain a copy of the License at
 //
-//     http://www.apache.org/licenses/LICENSE-2.0
+//     https://www.apache.org/licenses/LICENSE-2.0
 //
 // Unless required by applicable law or agreed to in writing, software
 // distributed under the License is distributed on an "AS IS" BASIS,
@@ -176,7 +176,7 @@ var (
 
 	// Base64HashSHA1TestTable is used by both the standard Go tests and also
 	// the Terraform acceptance tests.
-	// <github.com/golang/go/wiki/TableDrivenTests>
+	// <github.com/golang/go/wiki/TableDrivenTests>.
 	Base64HashSHA1TestTable = map[string]struct { // lint:no_dupe
 		Input    string
 		Expected string
@@ -201,7 +201,7 @@ var (
 
 	// Base64HashSHA256TestTable is used by both the standard Go tests and also
 	// the Terraform acceptance tests.
-	// <github.com/golang/go/wiki/TableDrivenTests>
+	// <github.com/golang/go/wiki/TableDrivenTests>.
 	Base64HashSHA256TestTable = map[string]struct { // lint:no_dupe
 		Input    string
 		Expected string
@@ -226,7 +226,7 @@ var (
 
 	// Base64HashSHA384TestTable is used by both the standard Go tests and also
 	// the Terraform acceptance tests.
-	// <github.com/golang/go/wiki/TableDrivenTests>
+	// <github.com/golang/go/wiki/TableDrivenTests>.
 	Base64HashSHA384TestTable = map[string]struct { // lint:no_dupe
 		Input    string
 		Expected string
@@ -251,7 +251,7 @@ var (
 
 	// Base64HashSHA512TestTable is used by both the standard Go tests and also
 	// the Terraform acceptance tests.
-	// <github.com/golang/go/wiki/TableDrivenTests>
+	// <github.com/golang/go/wiki/TableDrivenTests>.
 	Base64HashSHA512TestTable = map[string]struct { // lint:no_dupe
 		Input    string
 		Expected string
@@ -276,7 +276,7 @@ var (
 
 	// HashSHA3x256TestTable is used by both the standard Go tests and also
 	// the Terraform acceptance tests.
-	// <github.com/golang/go/wiki/TableDrivenTests>
+	// <github.com/golang/go/wiki/TableDrivenTests>.
 	HashSHA3x256TestTable = map[string]struct {
 		Input    string
 		Expected string
@@ -301,7 +301,7 @@ var (
 
 	// Base64HashSHA3x256TestTable is used by both the standard Go tests and also
 	// the Terraform acceptance tests.
-	// <github.com/golang/go/wiki/TableDrivenTests>
+	// <github.com/golang/go/wiki/TableDrivenTests>.
 	Base64HashSHA3x256TestTable = map[string]struct {
 		Input    string
 		Expected string
@@ -326,7 +326,7 @@ var (
 
 	// HashSHA3x384TestTable is used by both the standard Go tests and also
 	// the Terraform acceptance tests.
-	// <github.com/golang/go/wiki/TableDrivenTests>
+	// <github.com/golang/go/wiki/TableDrivenTests>.
 	HashSHA3x384TestTable = map[string]struct {
 		Input    string
 		Expected string
@@ -355,7 +355,7 @@ var (
 
 	// Base64HashSHA3x384TestTable is used by both the standard Go tests and also
 	// the Terraform acceptance tests.
-	// <github.com/golang/go/wiki/TableDrivenTests>
+	// <github.com/golang/go/wiki/TableDrivenTests>.
 	Base64HashSHA3x384TestTable = map[string]struct {
 		Input    string
 		Expected string
@@ -380,7 +380,7 @@ var (
 
 	// HashSHA3x512TestTable is used by both the standard Go tests and also
 	// the Terraform acceptance tests.
-	// <github.com/golang/go/wiki/TableDrivenTests>
+	// <github.com/golang/go/wiki/TableDrivenTests>.
 	HashSHA3x512TestTable = map[string]struct {
 		Input    string
 		Expected string
@@ -409,7 +409,7 @@ var (
 
 	// Base64HashSHA3x512TestTable is used by both the standard Go tests and also
 	// the Terraform acceptance tests.
-	// <github.com/golang/go/wiki/TableDrivenTests>
+	// <github.com/golang/go/wiki/TableDrivenTests>.
 	Base64HashSHA3x512TestTable = map[string]struct {
 		Input    string
 		Expected string
@@ -434,7 +434,7 @@ var (
 
 	// HashArgon2idTestTable is used by both the standard Go tests and also
 	// the Terraform acceptance tests.
-	// <github.com/golang/go/wiki/TableDrivenTests>
+	// <github.com/golang/go/wiki/TableDrivenTests>.
 	HashArgon2idTestTable = map[string]struct {
 		Input    string
 		Expected string
@@ -464,7 +464,7 @@ var (
 
 	// Base64HashArgon2idTestTable is used by both the standard Go tests and
 	// also the Terraform acceptance tests.
-	// <github.com/golang/go/wiki/TableDrivenTests>
+	// <github.com/golang/go/wiki/TableDrivenTests>.
 	Base64HashArgon2idTestTable = map[string]struct {
 		Input    string
 		Expected string
@@ -494,7 +494,7 @@ var (
 
 	// HashScryptTestTable is used by both the standard Go tests and also the
 	// Terraform acceptance tests.
-	// <github.com/golang/go/wiki/TableDrivenTests>
+	// <github.com/golang/go/wiki/TableDrivenTests>.
 	HashScryptTestTable = map[string]struct {
 		Input    string
 		Expected string
@@ -524,7 +524,7 @@ var (
 
 	// Base64HashScryptTestTable is used by both the standard Go tests and also
 	// the Terraform acceptance tests.
-	// <github.com/golang/go/wiki/TableDrivenTests>
+	// <github.com/golang/go/wiki/TableDrivenTests>.
 	Base64HashScryptTestTable = map[string]struct {
 		Input    string
 		Expected string
@@ -554,7 +554,7 @@ var (
 
 	// HashHMACSHA256TestTable is used by both the standard Go tests and also
 	// the Terraform acceptance tests.
-	// <github.com/golang/go/wiki/TableDrivenTests>
+	// <github.com/golang/go/wiki/TableDrivenTests>.
 	HashHMACSHA256TestTable = map[string]struct {
 		Input    string
 		Key      string
@@ -584,7 +584,7 @@ var (
 
 	// Base64HashHMACSHA256TestTable is used by both the standard Go tests and
 	// also the Terraform acceptance tests.
-	// <github.com/golang/go/wiki/TableDrivenTests>
+	// <github.com/golang/go/wiki/TableDrivenTests>.
 	Base64HashHMACSHA256TestTable = map[string]struct {
 		Input    string
 		Key      string

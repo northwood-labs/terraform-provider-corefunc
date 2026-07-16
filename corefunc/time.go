@@ -5,7 +5,7 @@
 // you may not use this file except in compliance with the License.
 // You may obtain a copy of the License at
 //
-//     http://www.apache.org/licenses/LICENSE-2.0
+//     https://www.apache.org/licenses/LICENSE-2.0
 //
 // Unless required by applicable law or agreed to in writing, software
 // distributed under the License is distributed on an "AS IS" BASIS,
@@ -70,46 +70,46 @@ func TimeParse(t string) (int64, error) {
 		time.RFC3339Nano,
 		string(types.ISO8601),
 		string(types.ISO8601Nano),
-		"2006-01-02T15:04:05",         // Basic date-time without timezone
-		"2006-01-02T15:04:05.9999999", // Date-time with fractional seconds
-		"2006-01-02",                  // Date only
+		"2006-01-02T15:04:05",         // Basic date-time without timezone.
+		"2006-01-02T15:04:05.9999999", // Date-time with fractional seconds.
+		"2006-01-02",                  // Date only.
 		time.RFC1123,
 		time.RFC1123Z,
 		time.RFC822,
 		time.RFC822Z,
 		time.RFC850,
-		http.TimeFormat, // RFC7231
+		http.TimeFormat, // RFC7231.
 		string(types.COOKIE),
 
-		// Short day, spaced, 2-digit year
+		// Short day, spaced, 2-digit year.
 		"Mon, _2 Jan 06 15:04:05 MST",
 		"Mon, _2 Jan 06 15:04:05.9999999 MST",
 
-		// Short day, spaced, 4-digit year
+		// Short day, spaced, 4-digit year.
 		"Mon, _2 Jan 2006 15:04:05 MST",
 		"Mon, _2 Jan 2006 15:04:05.9999999 MST",
 
-		// Short day, hyphenated, 2-digit year
+		// Short day, hyphenated, 2-digit year.
 		"Mon, _2-Jan-06 15:04:05 MST",
 		"Mon, _2-Jan-06 15:04:05.9999999 MST",
 
-		// Short day, hyphenated, 4-digit year
+		// Short day, hyphenated, 4-digit year.
 		"Mon, _2-Jan-2006 15:04:05 MST",
 		"Mon, _2-Jan-2006 15:04:05.9999999 MST",
 
-		// Long day, spaced, 2-digit year
+		// Long day, spaced, 2-digit year.
 		"Monday, _2 Jan 06 15:04:05 MST",
 		"Monday, _2 Jan 06 15:04:05.9999999 MST",
 
-		// Long day, spaced, 4-digit year
+		// Long day, spaced, 4-digit year.
 		"Monday, _2 Jan 2006 15:04:05 MST",
 		"Monday, _2 Jan 2006 15:04:05.9999999 MST",
 
-		// Long day, hyphenated, 2-digit year
+		// Long day, hyphenated, 2-digit year.
 		"Monday, _2-Jan-06 15:04:05 MST",
 		"Monday, _2-Jan-06 15:04:05.9999999 MST",
 
-		// Long day, hyphenated, 4-digit year
+		// Long day, hyphenated, 4-digit year.
 		"Monday, _2-Jan-2006 15:04:05 MST",
 		"Monday, _2-Jan-2006 15:04:05.9999999 MST",
 	}
@@ -206,7 +206,7 @@ func TimeCompare(t1, t2 any) (int, error) {
 		return 0, fmt.Errorf("unsupported type for t2: %T", t2) // lint:allow_errorf
 	}
 
-	// Compare the two Unix timestamps
+	// Compare the two Unix timestamps.
 	if v1 < v2 {
 		return -1, nil
 	} else if v1 > v2 {

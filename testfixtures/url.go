@@ -5,7 +5,7 @@
 // you may not use this file except in compliance with the License.
 // You may obtain a copy of the License at
 //
-//     http://www.apache.org/licenses/LICENSE-2.0
+//     https://www.apache.org/licenses/LICENSE-2.0
 //
 // Unless required by applicable law or agreed to in writing, software
 // distributed under the License is distributed on an "AS IS" BASIS,
@@ -316,12 +316,12 @@ var (
 			ExpectedErr: false,
 		},
 		"hello%20%E4%B8%96%E7%95%8C": {
-			Input:       "hello%20%E4%B8%96%E7%95%8C", // Unicode character support
+			Input:       "hello%20%E4%B8%96%E7%95%8C", // Unicode character support.
 			Expected:    "hello 世界",
 			ExpectedErr: false,
 		},
 		"hello%20%D8%AF%D9%86%DB%8C%D8%A7": {
-			Input:       "hello%20%D8%AF%D9%86%DB%8C%D8%A7", // Unicode character support
+			Input:       "hello%20%D8%AF%D9%86%DB%8C%D8%A7", // Unicode character support.
 			Expected:    "hello دنیا",
 			ExpectedErr: false,
 		},

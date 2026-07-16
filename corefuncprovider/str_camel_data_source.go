@@ -5,7 +5,7 @@
 // you may not use this file except in compliance with the License.
 // You may obtain a copy of the License at
 //
-//     http://www.apache.org/licenses/LICENSE-2.0
+//     https://www.apache.org/licenses/LICENSE-2.0
 //
 // Unless required by applicable law or agreed to in writing, software
 // distributed under the License is distributed on an "AS IS" BASIS,
@@ -41,7 +41,7 @@ type (
 
 	// strCamelDataSourceModel maps the data source schema data.
 	strCamelDataSourceModel struct {
-		// AcronymCaps types.Bool   `tfsdk:"acronym_caps"`
+		// AcronymCaps types.Bool   `tfsdk:"acronym_caps"`.
 		String types.String `tfsdk:"string"`
 		Value  types.String `tfsdk:"value"`
 	}
@@ -99,7 +99,7 @@ func (d *strCamelDataSource) Schema(
 			// 		"will be converted to uppercase. A value of `false` means that acronyms will using typical " +
 			// 		"casing. The default value is `false`.",
 			// 	Optional: true,
-			// },
+			// },.
 			"value": schema.StringAttribute{
 				MarkdownDescription: "The value of the string.",
 				Computed:            true,
@@ -159,16 +159,16 @@ func (d *strCamelDataSource) Read( // lint:no_dupe
 
 	// Default values
 	// opts := caps.Opts{}
-	// opts := caps.WithReplaceStyleCamel()
+	// opts := caps.WithReplaceStyleCamel().
 
 	// if state.AcronymCaps.ValueBool() { // lint:allow_commented
 	// 	opts = caps.WithReplaceStyleScreaming()
-	// }
+	// }.
 
 	state.Value = types.StringValue(
 		corefunc.StrCamel(
 			state.String.ValueString(),
-			// opts,
+			// opts,.
 		),
 	)
 

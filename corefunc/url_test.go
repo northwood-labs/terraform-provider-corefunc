@@ -5,7 +5,7 @@
 // you may not use this file except in compliance with the License.
 // You may obtain a copy of the License at
 //
-//     http://www.apache.org/licenses/LICENSE-2.0
+//     https://www.apache.org/licenses/LICENSE-2.0
 //
 // Unless required by applicable law or agreed to in writing, software
 // distributed under the License is distributed on an "AS IS" BASIS,
@@ -119,7 +119,7 @@ func ExampleURLDecode() {
 func TestURLParse(t *testing.T) { // lint:allow_complexity
 	for name, tc := range testfixtures.URLParseTestTable {
 		t.Run(name, func(t *testing.T) {
-			// Handle canonicalizer-switching
+			// Handle canonicalizer-switching.
 			opts := types.Standard
 
 			if strings.EqualFold(tc.Canonicalizer, "google_safe_browsing") {

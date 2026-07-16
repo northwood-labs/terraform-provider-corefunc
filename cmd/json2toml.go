@@ -5,7 +5,7 @@
 // you may not use this file except in compliance with the License.
 // You may obtain a copy of the License at
 //
-//     http://www.apache.org/licenses/LICENSE-2.0
+//     https://www.apache.org/licenses/LICENSE-2.0
 //
 // Unless required by applicable law or agreed to in writing, software
 // distributed under the License is distributed on an "AS IS" BASIS,
@@ -22,11 +22,12 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"github.com/northwood-labs/terraform-provider-corefunc/v2/corefunc"
 	clihelpers "go.nwlabs.dev/cli-helpers/v2"
+
+	"github.com/northwood-labs/terraform-provider-corefunc/v2/corefunc"
 )
 
-// json2tomlCmd represents the json2toml command
+// json2tomlCmd represents the json2toml command.
 var json2tomlCmd = &cobra.Command{
 	Use:   "json2toml",
 	Short: "Converts JSON to TOML.",
