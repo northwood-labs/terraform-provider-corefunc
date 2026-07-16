@@ -28,12 +28,11 @@ The majority of development is done on macOS, so we have some helpers set-up to 
 
    Obviously, this won't work on Linux, so ensure that the following packages are installed from your system's package manager.
 
-    * [Go] 1.25+ (primary language)
-    * [Node.js] 20+ (linting tools)
-    * [Python] 3.13+ (linting tools)
-    * [Git LFS] (storage of binary data)
-    * [`jq`][jq] (shell scripting tools)
-    * [`pre-commit`][pre-commit] (linting tools)
+   * [Go] 1.26+ (primary language)
+   * [Node.js] 26+ (linting tools)
+   * [Python] 3.14+ (linting tools)
+   * [Git LFS] (storage of binary data)
+   * [`jq`][jq] (shell scripting tools)
 
 2. Running `make` in the root of the repo, by itself, will display a list of tasks and what they do. The ones highlighted in yellow are the ones that are most frequently used, or combine running multiple sub-tasks with one convenient command.
 
@@ -53,7 +52,7 @@ The majority of development is done on macOS, so we have some helpers set-up to 
 
 In order to contribute a code change, you should fork the repository, make your changes, and then submit a pull request.
 
-You should follow the best practices in [Effective Go](https://go.dev/doc/effective_go), [Go Code Review Comments](https://go.dev/wiki/CodeReviewComments), and the [project's Go instructions](.github/instructions/go.instructions.md). If not, you should learn by running `make lint` and/or code review feedback and aim to improve over time.
+You should follow the best practices in [Effective Go](https://go.dev/doc/effective_go), [Go Code Review Comments](https://go.dev/wiki/CodeReviewComments), and the [project's Go instructions](.kiro/steering/go-code-conventions.md). If not, you should learn by running `make lint` and/or code review feedback and aim to improve over time.
 
 Crucially, all code changes should be preceded by an issue that you've been assigned to. If an issue for the change you'd like to introduce already exists, please communicate in the issue that you'd like to take ownership of it. If an issue doesn't yet exist, please create one expressing your interest in working on it and discuss it first, prior to working on the code. Code changes without a related issue will generally be rejected.
 
@@ -104,7 +103,7 @@ You can find more details about the _Developer Certificate of Origin_ checker in
 * Limit the first line to 80 characters or fewer.
 * The first line should be a complete sentence, ending with a period.
 * Reference issues and pull requests liberally after the first line.
-* When only changing documentation, include [ci skip] in the commit title.
+* When only changing documentation, include `[ci skip]` in the commit title.
 
 ### Written prose
 

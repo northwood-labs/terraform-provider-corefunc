@@ -1,0 +1,141 @@
+# @config-manager:start core-editor-top-level
+'bashIde.explainshellEndpoint' = 'http://localhost:5000'
+'editor.defaultFormatter' = 'esbenp.prettier-vscode'
+'editor.formatOnSave' = true
+'editor.formatOnType' = true
+'evenBetterToml.formatter.alignEntries' = true
+'evenBetterToml.formatter.indentString' = '  '
+'evenBetterToml.formatter.indentTables' = true
+'evenBetterToml.schema.links' = true
+'files.eol' = "\n"
+'files.insertFinalNewline' = true
+'files.trimFinalNewlines' = true
+'files.trimTrailingWhitespace' = true
+'git.alwaysSignOff' = true
+'git.autoStash' = true
+'gitlens.autolinks' = []
+'makefile.configureOnOpen' = false
+'markdown-table-formatter.markdownGrammarScopes' = ['gohtml', 'gotmpl', 'markdown']
+'markdown-table-formatter.removeColonsIfSameAsDefault' = true
+'markdown.extension.list.indentationSize' = 'inherit'
+'markdown.extension.orderedList.marker' = 'one'
+'markdown.extension.tableFormatter.normalizeIndentation' = true
+'markdown.extension.toc.levels' = '1..6'
+'markdown.extension.toc.unorderedList.marker' = '*'
+'markdown.preview.fontFamily' = "-apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', 'Ubuntu', 'Droid Sans', sans-serif"
+'markdown.updateLinksOnFileMove.enabled' = "always"
+'notebook.defaultFormatter' = "yzhang.markdown-all-in-one"
+'prettier.proseWrap' = "never"
+'rewrap.autoWrap.enabled' = false
+'sarif-viewer.connectToGithubCodeScanning' = 'off'
+'shellcheck.enableQuickFix' = true
+'shellformat.effectLanguages' = [
+  'azcli',
+  'bats',
+  'dotenv',
+  'gitignore',
+  'hosts',
+  'ignore',
+  'jvmoptions',
+  'properties',
+  'shellscript',
+  'spring-boot-properties',
+]
+'shellformat.flag' = '-s -ln=bash -i=4 -ci -sr'
+'shellformat.useEditorConfig' = true
+'snyk.advanced.autoScanOpenSourceSecurity' = true
+'snyk.advanced.autoSelectOrganization' = true
+'testExplorer.useNativeTesting' = true
+'todo-tree.general.tags' = ['BUG', 'FIXME', 'HACK', 'TODO', 'XXX', '[ ]', '[x]']
+'yaml.validate' = false
+# @config-manager:end core-editor-top-level
+
+# @config-manager:start core-editor
+['editor.codeActionsOnSave']
+  'source.addMissingImports' = 'always'
+  'source.fixAll.oxc'        = 'always'
+  'source.organizeImports'   = 'always'
+
+['evenBetterToml.schema.associations']
+  # Double escape the backslashes so that they write to JSON correctly.
+  "^(.*(/|\\\\)\\\\.?taplo\\\\.toml|\\\\.?taplo\\\\.toml)$" = 'taplo://taplo.toml'
+
+['files.associations']
+  '.style.yapf'       = 'ini'
+  '.terraformrc'      = 'hcl'
+  '*.chatmode.md'     = 'markdown'
+  '*.hcl'             = 'terraform'
+  '*.ini'             = 'ini'
+  '*.instructions.md' = 'markdown'
+  '*.kiro.hook'       = 'json'
+  '*.md'              = 'markdown'
+  '*.prompt.md'       = 'markdown'
+  '*.sh'              = 'shellscript'
+  '*.tf'              = 'terraform'
+  '*.tofu'            = 'opentofu'
+  '*.toml'            = 'toml'
+  'Brewfile*'         = 'ruby'
+  'config'            = 'ini'
+  'Dockerfile*'       = 'dockerfile'
+
+[['githubIssues.queries']]
+  label = 'My Issues'
+  query = 'default'
+
+[['githubIssues.queries']]
+  label = 'Created Issues'
+  query = 'author:${user} state:open repo:${owner}/${repository} sort:created-desc'
+
+[['githubIssues.queries']]
+  label = 'Recent Issues'
+  query = 'state:open repo:${owner}/${repository} sort:updated-desc'
+
+['[github-actions-workflow]']
+  'editor.defaultFormatter' = 'redhat.vscode-yaml'
+
+['[json]']
+  'editor.defaultFormatter' = 'vscode.json-language-features'
+
+['[jsonc]']
+  'editor.defaultFormatter' = 'vscode.json-language-features'
+
+[['json.schemas']]
+  fileMatch = ['.golangci.yml']
+  url       = 'https://golangci-lint.run/jsonschema/golangci.jsonschema.json'
+
+[['json.schemas']]
+  fileMatch = ['*.dd.json']
+  url       = 'https://raw.githubusercontent.com/DataDog/datadog-cloudformation-resources/master/datadog-monitors-monitor-handler/datadog-monitors-monitor.json'
+
+[['json.schemas']]
+  fileMatch = ['*taskdef.json']
+  url       = 'https://ecs-intellisense.s3-us-west-2.amazonaws.com/task-definition/schema.json'
+
+[['json.schemas']]
+  fileMatch = ['.prettierrc', 'prettier.config.js']
+  url       = 'https://www.schemastore.org/prettierrc'
+
+['[markdown]']
+  'editor.defaultFormatter' = 'fcrespo82.markdown-table-formatter'
+
+['[shellscript]']
+  'editor.defaultFormatter' = 'foxundermoon.shell-format'
+
+['workbench.editorAssociations']
+  '{git,gitlens,conflictResolution,vscode-local-history}:/**/*.{asl.json,asl.yaml,asl.yml}' = 'default'
+  '{git,gitlens,conflictResolution,vscode-local-history}:/**/*.tc.json'                     = 'default'
+  '*.copilotmd'                                                                             = 'vscode.markdown.preview.editor'
+  '*.csv'                                                                                   = 'duckdb.dataFileViewer'
+  '*.ipynb'                                                                                 = 'jupyter-notebook'
+  '*.parquet'                                                                               = 'duckdb.dataFileViewer'
+  '*.svg'                                                                                   = 'default'
+  '*.tsv'                                                                                   = 'duckdb.dataFileViewer'
+  '*.xlsx'                                                                                  = 'duckdb.dataFileViewer'
+  'git-rebase-todo'                                                                         = 'default'
+
+['[yaml]']
+  'editor.defaultFormatter' = 'redhat.vscode-yaml'
+
+['yaml.schemas']
+  'https://goreleaser.com/static/schema-pro.json' = '.goreleaser.yml'
+  # @config-manager:end core-editor

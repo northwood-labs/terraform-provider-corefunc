@@ -1,0 +1,50 @@
+# @config-manager:start go-top-level
+# These are for working with Go.
+'go.alternateTools'                   = {customFormatter = "golangci-lint"}
+'go.coverOnTestPackage'               = false
+'go.formatFlags'                      = ["--stdin", "fmt"]
+'go.formatTool'                       = 'custom'
+'go.installDependenciesWhenBuilding'  = true
+'go.lintFlags'                        = ["--fast-only", "--path-mode=abs"]
+'go.lintTool'                         = 'golangci-lint'
+'go.testExplorer.alwaysRunBenchmarks' = true
+'go.toolsManagement.autoUpdate'       = true
+'go.useLanguageServer'                = true
+'go.vetOnSave'                        = 'workspace'
+# @config-manager:end go-top-level
+
+# @config-manager:start go
+['[go]']
+  'editor.defaultFormatter' = 'golang.go'
+  'editor.formatOnSave'     = true
+
+['[gohtml]']
+  'editor.defaultFormatter' = 'esbenp.prettier-vscode'
+
+[gopls]
+  'ui.semanticTokens' = true
+
+['go.delveConfig']
+  debugAdapter = 'dlv-dap'
+
+['go.enableCodeLens']
+  runtest = true
+  # @config-manager:end go
+
+# @config-manager:start runonsave-go
+[['emeraldwalk.runonsave'.commands]]
+  cmd   = 'go tool golines --base-formatter=gofumpt --write-output --max-len=120 ${file}'
+  match = '\.go$'
+
+[['emeraldwalk.runonsave'.commands]]
+  cmd   = 'go tool modernize -fix ${file}'
+  match = '\.go$'
+
+[['emeraldwalk.runonsave'.commands]]
+  cmd   = 'go tool gofumpt -w ${file}'
+  match = '\.go$'
+
+[['emeraldwalk.runonsave'.commands]]
+  cmd   = 'go tool fieldalignment -fix ${file}'
+  match = '\.go$'
+  # @config-manager:end runonsave-go

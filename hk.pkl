@@ -1,8 +1,9 @@
 // @config-manager:start imports
 // https://github.com/jdx/hk/blob/main/hk.pkl
 // https://github.com/jdx/hk/releases/latest
-amends "package://github.com/jdx/hk/releases/download/v1.47.0/hk@1.47.0#/Config.pkl"
-import "package://github.com/jdx/hk/releases/download/v1.47.0/hk@1.47.0#/Builtins.pkl"
+amends "package://github.com/jdx/hk/releases/download/v1.48.0/hk@1.48.0#/Config.pkl"
+
+import "package://github.com/jdx/hk/releases/download/v1.48.0/hk@1.48.0#/Builtins.pkl"
 // @config-manager:end imports
 
 local linters = new Mapping<String, Group> {
@@ -16,8 +17,12 @@ local linters = new Mapping<String, Group> {
       ["check-json"] = (Builtins.jq) {}
       ["check-merge-conflict"] = (Builtins.check_merge_conflict) {}
       ["check-symlinks"] = (Builtins.check_symlinks) {}
-      ["check-toml-fmt"] = (Builtins.taplo_format) {}
-      ["check-toml-lint"] = (Builtins.taplo) {}
+      ["check-toml-fmt"] = (Builtins.taplo_format) {
+        glob = "**/*.toml"
+      }
+      ["check-toml-lint"] = (Builtins.taplo) {
+        glob = "**/*.toml"
+      }
       ["check-trailing-whitespace"] = (Builtins.trailing_whitespace) {}
       ["check-xml"] = (Builtins.xmllint) {}
       ["check-yaml"] = (Builtins.yamlfmt) {}
@@ -28,10 +33,13 @@ local linters = new Mapping<String, Group> {
         fix = "cd {{ workspace }} && editorconfig-checker"
       }
       ["end-of-file-fixer"] = (Builtins.newlines) {}
+      // fix-smart-quotes
+      // harper
       ["lychee"] = (Builtins.lychee) {
         profiles = List("slow")
       }
       ["markdown-lint"] = (Builtins.rumdl) {}
+      // mdschema
       ["mise-fmt"] = (Builtins.mise) {}
       ["mixed-line-ending"] = (Builtins.mixed_line_ending) {}
       ["pinact"] = (Builtins.pinact) {}
@@ -42,10 +50,13 @@ local linters = new Mapping<String, Group> {
       ["pkl-format"] = (Builtins.pkl_format) {
         glob = "**/*.pkl"
       }
+      // vale
+      ["zizmor"] = (Builtins.zizmor) {}
     }
   }
   ["containers"] = new Group {
     steps {
+      // dclint
       ["hadolint"] = (Builtins.hadolint) {}
     }
   }
@@ -59,14 +70,63 @@ local linters = new Mapping<String, Group> {
   }
   ["frontend"] = new Group {
     steps {
+      // astro
+      //   ["knip"] = (Builtins.knip_strict) {
+      //     workspace_indicator = ".knip.jsonc"
+      //     check = """
+      //         cd {{ workspace }} && \\
+      //         bun knip --strict --exports --no-progress --directory .
+      //         """
+      //     fix = """
+      //         cd {{ workspace }} && \\
+      //         bun knip --fix --strict --exports --no-progress --directory .
+      //         """
+      //   }
+      ["oxfmt"] = (Builtins.oxfmt) {
+        workspace_indicator = ".oxfmtrc.jsonc"
+        glob = "**/*.{jsx?,tsx?}"
+        check = "cd {{ workspace }} && oxfmt --check --no-error-on-unmatched-pattern {{ files }}"
+        fix = "cd {{ workspace }} && oxfmt --write --no-error-on-unmatched-pattern {{ files }}"
+      }
+      ["oxlint"] = (Builtins.ox_lint) {
+        workspace_indicator = ".oxlintrc.jsonc"
+        glob = "**/*.{jsx?,tsx?}"
+
+        // https://pkl-lang.org/main/current/language-reference/index.html#multiline-strings
+        check =
+          """
+          cd {{ workspace }} && \\
+          oxlint --import-plugin --jsdoc-plugin --jsx-a11y-plugin --react-perf-plugin \\
+              --no-error-on-unmatched-pattern {{ files }}
+          """
+        fix =
+          """
+          cd {{ workspace }} && \\
+          oxlint --import-plugin --jsdoc-plugin --jsx-a11y-plugin --react-perf-plugin \\
+              --fix --no-error-on-unmatched-pattern {{ files }}
+          """
+      }
       ["sort-package-json"] = (Builtins.sort_package_json) {
-        check = "aubx -y sort-package-json --check {{ files }}"
-        fix = "aubx -y sort-package-json {{ files }}"
+        check = "bunx sort-package-json --check {{ files }}"
+        fix = "bunx sort-package-json {{ files }}"
       }
       ["svg-optimize"] {
         glob = "**/*.svg"
         fix = "ogvs --config tools/ogvs.config.yaml {{ files }}"
       }
+      ["tsc"] = (Builtins.tsc) {
+        workspace_indicator = "tsconfig.json"
+        glob = "**/*.{jsx?,tsx?}"
+        check = "tsc --skipLibCheck --noEmit --project {{ workspace_indicator }}"
+        fix = "tsc --skipLibCheck --noEmit --project {{ workspace_indicator }}"
+      }
+      // vp - https://viteplus.dev
+    }
+  }
+  ["github"] = new Group {
+    steps {
+      ["ghalint-action"] = (Builtins.ghalint_action) {}
+      ["ghalint-workflow"] = (Builtins.ghalint_workflow) {}
     }
   }
   ["golang"] = new Group {
@@ -155,6 +215,12 @@ local linters = new Mapping<String, Group> {
       }
     }
   }
+  ["grpc"] = new Group {
+    steps {
+    // buf-format
+    // buf-lint
+    }
+  }
   ["python"] = new Group {
     steps {
       ["python-check-ast"] = (Builtins.python_check_ast) {
@@ -178,6 +244,20 @@ local linters = new Mapping<String, Group> {
         glob = List("**/*.py", "**/*.pyi")
         check = "uv tool run zuban check {{ files }}"
       }
+      // ty
+    }
+  }
+  ["rest-api"] = new Group {
+    steps {
+    // vacuum
+    }
+  }
+  ["rust"] = new Group {
+    steps {
+    // cargo-check
+    // cargo-clippy
+    // cargo-fmt
+    // rustfmt
     }
   }
   ["shell"] = new Group {
@@ -191,6 +271,7 @@ local linters = new Mapping<String, Group> {
   }
   ["security"] = new Group {
     steps {
+      ["detect-private-key"] = (Builtins.detect_private_key) {}
       ["govulncheck"] {
         workspace_indicator = "go.mod"
         glob = "**/*.go"
@@ -216,8 +297,14 @@ local linters = new Mapping<String, Group> {
       }
     }
   }
+  ["swift"] = new Group {
+    steps {
+    // swiftlint
+    }
+  }
   ["tofu"] = new Group {
     steps {
+      // hclfmt
       ["opentofu-format"] = (Builtins.tofu) {
         glob = List("**/*.tf", "**/*.tofu", "**/*.tfvars", "**/*.tftest.hcl")
       }
@@ -241,7 +328,7 @@ hooks {
   }
   ["pre-push"] {
     env {
-      ["HK_PROFILE"] = "!slow"
+      ["HK_PROFILE"] = "slow"
     }
     steps = linters
   }

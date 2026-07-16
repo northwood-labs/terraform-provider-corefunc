@@ -1,19 +1,25 @@
 [config]
-exclude-merge-commits = true
-check-summary-length  = true
-summary-length        = 80
+  # @config-manager:start config
+  exclude-merge-commits = true
+  check-summary-length  = true
+  summary-length        = 80
+  # @config-manager:end config
 
 [matchers]
-all = "(?:build|ci|deps|docs|feat|fix|lint|perf|refactor|relprep|style|test)(?:\\([^\\)]*\\))?: (?:.+)"
+  # @config-manager:start matchers
+  all = "(?:build|chore|ci|deps|docs|feat|fix|lint|perf|refactor|relprep|style|test)(?:\\([^\\)]*\\))?: (?:(.|\n)+)"
+  # @config-manager:end matchers
 
 [examples]
-a_simple_commit = """
-[build|ci|deps|docs|feat|fix|lint|perf|refactor|relprep|style|test](module): A commit message
+  # @config-manager:start examples
+  a_simple_commit = """
+[build|chore|ci|deps|docs|feat|fix|lint|perf|refactor|relprep|style|test](module): A commit message
 """
-an_extended_commit = """
-[build|ci|deps|docs|feat|fix|lint|perf|refactor|relprep|style|test](module): A commit message
+  an_extended_commit = """
+[build|chore|ci|deps|docs|feat|fix|lint|perf|refactor|relprep|style|test](module): A commit message
 
 * first line
 * second line
 * and so on...
 """
+  # @config-manager:end examples

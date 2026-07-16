@@ -1,0 +1,49 @@
+---
+# https://github.com/okooo5km/OGVS
+
+# @config-manager:start ogvs-parent
+final-newline: true
+multipass: true
+# @config-manager:end ogvs-parent
+
+plugins:
+  # @config-manager:start ogvs-plugins
+  - name: cleanupAttrs
+  - name: cleanupEnableBackground
+  - name: cleanupIds
+  - name: cleanupNumericValues
+  - name: collapseGroups
+  - name: convertColors
+  - name: convertEllipseToCircle
+  - name: convertOneStopGradients
+  - name: convertPathData
+  - name: convertShapeToPath
+  - name: convertTransform
+  - name: inlineStyles
+  - name: mergePaths
+  - name: mergeStyles
+  - name: minifyStyles
+  - name: moveElemsAttrsToGroup
+  - name: moveGroupAttrsToElems
+  - name: removeComments
+  - name: removeDeprecatedAttrs
+  - name: removeDesc
+  - name: removeDimensions
+  - name: removeDoctype
+  - name: removeEditorsNSData
+  - name: removeEmptyAttrs
+  - name: removeEmptyContainers
+  - name: removeEmptyText
+  - name: removeHiddenElems
+  - name: removeMetadata
+  - name: removeNonInheritableGroupAttrs
+  - name: removeRasterImages
+  - name: removeUnknownsAndDefaults
+  - name: removeUnusedNS
+  - name: removeUselessDefs
+  - name: removeUselessStrokeAndFill
+  - name: removeXlink
+  - name: removeXMLProcInst
+  - name: sortAttrs
+  - name: sortDefsChildren
+# @config-manager:end ogvs-plugins

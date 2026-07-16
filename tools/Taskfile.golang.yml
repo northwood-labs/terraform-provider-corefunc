@@ -1,0 +1,122 @@
+---
+# yaml-language-server: $schema=https://taskfile.dev/schema.json
+
+##
+# https://taskfile.dev/docs/guide
+##
+
+# @config-manager:start golang
+version: "3"
+
+set: [pipefail]
+shopt: [globstar]
+
+vars:
+  BASH: /opt/homebrew/opt/bash/bin/bash
+  FIND: /opt/homebrew/opt/findutils/bin/gfind
+  XARGS: /opt/homebrew/opt/findutils/bin/gxargs
+
+tasks:
+  #-----------------------------------------------------------------------------
+  # Building
+
+  build:go:
+    desc: >
+      Build a local copy of the program. Set SOURCEPATH for a non-default
+      code path.
+    summary: |
+      Builds a local copy of the program.
+
+      Builds a local copy of the program into a binary named after the project,
+      into $GOBIN. This is a pretty universal approach that will generally work
+      out of the box for most Go programs. If you want to _override_ this task,
+      copy it to Taskfile.yml and make changes there.
+    envs:
+      GOEXPERIMENT: jsonv2
+      SOURCEPATH: '{{ .SOURCEPATH | default "." }}'
+    cmds:
+      - task: internal:header
+        vars:
+          TEXT: "Building and installing..."
+      - cmd: go install -a -ldflags="-s -w" -trimpath {{ .SOURCEPATH }}
+
+  tidy:go:
+    desc: Run 'go mod tidy' for all go.mod files in the project.
+    summary: |
+      Runs 'go mod tidy' for all go.mod files in the project.
+    cmds:
+      - task: internal:header
+        vars:
+          TEXT: "Tidy and download the Go dependencies..."
+      - cmd: |
+          {{ .FIND }} . -type f -name "go.mod" \
+            | {{ .XARGS }} -I% dirname "%" \
+            | {{ .XARGS }} -I@ {{ .BASH }} -c 'cd "@" && go mod tidy'
+
+  deps:go:
+    desc: Update packages to their latest semver minor versions.
+    summary: |
+      Updates all of the packages to their latest semver minor versions.
+
+      This is useful for keeping the dependencies up to date with little effort.
+    cmds:
+      - task: internal:header
+        vars:
+          TEXT: "Upgrade the minor versions of Go dependencies..."
+      - cmd: |
+          {{ .FIND }} . -type f -name "go.mod" \
+            | {{ .XARGS }} -I% dirname "%" \
+            | {{ .XARGS }} -I@ {{ .BASH }} -c 'cd "@" && go mod tidy && go get -u -t -v ./...'
+      - task: tidy:go
+
+  godeps:
+    desc: (Deprecated) Alias for 'deps:go'.
+    cmds:
+      - task: internal:error
+        vars:
+          TEXT: "(Deprecated) call 'deps:go' instead."
+      - task: deps:go
+
+  #-----------------------------------------------------------------------------
+  # Testing
+
+  #-----------------------------------------------------------------------------
+  # Documentation
+
+  docs:serve:
+    desc: Preview the Go library documentation.
+    summary: |
+      Previews the Go library documentation. This helps us easily view the
+      documentation for the project and identify where the gaps are.
+    cmds:
+      - task: internal:header
+        vars:
+          TEXT: "Displaying Go documentation..."
+      - task: internal:error
+        vars:
+          TEXT: "Type Ctrl-C to quit."
+      - cmd: go doc -http
+
+  #-----------------------------------------------------------------------------
+  # Cleanup
+
+  clean:go:
+    desc: Clean Go's module and test cache.
+    summary: Cleans Go's module and test cache.
+    prompt: Are you certain that you want to remove Go's module and test cache?
+    cmds:
+      - task: internal:header
+        vars:
+          TEXT: "Cleaning Go cache..."
+      - cmd: go clean -i -r -x -testcache -modcache -cache || true
+
+  clean:bench:
+    desc: Clean benchmarking-related files.
+    summary: Cleans all benchmarking-related files.
+    cmds:
+      - task: internal:header
+        vars:
+          TEXT: "Cleaning artifacts from benchmarks..."
+      - cmd: '{{ .FIND }} . -type f -name "__*.out" | {{ .XARGS }} -I% {{ .RM }} -fv "%"'
+      - cmd: '{{ .FIND }} . -type f -name "*.test" | {{ .XARGS }} -I% {{ .RM }} -fv "%"'
+# @config-manager:end golang

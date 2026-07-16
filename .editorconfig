@@ -23,17 +23,14 @@ indent_style = tab
 max_line_length = 20000
 
 # Web
-[*.{css,html,js,less,sass,scss}]
+[*.{cjs,css,hcl,html,j2,js,json,jsonc,jsx,less,mjs,pkl,sass,scss,toml,ts,tsx,yaml,yml}]
 indent_size = 2
-
-# Configuration formats
-[*.{hcl,json,jsonc,pkl,toml,yaml,yml}]
-indent_size = 2
+max_line_length = 20000
 
 [*.go]
 indent_style = tab
 
-[*.{md,md.tmpl,md.gotmpl}]
+[*.{md,md.tmpl,md.gotmpl,mdx}]
 indent_size = 2
 max_line_length = 20000
 
@@ -48,6 +45,7 @@ max_line_length = 120
 [*.{tf,tftpl,tfvars,tofu}]
 indent_size = 2
 indent_style = space
+max_line_length = 20000
 
 [.yamllint]
 indent_size = 2

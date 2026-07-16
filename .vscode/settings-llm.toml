@@ -1,0 +1,90 @@
+# @config-manager:start llm-top-level
+# These are for LLMs and agentic workflows. GitHub Copilot and Kiro.
+'chat.agent.enabled' = true
+'chat.extensionTools.enabled' = true
+'chat.mcp.access' = 'all'
+'chat.mcp.autostart' = 'newAndOutdated'
+'chat.tools.autoApprove' = false
+'github.copilot.chat.codeGeneration.useInstructionFiles' = true
+'github.copilot.chat.copilotDebugCommand.enabled' = false
+'github.copilot.chat.editor.temporalContext.enabled' = true
+'github.copilot.chat.edits.temporalContext.enabled' = true
+'github.copilot.chat.reviewSelection.instructions' = []
+'kiroAgent.agentAutonomy' = 'Autopilot'
+'kiroAgent.enableCodebaseIndexing' = true
+'kiroAgent.enableTabAutocomplete' = true
+'kiroAgent.modelSelection' = 'auto'
+'kiroAgent.usageSummary' = true
+'kiroAgent.notifications.agent.actionRequired' = true
+'kiroAgent.notifications.agent.failure' = true
+'kiroAgent.notifications.agent.success' = true
+'kiroAgent.trustedCommands' = [
+  #
+  'aube *',
+  'aubr *',
+  'aubx *',
+  'bun *',
+  'bunx *',
+  'cat *',
+  'cd *',
+  'curl *',
+  'find *',
+  'go *',
+  'gofumpt *',
+  'golangci-lint run *',
+  'golines *',
+  'grep *',
+  'hexdump *',
+  'hk *',
+  'ls *',
+  'make *',
+  'mkdir *',
+  'pnpm *',
+  'pnpx *',
+  'sed *',
+  'tail *',
+  'task *',
+  'tee *',
+  'touch *',
+  'wc *',
+  'wget *',
+  'which *',
+  #
+]
+'remote.defaultExtensionsIfInstalledLocally' = [
+  'GitHub.copilot',
+  'GitHub.copilot-chat',
+  'GitHub.vscode-pull-request-github',
+]
+# @config-manager:end llm-top-level
+
+# @config-manager:start llm
+['chat.mcp.discovery.enabled']
+  claude-desktop   = true
+  cursor-global    = true
+  cursor-workspace = true
+  windsurf         = true
+
+['chat.promptFilesLocations']
+  prompts = true
+
+['github.copilot.enable']
+  '*'             = true
+  apex            = true
+  erb             = true
+  go              = true
+  java            = true
+  javascript      = true
+  markdown        = false
+  plaintext       = false
+  python          = true
+  ruby            = true
+  rust            = true
+  scala           = true
+  scminput        = false
+  shellscript     = true
+  starlark        = true
+  terraform       = true
+  typescript      = true
+  typescriptreact = true
+  # @config-manager:end llm

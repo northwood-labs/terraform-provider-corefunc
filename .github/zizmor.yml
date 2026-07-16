@@ -1,0 +1,174 @@
+---
+rules:
+  # @config-manager:start zizmor
+  # https://docs.zizmor.sh/audits/#adhoc-packages
+  adhoc-packages:
+    disable: false
+
+  # https://docs.zizmor.sh/audits/#anonymous-definition
+  anonymous-definition:
+    disable: false
+
+  # https://docs.zizmor.sh/audits/#archived-uses
+  archived-uses:
+    disable: false
+
+  # https://docs.zizmor.sh/audits/#artipacked
+  artipacked:
+    disable: false
+
+  # https://docs.zizmor.sh/audits/#bot-conditions
+  bot-conditions:
+    disable: false
+
+  # https://docs.zizmor.sh/audits/#cache-poisoning
+  cache-poisoning:
+    disable: false
+
+  # https://docs.zizmor.sh/audits/#concurrency-limits
+  concurrency-limits:
+    disable: false
+
+  # https://docs.zizmor.sh/audits/#dangerous-triggers
+  dangerous-triggers:
+    disable: false
+
+  # https://docs.zizmor.sh/audits/#dependabot-cooldown
+  dependabot-cooldown:
+    disable: false
+    config:
+      days: 7
+
+  # https://docs.zizmor.sh/audits/#dependabot-execution
+  dependabot-execution:
+    disable: false
+
+  # https://docs.zizmor.sh/audits/#excessive-permissions
+  excessive-permissions:
+    disable: false
+
+  # https://docs.zizmor.sh/audits/#forbidden-uses
+  forbidden-uses:
+    disable: false
+    config:
+      allow:
+        - actions/*
+        - astral-sh/setup-uv
+        - github/codeql-action/*
+        - orhun/git-cliff-action
+        - step-security/*
+
+  # https://docs.zizmor.sh/audits/#github-app
+  github-app:
+    disable: false
+
+  # https://docs.zizmor.sh/audits/#github-env
+  github-env:
+    disable: false
+
+  # https://docs.zizmor.sh/audits/#hardcoded-container-credentials
+  hardcoded-container-credentials:
+    disable: false
+
+  # https://docs.zizmor.sh/audits/#impostor-commit
+  impostor-commit:
+    disable: false
+
+  # https://docs.zizmor.sh/audits/#insecure-commands
+  insecure-commands:
+    disable: false
+
+  # https://docs.zizmor.sh/audits/#known-vulnerable-actions
+  known-vulnerable-actions:
+    disable: false
+    config:
+      allow:
+      # - GHSA
+
+  # https://docs.zizmor.sh/audits/#misfeature
+  misfeature:
+    disable: false
+
+  # https://docs.zizmor.sh/audits/#obfuscation
+  obfuscation:
+    disable: false
+
+  # https://docs.zizmor.sh/audits/#overprovisioned-secrets
+  overprovisioned-secrets:
+    disable: false
+
+  # https://docs.zizmor.sh/audits/#ref-confusion
+  ref-confusion:
+    disable: false
+
+  # https://docs.zizmor.sh/audits/#ref-version-mismatch
+  ref-version-mismatch:
+    disable: false
+
+  # https://docs.zizmor.sh/audits/#secrets-inherit
+  secrets-inherit:
+    disable: false
+
+  # https://docs.zizmor.sh/audits/#secrets-outside-env
+  secrets-outside-env:
+    disable: false
+
+  # https://docs.zizmor.sh/audits/#self-hosted-runner
+  self-hosted-runner:
+    disable: false
+
+  # https://docs.zizmor.sh/audits/#stale-action-refs
+  stale-action-refs:
+    disable: false
+
+  # https://docs.zizmor.sh/audits/#superfluous-actions
+  superfluous-actions:
+    disable: false
+
+  # https://docs.zizmor.sh/audits/#template-injection
+  template-injection:
+    disable: false
+
+  # https://docs.zizmor.sh/audits/#typosquat-uses
+  typosquat-uses:
+    disable: false
+
+  # https://docs.zizmor.sh/audits/#undocumented-permissions
+  undocumented-permissions:
+    disable: false
+
+  # https://docs.zizmor.sh/audits/#unpinned-images
+  unpinned-images:
+    disable: false
+
+  # https://docs.zizmor.sh/audits/#unpinned-tools
+  unpinned-tools:
+    disable: false
+
+  # https://docs.zizmor.sh/audits/#unpinned-uses
+  unpinned-uses:
+    disable: false
+    config:
+      policies:
+        "*": hash-pin
+
+  # https://docs.zizmor.sh/audits/#unredacted-secrets
+  unredacted-secrets:
+    disable: false
+
+  # https://docs.zizmor.sh/audits/#unsound-conditions
+  unsound-condition:
+    disable: false
+
+  # https://docs.zizmor.sh/audits/#unsound-contains
+  unsound-contains:
+    disable: false
+
+  # https://docs.zizmor.sh/audits/#unsound-ternary
+  unsound-ternary:
+    disable: false
+
+  # https://docs.zizmor.sh/audits/#use-trusted-publishing
+  use-trusted-publishing:
+    disable: false
+  # @config-manager:end zizmor

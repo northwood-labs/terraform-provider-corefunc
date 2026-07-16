@@ -1,0 +1,142 @@
+##
+# brew bundle --upgrade --upgrade-formulae --install --jobs=auto --file=Brewfile.standard
+##
+
+#-------------------------------------------------------------------------------
+# TAPS
+
+# @config-manager:start taps
+tap "go-task/tap", trusted: true
+tap "okooo5km/tap", trusted: true
+tap "oven-sh/bun", trusted: true
+tap "trufflesecurity/trufflehog", trusted: true
+tap "vet-run/vet", trusted: true
+# @config-manager:end taps
+
+#-------------------------------------------------------------------------------
+# FORMULAE
+
+# @config-manager:start brew
+# https://aube.en.dev
+brew "aube"
+
+# https://github.com/sharkdp/bat
+brew "bat"
+
+# https://bun.sh/
+brew "bun"
+
+# https://github.com/editorconfig-checker/editorconfig-checker
+brew "editorconfig-checker"
+
+# https://github.com/junegunn/fzf
+brew "fzf"
+
+# https://github.com/suzuki-shunsuke/ghalint
+brew "ghalint"
+
+# https://git-cliff.org/
+brew "git-cliff"
+
+# https://github.com/dandavison/delta
+brew "git-delta"
+
+# https://github.com/newren/git-filter-repo
+brew "git-filter-repo"
+
+# https://git-flow.sh
+brew "git-flow-next"
+
+# https://git-lfs.com/
+brew "git-lfs"
+
+# https://git-scm.com
+brew "git"
+
+# https://go.dev/
+brew "go"
+
+# https://taskfile.dev
+brew "go-task"
+
+# https://graphviz.org
+brew "graphviz"
+
+# https://github.com/charmbracelet/gum
+brew "gum"
+
+# https://hk.jdx.dev
+brew "hk"
+
+# https://jqlang.org/
+brew "jq"
+
+# https://lychee.cli.rs/
+brew "lychee"
+
+# https://github.com/okooo5km/ogvs
+brew "ogvs"
+
+# https://nodejs.org/en
+brew "node"
+
+# https://pandoc.org/
+brew "pandoc"
+
+# https://github.com/suzuki-shunsuke/pinact
+brew "pinact"
+
+# https://pkl-lang.org
+brew "pkl"
+
+# https://github.com/rvben/rumdl
+brew "rumdl"
+
+# https://www.shellcheck.net/
+brew "shellcheck"
+
+# https://github.com/mvdan/sh
+brew "shfmt"
+
+# https://ewhauser.github.io/shuck/
+brew "ewhauser/tap/shuck-cli"
+
+# https://taplo.tamasfe.dev
+brew "taplo"
+
+# https://trivy.dev/
+brew "trivy"
+
+# https://github.com/trufflesecurity/trufflehog
+brew "trufflesecurity/trufflehog/trufflehog"
+
+# https://github.com/vet-run/vet
+brew "vet-run/vet/vet-run"
+
+# https://github.com/google/yamlfmt
+brew "yamlfmt"
+
+# https://zizmor.sh
+brew "zizmor"
+# @config-manager:end brew
+
+#-------------------------------------------------------------------------------
+# NPM
+
+# @config-manager:start npm
+# @config-manager:end npm
+
+#-------------------------------------------------------------------------------
+# GO PACKAGES
+
+# @config-manager:start go
+go "github.com/antham/gommit"
+go "github.com/charmbracelet/gum"
+go "github.com/google/osv-scanner/v2/cmd/osv-scanner"
+go "github.com/goph/licensei/cmd/licensei"
+go "github.com/pelletier/go-toml/v2/cmd/jsontoml"
+go "github.com/pelletier/go-toml/v2/cmd/tomljson"
+go "github.com/pelletier/go-toml/v2/cmd/tomll"
+go "github.com/psampaz/gothanks"
+go "github.com/tomwright/dasel/v3/cmd/dasel"
+# @config-manager:end go

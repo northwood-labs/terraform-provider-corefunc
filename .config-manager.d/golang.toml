@@ -1,0 +1,59 @@
+#-------------------------------------------------------------------------------
+# DEFAULT FILES
+
+[[files]]
+  stub        = 'configs/stubs/golangci.yml'
+  source      = 'configs/templates/golangci.yml'
+  destination = '.golangci.yml'
+
+  #-------------------------------------------------------------------------------
+  # KIRO DIRECTORY
+
+[[files]]
+  stub        = 'configs/stubs/.kiro/steering/go-code-conventions.md'
+  source      = 'configs/templates/.kiro/steering/go-code-conventions.md'
+  destination = '.kiro/steering/go-code-conventions.md'
+
+  #-------------------------------------------------------------------------------
+  # GITHUB DIRECTORY
+
+  #-------------------------------------------------------------------------------
+  # VSCODE DIRECTORY
+
+[[files]]
+  stub        = 'configs/stubs/.vscode/extensions-golang.toml'
+  source      = 'configs/templates/.vscode/extensions-golang.toml'
+  destination = '.vscode/extensions-golang.toml'
+
+  [files.post_update_hook]
+    bash = 'bash .vscode/extensions.sh'
+
+[[files]]
+  stub        = 'configs/stubs/.vscode/settings-golang.toml'
+  source      = 'configs/templates/.vscode/settings-golang.toml'
+  destination = '.vscode/settings-golang.toml'
+
+  [files.post_update_hook]
+    bash = 'bash .vscode/settings.sh'
+
+    #-------------------------------------------------------------------------------
+    # TOOLING
+
+# Imported taskfiles
+# https://taskfile.dev/docs/guide#flatten-includes
+[[files]]
+  stub        = 'configs/stubs/tools/Taskfile.golang.yml'
+  source      = 'configs/templates/tools/Taskfile.golang.yml'
+  destination = 'tools/Taskfile.golang.yml'
+
+  #-------------------------------------------------------------------------------
+  # FILES WITH HOOKS
+
+# Brewfile tools
+[[files]]
+  stub        = 'configs/stubs/tools/Brewfile.golang'
+  source      = 'configs/templates/tools/Brewfile.golang'
+  destination = 'tools/Brewfile.golang'
+
+  [files.post_update_hook]
+    bash = 'brew bundle --upgrade --upgrade-formulae --install --jobs=auto --file=tools/Brewfile.golang'

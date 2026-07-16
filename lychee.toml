@@ -1,0 +1,149 @@
+# https://lychee.cli.rs/guides/config/
+
+#-------------------------------------------------------------------------------
+# DISPLAY
+
+# @config-manager:start display
+# Verbose program output
+# Accepts log level: "error", "warn", "info", "debug", "trace"
+verbose = "error"
+
+# Output format
+format = "markdown"
+
+# Path to summary output file.
+output = "lychee.md"
+
+# Show host statistics
+host_stats = true
+# @config-manager:end display
+
+#-------------------------------------------------------------------------------
+# CACHE
+
+# @config-manager:start cache
+# Enable link caching. This can be helpful to avoid checking the same links on
+# multiple runs.
+cache = true
+
+# Discard all cached requests older than this duration.
+max_cache_age = "2d"
+
+# A list of status codes that will be ignored from the cache
+cache_exclude_status = "500.."
+# @config-manager:end cache
+
+#-------------------------------------------------------------------------------
+# RUNTIME
+
+# @config-manager:start runtime
+# File to read and write cookies
+cookie_jar = ".lychee-cookie-jar"
+
+# Maximum number of allowed redirects.
+max_redirects = 3
+
+# Maximum number of allowed retries before a link is declared dead.
+max_retries = 3
+
+# Include hidden files/directories which begin with `.`.
+hidden = true
+# @config-manager:end runtime
+
+#-------------------------------------------------------------------------------
+# REQUESTS
+
+# @config-manager:start requests
+# User agent to send with each request.
+user_agent = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Safari/537.36"
+
+# Website timeout from connect to response finished.
+timeout = 30
+
+# Minimum wait time in seconds between retries of failed requests.
+retry_wait_time = 2
+
+# Comma-separated list of accepted status codes for valid links.
+accept = ["200..=308", "429"]
+
+# Proceed for server connections considered insecure (invalid TLS).
+insecure = false
+
+# When links are available using HTTPS, treat HTTP links as errors.
+require_https = true
+
+# Request method
+method = "get"
+
+# Minimum accepted TLS Version
+min_tls = "TLSv1_0"
+
+accept_timeouts = true
+# @config-manager:end requests
+
+#-------------------------------------------------------------------------------
+# EXCLUSIONS
+
+# @config-manager:start exclusions
+# Skip missing input files (default is to error if they don't exist).
+skip_missing = false
+
+# Do not skip files that are ignored
+no_ignore = false
+
+# Check links inside `<code>` and `<pre>` blocks as well as Markdown code
+# blocks.
+include_verbatim = true
+
+# Ignore case of paths when matching glob patterns.
+glob_ignore_case = true
+
+# Exclude loopback IP address range and localhost from checking.
+exclude_loopback = true
+
+# Check mail addresses
+include_mail = true
+# @config-manager:end exclusions
+
+#-------------------------------------------------------------------------------
+# OTHER
+
+# @config-manager:start other
+# Use the Wayback Machine as web archive
+archive = "wayback"
+
+# Search and suggest link replacements for all broken links
+suggest = true
+# @config-manager:end other
+
+#-------------------------------------------------------------------------------
+# HOSTS
+
+# @config-manager:start hosts
+# Maximum simultaneous requests to the same host
+host_concurrency = 5
+
+# Minimum interval between requests to the same host
+host_request_interval = "500ms"
+# @config-manager:end hosts
+
+exclude = [
+  # @config-manager:start host-excludes
+  '@github.com',
+  'bitbucket.org/org/',
+  'file://..',
+  'github.com/org/',
+  'gitlab.com/org/',
+  'go.nwlabs.dev',
+  'https://(([^\.]+)\.)?(([^\.]+)\.)?console.aws.amazon.com',
+  'https://([^\.]+).awsapps.com',
+  'https://(www\.)?example.(com|net|org)',
+  'https://(www\.)?npmjs.com/package/',
+  'https://aws-mcp(\.([^\.]+).api.aws)?',
+  'https://region-code(.signin.aws.amazon.com)?',
+  'package://',
+  'pkg.go.dev/go.nwlabs.dev',
+  'shellcheck.net',
+  'taplo://',
+  # @config-manager:end host-excludes
+]

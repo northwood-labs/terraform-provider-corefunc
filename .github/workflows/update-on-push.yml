@@ -3,29 +3,44 @@
 # by a third-party and are governed by separate terms of service, privacy
 # policy, and support documentation.
 
-name: Auto-update on push
+# @config-manager:start workflow-name
+name: Generate CHANGELOG on push
+# @config-manager:end workflow-name
+
 on:
+  # @config-manager:start workflow-on
   workflow_dispatch:
   push:
     branches:
       - main
+      # @config-manager:end workflow-on
 
 concurrency:
-  group: ${{ github.workflow }}-${{ github.ref }}
+  # @config-manager:start workflow-concurrency
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
   cancel-in-progress: true
+  # @config-manager:end workflow-concurrency
 
 # Declare default permissions as read only.
+# @config-manager:start workflow-permissions
 permissions: read-all
+# @config-manager:end workflow-permissions
 
 jobs:
   update_on_push_job:
+    # @config-manager:start update-on-push-job
     runs-on: ubuntu-latest
-    name: Auto-update on push
+    name: Generate CHANGELOG on push
+    timeout-minutes: 2
     permissions:
       contents: write
+    # @config-manager:end update-on-push-job
     steps:
+      # @config-manager:start harden-runner
       - name: Harden Runner
         uses: step-security/harden-runner@bf7454d06d71f1098171f2acdf0cd4708d7b5920 # v2.20.0
+        # @config-manager:end harden-runner
+        # @config-manager:start step-security-hosts
         with:
           disable-sudo: true
           egress-policy: block
@@ -75,6 +90,7 @@ jobs:
             api.ote-godaddy.com:443
             api.scorecard.dev:443
             api.securityscorecards.dev:443
+            api.stripe.com:443
             auth.docker.io:443
             bestpractices.coreinfrastructure.org:443
             cdn.fwupd.org:443
@@ -109,6 +125,7 @@ jobs:
             hosted-compute-watchdog-prod-iad-02.githubapp.com:443
             index.crates.io:443
             index.docker.io:443
+            keychecker.trufflesecurity.com:443
             lfs.github.com:443
             nodejs.org:443
             oauth2.sigstore.dev:443
@@ -118,6 +135,7 @@ jobs:
             pkg-containers.githubusercontent.com:443
             production.cloudflare.docker.com:443
             proxy.golang.org:443
+            pypi.org:443
             raw.githubusercontent.com:443
             registry-1.docker.io:443
             registry.npmjs.org:443
@@ -128,6 +146,7 @@ jobs:
             releases.astral.sh:443
             releases.hashicorp.com:443
             sigstore-tuf-root.storage.googleapis.com:443
+            slack.com:443
             snyk.io:443
             static.crates.io:443
             storage.googleapis.com:443
@@ -142,17 +161,26 @@ jobs:
             winatp-gw-cus.microsoft.com:443
             www.bestpractices.dev:443
             x.cp.wd.microsoft.com:443
+      # @config-manager:end step-security-hosts
 
+      # @config-manager:start workflow-run-steps
       - name: Install Node.js
-        uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
         with:
-          node-version: "20"
+          node-version: "26"
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Checkout Source
         uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
         with:
+          persist-credentials: false
           fetch-depth: 0
+
+      - name: Configure Git to use HTTPS with the PAT
+        run: |
+          git config --global url."https://${{ secrets.GH_PUBLIC_TOKEN }}@github.com/".insteadOf "https://github.com/"
+          git config --global url."https://${{ secrets.GH_PUBLIC_TOKEN }}@github.com".insteadOf "ssh://git@github.com"
+          git config --global advice.detachedHead false
 
       - name: Generate Changelog
         uses: orhun/git-cliff-action@f50e11560dce63f7c33227798f90b924471a88b5 # v4.8.0
@@ -161,6 +189,7 @@ jobs:
           args: --verbose
         env:
           OUTPUT: CHANGELOG.md
+          GITHUB_REPO: ${{ github.repository }}
 
       - name: Remove git-cliff artifacts
         run: |
@@ -172,6 +201,8 @@ jobs:
           ./scripts/generate-contributors.sh
 
       - name: Git commit if changed
+        env:
+          GITHUB_REPOSITORY: ${{ github.repository }}
         run: |
           git config user.name "Northwood Labs (Bot)"
           git config user.email "bot@northwood-labs.com"
@@ -182,5 +213,7 @@ jobs:
           git status | grep modified
           if [ $? -eq 0 ]; then
             git commit -a -m "automation: Updated AUTHORS and CHANGELOG on $(date)."
-            git push https://${{ secrets.GITHUB_TOKEN }}@github.com/${GITHUB_REPOSITORY}.git main
+            git pull --rebase --autostash
+            git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${GITHUB_REPOSITORY}.git main
           fi
+    # @config-manager:end workflow-run-steps

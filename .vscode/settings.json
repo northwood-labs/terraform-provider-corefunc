@@ -1,10 +1,79 @@
 {
-  // Core editor
+  "[github-actions-workflow]": {
+    "editor.defaultFormatter": "redhat.vscode-yaml"
+  },
+  "[go]": {
+    "editor.defaultFormatter": "golang.go",
+    "editor.formatOnSave": true
+  },
+  "[gohtml]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "[markdown]": {
+    "editor.defaultFormatter": "fcrespo82.markdown-table-formatter"
+  },
+  "[shellscript]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format"
+  },
+  "[yaml]": {
+    "editor.defaultFormatter": "redhat.vscode-yaml"
+  },
+  "bashIde.explainshellEndpoint": "http://localhost:5000",
+  "chat.agent.enabled": true,
+  "chat.extensionTools.enabled": true,
+  "chat.mcp.access": "all",
+  "chat.mcp.autostart": "newAndOutdated",
+  "chat.mcp.discovery.enabled": {
+    "claude-desktop": true,
+    "cursor-global": true,
+    "cursor-workspace": true,
+    "windsurf": true
+  },
+  "chat.promptFilesLocations": {
+    "prompts": true
+  },
+  "chat.tools.autoApprove": false,
   "editor.codeActionsOnSave": {
     "source.addMissingImports": "always",
-    "source.fixAll.eslint": "always",
+    "source.fixAll.oxc": "always",
     "source.organizeImports": "always"
   },
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "editor.formatOnType": true,
+  "emeraldwalk.runonsave": {
+    "commands": [
+      {
+        "cmd": "go tool golines --base-formatter=gofumpt --write-output --max-len=120 ${file}",
+        "match": "\\.go$"
+      },
+      {
+        "cmd": "go tool modernize -fix ${file}",
+        "match": "\\.go$"
+      },
+      {
+        "cmd": "go tool gofumpt -w ${file}",
+        "match": "\\.go$"
+      },
+      {
+        "cmd": "go tool fieldalignment -fix ${file}",
+        "match": "\\.go$"
+      }
+    ]
+  },
+  "evenBetterToml.formatter.alignEntries": true,
+  "evenBetterToml.formatter.indentString": "  ",
+  "evenBetterToml.formatter.indentTables": true,
+  "evenBetterToml.schema.associations": {
+    "^(.*(/|\\)\\.?taplo\\.toml|\\.?taplo\\.toml)$": "taplo://taplo.toml"
+  },
+  "evenBetterToml.schema.links": true,
   "files.associations": {
     ".style.yapf": "ini",
     ".terraformrc": "hcl",
@@ -12,73 +81,90 @@
     "*.hcl": "terraform",
     "*.ini": "ini",
     "*.instructions.md": "markdown",
+    "*.kiro.hook": "json",
     "*.md": "markdown",
     "*.prompt.md": "markdown",
     "*.sh": "shellscript",
     "*.tf": "terraform",
     "*.tofu": "opentofu",
     "*.toml": "toml",
+    "Brewfile*": "ruby",
     "config": "ini",
+    "Dockerfile*": "dockerfile"
   },
   "files.eol": "\n",
   "files.insertFinalNewline": true,
   "files.trimFinalNewlines": true,
   "files.trimTrailingWhitespace": true,
-  // Bash
-  "bashIde.explainshellEndpoint": "http://localhost:5000",
-  // LLMs
-  "chat.agent.enabled": true,
-  "chat.extensionTools.enabled": true,
-  "chat.promptFilesLocations": {
-    "prompts": true
-  },
-  "chat.tools.autoApprove": false,
+  "git.alwaysSignOff": true,
+  "git.autoStash": true,
+  "github.copilot.chat.codeGeneration.useInstructionFiles": true,
   "github.copilot.chat.copilotDebugCommand.enabled": false,
   "github.copilot.chat.editor.temporalContext.enabled": true,
   "github.copilot.chat.edits.temporalContext.enabled": true,
   "github.copilot.chat.reviewSelection.instructions": [],
-  "remote.defaultExtensionsIfInstalledLocally": [
-    "GitHub.copilot",
-    "GitHub.copilot-chat",
-    "GitHub.vscode-pull-request-github"
+  "github.copilot.enable": {
+    "*": true,
+    "apex": true,
+    "erb": true,
+    "go": true,
+    "java": true,
+    "javascript": true,
+    "markdown": false,
+    "plaintext": false,
+    "python": true,
+    "ruby": true,
+    "rust": true,
+    "scala": true,
+    "scminput": false,
+    "shellscript": true,
+    "starlark": true,
+    "terraform": true,
+    "typescript": true,
+    "typescriptreact": true
+  },
+  "githubIssues.queries": [
+    {
+      "label": "My Issues",
+      "query": "default"
+    },
+    {
+      "label": "Created Issues",
+      "query": "author:${user} state:open repo:${owner}/${repository} sort:created-desc"
+    },
+    {
+      "label": "Recent Issues",
+      "query": "state:open repo:${owner}/${repository} sort:updated-desc"
+    }
   ],
-  // Git
-  "git.alwaysSignOff": true,
-  "git.autoStash": true,
-  // Go
+  "gitlens.autolinks": [],
+  "go.alternateTools": {
+    "customFormatter": "golangci-lint"
+  },
+  "go.coverOnTestPackage": false,
+  "go.delveConfig": {
+    "debugAdapter": "dlv-dap"
+  },
   "go.enableCodeLens": {
     "runtest": true
   },
-  "go.lintTool": "golangci-lint",
-  "go.useLanguageServer": true,
-  // Makefiles
-  "makefile.configureOnOpen": false,
-  // Markdown
-  "markdown-table-formatter.removeColonsIfSameAsDefault": true,
-  "markdown.extension.list.indentationSize": "inherit",
-  "markdown.extension.orderedList.marker": "one",
-  "markdown.extension.tableFormatter.normalizeIndentation": true,
-  "markdown.extension.toc.levels": "1..6",
-  "markdown.extension.toc.unorderedList.marker": "*",
-  "markdown-table-formatter.markdownGrammarScopes": [
-    "markdown",
-    "gohtml",
-    "gotmpl"
+  "go.formatFlags": [
+    "fmt",
+    "--stdin"
   ],
-  // Security and vulnerabilities
-  "sarif-viewer.connectToGithubCodeScanning": "off",
-  "rewrap.autoWrap.enabled": false,
-  "shellcheck.enableQuickFix": true,
-  "shellformat.flag": "-s -ln=bash -i=4 -ci -sr",
-  "workbench.editorAssociations": {
-    "{git,gitlens,conflictResolution,vscode-local-history}:/**/*.tc.json": "default",
-    "*.copilotmd": "vscode.markdown.preview.editor",
-    "*.ipynb": "jupyter-notebook",
-    "git-rebase-todo": "default",
-    "*.svg": "default"
-  },
-  "[markdown]": {
-    "editor.defaultFormatter": "fcrespo82.markdown-table-formatter"
+  "go.formatTool": "custom",
+  "go.installDependenciesWhenBuilding": true,
+  "go.lintFlags": [
+    "--path-mode=abs",
+    "--fast-only"
+  ],
+  "go.lintTool": "golangci-lint",
+  "go.testExplorer.alwaysRunBenchmarks": true,
+  "go.toolsManagement.autoUpdate": true,
+  "go.useLanguageServer": true,
+  "go.vetOnSave": "workspace",
+  "gopls": {
+    "ui.semanticTokens": true
   },
   "json.schemas": [
     {
@@ -87,138 +173,92 @@
       ],
       "url": "https://golangci-lint.run/jsonschema/golangci.jsonschema.json"
     },
+    {
+      "fileMatch": [
+        "*.dd.json"
+      ],
+      "url": "https://raw.githubusercontent.com/DataDog/datadog-cloudformation-resources/master/datadog-monitors-monitor-handler/datadog-monitors-monitor.json"
+    },
+    {
+      "fileMatch": [
+        "*taskdef.json"
+      ],
+      "url": "https://ecs-intellisense.s3-us-west-2.amazonaws.com/task-definition/schema.json"
+    },
+    {
+      "fileMatch": [
+        ".prettierrc",
+        "prettier.config.js"
+      ],
+      "url": "https://www.schemastore.org/prettierrc"
+    }
   ],
-  "yaml.schemas": {
-    "https://goreleaser.com/static/schema-pro.json": ".goreleaser.yml",
-  },
-  "evenBetterToml.schema.associations": {
-    "^(.*(/|\\\\)\\.?taplo\\.toml|\\.?taplo\\.toml)$": "taplo://taplo.toml"
-  },
-  "evenBetterToml.schema.links": true,
-  "evenBetterToml.formatter.indentString": "  ",
-  "evenBetterToml.formatter.alignEntries": true,
-  "evenBetterToml.formatter.indentTables": true,
-  "[json]": {
-    "editor.defaultFormatter": "vscode.json-language-features"
-  },
-  "[gohtml]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "terraform.codelens.referenceCount": false,
-  "[terraform]": {
-    "editor.defaultFormatter": "hashicorp.terraform",
-    "editor.formatOnSave": false,
-    "editor.codeActionsOnSave": {
-      "source.formatAll.terraform": "always"
-    },
-  },
-  "[terraform-vars]": {
-    "editor.defaultFormatter": "hashicorp.terraform",
-    "editor.formatOnSave": false,
-    "editor.codeActionsOnSave": {
-      "source.formatAll.terraform": "always"
-    },
-  },
-  "go.formatTool": "gofumpt",
-  "[go]": {
-    "editor.formatOnSave": false,
-    "editor.defaultFormatter": "golang.go"
-  },
-  "markdown-preview-github-styles.colorTheme": "system",
-  "github.copilot.enable": {
-    "*": true,
-    "plaintext": false,
-    "markdown": false,
-    "scminput": false,
-    "apex": true,
-    "erb": true,
-    "go": true,
-    "java": true,
-    "javascript": true,
-    "python": true,
-    "ruby": true,
-    "rust": true,
-    "scala": true,
-    "shellscript": true,
-    "starlark": true,
-    "terraform": true,
-    "typescript": true,
-    "typescriptreact": true
-  },
-  "[yaml]": {
-    "editor.defaultFormatter": "redhat.vscode-yaml"
-  },
-  "snyk.advanced.autoScanOpenSourceSecurity": true,
-  "go.installDependenciesWhenBuilding": true,
-  "go.testExplorer.alwaysRunBenchmarks": true,
-  "terraform.experimentalFeatures.validateOnSave": true,
-  "[jsonc]": {
-    "editor.defaultFormatter": "vscode.json-language-features"
-  },
-  "terraform.languageServer.tcp.port": 0,
-  "go.delveConfig": {
-    "debugAdapter": "dlv-dap",
-  },
-  "[terraform][terraform-vars]": {
-    "editor.codeActionsOnSave": {
-      "source.formatAll.terraform": "explicit"
-    }
-  },
-  "emeraldwalk.runonsave": {
-    "commands": [
-      {
-        "match": "\\.go$",
-        "cmd": "go tool -modfile=go.tools.mod golines --base-formatter=gofumpt --write-output --max-len=120 ${file}"
-      }
-    ]
-  },
-  "shellformat.useEditorConfig": true,
-  "alignment.chars": {
-    ":": {
-      "spaceBefore": 0,
-      "spaceAfter": 1
-    },
-    "::": {
-      "spaceBefore": 0,
-      "spaceAfter": 0
-    },
-    "=": {
-      "spaceBefore": 1,
-      "spaceAfter": 1
-    },
-    "===": {
-      "spaceBefore": 1,
-      "spaceAfter": 1
-    },
-    "==": {
-      "spaceBefore": 1,
-      "spaceAfter": 1
-    },
-    "=>": {
-      "spaceBefore": 1,
-      "spaceAfter": 1
-    },
-    "+=": {
-      "spaceBefore": 1,
-      "spaceAfter": 1
-    },
-    "-=": {
-      "spaceBefore": 1,
-      "spaceAfter": 1
-    },
-    "*=": {
-      "spaceBefore": 1,
-      "spaceAfter": 1
-    },
-    "/=": {
-      "spaceBefore": 1,
-      "spaceAfter": 1
-    }
-  },
+  "kiroAgent.agentAutonomy": "Autopilot",
+  "kiroAgent.enableCodebaseIndexing": true,
+  "kiroAgent.enableTabAutocomplete": true,
+  "kiroAgent.modelSelection": "auto",
+  "kiroAgent.notifications.agent.actionRequired": true,
+  "kiroAgent.notifications.agent.failure": true,
+  "kiroAgent.notifications.agent.success": true,
+  "kiroAgent.trustedCommands": [
+    "aube *",
+    "aubr *",
+    "aubx *",
+    "bun *",
+    "bunx *",
+    "cat *",
+    "cd *",
+    "curl *",
+    "find *",
+    "go *",
+    "gofumpt *",
+    "golangci-lint run *",
+    "golines *",
+    "grep *",
+    "hexdump *",
+    "hk *",
+    "ls *",
+    "make *",
+    "mkdir *",
+    "pnpm *",
+    "pnpx *",
+    "sed *",
+    "tail *",
+    "task *",
+    "tee *",
+    "touch *",
+    "wc *",
+    "wget *",
+    "which *"
+  ],
+  "kiroAgent.usageSummary": true,
+  "makefile.configureOnOpen": false,
+  "markdown-table-formatter.markdownGrammarScopes": [
+    "markdown",
+    "gohtml",
+    "gotmpl"
+  ],
+  "markdown-table-formatter.removeColonsIfSameAsDefault": true,
+  "markdown.extension.list.indentationSize": "inherit",
+  "markdown.extension.orderedList.marker": "one",
+  "markdown.extension.tableFormatter.normalizeIndentation": true,
+  "markdown.extension.toc.levels": "1..6",
+  "markdown.extension.toc.unorderedList.marker": "*",
+  "markdown.preview.fontFamily": "-apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', 'Ubuntu', 'Droid Sans', sans-serif",
+  "markdown.updateLinksOnFileMove.enabled": "always",
+  "notebook.defaultFormatter": "yzhang.markdown-all-in-one",
+  "prettier.proseWrap": "never",
+  "remote.defaultExtensionsIfInstalledLocally": [
+    "GitHub.copilot",
+    "GitHub.copilot-chat",
+    "GitHub.vscode-pull-request-github"
+  ],
+  "rewrap.autoWrap.enabled": false,
+  "sarif-viewer.connectToGithubCodeScanning": "off",
+  "shellcheck.enableQuickFix": true,
   "shellformat.effectLanguages": [
     "azcli",
     "bats",
-    // "dockerfile",
     "dotenv",
     "gitignore",
     "hosts",
@@ -228,22 +268,34 @@
     "shellscript",
     "spring-boot-properties"
   ],
-  "[shellscript]": {
-    "editor.defaultFormatter": "foxundermoon.shell-format"
-  },
-  "chat.mcp.discovery.enabled": {
-    "claude-desktop": true,
-    "windsurf": true,
-    "cursor-global": true,
-    "cursor-workspace": true
-  },
-  "github.copilot.chat.codeGeneration.useInstructionFiles": true,
-  "chat.mcp.autostart": "newAndOutdated",
-  "chat.mcp.access": "all",
-  "kiroAgent.trustedCommands": [
-    "cat *",
-    "curl *",
-    "grep *",
-  ],
+  "shellformat.flag": "-s -ln=bash -i=4 -ci -sr",
+  "shellformat.useEditorConfig": true,
+  "snyk.advanced.autoScanOpenSourceSecurity": true,
   "snyk.advanced.autoSelectOrganization": true,
+  "testExplorer.useNativeTesting": true,
+  "todo-tree.general.tags": [
+    "BUG",
+    "HACK",
+    "FIXME",
+    "TODO",
+    "XXX",
+    "[ ]",
+    "[x]"
+  ],
+  "workbench.editorAssociations": {
+    "{git,gitlens,conflictResolution,vscode-local-history}:/**/*.{asl.json,asl.yaml,asl.yml}": "default",
+    "{git,gitlens,conflictResolution,vscode-local-history}:/**/*.tc.json": "default",
+    "*.copilotmd": "vscode.markdown.preview.editor",
+    "*.csv": "duckdb.dataFileViewer",
+    "*.ipynb": "jupyter-notebook",
+    "*.parquet": "duckdb.dataFileViewer",
+    "*.svg": "default",
+    "*.tsv": "duckdb.dataFileViewer",
+    "*.xlsx": "duckdb.dataFileViewer",
+    "git-rebase-todo": "default",
+  },
+  "yaml.schemas": {
+    "https://goreleaser.com/static/schema-pro.json": ".goreleaser.yml"
+  },
+  "yaml.validate": false
 }

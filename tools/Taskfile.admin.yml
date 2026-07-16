@@ -1,0 +1,66 @@
+---
+# yaml-language-server: $schema=https://taskfile.dev/schema.json
+
+##
+# https://taskfile.dev/docs/guide
+##
+
+# @config-manager:start standard
+version: "3"
+
+tasks:
+  #-----------------------------------------------------------------------------
+  # Dependencies
+
+  deps:update:
+    desc: Update all dev dependencies.
+    cmds:
+      - task: deps:update:config
+      - task: deps:update:brew
+      - task: deps:update:goinstall
+
+  deps:update:config:
+    desc: Update all configuration files.
+    cmds:
+      - task: internal:header
+        vars:
+          TEXT: "Updating all configuration files..."
+      - cmd: config-manager sync
+
+  deps:update:brew:
+    desc: Update all Homebrew dependencies.
+    vars:
+      BREW:
+        sh: '{{ .FIND }} tools/ -type f -name "Brewfile.*"'
+    cmds:
+      - task: internal:header
+        vars:
+          TEXT: "Updating all Homebrew dependencies..."
+      - for:
+          var: BREW
+        cmd: brew bundle --upgrade --upgrade-formulae --install --jobs=auto --file="{{ .ITEM }}"
+
+  deps:update:goinstall:
+    desc: Update all globally-installed Go packages.
+    cmds:
+      - task: internal:header
+        vars:
+          TEXT: "Updating all globally-installed Go packages..."
+      - cmd: go run github.com/Gelio/go-global-update@latest || true
+
+  #-----------------------------------------------------------------------------
+  # Dependencies
+
+  admin:thanks:
+    desc: Star all repositories this project depends on.
+    summary: |
+      Stars all repositories this project depends on.
+    requires:
+      vars:
+        - GITHUB_TOKEN
+    cmds:
+      - task: internal:header
+        vars:
+          TEXT: "Thanking our dependencies..."
+      - cmd: gothanks -y
+# @config-manager:end standard

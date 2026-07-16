@@ -1,0 +1,26 @@
+# Documentation: https://github.com/northwood-labs/config-manager
+config_version = '1.0'
+
+[default]
+  # Shared upstream repository URL. When set, source and stub values
+  # that are relative paths are resolved within this repository.
+  repository = 'file://../.github'
+
+  # # Name of an environment variable containing a bearer token
+  # # for authenticated HTTP requests.
+  # bearer_token_env = 'CONFIG_MANAGER_TOKEN'
+  #
+  # # HTTP request timeout in seconds (default: 30).
+  # timeout = 30
+
+  # Do not look for @TODO markers in files whose paths match these regex
+  # patterns. Mostly for ignoring anything in the KiroGraph database.
+  todo_ignore = [".*\\.db$"]
+
+  # We don't want to accidentally define a template file as a stub, or
+  # vice-versa. We define our expectations here, and throw errors when they are
+  # (accidentally) violated.
+  [default.error_if_path_does_not_contain]
+    stubs   = ["stubs?/"]
+    sources = ["templates?/"]
+    # destinations = []

@@ -1,0 +1,10 @@
+##
+# More information:
+#
+# https://gist.github.com/skyzyx/5ba989e91cc1cddd2b3d3010e9204544
+# https://git-scm.com/docs/git-config#Documentation/git-config.txt-blameignoreRevsFile
+# https://git-scm.com/docs/git-fsck#Documentation/git-fsck.txt-fsckskipList
+# https://github.com/llvm/llvm-project/blob/main/.git-blame-ignore-revs
+# https://chromium.googlesource.com/chromium/src.git/+/f0596779e57f46fccb115a0fd65f0305894e3031/.git-blame-ignore-revs
+# https://github.com/ipython/ipython/blob/main/.git-blame-ignore-revs
+##

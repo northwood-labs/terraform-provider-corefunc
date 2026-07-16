@@ -1,14 +1,5 @@
 ---
-cache:
-  backend: fs
-db:
-  download-java-only: false
-  download-only: false
-  java-skip-update: false
-  light: false
-  no-progress: false
-  skip-update: false
-# debug: false
+# @config-manager:start extras
 dependency-tree: true
 exit-code: 1
 format: table
@@ -17,12 +8,34 @@ ignorefile: .trivyignore
 include-dev-deps: false
 insecure: false
 list-all-pkgs: true
-misconfiguration:
-  include-non-failures: false
 output: ""
 quiet: true
 report: summary
+timeout: 5m0s
+# @config-manager:end extras
+
+cache:
+  # @config-manager:start cache
+  backend: fs
+  # @config-manager:end cache
+
+db:
+  # @config-manager:start db
+  download-java-only: false
+  download-only: false
+  java-skip-update: false
+  light: false
+  no-progress: false
+  skip-update: false
+  # @config-manager:end db
+
+misconfiguration:
+  # @config-manager:start misconfiguration
+  include-non-failures: false
+  # @config-manager:end misconfiguration
+
 scan:
+  # @config-manager:start scan
   compliance: ""
   file-patterns: []
   offline: false
@@ -33,18 +46,28 @@ scan:
   skip-dirs: []
   skip-files: []
   slow: false
+  # @config-manager:end scan
+
 secret:
+  # @config-manager:start secret
+  # https://trivy.dev/docs/latest/scanner/secret/
   config: trivy-secret.yaml
+  # @config-manager:end secret
+
 severity:
+  # @config-manager:start severity
   - UNKNOWN
   - LOW
   - MEDIUM
   - HIGH
   - CRITICAL
-timeout: 5m0s
+  # @config-manager:end severity
+
 vulnerability:
+  # @config-manager:start vulnerability
   ignore-status: []
   ignore-unfixed: true
   type:
     - os
     - library
+  # @config-manager:end vulnerability

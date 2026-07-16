@@ -1,0 +1,74 @@
+---
+# yaml-language-server: $schema=https://taskfile.dev/schema.json
+
+##
+# https://taskfile.dev/docs/guide
+##
+
+# @config-manager:start standard
+version: "3"
+
+set: [pipefail]
+shopt: [globstar]
+
+tasks:
+  #-----------------------------------------------------------------------------
+  # CLI output formatting
+
+  header:
+    desc: Wraps text in a header box.
+    silent: true
+    internal: true
+    vars:
+      TEXT: '{{ default "I am a default header! Change me!" .TEXT }}'
+    cmds:
+      - cmd: |
+          gum style --foreground='#FFFC67' --border='rounded' --border-foreground='12' \
+            --bold --width='78' --padding='0 1' --margin='1 0 0 0' "{{ .TEXT }}"
+
+  border:
+    desc: Wraps text in a bordered box.
+    silent: true
+    internal: true
+    vars:
+      TEXT: '{{ default "I am a default border box! Change me!" .TEXT }}'
+    cmds:
+      - cmd: |
+          gum style --foreground='#FFFFFF' --border='rounded' --border-foreground='240' \
+            --padding='0 1' --margin='1 0' "{{ .TEXT }}"
+
+  error:
+    desc: Prints error text.
+    silent: true
+    internal: true
+    vars:
+      TEXT: '{{ default "I am a default error! Change me!" .TEXT }}'
+    cmds:
+      - cmd: gum style --foreground='#FFFFFF' --background='#CC0000' --bold --padding='0 1' "{{ .TEXT }}"
+
+  bold:
+    desc: Prints bold text.
+    silent: true
+    internal: true
+    vars:
+      TEXT: '{{ default "I am a default bold message! Change me!" .TEXT }}'
+    cmds:
+      - cmd: gum style --bold "{{ .TEXT }}"
+
+  highlight:
+    desc: Prints highlighted text.
+    silent: true
+    internal: true
+    vars:
+      TEXT: '{{ default "I am a default highlighted message! Change me!" .TEXT }}'
+    cmds:
+      - cmd: gum style --foreground='#FFFC67' --bold "{{ .TEXT }}"
+
+  prompt:
+    desc: Presents user with a prompt.
+    silent: true
+    internal: true
+    vars:
+      TEXT: '{{ default "I am a prompt message! Change me!" .TEXT }}'
+    prompt: "{{ .TEXT }}"
+# @config-manager:end standard

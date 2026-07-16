@@ -1,0 +1,31 @@
+# @config-manager:start kg-comment
+##
+# It is presumed that each new developer who installs Kirograph will have their
+# code indexed in more-or-less the same way. So we don't commit the (binary)
+# database.
+#
+# Since Git is fundamentally designed for text and NOT binary data, if you
+# choose to commit a database, you MUST ensure that it is stored with Git LFS.
+##
+# @config-manager:end kg-comment
+
+# Single file databases
+# @config-manager:start kg-single
+kirograph.db
+vec.db
+orama.json
+# @config-manager:end kg-single
+
+# Database directories
+# @config-manager:start kg-dir
+pglite/
+lancedb/
+qdrant/
+typesense/
+# @config-manager:end kg-dir
+
+# @config-manager:start kg-files
+.session-id
+*.jsonl
+kirograph.lock
+# @config-manager:end kg-files

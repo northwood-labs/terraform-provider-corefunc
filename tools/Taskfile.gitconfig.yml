@@ -1,0 +1,116 @@
+---
+# yaml-language-server: $schema=https://taskfile.dev/schema.json
+
+##
+# https://taskfile.dev/docs/guide
+##
+
+# @config-manager:start standard
+version: "3"
+
+set: [pipefail]
+shopt: [globstar]
+
+tasks:
+  gitconfig:global:
+    desc: Apply standard Northwood Labs git configurations.
+    summary: |
+      Apply standard Northwood Labs git configurations.
+
+      Applies standard git configurations for Northwood Labs projects. This
+      includes settings for commit signing, safe directories, and various other
+      configurations that help keep things consistent across all projects.
+    cmds:
+      - task: header
+        vars:
+          TEXT: "Configuring global Git configuration..."
+      - git config --global alias.aa 'add -A'
+      - git config --global alias.st 'status'
+      - git config --global alias.co 'checkout'
+      - git config --global alias.cp 'cherry-pick -x'
+      - git config --global alias.pl 'pull --rebase --autostash'
+      - git config --global alias.diff 'diff --minimal --compaction-heuristic'
+      - git config --global alias.branches 'branch -av'
+      - git config --global alias.remotes 'remote -v'
+      - git config --global alias.prune 'fetch --prune'
+      - git config --global alias.rank 'shortlog -sn --no-merges'
+      - git config --global am.threeway true
+      - git config --global apply.whitespace 'fix'
+      - git config --global blame.date 'relative'
+      - git config --global branch.autosetupmerge true
+      - git config --global branch.autosetuprebase 'always'
+      - git config --global commit.gpgSign true
+      - git config --global core.autocrlf false
+      - git config --global core.eol 'lf'
+      - git config --global core.excludesfile '~/.gitignore'
+      - git config --global core.fsmonitor true
+      - git config --global core.ignorecase false
+      - git config --global core.preloadindex true
+      - git config --global core.warnAmbiguousRefs true
+      - git config --global credential.helper 'cache --timeout=3600'
+      - git config --global diff.algorithm 'patience'
+      - git config --global diff.autorefreshindex true
+      - git config --global diff.colorMoved 'default'
+      - git config --global diff.context 3
+      - git config --global diff.indentheuristic true
+      - git config --global diff.mnemonicprefix true
+      - git config --global diff.renameLimit 1000
+      - git config --global diff.renames 'copies'
+      - git config --global diff.submodule 'log'
+      - git config --global difftool.prompt false
+      - git config --global difftool.trustExitCode true
+      - git config --global filter."lfs".clean 'git-lfs clean -- %f'
+      - git config --global filter."lfs".smudge 'git-lfs smudge -- %f'
+      - git config --global filter."lfs".required true
+      - git config --global filter."lfs".process 'git-lfs filter-process'
+      - git config --global fetch.output compact
+      - git config --global fetch.prune true
+      - git config --global fetch.recurseSubmodules true
+      - git config --global gc.autodetach true
+      - git config --global gc.pruneExpire '1.day.ago'
+      - git config --global gpg.program gpg2
+      - git config --global grep.lineNumber true
+      - git config --global grep.extendedRegexp true
+      - git config --global grep.patterntype 'perl'
+      - git config --global help.autocorrect 1
+      - git config --global init.defaultBranch main
+      - git config --global log.abbrevcommit false
+      - git config --global log.all true
+      - git config --global log.date 'relative'
+      - git config --global log.decorate true
+      - git config --global log.no-merges true
+      - git config --global log.showroot true
+      - git config --global merge.conflictStyle 'zdiff3'
+      - git config --global merge.ff 'only'
+      - git config --global merge.log true
+      - git config --global merge.summary true
+      - git config --global merge.verbosity 1
+      - git config --global mergetool.keepBackup true
+      - git config --global mergetool.prompt false
+      - >
+        git config --global pretty.lol 'format:%C(red)%H%C(reset) %C(yellow)%d%C(reset) %s
+        [%C(green)%an, %C(bold black)%cr%C(reset)]'
+      - >
+        git config --global pretty.lola 'format:%C(red)%H%C(reset) %C(yellow)%d%C(reset) %s
+        [%C(green)%an <%aE>, %C(bold black)%ai%C(reset)]'
+      - git config --global pull.ff 'only'
+      - git config --global pull.rebase true
+      - git config --global pull.twohead 'ort'
+      - git config --global push.autoSetupRemote true
+      - git config --global push.default 'simple'
+      - git config --global push.followTags true
+      - git config --global rebase.autosquash true
+      - git config --global rebase.stat true
+      - git config --global rerere.enabled true
+      - git config --global rerere.autoupdate true
+      - git config --global status.branch true
+      - git config --global status.short true
+      - git config --global status.showuntrackedfiles 'all'
+      - git config --global status.submodulesummary true
+      - git config --global tag.forceSignAnnotated true
+      - git config --global tag.sort 'version:refname'
+      - git config --global transfer.credentialsInUrl warn
+      - git config --global url."git@github.com:".insteadOf 'https://github.com/'
+      - git config --global url."git@github.com:".pushInsteadOf 'git@github.com:'
+      - git config --global versionsort.suffix true
+# @config-manager:end standard

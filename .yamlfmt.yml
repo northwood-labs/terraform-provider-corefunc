@@ -9,8 +9,8 @@ extensions:
 output_format: default
 formatter:
   type: basic
-  disallow_anchors: true
-  drop_merge_tag: true
+  disallow_anchors: false
+  drop_merge_tag: false
   include_document_start: true
   indent: 2
   indentless_arrays: false

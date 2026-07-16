@@ -3,16 +3,34 @@
 #   tomljson ecrc.toml > .editorconfig-checker.json
 ##
 
-# goplicate-start:config
-Debug = false
-IgnoreDefaults = true
-NoColor = false
+# @config-manager:start config
+Debug           = false
+IgnoreDefaults  = true
+NoColor         = false
 SpacesAfterTabs = false
-Verbose = false
-# goplicate-end:config
+Verbose         = false
+# @config-manager:end config
 
 Exclude = [
-  # goplicate-start:excludes
+  # @config-manager:start excludes
+  # Directories
+  "\\.config-manager\\.d/",
+  "\\.github/workflows/",
+  "\\.kiro/",
+  "\\.kirograph/",
+  "\\.rumdl_cache/",
+  "\\.venv",
+  "\\.vite/",
+  "node_modules/",
+  "testdata/",
+  "testfixtures/.*$",
+
+  # Files
+  "Cargo\\.lock$",
+  "LICENSE(\\.(md|txt))?$",
+  "Taskfile\\.([^\\.]+)\\.(yaml|yml)$",
+  "Taskfile\\.(yaml|yml)$",
+  "TerraformOptions.json$",
   "\\.7z$",
   "\\.avif$",
   "\\.bak$",
@@ -37,9 +55,11 @@ Exclude = [
   "\\.jpeg$",
   "\\.jpg$",
   "\\.js\\.map$",
+  "\\.jsonschema\\.json$",
   "\\.lefthook-local/.*$",
   "\\.lefthook/.*$",
   "\\.licenses\\.cache\\.json$",
+  "\\.lock$",
   "\\.log$",
   "\\.mp4$",
   "\\.otf$",
@@ -57,11 +77,11 @@ Exclude = [
   "\\.terraform-docs\\.yml$",
   "\\.terraform/.*$",
   "\\.terraform\\.lock\\.hcl$",
-  "\\.tfstate\\.backup$",
   "\\.tfstate$",
+  "\\.tfstate\\.backup$",
   "\\.ttf$",
   "\\.txt$",
-  "\\.vscode/.*?\\.json$",
+  "\\.vscode/.*?\\.(json|sh|toml|yaml|yml)$",
   "\\.webp$",
   "\\.wmv$",
   "\\.woff$",
@@ -71,25 +91,23 @@ Exclude = [
   "^\\.pnp\\.js$",
   "^\\.pnp\\.loader\\.mjs$",
   "^\\.yarn/",
-  "^Cargo\\.lock$",
-  "^composer\\.lock$",
   "^package-lock\\.json$",
-  "^poetry\\.lock$",
-  "^yarn\\.lock$",
+  "aube-lock\\.yaml$",
   "cliff\\.toml$",
+  "composer\\.lock$",
   "go\\.mod$",
   "go\\.sum$",
   "go\\.tools\\.mod$",
   "go\\.tools\\.sum$",
+  "manifest\\.json$",
   "min\\.css$",
   "min\\.js$",
   "package-lock\\.json$",
+  "package\\.json$",
+  "pnpm-lock\\.yaml$",
+  "pnpm-workspace\\.yaml$",
+  "poetry\\.lock$",
   "standard\\.mk$",
-  "\\.venv",
-  # goplicate-end:excludes
-
-  "sha3x512",
-  "sha512",
-  "TerraformOptions.json$",
-  "testfixtures/.*$",
+  "yarn\\.lock$",
+  # @config-manager:end excludes
 ]

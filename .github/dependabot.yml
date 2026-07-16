@@ -4,42 +4,15 @@
 # Please see the documentation for all configuration options:
 # https://docs.github.com/github/administering-a-repository/configuration-options-for-dependency-updates
 #
-# When initializing a new repo (and even then, on a periodic basis), run this
-# repo through https://app.stepsecurity.io.
+# @TODO: For new repos (and on a periodic basis), run this repo through https://app.stepsecurity.io.
 
 version: 2
 updates:
-  - package-ecosystem: gomod # See documentation for possible values
-    directory: / # Location of package manifests
-    schedule:
-      interval: daily
-
-  - package-ecosystem: docker
-    directory: /.devcontainer
-    schedule:
-      interval: daily
-
   - package-ecosystem: github-actions
+    insecure-external-code-execution: deny
     directory: /
     schedule:
       interval: daily
-
-  - package-ecosystem: gomod
-    directory: /generator
-    schedule:
-      interval: daily
-
-  - package-ecosystem: gomod
-    directory: /terratest
-    schedule:
-      interval: daily
-
-  - package-ecosystem: gomod
-    directory: /terratest/data-sources
-    schedule:
-      interval: daily
-
-  - package-ecosystem: gomod
-    directory: /terratest/functions
-    schedule:
-      interval: daily
+    cooldown:
+      # Not lower than 7 days, please!
+      default-days: 7

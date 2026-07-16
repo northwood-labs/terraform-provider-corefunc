@@ -1,0 +1,324 @@
+#-------------------------------------------------------------------------------
+# DEFAULT FILES
+
+# git-cliff
+# https://git-cliff.org
+[[files]]
+  stub        = 'configs/stubs/cliff.toml'
+  source      = 'configs/templates/cliff.toml'
+  destination = 'cliff.toml'
+
+[[files]]
+  stub        = 'configs/stubs/CHANGELOG.md'
+  destination = 'CHANGELOG.md'
+
+# Snyk: Ignore definition
+# https://snyk.io
+[[files]]
+  stub        = 'configs/stubs/dcignore'
+  source      = 'configs/templates/dcignore'
+  destination = '.dcignore'
+
+# EditorConfig definition
+# https://editorconfig.org
+[[files]]
+  stub        = 'configs/stubs/editorconfig.ini'
+  source      = 'configs/templates/editorconfig.ini'
+  destination = '.editorconfig'
+
+# How to handle files in Git
+# https://git-scm.com/docs/gitattributes
+[[files]]
+  stub        = 'configs/stubs/gitattributes'
+  source      = 'configs/templates/gitattributes'
+  destination = '.gitattributes'
+
+[[files]]
+  stub        = 'configs/stubs/gitignore'
+  destination = '.gitignore'
+
+# Don't change `git blame` for these commits (project-specific).
+# https://git-scm.com/docs/git-fsck#Documentation/git-fsck.txt-fsckskipList
+# https://git-scm.com/docs/git-config#Documentation/git-config.txt-blameignoreRevsFile
+[[files]]
+  stub        = 'configs/stubs/git-blame-ignore-revs'
+  destination = '.git-blame-ignore-revs'
+
+# Enforce conventional commit messages.
+# https://github.com/antham/gommit
+[[files]]
+  stub        = 'configs/stubs/gommit.toml'
+  source      = 'configs/templates/gommit.toml'
+  destination = '.gommit.toml'
+
+# Precommit hooks
+# https://hk.jdx.dev
+[[files]]
+  stub        = 'configs/stubs/hk.pkl'
+  source      = 'configs/templates/hk.pkl'
+  destination = 'hk.pkl'
+  replaces    = ['.pre-commit']
+
+# Detect broken links.
+# https://lychee.cli.rs
+[[files]]
+  stub        = 'configs/stubs/lychee.toml'
+  source      = 'configs/templates/lychee.toml'
+  destination = 'lychee.toml'
+
+# Mailmap
+# https://git-scm.com/docs/gitmailmap
+[[files]]
+  stub        = 'configs/stubs/mailmap'
+  destination = '.mailmap'
+
+# OSV Scanner
+# https://osv.dev
+[[files]]
+  stub        = 'configs/stubs/osv-scanner.toml'
+  destination = 'osv-scanner.toml'
+
+# rumdl replaces Markdownlint
+# https://rumdl.dev
+[[files]]
+  stub        = 'configs/stubs/rumdl.toml'
+  source      = 'configs/templates/rumdl.toml'
+  destination = '.rumdl.toml'
+  replaces    = ['.markdownlint.json', '.markdownlintrc', 'markdownlint.config.toml']
+
+# Shellcheck for shell scripts
+# https://github.com/koalaman/shellcheck
+[[files]]
+  stub        = 'configs/stubs/shellcheckrc'
+  source      = 'configs/templates/shellcheckrc'
+  destination = '.shellcheckrc'
+
+# Shuck is a replacement for Shellcheck and shfmt.
+# https://ewhauser.github.io/shuck/
+[[files]]
+  stub        = 'configs/stubs/shuck.toml'
+  source      = 'configs/templates/shuck.toml'
+  destination = '.shuck.toml'
+
+# Taplo formatter for TOML files
+# https://taplo.tamasfe.dev
+[[files]]
+  stub        = 'configs/stubs/taplo.toml'
+  source      = 'configs/templates/taplo.toml'
+  destination = '.taplo.toml'
+
+# Trivy for vulnerability and license scanning
+# https://trivy.dev
+[[files]]
+  stub        = 'configs/stubs/trivyignore'
+  destination = '.trivyignore'
+
+[[files]]
+  stub        = 'configs/stubs/trivy-license.yaml'
+  source      = 'configs/templates/trivy-license.yaml'
+  destination = 'trivy-license.yaml'
+
+[[files]]
+  stub        = 'configs/stubs/trivy-vuln.yaml'
+  source      = 'configs/templates/trivy-vuln.yaml'
+  destination = 'trivy-vuln.yaml'
+
+# Standardized formatter for YAML files.
+# https://github.com/google/yamlfmt
+[[files]]
+  stub        = 'configs/stubs/yamlfmt.yml'
+  destination = '.yamlfmt.yml'
+
+[[files]]
+  stub        = 'configs/stubs/scripts/generate-contributors.sh'
+  source      = 'configs/templates/scripts/generate-contributors.sh'
+  destination = 'scripts/generate-contributors.sh'
+  executable  = true
+
+  #-------------------------------------------------------------------------------
+  # KIRO DIRECTORY
+
+[[files]]
+  stub        = 'configs/stubs/.kirograph/'
+  destination = '.kirograph/'
+
+[[files]]
+  stub        = 'configs/stubs/.kirograph/.gitignore'
+  source      = 'configs/templates/.kirograph/.gitignore'
+  destination = '.kirograph/.gitignore'
+
+[[files]]
+  stub        = 'configs/stubs/.kiro/steering/markdown-style.md'
+  source      = 'configs/templates/.kiro/steering/markdown-style.md'
+  destination = '.kiro/steering/markdown-style.md'
+
+  #-------------------------------------------------------------------------------
+  # GITHUB DIRECTORY
+
+# GitHub CODEOWNERS
+# https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
+[[files]]
+  stub        = 'configs/stubs/.github/CODEOWNERS'
+  source      = 'configs/templates/.github/CODEOWNERS'
+  destination = '.github/CODEOWNERS'
+
+# Developer Certificate of Origin (DCO)
+# https://github.com/dcoapp/app
+[[files]]
+  stub        = 'configs/stubs/.github/dco.yml'
+  source      = 'configs/templates/.github/dco.yml'
+  destination = '.github/dco.yml'
+
+# GitHub issue templates
+# https://docs.github.com/en/communities/using-templates-to-encourage-useful-issues-and-pull-requests/configuring-issue-templates-for-your-repository
+[[files]]
+  stub        = 'configs/stubs/.github/ISSUE_TEMPLATE/'
+  destination = '.github/ISSUE_TEMPLATE/'
+
+# GitHub Dependabot config
+# https://docs.github.com/en/code-security/tutorials/secure-your-dependencies/dependabot-quickstart-guide
+[[files]]
+  stub        = 'configs/stubs/.github/dependabot.yml'
+  destination = '.github/dependabot.yml'
+
+# Security scan for GitHub Actions
+# https://docs.zizmor.sh
+[[files]]
+  stub        = 'configs/stubs/.github/zizmor.yml'
+  source      = 'configs/templates/.github/zizmor.yml'
+  destination = '.github/zizmor.yml'
+
+[[files]]
+  stub        = 'configs/stubs/.github/workflows/dependabot-auto-merge.yml'
+  source      = 'configs/templates/.github/workflows/dependabot-auto-merge.yml'
+  destination = '.github/workflows/dependabot-auto-merge.yml'
+
+[[files]]
+  stub = 'configs/stubs/.github/workflows/update-on-push.yml'
+  source = [
+    'configs/templates/.github/workflows/__harden-hosts.yml',
+    'configs/templates/.github/workflows/update-on-push.yml',
+  ]
+  destination = '.github/workflows/update-on-push.yml'
+
+  #-------------------------------------------------------------------------------
+  # VSCODE DIRECTORY
+
+[[files]]
+  stub        = 'configs/stubs/.vscode/README.md'
+  source      = 'configs/templates/.vscode/README.md'
+  destination = '.vscode/README.md'
+
+# Merges multiple TOML files together using `dasel` and `jq`.
+[[files]]
+  stub        = 'configs/stubs/.vscode/extensions.sh'
+  source      = 'configs/templates/.vscode/extensions.sh'
+  destination = '.vscode/extensions.sh'
+  executable  = true
+
+# Merges multiple TOML files together using `dasel` and `jq`.
+[[files]]
+  stub        = 'configs/stubs/.vscode/settings.sh'
+  source      = 'configs/templates/.vscode/settings.sh'
+  destination = '.vscode/settings.sh'
+  executable  = true
+
+# Merges multiple TOML files together using `dasel` and `jq`.
+[[files]]
+  stub        = 'configs/stubs/.vscode/extensions-standard.toml'
+  source      = 'configs/templates/.vscode/extensions-standard.toml'
+  destination = '.vscode/extensions-standard.toml'
+
+  [files.post_update_hook]
+    bash = 'bash .vscode/extensions.sh'
+
+# Standardized LLM rules.
+[[files]]
+  stub        = 'configs/stubs/.vscode/settings-llm.toml'
+  source      = 'configs/templates/.vscode/settings-llm.toml'
+  destination = '.vscode/settings-llm.toml'
+
+  [files.post_update_hook]
+    bash = 'bash .vscode/settings.sh'
+
+# This just creates the TOML header for `runonsave`, allowing VSCode to run
+# certain tasks on save.
+[[files]]
+  stub        = 'configs/stubs/.vscode/settings-ros.toml'
+  source      = 'configs/templates/.vscode/settings-ros.toml'
+  destination = '.vscode/settings-ros.toml'
+
+  [files.post_update_hook]
+    bash = 'bash .vscode/settings.sh'
+
+# Standard configs that apply to every single project (Markdown, JSON, YAML, TOML).
+[[files]]
+  stub        = 'configs/stubs/.vscode/settings-standard.toml'
+  source      = 'configs/templates/.vscode/settings-standard.toml'
+  destination = '.vscode/settings-standard.toml'
+
+  [files.post_update_hook]
+    bash = 'bash .vscode/settings.sh'
+
+    #-------------------------------------------------------------------------------
+    # TOOLING
+
+# Imported taskfiles
+# https://taskfile.dev/docs/guide#flatten-includes
+[[files]]
+  stub        = 'configs/stubs/make-file'
+  source      = 'configs/templates/make-file'
+  destination = 'Makefile'
+
+[[files]]
+  stub        = 'configs/stubs/Taskfile.dist.yml'
+  source      = 'configs/templates/Taskfile.dist.yml'
+  destination = 'Taskfile.dist.yml'
+
+[[files]]
+  stub        = 'configs/stubs/tools/Taskfile.admin.yml'
+  source      = 'configs/templates/tools/Taskfile.admin.yml'
+  destination = 'tools/Taskfile.admin.yml'
+
+[[files]]
+  stub        = 'configs/stubs/tools/Taskfile.gitconfig.yml'
+  source      = 'configs/templates/tools/Taskfile.gitconfig.yml'
+  destination = 'tools/Taskfile.gitconfig.yml'
+
+[[files]]
+  stub        = 'configs/stubs/tools/Taskfile.internal.yml'
+  source      = 'configs/templates/tools/Taskfile.internal.yml'
+  destination = 'tools/Taskfile.internal.yml'
+
+[[files]]
+  stub        = 'configs/stubs/tools/Taskfile.kiro.yml'
+  source      = 'configs/templates/tools/Taskfile.kiro.yml'
+  destination = 'tools/Taskfile.kiro.yml'
+
+[[files]]
+  stub        = 'configs/stubs/tools/ogvs.config.yaml'
+  source      = 'configs/templates/tools/ogvs.config.yaml'
+  destination = 'tools/ogvs.config.yaml'
+
+  #-------------------------------------------------------------------------------
+  # FILES WITH HOOKS
+
+# EditorConfig Checker
+# https://editorconfig-checker.github.io
+[[files]]
+  stub        = 'configs/stubs/ecrc.toml'
+  source      = 'configs/templates/ecrc.toml'
+  destination = 'ecrc.toml'
+
+  [files.post_update_hook]
+    bash = 'tomljson ecrc.toml > .editorconfig-checker.json'
+
+# Brewfile tools
+# https://docs.brew.sh/Brew-Bundle-and-Brewfile
+[[files]]
+  stub        = 'configs/stubs/tools/Brewfile.standard'
+  source      = 'configs/templates/tools/Brewfile.standard'
+  destination = 'tools/Brewfile.standard'
+
+  [files.post_update_hook]
+    bash = 'brew bundle --upgrade --upgrade-formulae --install --jobs=auto --file=tools/Brewfile.standard'

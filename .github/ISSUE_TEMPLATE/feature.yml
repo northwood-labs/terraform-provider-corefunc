@@ -1,7 +1,7 @@
 ---
 name: Feature Request
 description: Request new functionality.
-title: '[Feature]: '
+title: "[Feature]: "
 labels: [feature, triage]
 assignees:
   - skyzyx

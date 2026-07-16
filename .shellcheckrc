@@ -1,3 +1,4 @@
+# @config-manager:start shellcheck
 check-sourced=true
 color=auto
 shell=bash
@@ -12,3 +13,4 @@ enable=deprecate-which
 enable=quote-safe-variables
 enable=require-double-brackets
 enable=require-variable-braces
+# @config-manager:end shellcheck

@@ -1,0 +1,343 @@
+---
+# yaml-language-server: $schema=https://taskfile.dev/schema.json
+
+##
+# You can _add_ to this Taskfile.dist.yml by adding tasks outside of the
+# `@config-manager` markers. Tasks inside the `@config-manager` markers are
+# managed by the config-manager.
+#
+# If you want to _override_ a task from this file, copy it to Taskfile.yml and
+# make changes there.
+#
+# https://taskfile.dev/docs/guide
+##
+
+version: "3"
+
+set: [pipefail]
+shopt: [globstar]
+
+vars:
+  # @config-manager:start standard-vars
+  # Explicitly define these paths to point to Homebrew-installed GNU versions.
+  BASH: /opt/homebrew/opt/bash/bin/bash
+  FIND: /opt/homebrew/opt/findutils/bin/gfind
+  GREP: /opt/homebrew/opt/grep/bin/ggrep
+  RM: /opt/homebrew/opt/coreutils/bin/grm
+  SED: /opt/homebrew/opt/gsed/bin/gsed
+  XARGS: /opt/homebrew/opt/findutils/bin/gxargs
+  # @config-manager:end standard-vars
+
+includes:
+  # @config-manager:start standard
+  admin:
+    taskfile: ./tools/Taskfile.admin.yml
+    flatten: true
+  aws:
+    taskfile: ./tools/Taskfile.aws.yml
+    optional: true
+  frontend:
+    taskfile: ./tools/Taskfile.frontend.yml
+    flatten: true
+    optional: true
+  gitconfig:
+    taskfile: ./tools/Taskfile.gitconfig.yml
+    flatten: true
+  go:
+    taskfile: ./tools/Taskfile.golang.yml
+    flatten: true
+    optional: true
+  hugo:
+    taskfile: ./tools/Taskfile.hugo.yml
+    flatten: true
+    optional: true
+  internal:
+    taskfile: ./tools/Taskfile.internal.yml
+  kiro:
+    taskfile: ./tools/Taskfile.kiro.yml
+  x:
+    # This is for project-specific tasks that are not synced.
+    taskfile: ./Taskfile.x.yml
+    optional: true
+    # @config-manager:end standard
+
+tasks:
+  #-----------------------------------------------------------------------------
+  # Installation and setup
+
+  # @config-manager:start installation-standard
+  install:hooks:
+    desc: Install Git hooks which perform standard tasks on pre-commit.
+    summary: |
+      Installs Git hooks which perform standard tasks on pre-commit.
+
+      Uses 'hk' to perform standardized code validation and hook management.
+    preconditions:
+      - sh: command -v gommit
+        msg: "gommit must be installed to validate commit messages. Run 'task install:tools` first."
+      - sh: command -v hk
+        msg: "hk must be installed to manage hooks. Run 'task install:tools` first."
+    cmds:
+      - task: internal:header
+        vars: {TEXT: "Installing Git hooks..."}
+      - hk install
+
+  install:tools:
+    desc: Install all dependencies required for development for this project.
+    summary: |
+      Install all dependencies required for development for this project.
+
+      Looks inside the ./tools directory for `Brewfile.*` and executes them all
+      in arbitrary order.
+    cmds:
+      - task: internal:header
+        vars: {TEXT: "Installing dependencies from Brewfiles..."}
+      - >
+        gfind ./tools -type f -name "Brewfile.*"
+        | gxargs -I% brew bundle --upgrade --upgrade-formulae --install --jobs=auto --file="%"
+      - vet https://raw.githubusercontent.com/mtdowling/chag/master/install.sh
+  # @config-manager:end installation-standard
+
+  # @config-manager:start gitconfig-standard
+  gitconfig:
+    desc: Apply standard project git configurations.
+    summary: |
+      Apply standard project git configurations.
+
+      This applies standard project-level git configurations. This includes
+      things like ignoring whitespace changes in blame, and setting the default
+      merge tool.
+    cmds:
+      - task: internal:header
+        vars: {TEXT: "Configuring project Git configuration..."}
+      - git config blame.ignoreRevsFile .git-blame-ignore-revs
+  # @config-manager:end gitconfig-standard
+
+  #-----------------------------------------------------------------------------
+  # Linting and code quality
+
+  # @config-manager:start linting-standard
+  lint:
+    desc: Run a battery of linters to ensure high quality on the changed files.
+    summary: |
+      Run a battery of linters to ensure high quality on the changed files.
+
+      Runs all linter, static analysis, and security tooling for the files in
+      the repository that have changed since last commit. This is faster than
+      linting everything.
+
+      Goal is for this to complete in under 5 seconds.
+    cmds:
+      - task: internal:header
+        vars: {TEXT: "Linting changed files..."}
+      - hk fix --no-fail-fast
+
+  lint:full:
+    desc: Run a battery of linters to ensure high quality on the changed files.
+    summary: |
+      Run a battery of linters to ensure high quality on the changed files.
+
+      Runs all linter, static analysis, and security tooling for the files in
+      the repository that have changed since last commit. This is faster than
+      linting everything.
+    cmds:
+      - task: internal:header
+        vars: {TEXT: "Linting changed files..."}
+      - hk fix --no-fail-fast --profile slow
+
+  lint:deep:
+    desc: Run a battery of linters to ensure high quality on ALL files.
+    summary: |
+      Run a battery of linters to ensure high quality on ALL files.
+
+      Runs all linter, static analysis, and security tooling for ALL files in
+      the repository. This is slower, but more comprehensive.
+    cmds:
+      - task: internal:header
+        vars: {TEXT: "Linting ALL files..."}
+      - hk fix --all --no-fail-fast
+
+  lint:deep:full:
+    desc: Run a battery of linters to ensure high quality on ALL files.
+    summary: |
+      Run a battery of linters to ensure high quality on ALL files.
+
+      Runs all linter, static analysis, and security tooling for ALL files in
+      the repository. This is slower, but more comprehensive.
+    cmds:
+      - task: internal:header
+        vars: {TEXT: "Linting ALL files with ALL (including slow) tools..."}
+      - hk fix --all --no-fail-fast --profile slow
+
+  lint:list:
+    desc: Get a list of available linters as an fzf list.
+    summary: |
+      Gets a list of available linters as an fzf list.
+
+      Values are read from the hk.pkl file.
+    preconditions:
+      - sh: command -v fzf
+        msg: "fzf must be installed to validate commit messages. Run 'task install:tools` first."
+    cmds:
+      - cmd: >
+          eval "$(
+            hk check --json --plan 2>/dev/null \
+            | jq -Mr '
+              [
+                .groups[].stepIds
+                | .[]
+              ]
+              | [
+                .[]
+                | . as $item
+                | ["task lint:\($item)", "task lint:deep:\($item)"]
+                | .[]
+              ]
+              | .+ ["task lint"]
+              | .+ ["task lint:full"]
+              | .+ ["task lint:deep"]
+              | .+ ["task lint:deep:full"]
+              | .+ ["task lint:list"]
+              | sort
+              | .[]
+            ' \
+            | fzf \
+              --algo=v2 \
+              --cycle \
+              --highlight-line \
+              --layout=default \
+              --no-extended \
+              --preview='' \
+              --select-1 \
+              --smart-case \
+              --header='[Type to filter, or select with arrows. Esc to close.]'
+          )"
+        silent: true
+
+  lint:deep:*:
+    desc: Run a specific linter on ALL files.
+    summary: |
+      Runs a specific linter on ALL files.
+    vars:
+      STEP: "{{ index .MATCH 0 }}"
+    cmds:
+      - task: internal:header
+        vars: {TEXT: "Linting ALL files with {{ .STEP }}..."}
+      - hk fix --all --no-fail-fast --step {{ .STEP }} --profile slow
+
+  lint:*:
+    desc: Run a specific linter on changed files.
+    summary: |
+      Runs a specific linter on changed files.
+    vars:
+      STEP: "{{ index .MATCH 0 }}"
+    cmds:
+      - task: internal:header
+        vars: {TEXT: "Linting changed files with {{ .STEP }}..."}
+      - hk fix --no-fail-fast --step {{ .STEP }} --profile slow
+
+  # @config-manager:end linting-standard
+
+  #-----------------------------------------------------------------------------
+  # Building
+
+  #-----------------------------------------------------------------------------
+  # Testing
+
+  #-------------------------------------------------------------------------------
+  # Documentation
+
+  # @config-manager:start docs-standard
+  docs:
+    desc: "! Run all standard documentation tasks."
+    summary: |
+      Runs all standard documentation tasks.
+
+      This runs all `docs-*` tasks, except for `docs-serve` (if it's even
+      defined). We do this by exporting a list of tasks to JSON, parsing it with
+      jq, then using a for-loop to call the matches.
+    vars:
+      TASKS:
+        sh: task --list --json | jq -Mr '.tasks[] | select(.name | startswith("docs:") and . != "docs:serve") | .name'
+    cmds:
+      - for:
+          var: TASKS
+        task: "{{ .ITEM }}"
+  # @config-manager:end docs-standard
+
+  #-------------------------------------------------------------------------------
+  # Compliance
+
+  # @config-manager:start compliance-standard
+  license:
+    desc: "Get list of software licenses in-use."
+    summary: |
+      Gets list of software licenses in-use.
+    cmds:
+      - task: internal:header
+        vars: {TEXT: "Detecting software licenses..."}
+      - trivy fs --config trivy-license.yaml --format json . 2>/dev/null > .licenses.cache.json
+      - silent: true
+        cmd: |
+          cat .licenses.cache.json | jq -Mr '
+            [
+              .Results[]
+              | select(.Packages)
+              | .Packages[]
+              | select(.Licenses)
+              | .Licenses[]
+            ]
+            | to_entries
+            | group_by(.value)[]
+            | {
+              Name: .[0].value,
+              Count: length
+            }
+            | "\(.Name): \(.Count)"
+          '
+  # @config-manager:end compliance-standard
+  #-----------------------------------------------------------------------------
+  # Cleanup
+
+  # @config-manager:start cleaning-standard
+  clean:
+    desc: "! Run all standard cleaning tasks."
+    summary: |
+      Runs all standard cleaning tasks.
+
+      This runs all `clean-*` tasks, except for `clean-go` (if it's even
+      defined). We do this by exporting a list of tasks to JSON, parsing it with
+      jq, then using a for-loop to call the matches.
+    vars:
+      TASKS:
+        sh: task --list --json | jq -Mr '.tasks[] | select(.name | startswith("clean:") and . != "clean:go") | .name'
+    cmds:
+      - for:
+          var: TASKS
+        task: "{{ .ITEM }}"
+
+  clean:ds:
+    desc: Clean .DS_Store files.
+    summary: |
+      Clean .DS_Store files.
+
+      Cleans .DS_Store files from every directory in this project. These are
+      hidden files that macOS Finder uses to store directory/window
+      customizations (icons vs. list; item groupings; sort-by preferences).
+      These are user-specific and do not belong in any Git repo.
+    cmds:
+      - task: internal:header
+        vars: {TEXT: "Cleaning .DS_Store files..."}
+      - '{{ .FIND }} . -type f -name ".DS_Store" | {{ .XARGS }} -I% {{ .RM }} -fv "%"'
+
+  clean:lychee:
+    desc: Clean Lychee artifacts.
+    summary: |
+      Clean Lychee artifacts.
+
+      Cleans the Lychee report and cache files from disk.
+    cmds:
+      - task: internal:header
+        vars: {TEXT: "Cleaning Lychee artifacts..."}
+      - "{{ .RM }} -vf .lychee* lychee.md"
+  # @config-manager:end cleaning-standard

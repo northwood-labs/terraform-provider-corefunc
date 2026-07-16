@@ -1,0 +1,26 @@
+---
+# yaml-language-server: $schema=https://taskfile.dev/schema.json
+
+##
+# https://taskfile.dev/docs/guide
+##
+
+# @config-manager:start kiro
+version: "3"
+
+set: [pipefail]
+shopt: [globstar]
+
+includes:
+  internal:
+    taskfile: ./Taskfile.internal.yml
+
+tasks:
+  update:
+    desc: Upgrade all Kiro extensions
+    cmds:
+      - task: internal:header
+        vars:
+          TEXT: "Upgrading all Kiro extensions..."
+      - cmd: kiro --update-extensions
+# @config-manager:end kiro
