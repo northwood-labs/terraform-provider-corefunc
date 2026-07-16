@@ -292,7 +292,7 @@
     "*.svg": "default",
     "*.tsv": "duckdb.dataFileViewer",
     "*.xlsx": "duckdb.dataFileViewer",
-    "git-rebase-todo": "default",
+    "git-rebase-todo": "default"
   },
   "yaml.schemas": {
     "https://goreleaser.com/static/schema-pro.json": ".goreleaser.yml"
