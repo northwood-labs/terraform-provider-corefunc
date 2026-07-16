@@ -26,14 +26,6 @@ The majority of development is done on macOS, so we have some helpers set-up to 
     make install-tools
     ```
 
-   Obviously, this won't work on Linux, so ensure that the following packages are installed from your system's package manager.
-
-   * [Go] 1.26+ (primary language)
-   * [Node.js] 26+ (linting tools)
-   * [Python] 3.14+ (linting tools)
-   * [Git LFS] (storage of binary data)
-   * [`jq`][jq] (shell scripting tools)
-
 2. Running `make` in the root of the repo, by itself, will display a list of tasks and what they do. The ones highlighted in yellow are the ones that are most frequently used, or combine running multiple sub-tasks with one convenient command.
 
     ```bash
@@ -693,18 +685,13 @@ To enable debugging for this Terraform provider:
 [Conventional Commits]: https://www.conventionalcommits.org
 [EditorConfig-Checker]: https://editorconfig-checker.github.io
 [EditorConfig]: https://editorconfig.org
-[Git LFS]: https://git-lfs.com
 [git-cliff]: https://git-cliff.org
-[Go]: https://go.dev
 [golangci-lint]: https://golangci-lint.run
 [gommit]: https://github.com/antham/gommit
 [GoReleaser]: https://goreleaser.com
-[jq]: https://jqlang.github.io/jq/
 [licensei]: https://github.com/goph/licensei
 [Markdownlint]: https://www.npmjs.com/package/markdownlint-cli
-[Node.js]: https://nodejs.org
 [pre-commit]: https://pre-commit.com
-[Python]: https://www.python.org
 [Snyk IDE Extension]: https://docs.snyk.io/integrations/ide-tools/visual-studio-code-extension
 [tflint]: https://github.com/terraform-linters/tflint
 [tfschema]: https://github.com/minamijoyo/tfschema
