@@ -23,7 +23,7 @@ require (
 	github.com/nlnwa/whatwg-url v0.6.2
 	github.com/pelletier/go-toml/v2 v2.4.3
 	github.com/spf13/cobra v1.10.2
-	github.com/stretchr/testify v1.11.1
+	github.com/stretchr/testify v1.12.0
 	go.nwlabs.dev/cli-helpers/v2 v2.0.0-20260710231300-0295ed1a2787
 	golang.org/x/crypto v0.55.0
 	pgregory.net/rapid v1.3.0
@@ -53,7 +53,6 @@ require (
 	github.com/clipperhouse/displaywidth v0.11.0 // indirect
 	github.com/clipperhouse/uax29/v2 v2.7.0 // indirect
 	github.com/cloudflare/circl v1.6.4 // indirect
-	github.com/davecgh/go-spew v1.1.2-0.20180830191138-d8f796af33cc // indirect
 	github.com/dlclark/regexp2/v2 v2.5.0 // indirect
 	github.com/fatih/color v1.19.0 // indirect
 	github.com/go-logfmt/logfmt v0.6.1 // indirect
@@ -95,7 +94,6 @@ require (
 	github.com/muesli/mango-pflag v0.2.0 // indirect
 	github.com/muesli/roff v0.1.0 // indirect
 	github.com/oklog/run v1.2.0 // indirect
-	github.com/pmezard/go-difflib v1.0.1-0.20181226105442-5d4384ee4fb2 // indirect
 	github.com/rivo/uniseg v0.4.7 // indirect
 	github.com/spf13/pflag v1.0.10 // indirect
 	github.com/vmihailenco/msgpack v4.0.4+incompatible // indirect
