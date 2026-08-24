@@ -534,7 +534,7 @@ jobs:
           cache: true
 
       - name: Install OpenTofu ${{ matrix.opentofu_version }}
-        uses: step-security/setup-opentofu@84cc3a843a234d872b49bd729cb74b65f938bf1f # v2.0.1
+        uses: step-security/setup-opentofu@98f922627f024c24b44355faaf668a261b8b687a # v2.0.2
         with:
           tofu_version: ~${{ matrix.opentofu_version }}
           tofu_wrapper: false
