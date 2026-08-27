@@ -149,7 +149,7 @@ jobs:
           cache: true
 
       - name: Install Terraform
-        uses: step-security/setup-terraform@11f45fe036ccfd27d231861d38b183d405b059a9 # v4.0.0
+        uses: step-security/setup-terraform@856d52e2f56619a4928ffc98bf60837d96a8e682 # v4.0.1
         with:
           terraform_version: 1.9
           terraform_wrapper: false
