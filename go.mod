@@ -25,7 +25,7 @@ require (
 	github.com/spf13/cobra v1.10.2
 	github.com/stretchr/testify v1.12.1
 	go.nwlabs.dev/cli-helpers/v2 v2.0.0-20260710231300-0295ed1a2787
-	golang.org/x/crypto v0.55.0
+	golang.org/x/crypto v0.56.0
 	pgregory.net/rapid v1.3.0
 )
 
