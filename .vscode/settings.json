@@ -103,6 +103,99 @@
   "github.copilot.chat.editor.temporalContext.enabled": true,
   "github.copilot.chat.edits.temporalContext.enabled": true,
   "github.copilot.chat.reviewSelection.instructions": [],
+  "remote.defaultExtensionsIfInstalledLocally": [
+    "GitHub.copilot",
+    "GitHub.copilot-chat",
+    "GitHub.vscode-pull-request-github"
+  ],
+  // Git
+  "git.alwaysSignOff": true,
+  "git.autoStash": true,
+  // Go
+  "go.enableCodeLens": {
+    "runtest": true
+  },
+  "go.lintTool": "golangci-lint",
+  "go.useLanguageServer": true,
+  // Makefiles
+  "makefile.configureOnOpen": false,
+  // Markdown
+  "markdown-table-formatter.removeColonsIfSameAsDefault": true,
+  "markdown.extension.list.indentationSize": "inherit",
+  "markdown.extension.orderedList.marker": "one",
+  "markdown.extension.tableFormatter.normalizeIndentation": true,
+  "markdown.extension.toc.levels": "1..6",
+  "markdown.extension.toc.unorderedList.marker": "*",
+  "markdown-table-formatter.markdownGrammarScopes": [
+    "markdown",
+    "gohtml",
+    "gotmpl"
+  ],
+  // Security and vulnerabilities
+  "sarif-viewer.connectToGithubCodeScanning": "off",
+  "rewrap.autoWrap.enabled": false,
+  "shellcheck.enableQuickFix": true,
+  "shellformat.flag": "-s -ln=bash -i=4 -ci -sr",
+  "workbench.editorAssociations": {
+    "{git,gitlens,conflictResolution,vscode-local-history}:/**/*.tc.json": "default",
+    "{git,gitlens,conflictResolution,vscode-local-history}:/**/*.{asl.json,asl.yaml,asl.yml}": "default",
+    "*.copilotmd": "vscode.markdown.preview.editor",
+    "*.ipynb": "jupyter-notebook",
+    "git-rebase-todo": "default",
+    "*.svg": "default",
+    "*.parquet": "duckdb.dataFileViewer",
+    "*.csv": "duckdb.dataFileViewer",
+    "*.tsv": "duckdb.dataFileViewer",
+    "*.xlsx": "duckdb.dataFileViewer"
+  },
+  "[markdown]": {
+    "editor.defaultFormatter": "fcrespo82.markdown-table-formatter"
+  },
+  "json.schemas": [
+    {
+      "fileMatch": [
+        ".golangci.yml"
+      ],
+      "url": "https://golangci-lint.run/jsonschema/golangci.jsonschema.json"
+    },
+  ],
+  "yaml.schemas": {
+    "https://goreleaser.com/static/schema-pro.json": ".goreleaser.yml",
+  },
+  "evenBetterToml.schema.associations": {
+    "^(.*(/|\\\\)\\.?taplo\\.toml|\\.?taplo\\.toml)$": "taplo://taplo.toml"
+  },
+  "evenBetterToml.schema.links": true,
+  "evenBetterToml.formatter.indentString": "  ",
+  "evenBetterToml.formatter.alignEntries": true,
+  "evenBetterToml.formatter.indentTables": true,
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "[gohtml]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "terraform.codelens.referenceCount": false,
+  "[terraform]": {
+    "editor.defaultFormatter": "hashicorp.terraform",
+    "editor.formatOnSave": false,
+    "editor.codeActionsOnSave": {
+      "source.formatAll.terraform": "always"
+    },
+  },
+  "[terraform-vars]": {
+    "editor.defaultFormatter": "hashicorp.terraform",
+    "editor.formatOnSave": false,
+    "editor.codeActionsOnSave": {
+      "source.formatAll.terraform": "always"
+    },
+  },
+  "go.formatTool": "gofumpt",
+  "[go]": {
+    "editor.formatOnSave": false,
+    "editor.defaultFormatter": "golang.go"
+  },
+  "markdown-preview-github-styles.colorTheme": "system",
   "github.copilot.enable": {
     "*": true,
     "apex": true,

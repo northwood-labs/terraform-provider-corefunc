@@ -19,7 +19,7 @@ jobs:
     name: Terratest
     steps:
       - name: Harden Runner
-        uses: step-security/harden-runner@bf7454d06d71f1098171f2acdf0cd4708d7b5920 # v2.20.0
+        uses: step-security/harden-runner@e14015d583714f6e62063499dc959a02595150a1 # v2.21.1
         with:
           disable-sudo: true
           egress-policy: block
@@ -138,7 +138,7 @@ jobs:
             x.cp.wd.microsoft.com:443
 
       - name: Checkout Source
-        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           fetch-depth: 0
 
@@ -149,13 +149,13 @@ jobs:
           cache: true
 
       - name: Install Terraform
-        uses: step-security/setup-terraform@11f45fe036ccfd27d231861d38b183d405b059a9 # v4.0.0
+        uses: step-security/setup-terraform@856d52e2f56619a4928ffc98bf60837d96a8e682 # v4.0.1
         with:
           terraform_version: 1.9
           terraform_wrapper: false
 
       - name: Install OpenTofu
-        uses: step-security/setup-opentofu@84cc3a843a234d872b49bd729cb74b65f938bf1f # v2.0.1
+        uses: step-security/setup-opentofu@98f922627f024c24b44355faaf668a261b8b687a # v2.0.2
         with:
           tofu_version: 1.8
           tofu_wrapper: false
