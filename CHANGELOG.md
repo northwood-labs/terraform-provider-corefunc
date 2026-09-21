@@ -34,6 +34,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`ba15fe7`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/ba15fe761f247242c0d8764e321f15b1dc9080c5): **deps**: Bump `trufflesecurity/trufflehog` from 3.97.2 to 3.97.4 ([#894](@REPO/issues/894)) ([@dependabot](https://github.com/dependabot))
 * [`e19deae`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/e19deae12a4e737d2320500eeaff7fa42c684db4): **deps**: Bump `step-security/goreleaser-action` from 7.2.2 to 7.2.3 ([#896](@REPO/issues/896)) ([@dependabot](https://github.com/dependabot))
 * [`5576daa`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/5576daa0056347679debcb1fba7a4792aa27b419): **deps**: Bump `trufflesecurity/trufflehog` from 3.97.4 to 3.97.5 ([#904](@REPO/issues/904)) ([@dependabot](https://github.com/dependabot))
+* [`3d54bbf`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/3d54bbf20d2936d0584f1c903462d78b061419e9): Add comprehensive VS Code development settings. ([@skyzyx](https://github.com/skyzyx))
 
 ### :dependabot: Building and Dependencies
 
