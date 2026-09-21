@@ -100,6 +100,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`c5d8296`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/c5d82965128f49edbd1d21c0d594aeccc281b47e): **deps**: Bump `github/codeql-action/analyze` from 4.37.2 to 4.38.1 ([#905](@REPO/issues/905)) ([@dependabot](https://github.com/dependabot))
 * [`fbb35de`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/fbb35decdee4e330544a56ddebea15282ec46573): **deps**: Bump `github/codeql-action/upload-sarif` ([#907](@REPO/issues/907)) ([@dependabot](https://github.com/dependabot))
 * [`64787b9`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/64787b98926d4e56c49717160315235e8dd3dca6): **deps**: Bump `github/codeql-action/autobuild` from 4.38.0 to 4.38.1 ([#908](@REPO/issues/908)) ([@dependabot](https://github.com/dependabot))
+* [`eb38d43`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/eb38d4393db9f43cd7340ca2944aa16e4c8eb5a8): **deps**: Bump `github.com/mattn/go-runewidth` from 0.0.29 to 0.0.30 ([#898](@REPO/issues/898)) ([@dependabot](https://github.com/dependabot))
 
 ### :test_tube: Testing
 
