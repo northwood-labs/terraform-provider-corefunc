@@ -103,6 +103,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), adheres t
 * [`64787b9`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/64787b98926d4e56c49717160315235e8dd3dca6): **deps**: Bump `github/codeql-action/autobuild` from 4.38.0 to 4.38.1 ([#908](@REPO/issues/908)) ([@dependabot](https://github.com/dependabot))
 * [`eb38d43`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/eb38d4393db9f43cd7340ca2944aa16e4c8eb5a8): **deps**: Bump `github.com/mattn/go-runewidth` from 0.0.29 to 0.0.30 ([#898](@REPO/issues/898)) ([@dependabot](https://github.com/dependabot))
 * [`2e1b7aa`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/2e1b7aa4e0a82e1278b954fef3f4256420ab66f9): **deps**: Bump `github/codeql-action/init` from 4.37.8 to 4.38.1 ([#906](@REPO/issues/906)) ([@dependabot](https://github.com/dependabot))
+* [`7f66bd0`](https://github.com/northwood-labs/terraform-provider-corefunc/commit/7f66bd04be87924f2ed87589014e8446886524b0): **deps**: Bump `actions/setup-go` from 6.5.0 to 7.0.0 ([#832](@REPO/issues/832)) ([@dependabot](https://github.com/dependabot))
 
 ### :test_tube: Testing
 
