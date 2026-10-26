@@ -7,7 +7,7 @@ replace github.com/northwood-labs/terraform-provider-corefunc/v2 v2.2.1 => ../..
 require (
 	github.com/charmbracelet/lipgloss v1.1.1-0.20250404203927-76690c660834
 	github.com/gruntwork-io/terratest v1.0.1
-	github.com/hairyhenderson/go-which v0.2.4
+	github.com/hairyhenderson/go-which v0.2.5
 	github.com/northwood-labs/terraform-provider-corefunc/v2 v2.2.1
 	github.com/stretchr/testify v1.12.1
 	go.nwlabs.dev/cli-helpers/v2 v2.0.0-20260710231300-0295ed1a2787
